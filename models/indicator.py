@@ -1,4 +1,4 @@
-from db import db
+from extensions import db
 
 class Indicator(db.Model):
     __tablename__ = "indicators"

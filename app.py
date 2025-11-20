@@ -3,38 +3,71 @@ from flask_migrate import Migrate
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
 from config import Config
-from db import db
+from extensions import db, bcrypt
 from routes import register_routes
+from sqlalchemy import inspect
+
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    # Configuración OpenAPI (Swagger)
     app.config["OPENAPI_VERSION"] = "3.0.3"
     app.config["OPENAPI_URL_PREFIX"] = "/"
     app.config["OPENAPI_JSON_PATH"] = "api-spec.json"
-    app.config["API_SPEC_OPTIONS"] = {"components": {"securitySchemes": {}}, "info": {"description": "Sistema indicador Gobernación"}}
+    app.config["API_SPEC_OPTIONS"] = {
+        "components": {"securitySchemes": {}},
+        "info": {"description": "Sistema indicador Gobernación"}
+    }
 
-
+    # Inicializar extensiones
     db.init_app(app)
-    
-    # 👇 IMPORTAR MODELOS AQUÍ
+    bcrypt.init_app(app)
+    jwt = JWTManager(app)
+    migrate = Migrate(app, db)
+
+    # Importar modelos
     from models.user import User
     from models.role import Role
     from models.permission import Permission
     from models.component import Component
     from models.indicator import Indicator
     from models.record import Record
-    
-    migrate = Migrate(app, db)
 
-    jwt = JWTManager(app)
-    
+    # Registrar comando seed
+    from commands.seed import seed
+    app.cli.add_command(seed)
+
+    # Registrar rutas
     api = Api(app)
     register_routes(api)
 
     return app
 
+
+def run_seed_if_needed(app):
+    """Ejecuta seed si las tablas ya están creadas y no hay roles."""
+    with app.app_context():
+        inspector = inspect(db.engine)
+
+        if "roles" not in inspector.get_table_names():
+            print("🚫 Tabla 'roles' no existe aún. Seed no ejecutado.")
+            return
+
+        from models.role import Role
+
+        if Role.query.count() > 0:
+            print("✔ Seed no necesario. Roles ya existen.")
+            return
+
+        print("⚙ Ejecutando seed automático…")
+        from commands.seed import seed
+        seed.main(standalone_mode=False)
+        print("🎉 Seed ejecutado.")
+
+
 if __name__ == "__main__":
     app = create_app()
+    run_seed_if_needed(app)
     app.run(debug=True)

@@ -1,64 +1,85 @@
 from flask_smorest import Blueprint, abort
 from flask.views import MethodView
-from db import db
+from extensions import db
 from models.permission import Permission
 from models.role import Role
 from schemas.permission_schema import PermissionSchema
 
 blp = Blueprint("Permissions", "permissions", description="Gestión de permisos")
 
+
+# ---------------------------------------------------------
+# LISTAR Y CREAR PERMISOS
+# ---------------------------------------------------------
 @blp.route("/permissions")
 class PermissionList(MethodView):
 
     @blp.response(200, PermissionSchema(many=True))
     def get(self):
-        """Obtener lista de permisos disponibles en el sistema."""
+        """Obtener lista de permisos."""
         return Permission.query.all()
 
     @blp.arguments(PermissionSchema)
     @blp.response(201, PermissionSchema)
     def post(self, permission_data):
         """Crear un nuevo permiso."""
-        existing = Permission.query.filter_by(name=permission_data.name).first()
-        if existing:
-            abort(400, message="Ese permiso ya existe.")
+
+        # Validación de unicidad
+        if Permission.query.filter_by(name=permission_data.name).first():
+            abort(409, message="Ese permiso ya existe.")
 
         db.session.add(permission_data)
         db.session.commit()
         return permission_data
 
 
+# ---------------------------------------------------------
+# GET / PUT / DELETE POR ID
+# ---------------------------------------------------------
 @blp.route("/permissions/<int:id>")
 class PermissionById(MethodView):
 
     @blp.response(200, PermissionSchema)
     def get(self, id):
-        """Obtener un permiso por ID."""
         permission = Permission.query.get_or_404(id)
         return permission
 
     @blp.arguments(PermissionSchema)
     @blp.response(200, PermissionSchema)
     def put(self, update_data, id):
-        """Actualizar un permiso existente."""
         permission = Permission.query.get_or_404(id)
 
-        # Validación: si cambia el nombre que no exista otro igual
+        # Validación: si cambia el nombre, evitar duplicados
         if update_data.name != permission.name:
             if Permission.query.filter_by(name=update_data.name).first():
-                abort(400, message="Ya existe un permiso con ese nombre.")
+                abort(409, message="Ya existe un permiso con ese nombre.")
 
         permission.name = update_data.name
         permission.description = update_data.description
-        db.session.commit()
 
+        db.session.commit()
         return permission
 
+    @blp.response(200)
     def delete(self, id):
-        ""
+        permission = Permission.query.get_or_404(id)
+
+        # Evitar borrar permisos que están en uso (opcional pero recomendado)
+        if permission.roles:
+            abort(400, message="No se puede eliminar porque está asociado a uno o más roles.")
+
+        db.session.delete(permission)
+        db.session.commit()
+
+        return {"message": "Permiso eliminado correctamente."}
+
+
+# ---------------------------------------------------------
+# ASIGNAR PERMISO A ROL
+# ---------------------------------------------------------
 @blp.route("/permissions/<int:perm_id>/assign-role/<int:role_id>", methods=["POST"])
 class AssignPermissionToRole(MethodView):
-    """Asigna un permiso a un rol."""
+
     def post(self, perm_id, role_id):
         permission = Permission.query.get_or_404(perm_id)
         role = Role.query.get_or_404(role_id)
@@ -69,12 +90,17 @@ class AssignPermissionToRole(MethodView):
         role.permissions.append(permission)
         db.session.commit()
 
-        return {"message": f"Permiso '{permission.name}' asignado al rol '{role.name}'."}
+        return {
+            "message": f"Permiso '{permission.name}' asignado al rol '{role.name}'."
+        }
 
 
+# ---------------------------------------------------------
+# REMOVER PERMISO DE ROL
+# ---------------------------------------------------------
 @blp.route("/permissions/<int:perm_id>/remove-role/<int:role_id>", methods=["DELETE"])
 class RemovePermissionFromRole(MethodView):
-    """Remueve un permiso de un rol."""
+
     def delete(self, perm_id, role_id):
         permission = Permission.query.get_or_404(perm_id)
         role = Role.query.get_or_404(role_id)
@@ -85,4 +111,6 @@ class RemovePermissionFromRole(MethodView):
         role.permissions.remove(permission)
         db.session.commit()
 
-        return {"message": f"Permiso '{permission.name}' removido del rol '{role.name}'."}
+        return {
+            "message": f"Permiso '{permission.name}' removido del rol '{role.name}'."
+        }
