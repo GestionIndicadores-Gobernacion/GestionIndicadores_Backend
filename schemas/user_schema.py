@@ -23,7 +23,7 @@ class UserSchema(SQLAlchemyAutoSchema):
 
     class Meta:
         model = User
-        load_instance = True
+        load_instance = False
         sqla_session = db.session
         include_fk = True
         exclude = ("password_hash",)
@@ -31,30 +31,28 @@ class UserSchema(SQLAlchemyAutoSchema):
     # -------- Validaciones --------
 
     @validates("name")
-    def validate_name(self, value):
+    def validate_name(self, value, **kwargs):
         if value and len(value) < 3:
             raise ValidationError("El nombre debe tener mínimo 3 caracteres.")
         if value and not re.match(r"^[a-zA-ZÀ-ÿ\s]+$", value):
             raise ValidationError("El nombre solo puede contener letras.")
-
+        
     @validates("email")
-    def validate_email(self, value):
+    def validate_email(self, value, **kwargs):
         email_regex = r"^[\w\.-]+@[\w\.-]+\.\w+$"
         if value and not re.match(email_regex, value):
             raise ValidationError("Formato de email inválido.")
 
     @validates("password")
-    def validate_password(self, value):
+    def validate_password(self, value, **kwargs):
         if value and len(value) < 6:
             raise ValidationError("La contraseña debe tener mínimo 6 caracteres.")
-
-
 
 # =====================================================================
 #  ESQUEMA PARA UPDATE (SOLO DICT)
 # =====================================================================
 class UserUpdateSchema(Schema):
-    name = fields.String()
-    email = fields.String()
-    password = fields.String()
-    role_id = fields.Integer()
+    name = fields.String(required=False)
+    email = fields.String(required=False)
+    password = fields.String(required=False)
+    role_id = fields.Integer(required=False)
