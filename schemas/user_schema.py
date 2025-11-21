@@ -1,4 +1,4 @@
-from marshmallow import fields, validates, ValidationError
+from marshmallow import Schema, fields, validates, ValidationError
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from extensions import db
 from models.user import User
@@ -6,18 +6,19 @@ import re
 from schemas.role_schema import RoleSchema
 
 
+# =====================================================================
+#  ESQUEMA PRINCIPAL (CREATE / READ)
+# =====================================================================
 class UserSchema(SQLAlchemyAutoSchema):
 
-    # ---- CAMPOS QUE SE PUEDEN RECIBIR ----
-    password = fields.String(load_only=True)   # opcional en update
+    password = fields.String(load_only=True)
     name = fields.String(required=False)
     email = fields.String(required=False)
 
-    # ---- ROLE ----
-    # Lista de roles (normalmente solo 1)
-    roles = fields.Nested(RoleSchema, many=True, dump_only=True)
+    # Rol asociado (dump)
+    role = fields.Nested(RoleSchema, dump_only=True)
 
-    # role_id SE PUEDE ENVIAR Y TAMBIÉN SE PUEDE MOSTRAR
+    # Permite enviar role_id
     role_id = fields.Integer(required=False)
 
     class Meta:
@@ -27,9 +28,7 @@ class UserSchema(SQLAlchemyAutoSchema):
         include_fk = True
         exclude = ("password_hash",)
 
-    # ---------------------------------------
-    #   VALIDACIONES
-    # ---------------------------------------
+    # -------- Validaciones --------
 
     @validates("name")
     def validate_name(self, value):
@@ -48,3 +47,14 @@ class UserSchema(SQLAlchemyAutoSchema):
     def validate_password(self, value):
         if value and len(value) < 6:
             raise ValidationError("La contraseña debe tener mínimo 6 caracteres.")
+
+
+
+# =====================================================================
+#  ESQUEMA PARA UPDATE (SOLO DICT)
+# =====================================================================
+class UserUpdateSchema(Schema):
+    name = fields.String()
+    email = fields.String()
+    password = fields.String()
+    role_id = fields.Integer()

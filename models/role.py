@@ -7,5 +7,4 @@ class Role(db.Model):
     name = db.Column(db.String(120), unique=True, nullable=False)
     description = db.Column(db.String(200))
 
-    # relación uno-a-muchos con User
     users = db.relationship("User", back_populates="role")
