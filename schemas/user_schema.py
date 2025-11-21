@@ -1,15 +1,24 @@
-# schemas/user_schema.py
 from marshmallow import fields, validates, ValidationError
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from extensions import db
 from models.user import User
 import re
+from schemas.role_schema import RoleSchema
+
 
 class UserSchema(SQLAlchemyAutoSchema):
 
-    password = fields.String(load_only=True)  # para updates opcionales
-    name = fields.String()
-    email = fields.String()
+    # ---- CAMPOS QUE SE PUEDEN RECIBIR ----
+    password = fields.String(load_only=True)   # opcional en update
+    name = fields.String(required=False)
+    email = fields.String(required=False)
+
+    # ---- ROLE ----
+    # Lista de roles (normalmente solo 1)
+    roles = fields.Nested(RoleSchema, many=True, dump_only=True)
+
+    # role_id SE PUEDE ENVIAR Y TAMBIÉN SE PUEDE MOSTRAR
+    role_id = fields.Integer(required=False)
 
     class Meta:
         model = User
@@ -18,7 +27,10 @@ class UserSchema(SQLAlchemyAutoSchema):
         include_fk = True
         exclude = ("password_hash",)
 
-    # -------- VALIDACIONES --------
+    # ---------------------------------------
+    #   VALIDACIONES
+    # ---------------------------------------
+
     @validates("name")
     def validate_name(self, value):
         if value and len(value) < 3:
@@ -29,7 +41,7 @@ class UserSchema(SQLAlchemyAutoSchema):
     @validates("email")
     def validate_email(self, value):
         email_regex = r"^[\w\.-]+@[\w\.-]+\.\w+$"
-        if not re.match(email_regex, value):
+        if value and not re.match(email_regex, value):
             raise ValidationError("Formato de email inválido.")
 
     @validates("password")

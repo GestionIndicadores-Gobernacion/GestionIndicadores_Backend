@@ -1,6 +1,5 @@
-from extensions import db, bcrypt
-
-from models.role import user_role  # necesario para asociar la tabla pivote
+from extensions import db
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class User(db.Model):
     __tablename__ = "users"
@@ -8,16 +7,13 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(255), nullable=False)
+    password_hash = db.Column(db.String(200), nullable=False)
 
-    roles = db.relationship(
-        "Role",
-        secondary=user_role,
-        back_populates="users"
-    )
+    role_id = db.Column(db.Integer, db.ForeignKey("roles.id"))
+    role = db.relationship("Role", back_populates="users")
 
     def set_password(self, password):
-        self.password_hash = bcrypt.generate_password_hash(password).decode("utf-8")
+        self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
-        return bcrypt.check_password_hash(self.password_hash, password)
+        return check_password_hash(self.password_hash, password)

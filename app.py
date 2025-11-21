@@ -2,6 +2,7 @@ from flask import Flask
 from flask_migrate import Migrate
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 from config import Config
 from extensions import db, bcrypt
 from routes import register_routes
@@ -12,7 +13,10 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    # Configuración OpenAPI (Swagger)
+    # 🔥 Habilitar CORS para Angular
+    CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}}, supports_credentials=True)
+
+    # Config OpenAPI
     app.config["OPENAPI_VERSION"] = "3.0.3"
     app.config["OPENAPI_URL_PREFIX"] = "/"
     app.config["OPENAPI_JSON_PATH"] = "api-spec.json"
@@ -21,25 +25,20 @@ def create_app():
         "info": {"description": "Sistema indicador Gobernación"}
     }
 
-    # Inicializar extensiones
     db.init_app(app)
     bcrypt.init_app(app)
     jwt = JWTManager(app)
     migrate = Migrate(app, db)
 
-    # Importar modelos
     from models.user import User
     from models.role import Role
-    from models.permission import Permission
     from models.component import Component
     from models.indicator import Indicator
     from models.record import Record
 
-    # Registrar comando seed
     from commands.seed import seed
     app.cli.add_command(seed)
 
-    # Registrar rutas
     api = Api(app)
     register_routes(api)
 

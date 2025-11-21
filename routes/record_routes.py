@@ -9,7 +9,6 @@ from models.record import Record
 from models.indicator import Indicator
 from models.component import Component
 from schemas.record_schema import RecordSchema
-from utils.permissions import permission_required
 
 blp = Blueprint("Records", "records", description="Gestión de registros/reportes")
 
@@ -77,7 +76,6 @@ def normalize_tipo_poblacion(value):
 @blp.route("/records")
 class RecordList(MethodView):
 
-    @permission_required('records.read')
     @blp.response(200, RecordSchema(many=True))
     def get(self):
         q = Record.query
@@ -110,7 +108,6 @@ class RecordList(MethodView):
         return q.order_by(Record.fecha.desc()).all()
 
 
-    @permission_required('records.create')
     @blp.arguments(RecordSchema)
     @blp.response(201, RecordSchema)
     def post(self, data):
@@ -164,7 +161,6 @@ class RecordList(MethodView):
 @blp.route("/records/<int:id>")
 class RecordById(MethodView):
 
-    @permission_required('records.read')
     @blp.response(200, RecordSchema)
     def get(self, id):
         record = Record.query.get(id)
@@ -173,7 +169,6 @@ class RecordById(MethodView):
         return record
 
 
-    @permission_required('records.update')
     @blp.arguments(RecordSchema)
     @blp.response(200, RecordSchema)
     def put(self, data, id):
@@ -210,7 +205,6 @@ class RecordById(MethodView):
         return record
 
 
-    @permission_required('records.delete')
     def delete(self, id):
         record = Record.query.get(id)
         if not record:
@@ -220,3 +214,82 @@ class RecordById(MethodView):
         db.session.commit()
 
         return {"message": "Registro eliminado."}
+    
+# -------------------------------------------------------------
+# ENDPOINTS DE ESTADÍSTICAS PARA DASHBOARD
+# -------------------------------------------------------------
+
+@blp.route("/records/stats/municipios")
+class RecordsStatsMunicipios(MethodView):
+
+    def get(self):
+        # Agrupar por municipio
+        data = (
+            db.session.query(Record.municipio, db.func.count(Record.id))
+            .group_by(Record.municipio)
+            .all()
+        )
+
+        response = [
+            {"municipio": municipio, "total": total}
+            for municipio, total in data
+        ]
+
+        return response
+
+@blp.route("/records/stats/mes")
+class RecordsStatsMes(MethodView):
+
+    def get(self):
+        data = (
+            db.session.query(
+                db.func.to_char(Record.fecha, 'YYYY-MM') , 
+                db.func.count(Record.id)
+            )
+            .group_by(db.func.to_char(Record.fecha, 'YYYY-MM'))
+            .order_by(db.func.to_char(Record.fecha, 'YYYY-MM'))
+            .all()
+        )
+
+        response = [
+            {"mes": mes, "total": total}
+            for mes, total in data
+        ]
+
+        return response
+
+@blp.route("/records/stats/tipo-poblacion")
+class RecordsStatsTipoPoblacion(MethodView):
+
+    def get(self):
+        records = Record.query.all()
+
+        conteo = {}
+
+        for r in records:
+            if r.tipo_poblacion:
+                for tipo in r.tipo_poblacion:
+                    conteo[tipo] = conteo.get(tipo, 0) + 1
+
+        response = [
+            {"tipo": tipo, "total": total}
+            for tipo, total in conteo.items()
+        ]
+
+        return response
+
+@blp.route("/records/latest")
+class RecordsLatest(MethodView):
+
+    def get(self):
+        limit = int(request.args.get("limit", 5))
+
+        records = (
+            Record.query
+            .order_by(Record.fecha.desc())
+            .limit(limit)
+            .all()
+        )
+
+        schema = RecordSchema(many=True)
+        return schema.dump(records)
