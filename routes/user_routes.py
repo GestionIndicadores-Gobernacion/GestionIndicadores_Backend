@@ -16,12 +16,12 @@ blp = Blueprint("Users", "users", description="Gestión de usuarios")
 @blp.route("/users")
 class UsersList(MethodView):
 
-    @jwt_required()
+    # @jwt_required()
     @blp.response(200, UserSchema(many=True))
     def get(self):
         return User.query.all()
 
-    @jwt_required()
+    # @jwt_required()
     @blp.arguments(UserSchema)
     @blp.response(201, UserSchema)
     def post(self, data):
@@ -56,13 +56,13 @@ class UsersList(MethodView):
 @blp.route("/users/<int:user_id>")
 class UserById(MethodView):
 
-    @jwt_required()
+    # @jwt_required()
     @blp.response(200, UserSchema)
     def get(self, user_id):
         user = User.query.get_or_404(user_id)
         return user
 
-    @jwt_required()
+    # @jwt_required()
     @blp.arguments(UserUpdateSchema)
     @blp.response(200, UserSchema)
     def put(self, data, user_id):

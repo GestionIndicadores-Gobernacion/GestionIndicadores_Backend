@@ -1,7 +1,7 @@
 from flask import request
 from flask_smorest import Blueprint, abort
 from flask.views import MethodView
-from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import get_jwt_identity, jwt_required
 from datetime import datetime
 
 from extensions import db
@@ -107,7 +107,7 @@ class RecordList(MethodView):
 
         return q.order_by(Record.fecha.desc()).all()
 
-
+    @jwt_required()
     @blp.arguments(RecordSchema)
     @blp.response(201, RecordSchema)
     def post(self, data):
@@ -168,7 +168,7 @@ class RecordById(MethodView):
             abort(404, message="Registro no encontrado.")
         return record
 
-
+    @jwt_required()
     @blp.arguments(RecordSchema)
     @blp.response(200, RecordSchema)
     def put(self, data, id):

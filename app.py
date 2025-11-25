@@ -4,7 +4,7 @@ from flask_smorest import Api
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 from config import Config
-from extensions import db, bcrypt
+from extensions import db, bcrypt, jwt
 from routes import register_routes
 from sqlalchemy import inspect
 
@@ -13,6 +13,8 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    print("JWT USADO:", app.config["JWT_SECRET_KEY"])
+    
     # 🔥 Habilitar CORS para Angular
     CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}}, supports_credentials=True)
 
@@ -27,7 +29,7 @@ def create_app():
 
     db.init_app(app)
     bcrypt.init_app(app)
-    jwt = JWTManager(app)
+    jwt.init_app(app)
     migrate = Migrate(app, db)
 
     from models.user import User
