@@ -1,10 +1,12 @@
-from flask_smorest import Blueprint, abort
+from flask_smorest import Blueprint
 from flask.views import MethodView
 from extensions import db
 from models.role import Role
 from schemas.role_schema import RoleSchema
+from validators.role_validator import RoleValidator
 
 blp = Blueprint("Roles", "roles", description="Gestión de roles")
+
 
 @blp.route("/roles")
 class RoleList(MethodView):
@@ -17,9 +19,7 @@ class RoleList(MethodView):
     @blp.response(201, RoleSchema)
     def post(self, data):
 
-        # Validación nombre único
-        if Role.query.filter_by(name=data["name"]).first():
-            abort(409, message="Ya existe un rol con ese nombre.")
+        RoleValidator.name_unique(data["name"])
 
         role = Role(
             name=data["name"],
@@ -37,16 +37,14 @@ class RoleById(MethodView):
     @blp.response(200, RoleSchema)
     def get(self, id):
         return Role.query.get_or_404(id)
-    
+
     @blp.arguments(RoleSchema)
     @blp.response(200, RoleSchema)
     def put(self, data, id):
         role = Role.query.get_or_404(id)
 
-        # Validar nombre único
         if data["name"] != role.name:
-            if Role.query.filter_by(name=data["name"]).first():
-                abort(409, message="Ya existe un rol con ese nombre.")
+            RoleValidator.name_unique(data["name"], id)
 
         role.name = data["name"]
         role.description = data.get("description")
@@ -57,9 +55,7 @@ class RoleById(MethodView):
     def delete(self, id):
         role = Role.query.get_or_404(id)
 
-        # Evitar borrar un rol en uso
-        if role.users:
-            abort(400, message="No se puede eliminar un rol que tiene usuarios asignados.")
+        RoleValidator.can_delete(role)
 
         db.session.delete(role)
         db.session.commit()

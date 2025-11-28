@@ -4,85 +4,68 @@ from flask_jwt_extended import jwt_required
 from extensions import db
 
 from models.user import User
-from models.role import Role
 from schemas.user_schema import UserSchema, UserUpdateSchema
+from validators.user_validator import UserValidator
 
 blp = Blueprint("Users", "users", description="Gestión de usuarios")
 
 
-# =====================================================================
-#  LISTAR + CREAR
-# =====================================================================
 @blp.route("/users")
 class UsersList(MethodView):
 
-    # @jwt_required()
     @blp.response(200, UserSchema(many=True))
     def get(self):
         return User.query.all()
 
-    # @jwt_required()
     @blp.arguments(UserSchema)
     @blp.response(201, UserSchema)
     def post(self, data):
 
-        if User.query.filter_by(email=data.get("email")).first():
-            abort(409, message="Este email ya está registrado.")
+        # Validación: email único
+        UserValidator.email_unique(data["email"])
+
+        # Validación: rol existe
+        role = UserValidator.role_exists(data["role_id"])
 
         user = User(
-            name=data.get("name"),
-            email=data.get("email")
+            name=data["name"],
+            email=data["email"]
         )
-
-        if not data.get("password"):
-            abort(400, message="La contraseña es obligatoria.")
-
         user.set_password(data["password"])
-
-        role = Role.query.get(data.get("role_id"))
-        if not role:
-            abort(400, message="El rol seleccionado no existe.")
-
         user.role = role
 
         db.session.add(user)
         db.session.commit()
+
         return user
 
 
-# =====================================================================
-#  GET ONE + UPDATE + DELETE
-# =====================================================================
 @blp.route("/users/<int:user_id>")
 class UserById(MethodView):
 
-    # @jwt_required()
     @blp.response(200, UserSchema)
     def get(self, user_id):
-        user = User.query.get_or_404(user_id)
-        return user
+        return User.query.get_or_404(user_id)
 
-    # @jwt_required()
     @blp.arguments(UserUpdateSchema)
     @blp.response(200, UserSchema)
     def put(self, data, user_id):
+
         user = User.query.get_or_404(user_id)
+
+        # Validar email único
+        if "email" in data:
+            UserValidator.email_unique(data["email"], user.id)
+            user.email = data["email"]
 
         if "name" in data:
             user.name = data["name"]
-
-        if "email" in data:
-            user.email = data["email"]
 
         if "password" in data and data["password"]:
             user.set_password(data["password"])
 
         if "role_id" in data:
-            role = Role.query.get(data["role_id"])
-            if not role:
-                abort(400, message="El rol seleccionado no existe.")
-            user.role = role
-
+            user.role = UserValidator.role_exists(data["role_id"])
 
         db.session.commit()
         return user
@@ -90,6 +73,9 @@ class UserById(MethodView):
     @jwt_required()
     def delete(self, user_id):
         user = User.query.get_or_404(user_id)
+
+        # No permitir eliminar último administrador
+        UserValidator.cannot_delete_last_admin(user)
 
         db.session.delete(user)
         db.session.commit()

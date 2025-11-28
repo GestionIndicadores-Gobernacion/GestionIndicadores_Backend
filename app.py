@@ -7,7 +7,7 @@ from config import Config
 from extensions import db, bcrypt, jwt
 from routes import register_routes
 from sqlalchemy import inspect
-
+from handlers.error_handlers import register_error_handlers
 
 def create_app():
     app = Flask(__name__)
@@ -15,10 +15,10 @@ def create_app():
 
     print("JWT USADO:", app.config["JWT_SECRET_KEY"])
     
-    # 🔥 Habilitar CORS para Angular
+    # CORS
     CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}}, supports_credentials=True)
 
-    # Config OpenAPI
+    # OpenAPI setup...
     app.config["OPENAPI_VERSION"] = "3.0.3"
     app.config["OPENAPI_URL_PREFIX"] = "/"
     app.config["OPENAPI_JSON_PATH"] = "api-spec.json"
@@ -32,20 +32,25 @@ def create_app():
     jwt.init_app(app)
     migrate = Migrate(app, db)
 
+    # Importar modelos para Migrate
     from models.user import User
     from models.role import Role
     from models.component import Component
     from models.indicator import Indicator
     from models.record import Record
 
+    # Seed
     from commands.seed import seed
     app.cli.add_command(seed)
 
+    # 🔥 Registrar rutas
     api = Api(app)
     register_routes(api)
 
-    return app
+    # 🔥 Registrar HANDLERS GLOBALES
+    register_error_handlers(app)
 
+    return app
 
 def run_seed_if_needed(app):
     """Ejecuta seed si las tablas ya están creadas y no hay roles."""

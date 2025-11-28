@@ -1,68 +1,57 @@
-from flask_smorest import Blueprint, abort
+from flask_smorest import Blueprint
 from flask.views import MethodView
+from flask_jwt_extended import jwt_required
 from extensions import db
-
 from models.component import Component
 from schemas.component_schema import ComponentSchema
+from validators.component_validator import validate_component_payload
 
-blp = Blueprint("Components", "components", description="Gestión de componentes")
+blp = Blueprint("component", "component", description="Gestión de componentes")
 
-
-@blp.route("/components")
+@blp.route("/component")
 class ComponentList(MethodView):
 
+    @jwt_required()
     @blp.response(200, ComponentSchema(many=True))
     def get(self):
         return Component.query.all()
 
+    @jwt_required()
     @blp.arguments(ComponentSchema)
     @blp.response(201, ComponentSchema)
-    def post(self, new_component):
-
-        # 🔥 Validar duplicado
-        if Component.query.filter_by(name=new_component.name).first():
-            abort(409, message="Ya existe un componente con este nombre.")
-
-        db.session.add(new_component)
+    def post(self, data):
+        validate_component_payload(data)
+        component = data
+        db.session.add(component)
         db.session.commit()
-        return new_component
+        return component
 
 
-@blp.route("/components/<int:id>")
-class ComponentById(MethodView):
+@blp.route("/component/<int:id>")
+class ComponentDetail(MethodView):
 
+    @jwt_required()
     @blp.response(200, ComponentSchema)
     def get(self, id):
-        comp = Component.query.get(id)
-        if not comp:
-            abort(404, message="Componente no encontrado.")
-        return comp
+        return Component.query.get_or_404(id)
 
+    @jwt_required()
     @blp.arguments(ComponentSchema)
     @blp.response(200, ComponentSchema)
-    def put(self, update_data, id):
-        comp = Component.query.get(id)
-        if not comp:
-            abort(404, message="Componente no existe.")
+    def put(self, data, id):
+        existing = Component.query.get_or_404(id)
+        validate_component_payload(data, component_id=id)
 
-        # 🔥 Validar duplicado solo si cambia el nombre
-        if update_data.name != comp.name:
-            exists = Component.query.filter_by(name=update_data.name).first()
-            if exists:
-                abort(409, message="Ya existe otro componente con este nombre.")
-
-        # Actualizar campos
-        comp.name = update_data.name
-        comp.description = update_data.description
-        comp.active = update_data.active if update_data.active is not None else comp.active
+        for key, value in data.__dict__.items():
+            if key not in ["id", "_sa_instance_state"]:
+                setattr(existing, key, value)
 
         db.session.commit()
-        return comp
+        return existing
 
+    @jwt_required()
     def delete(self, id):
-        comp = Component.query.get(id)
-        if not comp:
-            abort(404, message="Componente no existe.")
-        db.session.delete(comp)
+        component = Component.query.get_or_404(id)
+        db.session.delete(component)
         db.session.commit()
-        return {"message": "Componente eliminado correctamente."}
+        return {"message": "Componente eliminado correctamente"}

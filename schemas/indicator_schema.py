@@ -1,8 +1,12 @@
-from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from marshmallow import fields, validates, ValidationError
-from extensions import db
+from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
+
 from models.indicator import Indicator
 from models.component import Component
+from extensions import db
+import re
+
+ALLOWED_TYPES = {"string", "integer", "boolean", "date", "float"}
 
 class IndicatorSchema(SQLAlchemyAutoSchema):
     class Meta:
@@ -11,19 +15,7 @@ class IndicatorSchema(SQLAlchemyAutoSchema):
         sqla_session = db.session
         include_fk = True
 
-    component_id = fields.Integer(required=True)
-    name = fields.String(required=True)
-    description = fields.String(allow_none=True)
-
-    data_type = fields.String(required=True)
-    required = fields.Boolean()
-    use_list = fields.Boolean()
-    allowed_values = fields.List(fields.String(), allow_none=True)
-    active = fields.Boolean()
-
-    # -------------------------
-    # VALIDACIONES BÁSICAS
-    # -------------------------
+    id = fields.Integer(dump_only=True)
 
     @validates("component_id")
     def validate_component_id(self, value, **kwargs):
@@ -32,26 +24,26 @@ class IndicatorSchema(SQLAlchemyAutoSchema):
 
     @validates("name")
     def validate_name(self, value, **kwargs):
-        if not value.strip():
-            raise ValidationError("El nombre del indicador es obligatorio.")
+        if not value or not value.strip():
+            raise ValidationError("El nombre es obligatorio.")
+
         if len(value) < 3:
-            raise ValidationError("Debe tener al menos 3 caracteres.")
-        if len(value) > 200:
-            raise ValidationError("Máximo 200 caracteres permitidos.")
-        # ❗ No validar duplicados aquí (va en el route)
+            raise ValidationError("El nombre debe tener al menos 3 caracteres.")
+
+        if len(value) > 150:
+            raise ValidationError("El nombre no puede superar 150 caracteres.")
+
+        if not re.match(r"^[A-Za-zÁÉÍÓÚáéíóúñÑ0-9 \-_]+$", value):
+            raise ValidationError("El nombre contiene caracteres inválidos.")
+
+    @validates("description")
+    def validate_description(self, value, **kwargs):
+        if value and len(value) > 500:
+            raise ValidationError("La descripción no puede superar los 500 caracteres.")
 
     @validates("data_type")
     def validate_data_type(self, value, **kwargs):
-        allowed = ["integer", "decimal", "boolean", "text", "date", "category"]
-        if value not in allowed:
-            raise ValidationError(f"Tipo de dato inválido. Permitidos: {allowed}")
-
-    @validates("allowed_values")
-    def validate_allowed_values(self, value, **kwargs):
-        if value is not None and not isinstance(value, list):
-            raise ValidationError("allowed_values debe ser una lista de strings.")
-
-        if value:
-            for v in value:
-                if not isinstance(v, str):
-                    raise ValidationError("Todos los valores permitidos deben ser strings.")
+        if value not in ALLOWED_TYPES:
+            raise ValidationError(
+                f"data_type debe ser uno de: {', '.join(ALLOWED_TYPES)}"
+            )

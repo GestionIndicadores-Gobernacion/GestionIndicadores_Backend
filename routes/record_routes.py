@@ -1,295 +1,174 @@
 from flask import request
-from flask_smorest import Blueprint, abort
+from flask_smorest import Blueprint
 from flask.views import MethodView
-from flask_jwt_extended import get_jwt_identity, jwt_required
-from datetime import datetime
-
+from flask_jwt_extended import jwt_required
+from sqlalchemy import func
 from extensions import db
 from models.record import Record
-from models.indicator import Indicator
-from models.component import Component
 from schemas.record_schema import RecordSchema
+from validators.record_validator import validate_record_payload
 
-blp = Blueprint("Records", "records", description="Gestión de registros/reportes")
-
-
-# -------------------------------------------------------------
-# FUNCIONES AUXILIARES DE VALIDACIÓN
-# -------------------------------------------------------------
-def validate_indicator_value(indicator, valor):
-    """Valida el valor según el tipo del indicador."""
-    if indicator.data_type == "integer":
-        if not valor.isdigit():
-            abort(400, message="El valor debe ser un entero.")
-
-    elif indicator.data_type == "decimal":
-        try:
-            float(valor)
-        except ValueError:
-            abort(400, message="El valor debe ser un número decimal.")
-
-    elif indicator.data_type == "boolean":
-        if valor.lower() not in ["true", "false"]:
-            abort(400, message="El valor debe ser true o false.")
-
-    elif indicator.data_type == "date":
-        try:
-            datetime.strptime(valor, "%Y-%m-%d")
-        except ValueError:
-            abort(400, message="El valor debe ser una fecha válida (YYYY-MM-DD).")
-
-    elif indicator.data_type == "category":
-        if valor not in indicator.allowed_values:
-            abort(
-                400,
-                message=f"Valor inválido. Permitidos: {indicator.allowed_values}"
-            )
+blp = Blueprint("record", "record", description="Gestión de registros")
 
 
-def validate_detalle_poblacion(indicator, detalle):
-    """Valida el diccionario detalle_poblacion según allowed_values."""
-    if indicator.use_list and indicator.allowed_values:
-        invalid_keys = [k for k in detalle.keys() if k not in indicator.allowed_values]
-        if invalid_keys:
-            abort(
-                400,
-                message=(
-                    f"Valores inválidos en detalle_poblacion: {invalid_keys}. "
-                    f"Permitidos: {indicator.allowed_values}"
-                )
-            )
-
-def normalize_tipo_poblacion(value):
-    """Convierte tipo_poblacion en lista siempre."""
-    if isinstance(value, str):
-        return [value]
-
-    if isinstance(value, list):
-        return value
-
-    abort(400, message="tipo_poblacion debe ser string o lista.")
-
-
-# -------------------------------------------------------------
-# LISTAR Y CREAR REGISTROS
-# -------------------------------------------------------------
-@blp.route("/records")
+# ============================================================
+# 📌 CRUD PRINCIPAL
+# ============================================================
+@blp.route("/record")
 class RecordList(MethodView):
 
+    @jwt_required()
     @blp.response(200, RecordSchema(many=True))
     def get(self):
-        q = Record.query
-
-        # Filtros opcionales
-        municipio = request.args.get("municipio")
-        if municipio:
-            q = q.filter(Record.municipio.ilike(f"%{municipio}%"))
-
-        component_id = request.args.get("component_id")
-        if component_id:
-            q = q.filter(Record.component_id == int(component_id))
-
-        indicator_id = request.args.get("indicator_id")
-        if indicator_id:
-            q = q.filter(Record.indicator_id == int(indicator_id))
-
-        tipo_poblacion = request.args.get("tipo_poblacion")
-        if tipo_poblacion:
-            q = q.filter(Record.tipo_poblacion.contains([tipo_poblacion]))
-
-        fecha_from = request.args.get("fecha_from")
-        fecha_to = request.args.get("fecha_to")
-
-        if fecha_from:
-            q = q.filter(Record.fecha >= fecha_from)
-        if fecha_to:
-            q = q.filter(Record.fecha <= fecha_to)
-
-        return q.order_by(Record.fecha.desc()).all()
+        return Record.query.all()
 
     @jwt_required()
     @blp.arguments(RecordSchema)
     @blp.response(201, RecordSchema)
     def post(self, data):
-        # data es un DICT (porque load_instance=False)
-
-        indicator = Indicator.query.get(data["indicator_id"])
-
-        if indicator is None:
-            abort(400, message="El indicador no existe.")
-
-        # Validar relación entre componente e indicador
-        if indicator.component_id != data["component_id"]:
-            abort(400, message="El indicador no pertenece al componente enviado.")
-
-        # Validar valor
-        if data.get("valor"):
-            validate_indicator_value(indicator, data["valor"])
-
-        # Validar detalle poblacional
-        if data.get("detalle_poblacion"):
-            validate_detalle_poblacion(indicator, data["detalle_poblacion"])
-            
-        # Normalizar tipo_poblacion
-        data["tipo_poblacion"] = normalize_tipo_poblacion(data["tipo_poblacion"])
-
-        # Obtener usuario desde token
-        user_id = get_jwt_identity()
-
-        # Crear modelo manualmente
-        record = Record(
-            component_id=data["component_id"],
-            indicator_id=data["indicator_id"],
-            municipio=data["municipio"],
-            fecha=data["fecha"],
-            tipo_poblacion=data["tipo_poblacion"],  # lista
-            detalle_poblacion=data.get("detalle_poblacion"),
-            valor=data.get("valor"),
-            evidencia_url=data.get("evidencia_url"),
-            creado_por=str(user_id),
-        )
-
+        validate_record_payload(data)
+        record = data
         db.session.add(record)
         db.session.commit()
-
         return record
 
 
-# -------------------------------------------------------------
-# CRUD POR ID
-# -------------------------------------------------------------
-@blp.route("/records/<int:id>")
-class RecordById(MethodView):
+@blp.route("/record/<int:id>")
+class RecordDetail(MethodView):
 
+    @jwt_required()
     @blp.response(200, RecordSchema)
     def get(self, id):
-        record = Record.query.get(id)
-        if not record:
-            abort(404, message="Registro no encontrado.")
-        return record
+        return Record.query.get_or_404(id)
 
     @jwt_required()
     @blp.arguments(RecordSchema)
     @blp.response(200, RecordSchema)
     def put(self, data, id):
-        record = Record.query.get(id)
-        if not record:
-            abort(404, message="Registro no existe.")
+        existing = Record.query.get_or_404(id)
+        validate_record_payload(data)
 
-        indicator = Indicator.query.get(data["indicator_id"])
-        if not indicator:
-            abort(404, message="Indicador no existe.")
-
-        if indicator.component_id != data["component_id"]:
-            abort(400, message="El indicador no pertenece al componente enviado.")
-
-        if data.get("valor"):
-            validate_indicator_value(indicator, data["valor"])
-
-        if data.get("detalle_poblacion"):
-            validate_detalle_poblacion(indicator, data["detalle_poblacion"])
-            
-        data["tipo_poblacion"] = normalize_tipo_poblacion(data["tipo_poblacion"])
-
-        # Actualizar
-        record.component_id = data["component_id"]
-        record.indicator_id = data["indicator_id"]
-        record.municipio = data["municipio"]
-        record.fecha = data["fecha"]
-        record.tipo_poblacion = data["tipo_poblacion"]
-        record.detalle_poblacion = data.get("detalle_poblacion")
-        record.valor = data.get("valor")
-        record.evidencia_url = data.get("evidencia_url")
+        for key, value in data.__dict__.items():
+            if key not in ["id", "_sa_instance_state"]:
+                setattr(existing, key, value)
 
         db.session.commit()
-        return record
+        return existing
 
-
+    @jwt_required()
     def delete(self, id):
-        record = Record.query.get(id)
-        if not record:
-            abort(404, message="Registro no existe.")
-
+        record = Record.query.get_or_404(id)
         db.session.delete(record)
         db.session.commit()
+        return {"message": "Registro eliminado correctamente"}
 
-        return {"message": "Registro eliminado."}
-    
-# -------------------------------------------------------------
-# ENDPOINTS DE ESTADÍSTICAS PARA DASHBOARD
-# -------------------------------------------------------------
 
-@blp.route("/records/stats/municipios")
-class RecordsStatsMunicipios(MethodView):
+# ============================================================
+# 📊 STATS: Registros por municipio
+# ============================================================
+@blp.route("/record/stats/municipios")
+class RecordStatsMunicipios(MethodView):
 
+    @jwt_required()
     def get(self):
-        # Agrupar por municipio
-        data = (
-            db.session.query(Record.municipio, db.func.count(Record.id))
-            .group_by(Record.municipio)
-            .all()
-        )
-
-        response = [
-            {"municipio": municipio, "total": total}
-            for municipio, total in data
-        ]
-
-        return response
-
-@blp.route("/records/stats/mes")
-class RecordsStatsMes(MethodView):
-
-    def get(self):
-        data = (
+        results = (
             db.session.query(
-                db.func.to_char(Record.fecha, 'YYYY-MM') , 
-                db.func.count(Record.id)
+                Record.municipio,
+                func.count(Record.id).label("total")
             )
-            .group_by(db.func.to_char(Record.fecha, 'YYYY-MM'))
-            .order_by(db.func.to_char(Record.fecha, 'YYYY-MM'))
+            .group_by(Record.municipio)
+            .order_by(func.count(Record.id).desc())
             .all()
         )
 
-        response = [
-            {"mes": mes, "total": total}
-            for mes, total in data
-        ]
+        return [{"municipio": r[0], "total": r[1]} for r in results]
 
-        return response
 
-@blp.route("/records/stats/tipo-poblacion")
-class RecordsStatsTipoPoblacion(MethodView):
+# ============================================================
+# 📅 STATS: Registros por mes (YYYY-MM)
+# ============================================================
+@blp.route("/record/stats/mes")
+class RecordStatsMes(MethodView):
 
+    @jwt_required()
     def get(self):
-        records = Record.query.all()
+        results = (
+            db.session.query(
+                func.to_char(Record.fecha, "YYYY-MM").label("mes"),
+                func.count(Record.id).label("total")
+            )
+            .group_by("mes")
+            .order_by("mes")
+            .all()
+        )
 
-        conteo = {}
+        return [{"mes": r[0], "total": r[1]} for r in results]
 
-        for r in records:
-            if r.tipo_poblacion:
-                for tipo in r.tipo_poblacion:
-                    conteo[tipo] = conteo.get(tipo, 0) + 1
 
-        response = [
-            {"tipo": tipo, "total": total}
-            for tipo, total in conteo.items()
-        ]
+# ============================================================
+# 🕒 Últimos registros
+# ============================================================
+@blp.route("/record/latest")
+class RecordLatest(MethodView):
 
-        return response
-
-@blp.route("/records/latest")
-class RecordsLatest(MethodView):
-
+    @jwt_required()
+    @blp.response(200, RecordSchema(many=True))
     def get(self):
         limit = int(request.args.get("limit", 5))
 
         records = (
             Record.query
-            .order_by(Record.fecha.desc())
+            .order_by(Record.fecha_registro.desc())
             .limit(limit)
             .all()
         )
 
-        schema = RecordSchema(many=True)
-        return schema.dump(records)
+        return records
+
+
+# ============================================================
+# 📊 KPIs para el Dashboard
+# ============================================================
+@blp.route("/record/stats/count")
+class RecordStatsCount(MethodView):
+
+    @jwt_required()
+    def get(self):
+        total_registros = Record.query.count()
+
+        # Registros del mes actual
+        from datetime import datetime
+        today = datetime.utcnow()
+        year = today.year
+        month = today.month
+
+        registros_mes = Record.query.filter(
+            func.extract('year', Record.fecha) == year,
+            func.extract('month', Record.fecha) == month
+        ).count()
+
+        # Municipios distintos
+        municipios_activos = db.session.query(Record.municipio).distinct().count()
+
+        # indicadores activos (extraer IDs del JSON 'detalle_poblacion')
+        registros = Record.query.with_entities(Record.detalle_poblacion).all()
+
+        ids_indicadores = set()
+
+        for (detalle,) in registros:
+            if detalle:
+                ids_indicadores.update(detalle.keys())
+
+        indicadores_activos = len(ids_indicadores)
+
+
+        # Componentes activos
+        componentes_activos = db.session.query(Record.component_id).distinct().count()
+
+        return {
+            "totalRegistros": total_registros,
+            "registrosMes": registros_mes,
+            "municipiosActivos": municipios_activos,
+            "indicadoresActivos": indicadores_activos,
+            "componentesActivos": componentes_activos
+        }
