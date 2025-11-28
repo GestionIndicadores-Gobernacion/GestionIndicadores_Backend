@@ -10,6 +10,7 @@ class StrategySchema(SQLAlchemyAutoSchema):
         load_instance = True
         sqla_session = db.session
         include_fk = True
+        partial = True
 
     id = fields.Integer(dump_only=True)
 

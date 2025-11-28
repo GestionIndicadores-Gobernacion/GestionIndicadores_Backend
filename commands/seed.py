@@ -34,7 +34,7 @@ def seed():
         click.echo("✔ Roles ya existentes. Nada que crear.")
 
     # ===================================================
-    # 2️⃣ USUARIO ADMIN
+    # 2️⃣ USUARIO SUPERADMIN
     # ===================================================
     admin_email = "admin@gobernacion.gov.co"
     admin = User.query.filter_by(email=admin_email).first()
@@ -53,9 +53,45 @@ def seed():
     db.session.commit()
 
     # ======================================================
-    # 3️⃣ Estrategia + Componentes + Indicadores
+    # 3️⃣ Usuarios adicionales (Editor y Viewer)
     # ======================================================
+    usuarios_extra = [
+        {
+            "name": "Editor del Sistema",
+            "email": "editor@gobernacion.gov.co",
+            "password": "Editor2025*",
+            "role": "Editor",
+        },
+        {
+            "name": "Usuario Viewer",
+            "email": "viewer@gobernacion.gov.co",
+            "password": "Viewer2025*",
+            "role": "Viewer",
+        }
+    ]
 
+    for data in usuarios_extra:
+        user = User.query.filter_by(email=data["email"]).first()
+        if not user:
+            user = User(
+                name=data["name"],
+                email=data["email"]
+            )
+            user.set_password(data["password"])
+            db.session.add(user)
+            db.session.commit()
+            click.echo(f"👤 Usuario creado: {data['email']}")
+        else:
+            click.echo(f"✔ Usuario ya existe: {data['email']}")
+
+        # asignar rol
+        role = Role.query.filter_by(name=data["role"]).first()
+        user.role_id = role.id
+        db.session.commit()
+
+    # ======================================================
+    # 4️⃣ Estrategia principal
+    # ======================================================
     strategy_name = "OPERATIVIZAR"
 
     strategy = Strategy.query.filter_by(name=strategy_name).first()
@@ -79,7 +115,7 @@ def seed():
         click.echo("✔ Estrategia ya existente")
 
     # ======================================================
-    # HELPER PARA CREAR COMPONENTES + INDICADORES
+    # HELPER: Crear componente + indicadores
     # ======================================================
     def crear_componente(nombre, indicadores):
         comp = Component.query.filter_by(name=nombre).first()
@@ -89,7 +125,7 @@ def seed():
                 strategy_id=strategy.id,
                 name=nombre,
                 description=f"Componente '{nombre}' de la estrategia Operativizar.",
-                data_type="integer",   # 👈 siempre integer
+                data_type="integer",
                 active=True,
                 created_at=datetime.utcnow()
             )
@@ -99,7 +135,7 @@ def seed():
         else:
             click.echo(f"🧩 Componente ya existe: {nombre}")
 
-        # Crear indicadores del componente
+        # Indicadores del componente
         for ind_name in indicadores:
             ind = Indicator.query.filter_by(name=ind_name).first()
             if not ind:
@@ -107,10 +143,8 @@ def seed():
                     component_id=comp.id,
                     name=ind_name,
                     description=f"Indicador '{ind_name}' del componente {nombre}",
-                    data_type="integer",   # 👈 también integer
+                    data_type="integer",
                     active=True,
-                    # si tu modelo tiene created_at, déjalo;
-                    # si no, quita esta línea:
                     created_at=datetime.utcnow()
                 )
                 db.session.add(ind)
@@ -120,7 +154,7 @@ def seed():
                 click.echo(f"   ✔ Indicador ya existe: {ind_name}")
 
     # ======================================================
-    # 4️⃣ LISTA COMPLETA DE COMPONENTES E INDICADORES
+    # 5️⃣ Componentes e indicadores
     # ======================================================
     componentes = [
         {
@@ -169,9 +203,7 @@ def seed():
         },
         {
             "name": "IMPLEMENTAR POGRAMA PARA COMUNIDADES ETNICAS",
-            "indicators": [
-                # No enviaste indicadores → queda vacío
-            ]
+            "indicators": []
         },
         {
             "name": "EQUIPO MULTIDISCIPLINARIO",
@@ -197,7 +229,7 @@ def seed():
         }
     ]
 
-    # Crear todos
+    # Crear todos los componentes + indicadores
     for c in componentes:
         crear_componente(c["name"], c["indicators"])
 

@@ -1,8 +1,9 @@
-from flask_smorest import Blueprint
+from flask_smorest import Blueprint, abort   # 👈 agrega abort
 from flask.views import MethodView
 from flask_jwt_extended import jwt_required
 from extensions import db
 from models.indicator import Indicator
+from models.record import Record            # 👈 import para revisar uso en registros
 from schemas.indicator_schema import IndicatorSchema
 from validators.indicator_validator import validate_indicator_payload
 
@@ -52,6 +53,30 @@ class IndicatorDetail(MethodView):
     @jwt_required()
     def delete(self, id):
         indicator = Indicator.query.get_or_404(id)
+
+        # 👇 Revisar si este indicador aparece en algún Record.detalle_poblacion
+        records = (
+            Record.query
+            .with_entities(Record.id, Record.detalle_poblacion)
+            .filter(Record.detalle_poblacion.isnot(None))
+            .all()
+        )
+
+        usado_en = 0
+        for r_id, detalle in records:
+            if not detalle:
+                continue
+
+            # Las claves pueden venir como string o int, cubrimos ambas
+            if id in detalle.keys() or str(id) in detalle.keys():
+                usado_en += 1
+
+        if usado_en > 0:
+            abort(
+                400,
+                message=f"No se puede eliminar. El indicador está asociado a {usado_en} registro(s)."
+            )
+
         db.session.delete(indicator)
         db.session.commit()
         return {"message": "Indicador eliminado correctamente"}

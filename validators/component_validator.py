@@ -5,18 +5,23 @@ from utils.payload import normalize_payload
 ALLOWED_FIELDS = {"strategy_id", "name", "description", "data_type", "active"}
 
 def validate_component_payload(data, component_id=None):
+
+    # 🔥 1. Evitar validación cuando viene un modelo (DELETE / GET interno)
+    if not isinstance(data, dict):
+        return
+
     data = normalize_payload(data)
 
-    # Evitar campos inventados
+    # 2. Evitar campos inventados
     unknown = set(data.keys()) - ALLOWED_FIELDS
     if unknown:
         raise ValidationError({"error": f"Campos no permitidos: {', '.join(unknown)}"})
 
-    # Validar boolean
+    # 3. Validar Active booleano
     if "active" in data and not isinstance(data["active"], bool):
         raise ValidationError({"active": "El campo 'active' debe ser booleano."})
 
-    # Validación de unicidad (nombre + strategy)
+    # 4. Validar unicidad nombre + strategy
     if "name" in data and "strategy_id" in data:
         exists = Component.query.filter_by(
             name=data["name"],
@@ -27,3 +32,5 @@ def validate_component_payload(data, component_id=None):
             raise ValidationError({
                 "name": "Ya existe un componente con este nombre para esta estrategia."
             })
+
+    return True

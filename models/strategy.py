@@ -11,3 +11,10 @@ class Strategy(db.Model):
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, onupdate=datetime.utcnow)
+
+    components = db.relationship(
+            "Component",
+            backref="strategy",
+            cascade="all, delete",
+            passive_deletes=True
+        )

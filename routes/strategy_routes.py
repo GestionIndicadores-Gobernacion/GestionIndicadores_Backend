@@ -1,5 +1,4 @@
-from os import abort
-from flask_smorest import Blueprint
+from flask_smorest import abort, Blueprint
 from flask.views import MethodView
 from flask_jwt_extended import jwt_required
 from extensions import db
@@ -10,6 +9,10 @@ from validators.strategy_validator import validate_strategy_payload
 
 blp = Blueprint("strategy", "strategy", description="Gestión de estrategias")
 
+
+# ============================================
+# 📌 LISTA Y CREACIÓN DE ESTRATEGIAS
+# ============================================
 @blp.route("/strategy")
 class StrategyList(MethodView):
 
@@ -19,19 +22,22 @@ class StrategyList(MethodView):
         return Strategy.query.all()
 
     @jwt_required()
-    @blp.arguments(StrategySchema)
+    @blp.arguments(StrategySchema, location="json")   # ← EVITA VALIDAR DELETE
     @blp.response(201, StrategySchema)
     def post(self, data):
         validate_strategy_payload(data)
 
-        # data YA ES Strategy (SQLAlchemyAutoSchema lo crea)
         strategy = data
-
         db.session.add(strategy)
         db.session.commit()
+
         return strategy
 
 
+
+# ============================================
+# 📌 OBTENER / EDITAR / ELIMINAR ESTRATEGÍA
+# ============================================
 @blp.route("/strategy/<int:id>")
 class StrategyDetail(MethodView):
 
@@ -41,14 +47,14 @@ class StrategyDetail(MethodView):
         return Strategy.query.get_or_404(id)
 
     @jwt_required()
-    @blp.arguments(StrategySchema)
+    @blp.arguments(StrategySchema, location="json")   # ← IMPORTANTE
     @blp.response(200, StrategySchema)
     def put(self, data, id):
         existing = Strategy.query.get_or_404(id)
 
         validate_strategy_payload(data)
 
-        # data YA ES Strategy → copiamos atributos
+        # Copiar atributos excepto campos internos
         for key, value in data.__dict__.items():
             if key not in ["id", "_sa_instance_state"]:
                 setattr(existing, key, value)
@@ -59,11 +65,23 @@ class StrategyDetail(MethodView):
     @jwt_required()
     def delete(self, id):
         strategy = Strategy.query.get_or_404(id)
+
+        if len(strategy.components) > 0:
+            abort(
+                400,
+                message=f"No se puede eliminar. La estrategia tiene {len(strategy.components)} componentes asociados."
+            )
+
         db.session.delete(strategy)
         db.session.commit()
         return {"message": "Estrategia eliminada correctamente"}
 
 
+
+
+# ============================================
+# 📌 OBTENER COMPONENTES DE UNA ESTRATEGIA
+# ============================================
 @blp.route("/<int:strategy_id>/components")
 class StrategyComponents(MethodView):
 
@@ -75,6 +93,11 @@ class StrategyComponents(MethodView):
 
         return strategy.components
 
+
+
+# ============================================
+# 📌 OBTENER INDICADORES DE UN COMPONENTE
+# ============================================
 @blp.route("/<int:component_id>/indicators")
 class ComponentIndicators(MethodView):
 

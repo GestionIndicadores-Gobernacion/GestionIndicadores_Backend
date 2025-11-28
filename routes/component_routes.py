@@ -1,4 +1,4 @@
-from flask_smorest import Blueprint
+from flask_smorest import Blueprint, abort   # 👈 agrega abort
 from flask.views import MethodView
 from flask_jwt_extended import jwt_required
 from extensions import db
@@ -52,6 +52,14 @@ class ComponentDetail(MethodView):
     @jwt_required()
     def delete(self, id):
         component = Component.query.get_or_404(id)
+
+        # 🔥 Si tiene indicadores asociados, no permitimos eliminar
+        if len(component.indicators) > 0:
+            abort(
+                400,
+                message=f"No se puede eliminar. El componente tiene {len(component.indicators)} indicador(es) asociados."
+            )
+
         db.session.delete(component)
         db.session.commit()
         return {"message": "Componente eliminado correctamente"}

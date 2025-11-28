@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import app, jsonify
 from marshmallow import ValidationError
 from werkzeug.exceptions import NotFound, Unauthorized, Forbidden, BadRequest
 
@@ -47,8 +47,22 @@ def register_error_handlers(app):
     # =============================
     @app.errorhandler(BadRequest)
     def handle_bad_request(err):
+
+        # 🔥 1. Si viene de abort(400, message="..."), Flask-Smorest pone err.data
+        if hasattr(err, "data") and isinstance(err.data, dict):
+            message = err.data.get("message") or err.data.get("messages")
+            if message:
+                return jsonify({"message": message}), 400
+
+        # 🔥 2. Si err.description es un string normal y no el mensaje genérico del navegador
+        if isinstance(err.description, str) and err.description not in [
+            "The browser (or proxy) sent a request that this server could not understand."
+        ]:
+            return jsonify({"message": err.description}), 400
+
+        # 🔥 3. Fallback genérico
         return jsonify({
-            "message": "Solicitud inválida",
+            "message": "Solicitud inválida"
         }), 400
 
     # =============================

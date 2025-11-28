@@ -11,25 +11,27 @@ ALLOWED_FIELDS = {
 }
 
 def validate_indicator_payload(data, indicator_id=None):
-    """
-    Valida el payload de indicadores según el modelo limpiado.
-    """
+
+    # 🔥 Evitar validación cuando viene un modelo (caso DELETE)
+    if not isinstance(data, dict):
+        return
+
     data = normalize_payload(data)
 
-    # 1️⃣ Verificar que no existan campos desconocidos
+    # 1. Campos desconocidos
     unknown = set(data.keys()) - ALLOWED_FIELDS
     if unknown:
         raise ValidationError({
             "error": f"Campos no permitidos: {', '.join(unknown)}"
         })
 
-    # 2️⃣ Validar tipo de campo 'active'
+    # 2. Boolean
     if "active" in data and not isinstance(data["active"], bool):
         raise ValidationError({
             "active": "El campo 'active' debe ser booleano."
         })
 
-    # 3️⃣ Validar unicidad (name + component)
+    # 3. Unicidad (name + component)
     if "name" in data and "component_id" in data:
         exists = Indicator.query.filter_by(
             name=data["name"],

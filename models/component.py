@@ -15,15 +15,17 @@ class Component(db.Model):
     name = db.Column(db.String(150), nullable=False)
     description = db.Column(db.String(500), nullable=True)
 
-    data_type = db.Column(db.String(50), nullable=False)
+    data_type = db.Column(db.String(50), nullable=False, default="integer")
 
     active = db.Column(db.Boolean, default=True)
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, onupdate=datetime.utcnow)
 
-    # relación
-    strategy = db.relationship("Strategy", backref="components")
-
-    def __repr__(self):
-        return f"<Component {self.name}>"
+    # backref correcto
+    indicators = db.relationship(
+        "Indicator",
+        backref="component",
+        cascade="all, delete",
+        passive_deletes=True
+    )
