@@ -1,8 +1,8 @@
-"""Initial clean
+"""Initial migration
 
-Revision ID: eff2cdf8f67e
+Revision ID: fabf347e73e9
 Revises: 
-Create Date: 2025-11-26 16:50:22.568888
+Create Date: 2025-12-01 13:29:58.032084
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'eff2cdf8f67e'
+revision = 'fabf347e73e9'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -63,9 +63,6 @@ def upgrade():
     sa.Column('name', sa.String(length=150), nullable=False),
     sa.Column('description', sa.String(length=500), nullable=True),
     sa.Column('data_type', sa.String(length=50), nullable=False),
-    sa.Column('required', sa.Boolean(), nullable=True),
-    sa.Column('use_list', sa.Boolean(), nullable=True),
-    sa.Column('allowed_values', sa.JSON(), nullable=True),
     sa.Column('active', sa.Boolean(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
@@ -74,17 +71,14 @@ def upgrade():
     )
     op.create_table('records',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('strategy_id', sa.Integer(), nullable=False),
-    sa.Column('component_id', sa.Integer(), nullable=False),
-    sa.Column('indicator_id', sa.Integer(), nullable=False),
+    sa.Column('strategy_id', sa.Integer(), nullable=True),
+    sa.Column('component_id', sa.Integer(), nullable=True),
     sa.Column('municipio', sa.String(length=150), nullable=False),
     sa.Column('fecha', sa.Date(), nullable=False),
     sa.Column('detalle_poblacion', sa.JSON(), nullable=True),
     sa.Column('evidencia_url', sa.Text(), nullable=True),
-    sa.Column('creado_por', sa.String(length=120), nullable=True),
     sa.Column('fecha_registro', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['component_id'], ['components.id'], ondelete='SET NULL'),
-    sa.ForeignKeyConstraint(['indicator_id'], ['indicators.id'], ondelete='SET NULL'),
     sa.ForeignKeyConstraint(['strategy_id'], ['strategies.id'], ondelete='SET NULL'),
     sa.PrimaryKeyConstraint('id')
     )
