@@ -172,3 +172,66 @@ class RecordStatsCount(MethodView):
             "indicadoresActivos": indicadores_activos,
             "componentesActivos": componentes_activos
         }
+
+# ============================================================
+# 📊 STATS: Registros por estrategia
+# ============================================================
+@blp.route("/record/stats/estrategias")
+class RecordStatsEstrategias(MethodView):
+
+    @jwt_required()
+    def get(self):
+        results = (
+            db.session.query(
+                Record.strategy_id,
+                func.count(Record.id).label("total")
+            )
+            .group_by(Record.strategy_id)
+            .all()
+        )
+
+        # Recuperar nombres de estrategia
+        from models.strategy import Strategy
+
+        data = []
+        for strategy_id, total in results:
+            strategy = Strategy.query.get(strategy_id)
+            if strategy:
+                data.append({
+                    "estrategia": strategy.name,
+                    "total": total
+                })
+
+        return data
+
+# ============================================================
+# 📊 STATS: Registros por componente filtrados por estrategia
+# ============================================================
+@blp.route("/record/stats/componentes")
+class RecordStatsComponentes(MethodView):
+
+    @jwt_required()
+    def get(self):
+        estrategia_id = request.args.get("estrategia_id", type=int)
+
+        query = db.session.query(
+            Record.component_id,
+            func.count(Record.id).label("total")
+        )
+
+        if estrategia_id:
+            query = query.filter(Record.strategy_id == estrategia_id)
+
+        results = (
+            query.group_by(Record.component_id)
+                 .order_by(func.count(Record.id).desc())
+                 .all()
+        )
+
+        return [
+            {
+                "component_id": r[0],
+                "total": r[1]
+            }
+            for r in results
+        ]

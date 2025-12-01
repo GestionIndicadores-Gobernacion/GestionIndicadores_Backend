@@ -12,6 +12,13 @@ from handlers.error_handlers import register_error_handlers
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+    
+        # 🔒 Render — Forzar SSL en PostgreSQL
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+        "connect_args": {
+            "sslmode": "require"
+        }
+    }
 
     print("JWT USADO:", app.config["JWT_SECRET_KEY"])
     
