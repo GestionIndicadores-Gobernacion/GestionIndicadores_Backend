@@ -13,3 +13,7 @@ class Config:
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "cambia_esto_por_produccion")
     JWT_ACCESS_TOKEN_EXPIRES = 3600  # 1 hora (segundos)
     JWT_REFRESH_TOKEN_EXPIRES = 60 * 60 * 24 * 30  # 30 días
+
+    JWT_ERROR_MESSAGE_KEY = "msg"
+    JWT_IDENTITY_CLAIM = "sub"
+    JWT_ENCODE_SUBJECT = True
