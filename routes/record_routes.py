@@ -4,12 +4,12 @@ from flask.views import MethodView
 from flask_jwt_extended import jwt_required
 from sqlalchemy import func
 from extensions import db
+
 from models.record import Record
 from schemas.record_schema import RecordSchema
 from validators.record_validator import validate_record_payload
 
 blp = Blueprint("record", "record", description="Gestión de registros")
-
 
 # ============================================================
 # 📌 CRUD PRINCIPAL
@@ -25,12 +25,21 @@ class RecordList(MethodView):
     @jwt_required()
     @blp.arguments(RecordSchema)
     @blp.response(201, RecordSchema)
-    def post(self, data):
-        validate_record_payload(data)
-        record = data
-        db.session.add(record)
-        db.session.commit()
-        return record
+    def post(self, record):
+        """
+        Aquí record YA ES una instancia de Record,
+        porque load_instance=True en RecordSchema.
+        """
+        try:
+            validate_record_payload(record)  # sigue funcionando
+            db.session.add(record)
+            db.session.commit()
+            return record
+
+        except Exception as e:
+            print("🔥 ERROR NO CONTROLADO:", type(e), e)
+            db.session.rollback()
+            raise e
 
 
 @blp.route("/record/<int:id>")
@@ -44,13 +53,26 @@ class RecordDetail(MethodView):
     @jwt_required()
     @blp.arguments(RecordSchema)
     @blp.response(200, RecordSchema)
-    def put(self, data, id):
+    def put(self, new_record, id):
+        """
+        new_record también es una instancia de Record.
+        Se copian los valores al existente.
+        """
         existing = Record.query.get_or_404(id)
-        validate_record_payload(data)
 
-        for key, value in data.__dict__.items():
-            if key not in ["id", "_sa_instance_state"]:
-                setattr(existing, key, value)
+        validate_record_payload(new_record)
+
+        # Lista de campos editables
+        fields_to_copy = [
+            "strategy_id",
+            "component_id",
+            "fecha",
+            "detalle_poblacion",
+            "evidencia_url",
+        ]
+
+        for field in fields_to_copy:
+            setattr(existing, field, getattr(new_record, field))
 
         db.session.commit()
         return existing
@@ -64,24 +86,25 @@ class RecordDetail(MethodView):
 
 
 # ============================================================
-# 📊 STATS: Registros por municipio
+# 📊 STATS: Registros por municipio (desde JSON)
 # ============================================================
 @blp.route("/record/stats/municipios")
 class RecordStatsMunicipios(MethodView):
 
     @jwt_required()
     def get(self):
-        results = (
-            db.session.query(
-                Record.municipio,
-                func.count(Record.id).label("total")
-            )
-            .group_by(Record.municipio)
-            .order_by(func.count(Record.id).desc())
-            .all()
-        )
+        registros = Record.query.with_entities(Record.detalle_poblacion).all()
+        conteo = {}
 
-        return [{"municipio": r[0], "total": r[1]} for r in results]
+        for (detalle,) in registros:
+            if detalle and "municipios" in detalle:
+                for municipio in detalle["municipios"].keys():
+                    conteo[municipio] = conteo.get(municipio, 0) + 1
+
+        return [
+            {"municipio": m, "total": t}
+            for m, t in sorted(conteo.items(), key=lambda x: x[1], reverse=True)
+        ]
 
 
 # ============================================================
@@ -136,7 +159,6 @@ class RecordStatsCount(MethodView):
     def get(self):
         total_registros = Record.query.count()
 
-        # Registros del mes actual
         from datetime import datetime
         today = datetime.utcnow()
         year = today.year
@@ -147,22 +169,25 @@ class RecordStatsCount(MethodView):
             func.extract('month', Record.fecha) == month
         ).count()
 
-        # Municipios distintos
-        municipios_activos = db.session.query(Record.municipio).distinct().count()
-
-        # indicadores activos (extraer IDs del JSON 'detalle_poblacion')
         registros = Record.query.with_entities(Record.detalle_poblacion).all()
-
-        ids_indicadores = set()
+        municipios = set()
 
         for (detalle,) in registros:
-            if detalle:
-                ids_indicadores.update(detalle.keys())
+            if detalle and "municipios" in detalle:
+                municipios.update(detalle["municipios"].keys())
 
-        indicadores_activos = len(ids_indicadores)
+        municipios_activos = len(municipios)
 
+        indicadores = set()
 
-        # Componentes activos
+        for (detalle,) in registros:
+            if detalle and "municipios" in detalle:
+                for info in detalle["municipios"].values():
+                    if "indicadores" in info:
+                        indicadores.update(info["indicadores"].keys())
+
+        indicadores_activos = len(indicadores)
+
         componentes_activos = db.session.query(Record.component_id).distinct().count()
 
         return {
@@ -173,8 +198,9 @@ class RecordStatsCount(MethodView):
             "componentesActivos": componentes_activos
         }
 
+
 # ============================================================
-# 📊 STATS: Registros por estrategia
+# 📊 Registros por estrategia
 # ============================================================
 @blp.route("/record/stats/estrategias")
 class RecordStatsEstrategias(MethodView):
@@ -190,7 +216,6 @@ class RecordStatsEstrategias(MethodView):
             .all()
         )
 
-        # Recuperar nombres de estrategia
         from models.strategy import Strategy
 
         data = []
@@ -204,8 +229,9 @@ class RecordStatsEstrategias(MethodView):
 
         return data
 
+
 # ============================================================
-# 📊 STATS: Registros por componente filtrados por estrategia
+# 📊 Registros por componente filtrados por estrategia
 # ============================================================
 @blp.route("/record/stats/componentes")
 class RecordStatsComponentes(MethodView):
@@ -235,3 +261,37 @@ class RecordStatsComponentes(MethodView):
             }
             for r in results
         ]
+
+# ============================================================
+# 📊 Indicadores distintos por estrategia
+# ============================================================
+@blp.route("/record/stats/indicadores_por_estrategia")
+class RecordStatsIndicadoresEstrategia(MethodView):
+
+    @jwt_required()
+    def get(self):
+        from models.strategy import Strategy
+
+        estrategias = Strategy.query.all()
+        registros = Record.query.all()
+
+        result = []
+
+        for estr in estrategias:
+            indicadores_set = set()
+
+            for r in registros:
+                if r.strategy_id != estr.id:
+                    continue
+
+                municipios = r.detalle_poblacion.get("municipios", {})
+                for muni in municipios.values():
+                    for ind_name in muni.get("indicadores", {}):
+                        indicadores_set.add(ind_name)
+
+            result.append({
+                "estrategia": estr.name,
+                "total_indicadores": len(indicadores_set)
+            })
+
+        return result
