@@ -4,3 +4,4 @@ from models.record import Record
 from models.indicator import Indicator
 from models.component import Component
 from models.strategy import Strategy
+from models.activity import Activity

@@ -15,10 +15,11 @@ class RecordSchema(SQLAlchemyAutoSchema):
 
     id = fields.Integer(dump_only=True)
     strategy_id = fields.Integer(required=True)
+    activity_id = fields.Integer(required=True)
     component_id = fields.Integer(required=True)
 
     fecha = fields.Date(required=True)
-
+    description = fields.String(allow_none=True) 
     # JSON complejo
     detalle_poblacion = fields.Dict(required=True)
 

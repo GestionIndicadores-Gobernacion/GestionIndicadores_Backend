@@ -65,8 +65,10 @@ class RecordDetail(MethodView):
         # Lista de campos editables
         fields_to_copy = [
             "strategy_id",
+            "activity_id"
             "component_id",
             "fecha",
+            "description",
             "detalle_poblacion",
             "evidencia_url",
         ]

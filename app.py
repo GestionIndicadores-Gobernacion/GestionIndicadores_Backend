@@ -53,6 +53,7 @@ def create_app():
     from models.component import Component
     from models.indicator import Indicator
     from models.record import Record
+    from models.activity import Activity
 
     # Comando seed manual
     from commands.seed import seed

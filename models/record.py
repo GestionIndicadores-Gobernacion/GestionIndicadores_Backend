@@ -12,6 +12,12 @@ class Record(db.Model):
         nullable=True
     )
 
+    activity_id = db.Column(
+        db.Integer,
+        db.ForeignKey("activities.id", ondelete="SET NULL"),
+        nullable=True
+    )
+
     component_id = db.Column(
         db.Integer,
         db.ForeignKey("components.id", ondelete="SET NULL"),
@@ -20,12 +26,15 @@ class Record(db.Model):
 
     fecha = db.Column(db.Date, nullable=False)
 
+    description = db.Column(db.String(500), nullable=True)
+
     # JSON completo: municipios y valores por municipio
     detalle_poblacion = db.Column(db.JSON, nullable=True)
 
     evidencia_url = db.Column(db.Text, nullable=True)
     fecha_registro = db.Column(db.DateTime, default=datetime.utcnow)
 
-    # relaciones
+    # Relaciones
     strategy = db.relationship("Strategy", backref=db.backref("records", lazy=True))
+    activity = db.relationship("Activity", backref=db.backref("records", lazy=True))
     component = db.relationship("Component", backref=db.backref("records", lazy=True))
