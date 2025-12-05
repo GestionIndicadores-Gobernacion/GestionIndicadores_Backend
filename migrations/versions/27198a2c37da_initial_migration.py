@@ -1,8 +1,8 @@
-"""update
+"""Initial migration
 
-Revision ID: 9eddc2f54e65
+Revision ID: 27198a2c37da
 Revises: 
-Create Date: 2025-12-02 12:32:14.783263
+Create Date: 2025-12-05 14:57:04.285759
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '9eddc2f54e65'
+revision = '27198a2c37da'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -34,6 +34,16 @@ def upgrade():
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
+    )
+    op.create_table('activities',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('strategy_id', sa.Integer(), nullable=False),
+    sa.Column('description', sa.String(length=500), nullable=False),
+    sa.Column('active', sa.Boolean(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
+    sa.Column('updated_at', sa.DateTime(), nullable=True),
+    sa.ForeignKeyConstraint(['strategy_id'], ['strategies.id'], ondelete='CASCADE'),
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('components',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -63,6 +73,7 @@ def upgrade():
     sa.Column('name', sa.String(length=150), nullable=False),
     sa.Column('description', sa.String(length=500), nullable=True),
     sa.Column('data_type', sa.String(length=50), nullable=False),
+    sa.Column('meta', sa.Float(), nullable=False),
     sa.Column('active', sa.Boolean(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
@@ -72,12 +83,14 @@ def upgrade():
     op.create_table('records',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('strategy_id', sa.Integer(), nullable=True),
+    sa.Column('activity_id', sa.Integer(), nullable=True),
     sa.Column('component_id', sa.Integer(), nullable=True),
-    sa.Column('municipio', sa.String(length=150), nullable=False),
     sa.Column('fecha', sa.Date(), nullable=False),
+    sa.Column('description', sa.String(length=500), nullable=True),
     sa.Column('detalle_poblacion', sa.JSON(), nullable=True),
     sa.Column('evidencia_url', sa.Text(), nullable=True),
     sa.Column('fecha_registro', sa.DateTime(), nullable=True),
+    sa.ForeignKeyConstraint(['activity_id'], ['activities.id'], ondelete='SET NULL'),
     sa.ForeignKeyConstraint(['component_id'], ['components.id'], ondelete='SET NULL'),
     sa.ForeignKeyConstraint(['strategy_id'], ['strategies.id'], ondelete='SET NULL'),
     sa.PrimaryKeyConstraint('id')
@@ -91,6 +104,7 @@ def downgrade():
     op.drop_table('indicators')
     op.drop_table('users')
     op.drop_table('components')
+    op.drop_table('activities')
     op.drop_table('strategies')
     op.drop_table('roles')
     # ### end Alembic commands ###

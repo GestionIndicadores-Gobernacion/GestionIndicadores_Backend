@@ -1,5 +1,6 @@
 from flask.cli import with_appcontext
 import click
+import random  # 👈 AÑADIDO PARA GENERAR METAS
 from extensions import db
 from models.user import User
 from models.role import Role
@@ -68,14 +69,15 @@ def seed():
             user.set_password(data["password"])
             db.session.add(user)
             click.echo(f"👤 Usuario creado: {data['email']}")
+
         role = Role.query.filter_by(name=data["role"]).first()
         user.role_id = role.id
+
     db.session.commit()
 
     # ======================================================
     # 4️⃣ ESTRATEGIAS + ACTIVIDADES
     # ======================================================
-
     estrategias_con_actividades = {
         "OPERATIVIZAR": [
             "DESARROLLAR LA METODOLOGÍA PARA LA PREVENCIÓN DE LOS RIESGOS DE VIOLENCIAS CONTRA LOS ANIMALES",
@@ -83,27 +85,22 @@ def seed():
             "CAPACITAR A LOS GRUPOS DE INTERÉS RELACIONADOS CON LA PROTECCIÓN Y EL BIENESTAR ANIMAL...",
             "IMPLEMENTAR EL OBSERVATORIO DEPARTAMENTAL DE POLÍTICA PÚBLICA DE PROTECCIÓN Y BIENESTAR ANIMAL"
         ],
-
         "DOTAR TRES CENTROS DE BIENESTAR ANIMAL REGIONAL": [
             "Asesorar técnica y administrativamente los procesos desarrollados por los centros de bienestar animal regional",
             "Dotar los centros de bienestar animal regional con insumos definidos concertadamente",
         ],
-
         "ATENDER 10.000 ANIMALES": [
             "REALIZAR JORNADAS DE ATENCIÓN INTEGRAL PARA LOS ANIMALES EN SITUACIÓN DE VULNERABILIDAD",
             "ELABORAR DIAGNOSTICOS POBLACIONALES QUE IDENTIFIQUEN ZONAS PRIORITARIAS"
         ],
-
         "COFINANCIAR A 40 ACTORES": [
             "ACOMPAÑAR TÉCNICAMENTE LAS ACCIONES DESARROLLADAS POR ACTORES ANIMALISTAS",
             "SUMINISTRAR INSUMOS A ACTORES VOLUNTARIOS QUE PROTEGEN ANIMALES"
         ],
-
         "CREAR Y SOSTENER 3 REDES DE ACTORES": [
             "SUMINISTRAR INSUMOS A REDES DE PROTECCIÓN ANIMAL",
             "ACOMPAÑAR TÉCNICAMENTE A LOS ACTORES DE LA RED"
         ],
-
         "CAPACITAR 10.000 PERSONAS EN BIENESTAR ANIMAL": [
             "CAPACITAR A GRUPOS EN PROCESOS DE INCLUSIÓN Y RESPETO A LOS ANIMALES",
             "ELABORAR DIAGNÓSTICOS POBLACIONALES",
@@ -131,17 +128,14 @@ def seed():
 
         for act_desc in actividades:
             existe = Activity.query.filter_by(
-                strategy_id=estrategia.id,
-                description=act_desc
-            ).first()
-
+                strategy_id=estrategia.id, description=act_desc).first()
             if not existe:
                 db.session.add(Activity(
                     strategy_id=estrategia.id,
                     description=act_desc,
                     active=True
                 ))
-                click.echo(f"   ➕ Actividad agregada: {act_desc[:60]}...")
+                click.echo(f" ➕ Actividad agregada: {act_desc[:60]}...")
 
         db.session.commit()
 
@@ -150,26 +144,22 @@ def seed():
     # ======================================================
     # 5️⃣ COMPONENTES POR ESTRATEGIA
     # ======================================================
-
     componentes_por_estrategia = {
         "DOTAR TRES CENTROS DE BIENESTAR ANIMAL REGIONAL": [
             "ASISTENCIA TECNICA"
         ],
-
         "ATENDER 10.000 ANIMALES": [
             "ATENCION EN SALUD ANIMAL COMPAÑERO",
             "ATENCION PRIMARIA EN SALUD PARA ANIMALES DE PRODUCCION Y GRANJA",
             "PREVENCION EN SALUD DE LA FAUNA LIMINAL Y SILVESTRE",
             "EQUIPO URIA (VETERINARIOS - PSICOLOGO - ABOGADO)"
         ],
-
         "COFINANCIAR A 40 ACTORES": [
             "CLÚSTER EMPRESARIAL",
             "AUTOSOSTENIBILIDAD DE REFUGIOS",
             "EMPRENDIMIENTOS CONSCIENTES VALLEINN",
             "ALIANZAS ESTRATEGICAS"
         ],
-
         "CREAR Y SOSTENER 3 REDES DE ACTORES": [
             "DONATON SALVANDO HUELLAS",
             "RED ANIMALIA",
@@ -177,7 +167,6 @@ def seed():
             "PROGRAMA DE ADOPCIONES",
             "JUNTAS DEFENSORAS DE ANIMALES"
         ],
-
         "CAPACITAR 10.000 PERSONAS EN BIENESTAR ANIMAL": [
             "PROMOTORES PYBA",
             "ALIANZAS ACADEMICAS"
@@ -192,10 +181,7 @@ def seed():
 
         for comp_name in comps:
             comp = Component.query.filter_by(
-                name=comp_name,
-                strategy_id=estrategia.id
-            ).first()
-
+                name=comp_name, strategy_id=estrategia.id).first()
             if not comp:
                 comp = Component(
                     name=comp_name,
@@ -211,83 +197,67 @@ def seed():
     click.echo("🎉 COMPONENTES creados")
 
     # ======================================================
-    # 6️⃣ INDICADORES POR COMPONENTE
+    # 6️⃣ INDICADORES POR COMPONENTE (CON META ALEATORIA)
     # ======================================================
-
     indicadores_por_componente = {
         "ASISTENCIA TECNICA": [
             "NO DE ASISTENCIAS TECNICAS REALIZADAS",
             "NO DE CENTROS DE BIENESTAR ANIMAL DOTADOS"
         ],
-
         "ATENCION EN SALUD ANIMAL COMPAÑERO": [
             "NO DE ANIMALES ATENDIDOS",
             "NO DE ALBERGUES INSPECCIONADOS",
             "NO DE EVENTOS O JORNADAS APOYADAS",
             "NO DE DOCUMENTOS DE LINEAMIENTOS TECNICOS ELABORADOS"
         ],
-
         "ATENCION PRIMARIA EN SALUD PARA ANIMALES DE PRODUCCION Y GRANJA": [
             "NO DE ANIMALES ATENDIDOS",
             "NO DE EVENTOS O JORNADAS APOYADAS"
         ],
-
         "PREVENCION EN SALUD DE LA FAUNA LIMINAL Y SILVESTRE": [
             "NO DE ANIMALES ATENDIDOS",
             "NO DE DOCUMENTOS DE LINEAMIENTOS TECNICOS ELABORADOS"
         ],
-
         "EQUIPO URIA (VETERINARIOS - PSICOLOGO - ABOGADO)": [
             "NO DE ANIMALES ATENDIDOS",
             "NO DE ACOMPAÑAMIENTOS REALIZADOS"
         ],
-
         "CLÚSTER EMPRESARIAL": [
             "NO DE CLÚSTER REALIZADOS"
         ],
-
         "AUTOSOSTENIBILIDAD DE REFUGIOS": [
             "NO DE ACTORES COFINANCIADOS"
         ],
-
         "EMPRENDIMIENTOS CONSCIENTES VALLEINN": [
             "NO DE EMPRENDIMIENTOS COFINANCIADOS"
         ],
-
         "ALIANZAS ESTRATEGICAS": [
             "NO DE ALIANZAS REALIZADAS"
         ],
-
         "DONATON SALVANDO HUELLAS": [
             "NO DE REFUGIOS, FUNDACIONES O ACTORES CON ALIMENTO ENTREGADO",
             "N° DE TONELADAS"
         ],
-
         "RED ANIMALIA": [
             "NO DE ACTORES INSCRITOS Y CARACTERIZADOS DE LA RED ANIMALIA",
             "N° DE REDES CREADAS Y ACOMPAÑADAS"
         ],
-
         "ACOMPÁÑAMIENTO PSICOSOCIAL": [
             "NO DE ACOMPAÑAMIENTOS REALIZADOS",
             "NO DE CUIDADORES ATENDIDOS"
         ],
-
         "PROGRAMA DE ADOPCIONES": [
             "N° DE ANIMALES ADOPTADOS",
             "N° DE ASISTENCIAS TÉCNICAS"
         ],
-
         "JUNTAS DEFENSORAS DE ANIMALES": [
             "NO DE METODOLOGIAS IMPLEMENTADAS"
         ],
-
         "PROMOTORES PYBA": [
             "NO. DE PERSONAS CAPACITADAS",
             "NO. DE TALLERES CAPACITACIONES FORMACION REALIZADOS",
             "NO. DE ORGANZACIONES DE BASES INTERVENIDAS"
         ],
-
         "ALIANZAS ACADEMICAS": [
             "NO. DE DOCUMENTOS TECNICOS REALIZADOS",
             "NO. DE EVENTOS REALIZADOS"
@@ -295,28 +265,29 @@ def seed():
     }
 
     for comp_name, indicadores in indicadores_por_componente.items():
-
         componente = Component.query.filter_by(name=comp_name).first()
-
         if not componente:
             click.echo(f"⚠ Componente no encontrado: {comp_name}")
             continue
 
         for ind_name in indicadores:
             existe = Indicator.query.filter_by(
-                name=ind_name,
-                component_id=componente.id
-            ).first()
+                name=ind_name, component_id=componente.id).first()
 
             if not existe:
-                db.session.add(Indicator(
+                meta_aleatoria = random.randint(10, 500)  # 👈 META ALEATORIA
+
+                nuevo_ind = Indicator(
                     name=ind_name,
                     description=f"Indicador del componente {comp_name}",
                     data_type="integer",
                     component_id=componente.id,
-                    active=True
-                ))
-                click.echo(f"📊 Indicador creado: {ind_name}")
+                    active=True,
+                    meta=meta_aleatoria  # 👈 SE GUARDA LA META
+                )
+
+                db.session.add(nuevo_ind)
+                click.echo(f"📊 Indicador creado: {ind_name} (Meta: {meta_aleatoria})")
 
         db.session.commit()
 
