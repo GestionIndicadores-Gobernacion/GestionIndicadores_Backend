@@ -96,7 +96,7 @@ def run_seed_if_needed(app):
 app = create_app()
 
 # Seed automático en Render
-run_seed_if_needed(app)
+# run_seed_if_needed(app)
 
 # --------------------------------------------------------
 # 📌 Modo local

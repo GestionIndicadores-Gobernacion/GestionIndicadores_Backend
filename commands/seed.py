@@ -1,6 +1,5 @@
 from flask.cli import with_appcontext
 import click
-import random  # 👈 AÑADIDO PARA GENERAR METAS
 from extensions import db
 from models.user import User
 from models.role import Role
@@ -9,287 +8,316 @@ from models.component import Component
 from models.indicator import Indicator
 from models.activity import Activity
 
+# =======================================================
+# 🔧 Parseo de indicadores con meta
+# =======================================================
+def parse_indicator(ind):
+    """
+    Convierte:
+      'NOMBRE, 100' → ('NOMBRE', 100)
+      'NOMBRE, 100%' → ('NOMBRE', 100)
+      'NOMBRE' → ('NOMBRE', 1)
+    """
+    if "," in ind:
+        name, meta = ind.split(",", 1)
+        meta = meta.strip().replace("%", "")
+        try:
+            meta = int(meta)
+        except:
+            meta = 1
+        return name.strip(), meta
 
+    return ind.strip(), 1
+
+
+# =======================================================
+# 1️⃣ ESTRATEGIAS Y ACTIVIDADES (NOMBRES VALIDADOS <150 CHAR)
+# =======================================================
+ESTRATEGIAS_ACTIVIDADES = {
+
+    "OPERATIVIZAR": [
+        "DESARROLLAR LA METODOLOGÍA PARA LA PREVENCIÓN DE LOS RIESGOS DE VIOLENCIAS CONTRA LOS ANIMALES",
+        "OPERATIVIZAR EL COMITÉ INTERDISCIPLINARIO PARA ASESORÍA Y ACOMPAÑAMIENTO EN LA POLÍTICA PÚBLICA",
+        "IMPLEMENTAR EL OBSERVATORIO DEPARTAMENTAL DE POLÍTICA PÚBLICA DE PROTECCIÓN Y BIENESTAR ANIMAL",
+    ],
+
+    "DOTAR TRES CENTROS": [
+        "Asesorar técnica y administrativamente los procesos desarrollados por los centros de bienestar animal regional",
+        "Dotar los centros de bienestar animal regional con insumos definidos concertadamente",
+    ],
+
+    "ATENDER 10.000 ANIMALES": [
+        "REALIZAR JORNADAS DE ATENCIÓN INTEGRAL PARA ANIMALES EN ESTADOS VULNERABLES",
+        "ELABORAR DIAGNOSTICOS POBLACIONALES PARA IDENTIFICAR ZONAS PRIORITARIAS",
+    ],
+
+    "COFINANCIAR A 40 ACTORES": [
+        "ACOMPAÑAR TÉCNICAMENTE LAS ACCIONES DE ACTORES QUE PROTEGEN ANIMALES",
+        "SUMINISTRAR INSUMOS A LOS ACTORES VOLUNTARIOS",
+    ],
+
+    "CREAR Y SOSTENER 3 REDES": [
+        "SUMINISTRAR INSUMOS A ACTORES VOLUNTARIOS QUE PROTEGEN ANIMALES",
+        "ACOMPAÑAR TÉCNICAMENTE A LOS ACTORES DE LA RED",
+    ],
+
+    "CAPACITAR 10.000 PERSONAS EN BIENESTAR ANIMAL": [
+        "CAPACITAR A LOS GRUPOS DE INTERÉS EN INCLUSIÓN Y RESPETO HACIA LOS ANIMALES",
+        "ELABORAR DIAGNOSTICOS POBLACIONALES",
+        "REALIZAR EVENTOS DE PROMOCIÓN DE EXPERIENCIAS EXITOSAS",
+    ],
+}
+
+
+# =======================================================
+# 2️⃣ COMPONENTES POR ESTRATEGIA (CORREGIDOS Y SIN NOMBRES LARGOS)
+# =======================================================
+ESTRATEGIA_COMPONENTES = {
+
+    "OPERATIVIZAR": [
+        "ANIMALES COMO EMBAJADORES DE PAZ",
+        "EQUIPO MULTIDISCIPLINARIO",
+        "RUTA DE ATENCION PLATAFORMA DENUNCIAS",
+        "PROCESOS DE FORMACION",
+        "ENFOQUE DIFERENCIAL",
+        "OBSERVATORIO /PLATAFORMA",
+    ],
+
+    "DOTAR TRES CENTROS": [
+        "ASISTENCIA TECNICA"
+    ],
+
+    "ATENDER 10.000 ANIMALES": [
+        "ATENCION EN SALUD ANIMAL COMPAÑERO",
+        "ATENCION PRIMARIA EN SALUD PARA PRODUCCION Y GRANJA",
+        "PREVENCION EN SALUD FAUNA LIMINAL Y SILVESTRE",
+        "EQUIPO URIA (VETERINARIOS - PSICOLOGO - ABOGADO)",
+    ],
+
+    "COFINANCIAR A 40 ACTORES": [
+        "CLÚSTER EMPRESARIAL",
+        "AUTOSOSTENIBILIDAD DE REFUGIOS",
+        "EMPRENDIMIENTOS CONSCIENTES VALLEINN",
+        "ALIANZAS ESTRATEGICAS",
+    ],
+
+    "CREAR Y SOSTENER 3 REDES": [
+        "DONATON SALVANDO HUELLAS",
+        "RED ANIMALIA",
+        "ACOMPÁÑAMIENTO PSICOSOCIAL",
+        "PROGRAMA DE ADOPCIONES",
+        "JUNTAS DEFENSORAS DE ANIMALES",
+    ],
+
+    "CAPACITAR 10.000 PERSONAS EN BIENESTAR ANIMAL": [
+        "PROMOTORES PYBA",
+        "ALIANZAS ACADEMICAS",
+    ],
+}
+
+
+# =======================================================
+# 3️⃣ INDICADORES POR COMPONENTE
+# =======================================================
+COMPONENTES_INDICADORES = {
+
+    "ANIMALES COMO EMBAJADORES DE PAZ": [
+        "NO DE METODOLOGÍAS IMPLEMENTADAS, 2",
+        "NO DE PERSONAS ASISTIDAS, 100%",
+    ],
+
+    "EQUIPO MULTIDISCIPLINARIO": [
+        "NO DE ASISTENCIAS TECNICAS REALIZADAS, 43",
+        "NO DE METODOLOGIAS IMPLEMENTADAS, 1",
+        "NO DE ASISTENCIAS TECNICAS REALIZADAS, 100%",
+        "NO DE DOCUMENTOS TÉCNICOS Y LINEAMIENTOS REALIZADOS, 1",
+    ],
+
+    "RUTA DE ATENCION PLATAFORMA DENUNCIAS": [
+        "NO DE CASOS ATENDIDOS, 1000",
+        "NO DE CASOS CON SEGUIMIENTO, 100%",
+    ],
+
+    "PROCESOS DE FORMACION": [
+        "NO DE METODOLOGIA/ NO DE ALTERNATIVAS IMPLEMENTADAS, 1",
+        "NO DE JOVENES INSCRITOS EN EL PROGRAMA, 100%",
+        "NO GUIAS TURISTICOS CAPACITADOS, 20",
+        "CARACTERIZACION DE RED DE TURISMO PETFRIENDLYEN EL VALLE DEL CAUCA, 1",
+        "NO DE HERRAMIENTAS IMPLEMENTADAS DE LA METODOLOGIA, 1",
+        "NO DE NNA IMPACTADOS, 3000",
+    ],
+
+    "ENFOQUE DIFERENCIAL": [
+        "NO DE ANIMALES ATENDIDOS ENTORNO A LA RUTA DE VIOLENCIA CONTRA LA MUJER, 100%",
+        "NO DE GUIAS NETODOLOGICAS, 1",
+        "NO DE METODOLOGIAS IMPLEMENTADAS, 1",
+        "NO DE ANIMALES EN EL MARO DEL CONFLICTO ARMADO, 100%",
+        "NO DE PERSONAS FORMADAS, 100%",
+        "NO DE METODOLOGIAS IMPLEMENTADAS, 1",
+    ],
+
+    "OBSERVATORIO /PLATAFORMA": [
+        "NO DE PLATAFORMAS IMPLEMENTADAS, 1",
+        "NO DE OBSERVATORIOS IMPLEMENTADOS, 1",
+    ],
+
+    "ASISTENCIA TECNICA": [
+        "NO DE ASISTENCIAS TECNICAS REALIZADAS, 8",
+        "NO DE CENTROS DE BIENESTAR ANIMAL DOTADOS, 1",
+    ],
+
+    "ATENCION EN SALUD ANIMAL COMPAÑERO": [
+        "NO DE ANIMALES ATENDIDOS, 500",
+        "NO DE ALBERGUES INSPECCIONADOS, 2500",
+    ],
+
+    "ATENCION PRIMARIA EN SALUD PARA PRODUCCION Y GRANJA": [
+        "NO DE EVENTOS O JORNADAS APOYADAS, 10",
+        "NO DE DOCUMENTOS DE LINEAMIENTOS TECNICOS ELABORADOS, 1",
+    ],
+
+    "PREVENCION EN SALUD FAUNA LIMINAL Y SILVESTRE": [
+        "NO DE DOCUMENTOS DE LINEAMIENTOS TECNICOS ELABORADOS",
+    ],
+
+    "EQUIPO URIA (VETERINARIOS - PSICOLOGO - ABOGADO)": [
+        "NO DE ANIMALES ATENDIDOS, 100%",
+    ],
+
+    "CLÚSTER EMPRESARIAL": [
+        "NO DE CLÚSTER REALIZADOS, 1",
+    ],
+
+    "AUTOSOSTENIBILIDAD DE REFUGIOS": [
+        "NO DE ACTORES COFINANCIADOS",
+    ],
+
+    "EMPRENDIMIENTOS CONSCIENTES VALLEINN": [
+        "NO DE EMPRENDIMIENTOS COFINANCIADOS, 30",
+    ],
+
+    "ALIANZAS ESTRATEGICAS": [
+        "NO DE ALIANZAS RELIZADAS, 5",
+    ],
+
+    "DONATON SALVANDO HUELLAS": [
+        "NO DE REFUGIOS, FUNDACIONES O ACTORES CON ALIMENTO ENTREGADO, 50",
+        "NO DE TONELADAS, 15",
+    ],
+
+    "RED ANIMALIA": [
+        "NO DE ACOMPAÑAMIENTOS REALIZADOS, 10",
+        "NO DE ACTORES INSCRITOS Y CARACTERIZADOS DE LA RED ANIMALIA, 300",
+        "NO DE REDES CREADAS Y ACOMPAÑADAS, 3",
+    ],
+
+    "ACOMPÁÑAMIENTO PSICOSOCIAL": [
+        "NO DE METODOLOGIAS IMPLEMENTADAS, 1",
+        "NO DE CUIDADORES ATENDIDOS, 100",
+    ],
+
+    "PROGRAMA DE ADOPCIONES": [
+        "NO DE ANIMALES ADOPTADOS, 100",
+    ],
+
+    "JUNTAS DEFENSORAS DE ANIMALES": [
+        "NO DE ASISTENCIAS TÉCNICAS, 5",
+    ],
+
+    "PROMOTORES PYBA": [
+        "NO. DE PERSONAS CAPACITADAS, 3000",
+        "NO. DE TALLERES CAPACITACIONES FORMACION REALIZADOS, 3000",
+        "NO. DE ORGANIZACIONES DE BASES INTERVENIDAS, 3000",
+        "NO. DE DOCUMENTOS TECNICOS REALIZADOS, 1",
+    ],
+
+    "ALIANZAS ACADEMICAS": [
+        "NO. DE EVENTOS REALIZADOS, 10",
+        "NO. DE EVENTOS REALIZADOS, 4",
+    ],
+}
+
+
+# =======================================================
+# 🚀 SEED PRINCIPAL
+# =======================================================
 @click.command("seed")
 @with_appcontext
 def seed():
-    click.echo("🚀 Iniciando SEED del sistema...")
+    click.echo("🚀 Iniciando SEED...")
 
-    # ===================================================
-    # 1️⃣ ROLES
-    # ===================================================
-    roles = ["SuperAdmin", "Editor", "Viewer"]
-    for role_name in roles:
-        if not Role.query.filter_by(name=role_name).first():
-            db.session.add(Role(name=role_name, description=f"Rol del sistema: {role_name}"))
+    # ----------------------------
+    # ROLES
+    # ----------------------------
+    for r in ["SuperAdmin", "Editor", "Viewer"]:
+        if not Role.query.filter_by(name=r).first():
+            db.session.add(Role(name=r, description=f"Rol {r}"))
     db.session.commit()
-    click.echo("✔ Roles verificados")
 
-    # ===================================================
-    # 2️⃣ USUARIO SUPERADMIN
-    # ===================================================
-    admin_email = "admin@gobernacion.gov.co"
-    admin = User.query.filter_by(email=admin_email).first()
-
+    # ----------------------------
+    # SUPERADMIN
+    # ----------------------------
+    admin = User.query.filter_by(email="admin@gobernacion.gov.co").first()
     if not admin:
-        admin = User(
-            name="Administrador Sistema",
-            email=admin_email
-        )
+        admin = User(name="Administrador Sistema", email="admin@gobernacion.gov.co")
         admin.set_password("Gob2025*")
         db.session.add(admin)
-        click.echo("👑 Usuario SuperAdmin creado")
 
-    superadmin_role = Role.query.filter_by(name="SuperAdmin").first()
-    admin.role_id = superadmin_role.id
+    admin.role_id = Role.query.filter_by(name="SuperAdmin").first().id
     db.session.commit()
 
-    # ======================================================
-    # 3️⃣ Usuarios adicionales (Editor y Viewer)
-    # ======================================================
-    usuarios_extra = [
-        {
-            "name": "Editor del Sistema",
-            "email": "editor@gobernacion.gov.co",
-            "password": "Editor2025*",
-            "role": "Editor",
-        },
-        {
-            "name": "Usuario Viewer",
-            "email": "viewer@gobernacion.gov.co",
-            "password": "Viewer2025*",
-            "role": "Viewer",
-        }
-    ]
-
-    for data in usuarios_extra:
-        user = User.query.filter_by(email=data["email"]).first()
-        if not user:
-            user = User(name=data["name"], email=data["email"])
-            user.set_password(data["password"])
-            db.session.add(user)
-            click.echo(f"👤 Usuario creado: {data['email']}")
-
-        role = Role.query.filter_by(name=data["role"]).first()
-        user.role_id = role.id
-
-    db.session.commit()
-
-    # ======================================================
-    # 4️⃣ ESTRATEGIAS + ACTIVIDADES
-    # ======================================================
-    estrategias_con_actividades = {
-        "OPERATIVIZAR": [
-            "DESARROLLAR LA METODOLOGÍA PARA LA PREVENCIÓN DE LOS RIESGOS DE VIOLENCIAS CONTRA LOS ANIMALES",
-            "OPERATIVIZAR EL COMITÉ INTERDISCIPLINARIO, CON SABERES FINANCIEROS, JURÍDICOS, SOCIALES Y MEDICO VETERINARIOS...",
-            "CAPACITAR A LOS GRUPOS DE INTERÉS RELACIONADOS CON LA PROTECCIÓN Y EL BIENESTAR ANIMAL...",
-            "IMPLEMENTAR EL OBSERVATORIO DEPARTAMENTAL DE POLÍTICA PÚBLICA DE PROTECCIÓN Y BIENESTAR ANIMAL"
-        ],
-        "DOTAR TRES CENTROS DE BIENESTAR ANIMAL REGIONAL": [
-            "Asesorar técnica y administrativamente los procesos desarrollados por los centros de bienestar animal regional",
-            "Dotar los centros de bienestar animal regional con insumos definidos concertadamente",
-        ],
-        "ATENDER 10.000 ANIMALES": [
-            "REALIZAR JORNADAS DE ATENCIÓN INTEGRAL PARA LOS ANIMALES EN SITUACIÓN DE VULNERABILIDAD",
-            "ELABORAR DIAGNOSTICOS POBLACIONALES QUE IDENTIFIQUEN ZONAS PRIORITARIAS"
-        ],
-        "COFINANCIAR A 40 ACTORES": [
-            "ACOMPAÑAR TÉCNICAMENTE LAS ACCIONES DESARROLLADAS POR ACTORES ANIMALISTAS",
-            "SUMINISTRAR INSUMOS A ACTORES VOLUNTARIOS QUE PROTEGEN ANIMALES"
-        ],
-        "CREAR Y SOSTENER 3 REDES DE ACTORES": [
-            "SUMINISTRAR INSUMOS A REDES DE PROTECCIÓN ANIMAL",
-            "ACOMPAÑAR TÉCNICAMENTE A LOS ACTORES DE LA RED"
-        ],
-        "CAPACITAR 10.000 PERSONAS EN BIENESTAR ANIMAL": [
-            "CAPACITAR A GRUPOS EN PROCESOS DE INCLUSIÓN Y RESPETO A LOS ANIMALES",
-            "ELABORAR DIAGNÓSTICOS POBLACIONALES",
-            "REALIZAR EVENTOS DE PROMOCIÓN DE EXPERIENCIAS"
-        ]
-    }
-
+    # ----------------------------
+    # ESTRATEGIAS + ACTIVIDADES
+    # ----------------------------
     estrategia_objs = {}
 
-    for nombre_estrategia, actividades in estrategias_con_actividades.items():
-        estrategia = Strategy.query.filter_by(name=nombre_estrategia).first()
-        if not estrategia:
-            estrategia = Strategy(
-                name=nombre_estrategia,
-                description=f"Estrategia automática: {nombre_estrategia}",
-                active=True
-            )
-            db.session.add(estrategia)
-            click.echo(f"📌 Estrategia creada: {nombre_estrategia}")
-        else:
-            click.echo(f"✔ Estrategia existente: {nombre_estrategia}")
-
+    for estrategia, actividades in ESTRATEGIAS_ACTIVIDADES.items():
+        est = Strategy.query.filter_by(name=estrategia).first()
+        if not est:
+            est = Strategy(name=estrategia, description=estrategia, active=True)
+            db.session.add(est)
         db.session.commit()
-        estrategia_objs[nombre_estrategia] = estrategia
+        estrategia_objs[estrategia] = est
 
         for act_desc in actividades:
-            existe = Activity.query.filter_by(
-                strategy_id=estrategia.id, description=act_desc).first()
-            if not existe:
-                db.session.add(Activity(
-                    strategy_id=estrategia.id,
-                    description=act_desc,
-                    active=True
-                ))
-                click.echo(f" ➕ Actividad agregada: {act_desc[:60]}...")
-
+            if not Activity.query.filter_by(strategy_id=est.id, description=act_desc).first():
+                db.session.add(Activity(strategy_id=est.id, description=act_desc, active=True))
         db.session.commit()
 
-    click.echo("🎉 Estrategias y actividades creadas exitosamente")
+    # ----------------------------
+    # COMPONENTES + INDICADORES
+    # ----------------------------
+    for estrategia, comps in ESTRATEGIA_COMPONENTES.items():
 
-    # ======================================================
-    # 5️⃣ COMPONENTES POR ESTRATEGIA
-    # ======================================================
-    componentes_por_estrategia = {
-        "DOTAR TRES CENTROS DE BIENESTAR ANIMAL REGIONAL": [
-            "ASISTENCIA TECNICA"
-        ],
-        "ATENDER 10.000 ANIMALES": [
-            "ATENCION EN SALUD ANIMAL COMPAÑERO",
-            "ATENCION PRIMARIA EN SALUD PARA ANIMALES DE PRODUCCION Y GRANJA",
-            "PREVENCION EN SALUD DE LA FAUNA LIMINAL Y SILVESTRE",
-            "EQUIPO URIA (VETERINARIOS - PSICOLOGO - ABOGADO)"
-        ],
-        "COFINANCIAR A 40 ACTORES": [
-            "CLÚSTER EMPRESARIAL",
-            "AUTOSOSTENIBILIDAD DE REFUGIOS",
-            "EMPRENDIMIENTOS CONSCIENTES VALLEINN",
-            "ALIANZAS ESTRATEGICAS"
-        ],
-        "CREAR Y SOSTENER 3 REDES DE ACTORES": [
-            "DONATON SALVANDO HUELLAS",
-            "RED ANIMALIA",
-            "ACOMPÁÑAMIENTO PSICOSOCIAL",
-            "PROGRAMA DE ADOPCIONES",
-            "JUNTAS DEFENSORAS DE ANIMALES"
-        ],
-        "CAPACITAR 10.000 PERSONAS EN BIENESTAR ANIMAL": [
-            "PROMOTORES PYBA",
-            "ALIANZAS ACADEMICAS"
-        ]
-    }
-
-    for nombre_estrategia, comps in componentes_por_estrategia.items():
-        estrategia = estrategia_objs.get(nombre_estrategia)
-        if not estrategia:
-            click.echo(f"⚠ Estrategia no encontrada al crear componentes: {nombre_estrategia}")
-            continue
+        estrategia_obj = estrategia_objs[estrategia]
 
         for comp_name in comps:
-            comp = Component.query.filter_by(
-                name=comp_name, strategy_id=estrategia.id).first()
+            comp = Component.query.filter_by(name=comp_name, strategy_id=estrategia_obj.id).first()
+
             if not comp:
                 comp = Component(
                     name=comp_name,
-                    description=f"Componente de la estrategia {nombre_estrategia}",
-                    strategy_id=estrategia.id,
+                    description=f"Componente {comp_name}",
+                    strategy_id=estrategia_obj.id,
                     active=True
                 )
                 db.session.add(comp)
-                click.echo(f"🧩 Componente creado: {comp_name}")
+            db.session.commit()
 
-        db.session.commit()
+            # Indicadores
+            for ind in COMPONENTES_INDICADORES.get(comp_name, []):
+                nombre, meta = parse_indicator(ind)
 
-    click.echo("🎉 COMPONENTES creados")
+                if not Indicator.query.filter_by(name=nombre, component_id=comp.id).first():
+                    db.session.add(Indicator(
+                        name=nombre,
+                        description=f"Indicador {nombre}",
+                        data_type="integer",
+                        component_id=comp.id,
+                        active=True,
+                        meta=meta
+                    ))
 
-    # ======================================================
-    # 6️⃣ INDICADORES POR COMPONENTE (CON META ALEATORIA)
-    # ======================================================
-    indicadores_por_componente = {
-        "ASISTENCIA TECNICA": [
-            "NO DE ASISTENCIAS TECNICAS REALIZADAS",
-            "NO DE CENTROS DE BIENESTAR ANIMAL DOTADOS"
-        ],
-        "ATENCION EN SALUD ANIMAL COMPAÑERO": [
-            "NO DE ANIMALES ATENDIDOS",
-            "NO DE ALBERGUES INSPECCIONADOS",
-            "NO DE EVENTOS O JORNADAS APOYADAS",
-            "NO DE DOCUMENTOS DE LINEAMIENTOS TECNICOS ELABORADOS"
-        ],
-        "ATENCION PRIMARIA EN SALUD PARA ANIMALES DE PRODUCCION Y GRANJA": [
-            "NO DE ANIMALES ATENDIDOS",
-            "NO DE EVENTOS O JORNADAS APOYADAS"
-        ],
-        "PREVENCION EN SALUD DE LA FAUNA LIMINAL Y SILVESTRE": [
-            "NO DE ANIMALES ATENDIDOS",
-            "NO DE DOCUMENTOS DE LINEAMIENTOS TECNICOS ELABORADOS"
-        ],
-        "EQUIPO URIA (VETERINARIOS - PSICOLOGO - ABOGADO)": [
-            "NO DE ANIMALES ATENDIDOS",
-            "NO DE ACOMPAÑAMIENTOS REALIZADOS"
-        ],
-        "CLÚSTER EMPRESARIAL": [
-            "NO DE CLÚSTER REALIZADOS"
-        ],
-        "AUTOSOSTENIBILIDAD DE REFUGIOS": [
-            "NO DE ACTORES COFINANCIADOS"
-        ],
-        "EMPRENDIMIENTOS CONSCIENTES VALLEINN": [
-            "NO DE EMPRENDIMIENTOS COFINANCIADOS"
-        ],
-        "ALIANZAS ESTRATEGICAS": [
-            "NO DE ALIANZAS REALIZADAS"
-        ],
-        "DONATON SALVANDO HUELLAS": [
-            "NO DE REFUGIOS, FUNDACIONES O ACTORES CON ALIMENTO ENTREGADO",
-            "N° DE TONELADAS"
-        ],
-        "RED ANIMALIA": [
-            "NO DE ACTORES INSCRITOS Y CARACTERIZADOS DE LA RED ANIMALIA",
-            "N° DE REDES CREADAS Y ACOMPAÑADAS"
-        ],
-        "ACOMPÁÑAMIENTO PSICOSOCIAL": [
-            "NO DE ACOMPAÑAMIENTOS REALIZADOS",
-            "NO DE CUIDADORES ATENDIDOS"
-        ],
-        "PROGRAMA DE ADOPCIONES": [
-            "N° DE ANIMALES ADOPTADOS",
-            "N° DE ASISTENCIAS TÉCNICAS"
-        ],
-        "JUNTAS DEFENSORAS DE ANIMALES": [
-            "NO DE METODOLOGIAS IMPLEMENTADAS"
-        ],
-        "PROMOTORES PYBA": [
-            "NO. DE PERSONAS CAPACITADAS",
-            "NO. DE TALLERES CAPACITACIONES FORMACION REALIZADOS",
-            "NO. DE ORGANZACIONES DE BASES INTERVENIDAS"
-        ],
-        "ALIANZAS ACADEMICAS": [
-            "NO. DE DOCUMENTOS TECNICOS REALIZADOS",
-            "NO. DE EVENTOS REALIZADOS"
-        ]
-    }
+            db.session.commit()
 
-    for comp_name, indicadores in indicadores_por_componente.items():
-        componente = Component.query.filter_by(name=comp_name).first()
-        if not componente:
-            click.echo(f"⚠ Componente no encontrado: {comp_name}")
-            continue
-
-        for ind_name in indicadores:
-            existe = Indicator.query.filter_by(
-                name=ind_name, component_id=componente.id).first()
-
-            if not existe:
-                meta_aleatoria = random.randint(10, 500)  # 👈 META ALEATORIA
-
-                nuevo_ind = Indicator(
-                    name=ind_name,
-                    description=f"Indicador del componente {comp_name}",
-                    data_type="integer",
-                    component_id=componente.id,
-                    active=True,
-                    meta=meta_aleatoria  # 👈 SE GUARDA LA META
-                )
-
-                db.session.add(nuevo_ind)
-                click.echo(f"📊 Indicador creado: {ind_name} (Meta: {meta_aleatoria})")
-
-        db.session.commit()
-
-    click.echo("🎉 INDICADORES creados exitosamente")
-    click.echo("🎉 SEED COMPLETO 🚀")
+    click.echo("🎉 SEED COMPLETO Y CORRECTAMENTE AUTOMATIZADO 🚀")

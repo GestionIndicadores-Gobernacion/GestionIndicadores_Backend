@@ -65,13 +65,15 @@ class RecordDetail(MethodView):
         # Lista de campos editables
         fields_to_copy = [
             "strategy_id",
-            "activity_id"
+            "activity_id",
             "component_id",
             "fecha",
             "description",
+            "actividades_realizadas",
             "detalle_poblacion",
             "evidencia_url",
         ]
+
 
         for field in fields_to_copy:
             setattr(existing, field, getattr(new_record, field))

@@ -26,7 +26,7 @@ class Record(db.Model):
 
     fecha = db.Column(db.Date, nullable=False)
 
-    description = db.Column(db.String(500), nullable=True)
+    actividades_realizadas = db.Column(db.Text, nullable=True)
 
     # JSON completo: municipios y valores por municipio
     detalle_poblacion = db.Column(db.JSON, nullable=True)
