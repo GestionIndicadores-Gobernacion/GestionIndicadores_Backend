@@ -18,3 +18,10 @@ class Strategy(db.Model):
             cascade="all, delete",
             passive_deletes=True
         )
+    
+    activities = db.relationship(
+        "Activity",
+        backref="strategy",
+        cascade="all, delete-orphan",
+        passive_deletes=True
+    )

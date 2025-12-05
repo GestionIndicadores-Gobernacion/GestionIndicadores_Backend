@@ -15,16 +15,21 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    # 🔒 Render — Forzar SSL en PostgreSQL
-    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-        "connect_args": {
-            "sslmode": "require"
+    # ======================================================
+    # 🔒 SSL SOLO EN PRODUCCIÓN (Render)
+    # ======================================================
+    if os.getenv("RENDER", False) or os.getenv("FLASK_ENV") == "production":
+        print("🌐 Producción detectada → SSL ENABLED")
+        app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+            "connect_args": {"sslmode": "require"}
         }
-    }
+    else:
+        print("🖥️ Modo local → SSL DISABLED")
+        app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {}
 
     print("JWT USADO:", app.config["JWT_SECRET_KEY"])
 
-    # CORS (Render + Angular)
+    # CORS
     CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
     # OpenAPI
@@ -42,14 +47,15 @@ def create_app():
     jwt.init_app(app)
     migrate = Migrate(app, db)
 
-    # Import models (necesario para Flask-Migrate)
+    # Importar modelos (necesario para Flask-Migrate)
     from models.user import User
     from models.role import Role
     from models.component import Component
     from models.indicator import Indicator
     from models.record import Record
+    from models.activity import Activity
 
-    # CLI Seed
+    # Comando seed manual
     from commands.seed import seed
     app.cli.add_command(seed)
 
@@ -57,25 +63,23 @@ def create_app():
     api = Api(app)
     register_routes(api)
 
-    # Registrar manejadores de error globales
+    # Manejadores de error
     register_error_handlers(app)
 
     return app
 
 
 def run_seed_if_needed(app):
-    """Ejecuta seed automático si la BD está creada y no hay roles."""
+    """Ejecuta el seed si la BD ya está creada y no hay roles."""
     with app.app_context():
         inspector = inspect(db.engine)
 
-        # La tabla todavía no existe → no ejecutar seed
         if "roles" not in inspector.get_table_names():
             print("🚫 Tabla 'roles' no existe aún. Seed no ejecutado.")
             return
 
         from models.role import Role
 
-        # Si ya hay roles, no ejecutar seed
         if Role.query.count() > 0:
             print("✔ Seed no necesario. Roles ya existen.")
             return
@@ -87,16 +91,15 @@ def run_seed_if_needed(app):
 
 
 # --------------------------------------------------------
-# 📌 ESTA ES LA VARIABLE QUE RENDER NECESITA: app
+# 📌 Render necesita esta variable "app"
 # --------------------------------------------------------
 app = create_app()
 
-# Ejecutar seed automáticamente cuando Render arranca
+# Seed automático en Render
 run_seed_if_needed(app)
 
-
 # --------------------------------------------------------
-# 📌 SOLO PARA MODO LOCAL (Render nunca ejecuta esto)
+# 📌 Modo local
 # --------------------------------------------------------
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

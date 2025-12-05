@@ -6,32 +6,23 @@ from models.role import Role
 from models.strategy import Strategy
 from models.component import Component
 from models.indicator import Indicator
-from datetime import datetime
+from models.activity import Activity
 
 
 @click.command("seed")
 @with_appcontext
 def seed():
-    click.echo("🚀 Iniciando proceso de seed...")
+    click.echo("🚀 Iniciando SEED del sistema...")
 
     # ===================================================
     # 1️⃣ ROLES
     # ===================================================
     roles = ["SuperAdmin", "Editor", "Viewer"]
-    created_roles = []
-
     for role_name in roles:
-        role = Role.query.filter_by(name=role_name).first()
-        if not role:
-            role = Role(name=role_name, description=f"Rol del sistema: {role_name}")
-            db.session.add(role)
-            created_roles.append(role)
-
-    if created_roles:
-        db.session.commit()
-        click.echo(f"✔ Roles creados: {len(created_roles)}")
-    else:
-        click.echo("✔ Roles ya existentes. Nada que crear.")
+        if not Role.query.filter_by(name=role_name).first():
+            db.session.add(Role(name=role_name, description=f"Rol del sistema: {role_name}"))
+    db.session.commit()
+    click.echo("✔ Roles verificados")
 
     # ===================================================
     # 2️⃣ USUARIO SUPERADMIN
@@ -42,7 +33,7 @@ def seed():
     if not admin:
         admin = User(
             name="Administrador Sistema",
-            email=admin_email,
+            email=admin_email
         )
         admin.set_password("Gob2025*")
         db.session.add(admin)
@@ -73,164 +64,261 @@ def seed():
     for data in usuarios_extra:
         user = User.query.filter_by(email=data["email"]).first()
         if not user:
-            user = User(
-                name=data["name"],
-                email=data["email"]
-            )
+            user = User(name=data["name"], email=data["email"])
             user.set_password(data["password"])
             db.session.add(user)
-            db.session.commit()
             click.echo(f"👤 Usuario creado: {data['email']}")
-        else:
-            click.echo(f"✔ Usuario ya existe: {data['email']}")
-
-        # asignar rol
         role = Role.query.filter_by(name=data["role"]).first()
         user.role_id = role.id
-        db.session.commit()
+    db.session.commit()
 
     # ======================================================
-    # 4️⃣ Estrategia principal
+    # 4️⃣ ESTRATEGIAS + ACTIVIDADES
     # ======================================================
-    strategy_name = "OPERATIVIZAR"
 
-    strategy = Strategy.query.filter_by(name=strategy_name).first()
+    estrategias_con_actividades = {
+        "OPERATIVIZAR": [
+            "DESARROLLAR LA METODOLOGÍA PARA LA PREVENCIÓN DE LOS RIESGOS DE VIOLENCIAS CONTRA LOS ANIMALES",
+            "OPERATIVIZAR EL COMITÉ INTERDISCIPLINARIO, CON SABERES FINANCIEROS, JURÍDICOS, SOCIALES Y MEDICO VETERINARIOS...",
+            "CAPACITAR A LOS GRUPOS DE INTERÉS RELACIONADOS CON LA PROTECCIÓN Y EL BIENESTAR ANIMAL...",
+            "IMPLEMENTAR EL OBSERVATORIO DEPARTAMENTAL DE POLÍTICA PÚBLICA DE PROTECCIÓN Y BIENESTAR ANIMAL"
+        ],
 
-    if not strategy:
-        strategy = Strategy(
-            name=strategy_name,
-            description=(
-                "ESTRATEGIA QUE GARANTICE EL CUMPLIMIENTO DE LA POLÍTICA DE "
-                "PROTECCIÓN Y BIENESTAR ANIMAL EN TÉRMINOS DE PREVENCIÓN DEL "
-                "RIESGO DE VIOLENCIA Y GOBERNANZA INTERINSTITUCIONAL EN EL "
-                "PERIODO DE GOBIERNO"
-            ),
-            active=True,
-            created_at=datetime.utcnow()
-        )
-        db.session.add(strategy)
-        db.session.commit()
-        click.echo("📌 Estrategia creada")
-    else:
-        click.echo("✔ Estrategia ya existente")
+        "DOTAR TRES CENTROS DE BIENESTAR ANIMAL REGIONAL": [
+            "Asesorar técnica y administrativamente los procesos desarrollados por los centros de bienestar animal regional",
+            "Dotar los centros de bienestar animal regional con insumos definidos concertadamente",
+        ],
 
-    # ======================================================
-    # HELPER: Crear componente + indicadores
-    # ======================================================
-    def crear_componente(nombre, indicadores):
-        comp = Component.query.filter_by(name=nombre).first()
+        "ATENDER 10.000 ANIMALES": [
+            "REALIZAR JORNADAS DE ATENCIÓN INTEGRAL PARA LOS ANIMALES EN SITUACIÓN DE VULNERABILIDAD",
+            "ELABORAR DIAGNOSTICOS POBLACIONALES QUE IDENTIFIQUEN ZONAS PRIORITARIAS"
+        ],
 
-        if not comp:
-            comp = Component(
-                strategy_id=strategy.id,
-                name=nombre,
-                description=f"Componente '{nombre}' de la estrategia Operativizar.",
-                data_type="integer",
-                active=True,
-                created_at=datetime.utcnow()
+        "COFINANCIAR A 40 ACTORES": [
+            "ACOMPAÑAR TÉCNICAMENTE LAS ACCIONES DESARROLLADAS POR ACTORES ANIMALISTAS",
+            "SUMINISTRAR INSUMOS A ACTORES VOLUNTARIOS QUE PROTEGEN ANIMALES"
+        ],
+
+        "CREAR Y SOSTENER 3 REDES DE ACTORES": [
+            "SUMINISTRAR INSUMOS A REDES DE PROTECCIÓN ANIMAL",
+            "ACOMPAÑAR TÉCNICAMENTE A LOS ACTORES DE LA RED"
+        ],
+
+        "CAPACITAR 10.000 PERSONAS EN BIENESTAR ANIMAL": [
+            "CAPACITAR A GRUPOS EN PROCESOS DE INCLUSIÓN Y RESPETO A LOS ANIMALES",
+            "ELABORAR DIAGNÓSTICOS POBLACIONALES",
+            "REALIZAR EVENTOS DE PROMOCIÓN DE EXPERIENCIAS"
+        ]
+    }
+
+    estrategia_objs = {}
+
+    for nombre_estrategia, actividades in estrategias_con_actividades.items():
+        estrategia = Strategy.query.filter_by(name=nombre_estrategia).first()
+        if not estrategia:
+            estrategia = Strategy(
+                name=nombre_estrategia,
+                description=f"Estrategia automática: {nombre_estrategia}",
+                active=True
             )
-            db.session.add(comp)
-            db.session.commit()
-            click.echo(f"🧩 Componente creado: {nombre}")
+            db.session.add(estrategia)
+            click.echo(f"📌 Estrategia creada: {nombre_estrategia}")
         else:
-            click.echo(f"🧩 Componente ya existe: {nombre}")
+            click.echo(f"✔ Estrategia existente: {nombre_estrategia}")
 
-        # Indicadores del componente
-        for ind_name in indicadores:
-            ind = Indicator.query.filter_by(name=ind_name).first()
-            if not ind:
-                ind = Indicator(
-                    component_id=comp.id,
-                    name=ind_name,
-                    description=f"Indicador '{ind_name}' del componente {nombre}",
-                    data_type="integer",
-                    active=True,
-                    created_at=datetime.utcnow()
+        db.session.commit()
+        estrategia_objs[nombre_estrategia] = estrategia
+
+        for act_desc in actividades:
+            existe = Activity.query.filter_by(
+                strategy_id=estrategia.id,
+                description=act_desc
+            ).first()
+
+            if not existe:
+                db.session.add(Activity(
+                    strategy_id=estrategia.id,
+                    description=act_desc,
+                    active=True
+                ))
+                click.echo(f"   ➕ Actividad agregada: {act_desc[:60]}...")
+
+        db.session.commit()
+
+    click.echo("🎉 Estrategias y actividades creadas exitosamente")
+
+    # ======================================================
+    # 5️⃣ COMPONENTES POR ESTRATEGIA
+    # ======================================================
+
+    componentes_por_estrategia = {
+        "DOTAR TRES CENTROS DE BIENESTAR ANIMAL REGIONAL": [
+            "ASISTENCIA TECNICA"
+        ],
+
+        "ATENDER 10.000 ANIMALES": [
+            "ATENCION EN SALUD ANIMAL COMPAÑERO",
+            "ATENCION PRIMARIA EN SALUD PARA ANIMALES DE PRODUCCION Y GRANJA",
+            "PREVENCION EN SALUD DE LA FAUNA LIMINAL Y SILVESTRE",
+            "EQUIPO URIA (VETERINARIOS - PSICOLOGO - ABOGADO)"
+        ],
+
+        "COFINANCIAR A 40 ACTORES": [
+            "CLÚSTER EMPRESARIAL",
+            "AUTOSOSTENIBILIDAD DE REFUGIOS",
+            "EMPRENDIMIENTOS CONSCIENTES VALLEINN",
+            "ALIANZAS ESTRATEGICAS"
+        ],
+
+        "CREAR Y SOSTENER 3 REDES DE ACTORES": [
+            "DONATON SALVANDO HUELLAS",
+            "RED ANIMALIA",
+            "ACOMPÁÑAMIENTO PSICOSOCIAL",
+            "PROGRAMA DE ADOPCIONES",
+            "JUNTAS DEFENSORAS DE ANIMALES"
+        ],
+
+        "CAPACITAR 10.000 PERSONAS EN BIENESTAR ANIMAL": [
+            "PROMOTORES PYBA",
+            "ALIANZAS ACADEMICAS"
+        ]
+    }
+
+    for nombre_estrategia, comps in componentes_por_estrategia.items():
+        estrategia = estrategia_objs.get(nombre_estrategia)
+        if not estrategia:
+            click.echo(f"⚠ Estrategia no encontrada al crear componentes: {nombre_estrategia}")
+            continue
+
+        for comp_name in comps:
+            comp = Component.query.filter_by(
+                name=comp_name,
+                strategy_id=estrategia.id
+            ).first()
+
+            if not comp:
+                comp = Component(
+                    name=comp_name,
+                    description=f"Componente de la estrategia {nombre_estrategia}",
+                    strategy_id=estrategia.id,
+                    active=True
                 )
-                db.session.add(ind)
-                db.session.commit()
-                click.echo(f"   ✔ Indicador creado: {ind_name}")
-            else:
-                click.echo(f"   ✔ Indicador ya existe: {ind_name}")
+                db.session.add(comp)
+                click.echo(f"🧩 Componente creado: {comp_name}")
+
+        db.session.commit()
+
+    click.echo("🎉 COMPONENTES creados")
 
     # ======================================================
-    # 5️⃣ Componentes e indicadores
+    # 6️⃣ INDICADORES POR COMPONENTE
     # ======================================================
-    componentes = [
-        {
-            "name": "ANIMALES COMO EMBAJADORES DE PAZ",
-            "indicators": [
-                "No de Habitantes de Calle Impactados",
-                "No de Adultos Mayores Impactados"
-            ]
-        },
-        {
-            "name": "TURISMO MULTIESPECIE",
-            "indicators": [
-                "No Guias Turisticos Capacitados",
-                "No de Rutas Turisticas Impactadas"
-            ]
-        },
-        {
-            "name": "IMPLEMENTAR EL PROGRAMA ESCUADRON BENJI PRIMERA INFANCIA",
-            "indicators": [
-                "No de Niños, Niñas, Adolescentes (NNA) Impactados"
-            ]
-        },
-        {
-            "name": "IMPLEMENTAR EL PROGRAMA SERVICIO SOCIAL DEJANDO HUELLA",
-            "indicators": [
-                "No de Casos Atendidos",
-                "No de Animales Atendidos",
-                "No Guias Operativas Implemetadas"
-            ]
-        },
-        {
-            "name": "IMPLEMENTAR PROGRAMA DE GUARDIANTES DE HUELLA EN ARTICULACION CON LA SECRETARIA DE MUJER",
-            "indicators": [
-                "No de Personas Atendidas",
-                "No de Animales Atendidos",
-                "No Guias Operativas Implementadas"
-            ]
-        },
-        {
-            "name": "IMPLEMENTAR PROGRAMA DE LOS ANIMALES COMO VICTIMAS DEL CONFLICTO ARMADO",
-            "indicators": [
-                "No de Personas Atendidas",
-                "No de Animales Atendidos",
-                "No Guias Operativas Implementadas"
-            ]
-        },
-        {
-            "name": "IMPLEMENTAR POGRAMA PARA COMUNIDADES ETNICAS",
-            "indicators": []
-        },
-        {
-            "name": "EQUIPO MULTIDISCIPLINARIO",
-            "indicators": [
-                "No de Asistencias Tecnicas Realizadas"
-            ]
-        },
-        {
-            "name": "OBSERVATORIO /PLATAFORMA",
-            "indicators": [
-                "No de Plataformas Implementadas",
-                "No de Estrategias Monitoreadas",
-                "No de Observatorios Implementados"
-            ]
-        },
-        {
-            "name": "RUTA DE ATENCION PLATAFORMA DENUNCIAS LINEA SEGUIMIENTO OFICIOS",
-            "indicators": [
-                "No de Casos Recibidos",
-                "No de Casos Atendidos",
-                "No de Seguimiento de Casos Recibidos"
-            ]
-        }
-    ]
 
-    # Crear todos los componentes + indicadores
-    for c in componentes:
-        crear_componente(c["name"], c["indicators"])
+    indicadores_por_componente = {
+        "ASISTENCIA TECNICA": [
+            "NO DE ASISTENCIAS TECNICAS REALIZADAS",
+            "NO DE CENTROS DE BIENESTAR ANIMAL DOTADOS"
+        ],
 
-    click.echo("🎉 Seed completado exitosamente")
+        "ATENCION EN SALUD ANIMAL COMPAÑERO": [
+            "NO DE ANIMALES ATENDIDOS",
+            "NO DE ALBERGUES INSPECCIONADOS",
+            "NO DE EVENTOS O JORNADAS APOYADAS",
+            "NO DE DOCUMENTOS DE LINEAMIENTOS TECNICOS ELABORADOS"
+        ],
+
+        "ATENCION PRIMARIA EN SALUD PARA ANIMALES DE PRODUCCION Y GRANJA": [
+            "NO DE ANIMALES ATENDIDOS",
+            "NO DE EVENTOS O JORNADAS APOYADAS"
+        ],
+
+        "PREVENCION EN SALUD DE LA FAUNA LIMINAL Y SILVESTRE": [
+            "NO DE ANIMALES ATENDIDOS",
+            "NO DE DOCUMENTOS DE LINEAMIENTOS TECNICOS ELABORADOS"
+        ],
+
+        "EQUIPO URIA (VETERINARIOS - PSICOLOGO - ABOGADO)": [
+            "NO DE ANIMALES ATENDIDOS",
+            "NO DE ACOMPAÑAMIENTOS REALIZADOS"
+        ],
+
+        "CLÚSTER EMPRESARIAL": [
+            "NO DE CLÚSTER REALIZADOS"
+        ],
+
+        "AUTOSOSTENIBILIDAD DE REFUGIOS": [
+            "NO DE ACTORES COFINANCIADOS"
+        ],
+
+        "EMPRENDIMIENTOS CONSCIENTES VALLEINN": [
+            "NO DE EMPRENDIMIENTOS COFINANCIADOS"
+        ],
+
+        "ALIANZAS ESTRATEGICAS": [
+            "NO DE ALIANZAS REALIZADAS"
+        ],
+
+        "DONATON SALVANDO HUELLAS": [
+            "NO DE REFUGIOS, FUNDACIONES O ACTORES CON ALIMENTO ENTREGADO",
+            "N° DE TONELADAS"
+        ],
+
+        "RED ANIMALIA": [
+            "NO DE ACTORES INSCRITOS Y CARACTERIZADOS DE LA RED ANIMALIA",
+            "N° DE REDES CREADAS Y ACOMPAÑADAS"
+        ],
+
+        "ACOMPÁÑAMIENTO PSICOSOCIAL": [
+            "NO DE ACOMPAÑAMIENTOS REALIZADOS",
+            "NO DE CUIDADORES ATENDIDOS"
+        ],
+
+        "PROGRAMA DE ADOPCIONES": [
+            "N° DE ANIMALES ADOPTADOS",
+            "N° DE ASISTENCIAS TÉCNICAS"
+        ],
+
+        "JUNTAS DEFENSORAS DE ANIMALES": [
+            "NO DE METODOLOGIAS IMPLEMENTADAS"
+        ],
+
+        "PROMOTORES PYBA": [
+            "NO. DE PERSONAS CAPACITADAS",
+            "NO. DE TALLERES CAPACITACIONES FORMACION REALIZADOS",
+            "NO. DE ORGANZACIONES DE BASES INTERVENIDAS"
+        ],
+
+        "ALIANZAS ACADEMICAS": [
+            "NO. DE DOCUMENTOS TECNICOS REALIZADOS",
+            "NO. DE EVENTOS REALIZADOS"
+        ]
+    }
+
+    for comp_name, indicadores in indicadores_por_componente.items():
+
+        componente = Component.query.filter_by(name=comp_name).first()
+
+        if not componente:
+            click.echo(f"⚠ Componente no encontrado: {comp_name}")
+            continue
+
+        for ind_name in indicadores:
+            existe = Indicator.query.filter_by(
+                name=ind_name,
+                component_id=componente.id
+            ).first()
+
+            if not existe:
+                db.session.add(Indicator(
+                    name=ind_name,
+                    description=f"Indicador del componente {comp_name}",
+                    data_type="integer",
+                    component_id=componente.id,
+                    active=True
+                ))
+                click.echo(f"📊 Indicador creado: {ind_name}")
+
+        db.session.commit()
+
+    click.echo("🎉 INDICADORES creados exitosamente")
+    click.echo("🎉 SEED COMPLETO 🚀")
