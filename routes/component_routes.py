@@ -63,3 +63,11 @@ class ComponentDetail(MethodView):
         db.session.delete(component)
         db.session.commit()
         return {"message": "Componente eliminado correctamente"}
+    
+@blp.route("/component/by_strategy/<int:strategy_id>")
+class ComponentByStrategy(MethodView):
+
+    @jwt_required()
+    @blp.response(200, ComponentSchema(many=True))
+    def get(self, strategy_id):
+        return Component.query.filter_by(strategy_id=strategy_id).all()
