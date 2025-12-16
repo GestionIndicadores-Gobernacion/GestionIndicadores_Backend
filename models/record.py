@@ -26,13 +26,16 @@ class Record(db.Model):
 
     fecha = db.Column(db.Date, nullable=False)
 
+    # 🔥 NUEVO CAMPO
+    description = db.Column(db.Text, nullable=True)
+
     actividades_realizadas = db.Column(db.Text, nullable=True)
 
-    # JSON completo: municipios y valores por municipio
     detalle_poblacion = db.Column(db.JSON, nullable=True)
 
     evidencia_url = db.Column(db.Text, nullable=True)
     fecha_registro = db.Column(db.DateTime, default=datetime.utcnow)
+
 
     # Relaciones
     strategy = db.relationship("Strategy", backref=db.backref("records", lazy=True))

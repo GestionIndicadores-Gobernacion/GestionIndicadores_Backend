@@ -9,6 +9,12 @@ from models.record import Record
 from schemas.record_schema import RecordSchema
 from validators.record_validator import validate_record_payload
 
+from utils.municipios_coord import MUNICIPIOS_COORD
+from models.indicator import Indicator
+from models.component import Component
+from models.strategy import Strategy
+
+
 blp = Blueprint("record", "record", description="Gestión de registros")
 
 # ============================================================
@@ -284,68 +290,166 @@ class RecordStatsAvanceIndicadores(MethodView):
 
         query = Record.query
 
-        # FILTRAR POR AÑO
+        # ============================
+        # 🔎 FILTROS
+        # ============================
         if year:
             query = query.filter(func.extract('year', Record.fecha) == year)
 
-        # FILTRAR POR ESTRATEGIA
         if estrategia_id:
             query = query.filter(Record.strategy_id == estrategia_id)
 
-        # FILTRAR POR COMPONENTE
         if component_id:
             query = query.filter(Record.component_id == component_id)
 
         registros = query.all()
         data_final = []
 
-        # Si filtramos componente, obtenemos solo sus indicadores
+        # ============================
+        # 📌 INDICADORES A EVALUAR
+        # ============================
         if component_id:
             indicadores = Indicator.query.filter_by(component_id=component_id).all()
         else:
             indicadores = Indicator.query.all()
 
+        # ============================
+        # 🔁 PROCESAR INDICADORES
+        # ============================
         for ind in indicadores:
-            registros_componente = [r for r in registros if r.component_id == ind.component_id]
+
+            registros_componente = [
+                r for r in registros if r.component_id == ind.component_id
+            ]
 
             acumulado_mes = {}
+            acumulado_municipios = {}
 
             for r in registros_componente:
                 mes = r.fecha.strftime("%Y-%m")
                 municipios = r.detalle_poblacion.get("municipios", {})
 
-                for info in municipios.values():
+                for municipio_nombre, info in municipios.items():
                     indicadores_muni = info.get("indicadores", {})
 
                     if ind.name in indicadores_muni:
                         valor = indicadores_muni[ind.name]
+
+                        # 🔹 Acumulado por mes
                         acumulado_mes[mes] = acumulado_mes.get(mes, 0) + valor
 
-            if acumulado_mes:
-                meses_list = []
-                for mes, total in sorted(acumulado_mes.items()):
-                    avance = (total / ind.meta) * 100 if ind.meta else 0
+                        # 🔹 Acumulado por municipio
+                        acumulado_municipios[municipio_nombre] = (
+                            acumulado_municipios.get(municipio_nombre, 0) + valor
+                        )
 
-                    meses_list.append({
-                        "mes": mes,
-                        "valor": total,
-                        "avance": round(avance, 2)
-                    })
+            if not acumulado_mes:
+                continue
 
-                # ESTRATEGIA ASOCIADA AL INDICADOR
-                componente = Component.query.get(ind.component_id)
-                estrategia = Strategy.query.get(componente.strategy_id)
-
-                data_final.append({
-                    "estrategia": estrategia.name,
-                    "component_id": ind.component_id,
-                    "indicador_id": ind.id,
-                    "indicador": ind.name,
-                    "meta": ind.meta,
-                    "meses": meses_list
+            # ============================
+            # 📆 MESES
+            # ============================
+            meses_list = []
+            for mes, total in sorted(acumulado_mes.items()):
+                avance = (total / ind.meta) * 100 if ind.meta else 0
+                meses_list.append({
+                    "mes": mes,
+                    "valor": total,
+                    "avance": round(avance, 2)
                 })
 
+            # ============================
+            # 🏘️ MUNICIPIOS
+            # ============================
+            municipios_list = [
+                {
+                    "municipio": m,
+                    "valor": v
+                }
+                for m, v in sorted(acumulado_municipios.items())
+            ]
+
+            # ============================
+            # 📌 ESTRATEGIA ASOCIADA
+            # ============================
+            componente = Component.query.get(ind.component_id)
+            estrategia = Strategy.query.get(componente.strategy_id)
+
+            data_final.append({
+                "estrategia": estrategia.name,
+                "component_id": ind.component_id,
+                "indicador_id": ind.id,
+                "indicador": ind.name,
+                "meta": ind.meta,
+                "meses": meses_list,
+                "municipios": municipios_list
+            })
+
         return data_final
+    
+# ============================================================
+# 📊 EXPORT PARA POWER BI — Datos por municipio / indicador
+# ============================================================
+@blp.route("/record/powerbi")
+class RecordPowerBI(MethodView):
+
+    # @jwt_required()
+    def get(self):
+        registros = Record.query.all()
+        data = []
+
+        for r in registros:
+            estrategia = Strategy.query.get(r.strategy_id)
+            componente = Component.query.get(r.component_id)
+
+            detalle = r.detalle_poblacion or {}
+            municipios = detalle.get("municipios", {})
+
+            for municipio, info in municipios.items():
+
+                # Coordenadas
+                lat, lng = MUNICIPIOS_COORD.get(municipio, (None, None))
+
+                indicadores_dict = info.get("indicadores", {})
+
+                for indicador_nombre, valor_reportado in indicadores_dict.items():
+                    
+                    # Buscar meta dentro del modelo Indicator
+                    indicador = Indicator.query.filter_by(name=indicador_nombre).first()
+
+                    if indicador:
+                        meta = indicador.meta or 0
+                        avance = (valor_reportado / meta * 100) if meta > 0 else 0
+                    else:
+                        meta = 0
+                        avance = 0
+
+                    data.append({
+                        "record_id": r.id,
+                        "fecha_reporte": r.fecha.strftime("%Y-%m-%d"),
+                        "anio": r.fecha.year,
+                        "mes": r.fecha.month,
+
+                        "municipio": municipio,
+                        "lat": lat,
+                        "lng": lng,
+
+                        "indicador": indicador_nombre,
+                        "valor_reportado": valor_reportado,
+                        "meta_indicador": meta,
+                        "avance_porcentual": round(avance, 2),
+
+                        "estrategia": estrategia.name if estrategia else None,
+                        "componente": componente.name if componente else None,
+                        "strategy_id": r.strategy_id,
+                        "component_id": r.component_id,
+
+                        "actividades_realizadas": r.actividades_realizadas,
+                        "evidencia_url": r.evidencia_url,
+                    })
+
+        return data
+
 
 
 @blp.route("/record/years")

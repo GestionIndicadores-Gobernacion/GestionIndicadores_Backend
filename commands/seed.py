@@ -319,5 +319,27 @@ def seed():
                     ))
 
             db.session.commit()
+            
+                # ----------------------------
+    # EDITORES (21 USUARIOS)
+    # ----------------------------
+    editor_role = Role.query.filter_by(name="Editor").first()
+
+    for i in range(1, 22):
+        email = f"editor{i}@gov.co"
+
+        user = User.query.filter_by(email=email).first()
+        if not user:
+            user = User(
+                name=f"Editor {i}",
+                email=email
+            )
+            user.set_password("Ed1t0r1*")  # misma que usaste en Postman
+            user.role_id = editor_role.id
+            db.session.add(user)
+
+    db.session.commit()
+    click.echo("👥 21 usuarios Editor creados correctamente")
+
 
     click.echo("🎉 SEED COMPLETO Y CORRECTAMENTE AUTOMATIZADO 🚀")
