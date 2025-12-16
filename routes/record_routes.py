@@ -65,13 +65,15 @@ class RecordDetail(MethodView):
         # Lista de campos editables
         fields_to_copy = [
             "strategy_id",
-            "activity_id"
+            "activity_id",
             "component_id",
             "fecha",
             "description",
+            "actividades_realizadas",
             "detalle_poblacion",
             "evidencia_url",
         ]
+
 
         for field in fields_to_copy:
             setattr(existing, field, getattr(new_record, field))
@@ -267,33 +269,93 @@ class RecordStatsComponentes(MethodView):
 # ============================================================
 # 📊 Indicadores distintos por estrategia
 # ============================================================
-@blp.route("/record/stats/indicadores_por_estrategia")
-class RecordStatsIndicadoresEstrategia(MethodView):
+@blp.route("/record/stats/avance_indicadores")
+class RecordStatsAvanceIndicadores(MethodView):
 
     @jwt_required()
     def get(self):
+        year = request.args.get("year", type=int)
+        estrategia_id = request.args.get("estrategia_id", type=int)
+        component_id = request.args.get("component_id", type=int)
+
+        from models.indicator import Indicator
+        from models.component import Component
         from models.strategy import Strategy
 
-        estrategias = Strategy.query.all()
-        registros = Record.query.all()
+        query = Record.query
 
-        result = []
+        # FILTRAR POR AÑO
+        if year:
+            query = query.filter(func.extract('year', Record.fecha) == year)
 
-        for estr in estrategias:
-            indicadores_set = set()
+        # FILTRAR POR ESTRATEGIA
+        if estrategia_id:
+            query = query.filter(Record.strategy_id == estrategia_id)
 
-            for r in registros:
-                if r.strategy_id != estr.id:
-                    continue
+        # FILTRAR POR COMPONENTE
+        if component_id:
+            query = query.filter(Record.component_id == component_id)
 
+        registros = query.all()
+        data_final = []
+
+        # Si filtramos componente, obtenemos solo sus indicadores
+        if component_id:
+            indicadores = Indicator.query.filter_by(component_id=component_id).all()
+        else:
+            indicadores = Indicator.query.all()
+
+        for ind in indicadores:
+            registros_componente = [r for r in registros if r.component_id == ind.component_id]
+
+            acumulado_mes = {}
+
+            for r in registros_componente:
+                mes = r.fecha.strftime("%Y-%m")
                 municipios = r.detalle_poblacion.get("municipios", {})
-                for muni in municipios.values():
-                    for ind_name in muni.get("indicadores", {}):
-                        indicadores_set.add(ind_name)
 
-            result.append({
-                "estrategia": estr.name,
-                "total_indicadores": len(indicadores_set)
-            })
+                for info in municipios.values():
+                    indicadores_muni = info.get("indicadores", {})
 
-        return result
+                    if ind.name in indicadores_muni:
+                        valor = indicadores_muni[ind.name]
+                        acumulado_mes[mes] = acumulado_mes.get(mes, 0) + valor
+
+            if acumulado_mes:
+                meses_list = []
+                for mes, total in sorted(acumulado_mes.items()):
+                    avance = (total / ind.meta) * 100 if ind.meta else 0
+
+                    meses_list.append({
+                        "mes": mes,
+                        "valor": total,
+                        "avance": round(avance, 2)
+                    })
+
+                # ESTRATEGIA ASOCIADA AL INDICADOR
+                componente = Component.query.get(ind.component_id)
+                estrategia = Strategy.query.get(componente.strategy_id)
+
+                data_final.append({
+                    "estrategia": estrategia.name,
+                    "component_id": ind.component_id,
+                    "indicador_id": ind.id,
+                    "indicador": ind.name,
+                    "meta": ind.meta,
+                    "meses": meses_list
+                })
+
+        return data_final
+
+
+@blp.route("/record/years")
+class RecordYears(MethodView):
+
+    @jwt_required()
+    def get(self):
+        years = db.session.query(
+            func.extract('year', Record.fecha).label("year")
+        ).distinct().order_by("year").all()
+
+        return [int(y[0]) for y in years]
+

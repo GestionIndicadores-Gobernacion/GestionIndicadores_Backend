@@ -17,13 +17,12 @@ class Indicator(db.Model):
 
     data_type = db.Column(db.String(50), nullable=False, default="integer")
 
+    meta = db.Column(db.Float, nullable=False)   # ✅ NUEVO CAMPO OBLIGATORIO
+
     active = db.Column(db.Boolean, default=True)
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, onupdate=datetime.utcnow)
 
-    # ❌ ELIMINAR ESTO (causa duplicado)
-    # component = db.relationship("Component", backref="indicators")
-
     def __repr__(self):
-        return f"<Indicator {self.name}>"
+        return f"<Indicator {self.name} - Meta {self.meta}>"

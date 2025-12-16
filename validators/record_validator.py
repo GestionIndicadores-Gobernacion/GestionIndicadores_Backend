@@ -69,6 +69,11 @@ def validate_record_payload(data):
     if desc and len(desc) > 500:
         raise ValidationError({"description": "La descripción no puede superar 500 caracteres."})
 
+    # NUEVA VALIDACIÓN
+    actividades = data.get("actividades_realizadas")
+    if actividades and len(actividades) > 2000:
+        raise ValidationError({"actividades_realizadas": "Máximo 2000 caracteres."})
+    
     # Validar municipios e indicadores
     for municipio, info in municipios.items():
 

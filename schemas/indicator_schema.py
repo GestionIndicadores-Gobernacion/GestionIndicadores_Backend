@@ -16,7 +16,8 @@ class IndicatorSchema(SQLAlchemyAutoSchema):
         include_fk = True
 
     id = fields.Integer(dump_only=True)
-
+    meta = fields.Float(required=True)
+    
     @validates("component_id")
     def validate_component_id(self, value, **kwargs):
         if not Component.query.get(value):
@@ -47,3 +48,15 @@ class IndicatorSchema(SQLAlchemyAutoSchema):
             raise ValidationError(
                 f"data_type debe ser uno de: {', '.join(ALLOWED_TYPES)}"
             )
+
+    @validates("meta")
+    def validate_meta(self, value, **kwargs):
+        if value is None:
+            raise ValidationError("El campo meta es obligatorio.")
+        if value <= 0:
+            raise ValidationError("La meta debe ser mayor a 0.")
+
+    @validates("component_id")
+    def validate_component_id(self, value, **kwargs):
+        if not Component.query.get(value):
+            raise ValidationError("El componente indicado no existe.")
