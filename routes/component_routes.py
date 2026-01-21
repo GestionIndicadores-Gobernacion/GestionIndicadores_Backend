@@ -1,4 +1,4 @@
-from flask_smorest import Blueprint, abort   # 👈 agrega abort
+from flask_smorest import Blueprint, abort
 from flask.views import MethodView
 from flask_jwt_extended import jwt_required
 from extensions import db
@@ -7,6 +7,7 @@ from schemas.component_schema import ComponentSchema
 from validators.component_validator import validate_component_payload
 
 blp = Blueprint("component", "component", description="Gestión de componentes")
+
 
 @blp.route("/component")
 class ComponentList(MethodView):
@@ -53,7 +54,6 @@ class ComponentDetail(MethodView):
     def delete(self, id):
         component = Component.query.get_or_404(id)
 
-        # 🔥 Si tiene indicadores asociados, no permitimos eliminar
         if len(component.indicators) > 0:
             abort(
                 400,
@@ -63,11 +63,12 @@ class ComponentDetail(MethodView):
         db.session.delete(component)
         db.session.commit()
         return {"message": "Componente eliminado correctamente"}
-    
-@blp.route("/component/by_strategy/<int:strategy_id>")
-class ComponentByStrategy(MethodView):
+
+
+@blp.route("/component/by_activity/<int:activity_id>")
+class ComponentByActivity(MethodView):
 
     @jwt_required()
     @blp.response(200, ComponentSchema(many=True))
-    def get(self, strategy_id):
-        return Component.query.filter_by(strategy_id=strategy_id).all()
+    def get(self, activity_id):
+        return Component.query.filter_by(activity_id=activity_id).all()

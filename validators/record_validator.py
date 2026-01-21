@@ -1,114 +1,64 @@
-from models.strategy import Strategy
 from models.component import Component
-from models.activity import Activity
-from utils.payload import normalize_payload
 from marshmallow import ValidationError
 import re
 
-def validate_record_payload(data):
-    data = normalize_payload(data)
+def validate_record_payload(record):
 
     # ===============================
-    # 1. STRATEGY
+    # 1️⃣ COMPONENTE (único input real)
     # ===============================
-    strategy_id = data.get("strategy_id")
-    strategy = Strategy.query.get(strategy_id)
-
-    if not strategy:
-        raise ValidationError({"strategy_id": "La estrategia indicada no existe."})
-
-    # ===============================
-    # 2. ACTIVITY
-    # ===============================
-    activity_id = data.get("activity_id")
-    activity = Activity.query.get(activity_id)
-
-    if not activity:
-        raise ValidationError({"activity_id": "La actividad indicada no existe."})
-
-    if activity.strategy_id != strategy.id:
-        raise ValidationError({
-            "activity_id": "La actividad no pertenece a la estrategia seleccionada."
-        })
-
-    # ===============================
-    # 3. COMPONENT
-    # ===============================
-    component_id = data.get("component_id")
-    component = Component.query.get(component_id)
+    component = Component.query.get(record.component_id)
 
     if not component:
-        raise ValidationError({"component_id": "El componente indicado no existe."})
+        raise ValidationError({"component_id": "El componente no existe."})
 
-    if component.strategy_id != strategy.id:
-        raise ValidationError({
-            "component_id": "El componente no pertenece a la estrategia seleccionada."
-        })
+    activity = component.activity
+    if not activity:
+        raise ValidationError({"component_id": "El componente no tiene actividad asociada."})
+
+    strategy = activity.strategy
+    if not strategy:
+        raise ValidationError({"component_id": "La actividad no tiene estrategia asociada."})
+
+    # 🔥 ASIGNACIÓN DERIVADA
+    record.activity_id = activity.id
+    record.strategy_id = strategy.id
 
     # ===============================
-    # 4. DETALLE POBLACIÓN
+    # 2️⃣ VALIDAR DESCRIPCIONES
     # ===============================
-    detalle = data.get("detalle_poblacion")
+    if record.description and len(record.description) > 500:
+        raise ValidationError({"description": "Máximo 500 caracteres."})
 
-    if not detalle:
-        raise ValidationError({"detalle_poblacion": "Este campo es obligatorio."})
-
-    if not isinstance(detalle, dict):
-        raise ValidationError({"detalle_poblacion": "Debe ser un objeto JSON válido."})
-
-    if "municipios" not in detalle:
-        raise ValidationError({"detalle_poblacion": "Debe incluir 'municipios'."})
-
-    municipios = detalle["municipios"]
-
-    if not isinstance(municipios, dict):
-        raise ValidationError({"detalle_poblacion": "'municipios' debe ser un diccionario."})
-
-    # DESCRIPTION
-    desc = data.get("description")
-    if desc and len(desc) > 500:
-        raise ValidationError({"description": "La descripción no puede superar 500 caracteres."})
-
-    # NUEVA VALIDACIÓN
-    actividades = data.get("actividades_realizadas")
-    if actividades and len(actividades) > 2000:
+    if record.actividades_realizadas and len(record.actividades_realizadas) > 2000:
         raise ValidationError({"actividades_realizadas": "Máximo 2000 caracteres."})
-    
-    # Validar municipios e indicadores
-    for municipio, info in municipios.items():
 
-        if not isinstance(municipio, str) or not municipio.strip():
+    # ===============================
+    # 3️⃣ DETALLE POBLACIÓN
+    # ===============================
+    detalle = record.detalle_poblacion
+
+    if not isinstance(detalle, dict) or "municipios" not in detalle:
+        raise ValidationError({"detalle_poblacion": "Debe incluir municipios."})
+
+    for municipio, info in detalle["municipios"].items():
+        if "indicadores" not in info or not isinstance(info["indicadores"], dict):
             raise ValidationError({
-                "detalle_poblacion": f"El nombre de municipio '{municipio}' es inválido."
+                "detalle_poblacion": f"Municipio '{municipio}' mal estructurado."
             })
 
-        if not isinstance(info, dict) or "indicadores" not in info:
-            raise ValidationError({
-                "detalle_poblacion": f"El municipio '{municipio}' debe contener 'indicadores'."
-            })
-
-        indicadores = info["indicadores"]
-
-        if not isinstance(indicadores, dict):
-            raise ValidationError({
-                "detalle_poblacion": f"'indicadores' en '{municipio}' debe ser un diccionario."
-            })
-
-        for indicador, valor in indicadores.items():
+        for valor in info["indicadores"].values():
             if not isinstance(valor, int) or valor < 0:
                 raise ValidationError({
-                    "detalle_poblacion": (
-                        f"El valor de '{indicador}' en '{municipio}' debe ser un entero >= 0."
-                    )
+                    "detalle_poblacion": "Los valores deben ser enteros >= 0."
                 })
 
     # ===============================
-    # 5. URL
+    # 4️⃣ URL
     # ===============================
-    evidencia = data.get("evidencia_url")
-    if evidencia:
+    if record.evidencia_url:
         pattern = r"^https?:\/\/[\w\-\.\/\?\=\&\#%]+$"
-        if not re.match(pattern, evidencia):
-            raise ValidationError({"evidencia_url": "Debe ser una URL válida."})
+        if not re.match(pattern, record.evidencia_url):
+            raise ValidationError({"evidencia_url": "URL inválida."})
 
-    return data
+    return record
