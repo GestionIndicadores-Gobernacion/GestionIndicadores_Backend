@@ -174,9 +174,10 @@ class RecordStatsCount(MethodView):
 
         for (detalle,) in registros:
             if detalle and "municipios" in detalle:
-                for info in detalle["municipios"].values():
-                    municipios.add(info)
+                for municipio, info in detalle["municipios"].items():
+                    municipios.add(municipio)  # ✅ string
                     indicadores.update(info.get("indicadores", {}).keys())
+
 
         componentes_activos = (
             db.session.query(Record.component_id).distinct().count()
@@ -259,6 +260,8 @@ class RecordStatsAvanceIndicadores(MethodView):
         estrategia_id = request.args.get("estrategia_id", type=int)
         component_id = request.args.get("component_id", type=int)
 
+        estrategia = Strategy.query.get(estrategia_id)
+
         query = Record.query
 
         if year:
@@ -298,11 +301,8 @@ class RecordStatsAvanceIndicadores(MethodView):
             if not acumulado_mes:
                 continue
 
-            componente = Component.query.get(ind.component_id)
-            estrategia = Strategy.query.get(componente.strategy_id)
-
             data_final.append({
-                "estrategia": estrategia.name,
+                "estrategia": estrategia.name if estrategia else None,
                 "component_id": ind.component_id,
                 "indicador_id": ind.id,
                 "indicador": ind.name,
@@ -374,10 +374,10 @@ class RecordYears(MethodView):
     @jwt_required()
     def get(self):
         years = (
-            db.session.query(func.extract('year', Record.fecha))
+            db.session.query(func.extract('year', Record.fecha).label("year"))
             .distinct()
-            .order_by("year")
+            .order_by(func.extract('year', Record.fecha))
             .all()
         )
 
-        return [int(y[0]) for y in years]
+        return [int(y.year) for y in years]
