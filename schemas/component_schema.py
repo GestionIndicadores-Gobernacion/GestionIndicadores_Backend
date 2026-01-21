@@ -2,7 +2,7 @@ from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from marshmallow import fields, validates, ValidationError
 from extensions import db
 from models.component import Component
-from models.strategy import Strategy
+from models.activity import Activity
 
 TIPOS_VALIDOS = ["integer", "decimal", "boolean", "text", "date", "category"]
 
@@ -15,16 +15,16 @@ class ComponentSchema(SQLAlchemyAutoSchema):
 
     id = fields.Integer(dump_only=True)
 
-    # IMPORTANTE: estos nombres deben coincidir con los campos reales del modelo
-    strategy_id = fields.Integer(required=True)
+    activity_id = fields.Integer(required=True)
     name = fields.String(required=True)
+    description = fields.String()
     data_type = fields.String(required=True)
     active = fields.Boolean()
 
-    @validates("strategy_id")
-    def validate_strategy_id(self, value, **kwargs):
-        if not Strategy.query.get(value):
-            raise ValidationError("La estrategia indicada no existe.")
+    @validates("activity_id")
+    def validate_activity_id(self, value, **kwargs):
+        if not Activity.query.get(value):
+            raise ValidationError("La actividad indicada no existe.")
 
     @validates("name")
     def validate_name(self, value, **kwargs):
