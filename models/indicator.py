@@ -16,13 +16,11 @@ class Indicator(db.Model):
     description = db.Column(db.String(500), nullable=True)
 
     data_type = db.Column(db.String(50), nullable=False, default="integer")
+    meta = db.Column(db.Float, nullable=False)
 
-    meta = db.Column(db.Float, nullable=False)   # ✅ NUEVO CAMPO OBLIGATORIO
+    es_poblacional = db.Column(db.Boolean, default=False, nullable=False)  # 🔥 NUEVO
 
     active = db.Column(db.Boolean, default=True)
-
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, onupdate=datetime.utcnow)
 
     def __repr__(self):
         return f"<Indicator {self.name} - Meta {self.meta}>"

@@ -60,3 +60,5 @@ class IndicatorSchema(SQLAlchemyAutoSchema):
     def validate_component_id(self, value, **kwargs):
         if not Component.query.get(value):
             raise ValidationError("El componente indicado no existe.")
+        
+    es_poblacional = fields.Boolean()
