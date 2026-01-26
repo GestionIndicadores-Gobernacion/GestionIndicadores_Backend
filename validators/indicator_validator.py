@@ -9,6 +9,7 @@ ALLOWED_FIELDS = {
     "data_type",
     "active",
     "meta"     # ✅ AGREGADO
+    "es_poblacional"
 }
 
 def validate_indicator_payload(data, indicator_id=None):
@@ -51,5 +52,10 @@ def validate_indicator_payload(data, indicator_id=None):
             raise ValidationError({
                 "name": "Ya existe un indicador con este nombre en este componente."
             })
+            
+    if "es_poblacional" in data and not isinstance(data["es_poblacional"], bool):
+        raise ValidationError({
+            "es_poblacional": "Debe ser true o false."
+        })
 
     return True

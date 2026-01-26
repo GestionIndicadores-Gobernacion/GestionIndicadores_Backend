@@ -295,8 +295,15 @@ class RecordStatsAvanceIndicadores(MethodView):
                     if valor is None:
                         continue
 
-                    acumulado_mes[mes] = acumulado_mes.get(mes, 0) + valor
-                    acumulado_municipios[muni] = acumulado_municipios.get(muni, 0) + valor
+                    # 🔥 SOPORTE NUEVO FORMATO
+                    if isinstance(valor, dict):
+                        valor_num = valor.get("total", 0)
+                    else:
+                        valor_num = valor
+
+                    acumulado_mes[mes] = acumulado_mes.get(mes, 0) + valor_num
+                    acumulado_municipios[muni] = acumulado_municipios.get(muni, 0) + valor_num
+
 
             if not acumulado_mes:
                 continue
@@ -322,47 +329,6 @@ class RecordStatsAvanceIndicadores(MethodView):
             })
 
         return data_final
-
-
-# ============================================================
-# 📊 EXPORT POWER BI
-# ============================================================
-@blp.route("/record/powerbi")
-class RecordPowerBI(MethodView):
-
-    def get(self):
-        registros = Record.query.all()
-        data = []
-
-        for r in registros:
-            estrategia = Strategy.query.get(r.strategy_id)
-            componente = Component.query.get(r.component_id)
-
-            municipios = r.detalle_poblacion.get("municipios", {})
-
-            for municipio, info in municipios.items():
-                lat, lng = MUNICIPIOS_COORD.get(municipio, (None, None))
-
-                for ind_name, valor in info.get("indicadores", {}).items():
-                    indicador = Indicator.query.filter_by(name=ind_name).first()
-                    meta = indicador.meta if indicador else 0
-                    avance = (valor / meta * 100) if meta else 0
-
-                    data.append({
-                        "record_id": r.id,
-                        "fecha": r.fecha.strftime("%Y-%m-%d"),
-                        "municipio": municipio,
-                        "lat": lat,
-                        "lng": lng,
-                        "indicador": ind_name,
-                        "valor": valor,
-                        "meta": meta,
-                        "avance": round(avance, 2),
-                        "estrategia": estrategia.name if estrategia else None,
-                        "componente": componente.name if componente else None,
-                    })
-
-        return data
 
 
 # ============================================================
