@@ -35,17 +35,16 @@ def create_app():
     else:
         app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {}
 
-    # ======================================================
     # 🌐 CORS
     # ======================================================
     CORS(
         app,
-        resources={r"/*": {"origins": "http://localhost:4200"}},
+        resources={r"/*": {"origins": ["http://localhost:4200", "https://gestionindicadoresgov.netlify.app"]}},
         supports_credentials=True,
         allow_headers=["Content-Type", "Authorization"],
         methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
     )
-
+    
     # ======================================================
     # 📘 OpenAPI + JWT
     # ======================================================
