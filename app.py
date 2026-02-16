@@ -2,101 +2,132 @@ import os
 from flask import Flask
 from flask_migrate import Migrate
 from flask_smorest import Api
-from flask_jwt_extended import JWTManager
 from flask_cors import CORS
-from config import Config
-from extensions import db, bcrypt, jwt
-from routes import register_routes
 from sqlalchemy import inspect
-from handlers.error_handlers import register_error_handlers
+
+from config import Config
+from extensions import db, bcrypt, jwt, ma
+from domains.indicators.routes import register_indicators_routes
+from domains.indicators.handlers.error_handlers import register_error_handlers
+from domains.datasets.routes import register_routes as register_dataset_routes
 
 
+def schema_name_resolver(schema):
+        # Usa el nombre completo del módulo + clase
+        return schema.__class__.__module__ + "." + schema.__class__.__name__
+    
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
     # ======================================================
-    # 🔒 SSL SOLO EN PRODUCCIÓN (Render)
+    # 🚫 Evitar redirects por slash (/strategies vs /strategies/)
     # ======================================================
-    if os.getenv("RENDER", False) or os.getenv("FLASK_ENV") == "production":
-        print("🌐 Producción detectada → SSL ENABLED")
+    app.url_map.strict_slashes = False
+
+    # ======================================================
+    # 🔒 SSL SOLO EN PRODUCCIÓN
+    # ======================================================
+    if os.getenv("RENDER") or os.getenv("FLASK_ENV") == "production":
         app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
             "connect_args": {"sslmode": "require"}
         }
     else:
-        print("🖥️ Modo local → SSL DISABLED")
         app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {}
 
-    print("JWT USADO:", app.config["JWT_SECRET_KEY"])
+    # ======================================================
+    # 🌐 CORS
+    # ======================================================
+    CORS(
+        app,
+        resources={r"/*": {"origins": "http://localhost:4200"}},
+        supports_credentials=True,
+        allow_headers=["Content-Type", "Authorization"],
+        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    )
 
-    # CORS
-    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
-
-    # OpenAPI
+    # ======================================================
+    # 📘 OpenAPI + JWT
+    # ======================================================
     app.config["OPENAPI_VERSION"] = "3.0.3"
     app.config["OPENAPI_URL_PREFIX"] = "/"
     app.config["OPENAPI_JSON_PATH"] = "api-spec.json"
+
     app.config["API_SPEC_OPTIONS"] = {
-        "components": {"securitySchemes": {}},
-        "info": {"description": "Sistema indicador Gobernación"}
+        # 👇 ESTA LÍNEA ES LA CLAVE
+        "schema_name_resolver": schema_name_resolver,
+
+        "components": {
+            "securitySchemes": {
+                "bearerAuth": {
+                    "type": "http",
+                    "scheme": "bearer",
+                    "bearerFormat": "JWT"
+                }
+            }
+        },
+        "security": [{"bearerAuth": []}],
+        "info": {
+            "description": "Sistema de Indicadores PYBA - Gobernación"
+        }
     }
 
-    # Inicializar extensiones
+    # ======================================================
+    # 🔌 Inicializar extensiones
+    # ======================================================
     db.init_app(app)
+    ma.init_app(app)
     bcrypt.init_app(app)
     jwt.init_app(app)
-    migrate = Migrate(app, db)
+    Migrate(app, db)
 
-    # Importar modelos (necesario para Flask-Migrate)
-    from models.user import User
-    from models.role import Role
-    from models.component import Component
-    from models.indicator import Indicator
-    from models.record import Record
-    from models.activity import Activity
+    # ======================================================
+    # 📦 Importar modelos (Indicators)
+    # ======================================================
+    from domains.indicators import models
+    
+    # ======================================================
+    # 📦 Importar modelos (Datasets)
+    # ======================================================
+    from domains.datasets import models
 
-    # Comando seed manual
-    from commands.seed import seed
-    app.cli.add_command(seed)
 
-    # Registrar rutas
-    api = Api(app)
-    register_routes(api)
+    # ======================================================
+    # 🌱 Seed
+    # ======================================================
+    from domains.indicators import commands
 
-    # Manejadores de error
+    app.cli.add_command(commands.seed)
+    app.cli.add_command(commands.seed_users)
+
+
+    # ======================================================
+    # 🚏 Rutas
+    # ======================================================
+    api = Api(
+    app,
+    spec_kwargs={
+        "schema_name_resolver": schema_name_resolver
+    }
+)
+
+    register_indicators_routes(api)
+    register_dataset_routes(api)
+    # print(app.url_map)
+
+    # ======================================================
+    # ❌ Error handlers
+    # ======================================================
     register_error_handlers(app)
 
     return app
 
 
-def run_seed_if_needed(app):
-    """Ejecuta el seed si la BD ya está creada y no hay roles."""
-    with app.app_context():
-        inspector = inspect(db.engine)
-
-        if "roles" not in inspector.get_table_names():
-            print("🚫 Tabla 'roles' no existe aún. Seed no ejecutado.")
-            return
-
-        from models.role import Role
-
-        if Role.query.count() > 0:
-            print("✔ Seed no necesario. Roles ya existen.")
-            return
-
-        print("⚙ Ejecutando seed automático…")
-        from commands.seed import seed
-        seed.main(standalone_mode=False)
-        print("🎉 Seed ejecutado.")
-
-
 # --------------------------------------------------------
-# 📌 Render necesita esta variable "app"
+# 📌 Render necesita esta variable
 # --------------------------------------------------------
 app = create_app()
 
-# Seed automático en Render
-# run_seed_if_needed(app)
 
 # --------------------------------------------------------
 # 📌 Modo local
