@@ -106,8 +106,8 @@ class ComponentHandler:
             db.session.add(indicator)
             db.session.flush()
 
-            # SOLO NUMBER TIENE METAS
-            if ind["field_type"] == "number":
+            # NUMBER y SUM_GROUP TIENEN METAS
+            if ind["field_type"] in ["number", "sum_group"]:
                 for t in ind.get("targets", []):
                     db.session.add(
                         ComponentIndicatorTarget(

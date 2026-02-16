@@ -67,12 +67,12 @@ class ComponentValidator:
                 if not ind.get("config") or not ind["config"].get("fields"):
                     errors["indicators"] = "Sum_group indicators require fields"
 
-            # number targets
-            if ind.get("field_type") == "number":
+            # number y sum_group targets
+            if ind.get("field_type") in ["number", "sum_group"]:
                 targets = ind.get("targets")
 
                 if not targets:
-                    errors["indicators"] = "Each numeric indicator must define at least one annual target"
+                    errors["indicators"] = f"Each {ind.get('field_type')} indicator must define at least one annual target"
                 else:
                     years = set()
 
