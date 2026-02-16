@@ -47,6 +47,8 @@ class ComponentHandler:
 
         errors = ComponentValidator.validate_create(data, component.id)
         if errors:
+            print("❌ ERRORES DE VALIDACIÓN:")
+            print(errors)
             return None, errors
 
         try:
@@ -66,6 +68,14 @@ class ComponentHandler:
 
         except Exception as e:
             db.session.rollback()
+            print("=" * 60)
+            print("❌ ERROR EN UPDATE:")
+            print("=" * 60)
+            print(f"Tipo de error: {type(e).__name__}")
+            print(f"Mensaje: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            print("=" * 60)
             return None, {"database": str(e)}
 
     # =====================================================
@@ -106,8 +116,8 @@ class ComponentHandler:
             db.session.add(indicator)
             db.session.flush()
 
-            # NUMBER y SUM_GROUP TIENEN METAS
-            if ind["field_type"] in ["number", "sum_group"]:
+            # NUMBER, SUM_GROUP y GROUPED_DATA PUEDEN TENER METAS
+            if ind["field_type"] in ["number", "sum_group", "grouped_data"]:
                 for t in ind.get("targets", []):
                     db.session.add(
                         ComponentIndicatorTarget(
