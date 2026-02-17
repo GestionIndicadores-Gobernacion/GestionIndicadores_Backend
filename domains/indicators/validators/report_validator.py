@@ -49,8 +49,6 @@ class ReportValidator:
         ).all()
 
         indicator_map = {ind.id: ind for ind in component_indicators}
-        
-        # Mapa por nombre para validar grouped_data
         indicator_by_name = {ind.name: ind for ind in component_indicators}
 
         indicator_errors = []
@@ -60,8 +58,8 @@ class ReportValidator:
         # ---------------------
         report_date = data.get("report_date")
         report_year = report_date.year if report_date else None
-        
-        # Mapa de valores por nombre (para acceder al parent_field)
+
+        # Mapa de valores por nombre (para acceder al parent_field en grouped_data)
         values_by_name = {}
         for value in indicator_values:
             indicator = indicator_map.get(value.get("indicator_id"))
@@ -94,7 +92,6 @@ class ReportValidator:
                     )
                     continue
 
-                # Target validation
                 target = ComponentIndicatorTarget.query.filter_by(
                     indicator_id=indicator.id,
                     year=report_year
@@ -127,13 +124,11 @@ class ReportValidator:
                     )
 
             # ---------------------
-            # MULTI_SELECT (NUEVO)
+            # MULTI_SELECT
             # ---------------------
             elif field_type == "multi_select":
-                
-                error = ReportValidator._validate_multi_select_value(
-                    indicator, val
-                )
+
+                error = ReportValidator._validate_multi_select_value(indicator, val)
                 if error:
                     indicator_errors.append(error)
 
@@ -147,11 +142,20 @@ class ReportValidator:
                         f"Dictionary expected for indicator '{indicator.name}'"
                     )
                     continue
-                
-                # Validar que tenga todos los campos requeridos
+
                 fields = indicator.config.get("fields", []) if indicator.config else []
+
                 for field_def in fields:
-                    field_name = field_def.get("name")
+                    # fields puede ser lista de strings ["campo1", "campo2"]
+                    # o lista de dicts [{"name": "campo1"}, ...]
+                    if isinstance(field_def, dict):
+                        field_name = field_def.get("name")
+                    else:
+                        field_name = field_def
+
+                    if not field_name:
+                        continue
+
                     if field_name not in val:
                         indicator_errors.append(
                             f"Missing field '{field_name}' in sum_group '{indicator.name}'"
@@ -162,10 +166,10 @@ class ReportValidator:
                         )
 
             # ---------------------
-            # GROUPED_DATA (NUEVO)
+            # GROUPED_DATA
             # ---------------------
             elif field_type == "grouped_data":
-                
+
                 error = ReportValidator._validate_grouped_data_value(
                     indicator, val, values_by_name
                 )
@@ -183,102 +187,75 @@ class ReportValidator:
 
     @staticmethod
     def _validate_multi_select_value(indicator, value):
-        """
-        Valida que el valor de un multi_select sea correcto.
-        
-        Args:
-            indicator: ComponentIndicator
-            value: El valor a validar (debe ser lista)
-            
-        Returns:
-            str: Mensaje de error o None
-        """
-        # Debe ser una lista
         if not isinstance(value, list):
             return f"Multi-select '{indicator.name}' must be a list"
-        
-        # No puede estar vacía si es required
+
         if indicator.is_required and len(value) == 0:
             return f"Multi-select '{indicator.name}' cannot be empty (required)"
-        
-        # Obtener opciones válidas
+
         options = indicator.config.get("options", []) if indicator.config else []
-        
-        # Validar que cada selección sea válida
+
         for selected in value:
             if selected not in options:
                 return f"Invalid option '{selected}' in multi-select '{indicator.name}'. Valid options: {options}"
-        
+
         return None
 
     @staticmethod
     def _validate_grouped_data_value(indicator, value, all_values):
-        """
-        Valida que el valor de un grouped_data sea correcto.
-        
-        Args:
-            indicator: ComponentIndicator
-            value: El valor a validar (debe ser dict)
-            all_values: Dict con todos los valores (por nombre de indicador)
-            
-        Returns:
-            str: Mensaje de error o None
-        """
-        # Debe ser un diccionario
         if not isinstance(value, dict):
             return f"Grouped data '{indicator.name}' must be an object/dict"
-        
-        # Obtener configuración
+
         config = indicator.config
         if not config:
             return f"Grouped data '{indicator.name}' has no config"
-        
+
         parent_field_name = config.get("parent_field")
         sub_fields = config.get("sub_fields", [])
-        
-        # Obtener el valor del campo padre
+
         parent_value = all_values.get(parent_field_name)
-        
+
         if parent_value is None:
             return f"Grouped data '{indicator.name}' requires parent field '{parent_field_name}' to have a value"
-        
+
         if not isinstance(parent_value, list):
             return f"Parent field '{parent_field_name}' for '{indicator.name}' must be a list"
-        
-        # Validar que cada opción seleccionada tenga datos
+
         for selected_option in parent_value:
             if selected_option not in value:
                 return f"Grouped data '{indicator.name}' is missing data for '{selected_option}'"
-            
+
             group_data = value[selected_option]
-            
-            # Validar que sea un dict
+
             if not isinstance(group_data, dict):
                 return f"Data for '{selected_option}' in '{indicator.name}' must be an object"
-            
-            # Validar cada sub_field
+
             for sub_field in sub_fields:
-                field_name = sub_field["name"]
-                field_type = sub_field["type"]
-                
-                # Verificar que exista
+                # sub_fields puede ser lista de dicts o lista de strings
+                if isinstance(sub_field, dict):
+                    field_name = sub_field.get("name")
+                    field_type = sub_field.get("type")
+                else:
+                    field_name = sub_field
+                    field_type = None
+
+                if not field_name:
+                    continue
+
                 if field_name not in group_data:
                     return f"Missing field '{field_name}' for '{selected_option}' in '{indicator.name}'"
-                
+
                 field_value = group_data[field_name]
-                
-                # Validar tipo
+
                 if field_type == "number":
                     if not isinstance(field_value, (int, float)):
                         return f"Field '{field_name}' for '{selected_option}' must be a number in '{indicator.name}'"
-                
                 elif field_type == "text":
                     if not isinstance(field_value, str):
                         return f"Field '{field_name}' for '{selected_option}' must be text in '{indicator.name}'"
-        
-        # Validar que no haya claves extra (datos de opciones no seleccionadas)
+
         for key in value.keys():
             if key not in parent_value:
                 return f"Unexpected data for '{key}' in '{indicator.name}' (not selected in '{parent_field_name}')"
-        
+
         return None
