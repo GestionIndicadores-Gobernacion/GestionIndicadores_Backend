@@ -16,7 +16,8 @@ class UserHandler:
             first_name=data['first_name'],
             last_name=data['last_name'],
             email=data['email'],
-            profile_image_url=data.get('profile_image_url')
+            profile_image_url=data.get('profile_image_url'),
+            role_id=data.get('role_id')
         )
 
         user.set_password(data['password'])
@@ -35,7 +36,7 @@ class UserHandler:
 
     @staticmethod
     def update(user, data):
-        for field in ['first_name', 'last_name', 'email', 'profile_image_url']:
+        for field in ['first_name', 'last_name', 'email', 'profile_image_url', 'role_id']:
             if field in data:
                 setattr(user, field, data[field])
 
