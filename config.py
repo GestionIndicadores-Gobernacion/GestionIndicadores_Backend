@@ -17,3 +17,7 @@ class Config:
     JWT_ERROR_MESSAGE_KEY = "msg"
     JWT_IDENTITY_CLAIM = "sub"
     JWT_ENCODE_SUBJECT = True
+    
+    UPLOAD_FOLDER = os.getenv("UPLOAD_FOLDER", "uploads")
+    MAX_CONTENT_LENGTH = int(os.getenv("MAX_UPLOAD_MB", 10)) * 1024 * 1024
+    BASE_URL = os.getenv("BASE_URL", "http://localhost:5000")

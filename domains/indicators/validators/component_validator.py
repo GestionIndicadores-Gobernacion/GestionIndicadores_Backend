@@ -13,7 +13,8 @@ class ComponentValidator:
         "select",
         "multi_select",
         "sum_group",
-        "grouped_data"
+        "grouped_data",
+        "file_attachment"
     }
     
     # Tipos que requieren targets OBLIGATORIOS
@@ -23,7 +24,7 @@ class ComponentValidator:
     OPTIONAL_TARGET_TYPES = {"grouped_data"}
     
     # Tipos que NO aceptan targets
-    NO_TARGET_TYPES = {"text", "select", "multi_select"}
+    NO_TARGET_TYPES = {"text", "select", "multi_select", "file_attachment", }
 
     @staticmethod
     def validate_create(data, component_id=None):
@@ -115,6 +116,13 @@ class ComponentValidator:
                 if error:
                     errors["indicators"] = error
                     break
+                
+            # Agregar junto a los otros ifs de validacion por tipo:
+            if field_type == "file_attachment":
+                error = ComponentValidator._validate_file_attachment(ind)
+                if error:
+                    errors["indicators"] = error
+                    break           
 
             # ----------------------------------------
             # VALIDACIÓN: TARGETS (solo para tipos que los REQUIEREN)
@@ -280,5 +288,35 @@ class ComponentValidator:
 
             if value is None or not isinstance(value, (int, float)) or value <= 0:
                 return f"Indicator '{indicator.get('name')}': target for year {year} must be a positive number"
+
+        return None
+    
+    @staticmethod
+    def _validate_file_attachment(indicator):
+        """
+        Config es opcional. Si viene puede tener:
+        - allowed_types: lista de extensiones ej: ["pdf", "docx"]
+        - max_size_mb: numero positivo
+        """
+        config = indicator.get("config")
+        if not config:
+            return None
+
+        allowed_types = config.get("allowed_types")
+        if allowed_types is not None:
+            if not isinstance(allowed_types, list) or len(allowed_types) == 0:
+                return f"Indicator '{indicator.get('name')}': 'allowed_types' must be a non-empty list"
+            valid_extensions = {
+                "pdf", "doc", "docx", "xls", "xlsx",
+                "png", "jpg", "jpeg", "gif", "txt", "csv", "zip"
+            }
+            for ext in allowed_types:
+                if ext not in valid_extensions:
+                    return f"Indicator '{indicator.get('name')}': extension '{ext}' is not allowed"
+
+        max_size_mb = config.get("max_size_mb")
+        if max_size_mb is not None:
+            if not isinstance(max_size_mb, (int, float)) or max_size_mb <= 0:
+                return f"Indicator '{indicator.get('name')}': 'max_size_mb' must be a positive number"
 
         return None
