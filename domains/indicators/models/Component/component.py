@@ -48,7 +48,8 @@ class Component(db.Model):
     indicators = db.relationship(
         "ComponentIndicator",
         back_populates="component",
-        cascade="all, delete-orphan"
+        cascade="all, delete-orphan",
+        order_by="ComponentIndicator.order"
     )
 
     reports = db.relationship(

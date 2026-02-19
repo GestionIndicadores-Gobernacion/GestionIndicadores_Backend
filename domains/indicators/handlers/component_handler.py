@@ -123,7 +123,7 @@ class ComponentHandler:
         db.session.flush()
 
         # Upsert: actualizar existentes o crear nuevos
-        for ind_data in indicators_data:
+        for index, ind_data in enumerate(indicators_data):
             name = ind_data["name"]
 
             if name in existing:
@@ -132,6 +132,7 @@ class ComponentHandler:
                 indicator.field_type = ind_data["field_type"]
                 indicator.config = ind_data.get("config")
                 indicator.is_required = ind_data.get("is_required", True)
+                indicator.order = index
             else:
                 # Crear nuevo indicador
                 indicator = ComponentIndicator(
@@ -139,7 +140,8 @@ class ComponentHandler:
                     name=name,
                     field_type=ind_data["field_type"],
                     config=ind_data.get("config"),
-                    is_required=ind_data.get("is_required", True)
+                    is_required=ind_data.get("is_required", True),
+                    order=index
                 )
                 db.session.add(indicator)
 
@@ -202,13 +204,14 @@ class ComponentHandler:
                 )
             )
 
-        for ind in data["indicators"]:
+        for index, ind in enumerate(data["indicators"]):
             indicator = ComponentIndicator(
                 component_id=component.id,
                 name=ind["name"],
                 field_type=ind["field_type"],
                 config=ind.get("config"),
-                is_required=ind.get("is_required", True)
+                is_required=ind.get("is_required", True),
+                order=index
             )
 
             db.session.add(indicator)
