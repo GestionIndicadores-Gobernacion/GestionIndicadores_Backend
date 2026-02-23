@@ -15,6 +15,8 @@ class UserSchema(Schema):
 
     # password SOLO para input
     password = fields.Str(load_only=True, required=True)
+    
+    role_id = fields.Int(load_only=True, required=False)
 
     profile_image_url = fields.Str(allow_none=True)
 

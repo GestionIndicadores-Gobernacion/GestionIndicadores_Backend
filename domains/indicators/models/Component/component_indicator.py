@@ -16,6 +16,7 @@ class ComponentIndicator(db.Model):
     name = db.Column(db.String(255), nullable=False)
     field_type = db.Column(db.String(50), nullable=False)
     config = db.Column(db.JSON, nullable=True)
+    order = db.Column(db.Integer, nullable=False, default=0)
 
     is_required = db.Column(
         db.Boolean,

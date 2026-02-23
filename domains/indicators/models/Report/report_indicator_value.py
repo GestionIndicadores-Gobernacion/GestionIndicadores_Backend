@@ -28,6 +28,12 @@ class ReportIndicatorValue(db.Model):
         back_populates="indicator_values"
     )
 
+    # Relación con ComponentIndicator para serializar metadatos en el schema
+    indicator = db.relationship(
+        "ComponentIndicator",
+        lazy="joined"  # joined = un solo query, sin N+1
+    )
+
     __table_args__ = (
         db.UniqueConstraint(
             "report_id",
