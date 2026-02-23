@@ -20,7 +20,7 @@ class IndicatorMetaSchema(Schema):
 
 class ReportIndicatorValueSchema(Schema):
     indicator_id = fields.Int(required=True)
-    value = fields.Raw(required=True)
+    value = fields.Raw(required=True, allow_none=True)
     # Solo en respuestas (dump), no en requests (load)
     indicator = fields.Nested(IndicatorMetaSchema, dump_only=True)
 
