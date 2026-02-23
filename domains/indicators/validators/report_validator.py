@@ -77,6 +77,11 @@ class ReportValidator:
             field_type = indicator.field_type
             val = value.get("value")
 
+            if val is None:
+                if indicator.is_required:
+                    indicator_errors.append(f"'{indicator.name}' is required and cannot be null")
+                continue  # Si no es requerido, skip sin error
+            
             # ========================================
             # TYPE VALIDATION
             # ========================================
