@@ -8,6 +8,9 @@ from domains.indicators.models.Component.component_indicator_target import Compo
 
 from domains.indicators.validators.component_validator import ComponentValidator
 
+# Tipos de indicador que generan targets (meta anual)
+TYPES_WITH_TARGETS = {"number", "sum_group", "grouped_data", "categorized_group"}
+
 
 class ComponentHandler:
 
@@ -130,9 +133,9 @@ class ComponentHandler:
                 # Actualizar indicador existente
                 indicator = existing[name]
                 indicator.field_type = ind_data["field_type"]
-                indicator.config = ind_data.get("config")
+                indicator.config     = ind_data.get("config")
                 indicator.is_required = ind_data.get("is_required", True)
-                indicator.order = index
+                indicator.order      = index
             else:
                 # Crear nuevo indicador
                 indicator = ComponentIndicator(
@@ -147,8 +150,8 @@ class ComponentHandler:
 
             db.session.flush()
 
-            # Upsert de targets (metas)
-            if ind_data["field_type"] in ["number", "sum_group", "grouped_data"]:
+            # Upsert de targets para tipos que los soportan
+            if ind_data["field_type"] in TYPES_WITH_TARGETS:
                 ComponentHandler._upsert_targets(indicator, ind_data.get("targets", []))
 
     # =====================================================
@@ -217,7 +220,8 @@ class ComponentHandler:
             db.session.add(indicator)
             db.session.flush()
 
-            if ind["field_type"] in ["number", "sum_group", "grouped_data"]:
+            # Crear targets para tipos que los soportan
+            if ind["field_type"] in TYPES_WITH_TARGETS:
                 for t in ind.get("targets", []):
                     db.session.add(
                         ComponentIndicatorTarget(
