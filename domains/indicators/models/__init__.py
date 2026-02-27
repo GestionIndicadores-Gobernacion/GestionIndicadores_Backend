@@ -12,3 +12,5 @@ from domains.indicators.models.Component.component_indicator_target import Compo
 
 from domains.indicators.models.Report.report import Report
 from domains.indicators.models.Report.report_indicator_value import ReportIndicatorValue
+
+from domains.indicators.models.AuditLog.audit_log import AuditLog

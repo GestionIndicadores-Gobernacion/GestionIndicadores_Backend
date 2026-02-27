@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, request
 from flask_migrate import Migrate
 from flask_smorest import Api
 from flask_cors import CORS
@@ -10,15 +10,25 @@ from extensions import db, bcrypt, jwt, ma
 from domains.indicators.routes import register_indicators_routes
 from domains.indicators.handlers.error_handlers import register_error_handlers
 from domains.datasets.routes import register_routes as register_dataset_routes
+from domains.action_plans.routes import register_routes as register_action_plan_routes
 
 
 def schema_name_resolver(schema):
-        # Usa el nombre completo del módulo + clase
-        return schema.__class__.__module__ + "." + schema.__class__.__name__
-    
+    return schema.__class__.__module__ + "." + schema.__class__.__name__
+
+
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+
+    # ======================================================
+    # 🔥 FIX CRÍTICO — PERMITIR AUTH HEADER A JWT
+    # ======================================================
+    @app.before_request
+    def force_authorization_header():
+        auth = request.headers.get("Authorization")
+        if auth:
+            request.environ["HTTP_AUTHORIZATION"] = auth
 
     # ======================================================
     # 🚫 Evitar redirects por slash (/strategies vs /strategies/)
@@ -35,16 +45,17 @@ def create_app():
     else:
         app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {}
 
+    # ======================================================
     # 🌐 CORS
     # ======================================================
     CORS(
         app,
         resources={r"/*": {"origins": ["http://localhost:4200", "https://gestionindicadoresgov.netlify.app"]}},
-        supports_credentials=True,
         allow_headers=["Content-Type", "Authorization"],
-        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        supports_credentials=True
     )
-    
+
     # ======================================================
     # 📘 OpenAPI + JWT
     # ======================================================
@@ -53,9 +64,7 @@ def create_app():
     app.config["OPENAPI_JSON_PATH"] = "api-spec.json"
 
     app.config["API_SPEC_OPTIONS"] = {
-        # 👇 ESTA LÍNEA ES LA CLAVE
         "schema_name_resolver": schema_name_resolver,
-
         "components": {
             "securitySchemes": {
                 "bearerAuth": {
@@ -81,38 +90,27 @@ def create_app():
     Migrate(app, db)
 
     # ======================================================
-    # 📦 Importar modelos (Indicators)
+    # 📦 Importar modelos
     # ======================================================
     from domains.indicators import models
-    
-    # ======================================================
-    # 📦 Importar modelos (Datasets)
-    # ======================================================
     from domains.datasets import models
-
+    from domains.action_plans import models
 
     # ======================================================
     # 🌱 Seed
     # ======================================================
     from domains.indicators import commands
-
     app.cli.add_command(commands.seed)
     app.cli.add_command(commands.seed_users)
-
 
     # ======================================================
     # 🚏 Rutas
     # ======================================================
-    api = Api(
-    app,
-    spec_kwargs={
-        "schema_name_resolver": schema_name_resolver
-    }
-)
+    api = Api(app, spec_kwargs={"schema_name_resolver": schema_name_resolver})
 
     register_indicators_routes(api)
     register_dataset_routes(api)
-    # print(app.url_map)
+    register_action_plan_routes(api)
 
     # ======================================================
     # ❌ Error handlers
@@ -122,15 +120,8 @@ def create_app():
     return app
 
 
-# --------------------------------------------------------
-# 📌 Render necesita esta variable
-# --------------------------------------------------------
 app = create_app()
 
-
-# --------------------------------------------------------
-# 📌 Modo local
-# --------------------------------------------------------
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    app.run(host="0.0.0.0", port=port, debug=False)
