@@ -74,7 +74,7 @@ class ReportIndicatorHandler:
                 elif indicator.field_type == "sum_group":
                     if isinstance(value, dict):
                         month_total = sum(v for v in value.values() if isinstance(v, (int, float)))
-                        acc["by_month"][month_key] += month_total  # ← nuevo
+                        acc["by_month"][month_key] += month_total
                         for category, total in value.items():
                             if isinstance(total, (int, float)):
                                 acc["by_category"][category] += total
@@ -98,7 +98,10 @@ class ReportIndicatorHandler:
                                     if isinstance(metrics, dict):
                                         for metric, val in metrics.items():
                                             if isinstance(val, (int, float)):
+                                                # Total por categoría (CANINO, FELINO)
                                                 acc["by_nested"][category][metric] += val
+                                                # Total por categoría+género (CANINO – Hembra)
+                                                acc["by_nested"][f"{category} – {gender}"][metric] += val
 
                         sub = value.get("sub_sections", {})
                         if isinstance(sub, dict):
@@ -112,7 +115,7 @@ class ReportIndicatorHandler:
                 elif indicator.field_type == "grouped_data":
                     if isinstance(value, dict):
                         month_total = sum(v for v in value.values() if isinstance(v, (int, float)))
-                        acc["by_month"][month_key] += month_total  # ← nuevo
+                        acc["by_month"][month_key] += month_total
                         for group, val in value.items():
                             if isinstance(val, (int, float)):
                                 acc["by_category"][group] += val
@@ -140,32 +143,19 @@ class ReportIndicatorHandler:
                     {"category": cat, "total": round(total, 2)}
                     for cat, total in sorted(acc["by_category"].items(), key=lambda x: -x[1])
                 ]
-                entry["by_month"] = [  # ← nuevo
+                entry["by_month"] = [
                     {"month": m, "total": acc["by_month"].get(m, 0)}
                     for m in all_months
                 ]
 
-            elif indicator.field_type == "categorized_group":
-                if isinstance(value, dict):
-                    data = value.get("data", {})
-                    for category, genders in data.items():
-                        if isinstance(genders, dict):
-                            for gender, metrics in genders.items():
-                                if isinstance(metrics, dict):
-                                    for metric, val in metrics.items():
-                                        if isinstance(val, (int, float)):
-                                            # Total por categoría+métrica (como antes)
-                                            acc["by_nested"][category][metric] += val
-                                            # Total por género+métrica (nuevo)
-                                            acc["by_nested"][f"{category} – {gender}"][metric] += val
-
-                    sub = value.get("sub_sections", {})
-                    if isinstance(sub, dict):
-                        for section, metrics in sub.items():
-                            if isinstance(metrics, dict):
-                                for metric, val in metrics.items():
-                                    if isinstance(val, (int, float)):
-                                        acc["by_nested"][f"sub:{section}"][metric] += val
+            elif field_type == "categorized_group":
+                entry["by_nested"] = {
+                    category: [
+                        {"metric": metric, "total": round(total, 2)}
+                        for metric, total in metrics.items()
+                    ]
+                    for category, metrics in acc["by_nested"].items()
+                }
 
             result.append(entry)
 
