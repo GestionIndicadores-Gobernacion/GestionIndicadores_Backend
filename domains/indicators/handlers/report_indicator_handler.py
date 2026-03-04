@@ -145,14 +145,27 @@ class ReportIndicatorHandler:
                     for m in all_months
                 ]
 
-            elif field_type == "categorized_group":
-                entry["by_nested"] = {
-                    category: [
-                        {"metric": metric, "total": round(total, 2)}
-                        for metric, total in metrics.items()
-                    ]
-                    for category, metrics in acc["by_nested"].items()
-                }
+            elif indicator.field_type == "categorized_group":
+                if isinstance(value, dict):
+                    data = value.get("data", {})
+                    for category, genders in data.items():
+                        if isinstance(genders, dict):
+                            for gender, metrics in genders.items():
+                                if isinstance(metrics, dict):
+                                    for metric, val in metrics.items():
+                                        if isinstance(val, (int, float)):
+                                            # Total por categoría+métrica (como antes)
+                                            acc["by_nested"][category][metric] += val
+                                            # Total por género+métrica (nuevo)
+                                            acc["by_nested"][f"{category} – {gender}"][metric] += val
+
+                    sub = value.get("sub_sections", {})
+                    if isinstance(sub, dict):
+                        for section, metrics in sub.items():
+                            if isinstance(metrics, dict):
+                                for metric, val in metrics.items():
+                                    if isinstance(val, (int, float)):
+                                        acc["by_nested"][f"sub:{section}"][metric] += val
 
             result.append(entry)
 
