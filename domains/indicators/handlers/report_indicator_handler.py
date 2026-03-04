@@ -73,6 +73,8 @@ class ReportIndicatorHandler:
                 # ── sum_group ────────────────────────────────────────────────
                 elif indicator.field_type == "sum_group":
                     if isinstance(value, dict):
+                        month_total = sum(v for v in value.values() if isinstance(v, (int, float)))
+                        acc["by_month"][month_key] += month_total  # ← nuevo
                         for category, total in value.items():
                             if isinstance(total, (int, float)):
                                 acc["by_category"][category] += total
@@ -109,6 +111,8 @@ class ReportIndicatorHandler:
                 # ── grouped_data ─────────────────────────────────────────────
                 elif indicator.field_type == "grouped_data":
                     if isinstance(value, dict):
+                        month_total = sum(v for v in value.values() if isinstance(v, (int, float)))
+                        acc["by_month"][month_key] += month_total  # ← nuevo
                         for group, val in value.items():
                             if isinstance(val, (int, float)):
                                 acc["by_category"][group] += val
@@ -135,6 +139,10 @@ class ReportIndicatorHandler:
                 entry["by_category"] = [
                     {"category": cat, "total": round(total, 2)}
                     for cat, total in sorted(acc["by_category"].items(), key=lambda x: -x[1])
+                ]
+                entry["by_month"] = [  # ← nuevo
+                    {"month": m, "total": acc["by_month"].get(m, 0)}
+                    for m in all_months
                 ]
 
             elif field_type == "categorized_group":
