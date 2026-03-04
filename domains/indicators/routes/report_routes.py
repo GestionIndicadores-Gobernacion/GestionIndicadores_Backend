@@ -2,10 +2,12 @@ from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
-from domains.indicators.handlers.report_handler import ReportHandler
 from domains.indicators.schemas.report_schema import ReportSchema
 from domains.indicators.models.User.user import User
 
+from domains.indicators.handlers.report_handler import ReportHandler
+from domains.indicators.handlers.report_aggregate_handler import ReportAggregateHandler
+from domains.indicators.handlers.report_indicator_handler import ReportIndicatorHandler
 
 blp = Blueprint(
     "reports", "reports",
@@ -116,29 +118,22 @@ class ReportDetail(MethodView):
 # =========================================================
 # AGGREGATES
 # =========================================================
-
 @blp.route("/aggregate/component/<int:component_id>")
 class ReportAggregateComponent(MethodView):
-
     @jwt_required()
     def get(self, component_id):
-        return ReportHandler.aggregate_by_component(component_id)
+        return ReportAggregateHandler.aggregate_by_component(component_id)
 
 
 @blp.route("/aggregate/strategy/<int:strategy_id>")
 class ReportAggregateStrategy(MethodView):
-
     @jwt_required()
     def get(self, strategy_id):
-        return ReportHandler.aggregate_by_strategy(strategy_id)
-    
-# =========================================================
-# AGGREGATE POR INDICADOR
-# =========================================================
+        return ReportAggregateHandler.aggregate_by_strategy(strategy_id)
+
 
 @blp.route("/aggregate/component/<int:component_id>/indicators")
 class ReportAggregateComponentIndicators(MethodView):
-
     @jwt_required()
     def get(self, component_id):
-        return ReportHandler.aggregate_indicators_by_component(component_id)
+        return ReportIndicatorHandler.aggregate_indicators_by_component(component_id)
