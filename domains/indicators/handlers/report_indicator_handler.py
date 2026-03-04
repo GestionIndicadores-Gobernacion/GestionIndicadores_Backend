@@ -83,10 +83,12 @@ class ReportIndicatorHandler:
                 elif indicator.field_type in ("select", "multi_select"):
                     if isinstance(value, str):
                         acc["by_category"][value] += 1
+                        acc["by_month"][month_key] += 1  # ← nuevo
                     elif isinstance(value, list):
                         for option in value:
                             if isinstance(option, str):
                                 acc["by_category"][option] += 1
+                        acc["by_month"][month_key] += 1  # ← nuevo (una vez por reporte)
 
                 # ── categorized_group ────────────────────────────────────────
                 elif indicator.field_type == "categorized_group":
