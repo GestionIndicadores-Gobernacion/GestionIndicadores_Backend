@@ -49,3 +49,4 @@ class ReportSchema(Schema):
     )
 
     created_at = fields.DateTime(dump_only=True)
+    
