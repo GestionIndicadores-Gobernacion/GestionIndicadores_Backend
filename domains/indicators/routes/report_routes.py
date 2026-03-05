@@ -131,13 +131,6 @@ class ReportAggregateStrategy(MethodView):
     def get(self, strategy_id):
         return ReportAggregateHandler.aggregate_by_strategy(strategy_id)
 
-
-@blp.route("/aggregate/component/<int:component_id>/indicators")
-class ReportAggregateComponentIndicators(MethodView):
-    @jwt_required()
-    def get(self, component_id):
-        return ReportIndicatorHandler.aggregate_indicators_by_component(component_id)
-    
 @blp.route("/aggregate/component/<int:component_id>/indicators")
 class ReportAggregateComponentIndicators(MethodView):
     @jwt_required()
