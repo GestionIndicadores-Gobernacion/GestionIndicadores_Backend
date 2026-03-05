@@ -17,7 +17,6 @@ class Report(db.Model):
     report_date  = db.Column(db.Date,    nullable=False, index=True)
 
     executive_summary    = db.Column(db.Text,        nullable=False)
-    activities_performed = db.Column(db.Text,        nullable=False)
     intervention_location = db.Column(db.String(255), nullable=False)
     zone_type            = db.Column(db.Enum(ZoneTypeEnum), nullable=False)
     evidence_link        = db.Column(db.Text,        nullable=True)

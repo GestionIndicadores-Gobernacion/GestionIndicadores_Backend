@@ -33,7 +33,6 @@ class ReportSchema(Schema):
     report_date  = fields.Date(required=True)
 
     executive_summary     = fields.Str(required=True)
-    activities_performed  = fields.Str(required=True)
     intervention_location = fields.Str(required=True)
 
     zone_type = fields.Str(
