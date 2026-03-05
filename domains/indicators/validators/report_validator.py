@@ -20,9 +20,6 @@ class ReportValidator:
         if not data.get("executive_summary"):
             errors["executive_summary"] = "Executive summary required"
 
-        if not data.get("activities_performed"):
-            errors["activities_performed"] = "Activities required"
-
         if data.get("zone_type") not in ["Urbana", "Rural"]:
             errors["zone_type"] = "Invalid zone type"
 

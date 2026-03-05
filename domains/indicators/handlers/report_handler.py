@@ -30,7 +30,6 @@ class ReportHandler:
                 component_id=data["component_id"],
                 report_date=data["report_date"],
                 executive_summary=data["executive_summary"],
-                activities_performed=data["activities_performed"],
                 intervention_location=data["intervention_location"],
                 zone_type=ZoneTypeEnum(data["zone_type"]),
                 evidence_link=data.get("evidence_link"),
@@ -73,7 +72,6 @@ class ReportHandler:
             report.component_id          = data["component_id"]
             report.report_date           = data["report_date"]
             report.executive_summary     = data["executive_summary"]
-            report.activities_performed  = data["activities_performed"]
             report.intervention_location = data["intervention_location"]
             report.zone_type             = ZoneTypeEnum(data["zone_type"])
             report.evidence_link         = data.get("evidence_link")
