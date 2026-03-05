@@ -137,3 +137,11 @@ class ReportAggregateComponentIndicators(MethodView):
     @jwt_required()
     def get(self, component_id):
         return ReportIndicatorHandler.aggregate_indicators_by_component(component_id)
+    
+@blp.route("/aggregate/component/<int:component_id>/indicators")
+class ReportAggregateComponentIndicators(MethodView):
+    @jwt_required()
+    def get(self, component_id):
+        from flask import request
+        year = request.args.get('year', type=int)
+        return ReportIndicatorHandler.aggregate_indicators_by_component(component_id, year=year)
