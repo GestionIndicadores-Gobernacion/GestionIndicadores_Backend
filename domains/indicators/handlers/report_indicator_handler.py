@@ -1,5 +1,6 @@
 from collections import defaultdict
 from sqlalchemy.orm import selectinload, joinedload
+from sqlalchemy import extract
 
 from domains.indicators.models.Report.report import Report
 from domains.indicators.models.Report.report_indicator_value import ReportIndicatorValue
@@ -8,7 +9,7 @@ from domains.indicators.models.Report.report_indicator_value import ReportIndica
 class ReportIndicatorHandler:
 
     @staticmethod
-    def aggregate_indicators_by_component(component_id):
+    def aggregate_indicators_by_component(component_id, year: int = None):
         from domains.indicators.models.Component.component import Component
 
         component = Component.query.get(component_id)
@@ -16,15 +17,18 @@ class ReportIndicatorHandler:
             from flask import jsonify
             return jsonify({"message": "Componente no encontrado"}), 404
 
-        reports = (
+        query = (
             Report.query
             .options(
                 selectinload(Report.indicator_values).joinedload(ReportIndicatorValue.indicator)
             )
             .filter(Report.component_id == component_id)
-            .order_by(Report.report_date.asc())
-            .all()
         )
+
+        if year:
+            query = query.filter(extract('year', Report.report_date) == year)
+
+        reports = query.order_by(Report.report_date.asc()).all()
 
         if not reports:
             return {
@@ -83,18 +87,18 @@ class ReportIndicatorHandler:
                 elif indicator.field_type in ("select", "multi_select"):
                     if isinstance(value, str):
                         acc["by_category"][value] += 1
-                        acc["by_month"][month_key] += 1  # ← nuevo
+                        acc["by_month"][month_key] += 1
                     elif isinstance(value, list):
                         for option in value:
                             if isinstance(option, str):
                                 acc["by_category"][option] += 1
-                        acc["by_month"][month_key] += 1  # ← nuevo (una vez por reporte)
+                        acc["by_month"][month_key] += 1
 
                 # ── categorized_group ────────────────────────────────────────
                 elif indicator.field_type == "categorized_group":
                     if isinstance(value, dict):
                         data = value.get("data", {})
-                        month_total = 0  # ← nuevo
+                        month_total = 0
                         for category, genders in data.items():
                             if isinstance(genders, dict):
                                 for gender, metrics in genders.items():
@@ -104,9 +108,9 @@ class ReportIndicatorHandler:
                                             if isinstance(val, (int, float)):
                                                 acc["by_nested"][category][metric] += val
                                                 acc["by_nested"][f"{category} – {gender_clean}"][metric] += val
-                                                month_total += val  # ← nuevo
+                                                month_total += val
 
-                        acc["by_month"][month_key] += month_total  # ← nuevo
+                        acc["by_month"][month_key] += month_total
 
                         sub = value.get("sub_sections", {})
                         if isinstance(sub, dict):
@@ -161,7 +165,7 @@ class ReportIndicatorHandler:
                     ]
                     for category, metrics in acc["by_nested"].items()
                 }
-                entry["by_month"] = [  # ← nuevo
+                entry["by_month"] = [
                     {"month": m, "total": acc["by_month"].get(m, 0)}
                     for m in all_months
                 ]
