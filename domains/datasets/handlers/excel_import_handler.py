@@ -6,6 +6,45 @@ from domains.datasets.handlers.record_import_handler import import_records
 from domains.utils.normalizers import MAX_TABLE_NAME_LENGTH, normalize_name
 from extensions import db
 
+# Una fila necesita al menos esta fracción de columnas con datos para importarse.
+# Ejemplo: 0.3 significa que si hay 10 columnas, al menos 3 deben tener valor.
+MIN_ROW_FILL_RATIO = 0.3
+
+# Mínimo de valores no-nulos que debe tener una columna para no descartarse.
+# Columnas con menos valores que este % de las filas se descartan.
+MIN_COL_FILL_RATIO = 0.05
+
+
+def _clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Limpia el DataFrame antes de importar:
+    - Elimina columnas completamente vacías.
+    - Elimina columnas con muy pocos valores (< MIN_COL_FILL_RATIO).
+    - Elimina filas completamente vacías.
+    - Elimina filas con muy pocos valores (< MIN_ROW_FILL_RATIO de las columnas).
+    """
+    # 1. Eliminar columnas 100% vacías
+    df = df.dropna(axis=1, how="all")
+    if df.empty:
+        return df
+
+    # 2. Eliminar columnas con menos del MIN_COL_FILL_RATIO de datos
+    min_col_values = max(1, int(len(df) * MIN_COL_FILL_RATIO))
+    df = df.loc[:, df.notna().sum(axis=0) >= min_col_values]
+    if df.empty:
+        return df
+
+    # 3. Eliminar filas 100% vacías
+    df = df.dropna(axis=0, how="all")
+    if df.empty:
+        return df
+
+    # 4. Eliminar filas con menos del MIN_ROW_FILL_RATIO de columnas con datos
+    min_row_values = max(1, int(len(df.columns) * MIN_ROW_FILL_RATIO))
+    df = df[df.notna().sum(axis=1) >= min_row_values]
+
+    return df
+
 
 def import_excel_dataset(file, dataset_name):
     excel = pd.ExcelFile(file)
@@ -21,6 +60,7 @@ def import_excel_dataset(file, dataset_name):
     fields_created = 0
     records_inserted = 0
     failed_rows = 0
+    skipped_rows = 0
 
     for sheet_name in excel.sheet_names:
         df = excel.parse(sheet_name)
@@ -28,9 +68,13 @@ def import_excel_dataset(file, dataset_name):
         if df.empty:
             continue
 
-        df = df.dropna(axis=1, how="all")
+        original_rows = len(df)
+        df = _clean_dataframe(df)
+
         if df.empty:
             continue
+
+        skipped_rows += original_rows - len(df)
 
         table = Table(
             dataset_id=dataset.id,
@@ -57,5 +101,6 @@ def import_excel_dataset(file, dataset_name):
         "tables_created": tables_created,
         "fields_created": fields_created,
         "records_inserted": records_inserted,
-        "failed_rows": failed_rows
+        "failed_rows": failed_rows,
+        "skipped_rows": skipped_rows,
     }

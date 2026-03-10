@@ -129,6 +129,22 @@ class ReportIndicatorHandler:
                             if isinstance(val, (int, float)):
                                 acc["by_category"][group] += val
 
+                # ── dataset_select ────────────────────────────────────────────────
+                elif indicator.field_type == "dataset_select":
+                    if isinstance(value, dict):
+                        label = value.get("label") or str(value.get("id", "?"))
+                        acc["by_category"][label] += 1
+                        acc["by_month"][month_key] += 1
+
+                # ── dataset_multi_select ──────────────────────────────────────────
+                elif indicator.field_type == "dataset_multi_select":
+                    if isinstance(value, list):
+                        for item in value:
+                            if isinstance(item, dict):
+                                label = item.get("label") or str(item.get("id", "?"))
+                                acc["by_category"][label] += 1
+                        acc["by_month"][month_key] += 1
+
         # ── Serializar indicadores ───────────────────────────────────────────
         result = []
         all_months = sorted({r.report_date.strftime("%Y-%m") for r in reports})
@@ -147,7 +163,7 @@ class ReportIndicatorHandler:
                     for m in all_months
                 ]
 
-            elif field_type in ("sum_group", "grouped_data", "select", "multi_select"):
+            elif field_type in ("sum_group", "grouped_data", "select", "multi_select", "dataset_select", "dataset_multi_select"):
                 entry["by_category"] = [
                     {"category": cat, "total": round(total, 2)}
                     for cat, total in sorted(acc["by_category"].items(), key=lambda x: -x[1])
