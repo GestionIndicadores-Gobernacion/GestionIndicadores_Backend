@@ -15,7 +15,9 @@ class ComponentValidator:
         "sum_group",
         "grouped_data",
         "file_attachment",
-        "categorized_group",   # <-- nuevo
+        "categorized_group", 
+        "dataset_select",       
+        "dataset_multi_select",
     }
 
     # Tipos que requieren targets OBLIGATORIOS
@@ -25,7 +27,8 @@ class ComponentValidator:
     OPTIONAL_TARGET_TYPES = {"grouped_data"}
 
     # Tipos que NO aceptan targets
-    NO_TARGET_TYPES = {"text", "select", "multi_select", "file_attachment"}
+    NO_TARGET_TYPES = {"text", "select", "multi_select", "file_attachment",
+                   "dataset_select", "dataset_multi_select"}
 
     @staticmethod
     def validate_create(data, component_id=None):
@@ -132,6 +135,15 @@ class ComponentValidator:
             # ----------------------------------------
             if field_type == "categorized_group":
                 error = ComponentValidator._validate_categorized_group(ind)
+                if error:
+                    errors["indicators"] = error
+                    break
+                
+            # ----------------------------------------
+            # VALIDACIÓN: DATASET_SELECT / DATASET_MULTI_SELECT
+            # ----------------------------------------
+            if field_type in ("dataset_select", "dataset_multi_select"):
+                error = ComponentValidator._validate_dataset_select(ind)
                 if error:
                     errors["indicators"] = error
                     break
@@ -415,5 +427,29 @@ class ComponentValidator:
         if max_size_mb is not None:
             if not isinstance(max_size_mb, (int, float)) or max_size_mb <= 0:
                 return f"Indicator '{indicator.get('name')}': 'max_size_mb' must be a positive number"
+
+        return None
+    
+    @staticmethod
+    def _validate_dataset_select(indicator):
+        from domains.datasets.models.dataset import Dataset
+
+        config = indicator.get("config")
+        name   = indicator.get("name")
+
+        if not config:
+            return f"Indicator '{name}': dataset_select requires 'config'"
+
+        dataset_id = config.get("dataset_id")
+
+        if dataset_id is None:
+            return f"Indicator '{name}': config requires 'dataset_id'"
+
+        if not isinstance(dataset_id, int):
+            return f"Indicator '{name}': 'dataset_id' must be an integer"
+
+        dataset = Dataset.query.get(dataset_id)
+        if not dataset:
+            return f"Indicator '{name}': dataset {dataset_id} does not exist"
 
         return None

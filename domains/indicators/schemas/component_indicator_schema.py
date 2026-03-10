@@ -18,7 +18,9 @@ class ComponentIndicatorSchema(Schema):
             "sum_group",
             "grouped_data",
             "file_attachment",
-            "categorized_group",   # <-- nuevo
+            "categorized_group",
+            "dataset_select",        # ← selección simple de un registro de dataset
+            "dataset_multi_select", 
         ])
     )
     config      = fields.Dict(required=False, allow_none=True)

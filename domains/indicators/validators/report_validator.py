@@ -161,6 +161,18 @@ class ReportValidator:
                 error = ReportValidator._validate_categorized_group_value(indicator, val)
                 if error:
                     indicator_errors.append(error)
+                    
+            # DATASET_SELECT
+            elif field_type == "dataset_select":
+                error = ReportValidator._validate_dataset_select_value(indicator, val)
+                if error:
+                    indicator_errors.append(error)
+
+            # DATASET_MULTI_SELECT
+            elif field_type == "dataset_multi_select":
+                error = ReportValidator._validate_dataset_multi_select_value(indicator, val)
+                if error:
+                    indicator_errors.append(error)         
 
         if indicator_errors:
             errors["indicator_values"] = indicator_errors
@@ -257,31 +269,7 @@ class ReportValidator:
 
     @staticmethod
     def _validate_categorized_group_value(indicator, value):
-        """
-        Valida el valor reportado de un indicador tipo categorized_group.
 
-        Estructura esperada:
-        {
-            "selected_categories": ["Canino", "Felino"],
-            "data": {
-                "Canino": {
-                    "Hembra": { "vacunados": 3, "desparasitados": 0 },
-                    "Macho":  { "vacunados": 1, "desparasitados": 2 }
-                },
-                ...
-            },
-            "sub_sections": {
-                "red_animalia": {
-                    "Canino": { "vacunados": 2, "desparasitados": 1 },
-                    "Felino": { "vacunados": 0, "desparasitados": 3 }
-                }
-            }
-        }
-
-        Regla de sub_sections con max_source = "metrics_total":
-            sub_sections[section_key][category][metric_key]
-                <= sum(data[category][group][metric_key] for all groups)
-        """
         name   = indicator.name
         config = indicator.config or {}
 
@@ -377,5 +365,50 @@ class ReportValidator:
                             f"'{cat}/{metric_key}' ({sec_val}) cannot exceed "
                             f"the reported total for that category ({total})"
                         )
+
+        return None
+    
+    @staticmethod
+    def _validate_dataset_select_value(indicator, value):
+        from domains.datasets.models.dataset import Dataset
+
+        config = indicator.config or {}
+        dataset_id = config.get("dataset_id")
+
+        if not dataset_id:
+            return f"'{indicator.name}': config must include 'dataset_id'"
+
+        if not isinstance(value, int):
+            return f"'{indicator.name}': dataset_select value must be a dataset ID (integer)"
+
+        dataset = Dataset.query.get(value)
+        if not dataset:
+            return f"'{indicator.name}': dataset {value} does not exist"
+
+        return None
+
+
+    @staticmethod
+    def _validate_dataset_multi_select_value(indicator, value):
+        from domains.datasets.models.dataset import Dataset
+
+        config = indicator.config or {}
+        dataset_id = config.get("dataset_id")
+
+        if not dataset_id:
+            return f"'{indicator.name}': config must include 'dataset_id'"
+
+        if not isinstance(value, list):
+            return f"'{indicator.name}': dataset_multi_select must be a list of dataset IDs"
+
+        if indicator.is_required and len(value) == 0:
+            return f"'{indicator.name}': dataset_multi_select cannot be empty (required)"
+
+        existing_ids = {
+            d.id for d in Dataset.query.filter(Dataset.id.in_(value)).all()
+        }
+        invalid = set(value) - existing_ids
+        if invalid:
+            return f"'{indicator.name}': datasets {invalid} do not exist"
 
         return None

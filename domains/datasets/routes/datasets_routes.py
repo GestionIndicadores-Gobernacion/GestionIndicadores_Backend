@@ -1,7 +1,11 @@
+from flask import jsonify
 from flask_smorest import Blueprint
 from flask.views import MethodView
+from sqlalchemy import Table
 
 from domains.datasets.models.dataset import Dataset
+from domains.datasets.models.record import Record
+from domains.datasets.models.table import Table
 from domains.datasets.schemas.dataset_schema import DatasetSchema
 from domains.datasets.validators.dataset_validator import validate_dataset_name
 from extensions import db
@@ -66,3 +70,21 @@ class DatasetResource(MethodView):
 
         db.session.delete(dataset)   # 🔥 eliminación real
         db.session.commit()
+
+@blp.route("/<int:dataset_id>/tables/<int:table_id>/records")
+class DatasetTableRecordsResource(MethodView):
+
+    @blp.response(200)
+    def get(self, dataset_id, table_id):
+        # Verificar que la tabla pertenece al dataset
+        table = Table.query.filter_by(
+            id=table_id,
+            dataset_id=dataset_id
+        ).first_or_404()
+
+        records = Record.query.filter_by(table_id=table.id).all()
+
+        return jsonify([
+            {"id": r.id, "data": r.data}
+            for r in records
+        ])
