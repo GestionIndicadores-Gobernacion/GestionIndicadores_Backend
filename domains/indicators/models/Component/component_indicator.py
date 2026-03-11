@@ -13,27 +13,19 @@ class ComponentIndicator(db.Model):
         nullable=False
     )
 
-    name = db.Column(db.String(255), nullable=False)
-    field_type = db.Column(db.String(50), nullable=False)
-    config = db.Column(db.JSON, nullable=True)
-    order = db.Column(db.Integer, nullable=False, default=0)
+    name       = db.Column(db.String(255), nullable=False)
+    field_type = db.Column(db.String(50),  nullable=False)
+    config     = db.Column(db.JSON,        nullable=True)
+    order      = db.Column(db.Integer,     nullable=False, default=0)
 
-    is_required = db.Column(
-        db.Boolean,
-        default=True,
-        nullable=False
-    )
+    is_required = db.Column(db.Boolean, default=True, nullable=False)
 
-    created_at = db.Column(
-        db.DateTime,
-        default=datetime.utcnow,
-        nullable=False
-    )
+    group_name     = db.Column(db.String(100), nullable=True)
+    group_required = db.Column(db.Boolean,     nullable=True, default=False)
 
-    component = db.relationship(
-        "Component",
-        back_populates="indicators"
-    )
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+
+    component = db.relationship("Component", back_populates="indicators")
 
     targets = db.relationship(
         "ComponentIndicatorTarget",

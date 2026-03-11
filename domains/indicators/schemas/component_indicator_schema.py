@@ -19,12 +19,17 @@ class ComponentIndicatorSchema(Schema):
             "grouped_data",
             "file_attachment",
             "categorized_group",
-            "dataset_select",        # ← selección simple de un registro de dataset
-            "dataset_multi_select", 
+            "dataset_select",
+            "dataset_multi_select",
         ])
     )
     config      = fields.Dict(required=False, allow_none=True)
     is_required = fields.Bool(required=False)
+
+    # ── GRUPO MUTUAMENTE EXCLUYENTE ─────────────────────────────────────────
+    group_name     = fields.Str(allow_none=True, load_default=None)
+    group_required = fields.Bool(load_default=False)
+    # ────────────────────────────────────────────────────────────────────────
 
     targets = fields.List(
         fields.Nested(ComponentIndicatorTargetSchema),

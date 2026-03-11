@@ -135,6 +135,8 @@ class ComponentHandler:
                 indicator.field_type = ind_data["field_type"]
                 indicator.config     = ind_data.get("config")
                 indicator.is_required = ind_data.get("is_required", True)
+                indicator.group_name     = ind_data.get("group_name")  
+                indicator.group_required = ind_data.get("group_required", False)
                 indicator.order      = index
             else:
                 # Crear nuevo indicador
@@ -214,6 +216,8 @@ class ComponentHandler:
                 field_type=ind["field_type"],
                 config=ind.get("config"),
                 is_required=ind.get("is_required", True),
+                group_name=ind.get("group_name"),          # ← NUEVO
+                group_required=ind.get("group_required", False),  # ← NUEVO
                 order=index
             )
 

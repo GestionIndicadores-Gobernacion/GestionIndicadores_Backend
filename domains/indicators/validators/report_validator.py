@@ -63,6 +63,36 @@ class ReportValidator:
             if indicator:
                 values_by_name[indicator.name] = value.get("value")
 
+        # ── GRUPOS MUTUAMENTE EXCLUYENTES ───────────────────────────────────────
+        # Agrupar indicadores del componente por group_name
+        from collections import defaultdict
+        groups_in_component = defaultdict(list)
+        for ind in component_indicators:
+            if ind.group_name:
+                groups_in_component[ind.group_name].append(ind)
+
+        # IDs de indicadores que vienen en el payload
+        submitted_ids = {v.get("indicator_id") for v in indicator_values}
+
+        # Validar que cada grupo con group_required=True tenga al menos un miembro enviado
+        for gname, members in groups_in_component.items():
+            if any(m.group_required for m in members):
+                submitted_in_group = [m for m in members if m.id in submitted_ids]
+                if not submitted_in_group:
+                    names = " / ".join(m.name for m in members)
+                    errors[f"group_{gname}"] = (
+                        f"At least one of the following indicators must be reported: {names}"
+                    )
+
+        # IDs de indicadores que pertenecen a algún grupo
+        # → su is_required individual se ignora si no fueron enviados
+        grouped_indicator_ids = {
+            m.id
+            for members in groups_in_component.values()
+            for m in members
+        }
+        # ────────────────────────────────────────────────────────────────────────
+
         for value in indicator_values:
 
             indicator = indicator_map.get(value.get("indicator_id"))
@@ -75,7 +105,10 @@ class ReportValidator:
             val        = value.get("value")
 
             if val is None:
-                if indicator.is_required:
+                # Si pertenece a un grupo, is_required individual se ignora
+                # (el grupo ya fue validado como conjunto arriba)
+                in_group = indicator.id in grouped_indicator_ids
+                if indicator.is_required and not in_group:
                     indicator_errors.append(
                         f"'{indicator.name}' is required and cannot be null"
                     )
@@ -161,7 +194,7 @@ class ReportValidator:
                 error = ReportValidator._validate_categorized_group_value(indicator, val)
                 if error:
                     indicator_errors.append(error)
-                    
+
             # DATASET_SELECT
             elif field_type == "dataset_select":
                 error = ReportValidator._validate_dataset_select_value(indicator, val)
@@ -172,13 +205,13 @@ class ReportValidator:
             elif field_type == "dataset_multi_select":
                 error = ReportValidator._validate_dataset_multi_select_value(indicator, val)
                 if error:
-                    indicator_errors.append(error)         
+                    indicator_errors.append(error)
 
         if indicator_errors:
             errors["indicator_values"] = indicator_errors
 
         return errors
-
+    
     # =============================================
     # VALIDADORES ESPECÍFICOS PARA VALORES
     # =============================================
