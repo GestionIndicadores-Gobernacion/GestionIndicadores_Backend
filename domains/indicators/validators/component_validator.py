@@ -18,6 +18,7 @@ class ComponentValidator:
         "categorized_group", 
         "dataset_select",       
         "dataset_multi_select",
+        "group_name"
     }
 
     # Tipos que requieren targets OBLIGATORIOS
@@ -165,8 +166,12 @@ class ComponentValidator:
                         errors["indicators"] = error
                         break
 
-        return errors
 
+        group_error = ComponentValidator._validate_groups(indicators)
+        if group_error:
+            errors["indicators"] = group_error
+
+        return errors                         
     # =============================================
     # VALIDADORES ESPECÍFICOS POR TIPO
     # =============================================
@@ -271,31 +276,7 @@ class ComponentValidator:
 
     @staticmethod
     def _validate_categorized_group(indicator):
-        """
-        Valida el config de un indicador tipo categorized_group.
-
-        Config esperado:
-        {
-            "category_label": "Tipo de animal",          # label del selector de categorías
-            "categories": ["Canino", "Felino", ...],      # opciones disponibles (configurables)
-            "groups": ["Hembra", "Macho"],                # subgrupos dentro de cada categoría (configurables)
-            "metrics": [                                  # métricas numéricas a capturar
-                { "key": "vacunados", "label": "Nº Vacunados" },
-                ...
-            ],
-            "sub_sections": [                             # secciones adicionales opcionales
-                {
-                    "key": "red_animalia",
-                    "label": "¿Cuántos pertenecen a la Red Animalia?",
-                    "max_source": "metrics_total"         # el valor no puede superar el total de la métrica
-                }
-            ]
-        }
-
-        La meta (target) representa el total general esperado del indicador por año.
-        Los sub_sections son opcionales; si max_source = "metrics_total", se valida
-        al reportar que el valor <= suma de esa métrica en todos los grupos y categorías.
-        """
+    
         config = indicator.get("config")
         name   = indicator.get("name")
 
@@ -453,3 +434,32 @@ class ComponentValidator:
             return f"Indicator '{name}': dataset {dataset_id} does not exist"
 
         return None
+    
+    @staticmethod
+    def _validate_groups(indicators):
+        """
+        Valida que los grupos mutuamente excluyentes estén bien configurados:
+        - Un grupo debe tener al menos 2 indicadores.
+        - group_required debe ser consistente dentro del grupo (todos True o todos False).
+        """
+        from collections import defaultdict
+        groups = defaultdict(list)
+
+        for ind in indicators:
+            gname = ind.get("group_name")
+            if gname:
+                groups[gname].append(ind)
+
+        for gname, members in groups.items():
+            if len(members) < 2:
+                return (
+                    f"Group '{gname}' must have at least 2 indicators"
+                )
+            required_values = {m.get("group_required", False) for m in members}
+            if len(required_values) > 1:
+                return (
+                    f"Group '{gname}': all indicators must have the same 'group_required' value"
+                )
+
+        return None
+        
