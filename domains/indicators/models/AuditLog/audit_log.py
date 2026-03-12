@@ -1,5 +1,5 @@
 from extensions import db
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 class AuditLog(db.Model):
@@ -11,8 +11,8 @@ class AuditLog(db.Model):
     entity_id = db.Column(db.Integer,     nullable=False)
     action    = db.Column(db.String(20),  nullable=False)  # "created" | "updated" | "deleted"
     detail    = db.Column(db.Text,        nullable=True)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-
+    created_at = db.Column(db.DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
+    
     user = db.relationship("User", backref=db.backref("audit_logs", lazy=True))
 
     def __repr__(self):
