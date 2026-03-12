@@ -126,6 +126,13 @@ class ReportValidator:
                     )
                     continue
 
+                # Validar min_value si está configurado
+                min_value = (indicator.config or {}).get("min_value")
+                if min_value is not None and val < min_value:
+                    indicator_errors.append(
+                        f"'{indicator.name}' must be greater than or equal to {min_value}"
+                    )
+
                 target = ComponentIndicatorTarget.query.filter_by(
                     indicator_id=indicator.id,
                     year=report_year
