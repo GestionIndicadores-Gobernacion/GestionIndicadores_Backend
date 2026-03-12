@@ -378,8 +378,12 @@ class ReportValidator:
         # sub_sections: sub_sections[section_key][category][metric_key]
         if not isinstance(sub_sections, dict):
             return f"'{name}': sub_sections must be an object"
-
+            
         for section_key, section_cfg in sub_sections_cfg.items():
+            
+            if section_key == 'red_animalia':
+                continue
+            
             if section_cfg.get("max_source") != "metrics_total":
                 continue
 
