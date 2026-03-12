@@ -8,4 +8,4 @@ class AuditLogSchema(Schema):
     entity_id  = fields.Int()
     action     = fields.Str()
     detail     = fields.Str(allow_none=True)
-    created_at = fields.DateTime(dump_only=True)
+    created_at = fields.DateTime(dump_only=True, format='iso')
