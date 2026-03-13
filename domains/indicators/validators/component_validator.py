@@ -86,72 +86,48 @@ class ComponentValidator:
                 errors["indicators"] = f"Invalid field_type: '{field_type}'"
                 break
 
-            # ----------------------------------------
-            # VALIDACIÓN: SELECT
-            # ----------------------------------------
             if field_type == "select":
                 error = ComponentValidator._validate_select(ind)
                 if error:
                     errors["indicators"] = error
                     break
 
-            # ----------------------------------------
-            # VALIDACIÓN: MULTI_SELECT
-            # ----------------------------------------
             if field_type == "multi_select":
                 error = ComponentValidator._validate_multi_select(ind)
                 if error:
                     errors["indicators"] = error
                     break
 
-            # ----------------------------------------
-            # VALIDACIÓN: SUM_GROUP
-            # ----------------------------------------
             if field_type == "sum_group":
                 error = ComponentValidator._validate_sum_group(ind)
                 if error:
                     errors["indicators"] = error
                     break
 
-            # ----------------------------------------
-            # VALIDACIÓN: GROUPED_DATA
-            # ----------------------------------------
             if field_type == "grouped_data":
                 error = ComponentValidator._validate_grouped_data(ind, indicator_map)
                 if error:
                     errors["indicators"] = error
                     break
 
-            # ----------------------------------------
-            # VALIDACIÓN: FILE_ATTACHMENT
-            # ----------------------------------------
             if field_type == "file_attachment":
                 error = ComponentValidator._validate_file_attachment(ind)
                 if error:
                     errors["indicators"] = error
                     break
 
-            # ----------------------------------------
-            # VALIDACIÓN: CATEGORIZED_GROUP
-            # ----------------------------------------
             if field_type == "categorized_group":
                 error = ComponentValidator._validate_categorized_group(ind)
                 if error:
                     errors["indicators"] = error
                     break
                 
-            # ----------------------------------------
-            # VALIDACIÓN: DATASET_SELECT / DATASET_MULTI_SELECT
-            # ----------------------------------------
             if field_type in ("dataset_select", "dataset_multi_select"):
                 error = ComponentValidator._validate_dataset_select(ind)
                 if error:
                     errors["indicators"] = error
                     break
 
-            # ----------------------------------------
-            # VALIDACIÓN: TARGETS
-            # ----------------------------------------
             if field_type in ComponentValidator.REQUIRED_TARGET_TYPES:
                 error = ComponentValidator._validate_targets(ind, required=True)
                 if error:
@@ -166,12 +142,12 @@ class ComponentValidator:
                         errors["indicators"] = error
                         break
 
-
         group_error = ComponentValidator._validate_groups(indicators)
         if group_error:
             errors["indicators"] = group_error
 
         return errors                         
+
     # =============================================
     # VALIDADORES ESPECÍFICOS POR TIPO
     # =============================================
@@ -283,11 +259,9 @@ class ComponentValidator:
         if not config:
             return f"Indicator '{name}': categorized_group requires 'config'"
 
-        # --- category_label ---
         if not config.get("category_label"):
             return f"Indicator '{name}': config requires 'category_label'"
 
-        # --- categories ---
         categories = config.get("categories")
         if not categories or not isinstance(categories, list) or len(categories) == 0:
             return f"Indicator '{name}': config requires 'categories' as a non-empty list"
@@ -295,7 +269,6 @@ class ComponentValidator:
         if len(set(categories)) != len(categories):
             return f"Indicator '{name}': 'categories' cannot have duplicates"
 
-        # --- groups ---
         groups = config.get("groups")
         if not groups or not isinstance(groups, list) or len(groups) == 0:
             return f"Indicator '{name}': config requires 'groups' as a non-empty list"
@@ -303,7 +276,6 @@ class ComponentValidator:
         if len(set(groups)) != len(groups):
             return f"Indicator '{name}': 'groups' cannot have duplicates"
 
-        # --- metrics ---
         metrics = config.get("metrics")
         if not metrics or not isinstance(metrics, list) or len(metrics) == 0:
             return f"Indicator '{name}': config requires 'metrics' as a non-empty list"
@@ -320,7 +292,6 @@ class ComponentValidator:
                 return f"Indicator '{name}': duplicate metric key '{m['key']}'"
             metric_keys.add(m["key"])
 
-        # --- sub_sections (opcionales) ---
         sub_sections = config.get("sub_sections")
         if sub_sections is not None:
             if not isinstance(sub_sections, list):
@@ -349,9 +320,6 @@ class ComponentValidator:
 
     @staticmethod
     def _validate_targets(indicator, required=True):
-        """
-        Valida targets anuales.
-        """
         targets = indicator.get("targets")
 
         if required and not targets:
@@ -383,11 +351,6 @@ class ComponentValidator:
 
     @staticmethod
     def _validate_file_attachment(indicator):
-        """
-        Config es opcional. Si viene puede tener:
-        - allowed_types: lista de extensiones ej: ["pdf", "docx"]
-        - max_size_mb: numero positivo
-        """
         config = indicator.get("config")
         if not config:
             return None
@@ -433,15 +396,22 @@ class ComponentValidator:
         if not dataset:
             return f"Indicator '{name}': dataset {dataset_id} does not exist"
 
+        # ── show_if (opcional) ──────────────────────────────────────────────
+        # Permite condicionar la obligatoriedad a otro indicador.
+        # Estructura: {"indicator_name": "<nombre>", "value": "<valor>"}
+        show_if = config.get("show_if")
+        if show_if is not None:
+            if not isinstance(show_if, dict):
+                return f"Indicator '{name}': 'show_if' must be an object"
+            if not show_if.get("indicator_name"):
+                return f"Indicator '{name}': 'show_if' requires 'indicator_name'"
+            if show_if.get("value") is None:
+                return f"Indicator '{name}': 'show_if' requires 'value'"
+
         return None
     
     @staticmethod
     def _validate_groups(indicators):
-        """
-        Valida que los grupos mutuamente excluyentes estén bien configurados:
-        - Un grupo debe tener al menos 2 indicadores.
-        - group_required debe ser consistente dentro del grupo (todos True o todos False).
-        """
         from collections import defaultdict
         groups = defaultdict(list)
 
@@ -452,14 +422,9 @@ class ComponentValidator:
 
         for gname, members in groups.items():
             if len(members) < 2:
-                return (
-                    f"Group '{gname}' must have at least 2 indicators"
-                )
+                return f"Group '{gname}' must have at least 2 indicators"
             required_values = {m.get("group_required", False) for m in members}
             if len(required_values) > 1:
-                return (
-                    f"Group '{gname}': all indicators must have the same 'group_required' value"
-                )
+                return f"Group '{gname}': all indicators must have the same 'group_required' value"
 
         return None
-        

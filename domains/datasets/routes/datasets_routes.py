@@ -42,6 +42,9 @@ class DatasetListResource(MethodView):
 
         return dataset
 
+# =========================
+# DETALLE / UPDATE / DELETE
+# =========================
 @blp.route("/<int:dataset_id>")
 class DatasetResource(MethodView):
 
@@ -67,16 +70,51 @@ class DatasetResource(MethodView):
     @blp.response(204)
     def delete(self, dataset_id):
         dataset = Dataset.query.get_or_404(dataset_id)
-
-        db.session.delete(dataset)   # 🔥 eliminación real
+        db.session.delete(dataset)
         db.session.commit()
 
+# =========================
+# RECORDS DE TODAS LAS TABLAS DEL DATASET
+# GET /datasets/:id/records
+# Usado por indicadores dataset_select para listar opciones
+# =========================
+@blp.route("/<int:dataset_id>/records")
+class DatasetRecordsResource(MethodView):
+
+    def get(self, dataset_id):
+        dataset = Dataset.query.get_or_404(dataset_id)
+
+        # Obtener todas las tablas activas del dataset
+        tables = Table.query.filter_by(
+            dataset_id=dataset_id,
+            active=True
+        ).all()
+
+        table_ids = [t.id for t in tables]
+
+        if not table_ids:
+            return jsonify([])
+
+        records = (
+            Record.query
+            .filter(Record.table_id.in_(table_ids))
+            .order_by(Record.id.asc())
+            .all()
+        )
+
+        return jsonify([
+            {"id": r.id, "data": r.data}
+            for r in records
+        ])
+
+# =========================
+# RECORDS POR TABLA ESPECÍFICA
+# GET /datasets/:id/tables/:table_id/records
+# =========================
 @blp.route("/<int:dataset_id>/tables/<int:table_id>/records")
 class DatasetTableRecordsResource(MethodView):
 
-    @blp.response(200)
     def get(self, dataset_id, table_id):
-        # Verificar que la tabla pertenece al dataset
         table = Table.query.filter_by(
             id=table_id,
             dataset_id=dataset_id

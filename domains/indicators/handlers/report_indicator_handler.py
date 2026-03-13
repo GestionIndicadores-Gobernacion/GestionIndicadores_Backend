@@ -35,8 +35,36 @@ class ReportIndicatorHandler:
                 "component_id": component_id,
                 "indicators": [],
                 "by_location": [],
-                "by_location_indicator": []
+                "by_location_indicator": [],
+                "by_actor_location": []
             }
+
+        # ── Cargar records de datasets usados por indicadores dataset_select ─
+        # Una sola query por dataset para no hacer N+1
+        from domains.indicators.models.Component.component_indicator import ComponentIndicator
+        from domains.datasets.models.record import Record
+        from domains.datasets.models.table import Table
+
+        ds_indicators = ComponentIndicator.query.filter_by(
+            component_id=component_id
+        ).filter(
+            ComponentIndicator.field_type.in_(["dataset_select", "dataset_multi_select"])
+        ).all()
+
+        # dataset_id -> {record_id -> record_data}
+        dataset_record_map: dict[int, dict[int, dict]] = {}
+
+        for ds_ind in ds_indicators:
+            cfg        = ds_ind.config or {}
+            dataset_id = cfg.get("dataset_id")
+            if not dataset_id or dataset_id in dataset_record_map:
+                continue
+            tables    = Table.query.filter_by(dataset_id=dataset_id).all()
+            table_ids = [t.id for t in tables]
+            if not table_ids:
+                continue
+            records = Record.query.filter(Record.table_id.in_(table_ids)).all()
+            dataset_record_map[dataset_id] = {r.id: r.data for r in records}
 
         # ── Acumulador por indicador ─────────────────────────────────────────
         accumulator = defaultdict(lambda: {
@@ -48,8 +76,14 @@ class ReportIndicatorHandler:
         })
 
         # ── Acumulador por localización ──────────────────────────────────────
-        location_counts = defaultdict(int)
+        location_counts    = defaultdict(int)
         location_indicator = defaultdict(lambda: defaultdict(float))
+
+        # ── Acumulador actor por localización ────────────────────────────────
+        # indicator_id -> location -> actor_label -> count
+        actor_location_acc: dict[int, dict[str, dict[str, int]]] = defaultdict(
+            lambda: defaultdict(lambda: defaultdict(int))
+        )
 
         for r in reports:
             month_key = r.report_date.strftime("%Y-%m")
@@ -62,8 +96,8 @@ class ReportIndicatorHandler:
                 if not indicator:
                     continue
 
-                acc = accumulator[iv.indicator_id]
-                acc["name"] = indicator.name
+                acc   = accumulator[iv.indicator_id]
+                acc["name"]       = indicator.name
                 acc["field_type"] = indicator.field_type
                 value = iv.value
 
@@ -97,7 +131,7 @@ class ReportIndicatorHandler:
                 # ── categorized_group ────────────────────────────────────────
                 elif indicator.field_type == "categorized_group":
                     if isinstance(value, dict):
-                        data = value.get("data", {})
+                        data        = value.get("data", {})
                         month_total = 0
                         for category, genders in data.items():
                             if isinstance(genders, dict):
@@ -129,32 +163,58 @@ class ReportIndicatorHandler:
                             if isinstance(val, (int, float)):
                                 acc["by_category"][group] += val
 
-                # ── dataset_select ────────────────────────────────────────────────
+                # ── dataset_select ───────────────────────────────────────────
                 elif indicator.field_type == "dataset_select":
-                    if isinstance(value, dict):
-                        label = value.get("label") or str(value.get("id", "?"))
+                    if isinstance(value, int):
+                        cfg        = indicator.config or {}
+                        dataset_id = cfg.get("dataset_id")
+                        record_data = dataset_record_map.get(dataset_id, {}).get(value, {})
+
+                        # Label: preferir 'nombre', luego 'albergue_o_fundación', luego id
+                        label = (
+                            record_data.get("nombre")
+                            or record_data.get("albergue_o_fundación")
+                            or str(value)
+                        )
                         acc["by_category"][label] += 1
                         acc["by_month"][month_key] += 1
 
-                # ── dataset_multi_select ──────────────────────────────────────────
+                        # Acumular por (location, actor)
+                        if r.intervention_location:
+                            actor_location_acc[iv.indicator_id][r.intervention_location][label] += 1
+
+                # ── dataset_multi_select ─────────────────────────────────────
                 elif indicator.field_type == "dataset_multi_select":
                     if isinstance(value, list):
-                        for item in value:
-                            if isinstance(item, dict):
-                                label = item.get("label") or str(item.get("id", "?"))
-                                acc["by_category"][label] += 1
+                        cfg        = indicator.config or {}
+                        dataset_id = cfg.get("dataset_id")
+                        record_lookup = dataset_record_map.get(dataset_id, {})
+
+                        for record_id in value:
+                            if not isinstance(record_id, int):
+                                continue
+                            record_data = record_lookup.get(record_id, {})
+                            label = (
+                                record_data.get("nombre")
+                                or record_data.get("albergue_o_fundación")
+                                or str(record_id)
+                            )
+                            acc["by_category"][label] += 1
+                            if r.intervention_location:
+                                actor_location_acc[iv.indicator_id][r.intervention_location][label] += 1
+
                         acc["by_month"][month_key] += 1
 
         # ── Serializar indicadores ───────────────────────────────────────────
-        result = []
+        result     = []
         all_months = sorted({r.report_date.strftime("%Y-%m") for r in reports})
 
         for indicator_id, acc in accumulator.items():
             field_type = acc["field_type"]
             entry = {
-                "indicator_id": indicator_id,
+                "indicator_id":   indicator_id,
                 "indicator_name": acc["name"],
-                "field_type": field_type,
+                "field_type":     field_type,
             }
 
             if field_type == "number":
@@ -163,7 +223,8 @@ class ReportIndicatorHandler:
                     for m in all_months
                 ]
 
-            elif field_type in ("sum_group", "grouped_data", "select", "multi_select", "dataset_select", "dataset_multi_select"):
+            elif field_type in ("sum_group", "grouped_data", "select", "multi_select",
+                                "dataset_select", "dataset_multi_select"):
                 entry["by_category"] = [
                     {"category": cat, "total": round(total, 2)}
                     for cat, total in sorted(acc["by_category"].items(), key=lambda x: -x[1])
@@ -206,9 +267,30 @@ class ReportIndicatorHandler:
             for loc, indicators in sorted(location_indicator.items())
         ]
 
+        # ── Serializar by_actor_location ─────────────────────────────────────
+        # Para cada indicador dataset_select, muestra actores por municipio
+        by_actor_location = []
+        for indicator_id, locations in actor_location_acc.items():
+            ind_name = accumulator[indicator_id]["name"] if indicator_id in accumulator else str(indicator_id)
+            by_actor_location.append({
+                "indicator_id":   indicator_id,
+                "indicator_name": ind_name,
+                "by_location": [
+                    {
+                        "location": loc,
+                        "actors": [
+                            {"actor": actor, "count": count}
+                            for actor, count in sorted(actors.items(), key=lambda x: -x[1])
+                        ]
+                    }
+                    for loc, actors in sorted(locations.items())
+                ]
+            })
+
         return {
-            "component_id": component_id,
-            "indicators": result,
-            "by_location": by_location,
-            "by_location_indicator": by_location_indicator
+            "component_id":          component_id,
+            "indicators":            result,
+            "by_location":           by_location,
+            "by_location_indicator": by_location_indicator,
+            "by_actor_location":     by_actor_location,
         }

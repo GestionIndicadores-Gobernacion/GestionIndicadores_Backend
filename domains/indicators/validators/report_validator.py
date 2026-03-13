@@ -56,7 +56,7 @@ class ReportValidator:
         report_date = data.get("report_date")
         report_year = report_date.year if report_date else None
 
-        # Mapa de valores por nombre (para grouped_data / categorized_group)
+        # Mapa de valores por nombre (para grouped_data / categorized_group / show_if)
         values_by_name = {}
         for value in indicator_values:
             indicator = indicator_map.get(value.get("indicator_id"))
@@ -64,17 +64,14 @@ class ReportValidator:
                 values_by_name[indicator.name] = value.get("value")
 
         # ── GRUPOS MUTUAMENTE EXCLUYENTES ───────────────────────────────────────
-        # Agrupar indicadores del componente por group_name
         from collections import defaultdict
         groups_in_component = defaultdict(list)
         for ind in component_indicators:
             if ind.group_name:
                 groups_in_component[ind.group_name].append(ind)
 
-        # IDs de indicadores que vienen en el payload
         submitted_ids = {v.get("indicator_id") for v in indicator_values}
 
-        # Validar que cada grupo con group_required=True tenga al menos un miembro enviado
         for gname, members in groups_in_component.items():
             if any(m.group_required for m in members):
                 submitted_in_group = [m for m in members if m.id in submitted_ids]
@@ -84,8 +81,6 @@ class ReportValidator:
                         f"At least one of the following indicators must be reported: {names}"
                     )
 
-        # IDs de indicadores que pertenecen a algún grupo
-        # → su is_required individual se ignora si no fueron enviados
         grouped_indicator_ids = {
             m.id
             for members in groups_in_component.values()
@@ -105,9 +100,13 @@ class ReportValidator:
             val        = value.get("value")
 
             if val is None:
-                # Si pertenece a un grupo, is_required individual se ignora
-                # (el grupo ya fue validado como conjunto arriba)
-                in_group = indicator.id in grouped_indicator_ids
+                in_group    = indicator.id in grouped_indicator_ids
+                show_if_active = ReportValidator._show_if_is_active(indicator, values_by_name)
+
+                # Si show_if no se cumple → el indicador no aplica en este reporte
+                if not show_if_active:
+                    continue
+
                 if indicator.is_required and not in_group:
                     indicator_errors.append(
                         f"'{indicator.name}' is required and cannot be null"
@@ -126,7 +125,6 @@ class ReportValidator:
                     )
                     continue
 
-                # Validar min_value si está configurado
                 min_value = (indicator.config or {}).get("min_value")
                 if min_value is not None and val < min_value:
                     indicator_errors.append(
@@ -204,21 +202,75 @@ class ReportValidator:
 
             # DATASET_SELECT
             elif field_type == "dataset_select":
+                # Si show_if no se cumple, ignorar aunque venga en el payload
+                if not ReportValidator._show_if_is_active(indicator, values_by_name):
+                    continue
                 error = ReportValidator._validate_dataset_select_value(indicator, val)
                 if error:
                     indicator_errors.append(error)
 
             # DATASET_MULTI_SELECT
             elif field_type == "dataset_multi_select":
+                if not ReportValidator._show_if_is_active(indicator, values_by_name):
+                    continue
                 error = ReportValidator._validate_dataset_multi_select_value(indicator, val)
                 if error:
                     indicator_errors.append(error)
+
+        # ── Verificar dataset_select con show_if activo que son required
+        # pero no vinieron en el payload en absoluto ──────────────────────────
+        for ind in component_indicators:
+            if ind.field_type not in ("dataset_select", "dataset_multi_select"):
+                continue
+            if not ind.is_required:
+                continue
+            cfg     = ind.config or {}
+            show_if = cfg.get("show_if")
+            if not show_if:
+                continue
+            if not ReportValidator._show_if_is_active(ind, values_by_name):
+                continue
+            # show_if activo + required → debe estar en el payload
+            was_submitted = any(v.get("indicator_id") == ind.id for v in indicator_values)
+            if not was_submitted:
+                indicator_errors.append(
+                    f"'{ind.name}' is required when "
+                    f"'{show_if['indicator_name']}' = '{show_if['value']}'"
+                )
 
         if indicator_errors:
             errors["indicator_values"] = indicator_errors
 
         return errors
-    
+
+    # =============================================
+    # HELPER: evaluar show_if
+    # =============================================
+
+    @staticmethod
+    def _show_if_is_active(indicator, values_by_name: dict) -> bool:
+        """
+        Retorna True si el indicador debe aplicarse según su show_if.
+        Sin show_if → siempre True (comportamiento normal).
+
+        show_if: {"indicator_name": "¿PERTENECE A LA RED ANIMALIA?", "value": "SI"}
+        """
+        config  = indicator.config or {}
+        show_if = config.get("show_if")
+
+        if not show_if:
+            return True
+
+        parent_name    = show_if.get("indicator_name")
+        required_value = show_if.get("value")
+        actual_value   = values_by_name.get(parent_name)
+
+        # Soporte para padre de tipo multi_select
+        if isinstance(actual_value, list):
+            return required_value in actual_value
+
+        return actual_value == required_value
+
     # =============================================
     # VALIDADORES ESPECÍFICOS PARA VALORES
     # =============================================
@@ -325,7 +377,6 @@ class ReportValidator:
         data                = value.get("data", {})
         sub_sections        = value.get("sub_sections", {})
 
-        # selected_categories
         if not isinstance(selected_categories, list):
             return f"'{name}': selected_categories must be a list"
 
@@ -336,12 +387,9 @@ class ReportValidator:
         if invalid_cats:
             return f"'{name}': invalid categories: {invalid_cats}"
 
-        # data
         if not isinstance(data, dict):
             return f"'{name}': data must be an object"
 
-        # Calcular total por (categoría, métrica) — necesario para validar sub_sections
-        # category_metric_totals[cat][metric_key] = suma de todos los grupos
         category_metric_totals: dict[str, dict[str, float]] = {}
 
         for cat in selected_categories:
@@ -370,12 +418,10 @@ class ReportValidator:
                         )
                     category_metric_totals[cat][key] += val
 
-        # Categorías en data que no están en selected_categories
         for cat in data:
             if cat not in selected_categories:
                 return f"'{name}': data contains category '{cat}' that was not selected"
 
-        # sub_sections: sub_sections[section_key][category][metric_key]
         if not isinstance(sub_sections, dict):
             return f"'{name}': sub_sections must be an object"
             
@@ -414,45 +460,61 @@ class ReportValidator:
     
     @staticmethod
     def _validate_dataset_select_value(indicator, value):
-        from domains.datasets.models.dataset import Dataset
+        from domains.datasets.models.record import Record
 
-        config = indicator.config or {}
+        config     = indicator.config or {}
         dataset_id = config.get("dataset_id")
 
         if not dataset_id:
             return f"'{indicator.name}': config must include 'dataset_id'"
 
         if not isinstance(value, int):
-            return f"'{indicator.name}': dataset_select value must be a dataset ID (integer)"
+            return f"'{indicator.name}': dataset_select value must be a record ID (integer)"
 
-        dataset = Dataset.query.get(value)
-        if not dataset:
-            return f"'{indicator.name}': dataset {value} does not exist"
+        from domains.datasets.models.table import Table
+        valid_table_ids = [t.id for t in Table.query.filter_by(dataset_id=dataset_id).all()]
+        if not valid_table_ids:
+            return f"'{indicator.name}': dataset {dataset_id} has no tables"
+
+        record = Record.query.filter(
+            Record.id == value,
+            Record.table_id.in_(valid_table_ids)
+        ).first()
+
+        if not record:
+            return f"'{indicator.name}': record {value} does not exist in dataset {dataset_id}"
 
         return None
 
-
     @staticmethod
     def _validate_dataset_multi_select_value(indicator, value):
-        from domains.datasets.models.dataset import Dataset
+        from domains.datasets.models.record import Record
+        from domains.datasets.models.table import Table
 
-        config = indicator.config or {}
+        config     = indicator.config or {}
         dataset_id = config.get("dataset_id")
 
         if not dataset_id:
             return f"'{indicator.name}': config must include 'dataset_id'"
 
         if not isinstance(value, list):
-            return f"'{indicator.name}': dataset_multi_select must be a list of dataset IDs"
+            return f"'{indicator.name}': dataset_multi_select must be a list of record IDs"
 
         if indicator.is_required and len(value) == 0:
             return f"'{indicator.name}': dataset_multi_select cannot be empty (required)"
 
+        valid_table_ids = [t.id for t in Table.query.filter_by(dataset_id=dataset_id).all()]
+        if not valid_table_ids:
+            return f"'{indicator.name}': dataset {dataset_id} has no tables"
+
         existing_ids = {
-            d.id for d in Dataset.query.filter(Dataset.id.in_(value)).all()
+            r.id for r in Record.query.filter(
+                Record.id.in_(value),
+                Record.table_id.in_(valid_table_ids)
+            ).all()
         }
         invalid = set(value) - existing_ids
         if invalid:
-            return f"'{indicator.name}': datasets {invalid} do not exist"
+            return f"'{indicator.name}': records {invalid} do not exist in dataset {dataset_id}"
 
         return None
