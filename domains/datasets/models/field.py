@@ -10,8 +10,8 @@ class Field(db.Model):
         nullable=False
     )
 
-    name = db.Column(db.String(100), nullable=False)
-    label = db.Column(db.String(150), nullable=False)
+    name = db.Column(db.String(120), nullable=False)
+    label = db.Column(db.Text, nullable=False)
 
     type = db.Column(
         db.Enum("text", "number", "select", "boolean", "date", name="field_type"),
