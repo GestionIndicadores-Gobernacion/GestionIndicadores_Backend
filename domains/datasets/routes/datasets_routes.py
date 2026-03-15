@@ -4,6 +4,7 @@ from flask.views import MethodView
 from sqlalchemy import Table
 
 from domains.datasets.models.dataset import Dataset
+from domains.datasets.models.field import Field
 from domains.datasets.models.record import Record
 from domains.datasets.models.table import Table
 from domains.datasets.schemas.dataset_schema import DatasetSchema
@@ -126,3 +127,43 @@ class DatasetTableRecordsResource(MethodView):
             {"id": r.id, "data": r.data}
             for r in records
         ])
+        
+        
+# =========================
+# EXPLORER DE TABLA (schema + rows)
+# GET /datasets/:dataset_id/tables/:table_id/explore
+# =========================
+@blp.route("/<int:dataset_id>/tables/<int:table_id>/explore")
+class DatasetTableExplorerResource(MethodView):
+
+    def get(self, dataset_id, table_id):
+
+        table = Table.query.filter_by(
+            id=table_id,
+            dataset_id=dataset_id
+        ).first_or_404()
+
+        fields = Field.query.filter_by(table_id=table.id).all()
+
+        records = Record.query.filter_by(table_id=table.id).limit(1000).all()
+
+        return jsonify({
+            "table": {
+                "id": table.id,
+                "name": table.name,
+                "description": table.description
+            },
+
+            "fields": [
+                {
+                    "name": f.name,
+                    "label": f.label,
+                    "type": f.type
+                }
+                for f in fields
+            ],
+
+            "rows": [r.data for r in records],
+
+            "total": Record.query.filter_by(table_id=table.id).count()
+        })
