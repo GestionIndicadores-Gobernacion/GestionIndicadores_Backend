@@ -22,7 +22,7 @@ def create_fields(table, df):
         field = Field(
             table_id=table.id,
             name=name,
-            label=str(column),
+            label=str(column).strip()[:500],
             type=infer_field_type(df[column]),
             required=False
         )
