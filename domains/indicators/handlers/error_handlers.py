@@ -1,9 +1,32 @@
+from flask import jsonify
+from sqlalchemy.exc import SQLAlchemyError
+from extensions import db
+
+
 def register_error_handlers(app):
 
-    @app.errorhandler(404)
-    def not_found(error):
-        return {"message": "Resource not found"}, 404
+    @app.errorhandler(SQLAlchemyError)
+    def handle_db_error(e):
+        db.session.rollback()
 
-    @app.errorhandler(500)
-    def internal_error(error):
-        return {"message": "Internal server error"}, 500
+        msg = str(e).lower()
+
+        if "value too long" in msg:
+            message = "El valor ingresado es demasiado largo."
+        elif "duplicate key value" in msg:
+            message = "Ya existe un registro con ese valor."
+        elif "not-null constraint" in msg:
+            message = "Hay campos obligatorios sin completar."
+        else:
+            message = "Ocurrió un error al guardar la información."
+
+        return jsonify({
+            "message": message
+        }), 400
+
+
+    @app.errorhandler(Exception)
+    def handle_generic_error(e):
+        return jsonify({
+            "message": "Ocurrió un error interno en el servidor."
+        }), 500
