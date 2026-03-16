@@ -6,6 +6,15 @@ from domains.indicators.models.Report.report import Report
 from domains.indicators.models.Report.report_indicator_value import ReportIndicatorValue
 
 
+# ── Cross-indicator config ────────────────────────────────────────────
+# { component_id: [(text_indicator_id, number_indicator_id, virtual_indicator_id, label)] }
+CROSS_INDICATOR_CONFIG: dict[int, list[tuple]] = {
+    24: [
+        (116, 117, -6001, "Cantidad de jóvenes inscritos / institución educativa"),
+    ],
+}
+
+
 class ReportIndicatorHandler:
 
     @staticmethod
@@ -40,7 +49,6 @@ class ReportIndicatorHandler:
             }
 
         # ── Cargar records de datasets usados por indicadores dataset_select ─
-        # Una sola query por dataset para no hacer N+1
         from domains.indicators.models.Component.component_indicator import ComponentIndicator
         from domains.datasets.models.record import Record
         from domains.datasets.models.table import Table
@@ -51,7 +59,6 @@ class ReportIndicatorHandler:
             ComponentIndicator.field_type.in_(["dataset_select", "dataset_multi_select"])
         ).all()
 
-        # dataset_id -> {record_id -> record_data}
         dataset_record_map: dict[int, dict[int, dict]] = {}
 
         for ds_ind in ds_indicators:
@@ -80,10 +87,12 @@ class ReportIndicatorHandler:
         location_indicator = defaultdict(lambda: defaultdict(float))
 
         # ── Acumulador actor por localización ────────────────────────────────
-        # indicator_id -> location -> actor_label -> count
         actor_location_acc: dict[int, dict[str, dict[str, int]]] = defaultdict(
             lambda: defaultdict(lambda: defaultdict(int))
         )
+
+        # ── Mapa report_id -> {indicator_id -> value} para cruces ────────────
+        report_value_map: dict[int, dict[int, any]] = defaultdict(dict)
 
         for r in reports:
             month_key = r.report_date.strftime("%Y-%m")
@@ -95,6 +104,9 @@ class ReportIndicatorHandler:
                 indicator = iv.indicator
                 if not indicator:
                     continue
+
+                # Guardar valor para cruces
+                report_value_map[r.id][iv.indicator_id] = iv.value
 
                 acc   = accumulator[iv.indicator_id]
                 acc["name"]       = indicator.name
@@ -170,7 +182,6 @@ class ReportIndicatorHandler:
                         dataset_id = cfg.get("dataset_id")
                         record_data = dataset_record_map.get(dataset_id, {}).get(value, {})
 
-                        # Label: preferir 'nombre', luego 'albergue_o_fundación', luego id
                         label = (
                             record_data.get("nombre")
                             or record_data.get("albergue_o_fundación")
@@ -179,7 +190,6 @@ class ReportIndicatorHandler:
                         acc["by_category"][label] += 1
                         acc["by_month"][month_key] += 1
 
-                        # Acumular por (location, actor)
                         if r.intervention_location:
                             actor_location_acc[iv.indicator_id][r.intervention_location][label] += 1
 
@@ -208,6 +218,29 @@ class ReportIndicatorHandler:
         # ── Serializar indicadores ───────────────────────────────────────────
         result     = []
         all_months = sorted({r.report_date.strftime("%Y-%m") for r in reports})
+
+        # ── Cruces texto x número ────────────────────────────────────────────
+        if component_id in CROSS_INDICATOR_CONFIG:
+            for (text_id, number_id, virtual_id, label) in CROSS_INDICATOR_CONFIG[component_id]:
+                bucket: dict[str, float] = defaultdict(float)
+
+                for r in reports:
+                    vals   = report_value_map[r.id]
+                    nombre = vals.get(text_id)
+                    amount = vals.get(number_id)
+                    if isinstance(nombre, str) and nombre.strip() and isinstance(amount, (int, float)):
+                        bucket[nombre.strip()] += amount
+
+                if bucket:
+                    result.append({
+                        "indicator_id":   virtual_id,
+                        "indicator_name": label,
+                        "field_type":     "by_category_cross",
+                        "by_category": [
+                            {"category": cat, "total": round(total, 2)}
+                            for cat, total in sorted(bucket.items(), key=lambda x: -x[1])
+                        ]
+                    })
 
         for indicator_id, acc in accumulator.items():
             field_type = acc["field_type"]
@@ -268,7 +301,6 @@ class ReportIndicatorHandler:
         ]
 
         # ── Serializar by_actor_location ─────────────────────────────────────
-        # Para cada indicador dataset_select, muestra actores por municipio
         by_actor_location = []
         for indicator_id, locations in actor_location_acc.items():
             ind_name = accumulator[indicator_id]["name"] if indicator_id in accumulator else str(indicator_id)
