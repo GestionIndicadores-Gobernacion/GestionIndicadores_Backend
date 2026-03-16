@@ -160,3 +160,47 @@ class TableExplorerResource(MethodView):
             "rows": [r.data for r in records],
             "total": Record.query.filter_by(table_id=table.id).count()
         }
+
+# =========================
+# RECORDS FILTRADOS POR MUNICIPIO
+# GET /datasets/:dataset_id/records/by-municipio/<municipio>
+# Usado por dataset_select para filtrar actores por municipio
+# =========================
+@blp.route("/<int:dataset_id>/records/by-municipio/<string:municipio>")
+class DatasetRecordsByMunicipioResource(MethodView):
+
+    def get(self, dataset_id, municipio):
+
+        dataset = Dataset.query.get_or_404(dataset_id)
+
+        tables = Table.query.filter_by(
+            dataset_id=dataset_id,
+            active=True
+        ).all()
+
+        table_ids = [t.id for t in tables]
+
+        if not table_ids:
+            return jsonify([])
+
+        records = (
+            Record.query
+            .filter(Record.table_id.in_(table_ids))
+            .order_by(Record.id.asc())
+            .all()
+        )
+
+        municipio = municipio.lower().strip()
+
+        filtered = []
+
+        for r in records:
+            record_municipio = str(r.data.get("municipio", "")).lower()
+
+            if record_municipio == municipio:
+                filtered.append({
+                    "id": r.id,
+                    "data": r.data
+                })
+
+        return jsonify(filtered)
