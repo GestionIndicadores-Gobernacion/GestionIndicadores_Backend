@@ -102,15 +102,7 @@ class ReportHandler:
 
     @staticmethod
     def get_all():
-        user_id = get_jwt_identity()
-        if _current_user_is_admin():
-            return Report.query.order_by(Report.report_date.desc()).all()
-        return (
-            Report.query
-            .filter((Report.user_id == user_id) | (Report.user_id == None))
-            .order_by(Report.report_date.desc())
-            .all()
-        )
+        return Report.query.order_by(Report.report_date.desc()).all()
 
     @staticmethod
     def get_by_id(report_id):
