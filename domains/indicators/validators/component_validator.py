@@ -315,12 +315,18 @@ class ComponentValidator:
                 if not s.get("label"):
                     return f"Indicator '{name}': sub_section at index {idx} requires 'label'"
                 if s.get("max_source") and s["max_source"] not in valid_max_sources:
-                    return (
-                        f"Indicator '{name}': sub_section '{s['key']}' has invalid 'max_source'. "
-                        f"Valid values: {valid_max_sources}"
-                    )
+                    return (...)
                 if s["key"] in sub_keys:
                     return f"Indicator '{name}': duplicate sub_section key '{s['key']}'"
+                
+                # ← AGREGAR: validar dataset_id si es red_animalia
+                if s.get("key") == "red_animalia" and s.get("dataset_id") is not None:
+                    from domains.datasets.models.dataset import Dataset
+                    if not isinstance(s["dataset_id"], int):
+                        return f"Indicator '{name}': sub_section 'red_animalia' dataset_id must be an integer"
+                    if not Dataset.query.get(s["dataset_id"]):
+                        return f"Indicator '{name}': sub_section 'red_animalia' dataset {s['dataset_id']} does not exist"
+                
                 sub_keys.add(s["key"])
 
         return None
