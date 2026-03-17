@@ -55,6 +55,7 @@ class ComponentResource(MethodView):
         updated, errors = ComponentHandler.update(component, data)
 
         if errors:
+            print("ERRORS UPDATE:", errors)  # ← AGREGAR
             return {"errors": errors}, 400
 
         return updated
