@@ -21,6 +21,7 @@ class ComponentIndicatorSchema(Schema):
             "categorized_group",
             "dataset_select",
             "dataset_multi_select",
+            "red_animalia"
         ])
     )
     config      = fields.Dict(required=False, allow_none=True)
