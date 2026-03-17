@@ -103,11 +103,21 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
 
     sub = value.get("sub_sections", {})
     if isinstance(sub, dict):
-        for section, metrics in sub.items():
-            if isinstance(metrics, dict):
-                for metric, val in metrics.items():
-                    if isinstance(val, (int, float)):
-                        acc["by_nested"][f"sub:{section}"][metric] += val
+        for section, section_data in sub.items():
+            if isinstance(section_data, dict):
+                # ← estructura con actores: { actors: [{metrics: {...}}] }
+                if "actors" in section_data:
+                    for actor in section_data["actors"]:
+                        metrics = actor.get("metrics", {})
+                        if isinstance(metrics, dict):
+                            for metric, val in metrics.items():
+                                if isinstance(val, (int, float)):
+                                    acc["by_nested"][f"sub:{section}"][metric] += val
+                else:
+                    # ← estructura plana original: { metric: value }
+                    for metric, val in section_data.items():
+                        if isinstance(val, (int, float)):
+                            acc["by_nested"][f"sub:{section}"][metric] += val
 
 
 def _process_grouped_data(value, month_key, acc):
