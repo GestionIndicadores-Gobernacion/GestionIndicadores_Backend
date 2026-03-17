@@ -12,8 +12,10 @@ CROSS_INDICATOR_CONFIG: dict[int, list[tuple]] = {
     24: [
         (116, 117, -6001, "Cantidad de jóvenes inscritos / institución educativa"),
     ],
+    26: [
+        (146, 147, -7002, "Cantidad de personas / experiencia"),
+    ],
 }
-
 
 class ReportIndicatorHandler:
 
