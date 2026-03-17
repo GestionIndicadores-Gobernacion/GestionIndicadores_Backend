@@ -98,61 +98,67 @@ class ComponentHandler:
     # =====================================================
     @staticmethod
     def _upsert_indicators(component, indicators_data):
-        # Mapa de indicadores actuales por nombre
-        existing = {
-            ind.name: ind
+        # Mapa por ID y por nombre
+        existing_by_id = {
+            ind.id: ind
             for ind in ComponentIndicator.query.filter_by(component_id=component.id).all()
         }
+        existing_by_name = {ind.name: ind for ind in existing_by_id.values()}
 
-        # Nombres que vienen en el payload
-        incoming_names = {ind["name"] for ind in indicators_data}
+        incoming_ids = {ind["id"] for ind in indicators_data if ind.get("id")}
+        incoming_names = {ind["name"] for ind in indicators_data if not ind.get("id")}
 
-        # Eliminar indicadores que ya no están en el payload
-        # Solo se pueden eliminar si NO tienen report_indicator_values asociados
-        for name, indicator in existing.items():
-            if name not in incoming_names:
+        # Eliminar los que ya no están
+        for ind_id, indicator in existing_by_id.items():
+            in_incoming_ids = ind_id in incoming_ids
+            in_incoming_names = indicator.name in incoming_names
+            if not in_incoming_ids and not in_incoming_names:
                 has_reports = db.session.execute(
-                    db.text(
-                        "SELECT COUNT(*) FROM report_indicator_values WHERE indicator_id = :id"
-                    ),
+                    db.text("SELECT COUNT(*) FROM report_indicator_values WHERE indicator_id = :id"),
                     {"id": indicator.id}
                 ).scalar()
-
                 if has_reports == 0:
                     db.session.delete(indicator)
-                # Si tiene reportes, se deja — no se borra
-                # El indicador queda "huérfano" del componente pero preserva datos históricos
 
         db.session.flush()
 
-        # Upsert: actualizar existentes o crear nuevos
+        # Upsert
         for index, ind_data in enumerate(indicators_data):
-            name = ind_data["name"]
+            indicator = None
 
-            if name in existing:
-                # Actualizar indicador existente
-                indicator = existing[name]
-                indicator.field_type = ind_data["field_type"]
-                indicator.config     = ind_data.get("config")
+            # ← buscar por ID primero
+            if ind_data.get("id"):
+                indicator = existing_by_id.get(ind_data["id"])
+
+            # ← fallback por nombre si no hay ID
+            if indicator is None:
+                indicator = existing_by_name.get(ind_data["name"])
+
+            if indicator:
+                # Actualizar existente — incluyendo el nombre
+                indicator.name        = ind_data["name"]
+                indicator.field_type  = ind_data["field_type"]
+                indicator.config      = ind_data.get("config")
                 indicator.is_required = ind_data.get("is_required", True)
-                indicator.group_name     = ind_data.get("group_name")  
+                indicator.group_name  = ind_data.get("group_name")
                 indicator.group_required = ind_data.get("group_required", False)
-                indicator.order      = index
+                indicator.order       = index
             else:
-                # Crear nuevo indicador
+                # Crear nuevo
                 indicator = ComponentIndicator(
                     component_id=component.id,
-                    name=name,
+                    name=ind_data["name"],
                     field_type=ind_data["field_type"],
                     config=ind_data.get("config"),
                     is_required=ind_data.get("is_required", True),
+                    group_name=ind_data.get("group_name"),
+                    group_required=ind_data.get("group_required", False),
                     order=index
                 )
                 db.session.add(indicator)
 
             db.session.flush()
 
-            # Upsert de targets para tipos que los soportan
             if ind_data["field_type"] in TYPES_WITH_TARGETS:
                 ComponentHandler._upsert_targets(indicator, ind_data.get("targets", []))
 
