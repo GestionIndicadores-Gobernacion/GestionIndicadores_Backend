@@ -12,6 +12,9 @@ CROSS_INDICATOR_CONFIG: dict[int, list[tuple]] = {
     24: [
         (116, 117, -6001, "Cantidad de jóvenes inscritos / institución educativa"),
     ],
+    25: [
+        (120, 121, -8001, "Temas tratados / foros"),
+    ],
     26: [
         (146, 147, -7002, "Cantidad de personas / experiencia"),
     ],
