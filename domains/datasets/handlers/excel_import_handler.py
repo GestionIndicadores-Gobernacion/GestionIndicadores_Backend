@@ -104,3 +104,68 @@ def import_excel_dataset(file, dataset_name):
         "failed_rows": failed_rows,
         "skipped_rows": skipped_rows,
     }
+    
+
+def update_excel_dataset(file, dataset_id):
+    from domains.datasets.models.field import Field
+    from domains.datasets.models.record import Record
+
+    dataset = Dataset.query.get(dataset_id)
+    if not dataset:
+        return {"error": "Dataset no encontrado"}, 404
+
+    excel = pd.ExcelFile(file)
+
+    # Eliminar tablas/fields/records anteriores
+    old_tables = Table.query.filter_by(dataset_id=dataset_id).all()
+    for t in old_tables:
+        Record.query.filter_by(table_id=t.id).delete()
+        Field.query.filter_by(table_id=t.id).delete()
+        db.session.delete(t)
+    db.session.flush()
+
+    tables_created = 0
+    fields_created = 0
+    records_inserted = 0
+    failed_rows = 0
+    skipped_rows = 0
+
+    for sheet_name in excel.sheet_names:
+        df = excel.parse(sheet_name)
+        if df.empty:
+            continue
+
+        original_rows = len(df)
+        df = _clean_dataframe(df)
+        if df.empty:
+            continue
+
+        skipped_rows += original_rows - len(df)
+
+        table = Table(
+            dataset_id=dataset_id,
+            name=normalize_name(sheet_name, MAX_TABLE_NAME_LENGTH),
+            description="Actualizado desde Excel"
+        )
+        db.session.add(table)
+        db.session.flush()
+        tables_created += 1
+
+        field_map = create_fields(table, df)
+        fields_created += len(field_map)
+
+        inserted, failed = import_records(table, df, field_map)
+        records_inserted += inserted
+        failed_rows += failed
+
+    db.session.commit()
+
+    return {
+        "dataset_id": dataset_id,
+        "dataset_name": dataset.name,
+        "tables_created": tables_created,
+        "fields_created": fields_created,
+        "records_inserted": records_inserted,
+        "failed_rows": failed_rows,
+        "skipped_rows": skipped_rows,
+    }

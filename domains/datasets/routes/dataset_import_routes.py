@@ -36,3 +36,15 @@ class DatasetImportPreviewResource(MethodView):
         return {
             "preview": preview_excel(file)
         }
+
+from domains.datasets.handlers.excel_import_handler import import_excel_dataset, update_excel_dataset
+
+@blp.route("/<int:dataset_id>/update-excel")
+class DatasetUpdateResource(MethodView):
+
+    def put(self, dataset_id):
+        if "file" not in request.files:
+            abort(400, message="Archivo Excel no enviado")
+
+        file = request.files["file"]
+        return update_excel_dataset(file, dataset_id)
