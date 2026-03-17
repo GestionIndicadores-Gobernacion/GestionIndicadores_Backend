@@ -147,6 +147,11 @@ class ReportIndicatorHandler:
 
                 # ── categorized_group ────────────────────────────────────────
                 elif indicator.field_type == "categorized_group":
+                    # ── Acumulador nested por localización ──────────────────────────────
+                    location_nested: dict[str, dict[int, dict[str, float]]] = defaultdict(
+                        lambda: defaultdict(lambda: defaultdict(float))
+                    )
+                    
                     if isinstance(value, dict):
                         data        = value.get("data", {})
                         month_total = 0
@@ -160,6 +165,10 @@ class ReportIndicatorHandler:
                                                 acc["by_nested"][category][metric] += val
                                                 acc["by_nested"][f"{category} – {gender_clean}"][metric] += val
                                                 month_total += val
+
+                                                # ← NUEVO: acumular por municipio + métrica
+                                                if r.intervention_location:
+                                                    location_nested[r.intervention_location][iv.indicator_id][metric] += val
 
                         acc["by_month"][month_key] += month_total
 
@@ -323,11 +332,30 @@ class ReportIndicatorHandler:
                     for loc, actors in sorted(locations.items())
                 ]
             })
+            
+        # ── Serializar by_location_nested ───────────────────────────────────
+        by_location_nested = [
+            {
+                "location": loc,
+                "indicators": [
+                    {
+                        "indicator_id": ind_id,
+                        "metrics": [
+                            {"metric": metric, "total": round(total, 2)}
+                            for metric, total in metrics.items()
+                        ]
+                    }
+                    for ind_id, metrics in indicators.items()
+                ]
+            }
+            for loc, indicators in sorted(location_nested.items())
+        ]
 
         return {
             "component_id":          component_id,
             "indicators":            result,
             "by_location":           by_location,
             "by_location_indicator": by_location_indicator,
+            "by_location_nested":    by_location_nested,   # ← nuevo
             "by_actor_location":     by_actor_location,
         }
