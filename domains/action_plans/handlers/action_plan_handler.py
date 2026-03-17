@@ -9,13 +9,6 @@ from domains.action_plans.validators.action_plan_validator import ActionPlanVali
 from domains.indicators.models.AuditLog.audit_log import AuditLog
 
 
-def _current_user_is_admin():
-    from domains.indicators.models.User.user import User
-    user_id = get_jwt_identity()
-    user = User.query.get(user_id)
-    return user and user.role and user.role.name == "admin"
-
-
 class ActionPlanHandler:
 
     @staticmethod
@@ -82,11 +75,6 @@ class ActionPlanHandler:
         user_id = get_jwt_identity()
         query = ActionPlan.query
 
-        if not _current_user_is_admin():
-            # Ven los suyos + los que no tienen dueño
-            query = query.filter(
-                (ActionPlan.user_id == user_id) | (ActionPlan.user_id == None)
-            )
 
         if strategy_id:
             query = query.filter(ActionPlan.strategy_id == strategy_id)
