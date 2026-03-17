@@ -5,8 +5,8 @@ from domains.indicators.schemas.component_indicator_target_schema import (
 )
 
 class ComponentIndicatorSchema(Schema):
-    id = fields.Int(dump_only=True)
-
+    id = fields.Int(load_default=None)  # ← cambiar dump_only=True por load_default=None
+    
     name = fields.Str(required=True)
     field_type = fields.Str(
         required=True,
@@ -27,10 +27,8 @@ class ComponentIndicatorSchema(Schema):
     config      = fields.Dict(required=False, allow_none=True)
     is_required = fields.Bool(required=False)
 
-    # ── GRUPO MUTUAMENTE EXCLUYENTE ─────────────────────────────────────────
     group_name     = fields.Str(allow_none=True, load_default=None)
     group_required = fields.Bool(load_default=False)
-    # ────────────────────────────────────────────────────────────────────────
 
     targets = fields.List(
         fields.Nested(ComponentIndicatorTargetSchema),
