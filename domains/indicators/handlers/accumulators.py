@@ -86,22 +86,18 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
             for gender, metrics in genders.items():
                 gender_clean = gender.strip().rstrip(',')
                 if isinstance(metrics, dict):
-                    gender_animal_count = 0  # ← total de animales de este género
-
                     for metric, val in metrics.items():
                         if isinstance(val, (int, float)):
                             acc["by_nested"][category][metric] += val
                             acc["by_nested"][f"{category} – {gender_clean}"][metric] += val
 
+                            # ← solo sumar esterilizados de géneros (Hembra/Macho)
+                            # para no duplicar con el padre (CANINO/FELINO/etc)
+                            if metric == "no_de_animales_esterilizados":
+                                month_total += val
+
                             if r.intervention_location:
                                 location_nested[r.intervention_location][iv.indicator_id][metric] += val
-
-                        # ← el total de animales es el máximo entre todas las métricas
-                        # porque un animal puede recibir múltiples atenciones
-                        if isinstance(val, (int, float)) and val > gender_animal_count:
-                            gender_animal_count = val
-
-                    month_total += gender_animal_count  # ← suma animales únicos por género
 
     acc["by_month"][month_key] += month_total
 
