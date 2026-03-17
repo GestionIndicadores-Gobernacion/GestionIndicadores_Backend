@@ -18,7 +18,8 @@ class ComponentValidator:
         "categorized_group", 
         "dataset_select",       
         "dataset_multi_select",
-        "group_name"
+        "group_name",
+        "red_animalia"
     }
 
     # Tipos que requieren targets OBLIGATORIOS
