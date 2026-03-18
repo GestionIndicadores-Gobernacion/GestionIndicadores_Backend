@@ -79,33 +79,48 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
         return
 
     data = value.get("data", {})
-    month_total = 0
+
+    # Acumular by_nested y detectar métrica principal
+    metric_totals: dict[str, float] = defaultdict(float)
 
     for category, genders in data.items():
-        if isinstance(genders, dict):
+        if not isinstance(genders, dict):
+            continue
+        for gender, metrics in genders.items():
+            gender_clean = gender.strip().rstrip(',')
+            if not isinstance(metrics, dict):
+                continue
+            for metric, val in metrics.items():
+                if isinstance(val, (int, float)):
+                    acc["by_nested"][category][metric] += val
+                    acc["by_nested"][f"{category} – {gender_clean}"][metric] += val
+                    metric_totals[metric] += val
+
+                    if r.intervention_location:
+                        location_nested[r.intervention_location][iv.indicator_id][metric] += val
+
+    # Sumar by_month usando la métrica con mayor total (métrica principal)
+    # Los géneros (Hembra + Macho) suman el doble del total real → dividir por 2
+    if metric_totals:
+        main_metric = max(metric_totals, key=lambda k: metric_totals[k])
+        month_total = 0.0
+
+        for category, genders in data.items():
+            if not isinstance(genders, dict):
+                continue
             for gender, metrics in genders.items():
-                gender_clean = gender.strip().rstrip(',')
                 if isinstance(metrics, dict):
-                    for metric, val in metrics.items():
-                        if isinstance(val, (int, float)):
-                            acc["by_nested"][category][metric] += val
-                            acc["by_nested"][f"{category} – {gender_clean}"][metric] += val
+                    val = metrics.get(main_metric, 0)
+                    if isinstance(val, (int, float)):
+                        month_total += val
 
-                            # ← solo sumar esterilizados de géneros (Hembra/Macho)
-                            # para no duplicar con el padre (CANINO/FELINO/etc)
-                            if metric == "no_de_animales_esterilizados":
-                                month_total += val
+        acc["by_month"][month_key] += month_total / 2
 
-                            if r.intervention_location:
-                                location_nested[r.intervention_location][iv.indicator_id][metric] += val
-
-    acc["by_month"][month_key] += month_total
-
+    # Sub sections
     sub = value.get("sub_sections", {})
     if isinstance(sub, dict):
         for section, section_data in sub.items():
             if isinstance(section_data, dict):
-                # ← estructura con actores: { actors: [{metrics: {...}}] }
                 if "actors" in section_data:
                     for actor in section_data["actors"]:
                         metrics = actor.get("metrics", {})
@@ -114,7 +129,6 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
                                 if isinstance(val, (int, float)):
                                     acc["by_nested"][f"sub:{section}"][metric] += val
                 else:
-                    # ← estructura plana original: { metric: value }
                     for metric, val in section_data.items():
                         if isinstance(val, (int, float)):
                             acc["by_nested"][f"sub:{section}"][metric] += val
