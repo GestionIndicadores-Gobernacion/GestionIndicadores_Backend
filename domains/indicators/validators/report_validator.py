@@ -194,6 +194,19 @@ class ReportValidator:
                 if error:
                     indicator_errors.append(error)
 
+            # DATE
+            elif field_type == "date":
+                if not isinstance(val, str):
+                    indicator_errors.append(
+                        f"Date expected for indicator '{indicator.name}'"
+                    )
+                else:
+                    import re
+                    if not re.match(r'^\d{4}-\d{2}-\d{2}$', val):
+                        indicator_errors.append(
+                            f"'{indicator.name}': date must be in format YYYY-MM-DD"
+                        )
+
             # CATEGORIZED_GROUP
             elif field_type == "categorized_group":
                 error = ReportValidator._validate_categorized_group_value(indicator, val)

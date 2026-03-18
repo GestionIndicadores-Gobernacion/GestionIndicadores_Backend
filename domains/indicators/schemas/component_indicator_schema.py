@@ -13,6 +13,7 @@ class ComponentIndicatorSchema(Schema):
         validate=validate.OneOf([
             "number",
             "text",
+            "date",
             "select",
             "multi_select",
             "sum_group",

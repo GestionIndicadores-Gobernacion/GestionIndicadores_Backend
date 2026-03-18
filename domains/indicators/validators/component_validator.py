@@ -10,6 +10,7 @@ class ComponentValidator:
     VALID_FIELD_TYPES = {
         "number",
         "text",
+        "date",
         "select",
         "multi_select",
         "sum_group",
@@ -29,7 +30,7 @@ class ComponentValidator:
     OPTIONAL_TARGET_TYPES = {"grouped_data"}
 
     # Tipos que NO aceptan targets
-    NO_TARGET_TYPES = {"text", "select", "multi_select", "file_attachment",
+    NO_TARGET_TYPES = {"text", "date", "select", "multi_select", "file_attachment",
                    "dataset_select", "dataset_multi_select", "red_animalia"}
 
     @staticmethod
