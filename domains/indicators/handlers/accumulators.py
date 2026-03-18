@@ -114,7 +114,7 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
                     if isinstance(val, (int, float)):
                         month_total += val
 
-        acc["by_month"][month_key] += month_total / 2
+        acc["by_month"][month_key] += month_total
 
     # Sub sections
     sub = value.get("sub_sections", {})
