@@ -1,6 +1,7 @@
 from extensions import db
 from datetime import datetime
 
+
 class Component(db.Model):
     __tablename__ = "components"
 
@@ -56,6 +57,14 @@ class Component(db.Model):
         "Report",
         back_populates="component",
         cascade="all, delete-orphan"
+    )
+
+    # ── NUEVO: políticas públicas (many-to-many) ──────────────────────────
+    public_policies = db.relationship(
+        "PublicPolicy",
+        secondary="component_public_policies",
+        back_populates="components",
+        lazy="selectin"        # carga automáticamente junto al componente
     )
 
     __table_args__ = (

@@ -5,6 +5,7 @@ from domains.indicators.models.Component.component_objective import ComponentObj
 from domains.indicators.models.Component.component_mga_activity import ComponentMGAActivity
 from domains.indicators.models.Component.component_indicator import ComponentIndicator
 from domains.indicators.models.Component.component_indicator_target import ComponentIndicatorTarget
+from domains.indicators.models.PublicPolicy.public_policy import PublicPolicy
 
 from domains.indicators.validators.component_validator import ComponentValidator
 
@@ -34,6 +35,9 @@ class ComponentHandler:
             db.session.flush()
 
             ComponentHandler._rebuild_children(component, data)
+
+            # ── Políticas públicas ──────────────────────────────────────
+            ComponentHandler._sync_public_policies(component, data.get("public_policy_ids", []))
 
             db.session.commit()
             return component, None
@@ -82,6 +86,9 @@ class ComponentHandler:
             # Indicators — UPSERT por nombre para preservar report_indicator_values
             ComponentHandler._upsert_indicators(component, data.get("indicators", []))
 
+            # ── Políticas públicas ──────────────────────────────────────
+            ComponentHandler._sync_public_policies(component, data.get("public_policy_ids", []))
+
             db.session.commit()
             return component, None
 
@@ -92,25 +99,35 @@ class ComponentHandler:
             return None, {"database": str(e)}
 
     # =====================================================
+    # SYNC PUBLIC POLICIES
+    # Reemplaza las políticas del componente con las enviadas.
+    # =====================================================
+    @staticmethod
+    def _sync_public_policies(component, policy_ids):
+        if not policy_ids:
+            component.public_policies = []
+            return
+
+        policies = PublicPolicy.query.filter(PublicPolicy.id.in_(policy_ids)).all()
+        component.public_policies = policies
+
+    # =====================================================
     # UPSERT INDICATORS
-    # Actualiza los existentes, agrega los nuevos,
-    # elimina los que ya no están (solo si no tienen reportes)
     # =====================================================
     @staticmethod
     def _upsert_indicators(component, indicators_data):
-        # Mapa por ID y por nombre
         existing_by_id = {
             ind.id: ind
             for ind in ComponentIndicator.query.filter_by(component_id=component.id).all()
         }
         existing_by_name = {ind.name: ind for ind in existing_by_id.values()}
 
-        incoming_ids = {ind["id"] for ind in indicators_data if ind.get("id")}
+        incoming_ids   = {ind["id"] for ind in indicators_data if ind.get("id")}
         incoming_names = {ind["name"] for ind in indicators_data if not ind.get("id")}
 
         # Eliminar los que ya no están
         for ind_id, indicator in existing_by_id.items():
-            in_incoming_ids = ind_id in incoming_ids
+            in_incoming_ids   = ind_id in incoming_ids
             in_incoming_names = indicator.name in incoming_names
             if not in_incoming_ids and not in_incoming_names:
                 has_reports = db.session.execute(
@@ -126,25 +143,21 @@ class ComponentHandler:
         for index, ind_data in enumerate(indicators_data):
             indicator = None
 
-            # ← buscar por ID primero
             if ind_data.get("id"):
                 indicator = existing_by_id.get(ind_data["id"])
 
-            # ← fallback por nombre si no hay ID
             if indicator is None:
                 indicator = existing_by_name.get(ind_data["name"])
 
             if indicator:
-                # Actualizar existente — incluyendo el nombre
-                indicator.name        = ind_data["name"]
-                indicator.field_type  = ind_data["field_type"]
-                indicator.config      = ind_data.get("config")
-                indicator.is_required = ind_data.get("is_required", True)
-                indicator.group_name  = ind_data.get("group_name")
+                indicator.name           = ind_data["name"]
+                indicator.field_type     = ind_data["field_type"]
+                indicator.config         = ind_data.get("config")
+                indicator.is_required    = ind_data.get("is_required", True)
+                indicator.group_name     = ind_data.get("group_name")
                 indicator.group_required = ind_data.get("group_required", False)
-                indicator.order       = index
+                indicator.order          = index
             else:
-                # Crear nuevo
                 indicator = ComponentIndicator(
                     component_id=component.id,
                     name=ind_data["name"],
@@ -174,12 +187,10 @@ class ComponentHandler:
 
         incoming_years = {t["year"] for t in targets_data}
 
-        # Eliminar targets que ya no están
         for year, target in existing_targets.items():
             if year not in incoming_years:
                 db.session.delete(target)
 
-        # Upsert targets
         for t_data in targets_data:
             year = t_data["year"]
             if year in existing_targets:
@@ -222,15 +233,14 @@ class ComponentHandler:
                 field_type=ind["field_type"],
                 config=ind.get("config"),
                 is_required=ind.get("is_required", True),
-                group_name=ind.get("group_name"),          # ← NUEVO
-                group_required=ind.get("group_required", False),  # ← NUEVO
+                group_name=ind.get("group_name"),
+                group_required=ind.get("group_required", False),
                 order=index
             )
 
             db.session.add(indicator)
             db.session.flush()
 
-            # Crear targets para tipos que los soportan
             if ind["field_type"] in TYPES_WITH_TARGETS:
                 for t in ind.get("targets", []):
                     db.session.add(
