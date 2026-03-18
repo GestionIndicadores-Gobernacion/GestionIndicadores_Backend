@@ -10,7 +10,7 @@ from .serializers import (
     serialize_by_location_indicator, serialize_by_location_nested,
     serialize_by_actor_location
 )
-from .cross_indicators import build_cross_indicators
+from .cross_indicators import build_cross_indicators, build_multiselect_cross
 
 
 class ReportIndicatorHandler:
@@ -70,7 +70,7 @@ class ReportIndicatorHandler:
         accumulator = make_accumulator()
         location_counts    = defaultdict(int)
         location_indicator = defaultdict(lambda: defaultdict(float))
-        location_nested    = defaultdict(lambda: defaultdict(lambda: defaultdict(float)))  # ← fuera del loop
+        location_nested    = defaultdict(lambda: defaultdict(lambda: defaultdict(float)))
         actor_location_acc = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
         report_value_map   = defaultdict(dict)
 
@@ -94,17 +94,16 @@ class ReportIndicatorHandler:
         all_months = sorted({r.report_date.strftime("%Y-%m") for r in reports})
 
         result = build_cross_indicators(component_id, reports, report_value_map)
-        result += serialize_indicators(accumulator, all_months)
-        
+
         # ── Cruces especiales multi_select × number ──────────────────────────
         if component_id == 23:
-            from domains.indicators.handlers.cross_indicators import build_multiselect_cross
             cross = build_multiselect_cross(
                 reports, 115, 114, -11005, "Niños impactados por rango de edad"
             )
             if cross:
                 result.append(cross)
 
+        # ← una sola vez al final
         result += serialize_indicators(accumulator, all_months)
 
         return {

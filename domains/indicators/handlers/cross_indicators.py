@@ -3,7 +3,7 @@ from collections import defaultdict
 CROSS_INDICATOR_CONFIG: dict[int, list[tuple]] = {
     24: [(116, 117, -6001, "Cantidad de jóvenes inscritos / institución educativa")],
     25: [(120, 121, -8001, "Temas tratados / foros")],
-    26: [(146, 147, -7002, "Cantidad de personas / experiencia")],
+    26: [(146, 81, -7002, "Cantidad de personas / experiencia")],  # ← 147 → 81
     23: [(115, 114, -11005, "Niños impactados por rango de edad")],
 }
 def build_cross_indicators(component_id, reports, report_value_map):
