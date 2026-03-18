@@ -9,6 +9,8 @@ from domains.indicators.models.Component.component_objective import ComponentObj
 from domains.indicators.models.Component.component_indicator import ComponentIndicator
 from domains.indicators.models.Component.component_mga_activity import ComponentMGAActivity
 from domains.indicators.models.Component.component_indicator_target import ComponentIndicatorTarget
+from domains.indicators.models.Component.component_public_policy import component_public_policies  # ← NUEVO
+from domains.indicators.models.PublicPolicy.public_policy import PublicPolicy                      # ← NUEVO
 
 from domains.indicators.models.Report.report import Report
 from domains.indicators.models.Report.report_indicator_value import ReportIndicatorValue
