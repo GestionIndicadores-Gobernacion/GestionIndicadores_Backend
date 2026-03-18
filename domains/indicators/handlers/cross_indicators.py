@@ -108,3 +108,29 @@ def build_multiselect_x_dataset_cross(reports, multi_id, dataset_indicator_id, v
             for cat, total in sorted(bucket.items(), key=lambda x: -x[1])
         ]
     }
+    
+def build_text_count(reports, text_id, virtual_id, label):
+    """
+    Cuenta ocurrencias de un indicador de texto.
+    """
+    bucket: dict[str, float] = defaultdict(float)
+
+    for r in reports:
+        vals = {iv.indicator_id: iv.value for iv in r.indicator_values}
+        valor = vals.get(text_id)
+
+        if isinstance(valor, str) and valor.strip():
+            bucket[valor.strip()] += 1
+
+    if not bucket:
+        return None
+
+    return {
+        "indicator_id": virtual_id,
+        "indicator_name": label,
+        "field_type": "by_category_cross",
+        "by_category": [
+            {"category": cat, "total": round(total, 2)}
+            for cat, total in sorted(bucket.items(), key=lambda x: -x[1])
+        ]
+    }
