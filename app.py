@@ -11,6 +11,7 @@ from domains.indicators.routes import register_indicators_routes
 from domains.indicators.handlers.error_handlers import register_error_handlers
 from domains.datasets.routes import register_routes as register_dataset_routes
 from domains.action_plans.routes import register_routes as register_action_plan_routes
+from domains.indicators.routes.public_policy_routes import seed_public_policies_command
 
 
 def schema_name_resolver(schema):
@@ -102,7 +103,8 @@ def create_app():
     from domains.indicators import commands
     app.cli.add_command(commands.seed)
     app.cli.add_command(commands.seed_users)
-
+    app.cli.add_command(seed_public_policies_command)
+    
     # ======================================================
     # 🚏 Rutas
     # ======================================================
