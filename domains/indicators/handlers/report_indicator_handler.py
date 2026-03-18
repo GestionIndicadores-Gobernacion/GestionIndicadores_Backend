@@ -116,6 +116,14 @@ class ReportIndicatorHandler:
             )
             if cross_actor:
                 result.append(cross_actor)
+                
+        if component_id == 15:
+            from domains.indicators.handlers.cross_indicators import build_text_count
+            cross_tipo = build_text_count(
+                reports, 142, -15001, "No. de alianzas / tipo de alianza"
+            )
+            if cross_tipo:
+                result.append(cross_tipo)
 
         # ← una sola vez al final
         result += serialize_indicators(accumulator, all_months)
