@@ -125,6 +125,20 @@ class ReportIndicatorHandler:
             if cross_tipo:
                 result.append(cross_tipo)
 
+        if component_id == 17:
+            ind_64 = ComponentIndicator.query.get(64)
+            ds_id = (ind_64.config or {}).get('dataset_id') if ind_64 else None
+            record_map = dataset_record_map.get(ds_id, {}) if ds_id else {}
+
+            cross = build_multiselect_x_dataset_cross(
+                reports, 66, 64, -17003,
+                "Tipo de acompañamiento / tipo de actor",
+                record_map,
+                'nombre_hogar_de_paso_albergue_o_refugio_fundacion'
+            )
+            if cross:
+                result.append(cross)
+        
         # ← una sola vez al final
         result += serialize_indicators(accumulator, all_months)
 
