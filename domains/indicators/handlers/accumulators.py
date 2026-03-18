@@ -133,10 +133,13 @@ def _process_dataset_select(iv, r, value, month_key, acc, actor_location_acc, in
     if isinstance(value, int):
         cfg = indicator.config or {}
         dataset_id = cfg.get("dataset_id")
+        label_field = cfg.get("label_field")  # ← leer label_field del config
         record_data = dataset_record_map.get(dataset_id, {}).get(value, {})
         label = (
-            record_data.get("nombre")
-            or record_data.get("albergue_o_fundación")
+            (record_data.get(label_field) if label_field else None)
+            or record_data.get("nombre_hogar_de_paso_albergue_o_refugio_fundacion")
+            or record_data.get("nombres_y_apellidos")
+            or record_data.get("nombre")
             or str(value)
         )
         acc["by_category"][label] += 1
@@ -149,14 +152,17 @@ def _process_dataset_multi_select(iv, r, value, month_key, acc, actor_location_a
     if isinstance(value, list):
         cfg = indicator.config or {}
         dataset_id = cfg.get("dataset_id")
+        label_field = cfg.get("label_field")  # ← leer label_field del config
         record_lookup = dataset_record_map.get(dataset_id, {})
         for record_id in value:
             if not isinstance(record_id, int):
                 continue
             record_data = record_lookup.get(record_id, {})
             label = (
-                record_data.get("nombre")
-                or record_data.get("albergue_o_fundación")
+                (record_data.get(label_field) if label_field else None)
+                or record_data.get("nombre_hogar_de_paso_albergue_o_refugio_fundacion")
+                or record_data.get("nombres_y_apellidos")
+                or record_data.get("nombre")
                 or str(record_id)
             )
             acc["by_category"][label] += 1
