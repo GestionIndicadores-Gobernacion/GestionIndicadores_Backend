@@ -72,3 +72,39 @@ def build_multiselect_cross(reports, select_id, number_id, virtual_id, label):
             for cat, total in sorted(bucket.items(), key=lambda x: -x[1])
         ]
     }
+    
+    
+def build_multiselect_x_dataset_cross(reports, multi_id, dataset_indicator_id, virtual_id, label, record_map, label_field):
+    """
+    Cruce multi_select × dataset_select.
+    Muestra tipo de apoyo combinado con el nombre del actor (refugio/fundación).
+    """
+    bucket: dict[str, float] = defaultdict(float)
+
+    for r in reports:
+        vals = {iv.indicator_id: iv.value for iv in r.indicator_values}
+        opciones = vals.get(multi_id)
+        actor_id = vals.get(dataset_indicator_id)
+
+        if not isinstance(opciones, list) or not isinstance(actor_id, int):
+            continue
+
+        actor_data = record_map.get(actor_id, {})
+        actor_name = actor_data.get(label_field) or str(actor_id)
+
+        for opcion in opciones:
+            if isinstance(opcion, str):
+                bucket[f"{opcion.strip()} — {actor_name}"] += 1
+
+    if not bucket:
+        return None
+
+    return {
+        "indicator_id": virtual_id,
+        "indicator_name": label,
+        "field_type": "by_category_cross",
+        "by_category": [
+            {"category": cat, "total": round(total, 2)}
+            for cat, total in sorted(bucket.items(), key=lambda x: -x[1])
+        ]
+    }
