@@ -10,7 +10,7 @@ from .serializers import (
     serialize_by_location_indicator, serialize_by_location_nested,
     serialize_by_actor_location
 )
-from .cross_indicators import build_cross_indicators, build_multiselect_cross
+from .cross_indicators import build_cross_indicators, build_multiselect_cross, build_multiselect_x_dataset_cross
 
 
 class ReportIndicatorHandler:
@@ -95,13 +95,27 @@ class ReportIndicatorHandler:
 
         result = build_cross_indicators(component_id, reports, report_value_map)
 
-        # ── Cruces especiales multi_select × number ──────────────────────────
+        # ── Cruces especiales ────────────────────────────────────────────────
         if component_id == 23:
             cross = build_multiselect_cross(
                 reports, 115, 114, -11005, "Niños impactados por rango de edad"
             )
             if cross:
                 result.append(cross)
+
+        if component_id == 14:
+            ind_144 = ComponentIndicator.query.get(144)
+            ds_id = (ind_144.config or {}).get('dataset_id') if ind_144 else None
+            record_map = dataset_record_map.get(ds_id, {}) if ds_id else {}
+
+            cross_actor = build_multiselect_x_dataset_cross(
+                reports, 145, 144, -14004,
+                "Tipo de apoyo / actor",
+                record_map,
+                'nombre_hogar_de_paso_albergue_o_refugio_fundacion'
+            )
+            if cross_actor:
+                result.append(cross_actor)
 
         # ← una sola vez al final
         result += serialize_indicators(accumulator, all_months)
