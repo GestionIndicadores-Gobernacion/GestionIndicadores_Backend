@@ -163,17 +163,13 @@ class ComponentValidator:
     @staticmethod
     def _validate_select(indicator):
         config = indicator.get("config")
-
         if not config or not config.get("options"):
             return "Select indicators require 'options' in config"
-
         if not isinstance(config["options"], list):
             return "Select 'options' must be a list"
-
         if len(config["options"]) == 0:
             return "Select 'options' cannot be empty"
-
-        return None
+        return None  # show_if es ignorado aquí, ya es un dict adicional
 
     @staticmethod
     def _validate_multi_select(indicator):
