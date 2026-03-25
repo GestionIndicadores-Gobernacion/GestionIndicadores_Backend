@@ -3,6 +3,8 @@ import re
 
 from domains.datasets.models.dataset import Dataset
 from domains.datasets.models.record import Record
+from domains.datasets.models.table import Table
+
 from domains.indicators.models.Strategy.strategy import Strategy
 from domains.indicators.models.Report.report import Report
 
@@ -11,9 +13,6 @@ class StrategyProgressService:
 
     @staticmethod
     def get_progress(strategy: Strategy) -> dict:
-        """
-        Calcula el progreso de una estrategia para el año en curso.
-        """
 
         current_year = datetime.utcnow().year
 
@@ -167,9 +166,6 @@ class StrategyProgressService:
 
     @staticmethod
     def _dataset_count(metric, current_year: int) -> float:
-        """
-        Cuenta registros válidos de un dataset.
-        """
 
         if not metric.dataset_id:
             return 0.0
@@ -180,24 +176,20 @@ class StrategyProgressService:
             return 0.0
 
         match = re.search(r'\b(20\d{2})\b', dataset.name or '')
-
         if match and int(match.group(1)) != current_year:
             return 0.0
 
-        records = Record.query.filter_by(
-            dataset_id=dataset.id
-        ).all()
+        total = 0
 
-        return float(sum(
-            1 for r in records
-            if r.data and r.data.get("mes") not in (None, "")
-        ))
+        for table in dataset.tables:
+            for record in table.records:
+                if record.data and record.data.get("mes") not in (None, ""):
+                    total += 1
+
+        return float(total)
 
     @staticmethod
     def _dataset_sum(metric, current_year: int) -> float:
-        """
-        Suma una columna de un dataset.
-        """
 
         if not metric.dataset_id or not metric.field_name:
             return 0.0
@@ -207,24 +199,21 @@ class StrategyProgressService:
         if not dataset:
             return 0.0
 
-        records = Record.query.filter_by(
-            dataset_id=dataset.id
-        ).all()
-
         total = 0.0
 
-        for r in records:
+        for table in dataset.tables:
+            for record in table.records:
 
-            if not r.data:
-                continue
+                if not record.data:
+                    continue
 
-            val = r.data.get(metric.field_name)
+                val = record.data.get(metric.field_name)
 
-            if val is not None:
-                try:
-                    total += float(val)
-                except (ValueError, TypeError):
-                    pass
+                if val is not None:
+                    try:
+                        total += float(val)
+                    except (ValueError, TypeError):
+                        pass
 
         return total
 
