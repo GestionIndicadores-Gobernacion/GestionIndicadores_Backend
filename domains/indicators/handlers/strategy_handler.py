@@ -3,6 +3,7 @@ from extensions import db
 from domains.indicators.models.Strategy.strategy import Strategy
 from domains.indicators.validators.strategy_validator import StrategyValidator
 from domains.indicators.models.Strategy.strategy_annual_goal import StrategyAnnualGoal
+from domains.indicators.models.Strategy.strategy_metric import StrategyMetric
 
 
 class StrategyHandler:
@@ -31,6 +32,17 @@ class StrategyHandler:
                         value=goal['value']
                     )
                 )
+                
+            for metric in data.get("metrics", []):
+                db.session.add(
+                    StrategyMetric(
+                        strategy_id=strategy.id,
+                        description=metric["description"],
+                        metric_type=metric["metric_type"],
+                        component_id=metric.get("component_id"),
+                        field_name=metric.get("field_name")
+                    )
+                )
 
             db.session.commit()
             return strategy, None
@@ -49,7 +61,6 @@ class StrategyHandler:
         return Strategy.query.get(strategy_id)
 
     @staticmethod
-    @staticmethod
     def update(strategy, data):
 
         # ----------------------------
@@ -64,17 +75,12 @@ class StrategyHandler:
         # ----------------------------
         if 'annual_goals' in data:
 
-            # ⚠️ borrar en BD, no en memoria
-            from domains.indicators.models.Strategy.strategy_annual_goal import StrategyAnnualGoal
-
             StrategyAnnualGoal.query.filter_by(
                 strategy_id=strategy.id
             ).delete()
 
-            # ejecutar delete inmediatamente
             db.session.flush()
 
-            # insertar nuevos años
             for goal in data['annual_goals']:
                 db.session.add(
                     StrategyAnnualGoal(
@@ -84,10 +90,31 @@ class StrategyHandler:
                     )
                 )
 
+        # ----------------------------
+        # sincronizar métricas
+        # ----------------------------
+        if 'metrics' in data:
+
+            StrategyMetric.query.filter_by(
+                strategy_id=strategy.id
+            ).delete()
+
+            db.session.flush()
+
+            for metric in data['metrics']:
+                db.session.add(
+                    StrategyMetric(
+                        strategy_id=strategy.id,
+                        description=metric["description"],
+                        metric_type=metric["metric_type"],
+                        component_id=metric.get("component_id"),
+                        field_name=metric.get("field_name")
+                    )
+                )
+
         db.session.commit()
         return strategy
-
-
+    
     @staticmethod
     def delete(strategy):
         db.session.delete(strategy)
