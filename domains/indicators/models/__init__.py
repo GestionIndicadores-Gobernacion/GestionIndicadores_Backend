@@ -2,6 +2,7 @@ from  domains.indicators.models.Strategy.strategy import Strategy
 from  domains.indicators.models.Strategy.strategy_annual_goal import StrategyAnnualGoal
 
 from domains.indicators.models.User.user import User
+from domains.indicators.models.User.user_component import UserComponent
 from domains.indicators.models.Role.role import Role
 
 from domains.indicators.models.Component.component import Component

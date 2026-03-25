@@ -1,5 +1,4 @@
 from extensions import db
-
 from datetime import datetime
 from extensions import bcrypt
 
@@ -19,12 +18,30 @@ class User(db.Model):
 
     is_active = db.Column(db.Boolean, default=True, nullable=False)
 
+    role_id = db.Column(
+        db.Integer,
+        db.ForeignKey('roles.id'),
+        nullable=False,
+        default=1  # viewer por defecto (rol global / fallback)
+    )
+
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(
         db.DateTime,
         default=datetime.utcnow,
         onupdate=datetime.utcnow,
         nullable=False
+    )
+
+    # Relaciones
+    role = db.relationship('Role', back_populates='users')
+
+    # ── NUEVO: asignaciones a componentes ────────────────────────────────
+    component_assignments = db.relationship(
+        "UserComponent",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        lazy="selectin"
     )
 
     # ======================
@@ -38,12 +55,3 @@ class User(db.Model):
 
     def __repr__(self):
         return f"<User {self.id} - {self.email}>"
-
-    role_id = db.Column(
-        db.Integer,
-        db.ForeignKey('roles.id'),
-        nullable=False,
-        default=1  # viewer por defecto
-    )
-
-    role = db.relationship('Role', back_populates='users')
