@@ -16,11 +16,12 @@ class StrategyMetricHandler:
         try:
 
             metric = StrategyMetric(
-                strategy_id=data["strategy_id"],
-                description=data["description"],
-                metric_type=data["metric_type"],
-                component_id=data.get("component_id"),
-                field_name=data.get("field_name")
+                strategy_id  = data["strategy_id"],
+                description  = data["description"],
+                metric_type  = data["metric_type"],
+                component_id = data.get("component_id"),
+                field_name   = data.get("field_name"),
+                dataset_id   = data.get("dataset_id"),   # ← nuevo
             )
 
             db.session.add(metric)
@@ -53,7 +54,8 @@ class StrategyMetricHandler:
             "description",
             "metric_type",
             "component_id",
-            "field_name"
+            "field_name",
+            "dataset_id",   # ← nuevo
         ]:
             if field in data:
                 setattr(metric, field, data[field])
