@@ -20,13 +20,6 @@ class StrategyMetric(db.Model):
         db.String(50),
         nullable=False
     )
-    """
-    Valores esperados:
-    - dataset_sum
-    - report_count
-    - report_sum
-    - manual
-    """
 
     # componente relacionado (opcional)
     component_id = db.Column(
