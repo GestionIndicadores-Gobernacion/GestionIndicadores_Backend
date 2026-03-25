@@ -23,6 +23,7 @@ class StrategyMetricSchema(Schema):
     metric_type  = fields.Str(required=True, validate=validate.OneOf(METRIC_TYPES))
     component_id = fields.Int(allow_none=True)
     field_name   = fields.Str(allow_none=True)
+    dataset_id   = fields.Int(allow_none=True)   # ← nuevo
 
 
 class StrategySchema(Schema):
@@ -38,12 +39,14 @@ class StrategySchema(Schema):
     annual_goals = fields.List(fields.Nested(StrategyAnnualGoalSchema), load_default=[])
     metrics      = fields.List(fields.Nested(StrategyMetricSchema),      load_default=[])
 
-    # total_goal es un @property en el modelo — fields.Decimal no lo detecta
     total_goal = fields.Method("get_total_goal", dump_only=True)
 
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
 
     def get_total_goal(self, obj):
-        val = getattr(obj, 'total_goal', None)
-        return str(val) if val is not None else "0"
+        try:
+            val = sum(float(g.value or 0) for g in obj.annual_goals)
+            return str(val)
+        except Exception:
+            return "0"
