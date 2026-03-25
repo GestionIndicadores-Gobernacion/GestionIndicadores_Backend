@@ -266,3 +266,7 @@ class ComponentHandler:
     def delete(component):
         db.session.delete(component)
         db.session.commit()
+        
+    @staticmethod
+    def get_by_strategy(strategy_id: int):
+        return Component.query.filter_by(strategy_id=strategy_id).all()    

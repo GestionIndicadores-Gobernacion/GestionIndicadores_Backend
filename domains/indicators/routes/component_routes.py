@@ -68,3 +68,11 @@ class ComponentResource(MethodView):
             return {"message": "Component not found"}, 404
 
         ComponentHandler.delete(component)
+        
+    @blp.route("/by-strategy/<int:strategy_id>")
+    class ComponentByStrategyResource(MethodView):
+
+        @jwt_required()
+        @blp.response(200, ComponentSchema(many=True))
+        def get(self, strategy_id):
+            return ComponentHandler.get_by_strategy(strategy_id)
