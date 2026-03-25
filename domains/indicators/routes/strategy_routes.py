@@ -42,13 +42,15 @@ class StrategyDashboardResource(MethodView):
     @jwt_required()
     @blp.response(200, StrategyWithProgressSchema(many=True))
     def get(self):
-        strategies = StrategyHandler.get_all()
-
-        for s in strategies:
-            s.progress = StrategyProgressService.get_progress(s)
-
-        return strategies
-
+        try:
+            strategies = StrategyHandler.get_all()
+            for s in strategies:
+                s.progress = StrategyProgressService.get_progress(s)
+            return strategies
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            return {"message": str(e)}, 500
 
 # ─── Rutas dinámicas ─────────────────────────────────────────────────────────
 
