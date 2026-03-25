@@ -1,7 +1,6 @@
 import re
 from datetime import datetime
 
-from domains.datasets.models.dataset import Dataset
 from domains.datasets.models.record import Record
 from domains.indicators.models.Strategy.strategy import Strategy
 from models.Report.report import Report
@@ -86,32 +85,47 @@ class StrategyProgressService:
 
     @staticmethod
     def _report_sum(metric, strategy: Strategy, current_year: int) -> float:
+        """Suma un campo numérico plano — field_name es el indicator_id."""
         if not metric.field_name:
             return 0.0
+
+        try:
+            indicator_id = int(metric.field_name)
+        except (ValueError, TypeError):
+            return 0.0
+
         query = Report.query.filter_by(strategy_id=strategy.id)
         if metric.component_id:
             query = query.filter_by(component_id=metric.component_id)
+
         reports = [r for r in query.all() if _report_year(r) == current_year]
+
         total = 0.0
         for r in reports:
-            val = _extract_indicator_value(r, metric.field_name)
-            if val is not None:
-                total += val
+            iv = next((v for v in (r.indicator_values or []) if v.indicator_id == indicator_id), None)
+            if iv is None or iv.value is None:
+                continue
+            try:
+                total += float(iv.value)
+            except (ValueError, TypeError):
+                pass
+
         return total
 
     @staticmethod
     def _report_sum_nested(metric, strategy: Strategy, current_year: int) -> float:
         """
-        Suma un campo numérico dentro de un JSON anidado en indicator_values.
-        Busca el indicador por indicator_id (field_name debe ser el ID del indicador)
-        y recorre recursivamente el JSON sumando todas las ocurrencias de
-        'no_de_animales_esterilizados' (o el key configurado en field_name).
+        Suma un campo numérico dentro de un JSON anidado.
+        - field_name = indicator_id (el indicador cuyo value es el JSON anidado)
+        - Recorre recursivamente el JSON sumando todas las ocurrencias
+          de 'no_de_animales_esterilizados' (u otro key si se configura así)
 
-        Estructura esperada del valor:
+        Estructura esperada del value:
         {
           "data": {
-            "especie": {
-              "sexo": { "no_de_animales_esterilizados": N }
+            "perro": {
+              "macho":  { "no_de_animales_esterilizados": 12 },
+              "hembra": { "no_de_animales_esterilizados": 8  }
             }
           }
         }
@@ -119,6 +133,11 @@ class StrategyProgressService:
         if not metric.field_name:
             return 0.0
 
+        try:
+            indicator_id = int(metric.field_name)
+        except (ValueError, TypeError):
+            return 0.0
+
         query = Report.query.filter_by(strategy_id=strategy.id)
         if metric.component_id:
             query = query.filter_by(component_id=metric.component_id)
@@ -127,10 +146,11 @@ class StrategyProgressService:
 
         total = 0.0
         for r in reports:
-            for iv in (r.indicator_values or []):
-                if iv.value is None or not isinstance(iv.value, dict):
-                    continue
-                total += _sum_nested_key(iv.value, metric.field_name)
+            iv = next((v for v in (r.indicator_values or []) if v.indicator_id == indicator_id), None)
+            if iv is None or not isinstance(iv.value, dict):
+                continue
+            # Recorre recursivamente el JSON sumando 'no_de_animales_esterilizados'
+            total += _sum_nested_key(iv.value, "no_de_animales_esterilizados")
 
         return total
 
@@ -191,26 +211,9 @@ def _report_year(report) -> int:
     return date.year
 
 
-def _extract_indicator_value(report, field_name: str):
-    """Busca en indicator_values por slug/name del indicador."""
-    for iv in (report.indicator_values or []):
-        indicator = getattr(iv, 'indicator', None)
-        slug = getattr(indicator, 'slug', None) or getattr(indicator, 'name', None)
-        if slug == field_name:
-            try:
-                return float(iv.value)
-            except (ValueError, TypeError):
-                return None
-    return None
-
-
 def _sum_nested_key(obj, key: str) -> float:
-    """
-    Recorre recursivamente un dict/list y suma todos los valores
-    numéricos cuya clave coincida con key.
-    """
+    """Recorre recursivamente un dict/list sumando todos los valores del key."""
     total = 0.0
-
     if isinstance(obj, dict):
         for k, v in obj.items():
             if k == key:
@@ -220,9 +223,7 @@ def _sum_nested_key(obj, key: str) -> float:
                     pass
             else:
                 total += _sum_nested_key(v, key)
-
     elif isinstance(obj, list):
         for item in obj:
             total += _sum_nested_key(item, key)
-
     return total
