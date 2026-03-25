@@ -99,11 +99,19 @@ class ReportHandler:
         except Exception as e:
             db.session.rollback()
             return None, {"database": str(e)}
-
+        
     @staticmethod
     def get_all():
-        return Report.query.order_by(Report.report_date.desc()).all()
-
+        return (
+            Report.query
+            .options(
+                selectinload(Report.indicator_values)
+                .joinedload(ReportIndicatorValue.indicator)
+            )
+            .order_by(Report.report_date.desc())
+            .all()
+        )
+        
     @staticmethod
     def get_by_id(report_id):
         return Report.query.get(report_id)
