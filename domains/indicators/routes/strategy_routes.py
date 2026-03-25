@@ -34,6 +34,24 @@ class StrategyListResource(MethodView):
         return strategy
 
 
+# ─── Rutas estáticas ANTES que las dinámicas /<int:id> ───────────────────────
+
+@blp.route("/dashboard")
+class StrategyDashboardResource(MethodView):
+
+    @jwt_required()
+    @blp.response(200, StrategyWithProgressSchema(many=True))
+    def get(self):
+        strategies = StrategyHandler.get_all()
+
+        for s in strategies:
+            s.progress = StrategyProgressService.get_progress(s)
+
+        return strategies
+
+
+# ─── Rutas dinámicas ─────────────────────────────────────────────────────────
+
 @blp.route("/<int:strategy_id>")
 class StrategyResource(MethodView):
 
@@ -63,33 +81,8 @@ class StrategyResource(MethodView):
         StrategyHandler.delete(strategy)
 
 
-# ─── Dashboard ────────────────────────────────────────────────────────────────
-
-@blp.route("/dashboard")
-class StrategyDashboardResource(MethodView):
-    """
-    Devuelve todas las estrategias con su progreso calculado para el año actual.
-    Usado por el dashboard en strategy-list.
-    """
-
-    @jwt_required()
-    @blp.response(200, StrategyWithProgressSchema(many=True))
-    def get(self):
-        strategies = StrategyHandler.get_all()
-
-        # Adjuntar el progreso como atributo dinámico por cada estrategia
-        # (no se persiste, solo se serializa via StrategyWithProgressSchema)
-        for s in strategies:
-            s.progress = StrategyProgressService.get_progress(s)
-
-        return strategies
-
-
 @blp.route("/<int:strategy_id>/progress")
 class StrategyProgressResource(MethodView):
-    """
-    Devuelve el progreso de una estrategia específica.
-    """
 
     @jwt_required()
     @blp.response(200, StrategyWithProgressSchema)
