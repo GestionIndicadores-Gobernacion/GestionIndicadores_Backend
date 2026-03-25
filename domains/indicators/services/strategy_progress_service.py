@@ -114,22 +114,6 @@ class StrategyProgressService:
 
     @staticmethod
     def _report_sum_nested(metric, strategy: Strategy, current_year: int) -> float:
-        """
-        Suma un campo numérico dentro de un JSON anidado.
-        - field_name = indicator_id (el indicador cuyo value es el JSON anidado)
-        - Recorre recursivamente el JSON sumando todas las ocurrencias
-          de 'no_de_animales_esterilizados' (u otro key si se configura así)
-
-        Estructura esperada del value:
-        {
-          "data": {
-            "perro": {
-              "macho":  { "no_de_animales_esterilizados": 12 },
-              "hembra": { "no_de_animales_esterilizados": 8  }
-            }
-          }
-        }
-        """
         if not metric.field_name:
             return 0.0
 
@@ -149,8 +133,13 @@ class StrategyProgressService:
             iv = next((v for v in (r.indicator_values or []) if v.indicator_id == indicator_id), None)
             if iv is None or not isinstance(iv.value, dict):
                 continue
-            # Recorre recursivamente el JSON sumando 'no_de_animales_esterilizados'
-            total += _sum_nested_key(iv.value, "no_de_animales_esterilizados")
+            
+            # ← Solo sumar dentro de 'data', ignorando 'sub_sections'
+            data = iv.value.get('data')
+            if not data or not isinstance(data, dict):
+                continue
+            
+            total += _sum_nested_key(data, "no_de_animales_esterilizados")
 
         return total
 
