@@ -63,7 +63,7 @@ class Strategy(db.Model):
     @property
     def total_goal(self):
         """TOTAL calculado dinámicamente"""
-        return sum(goal.value for goal in self.annual_goals)
+        return sum((goal.value or 0) for goal in self.annual_goals)
 
     def __repr__(self):
         return f"<Strategy {self.id} - {self.name}>"
