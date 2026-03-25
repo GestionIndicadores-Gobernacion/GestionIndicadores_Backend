@@ -9,8 +9,8 @@ from domains.indicators.models.Report.report import Report
 class StrategyProgressService:
 
     @staticmethod
-    def get_progress(strategy: Strategy) -> dict:
-        current_year  = datetime.utcnow().year
+    def get_progress(strategy: Strategy, year: int = None) -> dict:
+        current_year  = year or datetime.utcnow().year
         goal_for_year = StrategyProgressService._get_goal_for_year(strategy, current_year)
         actual        = StrategyProgressService._calculate_actual(strategy, current_year)
 

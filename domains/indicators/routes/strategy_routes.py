@@ -35,6 +35,7 @@ class StrategyListResource(MethodView):
 
 
 # ─── Rutas estáticas ANTES que las dinámicas /<int:id> ───────────────────────
+from flask import request
 
 @blp.route("/dashboard")
 class StrategyDashboardResource(MethodView):
@@ -43,9 +44,12 @@ class StrategyDashboardResource(MethodView):
     @blp.response(200, StrategyWithProgressSchema(many=True))
     def get(self):
         try:
+            # año opcional — si no viene usa el año actual
+            year = request.args.get('year', type=int)
+
             strategies = StrategyHandler.get_all()
             for s in strategies:
-                s.progress = StrategyProgressService.get_progress(s)
+                s.progress = StrategyProgressService.get_progress(s, year=year)
             return strategies
         except Exception as e:
             import traceback
