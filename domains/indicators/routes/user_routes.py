@@ -16,6 +16,20 @@ blp = Blueprint(
 
 # ── CRUD base ────────────────────────────────────────────────────────────────
 
+from flask_jwt_extended import get_jwt_identity
+
+@blp.route("/me")
+class UserMeResource(MethodView):
+
+    @jwt_required()
+    @blp.response(200, UserSchema)
+    def get(self):
+        user_id = get_jwt_identity()
+        user = UserHandler.get_by_id(int(user_id))
+        if not user:
+            return {"message": "User not found"}, 404
+        return user
+    
 @blp.route("/")
 class UserListResource(MethodView):
 
