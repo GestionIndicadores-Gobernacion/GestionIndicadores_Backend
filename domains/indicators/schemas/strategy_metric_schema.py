@@ -3,7 +3,6 @@ from marshmallow import Schema, fields, validate
 
 from domains.indicators.constants.metric_types import METRIC_TYPES
 
-
 class StrategyMetricSchema(Schema):
 
     class Meta:
@@ -15,4 +14,5 @@ class StrategyMetricSchema(Schema):
     metric_type  = fields.Str(required=True, validate=validate.OneOf(METRIC_TYPES))
     component_id = fields.Int(allow_none=True)
     field_name   = fields.Str(allow_none=True)
-    dataset_id   = fields.Int(allow_none=True)   # ← nuevo
+    dataset_id   = fields.Int(allow_none=True)
+    manual_value = fields.Decimal(allow_none=True, as_string=True)  # ← falta
