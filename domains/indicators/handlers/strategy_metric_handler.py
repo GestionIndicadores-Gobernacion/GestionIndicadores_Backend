@@ -21,7 +21,8 @@ class StrategyMetricHandler:
                 metric_type  = data["metric_type"],
                 component_id = data.get("component_id"),
                 field_name   = data.get("field_name"),
-                dataset_id   = data.get("dataset_id"),   # ← nuevo
+                dataset_id   = data.get("dataset_id"),
+                manual_value = data.get("manual_value"),  # ← nuevo
             )
 
             db.session.add(metric)
@@ -55,7 +56,8 @@ class StrategyMetricHandler:
             "metric_type",
             "component_id",
             "field_name",
-            "dataset_id",   # ← nuevo
+            "dataset_id",
+            "manual_value",  # ← nuevo
         ]:
             if field in data:
                 setattr(metric, field, data[field])

@@ -36,12 +36,13 @@ class StrategyHandler:
             for metric in data.get("metrics", []):
                 db.session.add(
                     StrategyMetric(
-                        strategy_id=strategy.id,
-                        description=metric["description"],
-                        metric_type=metric["metric_type"],
-                        component_id=metric.get("component_id"),
-                        field_name=metric.get("field_name"),
-                        dataset_id=metric.get("dataset_id")  # ← agregar
+                        strategy_id  = strategy.id,
+                        description  = metric["description"],
+                        metric_type  = metric["metric_type"],
+                        component_id = metric.get("component_id"),
+                        field_name   = metric.get("field_name"),
+                        dataset_id   = metric.get("dataset_id"),
+                        manual_value = metric.get("manual_value"),  # ← nuevo
                     )
                 )
 
@@ -105,13 +106,14 @@ class StrategyHandler:
             for metric in data['metrics']:
                 db.session.add(
                     StrategyMetric(
-                    strategy_id=strategy.id,
-                    description=metric["description"],
-                    metric_type=metric["metric_type"],
-                    component_id=metric.get("component_id"),
-                    field_name=metric.get("field_name"),
-                    dataset_id=metric.get("dataset_id")  # ← agregar
-                )
+                        strategy_id  = strategy.id,
+                        description  = metric["description"],
+                        metric_type  = metric["metric_type"],
+                        component_id = metric.get("component_id"),
+                        field_name   = metric.get("field_name"),
+                        dataset_id   = metric.get("dataset_id"),
+                        manual_value = metric.get("manual_value"),  # ← nuevo
+                    )
             )
 
         db.session.commit()
