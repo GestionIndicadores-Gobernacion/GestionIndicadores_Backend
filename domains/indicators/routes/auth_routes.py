@@ -30,9 +30,8 @@ class LoginResource(MethodView):
         return {
             "access_token": result["access_token"],
             "refresh_token": result["refresh_token"],
-            "user": UserSchema().dump(result["user"])
+            "user": result["user"]
         }
-
 
 @blp.route("/refresh")
 class RefreshResource(MethodView):
