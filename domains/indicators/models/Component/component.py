@@ -67,6 +67,14 @@ class Component(db.Model):
         lazy="selectin"        # carga automáticamente junto al componente
     )
 
+    # ── Usuarios asignados ────────────────────────────────────────────────
+    user_assignments = db.relationship(
+        "UserComponent",
+        back_populates="component",
+        cascade="all, delete-orphan",
+        lazy="selectin"
+    )
+
     __table_args__ = (
         db.UniqueConstraint(
             "strategy_id",
