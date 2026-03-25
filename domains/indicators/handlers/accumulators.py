@@ -79,8 +79,6 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
         return
 
     data = value.get("data", {})
-
-    # Acumular by_nested y detectar métrica principal
     metric_totals: dict[str, float] = defaultdict(float)
 
     for category, genders in data.items():
@@ -99,24 +97,24 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
                     if r.intervention_location:
                         location_nested[r.intervention_location][iv.indicator_id][metric] += val
 
-    # Sumar by_month usando la métrica con mayor total (métrica principal)
-    # Los géneros (Hembra + Macho) suman el doble del total real → dividir por 2
+    # ── FIX: sumar TODAS las métricas, no solo la principal ──────────────
     if metric_totals:
-        main_metric = max(metric_totals, key=lambda k: metric_totals[k])
         month_total = 0.0
-
         for category, genders in data.items():
             if not isinstance(genders, dict):
                 continue
             for gender, metrics in genders.items():
-                if isinstance(metrics, dict):
-                    val = metrics.get(main_metric, 0)
+                if not isinstance(metrics, dict):
+                    continue
+                for metric, val in metrics.items():
                     if isinstance(val, (int, float)):
                         month_total += val
 
+        # Cada animal aparece en Hembra + Macho → ya están separados,
+        # no hay doble conteo porque iteramos sobre los sexos directamente
         acc["by_month"][month_key] += month_total
 
-    # Sub sections
+    # Sub sections (sin cambios)
     sub = value.get("sub_sections", {})
     if isinstance(sub, dict):
         for section, section_data in sub.items():
@@ -132,7 +130,6 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
                     for metric, val in section_data.items():
                         if isinstance(val, (int, float)):
                             acc["by_nested"][f"sub:{section}"][metric] += val
-
 
 def _process_grouped_data(value, month_key, acc):
     if isinstance(value, dict):

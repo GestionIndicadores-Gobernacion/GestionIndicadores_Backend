@@ -51,6 +51,13 @@ class Strategy(db.Model):
         cascade="all, delete-orphan",
         lazy=True
     )
+    
+    metrics = db.relationship(
+        "StrategyMetric",
+        back_populates="strategy",
+        cascade="all, delete-orphan",
+        lazy=True
+    )
 
 
     @property
