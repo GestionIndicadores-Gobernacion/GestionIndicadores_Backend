@@ -1,5 +1,6 @@
 from domains.indicators.models.Strategy.strategy_metric import StrategyMetric
 from domains.indicators.models.Strategy.strategy import Strategy
+from domains.indicators.constants.metric_types import METRIC_TYPES
 
 
 class StrategyMetricValidator:
@@ -19,16 +20,7 @@ class StrategyMetricValidator:
         if not data.get("description"):
             errors["description"] = "Description is required"
 
-        metric_type = data.get("metric_type")
-
-        allowed = [
-            "dataset_sum",
-            "report_count",
-            "report_sum",
-            "manual"
-        ]
-
-        if metric_type not in allowed:
-            errors["metric_type"] = "Invalid metric_type"
+        if data.get("metric_type") not in METRIC_TYPES:  # ← centralizado
+            errors["metric_type"] = f"Invalid metric_type. Allowed: {METRIC_TYPES}"
 
         return errors
