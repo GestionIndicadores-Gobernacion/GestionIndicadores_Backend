@@ -12,25 +12,28 @@ class StrategyMetric(db.Model):
         nullable=False
     )
 
-    # descripción de cómo se mide la meta
     description = db.Column(db.Text, nullable=False)
 
-    # tipo de métrica
     metric_type = db.Column(
         db.String(50),
         nullable=False
     )
 
-    # componente relacionado (opcional)
     component_id = db.Column(
         db.Integer,
         db.ForeignKey("components.id"),
         nullable=True
     )
 
-    # campo del reporte que se debe sumar
     field_name = db.Column(
         db.String(100),
+        nullable=True
+    )
+
+    # ID del dataset externo (usado en dataset_count y dataset_sum)
+    dataset_id = db.Column(
+        db.Integer,
+        db.ForeignKey("datasets.id"),
         nullable=True
     )
 
@@ -41,6 +44,11 @@ class StrategyMetric(db.Model):
 
     component = db.relationship(
         "Component",
+        lazy=True
+    )
+
+    dataset = db.relationship(
+        "Dataset",
         lazy=True
     )
 
