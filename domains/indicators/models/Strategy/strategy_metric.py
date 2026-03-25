@@ -13,6 +13,8 @@ class StrategyMetric(db.Model):
     )
 
     description = db.Column(db.Text, nullable=False)
+    
+    manual_value = db.Column(db.Numeric(14, 2), nullable=True)
 
     metric_type = db.Column(
         db.String(50),
