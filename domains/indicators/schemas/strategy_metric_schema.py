@@ -15,4 +15,4 @@ class StrategyMetricSchema(Schema):
     component_id = fields.Int(allow_none=True)
     field_name   = fields.Str(allow_none=True)
     dataset_id   = fields.Int(allow_none=True)
-    manual_value = fields.Decimal(allow_none=True, as_string=True)  # ← falta
+    manual_value = fields.Float(allow_none=True)
