@@ -40,7 +40,8 @@ class StrategyHandler:
                         description=metric["description"],
                         metric_type=metric["metric_type"],
                         component_id=metric.get("component_id"),
-                        field_name=metric.get("field_name")
+                        field_name=metric.get("field_name"),
+                        dataset_id=metric.get("dataset_id")  # ← agregar
                     )
                 )
 
@@ -104,13 +105,14 @@ class StrategyHandler:
             for metric in data['metrics']:
                 db.session.add(
                     StrategyMetric(
-                        strategy_id=strategy.id,
-                        description=metric["description"],
-                        metric_type=metric["metric_type"],
-                        component_id=metric.get("component_id"),
-                        field_name=metric.get("field_name")
-                    )
+                    strategy_id=strategy.id,
+                    description=metric["description"],
+                    metric_type=metric["metric_type"],
+                    component_id=metric.get("component_id"),
+                    field_name=metric.get("field_name"),
+                    dataset_id=metric.get("dataset_id")  # ← agregar
                 )
+            )
 
         db.session.commit()
         return strategy
