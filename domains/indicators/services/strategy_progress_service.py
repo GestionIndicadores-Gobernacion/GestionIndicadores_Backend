@@ -3,7 +3,7 @@ from datetime import datetime
 
 from domains.datasets.models.record import Record
 from domains.indicators.models.Strategy.strategy import Strategy
-from models.Report.report import Report
+from domains.indicators.models.Report.report import Report
 
 
 class StrategyProgressService:
