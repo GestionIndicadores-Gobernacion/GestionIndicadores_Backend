@@ -28,10 +28,13 @@ def _current_user_id() -> int | None:
     identity = get_jwt_identity()
     return int(identity) if identity is not None else None
 
-
 def _is_admin() -> bool:
     user = User.query.get(_current_user_id())
     return user and user.role and user.role.name == "admin"
+
+def _can_see_all() -> bool:
+    user = User.query.get(_current_user_id())
+    return user and user.role and user.role.name in ("admin", "monitor")
 
 
 def _can_access(report) -> bool:
@@ -56,16 +59,16 @@ class ReportList(MethodView):
     @blp.response(200, ReportSchema(many=True))
     def get(self):
         user_id = _current_user_id()
-        admin = _is_admin()
+        see_all = _can_see_all()
 
         component_ids = []
-        if not admin:
+        if not see_all:
             user = User.query.get(user_id)
             component_ids = [uc.component_id for uc in (user.component_assignments or [])]
 
         return ReportHandler.get_all(
             user_id=user_id,
-            is_admin=admin,
+            is_admin=see_all,
             component_ids=component_ids
         )
 

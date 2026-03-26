@@ -19,11 +19,10 @@ blp = Blueprint(
 )
 
 
-def _is_admin():
+def _can_manage_plans():
     from domains.indicators.models.User.user import User
     user = User.query.get(get_jwt_identity())
-    return user and user.role and user.role.name == "admin"
-
+    return user and user.role and user.role.name in ("admin", "monitor")
 
 @blp.route("/")
 class ActionPlanList(MethodView):
@@ -57,7 +56,7 @@ class ActionPlanDetail(MethodView):
         plan = ActionPlanHandler.get_by_id(plan_id)
         if not plan:
             return jsonify({"error": "No encontrado"}), 404
-        if not _is_admin() and plan.user_id is not None and plan.user_id != get_jwt_identity():
+        if not _can_manage_plans() and plan.user_id is not None and plan.user_id != get_jwt_identity():
             return jsonify({"error": "Sin permiso"}), 403
         return plan
 
@@ -66,7 +65,7 @@ class ActionPlanDetail(MethodView):
         plan = ActionPlanHandler.get_by_id(plan_id)
         if not plan:
             return jsonify({"error": "No encontrado"}), 404
-        if not _is_admin() and plan.user_id is not None and plan.user_id != get_jwt_identity():
+        if not _can_manage_plans() and plan.user_id is not None and plan.user_id != get_jwt_identity():
             return jsonify({"error": "Sin permiso"}), 403
         success, errors = ActionPlanHandler.delete(plan_id)
         if not success:
