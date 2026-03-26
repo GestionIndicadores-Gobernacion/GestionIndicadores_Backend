@@ -1,4 +1,5 @@
 from flask import request
+from flask_jwt_extended import get_jwt_identity
 from flask_smorest import Blueprint, abort
 from flask.views import MethodView
 
@@ -11,11 +12,19 @@ blp = Blueprint(
     url_prefix="/datasets"
 )
 
+def _is_admin():
+    from domains.indicators.models.User.user import User
+    user = User.query.get(get_jwt_identity())
+    return user and user.role and user.role.name == "admin"
 
 @blp.route("/import-excel")
 class DatasetImportResource(MethodView):
 
     def post(self):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")  
+
         if "file" not in request.files:
             abort(400, message="Archivo Excel no enviado")
 
@@ -29,6 +38,10 @@ class DatasetImportResource(MethodView):
 class DatasetImportPreviewResource(MethodView):
 
     def post(self):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")
+        
         if "file" not in request.files:
             abort(400, message="Archivo Excel no enviado")
 
@@ -43,6 +56,10 @@ from domains.datasets.handlers.excel_import_handler import import_excel_dataset,
 class DatasetUpdateResource(MethodView):
 
     def put(self, dataset_id):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")
+        
         if "file" not in request.files:
             abort(400, message="Archivo Excel no enviado")
 

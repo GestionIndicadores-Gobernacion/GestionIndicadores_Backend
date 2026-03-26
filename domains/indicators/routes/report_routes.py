@@ -36,15 +36,20 @@ def _can_see_all() -> bool:
     user = User.query.get(_current_user_id())
     return user and user.role and user.role.name in ("admin", "monitor")
 
+def _is_viewer() -> bool:
+    user = User.query.get(_current_user_id())
+    return user and user.role and user.role.name == "viewer"
 
 def _can_access(report) -> bool:
-    """
-    Permiso centralizado
-    """
+    if _is_viewer():
+        return True  # viewer puede VER cualquier reporte, pero no editar/eliminar
+
     if _is_admin():
         return True
+
     if report.user_id is None:
         return True
+
     return report.user_id == _current_user_id()
 
 
@@ -71,6 +76,18 @@ class ReportList(MethodView):
             is_admin=see_all,
             component_ids=component_ids
         )
+
+    @jwt_required()
+    @blp.arguments(ReportSchema)
+    @blp.response(201, ReportSchema)
+    def post(self, data):
+        if _is_viewer():
+            abort(403, message="No tienes permiso para crear reportes")
+
+        report, errors = ReportHandler.create(data)
+        if errors:
+            abort(400, message=errors)
+        return report
 
 @blp.route("/all")
 class ReportListAll(MethodView):
@@ -102,6 +119,10 @@ class ReportDetail(MethodView):
     @blp.arguments(ReportSchema)
     @blp.response(200, ReportSchema)
     def put(self, data, report_id):
+        
+        if _is_viewer():
+            abort(403, message="No tienes permiso para editar reportes")
+        
         report = ReportHandler.get_by_id(report_id)
         if not report:
             abort(404, message="Report not found")
@@ -117,6 +138,10 @@ class ReportDetail(MethodView):
     @jwt_required()
     @blp.response(204)
     def delete(self, report_id):
+        
+        if _is_viewer():
+            abort(403, message="No tienes permiso para editar reportes")
+        
         report = ReportHandler.get_by_id(report_id)
         if not report:
             abort(404, message="Report not found")

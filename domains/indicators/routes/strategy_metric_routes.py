@@ -1,6 +1,6 @@
 from flask.views import MethodView
-from flask_smorest import Blueprint
-from flask_jwt_extended import jwt_required
+from flask_smorest import Blueprint, abort
+from flask_jwt_extended import get_jwt_identity, jwt_required
 
 from domains.indicators.handlers.strategy_metric_handler import StrategyMetricHandler
 from domains.indicators.schemas.strategy_metric_schema import StrategyMetricSchema
@@ -13,6 +13,10 @@ blp = Blueprint(
     description="Strategy metrics management"
 )
 
+def _is_admin():
+    from domains.indicators.models.User.user import User
+    user = User.query.get(get_jwt_identity())
+    return user and user.role and user.role.name == "admin"
 
 @blp.route("/")
 class StrategyMetricListResource(MethodView):
@@ -26,6 +30,9 @@ class StrategyMetricListResource(MethodView):
     @blp.arguments(StrategyMetricSchema)
     @blp.response(201, StrategyMetricSchema)
     def post(self, data):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")  
 
         metric, errors = StrategyMetricHandler.create(data)
 
@@ -53,6 +60,9 @@ class StrategyMetricResource(MethodView):
     @blp.arguments(StrategyMetricSchema)
     @blp.response(200, StrategyMetricSchema)
     def put(self, data, metric_id):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")
 
         metric = StrategyMetricHandler.get_by_id(metric_id)
 
@@ -64,6 +74,9 @@ class StrategyMetricResource(MethodView):
     @jwt_required()
     @blp.response(204)
     def delete(self, metric_id):
+
+        if not _is_admin():
+            abort(403, message="Sin permiso")
 
         metric = StrategyMetricHandler.get_by_id(metric_id)
 
