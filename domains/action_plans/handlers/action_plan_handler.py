@@ -106,6 +106,8 @@ class ActionPlanHandler:
                     base_date = act_data["delivery_date"]
                     if isinstance(base_date, str):
                         base_date = date.fromisoformat(base_date)
+                    elif hasattr(base_date, 'isoformat'):
+                        pass  # ya es date, no hacer nada
 
                     if recurrence:
                         dates = _generate_dates(base_date, recurrence)
