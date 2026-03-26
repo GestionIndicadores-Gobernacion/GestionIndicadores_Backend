@@ -69,6 +69,13 @@ class ReportList(MethodView):
             component_ids=component_ids
         )
 
+@blp.route("/all")
+class ReportListAll(MethodView):
+
+    @jwt_required()
+    @blp.response(200, ReportSchema(many=True))
+    def get(self):
+        return ReportHandler.get_all(is_admin=True)
 # =========================================================
 # DETAIL
 # =========================================================
