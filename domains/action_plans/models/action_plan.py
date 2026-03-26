@@ -93,6 +93,17 @@ class ActionPlanActivity(db.Model):
         nullable=True
     ) 
     
+    recurrence_group_id = db.Column(
+        db.String(36),  # UUID como string
+        nullable=True,
+        index=True
+    )   
+    
+    recurrence_rule = db.Column(
+        db.JSON,  # guarda la regla: {"frequency": "monthly", "day": 26, "until": "2026-12-31"}
+        nullable=True
+    )
+    
     reported_by = db.relationship(
         "User",
         foreign_keys=[reported_by_user_id],
