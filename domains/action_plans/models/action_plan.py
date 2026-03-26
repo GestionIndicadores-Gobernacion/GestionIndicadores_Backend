@@ -87,6 +87,18 @@ class ActionPlanActivity(db.Model):
 
     plan_objective = db.relationship("ActionPlanObjective", back_populates="activities")
 
+    reported_by_user_id = db.Column(
+        db.Integer,
+        db.ForeignKey("users.id", ondelete="SET NULL"),
+        nullable=True
+    ) 
+    
+    reported_by = db.relationship(
+        "User",
+        foreign_keys=[reported_by_user_id],
+        backref=db.backref("activities_reported", lazy=True)
+    )
+
     support_staff = db.relationship(
         "ActionPlanSupportStaff",
         back_populates="activity",
