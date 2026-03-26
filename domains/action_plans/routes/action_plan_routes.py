@@ -129,3 +129,66 @@ class ActionPlanActivityDetail(MethodView):
             status_code = 404 if "activity" in errors else 422
             return jsonify({"errors": errors}), status_code
         return jsonify({"message": "Actividad eliminada"}), 200
+    
+@blp.route("/dashboard/users")
+class ActionPlanUserDashboard(MethodView):
+
+    @jwt_required()
+    def get(self):
+        from domains.indicators.models.User.user import User
+        from domains.action_plans.models.action_plan import ActionPlanActivity, ActionPlanObjective, ActionPlan
+        from datetime import date
+
+        # Solo admin y monitor
+        user = _get_current_user()
+        if not user or user.role.name not in ("admin", "monitor"):
+            return jsonify({"error": "Sin permiso"}), 403
+
+        users = User.query.filter_by(is_active=True).all()
+        result = []
+
+        for u in users:
+            # Todas las actividades donde este usuario es responsable del plan
+            activities = (
+                ActionPlanActivity.query
+                .join(ActionPlanObjective)
+                .join(ActionPlan)
+                .filter(ActionPlan.user_id == u.id)
+                .all()
+            )
+
+            if not activities:
+                continue
+
+            total       = len(activities)
+            completed   = [a for a in activities if a.evidence_url]
+            pending     = [a for a in activities if not a.evidence_url and date.today() <= a.delivery_date]
+            overdue     = [a for a in activities if not a.evidence_url and date.today() > a.delivery_date]
+            total_score = sum(a.score for a in completed if a.score)
+
+            result.append({
+                "user_id":    u.id,
+                "first_name": u.first_name,
+                "last_name":  u.last_name,
+                "email":      u.email,
+                "role":       u.role.name if u.role else None,
+                "total_activities": total,
+                "completed":  len(completed),
+                "pending":    len(pending),
+                "overdue":    len(overdue),
+                "total_score": total_score,
+                "activities": [
+                    {
+                        "id":            a.id,
+                        "name":          a.name,
+                        "delivery_date": str(a.delivery_date),
+                        "status":        a.status,
+                        "score":         a.score,
+                        "reported_at":   str(a.reported_at) if a.reported_at else None,
+                        "evidence_url":  a.evidence_url,
+                    }
+                    for a in activities
+                ]
+            })
+
+        return jsonify(result), 200
