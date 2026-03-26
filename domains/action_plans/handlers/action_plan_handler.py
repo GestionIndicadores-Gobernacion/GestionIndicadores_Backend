@@ -119,6 +119,7 @@ class ActionPlanHandler:
             activity.description  = (data.get("description") or "").strip() or None
             activity.reported_at  = now
             activity.score        = 5 if now.date() <= activity.delivery_date else 1
+            activity.reported_by_user_id = int(user_id)
 
             plan_id = activity.plan_objective.action_plan_id
             db.session.add(AuditLog(
