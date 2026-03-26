@@ -55,17 +55,19 @@ class ReportList(MethodView):
     @jwt_required()
     @blp.response(200, ReportSchema(many=True))
     def get(self):
-        return ReportHandler.get_all()
+        user_id = _current_user_id()
+        admin = _is_admin()
 
-    @jwt_required()
-    @blp.arguments(ReportSchema)
-    @blp.response(201, ReportSchema)
-    def post(self, data):
-        report, errors = ReportHandler.create(data)
-        if errors:
-            abort(400, message=errors)
-        return report
+        component_ids = []
+        if not admin:
+            user = User.query.get(user_id)
+            component_ids = [uc.component_id for uc in (user.component_assignments or [])]
 
+        return ReportHandler.get_all(
+            user_id=user_id,
+            is_admin=admin,
+            component_ids=component_ids
+        )
 
 # =========================================================
 # DETAIL
