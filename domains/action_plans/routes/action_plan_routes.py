@@ -6,6 +6,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from domains.action_plans.schemas.action_plan_schema import (
     ActionPlanCreateSchema,
     ActionPlanActivityReportSchema,
+    ActionPlanActivityEditSchema,
     ActionPlanResponseSchema,
     ActionPlanActivitySchema,
     ActionPlanActivityDetailSchema,
@@ -18,13 +19,13 @@ blp = Blueprint(
     description="Gestión de Planes de Acción"
 )
 
+
 def _get_current_user():
     from domains.indicators.models.User.user import User
     return User.query.get(get_jwt_identity())
 
 def _can_manage_plans():
-    from domains.indicators.models.User.user import User
-    user = User.query.get(get_jwt_identity())
+    user = _get_current_user()
     return user and user.role and user.role.name in ("admin", "monitor")
 
 def _is_viewer():
@@ -32,7 +33,6 @@ def _is_viewer():
     return user and user.role and user.role.name == "viewer"
 
 def _can_edit_plan(plan):
-    """Editor solo puede editar planes de sus componentes asignados."""
     user = _get_current_user()
     if not user:
         return False
@@ -40,9 +40,10 @@ def _can_edit_plan(plan):
         return True
     if user.role.name == "viewer":
         return False
-    # editor — verificar componente asignado
     assigned = [uc.component_id for uc in user.component_assignments]
     return plan.component_id in assigned
+
+
 @blp.route("/")
 class ActionPlanList(MethodView):
 
@@ -64,7 +65,6 @@ class ActionPlanList(MethodView):
             return jsonify({"error": "Sin permiso"}), 403
 
         user = _get_current_user()
-        # Editor — verificar que el componente sea el suyo
         if user.role.name == "editor":
             assigned = [uc.component_id for uc in user.component_assignments]
             if data.get("component_id") not in assigned:
@@ -117,6 +117,24 @@ class ActionPlanActivityReport(MethodView):
         return jsonify(ActionPlanActivityDetailSchema().dump(activity)), 200
 
 
+@blp.route("/activities/<int:activity_id>/edit")
+class ActionPlanActivityEdit(MethodView):
+    """Editar una actividad o todo su grupo de recurrencia."""
+
+    @blp.arguments(ActionPlanActivityEditSchema)
+    @jwt_required()
+    def put(self, data, activity_id):
+        if _is_viewer():
+            return jsonify({"error": "Sin permiso"}), 403
+
+        edit_all = data.pop("edit_all", False)
+        activity, errors = ActionPlanHandler.update_activity(activity_id, data, edit_all=edit_all)
+        if errors:
+            status_code = 404 if "activity" in errors else 422
+            return jsonify({"errors": errors}), status_code
+        return jsonify(ActionPlanActivityDetailSchema().dump(activity)), 200
+
+
 @blp.route("/activities/<int:activity_id>")
 class ActionPlanActivityDetail(MethodView):
 
@@ -124,12 +142,15 @@ class ActionPlanActivityDetail(MethodView):
     def delete(self, activity_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
-        success, errors = ActionPlanHandler.delete_activity(activity_id)
+
+        delete_all = request.args.get("delete_all", "false").lower() == "true"
+        success, errors = ActionPlanHandler.delete_activity(activity_id, delete_all=delete_all)
         if not success:
             status_code = 404 if "activity" in errors else 422
             return jsonify({"errors": errors}), status_code
         return jsonify({"message": "Actividad eliminada"}), 200
-    
+
+
 @blp.route("/dashboard/users")
 class ActionPlanUserDashboard(MethodView):
 
@@ -139,7 +160,6 @@ class ActionPlanUserDashboard(MethodView):
         from domains.action_plans.models.action_plan import ActionPlanActivity, ActionPlanObjective, ActionPlan
         from datetime import date
 
-        # Solo admin y monitor
         user = _get_current_user()
         if not user or user.role.name not in ("admin", "monitor"):
             return jsonify({"error": "Sin permiso"}), 403
@@ -148,7 +168,6 @@ class ActionPlanUserDashboard(MethodView):
         result = []
 
         for u in users:
-            # Todas las actividades donde este usuario es responsable del plan
             activities = (
                 ActionPlanActivity.query
                 .join(ActionPlanObjective)
@@ -160,10 +179,10 @@ class ActionPlanUserDashboard(MethodView):
             if not activities:
                 continue
 
-            total       = len(activities)
-            completed   = [a for a in activities if a.evidence_url]
-            pending     = [a for a in activities if not a.evidence_url and date.today() <= a.delivery_date]
-            overdue     = [a for a in activities if not a.evidence_url and date.today() > a.delivery_date]
+            total     = len(activities)
+            completed = [a for a in activities if a.evidence_url]
+            pending   = [a for a in activities if not a.evidence_url and date.today() <= a.delivery_date]
+            overdue   = [a for a in activities if not a.evidence_url and date.today() > a.delivery_date]
             total_score = sum(a.score for a in completed if a.score)
 
             result.append({
