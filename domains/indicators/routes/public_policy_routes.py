@@ -1,6 +1,6 @@
 from flask.views import MethodView
-from flask_smorest import Blueprint
-from flask_jwt_extended import jwt_required
+from flask_smorest import Blueprint, abort
+from flask_jwt_extended import get_jwt_identity, jwt_required
 
 from extensions import db
 from domains.indicators.models.PublicPolicy.public_policy import PublicPolicy
@@ -54,6 +54,11 @@ PUBLIC_POLICIES_SEED = [
 # ENDPOINTS
 # ─────────────────────────────────────────────────────────────────
 
+def _is_admin():
+    from domains.indicators.models.User.user import User
+    user = User.query.get(get_jwt_identity())
+    return user and user.role and user.role.name == "admin"
+
 @blp.route("/")
 class PublicPolicyListResource(MethodView):
 
@@ -67,6 +72,10 @@ class PublicPolicyListResource(MethodView):
     @blp.arguments(PublicPolicySchema)
     @blp.response(201, PublicPolicySchema)
     def post(self, data):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")
+        
         """Crear una política pública."""
         existing = PublicPolicy.query.filter_by(code=data["code"]).first()
         if existing:
@@ -94,6 +103,10 @@ class PublicPolicyResource(MethodView):
     @blp.arguments(PublicPolicySchema)
     @blp.response(200, PublicPolicySchema)
     def put(self, data, policy_id):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")
+        
         """Actualizar una política pública."""
         policy = PublicPolicy.query.get(policy_id)
         if not policy:
@@ -113,6 +126,10 @@ class PublicPolicyResource(MethodView):
     @jwt_required()
     @blp.response(204)
     def delete(self, policy_id):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")
+        
         """Eliminar una política pública."""
         policy = PublicPolicy.query.get(policy_id)
         if not policy:

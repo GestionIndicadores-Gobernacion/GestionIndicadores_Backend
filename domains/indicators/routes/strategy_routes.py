@@ -1,7 +1,7 @@
 # domains/indicators/routes/strategy_routes.py
 from flask.views import MethodView
-from flask_smorest import Blueprint
-from flask_jwt_extended import jwt_required
+from flask_smorest import Blueprint, abort
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from domains.indicators.handlers.strategy_handler import StrategyHandler
 from domains.indicators.schemas.strategy_schema import StrategySchema
@@ -14,6 +14,11 @@ blp = Blueprint(
     url_prefix="/strategies",
     description="Strategy management"
 )
+
+def _is_admin():
+    from domains.indicators.models.User.user import User
+    user = User.query.get(get_jwt_identity())
+    return user and user.role and user.role.name == "admin"
 
 
 @blp.route("/")
@@ -28,6 +33,10 @@ class StrategyListResource(MethodView):
     @blp.arguments(StrategySchema)
     @blp.response(201, StrategySchema)
     def post(self, data):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")  
+        
         strategy, errors = StrategyHandler.create(data)
         if errors:
             return {"errors": errors}, 400
@@ -73,6 +82,10 @@ class StrategyResource(MethodView):
     @blp.arguments(StrategySchema)
     @blp.response(200, StrategySchema)
     def put(self, data, strategy_id):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")  
+        
         strategy = StrategyHandler.get_by_id(strategy_id)
         if not strategy:
             return {"message": "Strategy not found"}, 404
@@ -81,6 +94,10 @@ class StrategyResource(MethodView):
     @jwt_required()
     @blp.response(204)
     def delete(self, strategy_id):
+        
+        if not _is_admin():
+            abort(403, message="Sin permiso")  
+        
         strategy = StrategyHandler.get_by_id(strategy_id)
         if not strategy:
             return {"message": "Strategy not found"}, 404
