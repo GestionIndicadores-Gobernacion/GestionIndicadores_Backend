@@ -13,22 +13,17 @@ from sqlalchemy.orm import selectinload
 
 
 def _generate_dates(start_date: date, recurrence: dict) -> list[date]:
-    """
-    Genera una lista de fechas según la regla de recurrencia.
-    recurrence = {
-        "frequency": "daily"|"weekly"|"biweekly"|"monthly"|"yearly"|"custom",
-        "until": "YYYY-MM-DD",          # fecha límite
-        "day_of_month": 26,             # para monthly
-        "day_of_week": 0,               # 0=lun..6=dom, para weekly/biweekly
-        "interval": 3,                  # para custom (cada N días)
-    }
-    """
     frequency = recurrence.get("frequency")
-    until_str = recurrence.get("until")
-    if not until_str:
+    until_raw = recurrence.get("until")
+    if not until_raw:
         return [start_date]
 
-    until = until_str if isinstance(until_str, date) else date.fromisoformat(until_str)
+    # until puede llegar como date o como string
+    if isinstance(until_raw, date):
+        until = until_raw
+    else:
+        until = date.fromisoformat(str(until_raw))
+
     dates = []
     current = start_date
 
@@ -37,32 +32,25 @@ def _generate_dates(start_date: date, recurrence: dict) -> list[date]:
 
         if frequency == "daily":
             current = current + timedelta(days=1)
-
         elif frequency == "weekly":
             current = current + timedelta(weeks=1)
-
         elif frequency == "biweekly":
             current = current + timedelta(weeks=2)
-
         elif frequency == "monthly":
-            # Mismo día del mes cada mes
             next_month = current + relativedelta(months=1)
-            day = recurrence.get("day_of_month", current.day)
+            # day_of_month puede ser None → usar el día actual
+            day = recurrence.get("day_of_month") or current.day
             try:
-                current = next_month.replace(day=day)
+                current = next_month.replace(day=int(day))
             except ValueError:
-                # Día no existe en ese mes (ej: 31 de febrero)
                 import calendar
                 last_day = calendar.monthrange(next_month.year, next_month.month)[1]
                 current = next_month.replace(day=last_day)
-
         elif frequency == "yearly":
             current = current + relativedelta(years=1)
-
         elif frequency == "custom":
-            interval = recurrence.get("interval", 7)
-            current = current + timedelta(days=interval)
-
+            interval = recurrence.get("interval") or 7
+            current = current + timedelta(days=int(interval))
         else:
             break
 
