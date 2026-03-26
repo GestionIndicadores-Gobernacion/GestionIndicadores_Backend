@@ -101,16 +101,26 @@ class ReportHandler:
             return None, {"database": str(e)}
         
     @staticmethod
-    def get_all():
-        return (
+    def get_all(user_id=None, is_admin=False, component_ids=None):
+        from sqlalchemy import or_
+
+        query = (
             Report.query
             .options(
                 selectinload(Report.indicator_values)
                 .joinedload(ReportIndicatorValue.indicator)
             )
-            .order_by(Report.report_date.desc())
-            .all()
         )
+
+        if not is_admin and user_id is not None:
+            query = query.filter(
+                or_(
+                    Report.component_id.in_(component_ids or []),
+                    Report.user_id == user_id
+                )
+            )
+
+        return query.order_by(Report.report_date.desc()).all()
         
     @staticmethod
     def get_by_id(report_id):
