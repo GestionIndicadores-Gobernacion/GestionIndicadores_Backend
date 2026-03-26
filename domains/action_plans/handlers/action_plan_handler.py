@@ -28,7 +28,7 @@ def _generate_dates(start_date: date, recurrence: dict) -> list[date]:
     if not until_str:
         return [start_date]
 
-    until = date.fromisoformat(until_str)
+    until = until_str if isinstance(until_str, date) else date.fromisoformat(until_str)
     dates = []
     current = start_date
 
@@ -110,9 +110,13 @@ class ActionPlanHandler:
                         pass  # ya es date, no hacer nada
 
                     if recurrence:
+                        recurrence_to_save = dict(recurrence)
+                        if isinstance(recurrence_to_save.get("until"), date):
+                            recurrence_to_save["until"] = recurrence_to_save["until"].isoformat()
                         dates = _generate_dates(base_date, recurrence)
                         group_id = str(uuid.uuid4())
                     else:
+                        recurrence_to_save = None
                         dates = [base_date]
                         group_id = None
 
@@ -124,7 +128,7 @@ class ActionPlanHandler:
                             delivery_date            = delivery_date,
                             requires_boss_assistance = act_data.get("requires_boss_assistance", False),
                             recurrence_group_id      = group_id,
-                            recurrence_rule          = recurrence,
+                            recurrence_rule          = recurrence_to_save,
                         )
                         db.session.add(activity)
                         db.session.flush()
