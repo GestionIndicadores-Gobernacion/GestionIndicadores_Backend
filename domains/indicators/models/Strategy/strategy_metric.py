@@ -12,14 +12,14 @@ class StrategyMetric(db.Model):
         nullable=False
     )
 
-    description = db.Column(db.Text, nullable=False)
-    
+    description  = db.Column(db.Text, nullable=False)
     manual_value = db.Column(db.Numeric(14, 2), nullable=True)
 
-    metric_type = db.Column(
-        db.String(50),
-        nullable=False
-    )
+    # Año calendario al que aplica esta métrica (solo para tipo 'manual')
+    # Ej: 2024, 2025. Si es None, aplica a todos los años.
+    year = db.Column(db.Integer, nullable=True)
+
+    metric_type = db.Column(db.String(50), nullable=False)
 
     component_id = db.Column(
         db.Integer,
@@ -27,32 +27,17 @@ class StrategyMetric(db.Model):
         nullable=True
     )
 
-    field_name = db.Column(
-        db.String(100),
-        nullable=True
-    )
+    field_name = db.Column(db.String(100), nullable=True)
 
-    # ID del dataset externo (usado en dataset_count y dataset_sum)
     dataset_id = db.Column(
         db.Integer,
         db.ForeignKey("datasets.id"),
         nullable=True
     )
 
-    strategy = db.relationship(
-        "Strategy",
-        back_populates="metrics"
-    )
-
-    component = db.relationship(
-        "Component",
-        lazy=True
-    )
-
-    dataset = db.relationship(
-        "Dataset",
-        lazy=True
-    )
+    strategy = db.relationship("Strategy", back_populates="metrics")
+    component = db.relationship("Component", lazy=True)
+    dataset   = db.relationship("Dataset", lazy=True)
 
     def __repr__(self):
         return f"<StrategyMetric {self.id} Strategy:{self.strategy_id}>"
