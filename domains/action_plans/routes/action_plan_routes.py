@@ -88,6 +88,22 @@ class ActionPlanDetail(MethodView):
         return plan
 
     @jwt_required()
+    def put(self, plan_id):          # ← NUEVO
+        if _is_viewer():
+            return jsonify({"error": "Sin permiso"}), 403
+        plan = ActionPlanHandler.get_by_id(plan_id)
+        if not plan:
+            return jsonify({"error": "No encontrado"}), 404
+        if not _can_edit_plan(plan):
+            return jsonify({"error": "Sin permiso"}), 403
+        data = request.get_json()
+        updated_plan, errors = ActionPlanHandler.update_plan(plan_id, data)
+        if errors:
+            return jsonify({"errors": errors}), 422
+        from domains.action_plans.schemas.action_plan_schema import ActionPlanResponseSchema
+        return jsonify(ActionPlanResponseSchema().dump(updated_plan)), 200
+
+    @jwt_required()
     def delete(self, plan_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403

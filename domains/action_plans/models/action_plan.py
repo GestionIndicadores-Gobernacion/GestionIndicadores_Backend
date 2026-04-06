@@ -9,7 +9,6 @@ class ActionPlan(db.Model):
     strategy_id  = db.Column(db.Integer, db.ForeignKey("strategies.id",  ondelete="CASCADE"), nullable=False)
     component_id = db.Column(db.Integer, db.ForeignKey("components.id",  ondelete="CASCADE"), nullable=False)
     responsible  = db.Column(db.String(255), nullable=True)
-
     user_id = db.Column(
         db.Integer,
         db.ForeignKey("users.id", ondelete="SET NULL"),
@@ -76,6 +75,7 @@ class ActionPlanActivity(db.Model):
     name                     = db.Column(db.String(500), nullable=False)
     deliverable              = db.Column(db.Text, nullable=False)
     delivery_date            = db.Column(db.Date, nullable=False)
+    lugar = db.Column(db.String(255), nullable=True)
     requires_boss_assistance = db.Column(db.Boolean, default=False, nullable=False)
 
     evidence_url = db.Column(db.String(500), nullable=True)
