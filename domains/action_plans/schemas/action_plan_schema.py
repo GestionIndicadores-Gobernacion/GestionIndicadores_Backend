@@ -64,15 +64,23 @@ class ActionPlanObjectiveSchema(Schema):
 
 
 class ActionPlanCreateSchema(Schema):
-    strategy_id     = fields.Int(required=True)
-    component_id    = fields.Int(required=True)
-    responsible     = fields.Str(load_default=None, allow_none=True)
-    
+    strategy_id         = fields.Int(required=True)
+    component_id        = fields.Int(required=True)
+    responsible         = fields.Str(load_default=None, allow_none=True)
+    responsible_user_id = fields.Int(load_default=None, allow_none=True)  # NUEVO
+
     plan_objectives = fields.List(
         fields.Nested(ActionPlanObjectiveSchema),
         required=True,
         validate=validate.Length(min=1)
     )
+    
+class ResponsibleUserSchema(Schema):
+    id         = fields.Int()
+    first_name = fields.Str()
+    last_name  = fields.Str()
+    email      = fields.Str()
+
 
 
 class ActionPlanActivityReportSchema(Schema):
@@ -81,15 +89,18 @@ class ActionPlanActivityReportSchema(Schema):
 
 
 class ActionPlanResponseSchema(Schema):
-    id              = fields.Int(dump_only=True)
-    user_id         = fields.Int(dump_only=True, allow_none=True)
-    strategy_id     = fields.Int()
-    component_id    = fields.Int()
-    responsible     = fields.Str(allow_none=True)
-    total_score     = fields.Int(dump_only=True)
-    plan_objectives = fields.List(fields.Nested(ActionPlanObjectiveSchema), dump_only=True)
-    created_at      = fields.DateTime(dump_only=True)
-    updated_at      = fields.DateTime(dump_only=True)
+    id                  = fields.Int(dump_only=True)
+    user_id             = fields.Int(dump_only=True, allow_none=True)
+    strategy_id         = fields.Int()
+    component_id        = fields.Int()
+    responsible         = fields.Str(allow_none=True)
+    responsible_user_id = fields.Int(dump_only=True, allow_none=True)       # NUEVO
+    responsible_user    = fields.Nested(ResponsibleUserSchema, dump_only=True, allow_none=True)  # NUEVO
+    responsible_display = fields.Str(dump_only=True)                        # NUEVO (property)
+    total_score         = fields.Int(dump_only=True)
+    plan_objectives     = fields.List(fields.Nested(ActionPlanObjectiveSchema), dump_only=True)
+    created_at          = fields.DateTime(dump_only=True)
+    updated_at          = fields.DateTime(dump_only=True)
 
 
 class ActionPlanActivityDetailSchema(Schema):

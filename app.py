@@ -12,7 +12,7 @@ from domains.indicators.handlers.error_handlers import register_error_handlers
 from domains.datasets.routes import register_routes as register_dataset_routes
 from domains.action_plans.routes import register_routes as register_action_plan_routes
 from domains.indicators.routes.public_policy_routes import seed_public_policies_command
-
+from domains.notifications.routes import register_routes as register_notification_routes
 
 def schema_name_resolver(schema):
     return schema.__class__.__module__ + "." + schema.__class__.__name__
@@ -96,6 +96,7 @@ def create_app():
     from domains.indicators import models
     from domains.datasets import models
     from domains.action_plans import models
+    from domains.notifications import models
 
     # ======================================================
     # 🌱 Seed
@@ -113,6 +114,7 @@ def create_app():
     register_indicators_routes(api)
     register_dataset_routes(api)
     register_action_plan_routes(api)
+    register_notification_routes(api)
 
     # ======================================================
     # ❌ Error handlers

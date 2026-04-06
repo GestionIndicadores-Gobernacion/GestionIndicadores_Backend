@@ -11,6 +11,7 @@ from domains.action_plans.validators.action_plan_validator import ActionPlanVali
 from domains.indicators.models.AuditLog.audit_log import AuditLog
 from sqlalchemy.orm import selectinload
 
+from domains.notifications.handlers.notification_handler import NotificationHandler
 
 def _generate_dates(start_date: date, recurrence: dict) -> list[date]:
     frequency = recurrence.get("frequency")
@@ -73,6 +74,7 @@ class ActionPlanHandler:
                 strategy_id  = data["strategy_id"],
                 component_id = data["component_id"],
                 responsible  = (data.get("responsible") or "").strip() or None,
+                responsible_user_id = data.get("responsible_user_id"),
                 user_id      = user_id,
             )
             db.session.add(plan)
@@ -135,7 +137,23 @@ class ActionPlanHandler:
                 action="created"
             ))
 
+             # ── Notificar al responsable ─────────────────────────────────
+            if plan.responsible_user_id and plan.responsible_user_id != int(user_id):
+                from domains.indicators.models.User.user import User
+                creator = User.query.get(user_id)
+                creator_name = f"{creator.first_name} {creator.last_name}" if creator else "Un usuario"
+                component_name = plan.component.name if plan.component else ""
+
+                NotificationHandler.create(
+                    user_id=plan.responsible_user_id,
+                    title="Nuevo plan de acción asignado",
+                    message=f"{creator_name} te asignó un plan de acción en {component_name}.",
+                    category="action_plan",
+                    entity_id=plan.id,
+                )
+                
             db.session.commit()
+            
             return plan, None
 
         except Exception as e:
@@ -341,10 +359,15 @@ def update_plan(plan_id, data):
 
     try:
         user_id = get_jwt_identity()
+        old_responsible_user_id = plan.responsible_user_id
 
         # Actualizar responsable
         if "responsible" in data:
             plan.responsible = (data["responsible"] or "").strip() or None
+            
+        # Actualizar responsable usuario
+        if "responsible_user_id" in data:
+            plan.responsible_user_id = data["responsible_user_id"]
         
         # Actualizar actividades NO realizadas por objetivo
         for obj_data in data.get("plan_objectives", []):
@@ -400,6 +423,24 @@ def update_plan(plan_id, data):
             action="updated",
             detail="Plan editado completo"
         ))
+        
+        # ── Notificar si cambió el responsable ───────────────────────
+        new_responsible = plan.responsible_user_id
+        if (new_responsible
+                and new_responsible != old_responsible_user_id
+                and new_responsible != int(user_id)):
+            from domains.indicators.models.User.user import User
+            creator = User.query.get(user_id)
+            creator_name = f"{creator.first_name} {creator.last_name}" if creator else "Un usuario"
+            component_name = plan.component.name if plan.component else ""
+
+            NotificationHandler.create(
+                user_id=new_responsible,
+                title="Plan de acción reasignado",
+                message=f"{creator_name} te asignó un plan de acción en {component_name}.",
+                category="action_plan",
+                entity_id=plan.id,
+            )
 
         db.session.commit()
         return plan, None

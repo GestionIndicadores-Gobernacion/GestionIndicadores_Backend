@@ -8,7 +8,17 @@ class ActionPlan(db.Model):
     id           = db.Column(db.Integer, primary_key=True)
     strategy_id  = db.Column(db.Integer, db.ForeignKey("strategies.id",  ondelete="CASCADE"), nullable=False)
     component_id = db.Column(db.Integer, db.ForeignKey("components.id",  ondelete="CASCADE"), nullable=False)
-    responsible  = db.Column(db.String(255), nullable=True)
+
+    # ── Responsable ──────────────────────────────────────────────────────
+    responsible = db.Column(db.String(255), nullable=True)  # texto display (legacy/opcional)
+    responsible_user_id = db.Column(
+        db.Integer,
+        db.ForeignKey("users.id", ondelete="SET NULL"),
+        nullable=True,
+        index=True
+    )
+
+    # ── Creador ──────────────────────────────────────────────────────────
     user_id = db.Column(
         db.Integer,
         db.ForeignKey("users.id", ondelete="SET NULL"),
@@ -19,9 +29,21 @@ class ActionPlan(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
+    # ── Relaciones ───────────────────────────────────────────────────────
     strategy  = db.relationship("Strategy",  backref=db.backref("action_plans", lazy=True))
     component = db.relationship("Component", backref=db.backref("action_plans", lazy=True))
-    user      = db.relationship("User",      backref=db.backref("action_plans_created", lazy=True))
+
+    user = db.relationship(
+        "User",
+        foreign_keys=[user_id],
+        backref=db.backref("action_plans_created", lazy=True)
+    )
+
+    responsible_user = db.relationship(
+        "User",
+        foreign_keys=[responsible_user_id],
+        backref=db.backref("action_plans_assigned", lazy=True)
+    )
 
     plan_objectives = db.relationship(
         "ActionPlanObjective",
@@ -38,6 +60,13 @@ class ActionPlan(db.Model):
                 if act.score is not None:
                     total += act.score
         return total
+
+    @property
+    def responsible_display(self):
+        """Retorna el nombre del responsable: del usuario vinculado o del texto libre."""
+        if self.responsible_user:
+            return f"{self.responsible_user.first_name} {self.responsible_user.last_name}"
+        return self.responsible or "Sin asignar"
 
     def __repr__(self):
         return f"<ActionPlan {self.id}>"
@@ -75,7 +104,7 @@ class ActionPlanActivity(db.Model):
     name                     = db.Column(db.String(500), nullable=False)
     deliverable              = db.Column(db.Text, nullable=False)
     delivery_date            = db.Column(db.Date, nullable=False)
-    lugar = db.Column(db.String(255), nullable=True)
+    lugar                    = db.Column(db.String(255), nullable=True)
     requires_boss_assistance = db.Column(db.Boolean, default=False, nullable=False)
 
     evidence_url = db.Column(db.String(500), nullable=True)
@@ -91,19 +120,11 @@ class ActionPlanActivity(db.Model):
         db.Integer,
         db.ForeignKey("users.id", ondelete="SET NULL"),
         nullable=True
-    ) 
-    
-    recurrence_group_id = db.Column(
-        db.String(36),  # UUID como string
-        nullable=True,
-        index=True
-    )   
-    
-    recurrence_rule = db.Column(
-        db.JSON,  # guarda la regla: {"frequency": "monthly", "day": 26, "until": "2026-12-31"}
-        nullable=True
     )
-    
+
+    recurrence_group_id = db.Column(db.String(36), nullable=True, index=True)
+    recurrence_rule     = db.Column(db.JSON, nullable=True)
+
     reported_by = db.relationship(
         "User",
         foreign_keys=[reported_by_user_id],
