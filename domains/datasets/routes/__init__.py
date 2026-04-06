@@ -10,3 +10,7 @@ def register_routes(api):
             module = importlib.import_module(f"{base_module}.{file[:-3]}")
             if hasattr(module, "blp"):
                 api.register_blueprint(module.blp)
+
+    # Dashboard (está en subcarpeta, no lo detecta el auto-discovery)
+    from domains.datasets.dashboard.routes import blp as dashboard_blp
+    api.register_blueprint(dashboard_blp)
