@@ -114,6 +114,7 @@ class ActionPlanHandler:
                             name                     = act_data["name"].strip(),
                             deliverable              = act_data["deliverable"].strip(),
                             delivery_date            = delivery_date,
+                            lugar                    = act_data.get("lugar"),
                             requires_boss_assistance = act_data.get("requires_boss_assistance", False),
                             recurrence_group_id      = group_id,
                             recurrence_rule          = recurrence_to_save,
@@ -231,6 +232,7 @@ class ActionPlanHandler:
                     act.name                     = data["name"].strip()
                     act.deliverable              = data["deliverable"].strip()
                     act.requires_boss_assistance = data.get("requires_boss_assistance", act.requires_boss_assistance)
+                    act.lugar = data.get("lugar", act.lugar)
 
                     # Actualizar support_staff si viene
                     if "support_staff" in data:
@@ -247,6 +249,7 @@ class ActionPlanHandler:
                 activity.name                     = data["name"].strip()
                 activity.deliverable              = data["deliverable"].strip()
                 activity.requires_boss_assistance = data.get("requires_boss_assistance", activity.requires_boss_assistance)
+                activity.lugar = data.get("lugar", activity.lugar)
 
                 if "delivery_date" in data:
                     d = data["delivery_date"]
@@ -329,3 +332,78 @@ class ActionPlanHandler:
         except Exception as e:
             db.session.rollback()
             return False, {"database": str(e)}
+        
+@staticmethod
+def update_plan(plan_id, data):
+    plan = ActionPlanHandler.get_by_id(plan_id)
+    if not plan:
+        return None, {"plan": "Plan no encontrado."}
+
+    try:
+        user_id = get_jwt_identity()
+
+        # Actualizar responsable
+        if "responsible" in data:
+            plan.responsible = (data["responsible"] or "").strip() or None
+        
+        # Actualizar actividades NO realizadas por objetivo
+        for obj_data in data.get("plan_objectives", []):
+            obj_id = obj_data.get("objective_id")
+            obj_text = obj_data.get("objective_text")
+
+            # Buscar objetivo existente en el plan
+            plan_obj = next(
+                (o for o in plan.plan_objectives
+                 if (obj_id and o.objective_id == obj_id) or
+                    (obj_text and o.objective_text == obj_text)),
+                None
+            )
+
+            if not plan_obj:
+                # Crear objetivo nuevo si no existe
+                plan_obj = ActionPlanObjective(
+                    action_plan_id=plan.id,
+                    objective_id=obj_id,
+                    objective_text=(obj_text or "").strip() or None,
+                )
+                db.session.add(plan_obj)
+                db.session.flush()
+
+            # Eliminar actividades no realizadas del objetivo
+            for act in list(plan_obj.activities):
+                if not act.evidence_url:
+                    db.session.delete(act)
+            db.session.flush()
+
+            # Recrear actividades
+            for act_data in obj_data.get("activities", []):
+                activity = ActionPlanActivity(
+                    plan_objective_id=plan_obj.id,
+                    name=act_data["name"].strip(),
+                    deliverable=act_data["deliverable"].strip(),
+                    delivery_date=date.fromisoformat(act_data["delivery_date"]),
+                    lugar=act_data.get("lugar"),
+                    requires_boss_assistance=act_data.get("requires_boss_assistance", False),
+                )
+                db.session.add(activity)
+                db.session.flush()
+                for staff in act_data.get("support_staff", []):
+                    db.session.add(ActionPlanSupportStaff(
+                        activity_id=activity.id,
+                        name=(staff.get("name") or "").strip()
+                    ))
+
+        db.session.add(AuditLog(
+            user_id=user_id,
+            entity="action_plan",
+            entity_id=plan.id,
+            action="updated",
+            detail="Plan editado completo"
+        ))
+
+        db.session.commit()
+        return plan, None
+
+    except Exception as e:
+        db.session.rollback()
+        return None, {"database": str(e)}
