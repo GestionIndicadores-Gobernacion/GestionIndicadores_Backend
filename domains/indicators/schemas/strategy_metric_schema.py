@@ -1,4 +1,3 @@
-# domains/indicators/schemas/strategy_metric_schema.py
 from marshmallow import Schema, fields, validate
 
 from domains.indicators.constants.metric_types import METRIC_TYPES
@@ -16,3 +15,4 @@ class StrategyMetricSchema(Schema):
     field_name   = fields.Str(allow_none=True)
     dataset_id   = fields.Int(allow_none=True)
     manual_value = fields.Float(allow_none=True)
+    year         = fields.Int(allow_none=True)   # ← nuevo

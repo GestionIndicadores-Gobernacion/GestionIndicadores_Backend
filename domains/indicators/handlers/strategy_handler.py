@@ -20,9 +20,8 @@ class StrategyHandler:
                 objective=data['objective'],
                 product_goal_description=data['product_goal_description']
             )
-
             db.session.add(strategy)
-            db.session.flush()  # obtener ID sin commit
+            db.session.flush()
 
             for goal in data['annual_goals']:
                 db.session.add(
@@ -32,7 +31,7 @@ class StrategyHandler:
                         value=goal['value']
                     )
                 )
-                
+
             for metric in data.get("metrics", []):
                 db.session.add(
                     StrategyMetric(
@@ -42,7 +41,8 @@ class StrategyHandler:
                         component_id = metric.get("component_id"),
                         field_name   = metric.get("field_name"),
                         dataset_id   = metric.get("dataset_id"),
-                        manual_value = metric.get("manual_value"),  # ← nuevo
+                        manual_value = metric.get("manual_value"),
+                        year         = metric.get("year"),   # ← nuevo
                     )
                 )
 
@@ -52,7 +52,6 @@ class StrategyHandler:
         except Exception as e:
             db.session.rollback()
             return None, {"database": str(e)}
-
 
     @staticmethod
     def get_all():
@@ -65,24 +64,13 @@ class StrategyHandler:
     @staticmethod
     def update(strategy, data):
 
-        # ----------------------------
-        # actualizar campos base
-        # ----------------------------
         for field in ['name', 'objective', 'product_goal_description']:
             if field in data:
                 setattr(strategy, field, data[field])
 
-        # ----------------------------
-        # sincronizar metas anuales
-        # ----------------------------
         if 'annual_goals' in data:
-
-            StrategyAnnualGoal.query.filter_by(
-                strategy_id=strategy.id
-            ).delete()
-
+            StrategyAnnualGoal.query.filter_by(strategy_id=strategy.id).delete()
             db.session.flush()
-
             for goal in data['annual_goals']:
                 db.session.add(
                     StrategyAnnualGoal(
@@ -92,17 +80,9 @@ class StrategyHandler:
                     )
                 )
 
-        # ----------------------------
-        # sincronizar métricas
-        # ----------------------------
         if 'metrics' in data:
-
-            StrategyMetric.query.filter_by(
-                strategy_id=strategy.id
-            ).delete()
-
+            StrategyMetric.query.filter_by(strategy_id=strategy.id).delete()
             db.session.flush()
-
             for metric in data['metrics']:
                 db.session.add(
                     StrategyMetric(
@@ -112,13 +92,14 @@ class StrategyHandler:
                         component_id = metric.get("component_id"),
                         field_name   = metric.get("field_name"),
                         dataset_id   = metric.get("dataset_id"),
-                        manual_value = metric.get("manual_value"),  # ← nuevo
+                        manual_value = metric.get("manual_value"),
+                        year         = metric.get("year"),   # ← nuevo
                     )
-            )
+                )
 
         db.session.commit()
         return strategy
-    
+
     @staticmethod
     def delete(strategy):
         db.session.delete(strategy)

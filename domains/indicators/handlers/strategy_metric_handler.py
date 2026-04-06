@@ -8,13 +8,11 @@ class StrategyMetricHandler:
 
     @staticmethod
     def create(data):
-
         errors = StrategyMetricValidator.validate_create(data)
         if errors:
             return None, errors
 
         try:
-
             metric = StrategyMetric(
                 strategy_id  = data["strategy_id"],
                 description  = data["description"],
@@ -22,14 +20,12 @@ class StrategyMetricHandler:
                 component_id = data.get("component_id"),
                 field_name   = data.get("field_name"),
                 dataset_id   = data.get("dataset_id"),
-                manual_value = data.get("manual_value"),  # ← nuevo
+                manual_value = data.get("manual_value"),
+                year         = data.get("year"),   # ← nuevo
             )
-
             db.session.add(metric)
             db.session.commit()
-
             return metric, None
-
         except Exception as e:
             db.session.rollback()
             return None, {"database": str(e)}
@@ -44,20 +40,14 @@ class StrategyMetricHandler:
 
     @staticmethod
     def get_by_strategy(strategy_id):
-        return StrategyMetric.query.filter_by(
-            strategy_id=strategy_id
-        ).all()
+        return StrategyMetric.query.filter_by(strategy_id=strategy_id).all()
 
     @staticmethod
     def update(metric, data):
-
         for field in [
-            "description",
-            "metric_type",
-            "component_id",
-            "field_name",
-            "dataset_id",
-            "manual_value",  # ← nuevo
+            "description", "metric_type", "component_id",
+            "field_name", "dataset_id", "manual_value",
+            "year",   # ← nuevo
         ]:
             if field in data:
                 setattr(metric, field, data[field])

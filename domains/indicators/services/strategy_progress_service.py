@@ -1,3 +1,5 @@
+# domains/indicators/services/strategy_progress_service.py
+
 import re
 from datetime import datetime
 
@@ -26,16 +28,24 @@ class StrategyProgressService:
             "percent":             min(percent, 100.0),
         }
 
-    # ─── Meta programada ──────────────────────────────────────────────────────
+    # ─── Año lógico ───────────────────────────────────────────────────────────
 
     @staticmethod
+    def _get_base_year(strategy: Strategy) -> int:
+        return 2024 
+    
+    @staticmethod
     def _get_year_number(strategy: Strategy, calendar_year: int):
-        base_year = strategy.created_at.year
+        base_year = StrategyProgressService._get_base_year(strategy)
         number    = calendar_year - base_year + 1
         return number if number >= 1 else None
 
     @staticmethod
     def _get_goal_for_year(strategy: Strategy, calendar_year: int):
+        """
+        Busca la meta del año lógico que corresponde al año calendario dado.
+        Si no existe meta para ese año lógico, retorna None.
+        """
         year_number = StrategyProgressService._get_year_number(strategy, calendar_year)
         if year_number is None:
             return None
@@ -57,6 +67,10 @@ class StrategyProgressService:
     @staticmethod
     def _calculate_metric(metric, strategy: Strategy, current_year: int) -> float:
         t = metric.metric_type
+
+        # Si la métrica tiene año definido y no coincide, no aporta nada
+        if metric.year is not None and metric.year != current_year:
+            return 0.0
 
         if t == "report_count":
             return StrategyProgressService._report_count(metric, strategy, current_year)
@@ -85,7 +99,6 @@ class StrategyProgressService:
 
     @staticmethod
     def _report_sum(metric, strategy: Strategy, current_year: int) -> float:
-        """Suma un campo numérico plano — field_name es el indicator_id."""
         if not metric.field_name:
             return 0.0
 
@@ -133,12 +146,11 @@ class StrategyProgressService:
             iv = next((v for v in (r.indicator_values or []) if v.indicator_id == indicator_id), None)
             if iv is None or not isinstance(iv.value, dict):
                 continue
-            
-            # ← Solo sumar dentro de 'data', ignorando 'sub_sections'
+
             data = iv.value.get('data')
             if not data or not isinstance(data, dict):
                 continue
-            
+
             total += _sum_nested_key(data, "no_de_animales_esterilizados")
 
         return total
@@ -201,7 +213,6 @@ def _report_year(report) -> int:
 
 
 def _sum_nested_key(obj, key: str) -> float:
-    """Recorre recursivamente un dict/list sumando todos los valores del key."""
     total = 0.0
     if isinstance(obj, dict):
         for k, v in obj.items():
