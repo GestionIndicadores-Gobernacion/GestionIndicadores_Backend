@@ -156,58 +156,76 @@ class ActionPlanUserDashboard(MethodView):
 
     @jwt_required()
     def get(self):
-        from domains.indicators.models.User.user import User
         from domains.action_plans.models.action_plan import ActionPlanActivity, ActionPlanObjective, ActionPlan
+        from domains.indicators.models.User.user import User
         from datetime import date
 
         user = _get_current_user()
         if not user or user.role.name not in ("admin", "monitor"):
             return jsonify({"error": "Sin permiso"}), 403
 
-        users = User.query.filter_by(is_active=True).all()
-        result = []
+        # Traer todos los planes que tengan responsable
+        plans = ActionPlan.query.all()
 
-        for u in users:
-            activities = (
-                ActionPlanActivity.query
-                .join(ActionPlanObjective)
-                .join(ActionPlan)
-                .filter(ActionPlan.user_id == u.id)
-                .all()
-            )
+        # Agrupar por responsable
+        grouped: dict[str, dict] = {}
 
-            if not activities:
+        for plan in plans:
+            responsible = (plan.responsible or "").strip()
+            if not responsible:
                 continue
 
-            total     = len(activities)
-            completed = [a for a in activities if a.evidence_url]
-            pending   = [a for a in activities if not a.evidence_url and date.today() <= a.delivery_date]
-            overdue   = [a for a in activities if not a.evidence_url and date.today() > a.delivery_date]
-            total_score = sum(a.score for a in completed if a.score)
+            if responsible not in grouped:
+                grouped[responsible] = {
+                    "responsible": responsible,
+                    "plans_owner": [],  # usuarios dueños del plan
+                    "activities": [],
+                }
+
+            # Dueño del plan
+            if plan.user_id:
+                owner = User.query.get(plan.user_id)
+                if owner:
+                    owner_info = {
+                        "user_id":    owner.id,
+                        "first_name": owner.first_name,
+                        "last_name":  owner.last_name,
+                        "email":      owner.email,
+                        "role":       owner.role.name if owner.role else None,
+                    }
+                    if owner_info not in grouped[responsible]["plans_owner"]:
+                        grouped[responsible]["plans_owner"].append(owner_info)
+
+            # Actividades del plan
+            for obj in plan.plan_objectives:
+                for activity in obj.activities:
+                    grouped[responsible]["activities"].append({
+                        "id":            activity.id,
+                        "name":          activity.name,
+                        "delivery_date": str(activity.delivery_date),
+                        "status":        activity.status,
+                        "score":         activity.score,
+                        "reported_at":   str(activity.reported_at) if activity.reported_at else None,
+                        "evidence_url":  activity.evidence_url,
+                    })
+
+        result = []
+        for responsible, data in grouped.items():
+            activities = data["activities"]
+            completed = [a for a in activities if a["evidence_url"]]
+            pending   = [a for a in activities if not a["evidence_url"] and date.today() <= date.fromisoformat(a["delivery_date"])]
+            overdue   = [a for a in activities if not a["evidence_url"] and date.today() > date.fromisoformat(a["delivery_date"])]
+            total_score = sum(a["score"] for a in completed if a["score"])
 
             result.append({
-                "user_id":    u.id,
-                "first_name": u.first_name,
-                "last_name":  u.last_name,
-                "email":      u.email,
-                "role":       u.role.name if u.role else None,
-                "total_activities": total,
-                "completed":  len(completed),
-                "pending":    len(pending),
-                "overdue":    len(overdue),
-                "total_score": total_score,
-                "activities": [
-                    {
-                        "id":            a.id,
-                        "name":          a.name,
-                        "delivery_date": str(a.delivery_date),
-                        "status":        a.status,
-                        "score":         a.score,
-                        "reported_at":   str(a.reported_at) if a.reported_at else None,
-                        "evidence_url":  a.evidence_url,
-                    }
-                    for a in activities
-                ]
+                "responsible":      responsible,
+                "plans_owner":      data["plans_owner"],
+                "total_activities": len(activities),
+                "completed":        len(completed),
+                "pending":          len(pending),
+                "overdue":          len(overdue),
+                "total_score":      total_score,
+                "activities":       activities,
             })
 
         return jsonify(result), 200
