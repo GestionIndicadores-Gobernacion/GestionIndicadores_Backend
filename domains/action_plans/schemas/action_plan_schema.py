@@ -24,7 +24,7 @@ class ActionPlanActivitySchema(Schema):
     name                     = fields.Str(required=True)
     deliverable              = fields.Str(required=True)
     delivery_date            = fields.Date(format="iso", required=True)
-    lugar                    = fields.Str(required=True)
+    lugar                    = fields.Str(load_default=None, allow_none=True)
     requires_boss_assistance = fields.Bool(load_default=False)
     evidence_url             = fields.Str(dump_only=True, allow_none=True)
     description              = fields.Str(dump_only=True, allow_none=True)
@@ -46,7 +46,7 @@ class ActionPlanActivityEditSchema(Schema):
     name                     = fields.Str(required=True)
     deliverable              = fields.Str(required=True)
     delivery_date            = fields.Date(format="iso", load_default=None, allow_none=True)
-    lugar                    = fields.Str(required=True)
+    lugar                    = fields.Str(load_default=None, allow_none=True)
     requires_boss_assistance = fields.Bool(load_default=False)
     support_staff            = fields.List(fields.Nested(ActionPlanSupportStaffSchema), load_default=[])
     edit_all                 = fields.Bool(load_default=False)  # True = editar todo el grupo
