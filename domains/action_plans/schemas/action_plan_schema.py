@@ -21,22 +21,22 @@ class RecurrenceSchema(Schema):
 class ActionPlanActivitySchema(Schema):
     id                       = fields.Int(dump_only=True)
     plan_objective_id        = fields.Int(dump_only=True)
-    name                     = fields.Str(required=True)
+    name                     = fields.Str(required=True)          # ← debe ser Str, no Int ni Method
     deliverable              = fields.Str(required=True)
     delivery_date            = fields.Date(format="iso", required=True)
     lugar                    = fields.Str(load_default=None, allow_none=True)
     requires_boss_assistance = fields.Bool(load_default=False)
-    generates_report         = fields.Bool(load_default=False) 
+    generates_report         = fields.Bool(load_default=False)
     evidence_url             = fields.Str(dump_only=True, allow_none=True)
     description              = fields.Str(dump_only=True, allow_none=True)
     reported_at              = fields.DateTime(dump_only=True, allow_none=True)
     score                    = fields.Int(dump_only=True, allow_none=True)
+    computed_score           = fields.Int(dump_only=True, allow_none=True)   # ← debe ser dump_only
     status                   = fields.Str(dump_only=True)
     support_staff            = fields.List(fields.Nested(ActionPlanSupportStaffSchema), load_default=[])
     recurrence               = fields.Nested(RecurrenceSchema, load_default=None, allow_none=True, load_only=True)
     recurrence_group_id      = fields.Str(dump_only=True, allow_none=True)
     recurrence_rule          = fields.Dict(dump_only=True, allow_none=True)
-    
     linked_report_id         = fields.Method("get_linked_report_id", dump_only=True)
     linked_report_evidence   = fields.Method("get_linked_report_evidence", dump_only=True)
 
@@ -44,13 +44,12 @@ class ActionPlanActivitySchema(Schema):
         if obj.linked_report:
             return obj.linked_report.id
         return None
-    
+
     def get_linked_report_evidence(self, obj):
-        """Retorna el evidence_link del reporte vinculado si existe."""
         if obj.linked_report:
             return obj.linked_report.evidence_link
         return None
-    
+
 class ActionPlanActivityEditSchema(Schema):
     """Schema para editar una actividad existente."""
     name                     = fields.Str(required=True)

@@ -163,8 +163,14 @@ class ActionPlanHandler:
 
     @staticmethod
     def get_all(strategy_id=None, component_id=None, month=None, year=None):
-        query = ActionPlan.query
-
+        query = ActionPlan.query.options(
+            selectinload(ActionPlan.plan_objectives).selectinload(
+                ActionPlanObjective.activities
+            ).selectinload(
+                ActionPlanActivity.linked_report  # ← cargar el reporte vinculado junto con la actividad
+            )
+        )
+        
         if strategy_id:
             query = query.filter(ActionPlan.strategy_id == strategy_id)
         if component_id:
@@ -208,7 +214,6 @@ class ActionPlanHandler:
             activity.evidence_url        = (data.get("evidence_url") or "").strip()
             activity.description         = (data.get("description") or "").strip() or None
             activity.reported_at         = now
-            activity.score               = 5 if now.date() <= activity.delivery_date else 1
             activity.reported_by_user_id = int(user_id)
 
             plan_id = activity.plan_objective.action_plan_id

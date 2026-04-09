@@ -166,7 +166,6 @@ class ActionPlanActivityDetail(MethodView):
             return jsonify({"errors": errors}), status_code
         return jsonify({"message": "Actividad eliminada"}), 200
 
-
 @blp.route("/dashboard/users")
 class ActionPlanUserDashboard(MethodView):
 
@@ -174,16 +173,20 @@ class ActionPlanUserDashboard(MethodView):
     def get(self):
         from domains.action_plans.models.action_plan import ActionPlanActivity, ActionPlanObjective, ActionPlan
         from domains.indicators.models.User.user import User
+        from sqlalchemy.orm import selectinload
         from datetime import date
 
         user = _get_current_user()
         if not user or user.role.name not in ("admin", "monitor"):
             return jsonify({"error": "Sin permiso"}), 403
 
-        # Traer todos los planes que tengan responsable
-        plans = ActionPlan.query.all()
+        # Cargar planes con relaciones eager para evitar lazy loading fuera de sesión
+        plans = ActionPlan.query.options(
+            selectinload(ActionPlan.plan_objectives)
+            .selectinload(ActionPlanObjective.activities)
+            .selectinload(ActionPlanActivity.linked_report)
+        ).all()
 
-        # Agrupar por responsable
         grouped: dict[str, dict] = {}
 
         for plan in plans:
@@ -194,11 +197,10 @@ class ActionPlanUserDashboard(MethodView):
             if responsible not in grouped:
                 grouped[responsible] = {
                     "responsible": responsible,
-                    "plans_owner": [],  # usuarios dueños del plan
+                    "plans_owner": [],
                     "activities": [],
                 }
 
-            # Dueño del plan
             if plan.user_id:
                 owner = User.query.get(plan.user_id)
                 if owner:
@@ -212,33 +214,41 @@ class ActionPlanUserDashboard(MethodView):
                     if owner_info not in grouped[responsible]["plans_owner"]:
                         grouped[responsible]["plans_owner"].append(owner_info)
 
-            # Actividades del plan
             for obj in plan.plan_objectives:
                 for activity in obj.activities:
+                    try:
+                        c_score = activity.computed_score
+                    except Exception:
+                        c_score = activity.score or 0
+
                     grouped[responsible]["activities"].append({
-                        "id":            activity.id,
-                        "name":          activity.name,
-                        "delivery_date": str(activity.delivery_date),
-                        "status":        activity.status,
-                        "score":         activity.score,
-                        "reported_at":   str(activity.reported_at) if activity.reported_at else None,
-                        "evidence_url":  activity.evidence_url,
+                        "id":             activity.id,
+                        "name":           activity.name,
+                        "delivery_date":  str(activity.delivery_date),
+                        "status":         activity.status,
+                        "score":          activity.score,
+                        "computed_score": c_score,
+                        "reported_at":    str(activity.reported_at) if activity.reported_at else None,
+                        "evidence_url":   activity.evidence_url,
                     })
 
         result = []
         for responsible, data in grouped.items():
-            activities = data["activities"]
+            activities = data["activities"]   # ← definir PRIMERO
+
             completed = [a for a in activities if a["evidence_url"]]
-            pending   = [a for a in activities if not a["evidence_url"] and date.today() <= date.fromisoformat(a["delivery_date"])]
+            running   = [a for a in activities if not a["evidence_url"] and date.today() <= date.fromisoformat(a["delivery_date"])]
             overdue   = [a for a in activities if not a["evidence_url"] and date.today() > date.fromisoformat(a["delivery_date"])]
-            total_score = sum(a["score"] for a in completed if a["score"])
+
+            total_score = sum(a["computed_score"] or 0 for a in activities)   # ← computed_score
 
             result.append({
                 "responsible":      responsible,
                 "plans_owner":      data["plans_owner"],
                 "total_activities": len(activities),
                 "completed":        len(completed),
-                "pending":          len(pending),
+                "running":          len(running),
+                "pending":          len(overdue),
                 "overdue":          len(overdue),
                 "total_score":      total_score,
                 "activities":       activities,

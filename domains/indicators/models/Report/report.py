@@ -52,7 +52,8 @@ class Report(db.Model):
     
     activity = db.relationship(
         "ActionPlanActivity",
-        backref=db.backref("linked_report", uselist=False, lazy=True)
+        backref=db.backref("linked_report", uselist=False, lazy="select"),
+        foreign_keys=[action_plan_activity_id]
     )
 
     def __repr__(self):
