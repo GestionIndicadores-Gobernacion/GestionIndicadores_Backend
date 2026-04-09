@@ -41,6 +41,19 @@ class Report(db.Model):
         back_populates="report",
         cascade="all, delete-orphan"
     )
+    
+    action_plan_activity_id = db.Column(
+        db.Integer,
+        db.ForeignKey("action_plan_activities.id", ondelete="SET NULL"),
+        nullable=True,
+        index=True,
+        unique=True   # una actividad → máximo un reporte
+    )
+    
+    activity = db.relationship(
+        "ActionPlanActivity",
+        backref=db.backref("linked_report", uselist=False, lazy=True)
+    )
 
     def __repr__(self):
         return f"<Report {self.id} - {self.report_date}>"

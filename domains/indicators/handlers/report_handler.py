@@ -21,10 +21,24 @@ class ReportHandler:
     def create(data):
         errors = ReportValidator.validate_create(data)
         if errors:
+            activity_id = data.get("action_plan_activity_id")  # ← leer ANTES del if
+            if "evidence_link" in errors and activity_id:
+                from domains.indicators.models.Report.report import Report as ReportModel
+                evidence_link = (data.get("evidence_link") or "").strip()
+                existing_report = ReportModel.query.filter_by(evidence_link=evidence_link).first()
+                if existing_report:
+                    result, link_errors = ReportHandler._link_activity_to_report(
+                        existing_report, activity_id
+                    )
+                    if link_errors:
+                        return None, link_errors
+                    return existing_report, None
             return None, errors
 
         try:
             user_id = get_jwt_identity()
+            activity_id = data.get("action_plan_activity_id")  # ← aquí sigue igual
+
             report = Report(
                 strategy_id=data["strategy_id"],
                 component_id=data["component_id"],
@@ -34,6 +48,7 @@ class ReportHandler:
                 zone_type=ZoneTypeEnum(data["zone_type"]),
                 evidence_link=data.get("evidence_link"),
                 user_id=user_id,
+                action_plan_activity_id=activity_id,
             )
             db.session.add(report)
             db.session.flush()
@@ -58,10 +73,30 @@ class ReportHandler:
         except Exception as e:
             db.session.rollback()
             return None, {"database": str(e)}
+    
+    @staticmethod
+    def _link_activity_to_report(report, activity_id):
+        """Vincula una actividad a un reporte existente."""
+        try:
+            from domains.action_plans.models.action_plan import ActionPlanActivity
+            activity = ActionPlanActivity.query.get(activity_id)
+            if not activity:
+                return None, {"activity": "Actividad no encontrada."}
+
+            # Verificar que el reporte no tenga ya otra actividad vinculada
+            if report.action_plan_activity_id and report.action_plan_activity_id != activity_id:
+                return None, {"activity": "Este reporte ya está vinculado a otra actividad."}
+
+            report.action_plan_activity_id = activity_id
+            db.session.commit()
+            return report, None
+        except Exception as e:
+            db.session.rollback()
+            return None, {"database": str(e)}
 
     @staticmethod
     def update(report, data):
-        errors = ReportValidator.validate_create(data)
+        errors = ReportValidator.validate_create(data, current_report_id=report.id)
         if errors:
             return None, errors
 

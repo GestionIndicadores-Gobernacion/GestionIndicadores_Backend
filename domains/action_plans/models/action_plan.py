@@ -111,6 +111,7 @@ class ActionPlanActivity(db.Model):
     description  = db.Column(db.Text, nullable=True)
     reported_at  = db.Column(db.DateTime, nullable=True)
     score        = db.Column(db.Integer, nullable=True)
+    generates_report = db.Column(db.Boolean, default=False, nullable=False)
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
