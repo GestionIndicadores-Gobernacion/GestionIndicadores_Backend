@@ -22,10 +22,27 @@ class ReportIndicatorValueSchema(Schema):
     indicator    = fields.Nested(IndicatorMetaSchema, dump_only=True)
 
 
+# ── Schemas anidados para relaciones ─────────────────────────────────────────
+
+class ComponentSummarySchema(Schema):
+    id   = fields.Int(dump_only=True)
+    name = fields.Str(dump_only=True)
+
+
+class StrategySummarySchema(Schema):
+    id   = fields.Int(dump_only=True)
+    name = fields.Str(dump_only=True)
+
+
+class UserSummarySchema(Schema):
+    id   = fields.Int(dump_only=True)
+    name = fields.Str(dump_only=True)
+
+
 class ReportSchema(Schema):
 
     id           = fields.Int(dump_only=True)
-    user_id      = fields.Int(dump_only=True, allow_none=True)  # ← NUEVO
+    user_id      = fields.Int(dump_only=True, allow_none=True)
 
     strategy_id  = fields.Int(required=True)
     component_id = fields.Int(required=True)
@@ -40,13 +57,17 @@ class ReportSchema(Schema):
         validate=validate.OneOf(["Urbana", "Rural"])
     )
 
-    evidence_link = fields.Str(allow_none=True)
-    action_plan_activity_id     = fields.Int(load_default=None, allow_none=True)
-    
+    evidence_link           = fields.Str(allow_none=True)
+    action_plan_activity_id = fields.Int(load_default=None, allow_none=True)
+
     indicator_values = fields.List(
         fields.Nested(ReportIndicatorValueSchema),
         required=True
     )
 
     created_at = fields.DateTime(dump_only=True)
-    
+
+    # ── Relaciones enriquecidas (solo dump) ───────────────────────
+    component = fields.Nested(ComponentSummarySchema, dump_only=True)
+    strategy  = fields.Nested(StrategySummarySchema,  dump_only=True)
+    user      = fields.Nested(UserSummarySchema,       dump_only=True)
