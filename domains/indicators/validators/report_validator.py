@@ -1,13 +1,14 @@
 from domains.indicators.models.Component.component_indicator_target import ComponentIndicatorTarget
 from domains.indicators.models.Component.component import Component
 from domains.indicators.models.Component.component_indicator import ComponentIndicator
+from domains.indicators.models.Report.report import Report
 from domains.indicators.models.Strategy.strategy import Strategy
 
 
 class ReportValidator:
 
     @staticmethod
-    def validate_create(data):
+    def validate_create(data, current_report_id=None):
 
         errors = {}
 
@@ -249,6 +250,21 @@ class ReportValidator:
                 indicator_errors.append(
                     f"'{ind.name}' is required when "
                     f"'{show_if['indicator_name']}' = '{show_if['value']}'"
+                )
+
+        if indicator_errors:
+            errors["indicator_values"] = indicator_errors
+            
+        # ── Validación evidence_link duplicado ──────────────────────────────
+        evidence_link = (data.get("evidence_link") or "").strip()
+        if evidence_link:
+            existing = Report.query.filter(
+                Report.evidence_link == evidence_link
+            ).first()
+            if existing and existing.id != current_report_id:
+                errors["evidence_link"] = (
+                    f"Ya existe un reporte con este link de evidencia (reporte #{existing.id}). "
+                    "Si deseas asociar esta actividad a ese reporte, usa el endpoint de vinculación."
                 )
 
         if indicator_errors:

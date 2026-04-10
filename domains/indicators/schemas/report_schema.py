@@ -41,7 +41,8 @@ class ReportSchema(Schema):
     )
 
     evidence_link = fields.Str(allow_none=True)
-
+    action_plan_activity_id     = fields.Int(load_default=None, allow_none=True)
+    
     indicator_values = fields.List(
         fields.Nested(ReportIndicatorValueSchema),
         required=True

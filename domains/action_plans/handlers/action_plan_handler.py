@@ -118,6 +118,7 @@ class ActionPlanHandler:
                             delivery_date            = delivery_date,
                             lugar                    = act_data.get("lugar"),
                             requires_boss_assistance = act_data.get("requires_boss_assistance", False),
+                            generates_report         = act_data.get("generates_report", False),
                             recurrence_group_id      = group_id,
                             recurrence_rule          = recurrence_to_save,
                         )
@@ -162,8 +163,14 @@ class ActionPlanHandler:
 
     @staticmethod
     def get_all(strategy_id=None, component_id=None, month=None, year=None):
-        query = ActionPlan.query
-
+        query = ActionPlan.query.options(
+            selectinload(ActionPlan.plan_objectives).selectinload(
+                ActionPlanObjective.activities
+            ).selectinload(
+                ActionPlanActivity.linked_report  # ← cargar el reporte vinculado junto con la actividad
+            )
+        )
+        
         if strategy_id:
             query = query.filter(ActionPlan.strategy_id == strategy_id)
         if component_id:
@@ -207,7 +214,6 @@ class ActionPlanHandler:
             activity.evidence_url        = (data.get("evidence_url") or "").strip()
             activity.description         = (data.get("description") or "").strip() or None
             activity.reported_at         = now
-            activity.score               = 5 if now.date() <= activity.delivery_date else 1
             activity.reported_by_user_id = int(user_id)
 
             plan_id = activity.plan_objective.action_plan_id
@@ -251,7 +257,8 @@ class ActionPlanHandler:
                     act.deliverable              = data["deliverable"].strip()
                     act.requires_boss_assistance = data.get("requires_boss_assistance", act.requires_boss_assistance)
                     act.lugar = data.get("lugar", act.lugar)
-
+                    act.generates_report = data.get("generates_report", act.generates_report)
+                    
                     # Actualizar support_staff si viene
                     if "support_staff" in data:
                         for s in act.support_staff:
@@ -268,7 +275,8 @@ class ActionPlanHandler:
                 activity.deliverable              = data["deliverable"].strip()
                 activity.requires_boss_assistance = data.get("requires_boss_assistance", activity.requires_boss_assistance)
                 activity.lugar = data.get("lugar", activity.lugar)
-
+                activity.generates_report = data.get("generates_report", activity.generates_report)
+                
                 if "delivery_date" in data:
                     d = data["delivery_date"]
                     activity.delivery_date = date.fromisoformat(str(d)) if isinstance(d, str) else d
@@ -407,6 +415,7 @@ class ActionPlanHandler:
                         delivery_date=date.fromisoformat(act_data["delivery_date"]),
                         lugar=act_data.get("lugar"),
                         requires_boss_assistance=act_data.get("requires_boss_assistance", False),
+                        generates_report         = act_data.get("generates_report", False),
                     )
                     db.session.add(activity)
                     db.session.flush()

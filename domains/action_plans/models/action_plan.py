@@ -57,8 +57,10 @@ class ActionPlan(db.Model):
         total = 0
         for obj in self.plan_objectives:
             for act in obj.activities:
-                if act.score is not None:
-                    total += act.score
+                try:
+                    total += act.computed_score
+                except Exception:
+                    total += act.score or 0
         return total
 
     @property
@@ -111,6 +113,7 @@ class ActionPlanActivity(db.Model):
     description  = db.Column(db.Text, nullable=True)
     reported_at  = db.Column(db.DateTime, nullable=True)
     score        = db.Column(db.Integer, nullable=True)
+    generates_report = db.Column(db.Boolean, default=False, nullable=False)
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
@@ -148,7 +151,29 @@ class ActionPlanActivity(db.Model):
 
     def __repr__(self):
         return f"<ActionPlanActivity {self.id} - {self.status}>"
+    
+    @property
+    def computed_score(self) -> int | None:
+        """
+        Reglas:
+        - Sin evidence_url + fecha futura (En Ejecución) → None (no suma ni resta)
+        - Sin evidence_url + fecha pasada (Pendiente vencida) → -1
+        - Con evidence_url (Realizado) → 5
+        - Con evidence_url + generates_report + reporte vinculado → 7
+        """
+        if not self.evidence_url:
+            if date.today() <= self.delivery_date:
+                return None   # En Ejecución — no puntuar
+            return -1         # Pendiente vencida
 
+        base = 5
+        try:
+            if self.generates_report and self.linked_report is not None:
+                base += 2
+        except Exception:
+            pass
+
+        return base
 
 class ActionPlanSupportStaff(db.Model):
     __tablename__ = "action_plan_support_staff"

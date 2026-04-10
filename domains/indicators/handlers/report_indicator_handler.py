@@ -16,7 +16,7 @@ from .cross_indicators import build_cross_indicators, build_multiselect_cross, b
 class ReportIndicatorHandler:
 
     @staticmethod
-    def aggregate_indicators_by_component(component_id, year: int = None):
+    def aggregate_indicators_by_component(component_id, year: int = None, date_from: str = None, date_to: str = None):
         from domains.indicators.models.Component.component import Component
 
         component = Component.query.get(component_id)
@@ -29,11 +29,18 @@ class ReportIndicatorHandler:
             .options(selectinload(Report.indicator_values).joinedload(ReportIndicatorValue.indicator))
             .filter(Report.component_id == component_id)
         )
-        if year:
+        
+        # ── Filtro de fecha ──────────────────────────────────────
+        if date_from and date_to:
+            query = query.filter(
+                Report.report_date >= date_from,
+                Report.report_date <= date_to
+            )
+        elif year:
             query = query.filter(extract('year', Report.report_date) == year)
 
         reports = query.order_by(Report.report_date.asc()).all()
-
+       
         if not reports:
             return {
                 "component_id": component_id,

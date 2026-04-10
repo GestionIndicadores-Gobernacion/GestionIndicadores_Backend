@@ -1,7 +1,9 @@
+from flask import jsonify
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
+from domains.indicators.models.Report.report import Report
 from domains.indicators.schemas.report_schema import ReportSchema
 from domains.indicators.models.User.user import User
 
@@ -84,6 +86,14 @@ class ReportList(MethodView):
         if _is_viewer():
             abort(403, message="No tienes permiso para crear reportes")
 
+        # ← NUEVO: validar componente para editor
+        user_id = _current_user_id()
+        user = User.query.get(user_id)
+        if user and user.role and user.role.name == "editor":
+            assigned = [uc.component_id for uc in user.component_assignments]
+            if data.get("component_id") not in assigned:
+                abort(403, message="No puedes crear reportes en este componente")
+
         report, errors = ReportHandler.create(data)
         if errors:
             abort(400, message=errors)
@@ -150,7 +160,71 @@ class ReportDetail(MethodView):
             abort(403, message="No tienes permiso para eliminar este reporte")
 
         ReportHandler.delete(report)
+        
+@blp.route("/<int:report_id>/link-activity/<int:activity_id>")
+class ReportLinkActivity(MethodView):
 
+    @jwt_required()
+    def post(self, report_id, activity_id):
+        """Vincula una actividad del plan de acción a un reporte existente."""
+        if _is_viewer():
+            abort(403, message="No tienes permiso")
+
+        report = ReportHandler.get_by_id(report_id)
+        if not report:
+            abort(404, message="Reporte no encontrado")
+
+        if not _can_access(report):
+            abort(403, message="No tienes permiso para modificar este reporte")
+
+        result, errors = ReportHandler._link_activity_to_report(report, activity_id)
+        if errors:
+            abort(422, message=errors)
+
+        return jsonify(ReportSchema().dump(result)), 200
+
+@blp.route("/prefill/activity/<int:activity_id>")
+class ReportPrefillFromActivity(MethodView):
+
+    @jwt_required()
+    def get(self, activity_id):
+        """
+        Devuelve los datos precargados para crear un reporte desde una actividad.
+        Si ya existe un reporte vinculado, lo retorna también.
+        """
+        from domains.action_plans.models.action_plan import ActionPlanActivity
+
+        activity = ActionPlanActivity.query.get(activity_id)
+        if not activity:
+            abort(404, message="Actividad no encontrada")
+
+        plan_obj = activity.plan_objective
+        plan     = plan_obj.action_plan
+
+        # ¿Ya tiene reporte vinculado?
+        existing_report = activity.linked_report
+        # ¿Existe algún reporte con el mismo evidence_url?
+        report_by_link = None
+        if activity.evidence_url:
+            report_by_link = Report.query.filter_by(
+                evidence_link=activity.evidence_url
+            ).first()
+
+        return jsonify({
+            "activity_id":   activity.id,
+            "activity_name": activity.name,
+            "generates_report": activity.generates_report,
+            "prefill": {
+                "strategy_id":    plan.strategy_id,
+                "component_id":   plan.component_id,
+                "evidence_link":  activity.evidence_url,
+            },
+            "linked_report": ReportSchema().dump(existing_report) if existing_report else None,
+            "report_by_evidence_link": {
+                "id": report_by_link.id,
+                "created_at": str(report_by_link.created_at),
+            } if report_by_link and report_by_link != existing_report else None,
+        }), 200
 
 # =========================================================
 # AGGREGATES
@@ -159,7 +233,16 @@ class ReportDetail(MethodView):
 class ReportAggregateComponent(MethodView):
     @jwt_required()
     def get(self, component_id):
-        return ReportAggregateHandler.aggregate_by_component(component_id)
+        from flask import request
+        year      = request.args.get('year', type=int)
+        date_from = request.args.get('date_from')
+        date_to   = request.args.get('date_to')
+        return ReportAggregateHandler.aggregate_by_component(
+            component_id,
+            year=year,
+            date_from=date_from,
+            date_to=date_to
+        )
 
 
 @blp.route("/aggregate/strategy/<int:strategy_id>")
@@ -173,5 +256,12 @@ class ReportAggregateComponentIndicators(MethodView):
     @jwt_required()
     def get(self, component_id):
         from flask import request
-        year = request.args.get('year', type=int)
-        return ReportIndicatorHandler.aggregate_indicators_by_component(component_id, year=year)
+        year      = request.args.get('year', type=int)
+        date_from = request.args.get('date_from')
+        date_to   = request.args.get('date_to')
+        return ReportIndicatorHandler.aggregate_indicators_by_component(
+            component_id,
+            year=year,
+            date_from=date_from,
+            date_to=date_to
+        )

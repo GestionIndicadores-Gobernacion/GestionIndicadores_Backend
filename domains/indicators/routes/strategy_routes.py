@@ -53,12 +53,18 @@ class StrategyDashboardResource(MethodView):
     @blp.response(200, StrategyWithProgressSchema(many=True))
     def get(self):
         try:
-            # año opcional — si no viene usa el año actual
-            year = request.args.get('year', type=int)
+            year      = request.args.get('year', type=int)
+            date_from = request.args.get('date_from')   # YYYY-MM-DD, opcional
+            date_to   = request.args.get('date_to')     # YYYY-MM-DD, opcional
 
             strategies = StrategyHandler.get_all()
             for s in strategies:
-                s.progress = StrategyProgressService.get_progress(s, year=year)
+                s.progress = StrategyProgressService.get_progress(
+                    s,
+                    year=year,
+                    date_from=date_from,
+                    date_to=date_to,
+                )
             return strategies
         except Exception as e:
             import traceback

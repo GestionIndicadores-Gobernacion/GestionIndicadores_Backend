@@ -1,4 +1,5 @@
 from collections import defaultdict
+from sqlalchemy import extract
 from sqlalchemy.orm import joinedload, selectinload
 
 from domains.indicators.models.Report.report import Report
@@ -67,16 +68,26 @@ class ReportAggregateHandler:
         }
 
     @staticmethod
-    def aggregate_by_component(component_id):
-        reports = (
+    def aggregate_by_component(component_id, year=None, date_from=None, date_to=None):
+        query = (
             Report.query
             .options(
-                selectinload(Report.indicator_values).joinedload(ReportIndicatorValue.indicator)
+                selectinload(Report.indicator_values)
+                .joinedload(ReportIndicatorValue.indicator)
             )
             .filter(Report.component_id == component_id)
-            .order_by(Report.report_date.asc())
-            .all()
         )
+        
+        # ── Filtro de fecha ──────────────────────────────────────
+        if date_from and date_to:
+            query = query.filter(
+                Report.report_date >= date_from,
+                Report.report_date <= date_to
+            )
+        elif year:
+            query = query.filter(extract('year', Report.report_date) == year)
+
+        reports = query.order_by(Report.report_date.asc()).all()
 
         if not reports:
             return {

@@ -21,9 +21,15 @@ class NotificationList(MethodView):
     def get(self):
         user_id = int(get_jwt_identity())
         unread_only = request.args.get("unread", "false").lower() == "true"
+
+        # ── Generar recordatorios automáticos antes de devolver la lista ──
+        try:
+            NotificationHandler.generate_activity_reminders(user_id)
+        except Exception:
+            pass  # No romper la respuesta si algo falla
+
         notifications = NotificationHandler.get_by_user(user_id, unread_only=unread_only)
         return jsonify(NotificationSchema(many=True).dump(notifications)), 200
-
 
 @blp.route("/count")
 class NotificationCount(MethodView):
