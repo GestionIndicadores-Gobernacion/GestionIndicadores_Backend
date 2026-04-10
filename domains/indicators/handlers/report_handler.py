@@ -159,7 +159,19 @@ class ReportHandler:
         
     @staticmethod
     def get_by_id(report_id):
-        return Report.query.get(report_id)
+        from sqlalchemy.orm import selectinload, joinedload
+        return (
+            Report.query
+            .options(
+                selectinload(Report.indicator_values)
+                    .joinedload(ReportIndicatorValue.indicator),
+                joinedload(Report.component),
+                joinedload(Report.strategy),
+                joinedload(Report.user),
+            )
+            .filter(Report.id == report_id)
+            .first()
+        )
 
     @staticmethod
     def delete(report):
