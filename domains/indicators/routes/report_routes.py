@@ -225,7 +225,16 @@ class ReportPrefillFromActivity(MethodView):
 class ReportAggregateComponent(MethodView):
     @jwt_required()
     def get(self, component_id):
-        return ReportAggregateHandler.aggregate_by_component(component_id)
+        from flask import request
+        year      = request.args.get('year', type=int)
+        date_from = request.args.get('date_from')
+        date_to   = request.args.get('date_to')
+        return ReportAggregateHandler.aggregate_by_component(
+            component_id,
+            year=year,
+            date_from=date_from,
+            date_to=date_to
+        )
 
 
 @blp.route("/aggregate/strategy/<int:strategy_id>")
@@ -239,5 +248,12 @@ class ReportAggregateComponentIndicators(MethodView):
     @jwt_required()
     def get(self, component_id):
         from flask import request
-        year = request.args.get('year', type=int)
-        return ReportIndicatorHandler.aggregate_indicators_by_component(component_id, year=year)
+        year      = request.args.get('year', type=int)
+        date_from = request.args.get('date_from')
+        date_to   = request.args.get('date_to')
+        return ReportIndicatorHandler.aggregate_indicators_by_component(
+            component_id,
+            year=year,
+            date_from=date_from,
+            date_to=date_to
+        )

@@ -1,7 +1,7 @@
 # domains/indicators/services/strategy_progress_service.py
 
 import re
-from datetime import datetime
+from datetime import datetime, date
 
 from domains.datasets.models.record import Record
 from domains.indicators.models.Strategy.strategy import Strategy
@@ -11,10 +11,18 @@ from domains.indicators.models.Report.report import Report
 class StrategyProgressService:
 
     @staticmethod
-    def get_progress(strategy: Strategy, year: int = None) -> dict:
+    def get_progress(
+        strategy: Strategy,
+        year: int = None,
+        date_from: str = None,
+        date_to: str = None,
+    ) -> dict:
         current_year  = year or datetime.utcnow().year
         goal_for_year = StrategyProgressService._get_goal_for_year(strategy, current_year)
-        actual        = StrategyProgressService._calculate_actual(strategy, current_year)
+        actual        = StrategyProgressService._calculate_actual(
+            strategy, current_year,
+            date_from=date_from, date_to=date_to
+        )
 
         percent = 0.0
         if goal_for_year and goal_for_year > 0:
@@ -32,8 +40,8 @@ class StrategyProgressService:
 
     @staticmethod
     def _get_base_year(strategy: Strategy) -> int:
-        return 2024 
-    
+        return 2024
+
     @staticmethod
     def _get_year_number(strategy: Strategy, calendar_year: int):
         base_year = StrategyProgressService._get_base_year(strategy)
@@ -42,10 +50,6 @@ class StrategyProgressService:
 
     @staticmethod
     def _get_goal_for_year(strategy: Strategy, calendar_year: int):
-        """
-        Busca la meta del año lógico que corresponde al año calendario dado.
-        Si no existe meta para ese año lógico, retorna None.
-        """
         year_number = StrategyProgressService._get_year_number(strategy, calendar_year)
         if year_number is None:
             return None
@@ -58,26 +62,45 @@ class StrategyProgressService:
     # ─── Valor real acumulado ─────────────────────────────────────────────────
 
     @staticmethod
-    def _calculate_actual(strategy: Strategy, current_year: int) -> float:
+    def _calculate_actual(
+        strategy: Strategy,
+        current_year: int,
+        date_from: str = None,
+        date_to: str = None,
+    ) -> float:
         total = 0.0
         for metric in strategy.metrics:
-            total += StrategyProgressService._calculate_metric(metric, strategy, current_year)
+            total += StrategyProgressService._calculate_metric(
+                metric, strategy, current_year,
+                date_from=date_from, date_to=date_to
+            )
         return total
 
     @staticmethod
-    def _calculate_metric(metric, strategy: Strategy, current_year: int) -> float:
+    def _calculate_metric(
+        metric,
+        strategy: Strategy,
+        current_year: int,
+        date_from: str = None,
+        date_to: str = None,
+    ) -> float:
         t = metric.metric_type
 
-        # Si la métrica tiene año definido y no coincide, no aporta nada
         if metric.year is not None and metric.year != current_year:
             return 0.0
 
         if t == "report_count":
-            return StrategyProgressService._report_count(metric, strategy, current_year)
+            return StrategyProgressService._report_count(
+                metric, strategy, current_year, date_from, date_to
+            )
         if t == "report_sum":
-            return StrategyProgressService._report_sum(metric, strategy, current_year)
+            return StrategyProgressService._report_sum(
+                metric, strategy, current_year, date_from, date_to
+            )
         if t == "report_sum_nested":
-            return StrategyProgressService._report_sum_nested(metric, strategy, current_year)
+            return StrategyProgressService._report_sum_nested(
+                metric, strategy, current_year, date_from, date_to
+            )
         if t == "dataset_count":
             return StrategyProgressService._dataset_count(metric, current_year)
         if t == "dataset_sum":
@@ -87,18 +110,55 @@ class StrategyProgressService:
 
         return 0.0
 
+    # ─── Helper compartido para filtrar reportes ──────────────────────────────
+
+    @staticmethod
+    def _filter_reports(
+        query,
+        current_year: int,
+        date_from: str = None,
+        date_to: str = None,
+    ):
+        """
+        Si vienen date_from y date_to filtra por rango de fechas.
+        Si no, filtra por año calendario.
+        """
+        if date_from and date_to:
+            from_ = date.fromisoformat(date_from)
+            to_   = date.fromisoformat(date_to)
+            return [r for r in query.all()
+                    if from_ <= _report_date(r) <= to_]
+        else:
+            return [r for r in query.all()
+                    if _report_year(r) == current_year]
+
     # ─── Implementaciones por tipo ────────────────────────────────────────────
 
     @staticmethod
-    def _report_count(metric, strategy: Strategy, current_year: int) -> float:
+    def _report_count(
+        metric,
+        strategy: Strategy,
+        current_year: int,
+        date_from: str = None,
+        date_to: str = None,
+    ) -> float:
         query = Report.query.filter_by(strategy_id=strategy.id)
         if metric.component_id:
             query = query.filter_by(component_id=metric.component_id)
-        reports = [r for r in query.all() if _report_year(r) == current_year]
+
+        reports = StrategyProgressService._filter_reports(
+            query, current_year, date_from, date_to
+        )
         return float(len(reports))
 
     @staticmethod
-    def _report_sum(metric, strategy: Strategy, current_year: int) -> float:
+    def _report_sum(
+        metric,
+        strategy: Strategy,
+        current_year: int,
+        date_from: str = None,
+        date_to: str = None,
+    ) -> float:
         if not metric.field_name:
             return 0.0
 
@@ -111,11 +171,16 @@ class StrategyProgressService:
         if metric.component_id:
             query = query.filter_by(component_id=metric.component_id)
 
-        reports = [r for r in query.all() if _report_year(r) == current_year]
+        reports = StrategyProgressService._filter_reports(
+            query, current_year, date_from, date_to
+        )
 
         total = 0.0
         for r in reports:
-            iv = next((v for v in (r.indicator_values or []) if v.indicator_id == indicator_id), None)
+            iv = next(
+                (v for v in (r.indicator_values or []) if v.indicator_id == indicator_id),
+                None
+            )
             if iv is None or iv.value is None:
                 continue
             try:
@@ -126,7 +191,13 @@ class StrategyProgressService:
         return total
 
     @staticmethod
-    def _report_sum_nested(metric, strategy: Strategy, current_year: int) -> float:
+    def _report_sum_nested(
+        metric,
+        strategy: Strategy,
+        current_year: int,
+        date_from: str = None,
+        date_to: str = None,
+    ) -> float:
         if not metric.field_name:
             return 0.0
 
@@ -139,11 +210,16 @@ class StrategyProgressService:
         if metric.component_id:
             query = query.filter_by(component_id=metric.component_id)
 
-        reports = [r for r in query.all() if _report_year(r) == current_year]
+        reports = StrategyProgressService._filter_reports(
+            query, current_year, date_from, date_to
+        )
 
         total = 0.0
         for r in reports:
-            iv = next((v for v in (r.indicator_values or []) if v.indicator_id == indicator_id), None)
+            iv = next(
+                (v for v in (r.indicator_values or []) if v.indicator_id == indicator_id),
+                None
+            )
             if iv is None or not isinstance(iv.value, dict):
                 continue
 
@@ -206,10 +282,20 @@ class StrategyProgressService:
 # ─── Helpers privados ─────────────────────────────────────────────────────────
 
 def _report_year(report) -> int:
-    date = report.report_date
-    if isinstance(date, str):
-        return int(date.split('-')[0])
-    return date.year
+    d = report.report_date
+    if isinstance(d, str):
+        return int(d.split('-')[0])
+    return d.year
+
+
+def _report_date(report) -> date:
+    """Convierte report_date a objeto date para comparaciones de rango."""
+    d = report.report_date
+    if isinstance(d, str):
+        return date.fromisoformat(d)
+    if isinstance(d, datetime):
+        return d.date()
+    return d
 
 
 def _sum_nested_key(obj, key: str) -> float:
