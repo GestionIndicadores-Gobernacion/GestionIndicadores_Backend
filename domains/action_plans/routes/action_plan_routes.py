@@ -43,6 +43,40 @@ def _can_edit_plan(plan):
     assigned = [uc.component_id for uc in user.component_assignments]
     return plan.component_id in assigned
 
+def _get_activity_plan(activity_id: int):
+    """Retorna (activity, plan) o (None, None) si no existe."""
+    from domains.action_plans.models.action_plan import (
+        ActionPlanActivity, ActionPlanObjective, ActionPlan
+    )
+    activity = ActionPlanActivity.query.get(activity_id)
+    if not activity:
+        return None, None
+    plan = ActionPlan.query.get(activity.plan_objective.action_plan_id)
+    return activity, plan
+
+
+def _can_interact_with_activity(activity, plan) -> bool:
+    """
+    Editor → puede si el plan es de su componente O si es el responsable del plan.
+    Admin/Monitor → siempre puede.
+    Viewer → nunca puede modificar.
+    """
+    user = _get_current_user()
+    if not user:
+        return False
+    if user.role.name in ("admin", "monitor"):
+        return True
+    if user.role.name == "viewer":
+        return False
+    if user.role.name == "editor":
+        assigned = [uc.component_id for uc in user.component_assignments]
+        if plan.component_id in assigned:
+            return True
+        # También puede si es el responsable del plan
+        if plan.responsible_user_id and plan.responsible_user_id == user.id:
+            return True
+        return False
+    return False
 
 @blp.route("/")
 class ActionPlanList(MethodView):
@@ -126,6 +160,14 @@ class ActionPlanActivityReport(MethodView):
     def put(self, data, activity_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
+
+        activity, plan = _get_activity_plan(activity_id)
+        if not activity:
+            return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
+
+        if not _can_interact_with_activity(activity, plan):
+            return jsonify({"error": "Sin permiso para reportar esta actividad"}), 403
+
         activity, errors = ActionPlanHandler.report_activity(activity_id, data)
         if errors:
             status_code = 404 if "activity" in errors else 422
@@ -135,13 +177,19 @@ class ActionPlanActivityReport(MethodView):
 
 @blp.route("/activities/<int:activity_id>/edit")
 class ActionPlanActivityEdit(MethodView):
-    """Editar una actividad o todo su grupo de recurrencia."""
 
     @blp.arguments(ActionPlanActivityEditSchema)
     @jwt_required()
     def put(self, data, activity_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
+
+        activity, plan = _get_activity_plan(activity_id)
+        if not activity:
+            return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
+
+        if not _can_interact_with_activity(activity, plan):
+            return jsonify({"error": "Sin permiso para editar esta actividad"}), 403
 
         edit_all = data.pop("edit_all", False)
         activity, errors = ActionPlanHandler.update_activity(activity_id, data, edit_all=edit_all)
@@ -150,7 +198,6 @@ class ActionPlanActivityEdit(MethodView):
             return jsonify({"errors": errors}), status_code
         return jsonify(ActionPlanActivityDetailSchema().dump(activity)), 200
 
-
 @blp.route("/activities/<int:activity_id>")
 class ActionPlanActivityDetail(MethodView):
 
@@ -158,6 +205,13 @@ class ActionPlanActivityDetail(MethodView):
     def delete(self, activity_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
+
+        activity, plan = _get_activity_plan(activity_id)
+        if not activity:
+            return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
+
+        if not _can_interact_with_activity(activity, plan):
+            return jsonify({"error": "Sin permiso para eliminar esta actividad"}), 403
 
         delete_all = request.args.get("delete_all", "false").lower() == "true"
         success, errors = ActionPlanHandler.delete_activity(activity_id, delete_all=delete_all)

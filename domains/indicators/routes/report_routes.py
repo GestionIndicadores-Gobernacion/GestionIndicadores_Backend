@@ -86,6 +86,14 @@ class ReportList(MethodView):
         if _is_viewer():
             abort(403, message="No tienes permiso para crear reportes")
 
+        # ← NUEVO: validar componente para editor
+        user_id = _current_user_id()
+        user = User.query.get(user_id)
+        if user and user.role and user.role.name == "editor":
+            assigned = [uc.component_id for uc in user.component_assignments]
+            if data.get("component_id") not in assigned:
+                abort(403, message="No puedes crear reportes en este componente")
+
         report, errors = ReportHandler.create(data)
         if errors:
             abort(400, message=errors)
