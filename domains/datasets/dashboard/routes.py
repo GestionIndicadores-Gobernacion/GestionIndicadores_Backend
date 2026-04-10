@@ -5,7 +5,7 @@ from flask.views import MethodView
 from domains.datasets.models.table import Table
 from domains.datasets.models.field import Field
 from domains.datasets.models.record import Record
-from .analyzer import analyze_dataset, detect_dataset_type
+from .analyzer import analyze_dataset
 
 blp = Blueprint("dataset_dashboard", __name__, url_prefix="/datasets")
 
@@ -17,7 +17,6 @@ class TableDashboardResource(MethodView):
         records = Record.query.filter_by(table_id=table.id).all()
 
         dashboard = analyze_dataset(fields, records)
-        dashboard["dataset_type"] = detect_dataset_type(fields)
         dashboard["table"] = {
             "id": table.id,
             "name": table.name,
