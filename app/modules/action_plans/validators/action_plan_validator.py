@@ -49,6 +49,13 @@ class ActionPlanValidator:
         if activity.evidence_url:
             errors["evidence_url"] = "Esta actividad ya fue reportada."
             return errors
+        # Bloquear si la actividad genera reporte pero no tiene uno vinculado aún
+        if activity.generates_report and activity.linked_report is None:
+            errors["activity"] = (
+                "Esta actividad requiere un reporte vinculado. "
+                "Primero crea el reporte desde el módulo de reportes."
+            )
+            return errors
         evidence_url = data.get("evidence_url", "").strip()
         if not evidence_url:
             errors["evidence_url"] = "El link de evidencia es requerido."

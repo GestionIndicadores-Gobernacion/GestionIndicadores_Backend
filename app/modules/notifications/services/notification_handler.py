@@ -59,7 +59,8 @@ class NotificationHandler:
         ya existentes con category='action_plan_reminder'.
         """
         from app.modules.action_plans.models.action_plan import (
-            ActionPlan, ActionPlanObjective, ActionPlanActivity
+            ActionPlan, ActionPlanObjective, ActionPlanActivity,
+            ActionPlanResponsibleUser
         )
         from sqlalchemy.orm import selectinload
 
@@ -79,13 +80,24 @@ class NotificationHandler:
             ).all()
         }
 
+        # IDs de planes donde el usuario es responsable (legacy o nuevo sistema)
+        plan_ids_new = {
+            ru.action_plan_id
+            for ru in ActionPlanResponsibleUser.query.filter_by(user_id=user_id).all()
+        }
+
         plans = (
             ActionPlan.query
             .options(
                 selectinload(ActionPlan.plan_objectives)
                 .selectinload(ActionPlanObjective.activities)
             )
-            .filter(ActionPlan.responsible_user_id == user_id)
+            .filter(
+                db.or_(
+                    ActionPlan.responsible_user_id == user_id,
+                    ActionPlan.id.in_(plan_ids_new)
+                )
+            )
             .all()
         )
 

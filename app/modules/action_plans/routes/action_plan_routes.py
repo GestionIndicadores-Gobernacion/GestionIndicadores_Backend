@@ -234,78 +234,123 @@ class ActionPlanUserDashboard(MethodView):
         if not user or user.role.name not in ("admin", "monitor"):
             return jsonify({"error": "Sin permiso"}), 403
 
+        from app.modules.action_plans.models.action_plan import ActionPlanResponsibleUser
+        from sqlalchemy.orm import selectinload as sil
+
         # Cargar planes con relaciones eager para evitar lazy loading fuera de sesión
         plans = ActionPlan.query.options(
             selectinload(ActionPlan.plan_objectives)
             .selectinload(ActionPlanObjective.activities)
-            .selectinload(ActionPlanActivity.linked_report)
+            .selectinload(ActionPlanActivity.linked_report),
+            selectinload(ActionPlan.responsible_users)
         ).all()
 
         grouped: dict[str, dict] = {}
 
-        for plan in plans:
-            responsible = (plan.responsible or "").strip()
-            if not responsible:
-                continue
-
-            if responsible not in grouped:
-                grouped[responsible] = {
-                    "responsible": responsible,
+        def _get_or_create_group(key: str, display_name: str):
+            if key not in grouped:
+                grouped[key] = {
+                    "responsible": display_name,
                     "plans_owner": [],
                     "activities": [],
                 }
+            return grouped[key]
 
-            if plan.user_id:
-                owner = User.query.get(plan.user_id)
-                if owner:
-                    owner_info = {
-                        "user_id":    owner.id,
-                        "first_name": owner.first_name,
-                        "last_name":  owner.last_name,
-                        "email":      owner.email,
-                        "role":       owner.role.name if owner.role else None,
-                    }
-                    if owner_info not in grouped[responsible]["plans_owner"]:
-                        grouped[responsible]["plans_owner"].append(owner_info)
+        for plan in plans:
+            # Determinar lista de responsables para agrupar
+            plan_responsible_entries = []
 
-            for obj in plan.plan_objectives:
-                for activity in obj.activities:
-                    try:
-                        c_score = activity.computed_score
-                    except Exception:
-                        c_score = activity.score or 0
+            # Sistema nuevo: múltiples responsables
+            if plan.responsible_users:
+                for ru in plan.responsible_users:
+                    if ru.user:
+                        name = f"{ru.user.first_name} {ru.user.last_name}".strip()
+                        plan_responsible_entries.append((f"user_{ru.user_id}", name))
+            # Fallback legacy: responsible_user_id
+            elif plan.responsible_user_id:
+                u = User.query.get(plan.responsible_user_id)
+                if u:
+                    name = f"{u.first_name} {u.last_name}".strip()
+                    plan_responsible_entries.append((f"user_{u.id}", name))
+            # Fallback texto libre
+            elif plan.responsible:
+                txt = plan.responsible.strip()
+                if txt:
+                    plan_responsible_entries.append((txt, txt))
 
-                    grouped[responsible]["activities"].append({
-                        "id":             activity.id,
-                        "name":           activity.name,
-                        "delivery_date":  str(activity.delivery_date),
-                        "status":         activity.status,
-                        "score":          activity.score,
-                        "computed_score": c_score,
-                        "reported_at":    str(activity.reported_at) if activity.reported_at else None,
-                        "evidence_url":   activity.evidence_url,
-                    })
+            if not plan_responsible_entries:
+                continue
+
+            for group_key, display_name in plan_responsible_entries:
+                grp = _get_or_create_group(group_key, display_name)
+
+                if plan.user_id:
+                    owner = User.query.get(plan.user_id)
+                    if owner:
+                        owner_info = {
+                            "user_id":    owner.id,
+                            "first_name": owner.first_name,
+                            "last_name":  owner.last_name,
+                            "email":      owner.email,
+                            "role":       owner.role.name if owner.role else None,
+                        }
+                        if owner_info not in grp["plans_owner"]:
+                            grp["plans_owner"].append(owner_info)
+
+                for obj in plan.plan_objectives:
+                    for activity in obj.activities:
+                        try:
+                            c_score = activity.computed_score
+                        except Exception:
+                            c_score = activity.score or 0
+
+                        # Verificar si tiene reporte vinculado
+                        has_linked_report = False
+                        try:
+                            has_linked_report = activity.linked_report is not None
+                        except Exception:
+                            pass
+
+                        grp["activities"].append({
+                            "id":                activity.id,
+                            "name":              activity.name,
+                            "delivery_date":     str(activity.delivery_date),
+                            "status":            activity.status,
+                            "score":             activity.score,
+                            "computed_score":    c_score,
+                            "reported_at":       str(activity.reported_at) if activity.reported_at else None,
+                            "evidence_url":      activity.evidence_url,
+                            "generates_report":  activity.generates_report,
+                            "has_linked_report": has_linked_report,
+                        })
 
         result = []
-        for responsible, data in grouped.items():
-            activities = data["activities"]   # ← definir PRIMERO
+        for _key, data in grouped.items():
+            activities = data["activities"]
 
             completed = [a for a in activities if a["evidence_url"]]
             running   = [a for a in activities if not a["evidence_url"] and date.today() <= date.fromisoformat(a["delivery_date"])]
             overdue   = [a for a in activities if not a["evidence_url"] and date.today() > date.fromisoformat(a["delivery_date"])]
 
-            total_score = sum(a["computed_score"] or 0 for a in activities)   # ← computed_score
+            # Actividades que generan reporte pero no tienen reporte vinculado
+            without_report = [
+                a for a in activities
+                if a["generates_report"] and not a["has_linked_report"]
+            ]
+
+            total_score = sum(a["computed_score"] or 0 for a in activities)
 
             result.append({
-                "responsible":      responsible,
-                "plans_owner":      data["plans_owner"],
-                "total_activities": len(activities),
-                "completed":        len(completed),
-                "running":          len(running),
-                "pending":          len(overdue),
-                "overdue":          len(overdue),
-                "total_score":      total_score,
-                "activities":       activities,
+                "responsible":               data["responsible"],
+                "plans_owner":               data["plans_owner"],
+                "total_activities":          len(activities),
+                "completed":                 len(completed),
+                "running":                   len(running),
+                "pending":                   len(overdue),
+                "overdue":                   len(overdue),
+                "total_score":               total_score,
+                "activities_without_report": len(without_report),
+                "activities":                activities,
             })
 
         return jsonify(result), 200

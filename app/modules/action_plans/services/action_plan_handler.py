@@ -5,7 +5,8 @@ import uuid
 
 from app.core.extensions import db
 from app.modules.action_plans.models.action_plan import (
-    ActionPlan, ActionPlanObjective, ActionPlanActivity, ActionPlanSupportStaff
+    ActionPlan, ActionPlanObjective, ActionPlanActivity, ActionPlanSupportStaff,
+    ActionPlanResponsibleUser
 )
 from app.modules.action_plans.validators.action_plan_validator import ActionPlanValidator
 from app.shared.models.audit_log import AuditLog
@@ -80,6 +81,17 @@ class ActionPlanHandler:
             db.session.add(plan)
             db.session.flush()
 
+            # Vincular múltiples responsables
+            responsible_ids = data.get("responsible_user_ids") or []
+            # Compatibilidad: si no viene responsible_user_ids pero sí responsible_user_id
+            if not responsible_ids and data.get("responsible_user_id"):
+                responsible_ids = [data["responsible_user_id"]]
+            for uid in responsible_ids:
+                db.session.add(ActionPlanResponsibleUser(
+                    action_plan_id=plan.id,
+                    user_id=uid
+                ))
+
             for obj_data in objectives_data:
                 plan_obj = ActionPlanObjective(
                     action_plan_id = plan.id,
@@ -128,7 +140,8 @@ class ActionPlanHandler:
                         for staff in act_data.get("support_staff", []):
                             db.session.add(ActionPlanSupportStaff(
                                 activity_id = activity.id,
-                                name        = (staff.get("name") or "").strip()
+                                name        = (staff.get("name") or "").strip(),
+                                user_id     = staff.get("user_id"),
                             ))
 
             db.session.add(AuditLog(
@@ -138,21 +151,46 @@ class ActionPlanHandler:
                 action="created"
             ))
 
-             # ── Notificar al responsable ─────────────────────────────────
-            if plan.responsible_user_id and plan.responsible_user_id != int(user_id):
-                from app.shared.models.user import User
-                creator = User.query.get(user_id)
-                creator_name = f"{creator.first_name} {creator.last_name}" if creator else "Un usuario"
-                component_name = plan.component.name if plan.component else ""
+            # ── Notificar a todos los responsables ───────────────────────────
+            from app.shared.models.user import User
+            creator = User.query.get(user_id)
+            creator_name = f"{creator.first_name} {creator.last_name}" if creator else "Un usuario"
+            component_name = plan.component.name if plan.component else ""
 
+            notify_ids = set()
+            for ru in plan.responsible_users:
+                if ru.user_id and ru.user_id != int(user_id):
+                    notify_ids.add(ru.user_id)
+            # Fallback legacy
+            if not notify_ids and plan.responsible_user_id and plan.responsible_user_id != int(user_id):
+                notify_ids.add(plan.responsible_user_id)
+
+            for nid in notify_ids:
                 NotificationHandler.create(
-                    user_id=plan.responsible_user_id,
+                    user_id=nid,
                     title="Nuevo plan de acción asignado",
                     message=f"{creator_name} te asignó un plan de acción en {component_name}.",
                     category="action_plan",
                     entity_id=plan.id,
                 )
-                
+
+            # ── Notificar al personal de apoyo vinculado como usuario ────────
+            support_user_ids = set()
+            for obj in plan.plan_objectives:
+                for act in obj.activities:
+                    for staff in act.support_staff:
+                        if staff.user_id and staff.user_id != int(user_id):
+                            support_user_ids.add(staff.user_id)
+
+            for nid in support_user_ids - notify_ids:
+                NotificationHandler.create(
+                    user_id=nid,
+                    title="Asignado como personal de apoyo",
+                    message=f"{creator_name} te incluyó como personal de apoyo en un plan de acción en {component_name}.",
+                    category="action_plan",
+                    entity_id=plan.id,
+                )
+
             db.session.commit()
             
             return plan, None
@@ -216,6 +254,19 @@ class ActionPlanHandler:
             activity.reported_at         = now
             activity.reported_by_user_id = int(user_id)
 
+            # Auto-vincular reporte si el evidence_url coincide con algún evidence_link
+            if activity.evidence_url and activity.generates_report:
+                try:
+                    from app.modules.indicators.models.Report.report import Report
+                    matching = Report.query.filter(
+                        Report.evidence_link == activity.evidence_url,
+                        Report.action_plan_activity_id.is_(None)
+                    ).first()
+                    if matching:
+                        matching.action_plan_activity_id = activity.id
+                except Exception:
+                    pass  # No interrumpir el reporte si falla el auto-link
+
             plan_id = activity.plan_objective.action_plan_id
             db.session.add(AuditLog(
                 user_id=user_id,
@@ -267,7 +318,8 @@ class ActionPlanHandler:
                         for staff in data["support_staff"]:
                             db.session.add(ActionPlanSupportStaff(
                                 activity_id=act.id,
-                                name=(staff.get("name") or "").strip()
+                                name=(staff.get("name") or "").strip(),
+                                user_id=staff.get("user_id"),
                             ))
             else:
                 # Editar solo esta
@@ -276,7 +328,7 @@ class ActionPlanHandler:
                 activity.requires_boss_assistance = data.get("requires_boss_assistance", activity.requires_boss_assistance)
                 activity.lugar = data.get("lugar", activity.lugar)
                 activity.generates_report = data.get("generates_report", activity.generates_report)
-                
+
                 if "delivery_date" in data:
                     d = data["delivery_date"]
                     activity.delivery_date = date.fromisoformat(str(d)) if isinstance(d, str) else d
@@ -288,7 +340,8 @@ class ActionPlanHandler:
                     for staff in data["support_staff"]:
                         db.session.add(ActionPlanSupportStaff(
                             activity_id=activity.id,
-                            name=(staff.get("name") or "").strip()
+                            name=(staff.get("name") or "").strip(),
+                            user_id=staff.get("user_id"),
                         ))
 
             plan_id = activity.plan_objective.action_plan_id
@@ -368,14 +421,32 @@ class ActionPlanHandler:
         try:
             user_id = get_jwt_identity()
             old_responsible_user_id = plan.responsible_user_id
+            old_responsible_ids = set(plan.responsible_user_ids)
 
             # Actualizar responsable
             if "responsible" in data:
                 plan.responsible = (data["responsible"] or "").strip() or None
-                
-            # Actualizar responsable usuario
+
+            # Actualizar responsable usuario (legacy)
             if "responsible_user_id" in data:
                 plan.responsible_user_id = data["responsible_user_id"]
+
+            # Actualizar múltiples responsables
+            if "responsible_user_ids" in data:
+                new_ids = set(data["responsible_user_ids"] or [])
+                # Eliminar los que ya no están
+                for ru in list(plan.responsible_users):
+                    if ru.user_id not in new_ids:
+                        db.session.delete(ru)
+                # Agregar los nuevos
+                existing_ids = {ru.user_id for ru in plan.responsible_users}
+                for uid in new_ids:
+                    if uid not in existing_ids:
+                        db.session.add(ActionPlanResponsibleUser(
+                            action_plan_id=plan.id,
+                            user_id=uid
+                        ))
+                db.session.flush()
             
             # Actualizar actividades NO realizadas por objetivo
             for obj_data in data.get("plan_objectives", []):
@@ -422,7 +493,8 @@ class ActionPlanHandler:
                     for staff in act_data.get("support_staff", []):
                         db.session.add(ActionPlanSupportStaff(
                             activity_id=activity.id,
-                            name=(staff.get("name") or "").strip()
+                            name=(staff.get("name") or "").strip(),
+                            user_id=staff.get("user_id"),
                         ))
 
             db.session.add(AuditLog(
@@ -433,18 +505,18 @@ class ActionPlanHandler:
                 detail="Plan editado completo"
             ))
             
-            # ── Notificar si cambió el responsable ───────────────────────
-            new_responsible = plan.responsible_user_id
-            if (new_responsible
-                    and new_responsible != old_responsible_user_id
-                    and new_responsible != int(user_id)):
-                from app.shared.models.user import User
-                creator = User.query.get(user_id)
-                creator_name = f"{creator.first_name} {creator.last_name}" if creator else "Un usuario"
-                component_name = plan.component.name if plan.component else ""
+            # ── Notificar a nuevos responsables ──────────────────────────
+            from app.shared.models.user import User
+            creator = User.query.get(user_id)
+            creator_name = f"{creator.first_name} {creator.last_name}" if creator else "Un usuario"
+            component_name = plan.component.name if plan.component else ""
 
+            new_responsible_ids = set(plan.responsible_user_ids)
+            added_responsibles = new_responsible_ids - old_responsible_ids - {int(user_id)}
+
+            for nid in added_responsibles:
                 NotificationHandler.create(
-                    user_id=new_responsible,
+                    user_id=nid,
                     title="Plan de acción reasignado",
                     message=f"{creator_name} te asignó un plan de acción en {component_name}.",
                     category="action_plan",
