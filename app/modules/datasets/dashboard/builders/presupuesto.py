@@ -15,6 +15,15 @@ def _filas_proyecto(fields, field_values):
     return idx if idx else list(range(len(vals)))
 
 
+def _safe_float(vals, i):
+    if i >= len(vals) or vals[i] is None:
+        return 0.0
+    try:
+        return float(vals[i])
+    except Exception:
+        return 0.0
+
+
 def _col_sum(field_values, name, rows):
     if not name: return 0
     vals = field_values.get(name, [])
@@ -113,13 +122,12 @@ def build_presupuesto(fields, field_values, total):
     pct_ejec = round(sum(pct_ejec_vals) / len(pct_ejec_vals), 1) if pct_ejec_vals else 0
 
     # ── KPIs ─────────────────────────────────────────────────────────────────
+    # Solo 4 KPIs: Presupuesto inicial, Total ejecutado, Total obligaciones, Total pagos
     kpis = [
-        {"label": "Apropiación definitiva", "value": f"${apropiacion:,.0f}",  "sub": "presupuesto total",         "icon": "number"},
-        {"label": cdp_label,                 "value": f"${cdp:,.0f}",          "sub": f"{pct_cdp}% comprometido",  "icon": "check"},
+        {"label": "Presupuesto inicial",     "value": f"${apropiacion:,.0f}",  "sub": "apropiación definitiva",    "icon": "number"},
+        {"label": cdp_label,                 "value": f"${cdp:,.0f}",          "sub": f"{pct_cdp}% del presupuesto","icon": "check"},
         {"label": "Total obligaciones",      "value": f"${obligaciones:,.0f}", "sub": f"{pct_oblig}% del total",   "icon": "number"},
         {"label": "Total pagos",             "value": f"${pagos:,.0f}",        "sub": f"{pct_pagos}% del total",   "icon": "number"},
-        {"label": "Presup. disponible",      "value": f"${disponible:,.0f}",   "sub": "saldo sin comprometer",     "icon": "number"},
-        {"label": "% Ejecución promedio",    "value": f"{pct_ejec}%",          "sub": "pagos / apropiación",       "icon": "check"},
     ]
 
     sections = []
@@ -134,7 +142,7 @@ def build_presupuesto(fields, field_values, total):
             "subtitle": "Flujo: Apropiación → Compromisos → Obligaciones → Pagos",
             "type": "bar", "span": "full",
             "bars": [
-                {"label": "Apropiación definitiva",
+                {"label": "Presupuesto inicial",
                  "value": round(apropiacion),
                  "pct": 100,
                  "color": "#1B3A6B"},
@@ -157,13 +165,12 @@ def build_presupuesto(fields, field_values, total):
     sections.append({
         "id": "__completeness_presupuesto__",
         "title": "Nivel de ejecución",
-        "subtitle": "% sobre apropiación definitiva",
+        "subtitle": "% sobre presupuesto inicial",
         "type": "completeness", "span": "half",
         "bars": [
-            {"label": cdp_label,            "value": pct_cdp,   "pct": pct_cdp,   "color": "#1B3A6B"},
-            {"label": "Obligaciones",       "value": pct_oblig, "pct": pct_oblig, "color": "#2563EB"},
-            {"label": "Pagos realizados",   "value": pct_pagos, "pct": pct_pagos, "color": "#059669"},
-            {"label": "Presup. disponible", "value": pct_disp,  "pct": pct_disp,  "color": "#E2E8F0"},
+            {"label": cdp_label,          "value": pct_cdp,   "pct": pct_cdp,   "color": "#1B3A6B"},
+            {"label": "Obligaciones",     "value": pct_oblig, "pct": pct_oblig, "color": "#2563EB"},
+            {"label": "Pagos realizados", "value": pct_pagos, "pct": pct_pagos, "color": "#059669"},
         ]
     })
 
@@ -254,6 +261,154 @@ def build_presupuesto(fields, field_values, total):
                     }
                     for lbl, pct in bars_pct
                 ]
+            })
+
+            # S6: Total ejecutado por rubro (valor absoluto de cdp/total_ejecutado)
+            if fn_cdp:
+                c_vals = field_values.get(fn_cdp, [])
+                rubros_cdp: dict = {}
+                for i in idx:
+                    r = r_vals[i] if i < len(r_vals) else None
+                    if not r or str(r).strip() in ("", "nan"): continue
+                    key = str(r).strip()[:60]
+                    if key not in rubros_cdp:
+                        rubros_cdp[key] = 0.0
+                    if i < len(c_vals) and c_vals[i] is not None:
+                        try: rubros_cdp[key] += float(c_vals[i])
+                        except: pass
+
+                if rubros_cdp:
+                    bars_cdp = sorted(rubros_cdp.items(), key=lambda x: -x[1])
+                    total_cdp_rubros = sum(v for _, v in bars_cdp) or 1
+                    sections.append({
+                        "id": "__ejecutado_por_rubro__",
+                        "title": f"{cdp_label} por actividad",
+                        "subtitle": f"Distribución de {cdp_label.lower()} entre {len(bars_cdp)} rubros",
+                        "type": "bar", "span": "full",
+                        "bars": [
+                            {
+                                "label": lbl,
+                                "value": round(v),
+                                "pct": round(v / total_cdp_rubros * 100, 1),
+                                "color": COLORS[(i + 2) % len(COLORS)]
+                            }
+                            for i, (lbl, v) in enumerate(bars_cdp)
+                        ]
+                    })
+
+            # S7: Total pagos por actividad/rubro (valor absoluto de pagos)
+            if fn_pagos:
+                rubros_pagos: dict = {}
+                for i in idx:
+                    r = r_vals[i] if i < len(r_vals) else None
+                    if not r or str(r).strip() in ("", "nan"): continue
+                    key = str(r).strip()[:60]
+                    if key not in rubros_pagos:
+                        rubros_pagos[key] = 0.0
+                    if i < len(p_vals) and p_vals[i] is not None:
+                        try: rubros_pagos[key] += float(p_vals[i])
+                        except: pass
+
+                if rubros_pagos:
+                    bars_pagos = sorted(rubros_pagos.items(), key=lambda x: -x[1])
+                    total_pagos_rubros = sum(v for _, v in bars_pagos) or 1
+                    sections.append({
+                        "id": "__pagos_por_rubro__",
+                        "title": "Total pagos por actividad",
+                        "subtitle": f"Distribución de pagos realizados entre {len(bars_pagos)} rubros",
+                        "type": "bar", "span": "full",
+                        "bars": [
+                            {
+                                "label": lbl,
+                                "value": round(v),
+                                "pct": round(v / total_pagos_rubros * 100, 1),
+                                "color": COLORS[(i + 4) % len(COLORS)]
+                            }
+                            for i, (lbl, v) in enumerate(bars_pagos)
+                        ]
+                    })
+
+    # ── S_GROUPED: Tabla agrupada por Proyecto → actividades PEP ────────────────
+    fn_proyecto_code = _fname_exact(fields, "proyecto")
+    fn_desc_proyecto = _fname_exact(fields, "descripcion_proyecto")
+    fn_pep           = _fname_exact(fields, "descripcion_pep")
+
+    if not fn_proyecto_code: fn_proyecto_code = _fname_all(fields, "proyecto")
+    if not fn_desc_proyecto:
+        fn_desc_proyecto = next(
+            (f.name for f in fields if "descripcion" in norm(f.name) and "proyecto" in norm(f.name)),
+            None
+        )
+    if not fn_pep: fn_pep = _fname_all(fields, "descripcion", "pep")
+
+    if fn_pep and fn_aprop:
+        code_vals  = field_values.get(fn_proyecto_code, []) if fn_proyecto_code else []
+        dproj_vals = field_values.get(fn_desc_proyecto, []) if fn_desc_proyecto else []
+        pep_vals   = field_values.get(fn_pep,   [])
+        a_vals2    = field_values.get(fn_aprop,  [])
+        cdp_vals2  = field_values.get(fn_cdp,   []) if fn_cdp  else []
+        oblig_vals2 = field_values.get(fn_oblig, []) if fn_oblig else []
+        pag_vals2  = field_values.get(fn_pagos,  []) if fn_pagos else []
+        disp_vals2 = field_values.get(fn_disp,   []) if fn_disp  else []
+
+        # Ordered dict: project_code → {label, activities ordered list}
+        from collections import OrderedDict
+        projects: "OrderedDict[str, dict]" = OrderedDict()
+
+        for i in idx:
+            code    = str(code_vals[i]).strip() if i < len(code_vals) and code_vals[i] else "—"
+            d_proj  = str(dproj_vals[i]).strip() if i < len(dproj_vals) and dproj_vals[i] else code
+            pep_lbl = str(pep_vals[i]).strip() if i < len(pep_vals) and pep_vals[i] else "Actividad"
+
+            aprop2  = _safe_float(a_vals2,    i)
+            cdp2    = _safe_float(cdp_vals2,  i)
+            oblig2  = _safe_float(oblig_vals2, i)
+            pag2    = _safe_float(pag_vals2,  i)
+            disp2   = _safe_float(disp_vals2, i)
+            pct2    = round(pag2 / aprop2 * 100, 1) if aprop2 > 0 else 0.0
+
+            if code not in projects:
+                projects[code] = {
+                    "code": code, "label": d_proj,
+                    "aprop": 0.0, "ejecutado": 0.0, "obligaciones": 0.0,
+                    "pagos": 0.0, "disponible": 0.0,
+                    "activities": []
+                }
+            g = projects[code]
+            g["aprop"]       += aprop2
+            g["ejecutado"]   += cdp2
+            g["obligaciones"] += oblig2
+            g["pagos"]       += pag2
+            g["disponible"]  += disp2
+            g["activities"].append({
+                "label":        pep_lbl,
+                "aprop":        round(aprop2),
+                "ejecutado":    round(cdp2),
+                "obligaciones": round(oblig2),
+                "pagos":        round(pag2),
+                "disponible":   round(disp2),
+                "pct_ejec":     min(pct2, 100.0),
+            })
+
+        groups_list = []
+        for g in projects.values():
+            aprop_g = g["aprop"] or 1
+            g["pct_ejec"] = round(min(g["pagos"] / aprop_g * 100, 100.0), 1)
+            g["aprop"]       = round(g["aprop"])
+            g["ejecutado"]   = round(g["ejecutado"])
+            g["obligaciones"] = round(g["obligaciones"])
+            g["pagos"]       = round(g["pagos"])
+            g["disponible"]  = round(g["disponible"])
+            groups_list.append(g)
+
+        if groups_list:
+            sections.append({
+                "id":    "__detalle_proyectos__",
+                "title": "Detalle por proyecto y actividad",
+                "subtitle": "Apropiación · Ejecutado · Obligaciones · Pagos · % Ejecución",
+                "type": "grouped_rows",
+                "span": "full",
+                "groups": groups_list,
             })
 
     return {

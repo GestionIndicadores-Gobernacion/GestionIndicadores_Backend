@@ -2,8 +2,9 @@ from marshmallow import Schema, fields, validate
 
 
 class ActionPlanSupportStaffSchema(Schema):
-    id   = fields.Int(dump_only=True)
-    name = fields.Str(required=True)
+    id      = fields.Int(dump_only=True)
+    name    = fields.Str(required=True)
+    user_id = fields.Int(load_default=None, allow_none=True)
 
 
 class RecurrenceSchema(Schema):
@@ -74,17 +75,18 @@ class ActionPlanObjectiveSchema(Schema):
 
 
 class ActionPlanCreateSchema(Schema):
-    strategy_id         = fields.Int(required=True)
-    component_id        = fields.Int(required=True)
-    responsible         = fields.Str(load_default=None, allow_none=True)
-    responsible_user_id = fields.Int(load_default=None, allow_none=True)  # NUEVO
+    strategy_id          = fields.Int(required=True)
+    component_id         = fields.Int(required=True)
+    responsible          = fields.Str(load_default=None, allow_none=True)
+    responsible_user_id  = fields.Int(load_default=None, allow_none=True)   # legacy (1 responsable)
+    responsible_user_ids = fields.List(fields.Int(), load_default=[])       # nuevo (múltiples)
 
     plan_objectives = fields.List(
         fields.Nested(ActionPlanObjectiveSchema),
         required=True,
         validate=validate.Length(min=1)
     )
-    
+
 class ResponsibleUserSchema(Schema):
     id         = fields.Int()
     first_name = fields.Str()
@@ -98,19 +100,42 @@ class ActionPlanActivityReportSchema(Schema):
     description  = fields.Str(load_default=None, allow_none=True)
 
 
+class ResponsibleUsersListSchema(Schema):
+    """Schema para serializar la lista de responsables (nuevo sistema)."""
+    user_id    = fields.Int(attribute="user_id")
+    first_name = fields.Method("get_first_name")
+    last_name  = fields.Method("get_last_name")
+    email      = fields.Method("get_email")
+
+    def get_first_name(self, obj):
+        return obj.user.first_name if obj.user else None
+
+    def get_last_name(self, obj):
+        return obj.user.last_name if obj.user else None
+
+    def get_email(self, obj):
+        return obj.user.email if obj.user else None
+
+
 class ActionPlanResponseSchema(Schema):
-    id                  = fields.Int(dump_only=True)
-    user_id             = fields.Int(dump_only=True, allow_none=True)
-    strategy_id         = fields.Int()
-    component_id        = fields.Int()
-    responsible         = fields.Str(allow_none=True)
-    responsible_user_id = fields.Int(dump_only=True, allow_none=True)       # NUEVO
-    responsible_user    = fields.Nested(ResponsibleUserSchema, dump_only=True, allow_none=True)  # NUEVO
-    responsible_display = fields.Str(dump_only=True)                        # NUEVO (property)
-    total_score         = fields.Int(dump_only=True)
-    plan_objectives     = fields.List(fields.Nested(ActionPlanObjectiveSchema), dump_only=True)
-    created_at          = fields.DateTime(dump_only=True)
-    updated_at          = fields.DateTime(dump_only=True)
+    id                   = fields.Int(dump_only=True)
+    user_id              = fields.Int(dump_only=True, allow_none=True)
+    strategy_id          = fields.Int()
+    component_id         = fields.Int()
+    responsible          = fields.Str(allow_none=True)
+    responsible_user_id  = fields.Int(dump_only=True, allow_none=True)
+    responsible_user     = fields.Nested(ResponsibleUserSchema, dump_only=True, allow_none=True)
+    responsible_display  = fields.Str(dump_only=True)
+    # Múltiples responsables
+    responsible_users    = fields.List(fields.Nested(ResponsibleUsersListSchema), dump_only=True)
+    responsible_user_ids = fields.Method("get_responsible_user_ids", dump_only=True)
+    total_score          = fields.Int(dump_only=True)
+    plan_objectives      = fields.List(fields.Nested(ActionPlanObjectiveSchema), dump_only=True)
+    created_at           = fields.DateTime(dump_only=True)
+    updated_at           = fields.DateTime(dump_only=True)
+
+    def get_responsible_user_ids(self, obj):
+        return obj.responsible_user_ids
 
 
 class ActionPlanActivityDetailSchema(Schema):
