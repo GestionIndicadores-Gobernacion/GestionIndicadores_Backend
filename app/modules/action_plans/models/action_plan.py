@@ -2,6 +2,24 @@ from app.core.extensions import db
 from datetime import datetime, date
 
 
+class ActionPlanResponsibleUser(db.Model):
+    """Tabla de múltiples responsables por plan de acción."""
+    __tablename__ = "action_plan_responsible_users"
+
+    id             = db.Column(db.Integer, primary_key=True)
+    action_plan_id = db.Column(db.Integer, db.ForeignKey("action_plans.id", ondelete="CASCADE"), nullable=False, index=True)
+    user_id        = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
+
+    user = db.relationship("User", foreign_keys=[user_id], lazy="select")
+
+    __table_args__ = (
+        db.UniqueConstraint("action_plan_id", "user_id", name="uq_plan_responsible_user"),
+    )
+
+    def __repr__(self):
+        return f"<ActionPlanResponsibleUser plan={self.action_plan_id} user={self.user_id}>"
+
+
 class ActionPlan(db.Model):
     __tablename__ = "action_plans"
 
@@ -9,7 +27,7 @@ class ActionPlan(db.Model):
     strategy_id  = db.Column(db.Integer, db.ForeignKey("strategies.id",  ondelete="CASCADE"), nullable=False)
     component_id = db.Column(db.Integer, db.ForeignKey("components.id",  ondelete="CASCADE"), nullable=False)
 
-    # ── Responsable ──────────────────────────────────────────────────────
+    # ── Responsable (legacy — se mantiene para compatibilidad) ───────────
     responsible = db.Column(db.String(255), nullable=True)  # texto display (legacy/opcional)
     responsible_user_id = db.Column(
         db.Integer,
@@ -52,6 +70,14 @@ class ActionPlan(db.Model):
         lazy=True
     )
 
+    # ── Múltiples responsables ───────────────────────────────────────────
+    responsible_users = db.relationship(
+        "ActionPlanResponsibleUser",
+        backref=db.backref("action_plan", lazy="select"),
+        cascade="all, delete-orphan",
+        lazy="selectin"
+    )
+
     @property
     def total_score(self):
         total = 0
@@ -65,10 +91,27 @@ class ActionPlan(db.Model):
 
     @property
     def responsible_display(self):
-        """Retorna el nombre del responsable: del usuario vinculado o del texto libre."""
+        """Retorna el nombre del responsable: múltiples usuarios, usuario único, o texto libre."""
+        if self.responsible_users:
+            names = []
+            for ru in self.responsible_users:
+                if ru.user:
+                    names.append(f"{ru.user.first_name} {ru.user.last_name}")
+            if names:
+                return ", ".join(names)
         if self.responsible_user:
             return f"{self.responsible_user.first_name} {self.responsible_user.last_name}"
         return self.responsible or "Sin asignar"
+
+    @property
+    def responsible_user_ids(self):
+        """Lista de IDs de responsables (nuevo sistema)."""
+        if self.responsible_users:
+            return [ru.user_id for ru in self.responsible_users]
+        # Fallback al campo legacy
+        if self.responsible_user_id:
+            return [self.responsible_user_id]
+        return []
 
     def __repr__(self):
         return f"<ActionPlan {self.id}>"
@@ -181,9 +224,13 @@ class ActionPlanSupportStaff(db.Model):
     id          = db.Column(db.Integer, primary_key=True)
     activity_id = db.Column(db.Integer, db.ForeignKey("action_plan_activities.id", ondelete="CASCADE"), nullable=False)
     name        = db.Column(db.String(255), nullable=False)
+    # Vínculo opcional con usuario existente en la plataforma
+    user_id     = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True)
     created_at  = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
     activity = db.relationship("ActionPlanActivity", back_populates="support_staff")
+    user     = db.relationship("User", foreign_keys=[user_id], lazy="select",
+                               backref=db.backref("support_staff_assignments", lazy=True))
 
     def __repr__(self):
         return f"<ActionPlanSupportStaff {self.id} - {self.name}>"
