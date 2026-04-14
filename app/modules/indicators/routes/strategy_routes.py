@@ -97,6 +97,81 @@ class ComponentGoalsResource(MethodView):
         target_map = {t.indicator_id: float(t.target_value) for t in targets}
         indicator_ids_with_target = set(target_map.keys())
 
+        def _extract_value(val, field_type: str) -> float:
+            """Extrae el total numérico de un valor según su field_type.
+
+            ALINEADO con accumulators.py/_process_* — el avance calculado
+            aquí debe coincidir exactamente con la suma de by_month del explorador.
+
+            number               → valor directo
+            select               → 1.0 por reporte (by_month += 1)
+            multi_select         → 1.0 por reporte si lista no vacía (by_month += 1)
+            dataset_select       → 1.0 por reporte (by_month += 1)
+            dataset_multi_select → 1.0 por reporte si lista no vacía (by_month += 1)
+            sum_group            → suma valores del dict
+            grouped_data         → suma valores numéricos (plano o un nivel anidado)
+            categorized_group    → suma data→cat→grupo→metrica (sub_sections excluidas,
+                                   igual que accumulators no las suma a by_month)
+            text / date / file   → 0.0
+            """
+            # Booleans son subclase de int en Python — nunca son valores válidos aquí
+            if isinstance(val, bool):
+                return 0.0
+
+            # ── number ───────────────────────────────────────────────────────
+            if isinstance(val, (int, float)):
+                # dataset_select almacena un record_id entero; contar como 1 reporte
+                return 1.0 if field_type == 'dataset_select' else float(val)
+
+            # ── select: string no vacío → 1 por reporte ──────────────────────
+            if field_type == 'select':
+                return 1.0 if isinstance(val, str) and val.strip() else 0.0
+
+            # ── multi_select / dataset_multi_select: lista no vacía → 1 reporte
+            # accumulators.py línea 74: acc["by_month"][month_key] += 1 (no por opción)
+            if field_type in ('multi_select', 'dataset_multi_select'):
+                return 1.0 if isinstance(val, list) and len(val) > 0 else 0.0
+
+            if not isinstance(val, dict):
+                return 0.0
+
+            # ── sum_group: { "Niños": 7, "Niñas": 3 } → 10 ──────────────────
+            if field_type == 'sum_group':
+                return float(sum(
+                    v for v in val.values()
+                    if isinstance(v, (int, float)) and not isinstance(v, bool)
+                ))
+
+            # ── categorized_group: data→cat→grupo→metrica ────────────────────
+            # sub_sections NO se suman al by_month en accumulators (solo a by_nested)
+            if field_type == 'categorized_group':
+                total = 0.0
+                for cat_data in val.get('data', {}).values():
+                    if not isinstance(cat_data, dict):
+                        continue
+                    for group_data in cat_data.values():
+                        if not isinstance(group_data, dict):
+                            continue
+                        for v in group_data.values():
+                            if isinstance(v, (int, float)) and not isinstance(v, bool):
+                                total += v
+                return total
+
+            # ── grouped_data: { grupo: n } o { grupo: { sub: n } } ───────────
+            if field_type == 'grouped_data':
+                total = 0.0
+                for group_val in val.values():
+                    if isinstance(group_val, (int, float)) and not isinstance(group_val, bool):
+                        total += group_val
+                    elif isinstance(group_val, dict):
+                        total += sum(
+                            v for v in group_val.values()
+                            if isinstance(v, (int, float)) and not isinstance(v, bool)
+                        )
+                return total
+
+            return 0.0
+
         # ── 3. Indicadores con target ─────────────────────────────────────────
         indicators = ComponentIndicator.query.filter(
             ComponentIndicator.id.in_(indicator_ids_with_target)
@@ -121,6 +196,9 @@ class ComponentGoalsResource(MethodView):
         all_comp_ids = {c.id for c in all_comp_query.with_entities(Component.id).all()}
         unconfigured_count = len(all_comp_ids - comp_ids_with_target)
 
+        # indicator_id → field_type (para extraer valores correctamente)
+        field_type_map = {ind.id: ind.field_type for ind in indicators}
+
         # ── 6. Valores reales: sumar ReportIndicatorValue por indicator_id ────
         reports = (
             Report.query
@@ -136,9 +214,8 @@ class ComponentGoalsResource(MethodView):
         for report in reports:
             for iv in report.indicator_values:
                 if iv.indicator_id in active_indicator_ids:
-                    val = iv.value
-                    if isinstance(val, (int, float)):
-                        actual_by_indicator[iv.indicator_id] += float(val)
+                    ft = field_type_map.get(iv.indicator_id, 'number')
+                    actual_by_indicator[iv.indicator_id] += _extract_value(iv.value, ft)
 
         # ── 7. Estrategias ────────────────────────────────────────────────────
         strat_ids = {c.strategy_id for c in components.values()}
