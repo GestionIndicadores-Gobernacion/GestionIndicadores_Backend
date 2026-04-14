@@ -1,0 +1,159 @@
+from collections import defaultdict
+from sqlalchemy.orm import selectinload, joinedload
+from sqlalchemy import extract
+
+from app.modules.indicators.models.Report.report import Report
+from app.modules.indicators.models.Report.report_indicator_value import ReportIndicatorValue
+from .accumulators import make_accumulator, process_indicator_value
+from .serializers import (
+    serialize_indicators, serialize_by_location,
+    serialize_by_location_indicator, serialize_by_location_nested,
+    serialize_by_actor_location
+)
+from .cross_indicators import build_cross_indicators, build_multiselect_cross, build_multiselect_x_dataset_cross
+
+
+class ReportIndicatorHandler:
+
+    @staticmethod
+    def aggregate_indicators_by_component(component_id, year: int = None, date_from: str = None, date_to: str = None):
+        from app.modules.indicators.models.Component.component import Component
+
+        component = Component.query.get(component_id)
+        if not component:
+            from flask import jsonify
+            return jsonify({"message": "Componente no encontrado"}), 404
+
+        query = (
+            Report.query
+            .options(selectinload(Report.indicator_values).joinedload(ReportIndicatorValue.indicator))
+            .filter(Report.component_id == component_id)
+        )
+        
+        # ── Filtro de fecha ──────────────────────────────────────
+        if date_from and date_to:
+            query = query.filter(
+                Report.report_date >= date_from,
+                Report.report_date <= date_to
+            )
+        elif year:
+            query = query.filter(extract('year', Report.report_date) == year)
+
+        reports = query.order_by(Report.report_date.asc()).all()
+       
+        if not reports:
+            return {
+                "component_id": component_id,
+                "indicators": [],
+                "by_location": [],
+                "by_location_indicator": [],
+                "by_location_nested": [],
+                "by_actor_location": []
+            }
+
+        # ── Cargar datasets ──────────────────────────────────────────────────
+        from app.modules.indicators.models.Component.component_indicator import ComponentIndicator
+        from app.modules.datasets.models.record import Record
+        from app.modules.datasets.models.table import Table
+
+        ds_indicators = ComponentIndicator.query.filter_by(component_id=component_id).filter(
+            ComponentIndicator.field_type.in_(["dataset_select", "dataset_multi_select"])
+        ).all()
+
+        dataset_record_map: dict[int, dict[int, dict]] = {}
+        for ds_ind in ds_indicators:
+            cfg = ds_ind.config or {}
+            dataset_id = cfg.get("dataset_id")
+            if not dataset_id or dataset_id in dataset_record_map:
+                continue
+            tables = Table.query.filter_by(dataset_id=dataset_id).all()
+            table_ids = [t.id for t in tables]
+            if not table_ids:
+                continue
+            records = Record.query.filter(Record.table_id.in_(table_ids)).all()
+            dataset_record_map[dataset_id] = {r.id: r.data for r in records}
+
+        # ── Acumuladores ────────────────────────────────────────────────────
+        accumulator = make_accumulator()
+        location_counts    = defaultdict(int)
+        location_indicator = defaultdict(lambda: defaultdict(float))
+        location_nested    = defaultdict(lambda: defaultdict(lambda: defaultdict(float)))
+        actor_location_acc = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
+        report_value_map   = defaultdict(dict)
+
+        # ── Loop principal ───────────────────────────────────────────────────
+        for r in reports:
+            month_key = r.report_date.strftime("%Y-%m")
+
+            if r.intervention_location:
+                location_counts[r.intervention_location] += 1
+
+            for iv in r.indicator_values:
+                if not iv.indicator:
+                    continue
+                process_indicator_value(
+                    iv, iv.indicator, r, month_key,
+                    accumulator, location_indicator, location_nested,
+                    actor_location_acc, report_value_map, dataset_record_map
+                )
+
+        # ── Serializar ───────────────────────────────────────────────────────
+        all_months = sorted({r.report_date.strftime("%Y-%m") for r in reports})
+
+        result = build_cross_indicators(component_id, reports, report_value_map)
+
+        # ── Cruces especiales ────────────────────────────────────────────────
+        if component_id == 23:
+            cross = build_multiselect_cross(
+                reports, 115, 114, -11005, "Niños impactados por rango de edad"
+            )
+            if cross:
+                result.append(cross)
+
+        if component_id == 14:
+            ind_144 = ComponentIndicator.query.get(144)
+            ds_id = (ind_144.config or {}).get('dataset_id') if ind_144 else None
+            record_map = dataset_record_map.get(ds_id, {}) if ds_id else {}
+
+            cross_actor = build_multiselect_x_dataset_cross(
+                reports, 145, 144, -14004,
+                "Tipo de apoyo / actor",
+                record_map,
+                'nombre_hogar_de_paso_albergue_o_refugio_fundacion'
+            )
+            if cross_actor:
+                result.append(cross_actor)
+                
+        if component_id == 15:
+            from app.modules.indicators.services.cross_indicators import build_text_count
+            cross_tipo = build_text_count(
+                reports, 142, -15001, "No. de alianzas / tipo de alianza"
+            )
+            if cross_tipo:
+                result.append(cross_tipo)
+
+        if component_id == 17:
+            ind_64 = ComponentIndicator.query.get(64)
+            ds_id = (ind_64.config or {}).get('dataset_id') if ind_64 else None
+            record_map = dataset_record_map.get(ds_id, {}) if ds_id else {}
+
+            cross = build_multiselect_x_dataset_cross(
+                reports, 66, 64, -17003,
+                "Tipo de acompañamiento / tipo de actor",
+                record_map,
+                'nombre_hogar_de_paso_albergue_o_refugio_fundacion'
+            )
+            if cross:
+                result.append(cross)
+        
+        # ← una sola vez al final
+        result += serialize_indicators(accumulator, all_months)
+
+        return {
+            "component_id":          component_id,
+            "indicators":            result,
+            "by_location":           serialize_by_location(location_counts),
+            "by_location_indicator": serialize_by_location_indicator(location_indicator),
+            "by_location_nested":    serialize_by_location_nested(location_nested),
+            "by_actor_location":     serialize_by_actor_location(actor_location_acc, accumulator),
+        }
