@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date, timedelta
 from app.modules.indicators.models.Strategy.strategy import Strategy
 from app.modules.indicators.models.Component.component import Component
 from app.modules.indicators.models.Component.component_objective import ComponentObjective
@@ -46,17 +46,49 @@ class ActionPlanValidator:
     @staticmethod
     def validate_report(data, activity):
         errors = {}
-        if activity.evidence_url:
-            errors["evidence_url"] = "Esta actividad ya fue reportada."
+        # Bloquear si la actividad ya fue reportada
+        if activity.reported_at:
+            errors["activity"] = "Esta actividad ya fue reportada."
             return errors
-        # Bloquear si la actividad genera reporte pero no tiene uno vinculado aún
-        if activity.generates_report and activity.linked_report is None:
+        # Validar evidence_url solo si fue proporcionado
+        evidence_url = (data.get("evidence_url") or "").strip()
+        if evidence_url and len(evidence_url) < 5:
+            errors["evidence_url"] = "El link de evidencia no es válido."
+        return errors
+
+    @staticmethod
+    def validate_add_evidence(data, activity, user_id, plan):
+        """
+        Valida que se pueda agregar o editar la evidencia de una actividad ya reportada.
+        - La actividad debe haber sido reportada (reported_at seteado).
+        - Solo dentro de los 8 días desde la fecha de entrega.
+        - Solo el responsable de la actividad puede agregar/editar evidencia.
+        """
+        errors = {}
+
+        if not activity.reported_at:
+            errors["activity"] = "La actividad aún no ha sido reportada."
+            return errors
+
+        # Ventana de 8 días desde la fecha de entrega
+        window_limit = activity.delivery_date + timedelta(days=8)
+        if date.today() > window_limit:
             errors["activity"] = (
-                "Esta actividad requiere un reporte vinculado. "
-                "Primero crea el reporte desde el módulo de reportes."
+                "Ya no es posible agregar evidencia. "
+                "El plazo de 8 días desde la fecha de entrega ha expirado."
             )
             return errors
-        evidence_url = data.get("evidence_url", "").strip()
+
+        # Solo el responsable del plan puede agregar/editar evidencia
+        responsible_ids = list(plan.responsible_user_ids)
+        if activity.reported_by_user_id:
+            responsible_ids.append(activity.reported_by_user_id)
+
+        if int(user_id) not in responsible_ids:
+            errors["activity"] = "Solo el responsable de la actividad puede agregar o editar la evidencia."
+            return errors
+
+        evidence_url = (data.get("evidence_url") or "").strip()
         if not evidence_url:
             errors["evidence_url"] = "El link de evidencia es requerido."
         elif len(evidence_url) < 5:

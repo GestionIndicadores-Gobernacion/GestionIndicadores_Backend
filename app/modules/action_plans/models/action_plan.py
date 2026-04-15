@@ -83,10 +83,9 @@ class ActionPlan(db.Model):
         total = 0
         for obj in self.plan_objectives:
             for act in obj.activities:
-                try:
-                    total += act.computed_score
-                except Exception:
-                    total += act.score or 0
+                score = act.computed_score
+                if score is not None:
+                    total += score
         return total
 
     @property
@@ -188,35 +187,40 @@ class ActionPlanActivity(db.Model):
     def status(self):
         if self.evidence_url:
             return "Realizado"
+        if self.reported_at:
+            return "Pendiente de Evidencia"
         if date.today() < self.delivery_date:
             return "En Ejecución"
         return "Pendiente"
 
     def __repr__(self):
         return f"<ActionPlanActivity {self.id} - {self.status}>"
-    
+
     @property
     def computed_score(self) -> int | None:
         """
         Reglas:
-        - Sin evidence_url + fecha futura (En Ejecución) → None (no suma ni resta)
-        - Sin evidence_url + fecha pasada (Pendiente vencida) → -1
         - Con evidence_url (Realizado) → 5
         - Con evidence_url + generates_report + reporte vinculado → 7
+        - Sin evidence_url + reported_at (Pendiente de Evidencia) → None (sin score aún)
+        - Sin evidence_url + sin reported_at + fecha futura (En Ejecución) → None
+        - Sin evidence_url + sin reported_at + fecha pasada (Pendiente vencida) → -1
         """
-        if not self.evidence_url:
-            if date.today() <= self.delivery_date:
-                return None   # En Ejecución — no puntuar
-            return -1         # Pendiente vencida
+        if self.evidence_url:
+            base = 5
+            try:
+                if self.generates_report and self.linked_report is not None:
+                    base += 2
+            except Exception:
+                pass
+            return base
 
-        base = 5
-        try:
-            if self.generates_report and self.linked_report is not None:
-                base += 2
-        except Exception:
-            pass
+        if self.reported_at:
+            return None   # Pendiente de Evidencia — sin puntaje hasta tener evidencia
 
-        return base
+        if date.today() <= self.delivery_date:
+            return None   # En Ejecución — no puntuar
+        return -1         # Pendiente vencida
 
 class ActionPlanSupportStaff(db.Model):
     __tablename__ = "action_plan_support_staff"

@@ -1,5 +1,8 @@
 from app.core.extensions import db
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+
+
+AUDIT_LOG_RETENTION_DAYS = 30
 
 
 class AuditLog(db.Model):
@@ -12,8 +15,16 @@ class AuditLog(db.Model):
     action    = db.Column(db.String(20),  nullable=False)  # "created" | "updated" | "deleted"
     detail    = db.Column(db.Text,        nullable=True)
     created_at = db.Column(db.DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
-    
+
     user = db.relationship("User", backref=db.backref("audit_logs", lazy=True))
 
     def __repr__(self):
         return f"<AuditLog {self.action} {self.entity}#{self.entity_id} by user#{self.user_id}>"
+
+    @staticmethod
+    def purge_old(days: int = AUDIT_LOG_RETENTION_DAYS) -> int:
+        """Elimina registros con más de `days` días. Retorna la cantidad borrada."""
+        cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+        deleted = AuditLog.query.filter(AuditLog.created_at < cutoff).delete(synchronize_session=False)
+        db.session.commit()
+        return deleted
