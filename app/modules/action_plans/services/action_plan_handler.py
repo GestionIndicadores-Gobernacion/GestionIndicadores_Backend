@@ -249,7 +249,8 @@ class ActionPlanHandler:
             user_id = get_jwt_identity()
             now = datetime.utcnow()
 
-            activity.evidence_url        = (data.get("evidence_url") or "").strip()
+            evidence_url = (data.get("evidence_url") or "").strip() or None
+            activity.evidence_url        = evidence_url
             activity.description         = (data.get("description") or "").strip() or None
             activity.reported_at         = now
             activity.reported_by_user_id = int(user_id)
@@ -268,12 +269,67 @@ class ActionPlanHandler:
                     pass  # No interrumpir el reporte si falla el auto-link
 
             plan_id = activity.plan_objective.action_plan_id
+            detail = f"Actividad #{activity_id} reportada"
+            if not activity.evidence_url:
+                detail += " (sin evidencia — pendiente de evidencia)"
             db.session.add(AuditLog(
                 user_id=user_id,
                 entity="action_plan",
                 entity_id=plan_id,
                 action="updated",
-                detail=f"Actividad #{activity_id} reportada — score={activity.score}"
+                detail=detail
+            ))
+
+            db.session.commit()
+            return activity, None
+
+        except Exception as e:
+            db.session.rollback()
+            return None, {"database": str(e)}
+
+    @staticmethod
+    def add_evidence(activity_id, data):
+        """
+        Agrega o edita la evidencia de una actividad ya reportada.
+        Solo válido dentro de los 8 días desde la fecha de entrega.
+        Solo el responsable puede hacerlo (validado en el validator).
+        """
+        from app.modules.action_plans.models.action_plan import ActionPlanObjective, ActionPlan
+        activity = ActionPlanActivity.query.get(activity_id)
+        if not activity:
+            return None, {"activity": "Actividad no encontrada."}
+
+        user_id = get_jwt_identity()
+        plan = ActionPlan.query.get(activity.plan_objective.action_plan_id)
+
+        errors = ActionPlanValidator.validate_add_evidence(data, activity, user_id, plan)
+        if errors:
+            return None, errors
+
+        try:
+            evidence_url = data.get("evidence_url", "").strip()
+            activity.evidence_url = evidence_url
+
+            # Auto-vincular reporte si el evidence_url coincide con algún evidence_link
+            if activity.evidence_url and activity.generates_report:
+                try:
+                    from app.modules.indicators.models.Report.report import Report
+                    matching = Report.query.filter(
+                        Report.evidence_link == activity.evidence_url,
+                        Report.action_plan_activity_id.is_(None)
+                    ).first()
+                    if matching:
+                        matching.action_plan_activity_id = activity.id
+                except Exception:
+                    pass
+
+            plan_id = activity.plan_objective.action_plan_id
+            db.session.add(AuditLog(
+                user_id=user_id,
+                entity="action_plan",
+                entity_id=plan_id,
+                action="updated",
+                detail=f"Actividad #{activity_id} — evidencia agregada/editada"
             ))
 
             db.session.commit()
@@ -301,7 +357,7 @@ class ActionPlanHandler:
                 # Editar todas las del grupo (excepto las ya reportadas)
                 group = ActionPlanActivity.query.filter_by(
                     recurrence_group_id=activity.recurrence_group_id
-                ).filter(ActionPlanActivity.evidence_url.is_(None)).all()
+                ).filter(ActionPlanActivity.reported_at.is_(None)).all()
 
                 for act in group:
                     act.name                     = data["name"].strip()
@@ -390,7 +446,7 @@ class ActionPlanHandler:
                 # Eliminar todas las no reportadas del grupo
                 group = ActionPlanActivity.query.filter_by(
                     recurrence_group_id=activity.recurrence_group_id
-                ).filter(ActionPlanActivity.evidence_url.is_(None)).all()
+                ).filter(ActionPlanActivity.reported_at.is_(None)).all()
                 for act in group:
                     db.session.delete(act)
             else:
@@ -471,9 +527,9 @@ class ActionPlanHandler:
                     db.session.add(plan_obj)
                     db.session.flush()
 
-                # Eliminar actividades no realizadas del objetivo
+                # Eliminar actividades no reportadas del objetivo
                 for act in list(plan_obj.activities):
-                    if not act.evidence_url:
+                    if not act.reported_at:
                         db.session.delete(act)
                 db.session.flush()
 
