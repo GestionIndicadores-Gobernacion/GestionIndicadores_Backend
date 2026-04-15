@@ -99,6 +99,20 @@ def create_app():
     app.cli.add_command(seed_public_policies_command)
 
     # ======================================================
+    # CLI — Mantenimiento de audit logs
+    # ======================================================
+    import click
+    from app.shared.models.audit_log import AuditLog, AUDIT_LOG_RETENTION_DAYS
+
+    @app.cli.command("purge-audit-logs")
+    @click.option("--days", default=AUDIT_LOG_RETENTION_DAYS, show_default=True,
+                  help="Días de retención. Registros más antiguos serán eliminados.")
+    def purge_audit_logs_cmd(days):
+        """Elimina registros de auditoría más antiguos que el período de retención."""
+        deleted = AuditLog.purge_old(days)
+        click.echo(f"Purga completada: {deleted} registro(s) eliminado(s) (retención: {days} días).")
+
+    # ======================================================
     # Rutas — crea la instancia Api y registra blueprints
     # ======================================================
     register_routes(app)
