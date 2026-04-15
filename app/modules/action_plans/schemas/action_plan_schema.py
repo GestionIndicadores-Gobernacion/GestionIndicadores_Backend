@@ -96,8 +96,12 @@ class ResponsibleUserSchema(Schema):
 
 
 class ActionPlanActivityReportSchema(Schema):
-    evidence_url = fields.Str(required=True)
+    evidence_url = fields.Str(load_default=None, allow_none=True)
     description  = fields.Str(load_default=None, allow_none=True)
+
+
+class ActionPlanActivityAddEvidenceSchema(Schema):
+    evidence_url = fields.Str(required=True)
 
 
 class ResponsibleUsersListSchema(Schema):

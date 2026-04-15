@@ -6,6 +6,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.modules.action_plans.schemas.action_plan_schema import (
     ActionPlanCreateSchema,
     ActionPlanActivityReportSchema,
+    ActionPlanActivityAddEvidenceSchema,
     ActionPlanActivityEditSchema,
     ActionPlanResponseSchema,
     ActionPlanActivitySchema,
@@ -53,6 +54,27 @@ def _get_activity_plan(activity_id: int):
         return None, None
     plan = ActionPlan.query.get(activity.plan_objective.action_plan_id)
     return activity, plan
+
+
+def _can_add_evidence(activity, plan) -> bool:
+    """
+    Solo el responsable del plan o quien reportó la actividad puede
+    agregar/editar evidencia. Admin y monitor siempre pueden.
+    """
+    user = _get_current_user()
+    if not user:
+        return False
+    if user.role.name in ("admin", "monitor"):
+        return True
+    if user.role.name == "viewer":
+        return False
+    if user.role.name == "editor":
+        # Debe ser uno de los responsables del plan o quien reportó la actividad
+        responsible_ids = list(plan.responsible_user_ids)
+        if activity.reported_by_user_id:
+            responsible_ids.append(activity.reported_by_user_id)
+        return user.id in responsible_ids
+    return False
 
 
 def _can_interact_with_activity(activity, plan) -> bool:
@@ -220,6 +242,33 @@ class ActionPlanActivityDetail(MethodView):
             return jsonify({"errors": errors}), status_code
         return jsonify({"message": "Actividad eliminada"}), 200
 
+@blp.route("/activities/<int:activity_id>/evidence")
+class ActionPlanActivityEvidence(MethodView):
+    """
+    Agrega o edita la evidencia de una actividad ya reportada.
+    Solo dentro de 8 días desde la fecha de entrega y solo el responsable.
+    """
+
+    @blp.arguments(ActionPlanActivityAddEvidenceSchema)
+    @jwt_required()
+    def put(self, data, activity_id):
+        if _is_viewer():
+            return jsonify({"error": "Sin permiso"}), 403
+
+        activity, plan = _get_activity_plan(activity_id)
+        if not activity:
+            return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
+
+        if not _can_add_evidence(activity, plan):
+            return jsonify({"error": "Solo el responsable de la actividad puede agregar o editar la evidencia."}), 403
+
+        activity, errors = ActionPlanHandler.add_evidence(activity_id, data)
+        if errors:
+            status_code = 404 if "activity" in errors else 422
+            return jsonify({"errors": errors}), status_code
+        return jsonify(ActionPlanActivityDetailSchema().dump(activity)), 200
+
+
 @blp.route("/dashboard/users")
 class ActionPlanUserDashboard(MethodView):
 
@@ -328,9 +377,10 @@ class ActionPlanUserDashboard(MethodView):
         for _key, data in grouped.items():
             activities = data["activities"]
 
-            completed = [a for a in activities if a["evidence_url"]]
-            running   = [a for a in activities if not a["evidence_url"] and date.today() <= date.fromisoformat(a["delivery_date"])]
-            overdue   = [a for a in activities if not a["evidence_url"] and date.today() > date.fromisoformat(a["delivery_date"])]
+            completed        = [a for a in activities if a["evidence_url"]]
+            pending_evidence = [a for a in activities if a["reported_at"] and not a["evidence_url"]]
+            running          = [a for a in activities if not a["reported_at"] and not a["evidence_url"] and date.today() <= date.fromisoformat(a["delivery_date"])]
+            overdue          = [a for a in activities if not a["reported_at"] and not a["evidence_url"] and date.today() > date.fromisoformat(a["delivery_date"])]
 
             # Actividades que generan reporte pero no tienen reporte vinculado
             without_report = [
@@ -345,6 +395,7 @@ class ActionPlanUserDashboard(MethodView):
                 "plans_owner":               data["plans_owner"],
                 "total_activities":          len(activities),
                 "completed":                 len(completed),
+                "pending_evidence":          len(pending_evidence),
                 "running":                   len(running),
                 "pending":                   len(overdue),
                 "overdue":                   len(overdue),
