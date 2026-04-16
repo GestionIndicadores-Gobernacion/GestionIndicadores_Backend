@@ -10,5 +10,5 @@ def orchestrate(dtype: str, fields, field_values, total) -> dict:
     if dtype == "censo_animal":
         return build_censo_animal(fields, field_values, total)
 
-    # generico, personas_capacitadas, animales → pipeline genérico
+    # generico, personas_capacitadas, animales, red_animalia → pipeline genérico
     return build_generico(fields, field_values, total)

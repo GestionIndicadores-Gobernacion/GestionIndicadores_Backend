@@ -5,6 +5,11 @@ def detect_dataset_type(fields) -> str:
     names = {f.name.lower() for f in fields}
     if {"mujer", "hombre", "municipio", "guia_1"}.issubset(names):
         return "personas_capacitadas"
+    # Red Animalia: tiene vinculación + campos de animales domésticos
+    if ("tipo_de_vinculacion_dentro_de_la_red_animalia_valle" in names
+            and any("perros" in n for n in names)
+            and any("gatos" in n for n in names)):
+        return "red_animalia"
     if ({"perros_cantidad", "gatos_cantidad",
          "tipo_de_vinculacion_dentro_de_la_red_animalia_valle"}.issubset(names) or
             {"nombres_y_apellidos", "municipio", "otro_telefono",
