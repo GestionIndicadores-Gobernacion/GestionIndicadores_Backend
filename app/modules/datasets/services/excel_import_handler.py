@@ -1,8 +1,11 @@
+from datetime import datetime
+
 import pandas as pd
 from app.modules.datasets.models.dataset import Dataset
 from app.modules.datasets.models.table import Table
 from app.modules.datasets.services.field_handler import create_fields
 from app.modules.datasets.services.record_import_handler import import_records
+from app.modules.datasets.validators.dataset_validator import validate_dataset_name
 from app.utils.normalizers import MAX_TABLE_NAME_LENGTH, normalize_name
 from app.core.extensions import db
 
@@ -109,7 +112,7 @@ def import_excel_dataset(file, dataset_name):
     }
     
 
-def update_excel_dataset(file, dataset_id):
+def update_excel_dataset(file, dataset_id, dataset_name: str | None = None):
     import traceback
     try:
         from app.modules.datasets.models.field import Field
@@ -119,14 +122,13 @@ def update_excel_dataset(file, dataset_id):
         if not dataset:
             return {"error": "Dataset no encontrado"}, 404
 
-        excel = pd.ExcelFile(file)
-
-        old_tables = Table.query.filter_by(dataset_id=dataset_id).all()
-        for t in old_tables:
-            Record.query.filter_by(table_id=t.id).delete()
-            Field.query.filter_by(table_id=t.id).delete()
-            db.session.delete(t)
-        db.session.flush()
+        name_changed = False
+        if dataset_name:
+            new_name = dataset_name.strip()
+            if new_name and new_name != dataset.name:
+                validate_dataset_name(new_name, dataset_id)
+                dataset.name = new_name
+                name_changed = True
 
         tables_created = 0
         fields_created = 0
@@ -134,33 +136,46 @@ def update_excel_dataset(file, dataset_id):
         failed_rows = 0
         skipped_rows = 0
 
-        for sheet_name in excel.sheet_names:
-            df = excel.parse(sheet_name)
-            if df.empty:
-                continue
+        if file is not None:
+            excel = pd.ExcelFile(file)
 
-            original_rows = len(df)
-            df = _clean_dataframe(df)
-            if df.empty:
-                continue
-
-            skipped_rows += original_rows - len(df)
-
-            table = Table(
-                dataset_id=dataset_id,
-                name=normalize_name(sheet_name, MAX_TABLE_NAME_LENGTH),
-                description="Actualizado desde Excel"
-            )
-            db.session.add(table)
+            old_tables = Table.query.filter_by(dataset_id=dataset_id).all()
+            for t in old_tables:
+                Record.query.filter_by(table_id=t.id).delete()
+                Field.query.filter_by(table_id=t.id).delete()
+                db.session.delete(t)
             db.session.flush()
-            tables_created += 1
 
-            field_map = create_fields(table, df)
-            fields_created += len(field_map)
+            for sheet_name in excel.sheet_names:
+                df = excel.parse(sheet_name)
+                if df.empty:
+                    continue
 
-            inserted, failed = import_records(table, df, field_map)
-            records_inserted += inserted
-            failed_rows += failed
+                original_rows = len(df)
+                df = _clean_dataframe(df)
+                if df.empty:
+                    continue
+
+                skipped_rows += original_rows - len(df)
+
+                table = Table(
+                    dataset_id=dataset_id,
+                    name=normalize_name(sheet_name, MAX_TABLE_NAME_LENGTH),
+                    description="Actualizado desde Excel"
+                )
+                db.session.add(table)
+                db.session.flush()
+                tables_created += 1
+
+                field_map = create_fields(table, df)
+                fields_created += len(field_map)
+
+                inserted, failed = import_records(table, df, field_map)
+                records_inserted += inserted
+                failed_rows += failed
+
+        if file is not None or name_changed:
+            dataset.updated_at = datetime.utcnow()
 
         db.session.commit()
 
@@ -172,6 +187,8 @@ def update_excel_dataset(file, dataset_id):
             "records_inserted": records_inserted,
             "failed_rows": failed_rows,
             "skipped_rows": skipped_rows,
+            "name_changed": name_changed,
+            "file_processed": file is not None,
         }
 
     except Exception as e:
@@ -179,65 +196,3 @@ def update_excel_dataset(file, dataset_id):
         print("❌ ERROR en update_excel_dataset:")
         traceback.print_exc()
         return {"error": str(e)}, 500
-    from app.modules.datasets.models.field import Field
-    from app.modules.datasets.models.record import Record
-
-    dataset = Dataset.query.get(dataset_id)
-    if not dataset:
-        return {"error": "Dataset no encontrado"}, 404
-
-    excel = pd.ExcelFile(file)
-
-    # Eliminar tablas/fields/records anteriores
-    old_tables = Table.query.filter_by(dataset_id=dataset_id).all()
-    for t in old_tables:
-        Record.query.filter_by(table_id=t.id).delete()
-        Field.query.filter_by(table_id=t.id).delete()
-        db.session.delete(t)
-    db.session.flush()
-
-    tables_created = 0
-    fields_created = 0
-    records_inserted = 0
-    failed_rows = 0
-    skipped_rows = 0
-
-    for sheet_name in excel.sheet_names:
-        df = excel.parse(sheet_name)
-        if df.empty:
-            continue
-
-        original_rows = len(df)
-        df = _clean_dataframe(df)
-        if df.empty:
-            continue
-
-        skipped_rows += original_rows - len(df)
-
-        table = Table(
-            dataset_id=dataset_id,
-            name=normalize_name(sheet_name, MAX_TABLE_NAME_LENGTH),
-            description="Actualizado desde Excel"
-        )
-        db.session.add(table)
-        db.session.flush()
-        tables_created += 1
-
-        field_map = create_fields(table, df)
-        fields_created += len(field_map)
-
-        inserted, failed = import_records(table, df, field_map)
-        records_inserted += inserted
-        failed_rows += failed
-
-    db.session.commit()
-
-    return {
-        "dataset_id": dataset_id,
-        "dataset_name": dataset.name,
-        "tables_created": tables_created,
-        "fields_created": fields_created,
-        "records_inserted": records_inserted,
-        "failed_rows": failed_rows,
-        "skipped_rows": skipped_rows,
-    }
