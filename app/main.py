@@ -4,15 +4,23 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 
 from app.core.config import Config
-from app.core.extensions import db, bcrypt, jwt, ma
+from app.core.extensions import db, bcrypt, jwt, ma, limiter
 from app.api.router import register_routes
 from app.modules.indicators.services.error_handlers import register_error_handlers
 from app.modules.indicators.routes.public_policy_routes import seed_public_policies_command
 
 
-def create_app():
+def create_app(config_class=Config):
+    """
+    Flask application factory.
+
+    :param config_class: Clase de configuración a usar. Por defecto usa
+        `Config` (dev/prod, lee .env). Para tests, pasar `TestConfig`
+        desde el conftest — así NO se toca `os.environ` globalmente y es
+        imposible que un test apunte por accidente a la BD de desarrollo.
+    """
     app = Flask(__name__)
-    app.config.from_object(Config)
+    app.config.from_object(config_class)
 
     # ======================================================
     # FIX CRÍTICO — PERMITIR AUTH HEADER A JWT
@@ -30,13 +38,16 @@ def create_app():
 
     # ======================================================
     # SSL SOLO EN PRODUCCIÓN
+    # TestConfig ya fija SQLALCHEMY_ENGINE_OPTIONS={} — si estamos en
+    # modo TESTING no tocamos nada (SQLite no acepta sslmode).
     # ======================================================
-    if os.getenv("RENDER") or os.getenv("FLASK_ENV") == "production":
-        app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-            "connect_args": {"sslmode": "require"}
-        }
-    else:
-        app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {}
+    if not app.config.get("TESTING"):
+        if os.getenv("RENDER") or os.getenv("FLASK_ENV") == "production":
+            app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+                "connect_args": {"sslmode": "require"}
+            }
+        else:
+            app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {}
 
     # ======================================================
     # CORS
@@ -47,7 +58,8 @@ def create_app():
             "http://localhost:4200",
             "https://gestionindicadoresgov.netlify.app",
         ]}},
-        allow_headers=["Content-Type", "Authorization"],
+        allow_headers=["Content-Type", "Authorization", "Accept", "X-Requested-With"],
+        expose_headers=["Content-Disposition"],
         methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         supports_credentials=True,
     )
@@ -80,6 +92,7 @@ def create_app():
     ma.init_app(app)
     bcrypt.init_app(app)
     jwt.init_app(app)
+    limiter.init_app(app)
     Migrate(app, db)
 
     # ======================================================

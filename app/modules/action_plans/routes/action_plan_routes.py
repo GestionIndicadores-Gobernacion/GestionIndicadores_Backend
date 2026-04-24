@@ -103,15 +103,36 @@ def _can_interact_with_activity(activity, plan) -> bool:
 @blp.route("/")
 class ActionPlanList(MethodView):
 
-    @blp.response(200, ActionPlanResponseSchema(many=True))
     @jwt_required()
     def get(self):
-        return ActionPlanHandler.get_all(
+        """
+        GET /action-plans/[?limit=&offset=&strategy_id=&component_id=&month=&year=]
+
+        - Sin `limit`/`offset` → lista completa (retrocompatible).
+        - Con paginación → envelope `{ items, total, limit, offset }`.
+        """
+        from app.utils.pagination import (
+            get_pagination_params, paginate_query, envelope,
+        )
+
+        query = ActionPlanHandler.base_query(
             strategy_id=request.args.get("strategy_id", type=int),
             component_id=request.args.get("component_id", type=int),
             month=request.args.get("month", type=int),
             year=request.args.get("year", type=int),
         )
+
+        paginated, limit, offset = get_pagination_params()
+        if not paginated:
+            return jsonify(
+                ActionPlanResponseSchema(many=True).dump(query.all())
+            ), 200
+
+        items, total = paginate_query(query, limit, offset)
+        return jsonify(
+            envelope(ActionPlanResponseSchema(many=True).dump(items),
+                     total, limit, offset)
+        ), 200
 
     @blp.arguments(ActionPlanCreateSchema)
     @blp.response(201, ActionPlanResponseSchema)

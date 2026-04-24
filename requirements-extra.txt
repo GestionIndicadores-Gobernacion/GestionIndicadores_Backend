@@ -1,0 +1,12 @@
+# Dependencias añadidas tras el refactor de producción.
+# Instalar con:  pip install -r requirements-extra.txt
+#
+# Nota: `requirements.txt` está en UTF-16 por legacy; se mantiene para no
+# romper pipelines existentes. Este archivo cubre lo adicional.
+
+# Rate limiting por IP en /auth/login (memoria in-process; migrar a Redis
+# en despliegue multi-worker con `storage_uri='redis://...'`).
+Flask-Limiter>=3.5.0
+
+# Tests unitarios / smoke de la app.
+pytest>=7.4.0

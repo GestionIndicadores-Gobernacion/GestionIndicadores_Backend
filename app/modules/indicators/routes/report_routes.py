@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, g
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -10,6 +10,7 @@ from app.shared.models.user import User
 from app.modules.indicators.services.report_handler import ReportHandler
 from app.modules.indicators.services.report_aggregate_handler import ReportAggregateHandler
 from app.modules.indicators.services.report_indicator_handler import ReportIndicatorHandler
+from app.utils.pagination import get_pagination_params, paginate_query, envelope
 
 blp = Blueprint(
     "reports", "reports",
@@ -30,17 +31,38 @@ def _current_user_id() -> int | None:
     identity = get_jwt_identity()
     return int(identity) if identity is not None else None
 
+
+def _current_user():
+    """
+    Carga el usuario actual una sola vez por request (cache en flask.g).
+    Antes, cada _is_admin / _can_see_all / _is_viewer / _can_access disparaba
+    su propio User.query.get() → 3-6 queries redundantes por request.
+    """
+    cached = getattr(g, "_cached_current_user", None)
+    if cached is not None:
+        return cached if cached is not False else None
+    uid = _current_user_id()
+    user = User.query.get(uid) if uid is not None else None
+    g._cached_current_user = user if user is not None else False
+    return user
+
+
+def _role_name() -> str:
+    user = _current_user()
+    return user.role.name if user and user.role else ""
+
+
 def _is_admin() -> bool:
-    user = User.query.get(_current_user_id())
-    return user and user.role and user.role.name == "admin"
+    return _role_name() == "admin"
+
 
 def _can_see_all() -> bool:
-    user = User.query.get(_current_user_id())
-    return user and user.role and user.role.name in ("admin", "monitor")
+    return _role_name() in ("admin", "monitor")
+
 
 def _is_viewer() -> bool:
-    user = User.query.get(_current_user_id())
-    return user and user.role and user.role.name == "viewer"
+    return _role_name() == "viewer"
+
 
 def _can_access(report) -> bool:
     if _is_viewer():
@@ -63,21 +85,33 @@ def _can_access(report) -> bool:
 class ReportList(MethodView):
 
     @jwt_required()
-    @blp.response(200, ReportSchema(many=True))
     def get(self):
-        user_id = _current_user_id()
+        """
+        GET /reports/[?limit=&offset=]
+
+        - Sin parámetros → lista completa (retrocompatible).
+        - Con `limit`/`offset` → envelope `{ items, total, limit, offset }`.
+        """
+        user = _current_user()
+        user_id = user.id if user else None
         see_all = _can_see_all()
 
         component_ids = []
-        if not see_all:
-            user = User.query.get(user_id)
+        if not see_all and user is not None:
             component_ids = [uc.component_id for uc in (user.component_assignments or [])]
 
-        return ReportHandler.get_all(
-            user_id=user_id,
-            is_admin=see_all,
-            component_ids=component_ids
+        query = ReportHandler.base_query(
+            user_id=user_id, is_admin=see_all, component_ids=component_ids
         )
+
+        paginated, limit, offset = get_pagination_params()
+        if not paginated:
+            return jsonify(ReportSchema(many=True).dump(query.all())), 200
+
+        items, total = paginate_query(query, limit, offset)
+        return jsonify(
+            envelope(ReportSchema(many=True).dump(items), total, limit, offset)
+        ), 200
 
     @jwt_required()
     @blp.arguments(ReportSchema)
@@ -87,8 +121,7 @@ class ReportList(MethodView):
             abort(403, message="No tienes permiso para crear reportes")
 
         # ← NUEVO: validar componente para editor
-        user_id = _current_user_id()
-        user = User.query.get(user_id)
+        user = _current_user()
         if user and user.role and user.role.name == "editor":
             assigned = [uc.component_id for uc in user.component_assignments]
             if data.get("component_id") not in assigned:
@@ -105,6 +138,10 @@ class ReportListAll(MethodView):
     @jwt_required()
     @blp.response(200, ReportSchema(many=True))
     def get(self):
+        # Solo roles con privilegio de ver TODOS los reportes: admin y monitor.
+        # Los demás deben usar GET /reports/ que aplica el scoping por componente.
+        if not _can_see_all():
+            abort(403, message="No tienes permiso para ver todos los reportes")
         return ReportHandler.get_all(is_admin=True)
 # =========================================================
 # DETAIL

@@ -5,7 +5,7 @@ from app.modules.indicators.models.Report.report import Report, ZoneTypeEnum
 from app.modules.indicators.models.Report.report_indicator_value import ReportIndicatorValue
 from app.modules.indicators.validators.report_validator import ReportValidator
 from app.shared.models.audit_log import AuditLog
-from sqlalchemy.orm import selectinload
+from sqlalchemy.orm import selectinload, joinedload
 
 
 def _current_user_is_admin():
@@ -136,14 +136,23 @@ class ReportHandler:
             return None, {"database": str(e)}
         
     @staticmethod
-    def get_all(user_id=None, is_admin=False, component_ids=None):
+    def base_query(user_id=None, is_admin=False, component_ids=None):
+        """
+        Query base reusable para listado y paginación. NO ejecuta `.all()`;
+        eso queda a cargo del caller (que puede paginar antes).
+        """
         from sqlalchemy import or_
 
         query = (
             Report.query
             .options(
                 selectinload(Report.indicator_values)
-                .joinedload(ReportIndicatorValue.indicator)
+                    .joinedload(ReportIndicatorValue.indicator),
+                # Eager load de relaciones serializadas en ReportSchema para
+                # evitar N+1 al dumpar listados.
+                joinedload(Report.component),
+                joinedload(Report.strategy),
+                joinedload(Report.user),
             )
         )
 
@@ -155,11 +164,16 @@ class ReportHandler:
                 )
             )
 
-        return query.order_by(Report.report_date.desc()).all()
-        
+        return query.order_by(Report.report_date.desc())
+
+    @staticmethod
+    def get_all(user_id=None, is_admin=False, component_ids=None):
+        return ReportHandler.base_query(
+            user_id=user_id, is_admin=is_admin, component_ids=component_ids
+        ).all()
+
     @staticmethod
     def get_by_id(report_id):
-        from sqlalchemy.orm import selectinload, joinedload
         return (
             Report.query
             .options(
