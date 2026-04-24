@@ -200,15 +200,16 @@ class ActionPlanHandler:
             return None, {"database": str(e)}
 
     @staticmethod
-    def get_all(strategy_id=None, component_id=None, month=None, year=None):
+    def base_query(strategy_id=None, component_id=None, month=None, year=None):
+        """Query base sin .all() — útil para paginar antes de ejecutar."""
         query = ActionPlan.query.options(
             selectinload(ActionPlan.plan_objectives).selectinload(
                 ActionPlanObjective.activities
             ).selectinload(
-                ActionPlanActivity.linked_report  # ← cargar el reporte vinculado junto con la actividad
+                ActionPlanActivity.linked_report
             )
         )
-        
+
         if strategy_id:
             query = query.filter(ActionPlan.strategy_id == strategy_id)
         if component_id:
@@ -229,7 +230,14 @@ class ActionPlanHandler:
                 .distinct()
             )
 
-        return query.order_by(ActionPlan.id.asc()).all()
+        return query.order_by(ActionPlan.id.asc())
+
+    @staticmethod
+    def get_all(strategy_id=None, component_id=None, month=None, year=None):
+        return ActionPlanHandler.base_query(
+            strategy_id=strategy_id, component_id=component_id,
+            month=month, year=year,
+        ).all()
 
     @staticmethod
     def get_by_id(plan_id):
