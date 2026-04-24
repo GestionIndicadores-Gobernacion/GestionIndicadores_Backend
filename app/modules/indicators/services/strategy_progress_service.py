@@ -268,6 +268,7 @@ class StrategyProgressService:
         return float(sum(
             1 for r in records
             if r.data and r.data.get('mes') not in (None, '')
+            and _record_matches_year(r, current_year)
         ))
 
     @staticmethod
@@ -288,6 +289,8 @@ class StrategyProgressService:
         total = 0.0
         for r in records:
             if not r.data:
+                continue
+            if not _record_matches_year(r, current_year):
                 continue
             val = r.data.get(metric.field_name)
             if val is not None:
@@ -332,6 +335,38 @@ def _sum_nested_key(obj, key: str) -> float:
         for item in obj:
             total += _sum_nested_key(item, key)
     return total
+
+
+def _record_matches_year(record, year: int) -> bool:
+    """
+    Decide si un Record (dataset externo) corresponde al año pedido.
+
+    Heurística (en orden):
+      1. Campo `año` o `year`: comparación directa.
+      2. Campo `mes` con formato 'YYYY-MM' o 'YYYY/MM': se extrae el año.
+      3. Si nada de lo anterior aplica → True (no se filtra; comportamiento
+         legacy: la métrica está vinculada a un dataset cuyo período se
+         define a nivel de dataset, no de fila).
+    """
+    data = getattr(record, "data", None) or {}
+
+    for key in ("año", "anio", "year"):
+        if key in data:
+            try:
+                return int(str(data[key]).strip()) == int(year)
+            except (ValueError, TypeError):
+                continue
+
+    mes = data.get("mes")
+    if isinstance(mes, str):
+        m = re.match(r"^(\d{4})[-/]\d{1,2}", mes.strip())
+        if m:
+            try:
+                return int(m.group(1)) == int(year)
+            except (ValueError, TypeError):
+                pass
+
+    return True
 
 
 def _parse_indicator_ids(field_name) -> list:

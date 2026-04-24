@@ -10,6 +10,7 @@ from app.shared.models.user import User
 from app.modules.indicators.services.report_handler import ReportHandler
 from app.modules.indicators.services.report_aggregate_handler import ReportAggregateHandler
 from app.modules.indicators.services.report_indicator_handler import ReportIndicatorHandler
+from app.utils.pagination import get_pagination_params, paginate_query, envelope
 
 blp = Blueprint(
     "reports", "reports",
@@ -84,8 +85,13 @@ def _can_access(report) -> bool:
 class ReportList(MethodView):
 
     @jwt_required()
-    @blp.response(200, ReportSchema(many=True))
     def get(self):
+        """
+        GET /reports/[?limit=&offset=]
+
+        - Sin parámetros → lista completa (retrocompatible).
+        - Con `limit`/`offset` → envelope `{ items, total, limit, offset }`.
+        """
         user = _current_user()
         user_id = user.id if user else None
         see_all = _can_see_all()
@@ -94,11 +100,18 @@ class ReportList(MethodView):
         if not see_all and user is not None:
             component_ids = [uc.component_id for uc in (user.component_assignments or [])]
 
-        return ReportHandler.get_all(
-            user_id=user_id,
-            is_admin=see_all,
-            component_ids=component_ids
+        query = ReportHandler.base_query(
+            user_id=user_id, is_admin=see_all, component_ids=component_ids
         )
+
+        paginated, limit, offset = get_pagination_params()
+        if not paginated:
+            return jsonify(ReportSchema(many=True).dump(query.all())), 200
+
+        items, total = paginate_query(query, limit, offset)
+        return jsonify(
+            envelope(ReportSchema(many=True).dump(items), total, limit, offset)
+        ), 200
 
     @jwt_required()
     @blp.arguments(ReportSchema)

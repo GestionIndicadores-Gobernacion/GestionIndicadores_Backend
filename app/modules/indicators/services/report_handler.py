@@ -136,7 +136,11 @@ class ReportHandler:
             return None, {"database": str(e)}
         
     @staticmethod
-    def get_all(user_id=None, is_admin=False, component_ids=None):
+    def base_query(user_id=None, is_admin=False, component_ids=None):
+        """
+        Query base reusable para listado y paginación. NO ejecuta `.all()`;
+        eso queda a cargo del caller (que puede paginar antes).
+        """
         from sqlalchemy import or_
 
         query = (
@@ -160,7 +164,13 @@ class ReportHandler:
                 )
             )
 
-        return query.order_by(Report.report_date.desc()).all()
+        return query.order_by(Report.report_date.desc())
+
+    @staticmethod
+    def get_all(user_id=None, is_admin=False, component_ids=None):
+        return ReportHandler.base_query(
+            user_id=user_id, is_admin=is_admin, component_ids=component_ids
+        ).all()
 
     @staticmethod
     def get_by_id(report_id):

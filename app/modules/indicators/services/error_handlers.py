@@ -2,12 +2,38 @@ import logging
 import os
 
 from flask import jsonify, request
+from marshmallow import ValidationError
 from sqlalchemy.exc import SQLAlchemyError
+from werkzeug.exceptions import HTTPException, NotFound
+
 from app.core.extensions import db, jwt
+from app.modules.indicators.services.token_blocklist import is_jti_revoked
 
 
 def register_error_handlers(app):
     logger = logging.getLogger("app.errors")
+
+    # Chequeo automático de blacklist en CADA request con @jwt_required.
+    # Si el jti está revocado → dispara revoked_token_loader (401).
+    @jwt.token_in_blocklist_loader
+    def _jwt_token_revoked(_jwt_header, jwt_payload) -> bool:
+        return is_jti_revoked(jwt_payload.get("jti", ""))
+
+    @app.errorhandler(ValidationError)
+    def handle_validation_error(e: ValidationError):
+        # Marshmallow lanza ValidationError cuando @blp.arguments falla.
+        return jsonify({
+            "error": "validation_error",
+            "message": "Hay errores de validación en los datos enviados.",
+            "errors": e.messages,
+        }), 400
+
+    @app.errorhandler(NotFound)
+    def handle_not_found(_e):
+        return jsonify({
+            "error": "not_found",
+            "message": "Recurso no encontrado."
+        }), 404
 
     # ==================================================================
     # JWT — respuestas consistentes para que el frontend pueda distinguir
@@ -77,7 +103,6 @@ def register_error_handlers(app):
     @app.errorhandler(Exception)
     def handle_generic_error(e):
         # No interferir con respuestas HTTP estructuradas (JWT, smorest, etc.)
-        from werkzeug.exceptions import HTTPException
         if isinstance(e, HTTPException):
             return e
 
