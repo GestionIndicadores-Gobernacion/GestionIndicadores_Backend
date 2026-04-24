@@ -4,9 +4,13 @@ import json
 import re
 from datetime import datetime, date
 
+from sqlalchemy import extract
+from sqlalchemy.orm import selectinload
+
 from app.modules.datasets.models.record import Record
 from app.modules.indicators.models.Strategy.strategy import Strategy
 from app.modules.indicators.models.Report.report import Report
+from app.modules.indicators.models.Report.report_indicator_value import ReportIndicatorValue
 
 
 class StrategyProgressService:
@@ -119,19 +123,30 @@ class StrategyProgressService:
         current_year: int,
         date_from: str = None,
         date_to: str = None,
+        eager_values: bool = False,
     ):
         """
-        Si vienen date_from y date_to filtra por rango de fechas.
-        Si no, filtra por año calendario.
+        Aplica filtros de fecha a nivel SQL (evita traer filas que luego se
+        descartan en memoria) y, cuando `eager_values=True`, también precarga
+        la colección `indicator_values` para evitar N+1 al iterar.
+
+        - Si `date_from` y `date_to` vienen: rango por `report_date`.
+        - En caso contrario: filtro por `EXTRACT(YEAR FROM report_date)`.
         """
         if date_from and date_to:
-            from_ = date.fromisoformat(date_from)
-            to_   = date.fromisoformat(date_to)
-            return [r for r in query.all()
-                    if from_ <= _report_date(r) <= to_]
+            try:
+                from_ = date.fromisoformat(date_from)
+                to_   = date.fromisoformat(date_to)
+            except ValueError:
+                return []
+            query = query.filter(Report.report_date.between(from_, to_))
         else:
-            return [r for r in query.all()
-                    if _report_year(r) == current_year]
+            query = query.filter(extract('year', Report.report_date) == current_year)
+
+        if eager_values:
+            query = query.options(selectinload(Report.indicator_values))
+
+        return query.all()
 
     # ─── Implementaciones por tipo ────────────────────────────────────────────
 
@@ -174,7 +189,7 @@ class StrategyProgressService:
             query = query.filter_by(component_id=metric.component_id)
 
         reports = StrategyProgressService._filter_reports(
-            query, current_year, date_from, date_to
+            query, current_year, date_from, date_to, eager_values=True
         )
 
         target_ids = set(indicator_ids)
@@ -217,7 +232,7 @@ class StrategyProgressService:
             query = query.filter_by(component_id=metric.component_id)
 
         reports = StrategyProgressService._filter_reports(
-            query, current_year, date_from, date_to
+            query, current_year, date_from, date_to, eager_values=True
         )
 
         target_ids = set(indicator_ids)

@@ -34,6 +34,7 @@ class UserMeResource(MethodView):
 class UserListResource(MethodView):
 
     @jwt_required()
+    @role_required("admin", "monitor")
     @blp.response(200, UserSchema(many=True))
     def get(self):
         return UserHandler.get_all()
@@ -56,6 +57,16 @@ class UserResource(MethodView):
     @jwt_required()
     @blp.response(200, UserSchema)
     def get(self, user_id):
+        # Solo admin/monitor pueden ver cualquier usuario; el resto
+        # solamente su propio perfil (/users/me es la ruta canónica).
+        current_id = int(get_jwt_identity())
+        current = UserHandler.get_by_id(current_id)
+        is_privileged = bool(
+            current and current.role and current.role.name in ("admin", "monitor")
+        )
+        if not is_privileged and current_id != user_id:
+            return {"message": "Forbidden"}, 403
+
         user = UserHandler.get_by_id(user_id)
         if not user:
             return {"message": "User not found"}, 404

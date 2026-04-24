@@ -5,7 +5,7 @@ from app.modules.indicators.models.Report.report import Report, ZoneTypeEnum
 from app.modules.indicators.models.Report.report_indicator_value import ReportIndicatorValue
 from app.modules.indicators.validators.report_validator import ReportValidator
 from app.shared.models.audit_log import AuditLog
-from sqlalchemy.orm import selectinload
+from sqlalchemy.orm import selectinload, joinedload
 
 
 def _current_user_is_admin():
@@ -143,7 +143,12 @@ class ReportHandler:
             Report.query
             .options(
                 selectinload(Report.indicator_values)
-                .joinedload(ReportIndicatorValue.indicator)
+                    .joinedload(ReportIndicatorValue.indicator),
+                # Eager load de relaciones serializadas en ReportSchema para
+                # evitar N+1 al dumpar listados.
+                joinedload(Report.component),
+                joinedload(Report.strategy),
+                joinedload(Report.user),
             )
         )
 
@@ -156,10 +161,9 @@ class ReportHandler:
             )
 
         return query.order_by(Report.report_date.desc()).all()
-        
+
     @staticmethod
     def get_by_id(report_id):
-        from sqlalchemy.orm import selectinload, joinedload
         return (
             Report.query
             .options(

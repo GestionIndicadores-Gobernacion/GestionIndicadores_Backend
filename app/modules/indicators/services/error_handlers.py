@@ -1,9 +1,13 @@
-from flask import jsonify
+import logging
+import os
+
+from flask import jsonify, request
 from sqlalchemy.exc import SQLAlchemyError
 from app.core.extensions import db, jwt
 
 
 def register_error_handlers(app):
+    logger = logging.getLogger("app.errors")
 
     # ==================================================================
     # JWT — respuestas consistentes para que el frontend pueda distinguir
@@ -50,6 +54,9 @@ def register_error_handlers(app):
     @app.errorhandler(SQLAlchemyError)
     def handle_db_error(e):
         db.session.rollback()
+        logger.exception(
+            "DB error on %s %s", request.method, request.path
+        )
 
         msg = str(e).lower()
 
@@ -73,6 +80,18 @@ def register_error_handlers(app):
         from werkzeug.exceptions import HTTPException
         if isinstance(e, HTTPException):
             return e
-        return jsonify({
-            "message": "Ocurrió un error interno en el servidor."
-        }), 500
+
+        # Log completo con traceback para diagnóstico; nunca se devuelve al cliente.
+        logger.exception(
+            "Unhandled error on %s %s", request.method, request.path
+        )
+
+        body = {"message": "Ocurrió un error interno en el servidor."}
+        # En dev, añadir el detalle para acelerar debugging. Jamás en prod.
+        is_dev = (
+            os.getenv("FLASK_ENV", "development") != "production"
+            and not os.getenv("RENDER")
+        )
+        if is_dev:
+            body["debug"] = f"{type(e).__name__}: {e}"
+        return jsonify(body), 500
