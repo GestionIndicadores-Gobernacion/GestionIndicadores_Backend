@@ -3,7 +3,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class Config:
+    """Configuración base (desarrollo / producción)."""
+
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -26,3 +29,33 @@ class Config:
     UPLOAD_FOLDER = os.getenv("UPLOAD_FOLDER", "uploads")
     MAX_CONTENT_LENGTH = int(os.getenv("MAX_UPLOAD_MB", 10)) * 1024 * 1024
     BASE_URL = os.getenv("BASE_URL", "http://localhost:5000")
+
+    # Bandera usada por la factory para decidir comportamientos de entorno
+    # (CORS, SSL, engine options). Solo `TestConfig` la pone en True.
+    TESTING = False
+
+
+class TestConfig(Config):
+    """
+    Config explícita para pytest. **NO lee `DATABASE_URL` del entorno** —
+    fuerza SQLite en memoria de forma literal para que sea imposible que
+    un test apunte por accidente a la BD de desarrollo / producción.
+    """
+
+    TESTING = True
+
+    # SQLite en memoria, aislado por proceso. No se persiste nada.
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
+
+    # Options específicas de SQLite: no SSL y sin opciones de PostgreSQL
+    # (evita que la factory inyecte `sslmode=require` accidentalmente).
+    SQLALCHEMY_ENGINE_OPTIONS: dict = {}
+
+    # Secret determinista para que los JWT creados en tests sean estables.
+    JWT_SECRET_KEY = "test-secret-not-for-production"
+
+    # Upload aislado en carpeta temporal del proceso.
+    UPLOAD_FOLDER = "tests/_uploads_tmp"
+
+    # Propagar excepciones para ver tracebacks reales en los tests.
+    PROPAGATE_EXCEPTIONS = True

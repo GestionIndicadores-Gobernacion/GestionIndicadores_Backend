@@ -1,12 +1,16 @@
+from flask import jsonify
 from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import (
     jwt_required,
     get_jwt_identity,
-    create_access_token
+    get_jwt,
+    create_access_token,
 )
 
+from app.core.extensions import limiter
 from app.modules.indicators.services.auth_handler import AuthHandler
+from app.modules.indicators.services.token_blocklist import revoke_jti
 from app.shared.schemas.auth_schema import LoginSchema
 from app.shared.schemas.user_schema import UserSchema
 
@@ -20,6 +24,10 @@ blp = Blueprint(
 
 @blp.route("/login")
 class LoginResource(MethodView):
+
+    # Límite por IP: protege contra fuerza bruta sin molestar a usuarios
+    # legítimos. Supera ~8 intentos/min → 429.
+    decorators = [limiter.limit("8 per minute; 30 per hour")]
 
     @blp.arguments(LoginSchema)
     def post(self, data):
@@ -49,5 +57,22 @@ class LogoutResource(MethodView):
 
     @jwt_required()
     def post(self):
-        # Stateless JWT → el frontend elimina tokens
+        # Revoca el jti del access token. El frontend también debe borrar
+        # localStorage, pero si alguien robó el token, a partir de ahora
+        # el backend lo rechazará.
+        jti = get_jwt().get("jti")
+        if jti:
+            revoke_jti(jti)
         return {"message": "Logged out successfully"}, 200
+
+
+@blp.route("/logout-refresh")
+class LogoutRefreshResource(MethodView):
+    """Revoca el refresh token (endpoint opcional)."""
+
+    @jwt_required(refresh=True)
+    def post(self):
+        jti = get_jwt().get("jti")
+        if jti:
+            revoke_jti(jti)
+        return {"message": "Refresh revoked"}, 200
