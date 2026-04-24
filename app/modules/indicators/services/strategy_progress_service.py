@@ -1,5 +1,6 @@
 # app/modules/indicators/services/strategy_progress_service.py
 
+import json
 import re
 from datetime import datetime, date
 
@@ -162,9 +163,10 @@ class StrategyProgressService:
         if not metric.field_name:
             return 0.0
 
-        try:
-            indicator_id = int(metric.field_name)
-        except (ValueError, TypeError):
+        # field_name puede ser un ID único ("76"), una lista CSV
+        # ("163,162,164") o un JSON array ("[163,162,164]").
+        indicator_ids = _parse_indicator_ids(metric.field_name)
+        if not indicator_ids:
             return 0.0
 
         query = Report.query.filter_by(strategy_id=strategy.id)
@@ -175,18 +177,22 @@ class StrategyProgressService:
             query, current_year, date_from, date_to
         )
 
+        target_ids = set(indicator_ids)
         total = 0.0
         for r in reports:
-            iv = next(
-                (v for v in (r.indicator_values or []) if v.indicator_id == indicator_id),
-                None
-            )
-            if iv is None or iv.value is None:
-                continue
-            try:
-                total += float(iv.value)
-            except (ValueError, TypeError):
-                pass
+            for iv in (r.indicator_values or []):
+                if iv.indicator_id not in target_ids or iv.value is None:
+                    continue
+                # Valor plano (int/float/decimal/string numérico)
+                try:
+                    total += float(iv.value)
+                    continue
+                except (ValueError, TypeError):
+                    pass
+                # Valor estructurado (dict/list): indicadores tipo
+                # "sum_group" u otras estructuras JSON con números
+                # anidados. Sumar todos los numéricos encontrados.
+                total += _sum_any_numeric(iv.value)
 
         return total
 
@@ -201,9 +207,9 @@ class StrategyProgressService:
         if not metric.field_name:
             return 0.0
 
-        try:
-            indicator_id = int(metric.field_name)
-        except (ValueError, TypeError):
+        # Acepta un ID único, CSV o JSON array (igual que report_sum).
+        indicator_ids = _parse_indicator_ids(metric.field_name)
+        if not indicator_ids:
             return 0.0
 
         query = Report.query.filter_by(strategy_id=strategy.id)
@@ -214,20 +220,18 @@ class StrategyProgressService:
             query, current_year, date_from, date_to
         )
 
+        target_ids = set(indicator_ids)
         total = 0.0
         for r in reports:
-            iv = next(
-                (v for v in (r.indicator_values or []) if v.indicator_id == indicator_id),
-                None
-            )
-            if iv is None or not isinstance(iv.value, dict):
-                continue
-
-            data = iv.value.get('data')
-            if not data or not isinstance(data, dict):
-                continue
-
-            total += _sum_nested_key(data, "no_de_animales_esterilizados")
+            for iv in (r.indicator_values or []):
+                if iv.indicator_id not in target_ids:
+                    continue
+                if not isinstance(iv.value, dict):
+                    continue
+                data = iv.value.get('data')
+                if not data or not isinstance(data, dict):
+                    continue
+                total += _sum_nested_key(data, "no_de_animales_esterilizados")
 
         return total
 
@@ -313,3 +317,95 @@ def _sum_nested_key(obj, key: str) -> float:
         for item in obj:
             total += _sum_nested_key(item, key)
     return total
+
+
+def _parse_indicator_ids(field_name) -> list:
+    """
+    Convierte `metric.field_name` en una lista de enteros (IDs de indicador).
+
+    Formatos aceptados (retrocompatibles):
+      - "76"               → [76]
+      - "163,162,164"      → [163, 162, 164]
+      - "163, 162 , 164"   → [163, 162, 164]
+      - "[163,162,164]"    → [163, 162, 164]  (JSON array)
+      - [163, 162, 164]    → [163, 162, 164]  (lista ya parseada)
+      - 76                 → [76]              (número directo)
+
+    Devuelve una lista vacía si no se puede extraer ningún entero.
+    Se preserva el orden y se eliminan duplicados.
+    """
+    if field_name is None:
+        return []
+
+    # Ya es una lista/tupla: extraer enteros.
+    if isinstance(field_name, (list, tuple)):
+        ids = []
+        for item in field_name:
+            try:
+                ids.append(int(str(item).strip()))
+            except (ValueError, TypeError):
+                continue
+        return _dedup_preserve_order(ids)
+
+    # Entero directo.
+    if isinstance(field_name, int) and not isinstance(field_name, bool):
+        return [field_name]
+
+    text = str(field_name).strip()
+    if not text:
+        return []
+
+    # JSON array: "[163, 162]"
+    if text.startswith('[') and text.endswith(']'):
+        try:
+            parsed = json.loads(text)
+            if isinstance(parsed, list):
+                return _parse_indicator_ids(parsed)
+        except (ValueError, TypeError):
+            pass  # cae al parser CSV / regex
+
+    # CSV / mixto: extraer todos los enteros que aparezcan.
+    tokens = re.findall(r'-?\d+', text)
+    ids = []
+    for t in tokens:
+        try:
+            ids.append(int(t))
+        except ValueError:
+            continue
+    return _dedup_preserve_order(ids)
+
+
+def _dedup_preserve_order(seq):
+    seen = set()
+    out = []
+    for x in seq:
+        if x not in seen:
+            seen.add(x)
+            out.append(x)
+    return out
+
+
+def _sum_any_numeric(obj) -> float:
+    """
+    Suma todos los valores numéricos encontrados dentro de una estructura
+    arbitraria (dict/list/number/string-numérico). Usado cuando un
+    indicator_value guarda una estructura tipo "sum_group" (p. ej.
+    {"enero": 50, "febrero": 30, ...}) en lugar de un número plano.
+
+    Ignora valores booleanos (True/False serían sumados como 1/0 por
+    float(), lo cual no es lo deseado en datos agregados).
+    """
+    if obj is None or isinstance(obj, bool):
+        return 0.0
+    if isinstance(obj, (int, float)):
+        return float(obj)
+    if isinstance(obj, str):
+        try:
+            return float(obj)
+        except (ValueError, TypeError):
+            return 0.0
+    if isinstance(obj, dict):
+        return sum(_sum_any_numeric(v) for v in obj.values())
+    if isinstance(obj, list):
+        return sum(_sum_any_numeric(item) for item in obj)
+    return 0.0
