@@ -3,6 +3,15 @@ from .orchestrator import orchestrate
 
 def detect_dataset_type(fields) -> str:
     names = {f.name.lower() for f in fields}
+    # Donatón: hay alimento perro/gato + municipio + total (kg recogidos).
+    # Detectado antes de personas_capacitadas porque también tiene
+    # "municipio" pero no entra en colisión por los demás campos.
+    if (
+        "municipio" in names
+        and any("alimento" in n and "perro" in n for n in names)
+        and any("alimento" in n and "gato" in n for n in names)
+    ):
+        return "donaton"
     if {"mujer", "hombre", "municipio", "guia_1"}.issubset(names):
         return "personas_capacitadas"
     # Red Animalia: tiene vinculación + campos de animales domésticos
