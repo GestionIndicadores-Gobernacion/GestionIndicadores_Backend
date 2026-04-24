@@ -1,9 +1,51 @@
 from flask import jsonify
 from sqlalchemy.exc import SQLAlchemyError
-from app.core.extensions import db
+from app.core.extensions import db, jwt
 
 
 def register_error_handlers(app):
+
+    # ==================================================================
+    # JWT — respuestas consistentes para que el frontend pueda distinguir
+    # expirado / inválido / ausente y reaccionar correctamente.
+    # Todos los casos devuelven 401 con un campo `error` estable.
+    # ==================================================================
+    @jwt.expired_token_loader
+    def _jwt_expired(jwt_header, jwt_payload):
+        token_type = jwt_payload.get("type", "access")
+        return jsonify({
+            "error": "token_expired",
+            "token_type": token_type,
+            "msg": "El token ha expirado."
+        }), 401
+
+    @jwt.invalid_token_loader
+    def _jwt_invalid(reason):
+        return jsonify({
+            "error": "token_invalid",
+            "msg": "El token es inválido."
+        }), 401
+
+    @jwt.unauthorized_loader
+    def _jwt_missing(reason):
+        return jsonify({
+            "error": "token_missing",
+            "msg": "No se ha enviado un token de autenticación."
+        }), 401
+
+    @jwt.revoked_token_loader
+    def _jwt_revoked(jwt_header, jwt_payload):
+        return jsonify({
+            "error": "token_revoked",
+            "msg": "El token ha sido revocado."
+        }), 401
+
+    @jwt.needs_fresh_token_loader
+    def _jwt_needs_fresh(jwt_header, jwt_payload):
+        return jsonify({
+            "error": "fresh_token_required",
+            "msg": "Se requiere un token fresco."
+        }), 401
 
     @app.errorhandler(SQLAlchemyError)
     def handle_db_error(e):
@@ -27,6 +69,10 @@ def register_error_handlers(app):
 
     @app.errorhandler(Exception)
     def handle_generic_error(e):
+        # No interferir con respuestas HTTP estructuradas (JWT, smorest, etc.)
+        from werkzeug.exceptions import HTTPException
+        if isinstance(e, HTTPException):
+            return e
         return jsonify({
             "message": "Ocurrió un error interno en el servidor."
         }), 500
