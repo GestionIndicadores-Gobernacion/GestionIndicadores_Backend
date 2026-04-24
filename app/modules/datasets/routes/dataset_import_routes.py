@@ -56,8 +56,10 @@ class DatasetUpdateResource(MethodView):
         if not _is_admin():
             abort(403, message="Sin permiso")
 
-        if "file" not in request.files:
-            abort(400, message="Archivo no enviado")
+        file = request.files.get("file")
+        dataset_name = request.form.get("dataset_name")
 
-        file = request.files["file"]
-        return update_excel_dataset(file, dataset_id)
+        if file is None and not (dataset_name and dataset_name.strip()):
+            abort(400, message="Debe enviar un archivo o un nuevo nombre")
+
+        return update_excel_dataset(file, dataset_id, dataset_name)

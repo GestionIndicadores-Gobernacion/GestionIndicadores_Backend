@@ -8,6 +8,7 @@ class DatasetSchema(Schema):
     # =========================
     id = fields.Int(dump_only=True)
     created_at = fields.DateTime(dump_only=True)
+    updated_at = fields.DateTime(dump_only=True)
     active = fields.Bool(dump_only=True)
 
     tables = fields.List(

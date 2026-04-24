@@ -9,6 +9,11 @@ class Dataset(db.Model):
     description = db.Column(db.Text)
     active = db.Column(db.Boolean, default=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(
+        db.DateTime,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
 
     tables = db.relationship(
         "Table",
