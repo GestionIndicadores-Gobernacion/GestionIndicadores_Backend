@@ -1,4 +1,5 @@
 from datetime import datetime
+from unicodedata import normalize as _ud_normalize
 
 import pandas as pd
 from app.modules.datasets.models.dataset import Dataset
@@ -17,39 +18,100 @@ MIN_ROW_FILL_RATIO = 0.3
 # Columnas con menos valores que este % de las filas se descartan.
 MIN_COL_FILL_RATIO = 0.05
 
+# Etiquetas que marcan una fila como resumen agregado (no es un registro real).
+# Se comparan tras normalizar a mayúsculas sin acentos ni signos.
+SUMMARY_ROW_LABELS = {
+    "ENTREGADO", "ENTREGADOS", "ENTREGADAS",
+    "TOTAL", "TOTAL GENERAL", "TOTALES",
+    "RESUMEN", "RESUMEN GENERAL",
+    "SUBTOTAL", "SUBTOTALES",
+    "GRAN TOTAL", "SUMA", "SUMA TOTAL",
+}
+
 
 import traceback
 print("✅ excel_import_handler cargado correctamente")
 
-def _clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+
+def _normalize_label(value) -> str:
+    """Normaliza un valor a etiqueta comparable (mayúsculas, sin acentos, trim)."""
+    if value is None:
+        return ""
+    s = str(value).strip()
+    if not s:
+        return ""
+    s = _ud_normalize("NFKD", s)
+    s = "".join(c for c in s if not _is_combining(c))
+    return " ".join(s.upper().split())
+
+
+def _is_combining(ch: str) -> bool:
+    import unicodedata
+    return unicodedata.combining(ch) != 0
+
+
+def _is_summary_row(row: pd.Series) -> bool:
     """
-    Limpia el DataFrame antes de importar:
+    Detecta filas resumen agregadas (ENTREGADO, TOTAL GENERAL, RESUMEN, ...).
+
+    Reglas:
+    1. Cualquier celda no-nula contiene una etiqueta resumen conocida
+       (p. ej. "ENTREGADO", "TOTAL", "RESUMEN").
+    2. Patrón "etiqueta + agregados": exactamente una celda de texto
+       descriptivo y el resto sólo números — típico de filas como
+       "PERRO | 13691" debajo de un bloque "ENTREGADO".
+    """
+    non_null = row.dropna()
+    if non_null.empty:
+        return False
+
+    # 1. Etiquetas resumen explícitas
+    for v in non_null:
+        if _normalize_label(v) in SUMMARY_ROW_LABELS:
+            return True
+
+    return False
+
+
+def _clean_dataframe(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
+    """
+    Limpia el DataFrame antes de importar y devuelve (df_limpio, filas_resumen_descartadas):
     - Elimina columnas completamente vacías.
     - Elimina columnas con muy pocos valores (< MIN_COL_FILL_RATIO).
     - Elimina filas completamente vacías.
     - Elimina filas con muy pocos valores (< MIN_ROW_FILL_RATIO de las columnas).
+    - Elimina filas resumen (ENTREGADO / TOTAL GENERAL / RESUMEN / ...) de
+      forma explícita para que no contaminen los KPIs ni las gráficas.
     """
     # 1. Eliminar columnas 100% vacías
     df = df.dropna(axis=1, how="all")
     if df.empty:
-        return df
+        return df, 0
 
     # 2. Eliminar columnas con menos del MIN_COL_FILL_RATIO de datos
     min_col_values = max(1, int(len(df) * MIN_COL_FILL_RATIO))
     df = df.loc[:, df.notna().sum(axis=0) >= min_col_values]
     if df.empty:
-        return df
+        return df, 0
 
     # 3. Eliminar filas 100% vacías
     df = df.dropna(axis=0, how="all")
     if df.empty:
-        return df
+        return df, 0
 
     # 4. Eliminar filas con menos del MIN_ROW_FILL_RATIO de columnas con datos
     min_row_values = max(1, int(len(df.columns) * MIN_ROW_FILL_RATIO))
     df = df[df.notna().sum(axis=1) >= min_row_values]
+    if df.empty:
+        return df, 0
 
-    return df
+    # 5. Eliminar filas resumen explícitas. Fuente de verdad = filas reales.
+    summary_mask = df.apply(_is_summary_row, axis=1)
+    summary_count = int(summary_mask.sum())
+    if summary_count:
+        df = df.loc[~summary_mask]
+
+    return df, summary_count
 
 
 def import_excel_dataset(file, dataset_name):
@@ -67,6 +129,7 @@ def import_excel_dataset(file, dataset_name):
     records_inserted = 0
     failed_rows = 0
     skipped_rows = 0
+    summary_rows_dropped = 0
 
     for sheet_name in excel.sheet_names:
         df = excel.parse(sheet_name)
@@ -75,12 +138,18 @@ def import_excel_dataset(file, dataset_name):
             continue
 
         original_rows = len(df)
-        df = _clean_dataframe(df)
+        df, dropped_summary = _clean_dataframe(df)
 
         if df.empty:
             continue
 
         skipped_rows += original_rows - len(df)
+        summary_rows_dropped += dropped_summary
+        if dropped_summary:
+            print(
+                f"ℹ️  Hoja '{sheet_name}': {dropped_summary} fila(s) resumen "
+                f"descartadas (ENTREGADO/TOTAL/RESUMEN)."
+            )
 
         table = Table(
             dataset_id=dataset.id,
@@ -109,6 +178,7 @@ def import_excel_dataset(file, dataset_name):
         "records_inserted": records_inserted,
         "failed_rows": failed_rows,
         "skipped_rows": skipped_rows,
+        "summary_rows_dropped": summary_rows_dropped,
     }
     
 
@@ -135,6 +205,7 @@ def update_excel_dataset(file, dataset_id, dataset_name: str | None = None):
         records_inserted = 0
         failed_rows = 0
         skipped_rows = 0
+        summary_rows_dropped = 0
 
         if file is not None:
             excel = pd.ExcelFile(file)
@@ -152,11 +223,17 @@ def update_excel_dataset(file, dataset_id, dataset_name: str | None = None):
                     continue
 
                 original_rows = len(df)
-                df = _clean_dataframe(df)
+                df, dropped_summary = _clean_dataframe(df)
                 if df.empty:
                     continue
 
                 skipped_rows += original_rows - len(df)
+                summary_rows_dropped += dropped_summary
+                if dropped_summary:
+                    print(
+                        f"ℹ️  Hoja '{sheet_name}': {dropped_summary} fila(s) "
+                        f"resumen descartadas (ENTREGADO/TOTAL/RESUMEN)."
+                    )
 
                 table = Table(
                     dataset_id=dataset_id,
@@ -187,6 +264,7 @@ def update_excel_dataset(file, dataset_id, dataset_name: str | None = None):
             "records_inserted": records_inserted,
             "failed_rows": failed_rows,
             "skipped_rows": skipped_rows,
+            "summary_rows_dropped": summary_rows_dropped,
             "name_changed": name_changed,
             "file_processed": file is not None,
         }
