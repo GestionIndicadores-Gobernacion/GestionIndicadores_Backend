@@ -105,7 +105,7 @@ def build_donaton(fields, field_values, total):
 
     kpis = [
         {"label": "Kg recogidos",   "value": f"{int(kg_total):,}",
-         "sub": f"{n_records:,} donaciones",  "icon": "package"},
+         "sub": f"calculado sobre {n_records:,} donaciones",  "icon": "package"},
         {"label": "Kg para perros", "value": f"{int(kg_perro):,}",
          "sub": f"{round(kg_perro / kg_total * 100, 1) if kg_total else 0}% del total",
          "icon": "heart"},
@@ -228,5 +228,8 @@ def build_donaton(fields, field_values, total):
         "total": n_records,
         "kpis": kpis,
         "sections": sections,
-        "project_label": f"{int(kg_total):,} kg recogidos en {municipios_unicos} municipios",
+        "project_label": (
+            f"{int(kg_total):,} kg recogidos en {municipios_unicos} municipios "
+            f"· KPIs calculados a partir de {n_records:,} registros"
+        ),
     }
