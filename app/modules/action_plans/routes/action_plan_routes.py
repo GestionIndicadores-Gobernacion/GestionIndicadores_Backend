@@ -100,6 +100,29 @@ def _can_interact_with_activity(activity, plan) -> bool:
         return False
     return False
 
+
+def _plan_responsible_ids(plan) -> set[int]:
+    ids = set(plan.responsible_user_ids or [])
+    if plan.responsible_user_id:
+        ids.add(plan.responsible_user_id)
+    return ids
+
+
+def _can_report_activity(plan) -> bool:
+    """
+    Reportar una actividad es un acto exclusivo del RESPONSABLE asignado
+    al plan. Ni editores del componente ni monitores que no sean
+    responsables pueden hacerlo. Admin mantiene override total.
+    """
+    user = _get_current_user()
+    if not user:
+        return False
+    if user.role.name == "admin":
+        return True
+    if user.role.name == "viewer":
+        return False
+    return user.id in _plan_responsible_ids(plan)
+
 @blp.route("/")
 class ActionPlanList(MethodView):
 
@@ -208,8 +231,8 @@ class ActionPlanActivityReport(MethodView):
         if not activity:
             return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
 
-        if not _can_interact_with_activity(activity, plan):
-            return jsonify({"error": "Sin permiso para reportar esta actividad"}), 403
+        if not _can_report_activity(plan):
+            return jsonify({"error": "Solo el responsable asignado del plan puede reportar esta actividad"}), 403
 
         activity, errors = ActionPlanHandler.report_activity(activity_id, data)
         if errors:
