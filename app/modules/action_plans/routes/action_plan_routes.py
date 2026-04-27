@@ -34,15 +34,19 @@ def _is_viewer():
     return user and user.role and user.role.name == "viewer"
 
 def _can_edit_plan(plan):
+    """Editar/eliminar un plan: admin override, o creador del plan.
+
+    Monitor y editor solo pueden modificar planes que ellos mismos crearon.
+    El acceso por componente ya no concede permiso de modificación.
+    """
     user = _get_current_user()
     if not user:
         return False
-    if user.role.name in ("admin", "monitor"):
+    if user.role.name == "admin":
         return True
     if user.role.name == "viewer":
         return False
-    assigned = [uc.component_id for uc in user.component_assignments]
-    return plan.component_id in assigned
+    return plan.user_id is not None and plan.user_id == user.id
 
 def _get_activity_plan(activity_id: int):
     """Retorna (activity, plan) o (None, None) si no existe."""
@@ -77,28 +81,39 @@ def _can_add_evidence(activity, plan) -> bool:
     return False
 
 
-def _can_interact_with_activity(activity, plan) -> bool:
+def _can_edit_activity(activity, plan) -> bool:
     """
-    Editor → puede si el plan es de su componente O si es el responsable del plan.
-    Admin/Monitor → siempre puede.
-    Viewer → nunca puede modificar.
+    Editar una actividad: admin override, creador del plan, o el responsable
+    del plan SI la actividad ya fue reportada (puede ajustar datos del reporte).
     """
     user = _get_current_user()
     if not user:
         return False
-    if user.role.name in ("admin", "monitor"):
+    if user.role.name == "admin":
         return True
     if user.role.name == "viewer":
         return False
-    if user.role.name == "editor":
-        assigned = [uc.component_id for uc in user.component_assignments]
-        if plan.component_id in assigned:
-            return True
-        # También puede si es el responsable del plan
-        if plan.responsible_user_id and plan.responsible_user_id == user.id:
-            return True
-        return False
+    if plan.user_id is not None and plan.user_id == user.id:
+        return True
+    # Responsable después de reportar (status: Realizado o Pendiente de Evidencia)
+    if activity.reported_at and user.id in _plan_responsible_ids(plan):
+        return True
     return False
+
+
+def _can_delete_activity(activity, plan) -> bool:
+    """
+    Eliminar una actividad: solo admin o creador del plan.
+    Ni el responsable, ni editores ajenos al plan, pueden eliminar.
+    """
+    user = _get_current_user()
+    if not user:
+        return False
+    if user.role.name == "admin":
+        return True
+    if user.role.name == "viewer":
+        return False
+    return plan.user_id is not None and plan.user_id == user.id
 
 
 def _plan_responsible_ids(plan) -> set[int]:
@@ -254,7 +269,7 @@ class ActionPlanActivityEdit(MethodView):
         if not activity:
             return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
 
-        if not _can_interact_with_activity(activity, plan):
+        if not _can_edit_activity(activity, plan):
             return jsonify({"error": "Sin permiso para editar esta actividad"}), 403
 
         edit_all = data.pop("edit_all", False)
@@ -276,7 +291,7 @@ class ActionPlanActivityDetail(MethodView):
         if not activity:
             return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
 
-        if not _can_interact_with_activity(activity, plan):
+        if not _can_delete_activity(activity, plan):
             return jsonify({"error": "Sin permiso para eliminar esta actividad"}), 403
 
         delete_all = request.args.get("delete_all", "false").lower() == "true"
