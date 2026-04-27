@@ -57,23 +57,33 @@ def _is_admin() -> bool:
 
 
 def _can_see_all() -> bool:
-    return _role_name() in ("admin", "monitor")
+    """Listado completo de reportes: admin, monitor y editor (lectura amplia).
+
+    Viewer no aparece aquí porque su acceso se controla en el frontend
+    (viewerGuard) y solo necesita el dashboard agregado.
+    """
+    return _role_name() in ("admin", "monitor", "editor")
 
 
 def _is_viewer() -> bool:
     return _role_name() == "viewer"
 
 
-def _can_access(report) -> bool:
-    if _is_viewer():
-        return True  # viewer puede VER cualquier reporte, pero no editar/eliminar
+def _can_view(report) -> bool:
+    """Lectura: admin, monitor, editor y viewer pueden ver cualquier reporte.
 
+    El acceso del viewer al UI individual se controla en el frontend (viewerGuard);
+    aquí no hay ownership porque la visualización es información compartida.
+    """
+    return _role_name() in ("admin", "monitor", "editor", "viewer")
+
+
+def _can_modify(report) -> bool:
+    """Edición/eliminación: admin override, o autor del reporte."""
     if _is_admin():
         return True
-
     if report.user_id is None:
         return True
-
     return report.user_id == _current_user_id()
 
 
@@ -159,7 +169,7 @@ class ReportDetail(MethodView):
         if not report:
             abort(404, message="Report not found")
 
-        if not _can_access(report):
+        if not _can_view(report):
             abort(403, message="No tienes permiso para ver este reporte")
 
         return report
@@ -168,15 +178,15 @@ class ReportDetail(MethodView):
     @blp.arguments(ReportSchema)
     @blp.response(200, ReportSchema)
     def put(self, data, report_id):
-        
+
         if _is_viewer():
             abort(403, message="No tienes permiso para editar reportes")
-        
+
         report = ReportHandler.get_by_id(report_id)
         if not report:
             abort(404, message="Report not found")
 
-        if not _can_access(report):
+        if not _can_modify(report):
             abort(403, message="No tienes permiso para editar este reporte")
 
         updated, errors = ReportHandler.update(report, data)
@@ -187,15 +197,15 @@ class ReportDetail(MethodView):
     @jwt_required()
     @blp.response(204)
     def delete(self, report_id):
-        
+
         if _is_viewer():
             abort(403, message="No tienes permiso para editar reportes")
-        
+
         report = ReportHandler.get_by_id(report_id)
         if not report:
             abort(404, message="Report not found")
 
-        if not _can_access(report):
+        if not _can_modify(report):
             abort(403, message="No tienes permiso para eliminar este reporte")
 
         ReportHandler.delete(report)
@@ -213,7 +223,7 @@ class ReportLinkActivity(MethodView):
         if not report:
             abort(404, message="Reporte no encontrado")
 
-        if not _can_access(report):
+        if not _can_modify(report):
             abort(403, message="No tienes permiso para modificar este reporte")
 
         result, errors = ReportHandler._link_activity_to_report(report, activity_id)
