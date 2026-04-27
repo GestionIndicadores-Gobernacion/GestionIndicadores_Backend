@@ -56,12 +56,16 @@ class ReportKpiService:
 
     # ─── Entrada principal ──────────────────────────────────────────────
     @staticmethod
-    def get_snapshot(year: int) -> dict:
-        reports = ReportKpiService._year_reports(year)
+    def get_snapshot(year: int, date_from: str | None = None, date_to: str | None = None) -> dict:
+        reports = ReportKpiService._scoped_reports(year, date_from, date_to)
         return {
             "year": year,
             "asistencias_tecnicas": ReportKpiService._asistencias_tecnicas(reports),
             "denuncias_reportadas": ReportKpiService._denuncias_reportadas(reports),
+            # NOTA: `personas_capacitadas` mezcla reportes (sí filtrados por
+            # rango) + un dataset externo anual sin granularidad por fecha.
+            # La parte del dataset se mantiene anclada al año; documentado en
+            # `_personas_capacitadas`.
             "personas_capacitadas": ReportKpiService._personas_capacitadas(year, reports),
             "ninos_sensibilizados": ReportKpiService._ninos_sensibilizados(reports),
             "animales_esterilizados": ReportKpiService._animales_esterilizados(reports),
@@ -70,7 +74,7 @@ class ReportKpiService:
         }
 
     @staticmethod
-    def get_by_location(year: int) -> dict:
+    def get_by_location(year: int, date_from: str | None = None, date_to: str | None = None) -> dict:
         """
         KPIs agrupados por `intervention_location`. No incluye
         `personas_capacitadas` porque su cálculo depende del dataset
@@ -94,7 +98,7 @@ class ReportKpiService:
           ]
         }
         """
-        reports = ReportKpiService._year_reports(year)
+        reports = ReportKpiService._scoped_reports(year, date_from, date_to)
 
         by_loc: dict[str, list] = {}
         for r in reports:
@@ -132,6 +136,24 @@ class ReportKpiService:
             .filter(extract("year", Report.report_date) == year)
             .all()
         )
+
+    @staticmethod
+    def _scoped_reports(year: int, date_from: str | None, date_to: str | None):
+        """
+        Si llega rango (`date_from`+`date_to`) lo respeta; en otro caso
+        cae al filtro por año. Mantiene el eager-load de indicator_values.
+        """
+        if date_from and date_to:
+            return (
+                Report.query
+                .options(selectinload(Report.indicator_values))
+                .filter(
+                    Report.report_date >= date_from,
+                    Report.report_date <= date_to,
+                )
+                .all()
+            )
+        return ReportKpiService._year_reports(year)
 
     @staticmethod
     def _iv_for(report, indicator_id: int):
