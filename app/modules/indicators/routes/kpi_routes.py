@@ -29,14 +29,16 @@ class KpiResource(MethodView):
     @jwt_required()
     def get(self):
         """
-        GET /kpis?year=YYYY
+        GET /kpis?year=YYYY[&date_from=YYYY-MM-DD&date_to=YYYY-MM-DD]
 
-        Si no se indica `year`, se usa el año calendario actual.
-        Cualquier usuario autenticado puede consultar los KPIs (la
-        granularidad es agregada por año; no expone datos por usuario).
+        - Si llegan `date_from` y `date_to`, los reportes se filtran por
+          ese rango (ignorando `year` para los reportes).
+        - Si no, se filtra por `year` (default = año actual).
         """
         year = request.args.get("year", type=int) or datetime.utcnow().year
-        snapshot = ReportKpiService.get_snapshot(year)
+        date_from = request.args.get("date_from") or None
+        date_to = request.args.get("date_to") or None
+        snapshot = ReportKpiService.get_snapshot(year, date_from, date_to)
         return jsonify(snapshot), 200
 
 
@@ -45,6 +47,10 @@ class KpiByLocationResource(MethodView):
 
     @jwt_required()
     def get(self):
-        """GET /kpis/by-location?year=YYYY"""
+        """GET /kpis/by-location?year=YYYY[&date_from=&date_to=]"""
         year = request.args.get("year", type=int) or datetime.utcnow().year
-        return jsonify(ReportKpiService.get_by_location(year)), 200
+        date_from = request.args.get("date_from") or None
+        date_to = request.args.get("date_to") or None
+        return jsonify(
+            ReportKpiService.get_by_location(year, date_from, date_to)
+        ), 200
