@@ -138,10 +138,12 @@ class ReportListAll(MethodView):
     @jwt_required()
     @blp.response(200, ReportSchema(many=True))
     def get(self):
-        # Solo roles con privilegio de ver TODOS los reportes: admin y monitor.
-        # Los demás deben usar GET /reports/ que aplica el scoping por componente.
-        if not _can_see_all():
-            abort(403, message="No tienes permiso para ver todos los reportes")
+        # Lectura global usada por el dashboard para gráficas agregadas.
+        # Abierto a todos los roles autenticados: el dashboard es el único
+        # consumidor "público" y las restricciones de creación/edición/borrado
+        # viven en los endpoints individuales (POST/PUT/DELETE de /reports).
+        # El acceso al listado UI individual ya está restringido por
+        # viewerGuard en el frontend.
         return ReportHandler.get_all(is_admin=True)
 # =========================================================
 # DETAIL
