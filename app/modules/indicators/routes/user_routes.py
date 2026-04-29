@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, request
 from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
@@ -6,8 +6,20 @@ from flask_jwt_extended import jwt_required
 from app.modules.indicators.services.user_handler import UserHandler
 from app.shared.schemas.user_schema import UserSchema
 from app.shared.models.user import User
+from app.shared.models.user_component import UserComponent
 from app.utils.permissions import role_required
 from app.utils.pagination import get_pagination_params, paginate_query, envelope
+
+
+def _basic_user_dump(users):
+    """Proyección mínima (id, first_name, last_name) para roles no privilegiados.
+    Suficiente para poblar selects de "responsable" sin filtrar email,
+    role ni component_assignments.
+    """
+    return [
+        {"id": u.id, "first_name": u.first_name, "last_name": u.last_name}
+        for u in users
+    ]
 
 blp = Blueprint(
     "users",
@@ -37,22 +49,48 @@ class UserMeResource(MethodView):
 class UserListResource(MethodView):
 
     @jwt_required()
-    @role_required("admin", "monitor")
     def get(self):
         """
         GET /users/[?limit=&offset=]
 
+        Acceso:
+          - admin / monitor → datos completos (UserSchema).
+          - editor          → proyección básica (id + nombre) para poblar
+                              selects de responsable en el Plan de Acción.
+          - viewer          → 403.
+
         - Sin parámetros → lista completa (retrocompatible).
         - Con `limit`/`offset` → envelope `{ items, total, limit, offset }`.
         """
+        current_id = int(get_jwt_identity())
+        current = UserHandler.get_by_id(current_id)
+        role_name = current.role.name if current and current.role else None
+        if role_name not in ("admin", "monitor", "editor"):
+            return jsonify({"message": "Forbidden"}), 403
+
+        is_privileged = role_name in ("admin", "monitor")
+        dump = (lambda items: UserSchema(many=True).dump(items)) if is_privileged else _basic_user_dump
+
         query = User.query.order_by(User.created_at.desc())
+
+        # Filtro opcional: ?component_id=N → solo usuarios con ese componente
+        # asignado en user_components. Útil para poblar el select de
+        # "Responsables" en el modal de Plan de Acción según el componente
+        # elegido.
+        component_id = request.args.get("component_id", type=int)
+        if component_id:
+            query = (
+                query
+                .join(UserComponent, UserComponent.user_id == User.id)
+                .filter(UserComponent.component_id == component_id)
+                .distinct()
+            )
+
         paginated, limit, offset = get_pagination_params()
         if not paginated:
-            return jsonify(UserSchema(many=True).dump(query.all())), 200
+            return jsonify(dump(query.all())), 200
         items, total = paginate_query(query, limit, offset)
-        return jsonify(
-            envelope(UserSchema(many=True).dump(items), total, limit, offset)
-        ), 200
+        return jsonify(envelope(dump(items), total, limit, offset)), 200
 
     @jwt_required()
     @role_required("admin")

@@ -34,19 +34,26 @@ def _is_viewer():
     return user and user.role and user.role.name == "viewer"
 
 def _can_edit_plan(plan):
-    """Editar/eliminar un plan: admin override, o creador del plan.
+    """Editar/eliminar un plan: solo el creador. Admin tiene override
+    por seguridad administrativa.
 
-    Monitor y editor solo pueden modificar planes que ellos mismos crearon.
-    El acceso por componente ya no concede permiso de modificación.
+    Si el creador es Editor, además exige que el componente del plan siga
+    estando entre sus componentes asignados (si se lo desasignaron, pierde
+    el permiso aunque haya sido el autor).
     """
     user = _get_current_user()
-    if not user:
+    if not user or not user.role:
         return False
     if user.role.name == "admin":
         return True
     if user.role.name == "viewer":
         return False
-    return plan.user_id is not None and plan.user_id == user.id
+    if plan.user_id is None or plan.user_id != user.id:
+        return False
+    if user.role.name == "editor":
+        assigned = {uc.component_id for uc in user.component_assignments}
+        return plan.component_id in assigned
+    return True
 
 def _get_activity_plan(activity_id: int):
     """Retorna (activity, plan) o (None, None) si no existe."""
@@ -62,58 +69,25 @@ def _get_activity_plan(activity_id: int):
 
 def _can_add_evidence(activity, plan) -> bool:
     """
-    Solo el responsable del plan o quien reportó la actividad puede
-    agregar/editar evidencia. Admin y monitor siempre pueden.
+    Subir/editar evidencia: SOLO el responsable asignado al plan.
+    Admin tiene override por seguridad administrativa.
     """
     user = _get_current_user()
-    if not user:
+    if not user or not user.role or user.role.name == "viewer":
         return False
-    if user.role.name in ("admin", "monitor"):
+    if user.role.name == "admin":
         return True
-    if user.role.name == "viewer":
-        return False
-    if user.role.name == "editor":
-        # Debe ser uno de los responsables del plan o quien reportó la actividad
-        responsible_ids = list(plan.responsible_user_ids)
-        if activity.reported_by_user_id:
-            responsible_ids.append(activity.reported_by_user_id)
-        return user.id in responsible_ids
-    return False
+    return user.id in _plan_responsible_ids(plan)
 
 
 def _can_edit_activity(activity, plan) -> bool:
-    """
-    Editar una actividad: admin override, creador del plan, o el responsable
-    del plan SI la actividad ya fue reportada (puede ajustar datos del reporte).
-    """
-    user = _get_current_user()
-    if not user:
-        return False
-    if user.role.name == "admin":
-        return True
-    if user.role.name == "viewer":
-        return False
-    if plan.user_id is not None and plan.user_id == user.id:
-        return True
-    # Responsable después de reportar (status: Realizado o Pendiente de Evidencia)
-    if activity.reported_at and user.id in _plan_responsible_ids(plan):
-        return True
-    return False
+    """Editar una actividad: mismas reglas que editar el plan (solo creador)."""
+    return _can_edit_plan(plan)
 
 
 def _can_delete_activity(activity, plan) -> bool:
-    """
-    Eliminar una actividad: solo admin o creador del plan.
-    Ni el responsable, ni editores ajenos al plan, pueden eliminar.
-    """
-    user = _get_current_user()
-    if not user:
-        return False
-    if user.role.name == "admin":
-        return True
-    if user.role.name == "viewer":
-        return False
-    return plan.user_id is not None and plan.user_id == user.id
+    """Eliminar una actividad: mismas reglas que editar el plan (solo creador)."""
+    return _can_edit_plan(plan)
 
 
 def _plan_responsible_ids(plan) -> set[int]:
@@ -125,16 +99,12 @@ def _plan_responsible_ids(plan) -> set[int]:
 
 def _can_report_activity(plan) -> bool:
     """
-    Reportar una actividad es un acto exclusivo del RESPONSABLE asignado
-    al plan. Ni editores del componente ni monitores que no sean
-    responsables pueden hacerlo. Admin mantiene override total.
+    Reportar una actividad es un acto EXCLUSIVO del responsable asignado
+    al plan. Ni el creador del plan (si no es responsable), ni admin, ni
+    monitor pueden reportar por él.
     """
     user = _get_current_user()
-    if not user:
-        return False
-    if user.role.name == "admin":
-        return True
-    if user.role.name == "viewer":
+    if not user or not user.role or user.role.name == "viewer":
         return False
     return user.id in _plan_responsible_ids(plan)
 
@@ -176,12 +146,14 @@ class ActionPlanList(MethodView):
     @blp.response(201, ActionPlanResponseSchema)
     @jwt_required()
     def post(self, data):
-        if _is_viewer():
+        user = _get_current_user()
+        if not user or not user.role or user.role.name == "viewer":
             return jsonify({"error": "Sin permiso"}), 403
 
-        user = _get_current_user()
+        # Editor: solo puede crear planes en sus componentes asignados.
+        # Monitor y admin: cualquier componente.
         if user.role.name == "editor":
-            assigned = [uc.component_id for uc in user.component_assignments]
+            assigned = {uc.component_id for uc in user.component_assignments}
             if data.get("component_id") not in assigned:
                 return jsonify({"error": "No puedes crear planes en este componente"}), 403
 
