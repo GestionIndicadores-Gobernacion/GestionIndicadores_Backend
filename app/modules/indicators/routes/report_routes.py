@@ -79,12 +79,14 @@ def _can_view(report) -> bool:
 
 
 def _can_modify(report) -> bool:
-    """Edición/eliminación: admin override, o autor del reporte."""
+    """Edición/eliminación: solo el autor del reporte. Admin tiene override
+    por seguridad administrativa."""
+    if _is_viewer():
+        return False
     if _is_admin():
         return True
-    if report.user_id is None:
-        return True
-    return report.user_id == _current_user_id()
+    uid = _current_user_id()
+    return uid is not None and report.user_id == uid
 
 
 # =========================================================
@@ -127,13 +129,14 @@ class ReportList(MethodView):
     @blp.arguments(ReportSchema)
     @blp.response(201, ReportSchema)
     def post(self, data):
-        if _is_viewer():
+        user = _current_user()
+        if not user or not user.role or user.role.name == "viewer":
             abort(403, message="No tienes permiso para crear reportes")
 
-        # ← NUEVO: validar componente para editor
-        user = _current_user()
-        if user and user.role and user.role.name == "editor":
-            assigned = [uc.component_id for uc in user.component_assignments]
+        # Editor: solo puede crear reportes en sus componentes asignados.
+        # Monitor y admin: cualquier componente.
+        if user.role.name == "editor":
+            assigned = {uc.component_id for uc in user.component_assignments}
             if data.get("component_id") not in assigned:
                 abort(403, message="No puedes crear reportes en este componente")
 
