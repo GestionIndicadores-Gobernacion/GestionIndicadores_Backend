@@ -12,6 +12,11 @@ def detect_dataset_type(fields) -> str:
         and any("alimento" in n and "gato" in n for n in names)
     ):
         return "donaton"
+    # Personas capacitadas (formato consolidado 2026): además de las guías 1/2/3
+    # incluye fecha, rural/urbana, correo_electronico y observacion.
+    if {"mujer", "hombre", "municipio", "guia_1", "guia_2", "guia_3",
+        "rural", "urbana", "fecha"}.issubset(names):
+        return "personas_capacitadas_consolidado"
     if {"mujer", "hombre", "municipio", "guia_1"}.issubset(names):
         return "personas_capacitadas"
     # Red Animalia: tiene vinculación + campos de animales domésticos

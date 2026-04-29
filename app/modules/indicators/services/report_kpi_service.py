@@ -197,62 +197,90 @@ class ReportKpiService:
     # ─── 3. Personas capacitadas ────────────────────────────────────────
     @staticmethod
     def _personas_capacitadas(year: int, reports: Iterable[Report]) -> int:
+        """Avance del KPI 'Personas Capacitadas'.
+
+        Reglas por año:
+
+        - **2026 en adelante**: el equipo dejó de reportar manualmente
+          el indicador 76 y todo lo nuevo se carga al dataset
+          "PERSONAS CAPACITADAS CONSOLIDADO". El KPI cuenta SOLO los
+          registros del dataset cuya `data.fecha` sea de ese año.
+          (Para 2026 → 456). NO se suma el indicador 163 (niños) ni
+          el 76 desde reportes para no duplicar con las otras tarjetas
+          del dashboard de Cumplimiento.
+
+        - **Años anteriores (2025 y previos)**: el dataset todavía no
+          existía; los datos vivían en reportes manuales del indicador
+          76 (plano). Se suma `reportes(ind 76) + dataset_filtered`
+          para no perder los volúmenes históricos (2025 ≈ 3.500 + 18
+          rezagados). Esa suma da el total real ingresado al sistema
+          ese año.
+        """
+        from_dataset = ReportKpiService._dataset_personas_capacitadas_count(year)
+
+        if year >= 2026:
+            return from_dataset
+
         from_reports = 0.0
-        ind_id = (
-            ID_NINOS_CAPACITADOS_PROMOTORES
-            if year == 2026
-            else ID_PERSONAS_CAPACITADAS_PROMOTORES
-        )
         for r in reports:
             if r.component_id != COMPONENT_ID_PROMOTORES:
                 continue
-            iv = ReportKpiService._iv_for(r, ind_id)
+            iv = ReportKpiService._iv_for(r, ID_PERSONAS_CAPACITADAS_PROMOTORES)
             if iv is None or iv.value is None:
                 continue
-            if year == 2026:
-                # Formato sum_group / estructurado: sumar cualquier numérico.
-                from_reports += _sum_any_numeric(iv.value)
-            else:
-                try:
-                    from_reports += float(iv.value)
-                except (ValueError, TypeError):
-                    pass
-
-        # Dataset externo "Personas Capacitadas"
-        dataset_year, records_with_mes = ReportKpiService._dataset_personas_capacitadas()
-        if year == 2026:
-            from_dataset = records_with_mes
-        else:
-            from_dataset = records_with_mes if dataset_year == year else 0
+            try:
+                from_reports += float(iv.value)
+            except (ValueError, TypeError):
+                pass
 
         return int(from_reports + from_dataset)
 
     @staticmethod
-    def _dataset_personas_capacitadas() -> Tuple[int | None, int]:
-        """Devuelve (año detectado en el nombre del dataset, cantidad de
-        registros con campo 'mes' no vacío)."""
+    def _dataset_personas_capacitadas_count(year: int) -> int:
+        """Cuenta los registros del dataset "PERSONAS CAPACITADAS
+        CONSOLIDADO" cuya columna `fecha` pertenece al año pedido.
+
+        Mismo parser que strategy_routes (single source of truth para
+        que el KPI Card y el Dashboard de Cumplimiento siempre muestren
+        el mismo número).
+        """
         import re
         from app.modules.datasets.models.dataset import Dataset
         from app.modules.datasets.models.table import Table
         from app.modules.datasets.models.record import Record
+        from sqlalchemy import func
 
-        ds = Dataset.query.get(DATASET_ID_PERSONAS_CAPACITADAS)
+        def _year_from_fecha(v) -> int | None:
+            if v is None or v == "":
+                return None
+            s = str(v).strip()
+            m = re.match(r'^(\d{4})-\d{1,2}-\d{1,2}', s)
+            if m: return int(m.group(1))
+            m = re.match(r'^\d{1,2}/\d{1,2}/(\d{4})\b', s)
+            if m: return int(m.group(1))
+            m = re.match(r'^(\d{4})/\d{1,2}/\d{1,2}', s)
+            if m: return int(m.group(1))
+            m = re.search(r'\b(20\d{2})\b', s)
+            if m: return int(m.group(1))
+            return None
+
+        # Búsqueda por nombre (igual que strategy_routes), no por id
+        # hardcodeado — el id puede cambiar entre entornos.
+        ds = (
+            Dataset.query
+            .filter(func.upper(Dataset.name) == "PERSONAS CAPACITADAS CONSOLIDADO")
+            .first()
+        )
         if not ds:
-            return None, 0
-        match = re.search(r"\b(20\d{2})\b", ds.name or "")
-        dataset_year = int(match.group(1)) if match else None
-
-        # El servicio dataset_count (backend actual) filtra por la primera
-        # tabla activa — replicamos la misma convención.
+            return 0
         table = Table.query.filter_by(dataset_id=ds.id, active=True).first()
         if not table:
-            return dataset_year, 0
+            return 0
         records = Record.query.filter_by(table_id=table.id).all()
-        count = sum(
+        return sum(
             1 for r in records
-            if r.data and r.data.get("mes") not in (None, "")
+            if r.data and _year_from_fecha(r.data.get("fecha")) == year
         )
-        return dataset_year, count
 
     # ─── 4. Niños sensibilizados ────────────────────────────────────────
     @staticmethod

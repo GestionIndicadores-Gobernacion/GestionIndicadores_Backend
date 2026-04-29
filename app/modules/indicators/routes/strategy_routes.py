@@ -210,12 +210,118 @@ class ComponentGoalsResource(MethodView):
             .all()
         )
 
-        actual_by_indicator: dict[int, float] = defaultdict(float)
+        # Indexamos el avance por (component_id, indicator_id) — un mismo
+        # indicator_id puede estar asociado a varios componentes (p.ej. el 96
+        # "CANTIDAD DE PERSONAS ASISTIDAS" se reusa en Asistencias Técnicas,
+        # Juntas Defensoras y Alianzas Académicas). Si solo agrupásemos por
+        # indicator_id, los reportes de un componente contaminarían el avance
+        # del otro.
+        actual_by_pair: dict[tuple[int, int], float] = defaultdict(float)
         for report in reports:
             for iv in report.indicator_values:
                 if iv.indicator_id in active_indicator_ids:
                     ft = field_type_map.get(iv.indicator_id, 'number')
-                    actual_by_indicator[iv.indicator_id] += _extract_value(iv.value, ft)
+                    actual_by_pair[(report.component_id, iv.indicator_id)] += \
+                        _extract_value(iv.value, ft)
+
+        # ── 6.b/6.c. Overrides desde Datasets ─────────────────────────────────
+        # Helpers compartidos por todos los overrides que cruzan con un dataset.
+        if active_indicator_ids & {76, 69}:
+            import re as _re
+            from app.modules.datasets.models.dataset import Dataset
+            from app.modules.datasets.models.table import Table
+            from app.modules.datasets.models.record import Record
+            from sqlalchemy import func
+
+            def _year_from_fecha(v) -> int | None:
+                """Extrae el año de un valor 'fecha' guardado en el JSON.
+
+                Soporta:
+                  - ISO 'YYYY-MM-DD[ THH:MM:SS]'  ← Timestamp.isoformat().
+                  - 'DD/MM/YYYY' o 'D/M/YYYY'.
+                  - 'YYYY/MM/DD'.
+                  - Cualquier 20XX suelto (sirve para textos como
+                    "22 julio de 2025").
+                """
+                if v is None or v == "":
+                    return None
+                s = str(v).strip()
+                m = _re.match(r'^(\d{4})-\d{1,2}-\d{1,2}', s)
+                if m: return int(m.group(1))
+                m = _re.match(r'^\d{1,2}/\d{1,2}/(\d{4})\b', s)
+                if m: return int(m.group(1))
+                m = _re.match(r'^(\d{4})/\d{1,2}/\d{1,2}', s)
+                if m: return int(m.group(1))
+                m = _re.search(r'\b(20\d{2})\b', s)
+                if m: return int(m.group(1))
+                return None
+
+            def _to_float(v) -> float:
+                if v is None or v == "":
+                    return 0.0
+                try:
+                    return float(v)
+                except (ValueError, TypeError):
+                    return 0.0
+
+            def _dataset_active_table(dataset_name_upper: str):
+                ds = (
+                    Dataset.query
+                    .filter(func.upper(Dataset.name) == dataset_name_upper)
+                    .first()
+                )
+                if not ds:
+                    return None
+                return Table.query.filter_by(dataset_id=ds.id, active=True).first()
+
+            # ── 6.b. Indicador 76: NO DE PERSONAS CAPACITADAS (Promotores PYBA)
+            # Fuente: dataset "PERSONAS CAPACITADAS CONSOLIDADO".
+            # Avance: count de registros del dataset cuya `fecha` pertenezca
+            # al año, SUMADO al avance que ya se haya recolectado desde
+            # reportes manuales del módulo Reportes para ese mismo año.
+            #
+            # Por qué sumar y no sobrescribir: en 2025 el equipo reportaba
+            # manualmente totales mensuales (suma ~3.500 en 16 reportes)
+            # antes de que existiese el dataset; el dataset solo guarda 18
+            # registros rezagados de 2025. Para 2026 ya no se reporta y
+            # todo está en el dataset (456 registros). Si sobrescribimos,
+            # 2025 muestra 18 cuando la realidad capturada es ~3.500.
+            COMPONENT_PROMOTORES = 22
+            if 76 in active_indicator_ids:
+                count = 0
+                table = _dataset_active_table("PERSONAS CAPACITADAS CONSOLIDADO")
+                if table:
+                    records = Record.query.filter_by(table_id=table.id).all()
+                    count = sum(
+                        1 for r in records
+                        if r.data and _year_from_fecha(r.data.get("fecha")) == year
+                    )
+                actual_by_pair[(COMPONENT_PROMOTORES, 76)] += float(count)
+
+            # ── 6.c. Indicador 69: CANTIDAD DE ALIMENTO ENTREGADO (Donatón)
+            # Fuente: dataset "DONATON 2025".
+            # Avance: suma de kg (alimento_perro + alimento_gato). Si ambos
+            # están vacíos en una fila, usa la columna 'total' como fallback.
+            # Filtra por data.fecha == year.
+            COMPONENT_DONATON = 16
+            if 69 in active_indicator_ids:
+                kg_total = 0.0
+                table = _dataset_active_table("DONATON 2025")
+                if table:
+                    records = Record.query.filter_by(table_id=table.id).all()
+                    for r in records:
+                        if not r.data:
+                            continue
+                        if _year_from_fecha(r.data.get("fecha")) != year:
+                            continue
+                        perro = _to_float(r.data.get("alimento_perro"))
+                        gato  = _to_float(r.data.get("alimento_gato"))
+                        if perro == 0.0 and gato == 0.0:
+                            kg_total += _to_float(r.data.get("total"))
+                        else:
+                            kg_total += perro + gato
+                # Suma al avance de reportes (mismo criterio que el ind. 76).
+                actual_by_pair[(COMPONENT_DONATON, 69)] += kg_total
 
         # ── 7. Estrategias ────────────────────────────────────────────────────
         strat_ids = {c.strategy_id for c in components.values()}
@@ -224,7 +330,7 @@ class ComponentGoalsResource(MethodView):
         # ── 8. Agrupar por componente ─────────────────────────────────────────
         indicators_by_comp: dict[int, list] = defaultdict(list)
         for ind in indicators:
-            actual = round(actual_by_indicator.get(ind.id, 0.0), 2)
+            actual = round(actual_by_pair.get((ind.component_id, ind.id), 0.0), 2)
             goal   = target_map.get(ind.id, 0.0)
             pct    = round(actual / goal * 100, 1) if goal > 0 else 0.0
             indicators_by_comp[ind.component_id].append({
