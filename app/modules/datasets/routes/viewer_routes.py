@@ -1,4 +1,5 @@
 from flask import jsonify
+from flask_jwt_extended import jwt_required
 from flask_smorest import Blueprint
 from flask.views import MethodView
 
@@ -15,6 +16,7 @@ blp = Blueprint(
 
 @blp.route("/tables/<int:table_id>/viewer")
 class TableViewerResource(MethodView):
+    decorators = [jwt_required()]
 
     def get(self, table_id):
         table = Table.query.get_or_404(table_id)
