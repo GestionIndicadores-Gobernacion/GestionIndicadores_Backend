@@ -30,7 +30,6 @@ SUMMARY_ROW_LABELS = {
 
 
 import traceback
-print("✅ excel_import_handler cargado correctamente")
 
 
 def _normalize_label(value) -> str:

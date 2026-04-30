@@ -1,3 +1,4 @@
+from flask_jwt_extended import jwt_required
 from flask_smorest import Blueprint
 from flask.views import MethodView
 from flask import request
@@ -20,6 +21,7 @@ blp = Blueprint(
 # =========================
 @blp.route("")
 class RecordListResource(MethodView):
+    decorators = [jwt_required()]
 
     @blp.response(200, RecordSchema(many=True))
     def get(self):
@@ -54,6 +56,7 @@ class RecordListResource(MethodView):
 
 @blp.route("/<int:record_id>")
 class RecordResource(MethodView):
+    decorators = [jwt_required()]
 
     @blp.response(200, RecordSchema)
     def get(self, record_id):

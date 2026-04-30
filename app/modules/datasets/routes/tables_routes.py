@@ -1,3 +1,4 @@
+from flask_jwt_extended import jwt_required
 from flask_smorest import Blueprint, abort
 from flask.views import MethodView
 
@@ -23,6 +24,7 @@ blp = Blueprint(
 # =========================
 @blp.route("")
 class TableListResource(MethodView):
+    decorators = [jwt_required()]
 
     @blp.response(200, TableSchema(many=True))
     def get(self):
@@ -61,6 +63,7 @@ class TableListResource(MethodView):
 # =========================
 @blp.route("/<int:table_id>")
 class TableResource(MethodView):
+    decorators = [jwt_required()]
 
     @blp.response(200, TableSchema)
     def get(self, table_id):
