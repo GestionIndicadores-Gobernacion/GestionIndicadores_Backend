@@ -1,4 +1,5 @@
 from flask import jsonify
+from flask_jwt_extended import jwt_required
 from flask_smorest import Blueprint
 from flask.views import MethodView
 from sqlalchemy import Table
@@ -23,6 +24,7 @@ blp = Blueprint(
 # =========================
 @blp.route("/")
 class DatasetListResource(MethodView):
+    decorators = [jwt_required()]
 
     @blp.response(200, DatasetSchema(many=True))
     def get(self):
@@ -48,6 +50,7 @@ class DatasetListResource(MethodView):
 # =========================
 @blp.route("/<int:dataset_id>")
 class DatasetResource(MethodView):
+    decorators = [jwt_required()]
 
     @blp.response(200, DatasetSchema)
     def get(self, dataset_id):
@@ -81,6 +84,7 @@ class DatasetResource(MethodView):
 # =========================
 @blp.route("/<int:dataset_id>/records")
 class DatasetRecordsResource(MethodView):
+    decorators = [jwt_required()]
 
     def get(self, dataset_id):
         dataset = Dataset.query.get_or_404(dataset_id)
@@ -114,6 +118,7 @@ class DatasetRecordsResource(MethodView):
 # =========================
 @blp.route("/<int:dataset_id>/tables/<int:table_id>/records")
 class DatasetTableRecordsResource(MethodView):
+    decorators = [jwt_required()]
 
     def get(self, dataset_id, table_id):
         table = Table.query.filter_by(
@@ -135,6 +140,7 @@ class DatasetTableRecordsResource(MethodView):
 # =========================
 @blp.route("/tables/<int:table_id>/explore")
 class TableExplorerResource(MethodView):
+    decorators = [jwt_required()]
 
     def get(self, table_id):
 
@@ -168,6 +174,7 @@ class TableExplorerResource(MethodView):
 # =========================
 @blp.route("/<int:dataset_id>/records/by-municipio/<string:municipio>")
 class DatasetRecordsByMunicipioResource(MethodView):
+    decorators = [jwt_required()]
 
     def get(self, dataset_id, municipio):
 
