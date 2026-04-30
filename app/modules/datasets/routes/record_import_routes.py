@@ -1,5 +1,6 @@
 import pandas as pd
 from flask import request
+from flask_jwt_extended import jwt_required
 from flask_smorest import Blueprint
 from flask.views import MethodView
 
@@ -41,6 +42,7 @@ def map_excel_row_to_record(table, row: dict) -> dict:
 
 @blp.route("/import")
 class RecordImportResource(MethodView):
+    decorators = [jwt_required()]
 
     @blp.response(200)
     def post(self):
