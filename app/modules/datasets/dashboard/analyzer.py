@@ -3,6 +3,15 @@ from .orchestrator import orchestrate
 
 def detect_dataset_type(fields) -> str:
     names = {f.name.lower() for f in fields}
+    # Denuncias: caso + denunciante + motivo de la denuncia (texto largo).
+    # Se evalúa primero porque el Excel puede traer también "municipio" y
+    # "fecha", que entrarían en colisión con otros tipos.
+    if (
+        any("numero_de_caso" in n or n == "numero_de_caso" for n in names)
+        and any("denunciante" in n for n in names)
+        and any("motivo" in n for n in names)
+    ):
+        return "denuncias"
     # Donatón: hay alimento perro/gato + municipio + total (kg recogidos).
     # Detectado antes de personas_capacitadas porque también tiene
     # "municipio" pero no entra en colisión por los demás campos.
