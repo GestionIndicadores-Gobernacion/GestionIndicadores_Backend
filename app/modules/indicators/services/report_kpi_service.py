@@ -61,7 +61,7 @@ class ReportKpiService:
         return {
             "year": year,
             "asistencias_tecnicas": ReportKpiService._asistencias_tecnicas(reports),
-            "denuncias_reportadas": ReportKpiService._denuncias_reportadas(reports),
+            "denuncias_reportadas": ReportKpiService._denuncias_reportadas(year, reports),
             # NOTA: `personas_capacitadas` mezcla reportes (sí filtrados por
             # rango) + un dataset externo anual sin granularidad por fecha.
             # La parte del dataset se mantiene anclada al año; documentado en
@@ -113,7 +113,7 @@ class ReportKpiService:
                 "location": location,
                 "total_reports": len(reps),
                 "asistencias_tecnicas": ReportKpiService._asistencias_tecnicas(reps),
-                "denuncias_reportadas": ReportKpiService._denuncias_reportadas(reps),
+                "denuncias_reportadas": ReportKpiService._denuncias_reportadas(year, reps),
                 "animales_esterilizados": ReportKpiService._animales_esterilizados(reps),
                 "refugios_impactados": ReportKpiService._refugios_impactados(reps),
                 "ninos_sensibilizados": ReportKpiService._ninos_sensibilizados(reps),
@@ -182,17 +182,105 @@ class ReportKpiService:
 
     # ─── 2. Denuncias reportadas ────────────────────────────────────────
     @staticmethod
-    def _denuncias_reportadas(reports: Iterable[Report]) -> int:
-        total = 0.0
+    def _denuncias_reportadas(year: int, reports: Iterable[Report]) -> int:
+        """Avance del KPI 'Denuncias reportadas'.
+
+        Mismo patrón que `_personas_capacitadas`: la fuente real ahora es
+        el dataset "REPORTE DENUNCIAS" (registros con `data.fecha`).
+
+        - **2026 en adelante**: solo dataset, filtrado por año.
+        - **Años anteriores**: reportes manuales (indicador 137) +
+          dataset, para no perder valores históricos cargados antes de
+          que existiera el dataset.
+        """
+        from_dataset = ReportKpiService._dataset_denuncias_count(year)
+
+        if year >= 2026:
+            return from_dataset
+
+        from_reports = 0.0
         for r in reports:
             iv = ReportKpiService._iv_for(r, ID_DENUNCIAS_REPORTADAS)
             if iv is None or iv.value is None:
                 continue
             try:
-                total += float(iv.value)
+                from_reports += float(iv.value)
             except (ValueError, TypeError):
                 pass
-        return int(total)
+        return int(from_reports + from_dataset)
+
+    @staticmethod
+    def _dataset_denuncias_count(year: int) -> int:
+        """Cuenta registros del dataset "REPORTE DENUNCIAS" cuyo año en
+        cualquier campo de fecha disponible (Fecha, Fecha del presunto
+        maltrato, Fecha del diligenciamiento) coincida con `year`.
+
+        Mismo parser que `_year_from_fecha` de strategy_routes para que
+        Dashboard y Cumplimiento muestren el mismo número.
+        """
+        import re
+        from app.modules.datasets.models.dataset import Dataset
+        from app.modules.datasets.models.table import Table
+        from app.modules.datasets.models.record import Record
+        from sqlalchemy import func
+
+        def _year_from_value(v) -> int | None:
+            if v is None or v == "":
+                return None
+            s = str(v).strip()
+            m = re.match(r'^(\d{4})-\d{1,2}-\d{1,2}', s)
+            if m: return int(m.group(1))
+            m = re.match(r'^\d{1,2}/\d{1,2}/(\d{4})\b', s)
+            if m: return int(m.group(1))
+            m = re.match(r'^(\d{4})/\d{1,2}/\d{1,2}', s)
+            if m: return int(m.group(1))
+            m = re.search(r'\b(20\d{2})\b', s)
+            if m: return int(m.group(1))
+            return None
+
+        def _record_year(data: dict) -> int | None:
+            # Preferir campo "Fecha" (timestamp del registro). Fallback a
+            # cualquier otro campo cuyo nombre normalizado contenga 'fecha'.
+            preferred = data.get("fecha")
+            y = _year_from_value(preferred)
+            if y is not None:
+                return y
+            for k, v in data.items():
+                if "fecha" in k.lower():
+                    y = _year_from_value(v)
+                    if y is not None:
+                        return y
+            return None
+
+        ds = (
+            Dataset.query
+            .filter(func.upper(Dataset.name) == "REPORTE DENUNCIAS")
+            .first()
+        )
+        if not ds:
+            return 0
+        # El analyzer marca como `denuncias` solo la hoja principal; aquí
+        # iteramos todas las tablas activas y nos quedamos con la que tenga
+        # el campo "numero_de_caso" para no contar hojas auxiliares.
+        tables = Table.query.filter_by(dataset_id=ds.id, active=True).all()
+        if not tables:
+            return 0
+
+        from app.modules.datasets.models.field import Field
+        target_table_ids = []
+        for t in tables:
+            field_names = {f.name for f in Field.query.filter_by(table_id=t.id).all()}
+            if any("numero_de_caso" in n for n in field_names):
+                target_table_ids.append(t.id)
+        if not target_table_ids:
+            target_table_ids = [t.id for t in tables]
+
+        total = 0
+        for tid in target_table_ids:
+            for r in Record.query.filter_by(table_id=tid).all():
+                if r.data and _record_year(r.data) == year:
+                    total += 1
+        return total
 
     # ─── 3. Personas capacitadas ────────────────────────────────────────
     @staticmethod
