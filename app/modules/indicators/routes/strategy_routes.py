@@ -226,7 +226,7 @@ class ComponentGoalsResource(MethodView):
 
         # ── 6.b/6.c. Overrides desde Datasets ─────────────────────────────────
         # Helpers compartidos por todos los overrides que cruzan con un dataset.
-        if active_indicator_ids & {76, 69}:
+        if active_indicator_ids & {76, 69, 137}:
             import re as _re
             from app.modules.datasets.models.dataset import Dataset
             from app.modules.datasets.models.table import Table
@@ -322,6 +322,41 @@ class ComponentGoalsResource(MethodView):
                             kg_total += perro + gato
                 # Suma al avance de reportes (mismo criterio que el ind. 76).
                 actual_by_pair[(COMPONENT_DONATON, 69)] += kg_total
+
+            # ── 6.d. Indicador 137: NO DE CASOS REPORTADOS (Denuncias)
+            # Fuente: dataset "REPORTE DENUNCIAS".
+            # Avance: count de registros cuya `data.fecha` (o cualquier
+            # otro campo con 'fecha' en su nombre) pertenezca al año.
+            # Suma al avance de reportes manuales del indicador 137 para
+            # no perder valores históricos cargados antes del dataset.
+            COMPONENT_DENUNCIAS = 31
+            if 137 in active_indicator_ids:
+                count = 0
+                table = _dataset_active_table("REPORTE DENUNCIAS")
+                if table:
+                    from app.modules.datasets.models.field import Field as _F
+                    field_names = {f.name for f in _F.query.filter_by(table_id=table.id).all()}
+                    # Solo contamos si la tabla activa luce como la hoja
+                    # principal (tiene numero_de_caso). Si no, evitamos
+                    # contar hojas auxiliares (AutoCrat) que importes
+                    # antiguos hayan dejado.
+                    if any("numero_de_caso" in n for n in field_names):
+                        records = Record.query.filter_by(table_id=table.id).all()
+                        for r in records:
+                            if not r.data:
+                                continue
+                            y = _year_from_fecha(r.data.get("fecha"))
+                            if y is None:
+                                # Fallback: revisar cualquier campo cuyo nombre
+                                # contenga 'fecha'.
+                                for k, v in r.data.items():
+                                    if "fecha" in k.lower():
+                                        y = _year_from_fecha(v)
+                                        if y is not None:
+                                            break
+                            if y == year:
+                                count += 1
+                actual_by_pair[(COMPONENT_DENUNCIAS, 137)] += float(count)
 
         # ── 7. Estrategias ────────────────────────────────────────────────────
         strat_ids = {c.strategy_id for c in components.values()}
