@@ -68,10 +68,11 @@ def client(app):
 
 
 @pytest.fixture(autouse=True)
-def _isolate_jwt_blocklist():
+def _isolate_jwt_blocklist(app):
     """
-    Limpia el set in-memory del blocklist JWT entre tests para que un
-    token revocado en un test no afecte al siguiente.
+    Limpia el blocklist JWT entre tests para que un token revocado en
+    un test no afecte al siguiente. Depende de `app` porque ahora la
+    blocklist vive en la BD y requiere app_context activo.
     """
     from app.modules.indicators.services.token_blocklist import clear_all
     clear_all()
