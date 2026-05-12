@@ -2,5 +2,6 @@ from app.shared.models.role import Role
 from app.shared.models.user import User
 from app.shared.models.user_component import UserComponent
 from app.shared.models.audit_log import AuditLog
+from app.shared.models.revoked_token import RevokedToken
 
-__all__ = ["Role", "User", "UserComponent", "AuditLog"]
+__all__ = ["Role", "User", "UserComponent", "AuditLog", "RevokedToken"]
