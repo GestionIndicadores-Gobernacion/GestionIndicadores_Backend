@@ -1,3 +1,4 @@
+from flask import jsonify
 from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -18,6 +19,30 @@ def _is_admin():
     from app.shared.models.user import User
     user = User.query.get(get_jwt_identity())
     return user and user.role and user.role.name == "admin"
+
+@blp.route("/summary")
+class ComponentSummaryResource(MethodView):
+    """
+    Listado ultra-liviano: solo `id` y `name`.
+
+    Reemplazo de `/components/` cuando el cliente solo necesita poblar
+    un mapa id→name (reports-list, dashboard, etc.). Evita los lazy
+    loads de `objectives`, `mga_activities`, `indicators(+targets)` y
+    los selectin de `public_policies` / `user_assignments` que dispara
+    `ComponentSchema` aunque no se usen.
+    """
+
+    @jwt_required()
+    def get(self):
+        from app.modules.indicators.models.Component.component import Component
+        rows = (
+            Component.query
+            .with_entities(Component.id, Component.name)
+            .order_by(Component.name)
+            .all()
+        )
+        return jsonify([{"id": id_, "name": name} for id_, name in rows]), 200
+
 
 @blp.route("/")
 class ComponentListResource(MethodView):
