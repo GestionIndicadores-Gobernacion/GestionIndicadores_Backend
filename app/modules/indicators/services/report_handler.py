@@ -173,6 +173,28 @@ class ReportHandler:
         ).all()
 
     @staticmethod
+    def list_for_all():
+        """
+        Listado plano para `/reports/all` (tabla de reports + dashboard).
+
+        Eager-load mínimo: solo `indicator_values + indicator` (lo que el
+        mapa del dashboard agrupa). NO carga `component`, `strategy` ni
+        `user` porque la respuesta lite no los serializa — y al evitarlo
+        SQLAlchemy tampoco dispara los selectin de `Component.public_policies`
+        y `Component.user_assignments` por cada componente. `indicator.targets`
+        queda fuera del schema → no se accede → no se lazy-loadea (N+1 eliminado).
+        """
+        return (
+            Report.query
+            .options(
+                selectinload(Report.indicator_values)
+                    .joinedload(ReportIndicatorValue.indicator)
+            )
+            .order_by(Report.report_date.desc())
+            .all()
+        )
+
+    @staticmethod
     def get_by_id(report_id):
         return (
             Report.query
