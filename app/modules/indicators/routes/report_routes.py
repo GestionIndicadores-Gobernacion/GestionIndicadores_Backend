@@ -4,7 +4,7 @@ from flask_smorest import Blueprint, abort
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.modules.indicators.models.Report.report import Report
-from app.modules.indicators.schemas.report_schema import ReportSchema
+from app.modules.indicators.schemas.report_schema import ReportSchema, ReportListSchema
 from app.shared.models.user import User
 
 from app.modules.indicators.services.report_handler import ReportHandler
@@ -149,15 +149,16 @@ class ReportList(MethodView):
 class ReportListAll(MethodView):
 
     @jwt_required()
-    @blp.response(200, ReportSchema(many=True))
+    @blp.response(200, ReportListSchema(many=True))
     def get(self):
-        # Lectura global usada por el dashboard para gráficas agregadas.
-        # Abierto a todos los roles autenticados: el dashboard es el único
-        # consumidor "público" y las restricciones de creación/edición/borrado
-        # viven en los endpoints individuales (POST/PUT/DELETE de /reports).
-        # El acceso al listado UI individual ya está restringido por
-        # viewerGuard en el frontend.
-        return ReportHandler.get_all(is_admin=True)
+        # Lectura global usada por el dashboard para gráficas agregadas
+        # y por reports-list para poblar la tabla. Usa `ReportListSchema`
+        # (sin nested component/strategy/user, sin indicator.targets ni
+        # indicator.config) para evitar payload pesado y N+1. El detalle
+        # `/reports/:id` y el listado paginado `/reports/` siguen con el
+        # schema completo (`ReportSchema`) para no afectar exports ni vistas
+        # detalladas.
+        return ReportHandler.list_for_all()
 # =========================================================
 # DETAIL
 # =========================================================
