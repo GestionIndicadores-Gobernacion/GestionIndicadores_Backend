@@ -47,6 +47,28 @@ class StrategyListResource(MethodView):
 from flask import request, jsonify
 
 
+@blp.route("/summary")
+class StrategySummaryResource(MethodView):
+    """
+    Listado ultra-liviano: solo `id` y `name`.
+
+    Pensado para llenar mapas/labels en pantallas que NO necesitan metrics,
+    annual_goals ni timestamps. Evita las N+1 que dispara `StrategySchema`
+    cuando dumpa esas relaciones lazy.
+    """
+
+    @jwt_required()
+    def get(self):
+        from app.modules.indicators.models.Strategy.strategy import Strategy
+        rows = (
+            Strategy.query
+            .with_entities(Strategy.id, Strategy.name)
+            .order_by(Strategy.name)
+            .all()
+        )
+        return jsonify([{"id": id_, "name": name} for id_, name in rows]), 200
+
+
 @blp.route("/component-goals")
 class ComponentGoalsResource(MethodView):
     """
