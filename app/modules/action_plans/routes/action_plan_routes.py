@@ -305,7 +305,9 @@ class ActionPlanUserDashboard(MethodView):
 
     @jwt_required()
     def get(self):
-        from app.modules.action_plans.models.action_plan import ActionPlanActivity, ActionPlanObjective, ActionPlan
+        from app.modules.action_plans.models.action_plan import (
+            ActionPlanActivity, ActionPlanObjective, ActionPlan, activity_is_overdue,
+        )
         from app.shared.models.user import User
         from sqlalchemy.orm import selectinload
         from datetime import date
@@ -410,8 +412,8 @@ class ActionPlanUserDashboard(MethodView):
 
             completed        = [a for a in activities if a["evidence_url"]]
             pending_evidence = [a for a in activities if a["reported_at"] and not a["evidence_url"]]
-            running          = [a for a in activities if not a["reported_at"] and not a["evidence_url"] and date.today() <= date.fromisoformat(a["delivery_date"])]
-            overdue          = [a for a in activities if not a["reported_at"] and not a["evidence_url"] and date.today() > date.fromisoformat(a["delivery_date"])]
+            running          = [a for a in activities if not a["reported_at"] and not a["evidence_url"] and not activity_is_overdue(date.fromisoformat(a["delivery_date"]))]
+            overdue          = [a for a in activities if not a["reported_at"] and not a["evidence_url"] and activity_is_overdue(date.fromisoformat(a["delivery_date"]))]
 
             # Actividades que generan reporte pero no tienen reporte vinculado
             without_report = [
