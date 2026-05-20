@@ -1,5 +1,20 @@
 from app.core.extensions import db
-from datetime import datetime, date
+from datetime import datetime, date, time, timedelta
+
+
+# ── Ventana de gracia para vencimiento de actividades ────────────────────
+# La fecha límite se interpreta como el fin del día (23:59:59) hora local
+# del servidor. La actividad se considera "vencida" (Pendiente) solo después
+# de que hayan pasado GRACE_HOURS desde ese instante.
+ACTIVITY_GRACE_HOURS = 24
+
+
+def activity_is_overdue(delivery_date: date, now: datetime | None = None) -> bool:
+    """Fuente única de verdad: True si ya pasó la fecha límite + 24h de gracia."""
+    if now is None:
+        now = datetime.now()
+    deadline = datetime.combine(delivery_date, time(23, 59, 59))
+    return now > deadline + timedelta(hours=ACTIVITY_GRACE_HOURS)
 
 
 class ActionPlanResponsibleUser(db.Model):
@@ -189,7 +204,7 @@ class ActionPlanActivity(db.Model):
             return "Realizado"
         if self.reported_at:
             return "Pendiente de Evidencia"
-        if date.today() < self.delivery_date:
+        if not activity_is_overdue(self.delivery_date):
             return "En Ejecución"
         return "Pendiente"
 
@@ -203,8 +218,8 @@ class ActionPlanActivity(db.Model):
         - Con evidence_url (Realizado) → 5
         - Con evidence_url + generates_report + reporte vinculado → 7
         - Sin evidence_url + reported_at (Pendiente de Evidencia) → None (sin score aún)
-        - Sin evidence_url + sin reported_at + fecha futura (En Ejecución) → None
-        - Sin evidence_url + sin reported_at + fecha pasada (Pendiente vencida) → -1
+        - Sin evidence_url + sin reported_at + dentro de la ventana de gracia (En Ejecución) → None
+        - Sin evidence_url + sin reported_at + vencida tras la gracia (Pendiente) → -1
         """
         if self.evidence_url:
             base = 5
@@ -218,8 +233,8 @@ class ActionPlanActivity(db.Model):
         if self.reported_at:
             return None   # Pendiente de Evidencia — sin puntaje hasta tener evidencia
 
-        if date.today() <= self.delivery_date:
-            return None   # En Ejecución — no puntuar
+        if not activity_is_overdue(self.delivery_date):
+            return None   # En Ejecución (incluye ventana de gracia de 24h)
         return -1         # Pendiente vencida
 
 class ActionPlanSupportStaff(db.Model):
