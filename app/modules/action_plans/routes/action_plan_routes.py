@@ -13,6 +13,18 @@ from app.modules.action_plans.schemas.action_plan_schema import (
     ActionPlanActivityDetailSchema,
 )
 from app.modules.action_plans.services.action_plan_handler import ActionPlanHandler
+from app.utils.permissions import dual_required
+from app.shared.permissions import (
+    PERM_ACTION_PLANS_CREATE,
+    PERM_ACTION_PLANS_READ,
+    PERM_ACTION_PLANS_UPDATE_OWN,
+    PERM_ACTION_PLANS_UPDATE_ANY,
+    PERM_ACTION_PLANS_DELETE_OWN,
+    PERM_ACTION_PLANS_DELETE_ANY,
+    PERM_ACTION_PLANS_REPORT_ACTIVITY,
+    PERM_ACTION_PLANS_ADD_EVIDENCE,
+    PERM_ACTION_PLANS_DASHBOARD,
+)
 
 blp = Blueprint(
     "action_plans", __name__,
@@ -112,6 +124,10 @@ def _can_report_activity(plan) -> bool:
 class ActionPlanList(MethodView):
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_READ,),
+    )
     def get(self):
         """
         GET /action-plans/[?limit=&offset=&strategy_id=&component_id=&month=&year=]
@@ -145,6 +161,10 @@ class ActionPlanList(MethodView):
     @blp.arguments(ActionPlanCreateSchema)
     @blp.response(201, ActionPlanResponseSchema)
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_CREATE,),
+    )
     def post(self, data):
         user = _get_current_user()
         if not user or not user.role or user.role.name == "viewer":
@@ -168,6 +188,10 @@ class ActionPlanDetail(MethodView):
 
     @blp.response(200, ActionPlanResponseSchema)
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_READ,),
+    )
     def get(self, plan_id):
         plan = ActionPlanHandler.get_by_id(plan_id)
         if not plan:
@@ -175,6 +199,10 @@ class ActionPlanDetail(MethodView):
         return plan
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_UPDATE_OWN, PERM_ACTION_PLANS_UPDATE_ANY),
+    )
     def put(self, plan_id):          # ← NUEVO
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
@@ -191,6 +219,10 @@ class ActionPlanDetail(MethodView):
         return jsonify(ActionPlanResponseSchema().dump(updated_plan)), 200
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_DELETE_OWN, PERM_ACTION_PLANS_DELETE_ANY),
+    )
     def delete(self, plan_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
@@ -210,6 +242,10 @@ class ActionPlanActivityReport(MethodView):
 
     @blp.arguments(ActionPlanActivityReportSchema)
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_REPORT_ACTIVITY,),
+    )
     def put(self, data, activity_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
@@ -233,6 +269,10 @@ class ActionPlanActivityEdit(MethodView):
 
     @blp.arguments(ActionPlanActivityEditSchema)
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_UPDATE_OWN, PERM_ACTION_PLANS_UPDATE_ANY),
+    )
     def put(self, data, activity_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
@@ -255,6 +295,10 @@ class ActionPlanActivityEdit(MethodView):
 class ActionPlanActivityDetail(MethodView):
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_DELETE_OWN, PERM_ACTION_PLANS_DELETE_ANY),
+    )
     def delete(self, activity_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
@@ -282,6 +326,10 @@ class ActionPlanActivityEvidence(MethodView):
 
     @blp.arguments(ActionPlanActivityAddEvidenceSchema)
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_ADD_EVIDENCE,),
+    )
     def put(self, data, activity_id):
         if _is_viewer():
             return jsonify({"error": "Sin permiso"}), 403
@@ -304,6 +352,10 @@ class ActionPlanActivityEvidence(MethodView):
 class ActionPlanUserDashboard(MethodView):
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor"),
+        perms=(PERM_ACTION_PLANS_DASHBOARD,),
+    )
     def get(self):
         from app.modules.action_plans.models.action_plan import (
             ActionPlanActivity, ActionPlanObjective, ActionPlan, activity_is_overdue,

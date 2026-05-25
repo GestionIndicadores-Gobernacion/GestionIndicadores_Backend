@@ -23,3 +23,5 @@ Thumbs.db
 
 # Env files
 .env
+
+testsprite_tests\tmp\config.json

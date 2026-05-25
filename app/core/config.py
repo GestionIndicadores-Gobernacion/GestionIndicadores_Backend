@@ -34,6 +34,14 @@ class Config:
     # (CORS, SSL, engine options). Solo `TestConfig` la pone en True.
     TESTING = False
 
+    # ── RBAC Bloque 12: shadow mode ─────────────────────────────────────
+    # Cuando True, `dual_required` compara la decisión por rol (legacy
+    # autoritativa) con la decisión por permisos (sombra) y loguea cada
+    # divergencia. Default: False en producción para evitar ruido en logs.
+    # Activar en staging (`PERM_SHADOW_MODE=true` en env) para validar
+    # paridad antes de promover el sistema permisos como autoritativo.
+    PERM_SHADOW_MODE = os.getenv("PERM_SHADOW_MODE", "false").lower() == "true"
+
 
 class TestConfig(Config):
     """
@@ -59,3 +67,8 @@ class TestConfig(Config):
 
     # Propagar excepciones para ver tracebacks reales en los tests.
     PROPAGATE_EXCEPTIONS = True
+
+    # Rate limiter deshabilitado en tests — el endpoint /auth/login tiene
+    # `8/min; 30/hour` y la suite hace decenas de logins. Sin esto, los
+    # tests posteriores caen con 429.
+    RATELIMIT_ENABLED = False

@@ -1,0 +1,16 @@
+[
+  {
+    "projectId": "9cb197ca-4202-467a-afaf-5902afe63fba",
+    "testId": "f0b5cc84-3530-4be6-a5ef-222838d5d31d",
+    "userId": "64b8d4c8-5041-7008-b8f8-5efb7de60a54",
+    "title": "TC001-post auth login with valid credentials",
+    "description": "Test the /auth/login endpoint by submitting a valid email and password to verify that access and refresh tokens are returned with correct claims including permissions and role.",
+    "code": "import requests\nimport jwt\nimport time\n\n\ndef test_post_auth_login_valid_credentials():\n    base_url = \"http://localhost:5000\"\n    login_url = f\"{base_url}/auth/login\"\n    email = \"admin@gobernacion.gov.co\"\n    password = \"Gob2025*\"\n    timeout = 30\n\n    payload = {\n        \"email\": email,\n        \"password\": password\n    }\n\n    try:\n        response = requests.post(login_url, json=payload, timeout=timeout)\n        assert response.status_code == 200, f\"Expected status 200, got {response.status_code}\"\n\n        data = response.json()\n        assert \"access_token\" in data, \"access_token not in response\"\n        assert \"refresh_token\" in data, \"refresh_token not in response\"\n\n        access_token = data[\"access_token\"]\n        refresh_token = data[\"refresh_token\"]\n\n        # Decode without verification since the secret/key is not known here, just check claims presence\n        access_claims = jwt.decode(access_token, options={\"verify_signature\": False})\n        refresh_claims = jwt.decode(refresh_token, options={\"verify_signature\": False})\n\n        # Check required claims in access token (permissions, role)\n        assert \"permissions\" in access_claims, \"permissions claim missing in access_token\"\n        # permissions may be empty list in shadow mode, still must exist\n        assert isinstance(access_claims[\"permissions\"], (list, tuple)), \"permissions claim is not a list or tuple\"\n\n        assert \"role\" in access_claims or \"role_id\" in access_claims, \"role or role_id claim missing in access_token\"\n\n        # Similarly check refresh token claims contains role or role_id (commonly minimal claims present)\n        assert \"role\" in refresh_claims or \"role_id\" in refresh_claims, \"role or role_id missing in refresh_token claims\"\n\n    except requests.exceptions.RequestException as e:\n        assert False, f\"Request to {login_url} failed: {e}\"\n\n\ntest_post_auth_login_valid_credentials()",
+    "testStatus": "FAILED",
+    "testError": "Traceback (most recent call last):\n  File \"/var/task/handler.py\", line 258, in run_with_retry\n    exec(code, exec_env)\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'jwt'\n",
+    "testType": "BACKEND",
+    "createFrom": "mcp",
+    "created": "2026-05-23T17:47:35.004Z",
+    "modified": "2026-05-23T17:47:43.864Z"
+  }
+]

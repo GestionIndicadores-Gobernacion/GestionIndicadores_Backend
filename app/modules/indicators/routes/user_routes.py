@@ -7,8 +7,12 @@ from app.modules.indicators.services.user_handler import UserHandler
 from app.shared.schemas.user_schema import UserSchema
 from app.shared.models.user import User
 from app.shared.models.user_component import UserComponent
-from app.utils.permissions import role_required
+from app.utils.permissions import role_required, dual_required
 from app.utils.pagination import get_pagination_params, paginate_query, envelope
+from app.shared.permissions import (
+    PERM_USERS_MANAGE,
+    PERM_USERS_ASSIGN_COMPONENTS,
+)
 
 
 def _basic_user_dump(users):
@@ -44,6 +48,30 @@ class UserMeResource(MethodView):
         if not user:
             return {"message": "User not found"}, 404
         return user
+
+
+@blp.route("/me/permissions")
+class UserMePermissionsResource(MethodView):
+    """Endpoint dedicado de permisos efectivos del usuario activo.
+
+    Aditivo: el cliente ya puede leerlos del JWT o de /users/me. Útil
+    para refrescar el set tras un cambio admin sin esperar a que el
+    JWT expire y se reemita.
+    """
+
+    @jwt_required()
+    def get(self):
+        from app.utils.permissions import current_user, current_user_permissions
+        user = current_user()
+        if not user:
+            return {"message": "User not found"}, 404
+        return jsonify({
+            "role": {
+                "id": user.role.id if user.role else None,
+                "name": user.role.name if user.role else None,
+            },
+            "permissions": sorted(current_user_permissions()),
+        }), 200
     
 @blp.route("/")
 class UserListResource(MethodView):
@@ -93,7 +121,7 @@ class UserListResource(MethodView):
         return jsonify(envelope(dump(items), total, limit, offset)), 200
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_MANAGE,))
     @blp.arguments(UserSchema)
     @blp.response(201, UserSchema)
     def post(self, data):
@@ -126,7 +154,7 @@ class UserResource(MethodView):
         return user
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_MANAGE,))
     @blp.arguments(UserSchema(partial=True))
     @blp.response(200, UserSchema)
     def put(self, data, user_id):
@@ -137,7 +165,7 @@ class UserResource(MethodView):
         return UserHandler.update(user, data)
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_MANAGE,))
     @blp.response(204)
     def delete(self, user_id):
         user = UserHandler.get_by_id(user_id)
@@ -152,7 +180,7 @@ class UserResource(MethodView):
 class UserComponentResource(MethodView):
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_ASSIGN_COMPONENTS,))
     @blp.response(201)
     def post(self, user_id, component_id):
         """Asignar un componente a un usuario."""
@@ -166,7 +194,7 @@ class UserComponentResource(MethodView):
         return {"message": "Component assigned", "user_id": user_id, "component_id": component_id}
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_ASSIGN_COMPONENTS,))
     @blp.response(204)
     def delete(self, user_id, component_id):
         """Quitar un componente de un usuario."""

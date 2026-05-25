@@ -1,0 +1,30 @@
+{"timestamp":"2026-05-23T17:47:29.123Z","level":"debug","message":"Generate code and execute params","context":{"projectName":"GestionIndicadores_Backend","projectPath":"C:/Users/usuario/Desktop/Programacion/IndicadoresPYBA/Software/GestionIndicadores_Backend","testIds":[],"serverMode":"development"}}
+{"timestamp":"2026-05-23T17:47:29.140Z","level":"info","message":"Attempting to start server (attempt 1/3)"}
+{"timestamp":"2026-05-23T17:47:29.142Z","level":"info","message":"HTTP server started successfully on port 61751"}
+{"timestamp":"2026-05-23T17:47:29.973Z","level":"info","message":"[TunnelClient] Tunnel client started","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.046Z","level":"debug","message":"[TunnelClient] Control message: {\"type\":\"Ack\"}","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:29.972Z","level":"info","message":"[TunnelClient] Control websocket connected","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:29.973Z","level":"info","message":"Verifying tunnel connectivity..."}
+{"timestamp":"2026-05-23T17:47:30.312Z","level":"debug","message":"[TunnelClient] Control message: {\"type\":\"RequestTunnel\",\"payload\":{\"tunnel_connection_id\":\"tunnel_k9DESBl0aMv4OCWl\",\"target_host\":\"localhost\",\"target_port\":5000}}","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.312Z","level":"debug","message":"[TunnelClient] RequestTunnel received: tunnel_k9DESBl0aMv4OCWl","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.544Z","level":"info","message":"[TunnelClient] Tunnel tcp connected: tunnel_k9DESBl0aMv4OCWl","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.313Z","level":"info","message":"[TunnelClient] Starting tunnel runtime on demand: tunnel_k9DESBl0aMv4OCWl","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:29.973Z","level":"info","message":"Tunnel probe attempt 1/2 through proxy.tun.testsprite.com:9090 to http://localhost:5000..."}
+{"timestamp":"2026-05-23T17:47:29.973Z","level":"info","message":"proxy: [REDACTED]proxy.tun.testsprite.com:9090"}
+{"timestamp":"2026-05-23T17:47:30.691Z","level":"debug","message":"[TunnelClient] Stream open: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.701Z","level":"debug","message":"[TunnelClient] Target end: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.691Z","level":"info","message":"[TunnelClient] Open request 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2): localhost:5000","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.702Z","level":"debug","message":"[TunnelClient] Half-close tunnel write: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.874Z","level":"info","message":"Tunnel connectivity verified."}
+{"timestamp":"2026-05-23T17:47:30.876Z","level":"debug","message":"[TunnelClient] Half-close target write: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.874Z","level":"info","message":"Tunnel probe succeeded on attempt 1: status=404"}
+{"timestamp":"2026-05-23T17:47:30.692Z","level":"debug","message":"[TunnelClient] Target connected: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.702Z","level":"debug","message":"[TunnelClient] Copy complete target->tunnel: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.876Z","level":"debug","message":"[TunnelClient] Tunnel stream close: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.692Z","level":"debug","message":"[TunnelClient] Proxy copy start: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.702Z","level":"debug","message":"[TunnelClient] Target close: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.876Z","level":"debug","message":"[TunnelClient] Tunnel stream end: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.876Z","level":"debug","message":"[TunnelClient] Copy complete tunnel->target: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:30.877Z","level":"debug","message":"[TunnelClient] Stream proxy finished: 78fda22a-5f47-48e2-91c9-3b871fa75563 (proxy_4APD2g0ojB39fIkf, tunnel_k9DESBl0aMv4OCWl, stream 2)","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:40.059Z","level":"debug","message":"[TunnelClient] Control message: {\"type\":\"Ack\"}","context":{"tunnelVersion":"2"}}
+{"timestamp":"2026-05-23T17:47:40.481Z","level":"info","message":"Test execution completed","context":{"projectId":"9cb197ca-4202-467a-afaf-5902afe63fba","totalTests":1}}

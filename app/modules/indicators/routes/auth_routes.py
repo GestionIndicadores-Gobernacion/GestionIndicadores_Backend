@@ -77,7 +77,13 @@ class RefreshResource(MethodView):
         payload = get_jwt()
         user_id_str = str(get_jwt_identity())
 
-        user = User.query.get(int(user_id_str))
+        # Refresh emite también el claim `permissions` para mantener el
+        # contrato del Bloque 6. Eager-load del rol y permisos en a lo sumo
+        # 3 SELECTs (mismo helper que login).
+        from app.modules.indicators.services.auth_handler import _eager_user_query
+        from app.utils.permissions import get_effective_permissions
+
+        user = _eager_user_query().filter(User.id == int(user_id_str)).first()
         if not user:
             return {"msg": "Usuario no encontrado.", "error": "user_not_found"}, 401
         if not user.is_active:
@@ -97,6 +103,7 @@ class RefreshResource(MethodView):
         extra_claims = {
             "role_id": user.role_id,
             "role": user.role.name if user.role else None,
+            "permissions": sorted(get_effective_permissions(user)),
         }
         access_token = create_access_token(
             identity=user_id_str,
