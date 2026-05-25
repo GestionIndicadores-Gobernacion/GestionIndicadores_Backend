@@ -15,10 +15,8 @@ blp = Blueprint(
     description="Strategy management"
 )
 
-def _is_admin():
-    from app.shared.models.user import User
-    user = User.query.get(get_jwt_identity())
-    return user and user.role and user.role.name == "admin"
+from app.utils.permissions import is_admin as _is_admin, dual_required  # noqa: E402
+from app.shared.permissions import PERM_STRATEGIES_MANAGE  # noqa: E402
 
 
 @blp.route("/")
@@ -30,13 +28,10 @@ class StrategyListResource(MethodView):
         return StrategyHandler.get_all()
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_STRATEGIES_MANAGE,))
     @blp.arguments(StrategySchema)
     @blp.response(201, StrategySchema)
     def post(self, data):
-        
-        if not _is_admin():
-            abort(403, message="Sin permiso")  
-        
         strategy, errors = StrategyHandler.create(data)
         if errors:
             return {"errors": errors}, 400
@@ -464,25 +459,19 @@ class StrategyResource(MethodView):
         return strategy
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_STRATEGIES_MANAGE,))
     @blp.arguments(StrategySchema)
     @blp.response(200, StrategySchema)
     def put(self, data, strategy_id):
-        
-        if not _is_admin():
-            abort(403, message="Sin permiso")  
-        
         strategy = StrategyHandler.get_by_id(strategy_id)
         if not strategy:
             return {"message": "Strategy not found"}, 404
         return StrategyHandler.update(strategy, data)
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_STRATEGIES_MANAGE,))
     @blp.response(204)
     def delete(self, strategy_id):
-        
-        if not _is_admin():
-            abort(403, message="Sin permiso")  
-        
         strategy = StrategyHandler.get_by_id(strategy_id)
         if not strategy:
             return {"message": "Strategy not found"}, 404

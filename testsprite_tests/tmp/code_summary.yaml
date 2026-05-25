@@ -1,0 +1,522 @@
+version: "2"
+type: backend
+tech_stack:
+  - Python 3.11
+  - Flask 3.1
+  - Flask-Smorest 0.46 (OpenAPI / MethodView blueprints)
+  - Flask-SQLAlchemy 3.1 + SQLAlchemy 2.0
+  - Flask-Migrate (Alembic)
+  - Flask-JWT-Extended 4.7 (JWT access + refresh tokens, blocklist)
+  - Flask-Bcrypt (password hashing)
+  - Marshmallow 3.24 + marshmallow-sqlalchemy + flask-marshmallow
+  - Flask-CORS 5
+  - Flask-Limiter (rate limit)
+  - PostgreSQL via psycopg2-binary (production) / SQLite in-memory (tests)
+  - pandas 2.1 + openpyxl 3.1 (Excel import/export)
+  - python-dotenv
+  - gunicorn (prod)
+routes:
+  - path: /auth/login
+    file: app/modules/indicators/routes/auth_routes.py
+    auth_required: false
+    description: Login con email/password. Devuelve access + refresh tokens con claims permissions/role.
+  - path: /auth/refresh
+    file: app/modules/indicators/routes/auth_routes.py
+    auth_required: true
+    description: Refresca el access token usando un refresh token válido.
+  - path: /auth/logout
+    file: app/modules/indicators/routes/auth_routes.py
+    auth_required: true
+    description: Revoca el access token actual.
+  - path: /auth/logout-refresh
+    file: app/modules/indicators/routes/auth_routes.py
+    auth_required: true
+    description: Revoca el refresh token actual.
+  - path: /users/me
+    file: app/modules/indicators/routes/user_routes.py
+    auth_required: true
+    description: Datos del usuario autenticado.
+  - path: /users/me/permissions
+    file: app/modules/indicators/routes/user_routes.py
+    auth_required: true
+    description: Refresca el set de permisos del usuario sin reemitir token.
+  - path: /users/
+    file: app/modules/indicators/routes/user_routes.py
+    auth_required: true
+    description: Listar (admin) / crear usuario.
+  - path: /users/{user_id}
+    file: app/modules/indicators/routes/user_routes.py
+    auth_required: true
+    description: Detalle, actualizar y eliminar usuario.
+  - path: /users/{user_id}/components/{component_id}
+    file: app/modules/indicators/routes/user_routes.py
+    auth_required: true
+    description: Asignar/quitar componentes a un usuario.
+  - path: /roles/
+    file: app/modules/indicators/routes/roles_routes.py
+    auth_required: true
+    description: Listar/crear roles.
+  - path: /roles/{role_id}
+    file: app/modules/indicators/routes/roles_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar rol (los is_system no se eliminan).
+  - path: /strategies/
+    file: app/modules/indicators/routes/strategy_routes.py
+    auth_required: true
+    description: Listar/crear estrategias.
+  - path: /strategies/summary
+    file: app/modules/indicators/routes/strategy_routes.py
+    auth_required: true
+    description: Resumen agregado de estrategias.
+  - path: /strategies/component-goals
+    file: app/modules/indicators/routes/strategy_routes.py
+    auth_required: true
+    description: Metas por componente.
+  - path: /strategies/dashboard
+    file: app/modules/indicators/routes/strategy_routes.py
+    auth_required: true
+    description: Dashboard agregado de estrategia.
+  - path: /strategies/{strategy_id}
+    file: app/modules/indicators/routes/strategy_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar estrategia.
+  - path: /strategies/{strategy_id}/progress
+    file: app/modules/indicators/routes/strategy_routes.py
+    auth_required: true
+    description: Progreso de avance por estrategia.
+  - path: /strategy-metrics/
+    file: app/modules/indicators/routes/strategy_metric_routes.py
+    auth_required: true
+    description: Listar/crear métricas estratégicas.
+  - path: /strategy-metrics/{metric_id}
+    file: app/modules/indicators/routes/strategy_metric_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar métrica.
+  - path: /components/summary
+    file: app/modules/indicators/routes/component_routes.py
+    auth_required: true
+    description: Resumen agregado de componentes.
+  - path: /components/
+    file: app/modules/indicators/routes/component_routes.py
+    auth_required: true
+    description: Listar/crear componentes.
+  - path: /components/{component_id}
+    file: app/modules/indicators/routes/component_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar componente.
+  - path: /components/by-strategy/{strategy_id}
+    file: app/modules/indicators/routes/component_routes.py
+    auth_required: true
+    description: Componentes filtrados por estrategia.
+  - path: /public-policies/
+    file: app/modules/indicators/routes/public_policy_routes.py
+    auth_required: true
+    description: Listar/crear políticas públicas.
+  - path: /public-policies/{policy_id}
+    file: app/modules/indicators/routes/public_policy_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar política pública.
+  - path: /reports/
+    file: app/modules/indicators/routes/report_routes.py
+    auth_required: true
+    description: Listar/crear reportes (avance de indicadores).
+  - path: /reports/all
+    file: app/modules/indicators/routes/report_routes.py
+    auth_required: true
+    description: Listar todos los reportes (admin/monitor).
+  - path: /reports/{report_id}
+    file: app/modules/indicators/routes/report_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar reporte.
+  - path: /reports/{report_id}/link-activity/{activity_id}
+    file: app/modules/indicators/routes/report_routes.py
+    auth_required: true
+    description: Vincula un reporte con una actividad de plan de acción.
+  - path: /reports/prefill/activity/{activity_id}
+    file: app/modules/indicators/routes/report_routes.py
+    auth_required: true
+    description: Prellena un reporte desde una actividad.
+  - path: /reports/aggregate/component/{component_id}
+    file: app/modules/indicators/routes/report_routes.py
+    auth_required: true
+    description: Agrega reportes por componente.
+  - path: /reports/aggregate/strategy/{strategy_id}
+    file: app/modules/indicators/routes/report_routes.py
+    auth_required: true
+    description: Agrega reportes por estrategia.
+  - path: /reports/aggregate/component/{component_id}/indicators
+    file: app/modules/indicators/routes/report_routes.py
+    auth_required: true
+    description: Agrega reportes a nivel indicador dentro de un componente.
+  - path: /kpis/
+    file: app/modules/indicators/routes/kpi_routes.py
+    auth_required: true
+    description: KPIs principales del dashboard.
+  - path: /kpis/by-location
+    file: app/modules/indicators/routes/kpi_routes.py
+    auth_required: true
+    description: KPIs agregados por ubicación/municipio.
+  - path: /files/upload
+    file: app/modules/indicators/routes/file_route.py
+    auth_required: true
+    description: Subida de archivos (evidencias / reportes).
+  - path: /files/delete
+    file: app/modules/indicators/routes/file_route.py
+    auth_required: true
+    description: Eliminación de archivos.
+  - path: /audit-logs/
+    file: app/modules/indicators/routes/audit_log_routes.py
+    auth_required: true
+    description: Listar registros de auditoría (admin).
+  - path: /audit-logs/purge
+    file: app/modules/indicators/routes/audit_log_routes.py
+    auth_required: true
+    description: Purga registros más antiguos que el período de retención (admin).
+  - path: /datasets/
+    file: app/modules/datasets/routes/datasets_routes.py
+    auth_required: true
+    description: Listar/crear datasets (admin).
+  - path: /datasets/{dataset_id}
+    file: app/modules/datasets/routes/datasets_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar dataset.
+  - path: /datasets/{dataset_id}/records
+    file: app/modules/datasets/routes/datasets_routes.py
+    auth_required: true
+    description: Registros del dataset.
+  - path: /datasets/{dataset_id}/tables/{table_id}/records
+    file: app/modules/datasets/routes/datasets_routes.py
+    auth_required: true
+    description: Registros de una tabla del dataset.
+  - path: /datasets/tables/{table_id}/explore
+    file: app/modules/datasets/routes/datasets_routes.py
+    auth_required: true
+    description: Explorador de tabla.
+  - path: /datasets/{dataset_id}/records/by-municipio/{municipio}
+    file: app/modules/datasets/routes/datasets_routes.py
+    auth_required: true
+    description: Registros filtrados por municipio.
+  - path: /datasets/import-excel
+    file: app/modules/datasets/routes/dataset_import_routes.py
+    auth_required: true
+    description: Importar dataset desde Excel.
+  - path: /datasets/import-excel/preview
+    file: app/modules/datasets/routes/dataset_import_routes.py
+    auth_required: true
+    description: Preview de import Excel antes de persistir.
+  - path: /datasets/{dataset_id}/update-excel
+    file: app/modules/datasets/routes/dataset_import_routes.py
+    auth_required: true
+    description: Actualizar un dataset existente desde Excel.
+  - path: /datasets/tables/{table_id}/viewer
+    file: app/modules/datasets/routes/viewer_routes.py
+    auth_required: true
+    description: Vista resumida de una tabla.
+  - path: /datasets/tables/{table_id}/dashboard
+    file: app/modules/datasets/dashboard/routes.py
+    auth_required: true
+    description: Dashboard dispatcher por dataset_type (presupuesto, censo_animal, donaton, denuncias, personas_capacitadas, etc.).
+  - path: /tables
+    file: app/modules/datasets/routes/tables_routes.py
+    auth_required: true
+    description: Listar/crear tablas.
+  - path: /tables/{table_id}
+    file: app/modules/datasets/routes/tables_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar tabla.
+  - path: /fields
+    file: app/modules/datasets/routes/field_routes.py
+    auth_required: true
+    description: Listar/crear campos de tabla.
+  - path: /fields/{field_id}
+    file: app/modules/datasets/routes/field_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar campo.
+  - path: /records
+    file: app/modules/datasets/routes/record_routes.py
+    auth_required: true
+    description: Listar/crear registros.
+  - path: /records/{record_id}
+    file: app/modules/datasets/routes/record_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar registro.
+  - path: /records/import
+    file: app/modules/datasets/routes/record_import_routes.py
+    auth_required: true
+    description: Import bulk de registros.
+  - path: /action-plans/
+    file: app/modules/action_plans/routes/action_plan_routes.py
+    auth_required: true
+    description: Listar/crear planes de acción (responsables del dataset PERSONAS PROMOTORES PYBA).
+  - path: /action-plans/{plan_id}
+    file: app/modules/action_plans/routes/action_plan_routes.py
+    auth_required: true
+    description: Detalle/actualizar/eliminar plan de acción.
+  - path: /action-plans/activities/{activity_id}/report
+    file: app/modules/action_plans/routes/action_plan_routes.py
+    auth_required: true
+    description: Reportar avance de una actividad.
+  - path: /action-plans/activities/{activity_id}/edit
+    file: app/modules/action_plans/routes/action_plan_routes.py
+    auth_required: true
+    description: Editar una actividad existente.
+  - path: /action-plans/activities/{activity_id}
+    file: app/modules/action_plans/routes/action_plan_routes.py
+    auth_required: true
+    description: Detalle/eliminar actividad.
+  - path: /action-plans/activities/{activity_id}/evidence
+    file: app/modules/action_plans/routes/action_plan_routes.py
+    auth_required: true
+    description: Subir evidencia (status "Pendiente de Evidencia", ventana 8 días).
+  - path: /action-plans/dashboard/users
+    file: app/modules/action_plans/routes/action_plan_routes.py
+    auth_required: true
+    description: Dashboard de actividades por responsable.
+  - path: /notifications/
+    file: app/modules/notifications/routes/notification_routes.py
+    auth_required: true
+    description: Lista notificaciones del usuario.
+  - path: /notifications/count
+    file: app/modules/notifications/routes/notification_routes.py
+    auth_required: true
+    description: Conteo de notificaciones no leídas.
+  - path: /notifications/{notification_id}/read
+    file: app/modules/notifications/routes/notification_routes.py
+    auth_required: true
+    description: Marcar una notificación como leída.
+  - path: /notifications/read-all
+    file: app/modules/notifications/routes/notification_routes.py
+    auth_required: true
+    description: Marcar todas como leídas.
+  - path: /swagger-ui
+    file: app/api/router.py
+    auth_required: false
+    description: Swagger UI (Flask-Smorest).
+  - path: /api-spec.json
+    file: app/api/router.py
+    auth_required: false
+    description: OpenAPI JSON spec.
+features:
+  - name: Autenticación JWT
+    description: Login con email/password. Emite access + refresh con claims permissions/role_id/role. Refresh, logout y logout-refresh con blocklist. Rate limit 8/min en /auth/login.
+    files:
+      - app/modules/indicators/routes/auth_routes.py
+      - app/modules/indicators/services/auth_service.py
+      - app/core/extensions.py
+    entry_route: /auth/login
+    user_interactions:
+      - POST /auth/login con email + password válidos para obtener access + refresh
+      - POST /auth/refresh con Authorization Bearer del refresh para nuevo access
+      - POST /auth/logout y /auth/logout-refresh para invalidar tokens
+    api_calls:
+      - method: POST
+        endpoint: /auth/login
+      - method: POST
+        endpoint: /auth/refresh
+      - method: POST
+        endpoint: /auth/logout
+    auth_required: false
+  - name: Gestión de usuarios y RBAC
+    description: CRUD de usuarios + roles + permisos. Hybrid RBAC (roles + permissions + overrides) con dual_required. Endpoint /users/me/permissions para refrescar permisos sin reissue de token. Roles 4 system (admin/monitor/editor/viewer).
+    files:
+      - app/modules/indicators/routes/user_routes.py
+      - app/modules/indicators/routes/roles_routes.py
+      - app/utils/permissions.py
+      - app/shared/permissions/catalog.py
+      - app/shared/permissions/__init__.py
+    entry_route: /users/
+    user_interactions:
+      - Admin crea usuario, asigna rol y componentes
+      - Usuario consulta /users/me para datos propios
+      - Admin asigna/quita componentes vía /users/{id}/components/{cid}
+    api_calls:
+      - method: GET
+        endpoint: /users/me
+      - method: GET
+        endpoint: /users/me/permissions
+      - method: POST
+        endpoint: /users/
+      - method: PUT
+        endpoint: /users/{user_id}
+      - method: DELETE
+        endpoint: /users/{user_id}
+      - method: GET
+        endpoint: /roles/
+      - method: POST
+        endpoint: /roles/
+    auth_required: true
+  - name: Estrategias y componentes
+    description: CRUD de estrategias, métricas estratégicas, componentes y políticas públicas. Cálculo de progreso y resumen agregado, dashboard estratégico.
+    files:
+      - app/modules/indicators/routes/strategy_routes.py
+      - app/modules/indicators/routes/strategy_metric_routes.py
+      - app/modules/indicators/routes/component_routes.py
+      - app/modules/indicators/routes/public_policy_routes.py
+    entry_route: /strategies/
+    user_interactions:
+      - Crear estrategia con políticas y componentes
+      - Consultar dashboard agregado y progreso
+      - CRUD de métricas estratégicas
+    api_calls:
+      - method: GET
+        endpoint: /strategies/
+      - method: POST
+        endpoint: /strategies/
+      - method: GET
+        endpoint: /strategies/{strategy_id}/progress
+      - method: GET
+        endpoint: /strategies/dashboard
+      - method: GET
+        endpoint: /components/
+      - method: GET
+        endpoint: /components/by-strategy/{strategy_id}
+      - method: GET
+        endpoint: /public-policies/
+    auth_required: true
+  - name: Reportes de avance de indicadores
+    description: Reportar avance de indicadores, agregación por componente/estrategia/indicador, prellenado desde actividades y vinculación con plan de acción. Soporta upload de archivos como evidencia.
+    files:
+      - app/modules/indicators/routes/report_routes.py
+      - app/modules/indicators/routes/file_route.py
+    entry_route: /reports/
+    user_interactions:
+      - Crear/actualizar reporte de avance (POST/PUT /reports/)
+      - Vincular reporte con actividad
+      - Consultar agregados por componente o estrategia
+    api_calls:
+      - method: GET
+        endpoint: /reports/
+      - method: POST
+        endpoint: /reports/
+      - method: GET
+        endpoint: /reports/aggregate/component/{component_id}
+      - method: POST
+        endpoint: /files/upload
+    auth_required: true
+  - name: KPIs
+    description: KPIs principales y agregaciones por ubicación/municipio.
+    files:
+      - app/modules/indicators/routes/kpi_routes.py
+    entry_route: /kpis/
+    user_interactions:
+      - GET KPIs principales y desglose por municipio
+    api_calls:
+      - method: GET
+        endpoint: /kpis/
+      - method: GET
+        endpoint: /kpis/by-location
+    auth_required: true
+  - name: Datasets y tablas
+    description: CRUD de datasets, tablas, campos y records. Dispatcher por dataset_type (presupuesto, censo_animal, donaton, denuncias, generico, personas_capacitadas, animales, red_animalia). Import Excel con preview y update.
+    files:
+      - app/modules/datasets/routes/datasets_routes.py
+      - app/modules/datasets/routes/tables_routes.py
+      - app/modules/datasets/routes/field_routes.py
+      - app/modules/datasets/routes/record_routes.py
+      - app/modules/datasets/routes/dataset_import_routes.py
+      - app/modules/datasets/routes/record_import_routes.py
+      - app/modules/datasets/routes/viewer_routes.py
+    entry_route: /datasets/
+    user_interactions:
+      - Admin crea dataset, define tablas y campos
+      - Import Excel con preview previa, después confirmar persistencia
+      - Update Excel sobre un dataset existente
+      - Consultar registros por dataset/tabla/municipio
+    api_calls:
+      - method: GET
+        endpoint: /datasets/
+      - method: POST
+        endpoint: /datasets/
+      - method: POST
+        endpoint: /datasets/import-excel/preview
+      - method: POST
+        endpoint: /datasets/import-excel
+      - method: PUT
+        endpoint: /datasets/{dataset_id}/update-excel
+      - method: GET
+        endpoint: /datasets/{dataset_id}/records
+      - method: GET
+        endpoint: /tables/{table_id}
+      - method: GET
+        endpoint: /fields
+    auth_required: true
+  - name: Dashboards de datasets
+    description: Orquestador por dataset_type en /datasets/tables/{id}/dashboard. Builders específicos (presupuesto, censo_animal, donaton, denuncias) y pipeline genérico (generico, personas_capacitadas, animales, red_animalia).
+    files:
+      - app/modules/datasets/dashboard/routes.py
+      - app/modules/datasets/dashboard/orchestrator.py
+    entry_route: /datasets/tables/{table_id}/dashboard
+    user_interactions:
+      - GET dashboard de cualquier tabla, formato condicionado por dataset_type
+    api_calls:
+      - method: GET
+        endpoint: /datasets/tables/{table_id}/dashboard
+    auth_required: true
+  - name: Planes de acción
+    description: CRUD de planes y actividades. Reportar avance, editar actividad, subir evidencia opcional (status "Pendiente de Evidencia" con ventana 8 días). Dashboard por usuario responsable. Responsables vienen del dataset PERSONAS PROMOTORES PYBA.
+    files:
+      - app/modules/action_plans/routes/action_plan_routes.py
+    entry_route: /action-plans/
+    user_interactions:
+      - Crear plan con actividades asignadas a promotores
+      - Reportar avance de actividad
+      - Subir evidencia dentro de los 8 días posteriores
+      - Consultar dashboard del responsable
+    api_calls:
+      - method: GET
+        endpoint: /action-plans/
+      - method: POST
+        endpoint: /action-plans/
+      - method: POST
+        endpoint: /action-plans/activities/{activity_id}/report
+      - method: PUT
+        endpoint: /action-plans/activities/{activity_id}/edit
+      - method: POST
+        endpoint: /action-plans/activities/{activity_id}/evidence
+      - method: GET
+        endpoint: /action-plans/dashboard/users
+    auth_required: true
+  - name: Notificaciones
+    description: Notificaciones in-app por usuario. Listar, contar no leídas, marcar leídas individuales o en bloque.
+    files:
+      - app/modules/notifications/routes/notification_routes.py
+    entry_route: /notifications/
+    user_interactions:
+      - Consultar lista de notificaciones
+      - Polling /notifications/count para badge
+      - Marcar como leída individual o bulk
+    api_calls:
+      - method: GET
+        endpoint: /notifications/
+      - method: GET
+        endpoint: /notifications/count
+      - method: PUT
+        endpoint: /notifications/{notification_id}/read
+      - method: PUT
+        endpoint: /notifications/read-all
+    auth_required: true
+  - name: Auditoría
+    description: Listado y purga de audit logs. Retención configurable, comando CLI flask purge-audit-logs --days 90.
+    files:
+      - app/modules/indicators/routes/audit_log_routes.py
+      - app/shared/models/audit_log.py
+    entry_route: /audit-logs/
+    user_interactions:
+      - Admin consulta logs por filtros
+      - Admin purga logs antiguos
+    api_calls:
+      - method: GET
+        endpoint: /audit-logs/
+      - method: POST
+        endpoint: /audit-logs/purge
+    auth_required: true
+known_limitations:
+  - issue: "RBAC en modo shadow: la decisión por rol es la autoritativa, los chequeos de permisos sólo se loguean"
+    location: "app/utils/permissions.py (dual_required) y env PERM_SHADOW_MODE"
+    impact: "Si los permisos catalogados divergen de lo que el rol permite, gana el rol; las pruebas no deben asumir enforcement de permisos puros aún"
+  - issue: "TestConfig fuerza sqlite in-memory con guards en tests/conftest.py; TestSprite no debe ejecutar pytest contra otra DB"
+    location: "tests/conftest.py"
+    impact: "Cualquier suite externa que se enchufe debe respetar TESTING=True y SQLALCHEMY_DATABASE_URI exacto"
+  - issue: "Rate limit en /auth/login (8/min, 30/hour) en producción"
+    location: "app/modules/indicators/routes/auth_routes.py"
+    impact: "Pruebas de carga / regresión sobre login pueden ver 429 si no aplican backoff"

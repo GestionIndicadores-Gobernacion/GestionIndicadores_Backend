@@ -1,0 +1,19 @@
+{
+  "status": "commited",
+  "type": "backend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:5000",
+  "loginUser": "admin@gobernacion.gov.co",
+  "loginPassword": "Gob2025*",
+  "executionArgs": {
+    "projectName": "GestionIndicadores_Backend",
+    "projectPath": "C:/Users/usuario/Desktop/Programacion/IndicadoresPYBA/Software/GestionIndicadores_Backend",
+    "testIds": [],
+    "additionalInstruction": "Backend Flask API en http://localhost:5000. Usuario admin de prueba: admin@gobernacion.gov.co / Gob2025*. Otros: editor@gobernacion.gov.co / Gob2025*, viewer@gobernacion.gov.co / Gob2025*. Para autenticar usar POST /auth/login que devuelve access_token JWT; pasarlo en header Authorization: Bearer <token>. Respeta el rate limit del login (8/min) intercalando waits si haces múltiples logins. RBAC está en modo shadow (gana el rol, no los permisos). No invocar pytest local ni tocar BD: TestSprite debe usar la API HTTP en vivo.",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-L15Rh6hP6TuwMNhctlunVjQpA3Vj1MdWXM7SuQB_QHhylJd4lEYv3UnjpWps_SfPDuvoqevuLH6_LapjGpVF446gUAWxYFYPXGxjlcn6Eq8ZXhcZ9KPzxTvvZaCtIwJQnp8"
+    }
+  },
+  "serverPort": 61751
+}

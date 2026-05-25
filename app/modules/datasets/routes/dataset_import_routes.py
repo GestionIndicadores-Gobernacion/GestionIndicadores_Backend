@@ -1,10 +1,12 @@
 from flask import request
-from flask_jwt_extended import get_jwt_identity, verify_jwt_in_request
+from flask_jwt_extended import jwt_required
 from flask_smorest import Blueprint, abort
 from flask.views import MethodView
 
 from app.modules.datasets.services.excel_import_handler import import_excel_dataset, update_excel_dataset
 from app.modules.datasets.services.excel_preview_handler import preview_excel
+from app.utils.permissions import dual_required
+from app.shared.permissions import PERM_DATASETS_IMPORT
 
 blp = Blueprint(
     "dataset_import",
@@ -12,20 +14,13 @@ blp = Blueprint(
     url_prefix="/datasets"
 )
 
-def _is_admin():
-    from app.shared.models.user import User
-    verify_jwt_in_request()
-    user = User.query.get(get_jwt_identity())
-    return user and user.role and user.role.name == "admin"
-
 
 @blp.route("/import-excel")
 class DatasetImportResource(MethodView):
 
+    @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_DATASETS_IMPORT,))
     def post(self):
-        if not _is_admin():
-            abort(403, message="Sin permiso")
-
         if "file" not in request.files:
             abort(400, message="Archivo Excel no enviado")
 
@@ -38,10 +33,9 @@ class DatasetImportResource(MethodView):
 @blp.route("/import-excel/preview")
 class DatasetImportPreviewResource(MethodView):
 
+    @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_DATASETS_IMPORT,))
     def post(self):
-        if not _is_admin():
-            abort(403, message="Sin permiso")
-
         if "file" not in request.files:
             abort(400, message="Archivo Excel no enviado")
 
@@ -52,10 +46,9 @@ class DatasetImportPreviewResource(MethodView):
 @blp.route("/<int:dataset_id>/update-excel")
 class DatasetUpdateResource(MethodView):
 
+    @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_DATASETS_IMPORT,))
     def put(self, dataset_id):
-        if not _is_admin():
-            abort(403, message="Sin permiso")
-
         file = request.files.get("file")
         dataset_name = request.form.get("dataset_name")
 

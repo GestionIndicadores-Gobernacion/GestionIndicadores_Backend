@@ -54,10 +54,8 @@ PUBLIC_POLICIES_SEED = [
 # ENDPOINTS
 # ─────────────────────────────────────────────────────────────────
 
-def _is_admin():
-    from app.shared.models.user import User
-    user = User.query.get(get_jwt_identity())
-    return user and user.role and user.role.name == "admin"
+from app.utils.permissions import is_admin as _is_admin, dual_required  # noqa: E402
+from app.shared.permissions import PERM_PUBLIC_POLICIES_MANAGE  # noqa: E402
 
 @blp.route("/")
 class PublicPolicyListResource(MethodView):
@@ -69,13 +67,10 @@ class PublicPolicyListResource(MethodView):
         return PublicPolicy.query.order_by(PublicPolicy.code).all()
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_PUBLIC_POLICIES_MANAGE,))
     @blp.arguments(PublicPolicySchema)
     @blp.response(201, PublicPolicySchema)
     def post(self, data):
-        
-        if not _is_admin():
-            abort(403, message="Sin permiso")
-        
         """Crear una política pública."""
         existing = PublicPolicy.query.filter_by(code=data["code"]).first()
         if existing:
@@ -100,13 +95,10 @@ class PublicPolicyResource(MethodView):
         return policy
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_PUBLIC_POLICIES_MANAGE,))
     @blp.arguments(PublicPolicySchema)
     @blp.response(200, PublicPolicySchema)
     def put(self, data, policy_id):
-        
-        if not _is_admin():
-            abort(403, message="Sin permiso")
-        
         """Actualizar una política pública."""
         policy = PublicPolicy.query.get(policy_id)
         if not policy:
@@ -124,12 +116,9 @@ class PublicPolicyResource(MethodView):
         return policy
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_PUBLIC_POLICIES_MANAGE,))
     @blp.response(204)
     def delete(self, policy_id):
-        
-        if not _is_admin():
-            abort(403, message="Sin permiso")
-        
         """Eliminar una política pública."""
         policy = PublicPolicy.query.get(policy_id)
         if not policy:

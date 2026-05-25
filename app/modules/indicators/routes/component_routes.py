@@ -15,10 +15,8 @@ blp = Blueprint(
     description="Component management"
 )
 
-def _is_admin():
-    from app.shared.models.user import User
-    user = User.query.get(get_jwt_identity())
-    return user and user.role and user.role.name == "admin"
+from app.utils.permissions import is_admin as _is_admin, dual_required  # noqa: E402
+from app.shared.permissions import PERM_COMPONENTS_MANAGE  # noqa: E402
 
 @blp.route("/summary")
 class ComponentSummaryResource(MethodView):
@@ -53,12 +51,10 @@ class ComponentListResource(MethodView):
         return ComponentHandler.get_all()
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_COMPONENTS_MANAGE,))
     @blp.arguments(ComponentSchema)
     @blp.response(201, ComponentSchema)
     def post(self, data):
-        if not _is_admin():
-            abort(403, message="Sin permiso")    
-            
         component, errors = ComponentHandler.create(data)
 
         if errors:
@@ -79,13 +75,10 @@ class ComponentResource(MethodView):
         return component
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_COMPONENTS_MANAGE,))
     @blp.arguments(ComponentSchema)
     @blp.response(200, ComponentSchema)
     def put(self, data, component_id):
-        
-        if not _is_admin():
-            abort(403, message="Sin permiso")  
-        
         component = ComponentHandler.get_by_id(component_id)
         if not component:
             return {"message": "Component not found"}, 404
@@ -99,12 +92,9 @@ class ComponentResource(MethodView):
         return updated
 
     @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_COMPONENTS_MANAGE,))
     @blp.response(204)
     def delete(self, component_id):
-        
-        if not _is_admin():
-            abort(403, message="Sin permiso")  
-        
         component = ComponentHandler.get_by_id(component_id)
         if not component:
             return {"message": "Component not found"}, 404

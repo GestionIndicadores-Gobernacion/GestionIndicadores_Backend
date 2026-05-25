@@ -1,0 +1,7 @@
+[
+  {
+    "id": "TC001",
+    "title": "post auth login with valid credentials",
+    "description": "Test the /auth/login endpoint by submitting a valid email and password to verify that access and refresh tokens are returned with correct claims including permissions and role."
+  }
+]
