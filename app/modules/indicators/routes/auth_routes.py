@@ -1,6 +1,6 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
-from flask import jsonify
+from flask import current_app, jsonify
 from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import (
@@ -100,6 +100,25 @@ class RefreshResource(MethodView):
                 expires_at=_exp_to_datetime(payload),
             )
 
+        # Ventana absoluta: el refresh nuevo hereda el `exp` del refresh
+        # entrante (no se extiende). El access nuevo se topa al remaining
+        # del refresh original — al final de la ventana puede durar
+        # menos que el TTL por defecto, lo cual es correcto.
+        old_exp_dt = _exp_to_datetime(payload)
+        now = datetime.now(timezone.utc)
+        remaining = (old_exp_dt - now) if old_exp_dt else timedelta(0)
+        if remaining <= timedelta(0):
+            return {"msg": "Sesión expirada.", "error": "refresh_expired"}, 401
+
+        default_access_ttl = current_app.config.get("JWT_ACCESS_TOKEN_EXPIRES")
+        if isinstance(default_access_ttl, timedelta):
+            default_access_td = default_access_ttl
+        elif isinstance(default_access_ttl, (int, float)):
+            default_access_td = timedelta(seconds=int(default_access_ttl))
+        else:
+            default_access_td = remaining
+        access_ttl = min(default_access_td, remaining)
+
         extra_claims = {
             "role_id": user.role_id,
             "role": user.role.name if user.role else None,
@@ -108,8 +127,12 @@ class RefreshResource(MethodView):
         access_token = create_access_token(
             identity=user_id_str,
             additional_claims=extra_claims,
+            expires_delta=access_ttl,
         )
-        refresh_token = create_refresh_token(identity=user_id_str)
+        refresh_token = create_refresh_token(
+            identity=user_id_str,
+            expires_delta=remaining,
+        )
 
         return {
             "access_token": access_token,

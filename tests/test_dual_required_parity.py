@@ -45,10 +45,16 @@ def _token_for(client, app, role_name):
 
 
 # (path, method, allowed_roles)
+# Nota PUT D2/D3: el test sólo valida que el rol no permitido reciba 403
+# (auth se evalúa ANTES del schema/body), así que enviarlos sin body es OK
+# — un 422 para admin sigue cumpliendo "≠ 403". Lo único que prueba es la
+# paridad rol↔perm de `dual_required`, no la validación de payload.
 DUAL_ENDPOINTS = [
-    ("/roles/",          "GET", {"admin", "monitor"}),
-    ("/roles/1",         "GET", {"admin", "monitor"}),
-    ("/audit-logs/",     "GET", {"admin"}),
+    ("/roles/",                              "GET", {"admin", "monitor"}),
+    ("/roles/1",                             "GET", {"admin", "monitor"}),
+    ("/audit-logs/",                         "GET", {"admin", "monitor"}),
+    ("/roles/1/permissions",                 "PUT", {"admin"}),
+    ("/users/1/permissions/overrides",       "PUT", {"admin"}),
 ]
 
 

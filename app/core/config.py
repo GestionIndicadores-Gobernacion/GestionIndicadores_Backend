@@ -14,8 +14,11 @@ class Config:
     API_VERSION = "1.0.0"
 
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "cambia_esto_por_produccion")
-    JWT_ACCESS_TOKEN_EXPIRES = 3600 * 8
-    JWT_REFRESH_TOKEN_EXPIRES = 60 * 60 * 24 * 30
+    # Ventana de sesión absoluta de 24 h desde el login. Ambos tokens duran
+    # lo mismo; `/auth/refresh` hereda el `exp` del refresh entrante (ver
+    # `auth_routes.py`) para que un refresh no extienda la ventana.
+    JWT_ACCESS_TOKEN_EXPIRES = 60 * 60 * 24
+    JWT_REFRESH_TOKEN_EXPIRES = 60 * 60 * 24
 
     JWT_ERROR_MESSAGE_KEY = "msg"
     JWT_IDENTITY_CLAIM = "sub"

@@ -124,23 +124,18 @@ def is_viewer() -> bool:
 # PERMISOS EFECTIVOS — role ∪ grants − revokes, cacheado por request.
 # ─────────────────────────────────────────────────────────────────────────
 
-def get_effective_permissions(user: Optional[User]) -> Set[str]:
-    """Conjunto de permisos efectivos del usuario.
+def _compute_permission_breakdown(user: User) -> tuple[Set[str], Set[str], Set[str], Set[str]]:
+    """Calcula (from_role, grants, revokes, effective) sin tocar caches.
 
-        permisos = permisos_del_rol(user.role) ∪ grants(user) − revokes(user)
+    Helper interno: NO consulta ni escribe en `flask.g`. Reusado tanto por
+    `get_effective_permissions` (que sí cachea) como por el endpoint admin
+    `GET /users/:id/permissions` (que necesita el desglose para usuarios
+    distintos al actual sin contaminar el cache del current_user).
 
-    Cacheado por (request, user_id). Asume que `user` viene con sus
-    relaciones cargadas (lo provee `_load_user_with_perms`). Si no, hace
-    los SELECTs adicionales — el resultado sigue siendo correcto.
+    Asume que `user` viene con `role.role_permissions[*].permission` y
+    `permission_overrides[*].permission` eager-loaded; si no, SQLAlchemy
+    emite SELECTs adicionales — el resultado sigue siendo correcto.
     """
-    if user is None:
-        return set()
-
-    cache_key = f"_perm_set_{user.id}"
-    cached = getattr(g, cache_key, _NOT_FOUND)
-    if cached is not _NOT_FOUND:
-        return cached  # type: ignore[return-value]
-
     from_role: Set[str] = set()
     if user.role is not None:
         for assoc in user.role.role_permissions:
@@ -158,8 +153,49 @@ def get_effective_permissions(user: Optional[User]) -> Set[str]:
             revokes.add(ov.permission.code)
 
     effective = (from_role | grants) - revokes
+    return from_role, grants, revokes, effective
+
+
+def get_effective_permissions(user: Optional[User]) -> Set[str]:
+    """Conjunto de permisos efectivos del usuario.
+
+        permisos = permisos_del_rol(user.role) ∪ grants(user) − revokes(user)
+
+    Cacheado por (request, user_id). Asume que `user` viene con sus
+    relaciones cargadas (lo provee `_load_user_with_perms`). Si no, hace
+    los SELECTs adicionales — el resultado sigue siendo correcto.
+    """
+    if user is None:
+        return set()
+
+    cache_key = f"_perm_set_{user.id}"
+    cached = getattr(g, cache_key, _NOT_FOUND)
+    if cached is not _NOT_FOUND:
+        return cached  # type: ignore[return-value]
+
+    _from_role, _grants, _revokes, effective = _compute_permission_breakdown(user)
     setattr(g, cache_key, effective)
     return effective
+
+
+def get_permission_breakdown(user: User) -> dict[str, Set[str]]:
+    """Devuelve el desglose {from_role, grants, revokes, effective} de un usuario.
+
+    Útil para endpoints admin de inspección (`GET /users/:id/permissions`).
+    A diferencia de `get_effective_permissions`, NO escribe en `flask.g`
+    — así llamar este helper para un user_id distinto al current_user no
+    pisa el cache de permisos del current_user en la misma request.
+
+    `user` debe tener `role.role_permissions[*].permission` y
+    `permission_overrides[*].permission` eager-loaded para evitar N+1.
+    """
+    from_role, grants, revokes, effective = _compute_permission_breakdown(user)
+    return {
+        "from_role": from_role,
+        "grants": grants,
+        "revokes": revokes,
+        "effective": effective,
+    }
 
 
 def _jwt_permissions() -> Optional[Set[str]]:

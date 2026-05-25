@@ -7,6 +7,8 @@ from app.shared.permissions.catalog import (  # noqa: F401
     PermissionDef,
     ALL_PERMISSIONS,
     BY_CODE,
+    CRITICAL_PERMS,
+    is_critical_permission,
     permissions_by_module,
     # Módulos
     MODULE_USERS,
@@ -26,6 +28,7 @@ from app.shared.permissions.catalog import (  # noqa: F401
     PERM_USERS_MANAGE,
     PERM_USERS_ASSIGN_COMPONENTS,
     PERM_USERS_MANAGE_PERMISSIONS,
+    PERM_USERS_READ_PERMISSIONS,
     # Constantes — roles
     PERM_ROLES_READ,
     PERM_ROLES_MANAGE,

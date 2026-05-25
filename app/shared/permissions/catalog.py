@@ -73,6 +73,7 @@ PERM_USERS_READ                 = "users.read"
 PERM_USERS_MANAGE               = "users.manage"
 PERM_USERS_ASSIGN_COMPONENTS    = "users.assign_components"
 PERM_USERS_MANAGE_PERMISSIONS   = "users.manage_permissions"
+PERM_USERS_READ_PERMISSIONS     = "users.read_permissions"
 
 # roles
 PERM_ROLES_READ                 = "roles.read"
@@ -122,6 +123,7 @@ ALL_PERMISSIONS: Tuple[PermissionDef, ...] = (
     PermissionDef(PERM_USERS_MANAGE,             "Crear, editar y desactivar usuarios",              MODULE_USERS),
     PermissionDef(PERM_USERS_ASSIGN_COMPONENTS,  "Asignar componentes a usuarios",                   MODULE_USERS),
     PermissionDef(PERM_USERS_MANAGE_PERMISSIONS, "Otorgar y revocar permisos a usuarios",            MODULE_USERS),
+    PermissionDef(PERM_USERS_READ_PERMISSIONS,   "Ver permisos efectivos y overrides de otros usuarios", MODULE_USERS),
 
     # roles
     PermissionDef(PERM_ROLES_READ,               "Listar y ver roles",                               MODULE_ROLES),
@@ -172,6 +174,40 @@ ALL_PERMISSIONS: Tuple[PermissionDef, ...] = (
 BY_CODE: Dict[str, PermissionDef] = {p.code: p for p in ALL_PERMISSIONS}
 
 
+# ── Permisos críticos a nivel de rol (D2) ────────────────────────────────
+# Estos cinco permisos son los que el rol `admin` necesita para seguir
+# administrando el sistema desde la UI:
+#   - roles.read              → ver el catálogo de roles y sus permisos.
+#   - roles.manage            → editar/crear/borrar roles (incluye este PUT).
+#   - users.manage            → crear/editar usuarios y resetear contraseñas.
+#   - users.manage_permissions → editar overrides por usuario.
+#   - users.read_permissions  → ver el set efectivo y overrides de otros.
+#
+# Si una operación intentase remover cualquiera de ellos del rol `admin`,
+# la edición se bloquea (lockout protection en `RolePermissionsHandler`).
+# Nótese que esto es un subconjunto MÁS AMPLIO que el de
+# `app.utils.rbac_invariants.CRITICAL_PERMISSIONS` (que opera a nivel de
+# usuario individual, no de rol). Ambas son intencionalmente distintas y
+# deben mantenerse separadas.
+CRITICAL_PERMS: frozenset[str] = frozenset({
+    "roles.read",
+    "roles.manage",
+    "users.manage",
+    "users.manage_permissions",
+    "users.read_permissions",
+})
+
+
+def is_critical_permission(code: str) -> bool:
+    """True si remover este code del rol `admin` rompería la administración.
+
+    Helper estable de chequeo. Lo usa el handler del PUT y el schema
+    `PermissionSchema` (campo derivado `is_critical`) que sirve a la UI
+    para deshabilitar checkboxes destructivos.
+    """
+    return code in CRITICAL_PERMS
+
+
 def permissions_by_module() -> Dict[str, List[PermissionDef]]:
     """Agrupa permisos por módulo en el orden del catálogo.
 
@@ -218,6 +254,15 @@ def _validate_catalog() -> None:
         raise RuntimeError(
             f"[catalog] Entradas en ALL_PERMISSIONS sin constante PERM_*: "
             f"{sorted(only_in_catalog)}"
+        )
+
+    # 4) CRITICAL_PERMS apunta a codes existentes — un typo aquí dejaría al
+    #    lockout sin efecto y es exactamente el bug que hay que evitar.
+    unknown_critical = CRITICAL_PERMS - catalog_codes
+    if unknown_critical:
+        raise RuntimeError(
+            f"[catalog] CRITICAL_PERMS referencia codes inexistentes: "
+            f"{sorted(unknown_critical)}"
         )
 
 

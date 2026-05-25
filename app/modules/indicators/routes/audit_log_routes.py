@@ -19,7 +19,7 @@ blp = Blueprint(
 class AuditLogList(MethodView):
 
     @jwt_required()
-    @dual_required(roles=("admin",), perms=(PERM_AUDIT_READ,))           # solo admin puede ver el historial completo
+    @dual_required(roles=("admin", "monitor"), perms=(PERM_AUDIT_READ,))  # admin y monitor (read-only del historial)
     @blp.response(200, AuditLogSchema(many=True))
     def get(self):
         # Purga automática: borra registros más antiguos que el período de retención
