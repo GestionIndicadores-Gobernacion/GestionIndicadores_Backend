@@ -18,6 +18,12 @@ class User(db.Model):
 
     is_active = db.Column(db.Boolean, default=True, nullable=False)
 
+    # ── RBAC (Bloque 11): admin principal protegido ─────────────────────
+    # Reemplaza el hardcode por email en el frontend. Backfilled por la
+    # migración. Solo un usuario debería tenerlo en true (no se impone
+    # vía constraint para no bloquear ediciones temporales).
+    is_main_admin = db.Column(db.Boolean, default=False, nullable=False)
+
     role_id = db.Column(
         db.Integer,
         db.ForeignKey('roles.id'),
@@ -42,6 +48,20 @@ class User(db.Model):
         back_populates="user",
         cascade="all, delete-orphan",
         lazy="selectin"
+    )
+
+    # ── RBAC: overrides personales (grant/revoke) ────────────────────────
+    # `lazy='select'` (deferred): no se carga automáticamente en /users/me,
+    # /users/, login ni en ningún serializador existente. Solo el evaluador
+    # de permisos (Bloque 5) lo accederá explícitamente.
+    # `foreign_keys=...` apunta solo al user_id; el campo granted_by tiene
+    # su propia relación en UserPermission (no inverse aquí).
+    permission_overrides = db.relationship(
+        "UserPermission",
+        foreign_keys="UserPermission.user_id",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        lazy="select",
     )
 
     # ======================

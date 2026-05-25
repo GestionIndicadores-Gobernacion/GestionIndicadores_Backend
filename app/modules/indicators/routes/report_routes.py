@@ -11,6 +11,15 @@ from app.modules.indicators.services.report_handler import ReportHandler
 from app.modules.indicators.services.report_aggregate_handler import ReportAggregateHandler
 from app.modules.indicators.services.report_indicator_handler import ReportIndicatorHandler
 from app.utils.pagination import get_pagination_params, paginate_query, envelope
+from app.utils.permissions import dual_required
+from app.shared.permissions import (
+    PERM_REPORTS_CREATE,
+    PERM_REPORTS_READ,
+    PERM_REPORTS_UPDATE_OWN,
+    PERM_REPORTS_UPDATE_ANY,
+    PERM_REPORTS_DELETE_OWN,
+    PERM_REPORTS_DELETE_ANY,
+)
 
 blp = Blueprint(
     "reports", "reports",
@@ -97,6 +106,10 @@ def _can_modify(report) -> bool:
 class ReportList(MethodView):
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor", "viewer"),
+        perms=(PERM_REPORTS_READ,),
+    )
     def get(self):
         """
         GET /reports/[?limit=&offset=]
@@ -126,6 +139,10 @@ class ReportList(MethodView):
         ), 200
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_REPORTS_CREATE,),
+    )
     @blp.arguments(ReportSchema)
     @blp.response(201, ReportSchema)
     def post(self, data):
@@ -167,6 +184,10 @@ class ReportListAll(MethodView):
 class ReportDetail(MethodView):
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor", "viewer"),
+        perms=(PERM_REPORTS_READ,),
+    )
     @blp.response(200, ReportSchema)
     def get(self, report_id):
         report = ReportHandler.get_by_id(report_id)
@@ -179,6 +200,10 @@ class ReportDetail(MethodView):
         return report
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_REPORTS_UPDATE_OWN, PERM_REPORTS_UPDATE_ANY),
+    )
     @blp.arguments(ReportSchema)
     @blp.response(200, ReportSchema)
     def put(self, data, report_id):
@@ -199,6 +224,10 @@ class ReportDetail(MethodView):
         return updated
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_REPORTS_DELETE_OWN, PERM_REPORTS_DELETE_ANY),
+    )
     @blp.response(204)
     def delete(self, report_id):
 
@@ -218,6 +247,10 @@ class ReportDetail(MethodView):
 class ReportLinkActivity(MethodView):
 
     @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_REPORTS_UPDATE_OWN, PERM_REPORTS_UPDATE_ANY),
+    )
     def post(self, report_id, activity_id):
         """Vincula una actividad del plan de acción a un reporte existente."""
         if _is_viewer():

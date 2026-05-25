@@ -14,8 +14,11 @@ class Config:
     API_VERSION = "1.0.0"
 
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "cambia_esto_por_produccion")
-    JWT_ACCESS_TOKEN_EXPIRES = 3600 * 8
-    JWT_REFRESH_TOKEN_EXPIRES = 60 * 60 * 24 * 30
+    # Ventana de sesión absoluta de 24 h desde el login. Ambos tokens duran
+    # lo mismo; `/auth/refresh` hereda el `exp` del refresh entrante (ver
+    # `auth_routes.py`) para que un refresh no extienda la ventana.
+    JWT_ACCESS_TOKEN_EXPIRES = 60 * 60 * 24
+    JWT_REFRESH_TOKEN_EXPIRES = 60 * 60 * 24
 
     JWT_ERROR_MESSAGE_KEY = "msg"
     JWT_IDENTITY_CLAIM = "sub"
@@ -33,6 +36,14 @@ class Config:
     # Bandera usada por la factory para decidir comportamientos de entorno
     # (CORS, SSL, engine options). Solo `TestConfig` la pone en True.
     TESTING = False
+
+    # ── RBAC Bloque 12: shadow mode ─────────────────────────────────────
+    # Cuando True, `dual_required` compara la decisión por rol (legacy
+    # autoritativa) con la decisión por permisos (sombra) y loguea cada
+    # divergencia. Default: False en producción para evitar ruido en logs.
+    # Activar en staging (`PERM_SHADOW_MODE=true` en env) para validar
+    # paridad antes de promover el sistema permisos como autoritativo.
+    PERM_SHADOW_MODE = os.getenv("PERM_SHADOW_MODE", "false").lower() == "true"
 
 
 class TestConfig(Config):
@@ -59,3 +70,8 @@ class TestConfig(Config):
 
     # Propagar excepciones para ver tracebacks reales en los tests.
     PROPAGATE_EXCEPTIONS = True
+
+    # Rate limiter deshabilitado en tests — el endpoint /auth/login tiene
+    # `8/min; 30/hour` y la suite hace decenas de logins. Sin esto, los
+    # tests posteriores caen con 429.
+    RATELIMIT_ENABLED = False

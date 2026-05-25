@@ -5,7 +5,8 @@ from flask_jwt_extended import jwt_required
 
 from app.shared.models.audit_log import AuditLog, AUDIT_LOG_RETENTION_DAYS
 from app.shared.schemas.audit_log_schema import AuditLogSchema
-from app.utils.permissions import role_required
+from app.utils.permissions import dual_required
+from app.shared.permissions import PERM_AUDIT_READ
 
 blp = Blueprint(
     "audit_logs", "audit_logs",
@@ -18,7 +19,7 @@ blp = Blueprint(
 class AuditLogList(MethodView):
 
     @jwt_required()
-    @role_required("admin")           # solo admin puede ver el historial completo
+    @dual_required(roles=("admin", "monitor"), perms=(PERM_AUDIT_READ,))  # admin y monitor (read-only del historial)
     @blp.response(200, AuditLogSchema(many=True))
     def get(self):
         # Purga automática: borra registros más antiguos que el período de retención
@@ -44,7 +45,7 @@ class AuditLogList(MethodView):
 class AuditLogPurge(MethodView):
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_AUDIT_READ,))
     def delete(self):
         """Purga manual: elimina registros más antiguos que el período de retención."""
         deleted = AuditLog.purge_old(AUDIT_LOG_RETENTION_DAYS)
