@@ -2,13 +2,35 @@ from flask import jsonify, request
 from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
+from sqlalchemy.orm import joinedload, selectinload
 
 from app.modules.indicators.services.user_handler import UserHandler
+from app.modules.indicators.services.user_overrides_handler import (
+    UserOverridesHandler,
+)
 from app.shared.schemas.user_schema import UserSchema
+from app.shared.schemas.user_permission_schema import (
+    UserPermissionsViewSchema,
+    UserPermissionOverrideSchema,
+    UserOverridesUpdateSchema,
+)
 from app.shared.models.user import User
+from app.shared.models.role import Role
+from app.shared.models.role_permission import RolePermission
 from app.shared.models.user_component import UserComponent
-from app.utils.permissions import role_required
+from app.shared.models.user_permission import UserPermission
+from app.utils.permissions import (
+    role_required,
+    dual_required,
+    get_permission_breakdown,
+)
 from app.utils.pagination import get_pagination_params, paginate_query, envelope
+from app.shared.permissions import (
+    PERM_USERS_MANAGE,
+    PERM_USERS_ASSIGN_COMPONENTS,
+    PERM_USERS_READ_PERMISSIONS,
+    PERM_USERS_MANAGE_PERMISSIONS,
+)
 
 
 def _basic_user_dump(users):
@@ -44,6 +66,30 @@ class UserMeResource(MethodView):
         if not user:
             return {"message": "User not found"}, 404
         return user
+
+
+@blp.route("/me/permissions")
+class UserMePermissionsResource(MethodView):
+    """Endpoint dedicado de permisos efectivos del usuario activo.
+
+    Aditivo: el cliente ya puede leerlos del JWT o de /users/me. Útil
+    para refrescar el set tras un cambio admin sin esperar a que el
+    JWT expire y se reemita.
+    """
+
+    @jwt_required()
+    def get(self):
+        from app.utils.permissions import current_user, current_user_permissions
+        user = current_user()
+        if not user:
+            return {"message": "User not found"}, 404
+        return jsonify({
+            "role": {
+                "id": user.role.id if user.role else None,
+                "name": user.role.name if user.role else None,
+            },
+            "permissions": sorted(current_user_permissions()),
+        }), 200
     
 @blp.route("/")
 class UserListResource(MethodView):
@@ -93,7 +139,7 @@ class UserListResource(MethodView):
         return jsonify(envelope(dump(items), total, limit, offset)), 200
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_MANAGE,))
     @blp.arguments(UserSchema)
     @blp.response(201, UserSchema)
     def post(self, data):
@@ -126,7 +172,7 @@ class UserResource(MethodView):
         return user
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_MANAGE,))
     @blp.arguments(UserSchema(partial=True))
     @blp.response(200, UserSchema)
     def put(self, data, user_id):
@@ -137,7 +183,7 @@ class UserResource(MethodView):
         return UserHandler.update(user, data)
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_MANAGE,))
     @blp.response(204)
     def delete(self, user_id):
         user = UserHandler.get_by_id(user_id)
@@ -152,7 +198,7 @@ class UserResource(MethodView):
 class UserComponentResource(MethodView):
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_ASSIGN_COMPONENTS,))
     @blp.response(201)
     def post(self, user_id, component_id):
         """Asignar un componente a un usuario."""
@@ -166,10 +212,137 @@ class UserComponentResource(MethodView):
         return {"message": "Component assigned", "user_id": user_id, "component_id": component_id}
 
     @jwt_required()
-    @role_required("admin")
+    @dual_required(roles=("admin",), perms=(PERM_USERS_ASSIGN_COMPONENTS,))
     @blp.response(204)
     def delete(self, user_id, component_id):
         """Quitar un componente de un usuario."""
         removed = UserHandler.remove_component(user_id, component_id)
         if not removed:
             return {"message": "Assignment not found"}, 404
+
+
+# ── Permisos efectivos / overrides (D1, read-only) ─────────────────────────
+
+def _load_user_for_perm_inspection(user_id: int):
+    """Carga un usuario con todas las relaciones necesarias para inspeccionar
+    sus permisos en una sola pasada (eager loading).
+    """
+    return (
+        User.query
+        .options(
+            joinedload(User.role)
+              .selectinload(Role.role_permissions)
+              .joinedload(RolePermission.permission),
+            selectinload(User.permission_overrides)
+              .joinedload(UserPermission.permission),
+        )
+        .filter(User.id == user_id)
+        .first()
+    )
+
+
+@blp.route("/<int:user_id>/permissions")
+class UserPermissionsAdminResource(MethodView):
+    """Permisos efectivos de un usuario, vistos por un admin (D1).
+
+    Devuelve el desglose `{from_role, grants, revokes, effective}` para
+    diagnóstico de la matriz de permisos del usuario. No hace login al
+    target — siempre se ejecuta en el contexto del JWT del admin actual.
+    """
+
+    @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_USERS_READ_PERMISSIONS,))
+    def get(self, user_id):
+        user = _load_user_for_perm_inspection(user_id)
+        if not user:
+            return {"message": "User not found"}, 404
+
+        breakdown = get_permission_breakdown(user)
+        payload = {
+            "user": {
+                "id": user.id,
+                "email": user.email,
+                "role": (
+                    {"id": user.role.id, "name": user.role.name}
+                    if user.role else None
+                ),
+            },
+            "from_role": sorted(breakdown["from_role"]),
+            "grants":    sorted(breakdown["grants"]),
+            "revokes":   sorted(breakdown["revokes"]),
+            "effective": sorted(breakdown["effective"]),
+        }
+        return jsonify(UserPermissionsViewSchema().dump(payload)), 200
+
+
+@blp.route("/<int:user_id>/permissions/overrides")
+class UserPermissionOverridesResource(MethodView):
+    """Overrides directos (grant/revoke) de un usuario.
+
+    - GET (D1, read-only): lista UserPermission del target ordenados por
+      (módulo, code). Acceso: admin con `users.read_permissions`.
+    - PUT (D3): bulk replace del set de overrides. Acceso: admin con
+      `users.manage_permissions`. El handler valida lockouts (self,
+      main-admin, admin-colectivo) y emite AuditLog.
+    """
+
+    @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_USERS_READ_PERMISSIONS,))
+    @blp.response(200, UserPermissionOverrideSchema(many=True))
+    def get(self, user_id):
+        # 404 si el usuario no existe.
+        target = User.query.get(user_id)
+        if not target:
+            return {"message": "User not found"}, 404
+
+        overrides = (
+            UserPermission.query
+            .options(
+                joinedload(UserPermission.permission),
+                joinedload(UserPermission.granted_by_user),
+            )
+            .filter(UserPermission.user_id == user_id)
+            .all()
+        )
+        # Orden estable por (permission.module, permission.code) en Python
+        # — la cláusula ORDER BY en SQL requiere un JOIN extra y el set
+        # de overrides es pequeño, así que ordenamos en memoria.
+        overrides.sort(
+            key=lambda o: (
+                o.permission.module if o.permission else "",
+                o.permission.code if o.permission else "",
+            )
+        )
+        return overrides
+
+    @jwt_required()
+    @dual_required(roles=("admin",), perms=(PERM_USERS_MANAGE_PERMISSIONS,))
+    @blp.arguments(UserOverridesUpdateSchema)
+    def put(self, payload, user_id):
+        """Bulk replace de overrides del usuario (D3).
+
+        Body: `{"overrides": [{permission_code, effect}, ...]}` — el set
+        completo de overrides que quedará persistido. Devuelve
+        `{overrides, permissions}` para hidratar el drawer sin refetch.
+        """
+        target = _load_user_for_perm_inspection(user_id)
+        if not target:
+            return jsonify({"message": "User not found"}), 404
+
+        try:
+            actor_id = int(get_jwt_identity())
+        except (TypeError, ValueError):
+            return jsonify({"message": "Invalid token identity"}), 401
+        actor = User.query.get(actor_id)
+        if not actor:
+            return jsonify({"message": "Actor not found"}), 401
+
+        result, error = UserOverridesHandler.replace_overrides(
+            target_user=target,
+            actor=actor,
+            requested_overrides=payload.get("overrides", []),
+        )
+        if error is not None:
+            status, msg = error
+            return jsonify({"message": msg}), status
+        return jsonify(result), 200

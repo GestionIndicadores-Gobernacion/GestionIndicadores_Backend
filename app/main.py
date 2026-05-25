@@ -181,6 +181,7 @@ def create_app(config_class=Config):
     from app.modules.indicators import commands
     app.cli.add_command(commands.seed)
     app.cli.add_command(commands.seed_users)
+    app.cli.add_command(commands.seed_permissions)
     app.cli.add_command(seed_public_policies_command)
 
     # ======================================================

@@ -4,6 +4,11 @@ from app.modules.indicators.models.Strategy.strategy_annual_goal import Strategy
 from app.shared.models.user import User
 from app.shared.models.user_component import UserComponent
 from app.shared.models.role import Role
+# ── RBAC (Bloque 2): registrados aquí para que db.create_all() los
+# considere también desde el módulo indicators. No hay uso en runtime aún.
+from app.shared.models.permission import Permission
+from app.shared.models.role_permission import RolePermission
+from app.shared.models.user_permission import UserPermission
 
 from app.modules.indicators.models.Component.component import Component
 from app.modules.indicators.models.Component.component_objective import ComponentObjective

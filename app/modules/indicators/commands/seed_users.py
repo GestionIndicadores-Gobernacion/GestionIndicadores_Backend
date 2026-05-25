@@ -17,7 +17,10 @@ def seed_users():
     # ===================================================
     # ROLES
     # ===================================================
-    roles = ["viewer", "editor", "admin"]
+    # `monitor` se incluye para mantener parity con SYSTEM_ROLES de
+    # seed_permissions. Si seed_permissions ya corrió, este loop solo
+    # encuentra los roles existentes y no duplica nada.
+    roles = ["viewer", "editor", "admin", "monitor"]
     role_map = {}
 
     for name in roles:
