@@ -174,6 +174,7 @@ def create_app(config_class=Config):
     from app.modules.datasets import models     # noqa: F401
     from app.modules.action_plans import models # noqa: F401
     from app.modules.notifications import models# noqa: F401
+    from app.modules.support import models      # noqa: F401
 
     # ======================================================
     # CLI — Seed commands
