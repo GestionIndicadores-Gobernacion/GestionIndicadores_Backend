@@ -25,7 +25,7 @@ blp = Blueprint(
 class PermissionListResource(MethodView):
 
     @jwt_required()
-    @dual_required(roles=("admin", "monitor"), perms=(PERM_ROLES_READ,))
+    @dual_required(roles=("admin",), perms=(PERM_ROLES_READ,))
     @blp.response(200, PermissionSchema(many=True))
     def get(self):
         """Lista el catálogo completo de permisos (ordenado por módulo + code)."""
