@@ -100,11 +100,12 @@ def test_permissions_list_admin_ok(app, client):
     assert len(data) == len(ALL_PERMISSIONS)
 
 
-def test_permissions_list_monitor_ok(app, client):
+def test_permissions_list_monitor_forbidden(app, client):
+    """Post-restricción a admin-only: monitor ya no accede al catálogo."""
     _seed(app)
     token = _token_for(client, app, "monitor")
     resp = client.get("/permissions/", headers={"Authorization": f"Bearer {token}"})
-    assert resp.status_code == 200
+    assert resp.status_code == 403
 
 
 def test_permissions_list_editor_forbidden(app, client):
@@ -179,7 +180,8 @@ def test_role_permissions_admin_ok(app, client):
     assert resp.status_code == 200
 
 
-def test_role_permissions_monitor_ok(app, client):
+def test_role_permissions_monitor_forbidden(app, client):
+    """Post-restricción a admin-only: monitor ya no accede al detalle del rol."""
     _seed(app)
     role_id = _admin_role_id(app)
     token = _token_for(client, app, "monitor")
@@ -187,7 +189,7 @@ def test_role_permissions_monitor_ok(app, client):
         f"/roles/{role_id}/permissions",
         headers={"Authorization": f"Bearer {token}"},
     )
-    assert resp.status_code == 200
+    assert resp.status_code == 403
 
 
 def test_role_permissions_editor_forbidden(app, client):
