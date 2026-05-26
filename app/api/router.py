@@ -4,6 +4,7 @@ from app.modules.indicators.routes import register_indicators_routes
 from app.modules.datasets.routes import register_routes as register_dataset_routes
 from app.modules.action_plans.routes import register_routes as register_action_plan_routes
 from app.modules.notifications.routes import register_routes as register_notification_routes
+from app.modules.support.routes import register_routes as register_support_routes
 
 
 # Esquemas homónimos detectados entre módulos. Para estos, se antepone el
@@ -45,5 +46,6 @@ def register_routes(app):
     register_dataset_routes(api)
     register_action_plan_routes(api)
     register_notification_routes(api)
+    register_support_routes(api)
 
     return api
