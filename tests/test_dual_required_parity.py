@@ -50,8 +50,8 @@ def _token_for(client, app, role_name):
 # — un 422 para admin sigue cumpliendo "≠ 403". Lo único que prueba es la
 # paridad rol↔perm de `dual_required`, no la validación de payload.
 DUAL_ENDPOINTS = [
-    ("/roles/",                              "GET", {"admin", "monitor"}),
-    ("/roles/1",                             "GET", {"admin", "monitor"}),
+    ("/roles/",                              "GET", {"admin"}),
+    ("/roles/1",                             "GET", {"admin"}),
     ("/audit-logs/",                         "GET", {"admin", "monitor"}),
     ("/roles/1/permissions",                 "PUT", {"admin"}),
     ("/users/1/permissions/overrides",       "PUT", {"admin"}),
