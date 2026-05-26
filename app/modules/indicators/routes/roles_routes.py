@@ -31,7 +31,7 @@ blp = Blueprint(
 class RoleListResource(MethodView):
 
     @jwt_required()
-    @dual_required(roles=("admin", "monitor"), perms=(PERM_ROLES_READ,))
+    @dual_required(roles=("admin",), perms=(PERM_ROLES_READ,))
     @blp.response(200, RoleDetailSchema(many=True))
     def get(self):
         return (
@@ -49,7 +49,7 @@ class RoleListResource(MethodView):
 class RoleResource(MethodView):
 
     @jwt_required()
-    @dual_required(roles=("admin", "monitor"), perms=(PERM_ROLES_READ,))
+    @dual_required(roles=("admin",), perms=(PERM_ROLES_READ,))
     @blp.response(200, RoleSchema)
     def get(self, role_id):
         role = RoleHandler.get_by_id(role_id)
@@ -68,7 +68,7 @@ class RolePermissionsResource(MethodView):
     """
 
     @jwt_required()
-    @dual_required(roles=("admin", "monitor"), perms=(PERM_ROLES_READ,))
+    @dual_required(roles=("admin",), perms=(PERM_ROLES_READ,))
     def get(self, role_id):
         role = (
             Role.query
