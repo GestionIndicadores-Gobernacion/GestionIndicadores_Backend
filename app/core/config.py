@@ -45,6 +45,14 @@ class Config:
     # paridad antes de promover el sistema permisos como autoritativo.
     PERM_SHADOW_MODE = os.getenv("PERM_SHADOW_MODE", "false").lower() == "true"
 
+    # ── Email de soporte (botón flotante de reporte de fallos) ──────────
+    SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
+    SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+    SMTP_USER = os.getenv("SMTP_USER", "")
+    SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")
+    SUPPORT_EMAIL_TO = os.getenv("SUPPORT_EMAIL_TO", "juamcamirodri@gmail.com")
+    SUPPORT_EMAIL_FROM_NAME = os.getenv("SUPPORT_EMAIL_FROM_NAME", "Indicadores PYBA — Soporte")
+
 
 class TestConfig(Config):
     """
