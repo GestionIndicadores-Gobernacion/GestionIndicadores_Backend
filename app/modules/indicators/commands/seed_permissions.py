@@ -71,8 +71,12 @@ BUNDLE_MONITOR = frozenset({
     PERM_ACTION_PLANS_READ,
     PERM_ACTION_PLANS_UPDATE_OWN,
     PERM_ACTION_PLANS_DELETE_OWN,
-    PERM_ACTION_PLANS_REPORT_ACTIVITY,
-    PERM_ACTION_PLANS_ADD_EVIDENCE,
+    # PERM_ACTION_PLANS_REPORT_ACTIVITY y PERM_ACTION_PLANS_ADD_EVIDENCE
+    # NO se incluyen por default. Son overrides granulares (ver
+    # `_can_report_activity` / `_can_add_evidence`): por defecto monitor
+    # solo puede reportar/evidenciar planes donde sea responsable. Se
+    # asignan desde la UI a usuarios específicos cuando se requiera la
+    # excepción.
     PERM_ACTION_PLANS_DASHBOARD,
     PERM_DATASETS_READ,
 })
@@ -87,8 +91,8 @@ BUNDLE_EDITOR = frozenset({
     PERM_ACTION_PLANS_READ,
     PERM_ACTION_PLANS_UPDATE_OWN,
     PERM_ACTION_PLANS_DELETE_OWN,
-    PERM_ACTION_PLANS_REPORT_ACTIVITY,
-    PERM_ACTION_PLANS_ADD_EVIDENCE,
+    # PERM_ACTION_PLANS_REPORT_ACTIVITY y PERM_ACTION_PLANS_ADD_EVIDENCE
+    # idem monitor: overrides granulares, no se dan por default.
     PERM_DATASETS_READ,
 })
 
