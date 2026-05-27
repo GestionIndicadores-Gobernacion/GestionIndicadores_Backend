@@ -11,7 +11,7 @@ from app.modules.indicators.services.report_handler import ReportHandler
 from app.modules.indicators.services.report_aggregate_handler import ReportAggregateHandler
 from app.modules.indicators.services.report_indicator_handler import ReportIndicatorHandler
 from app.utils.pagination import get_pagination_params, paginate_query, envelope
-from app.utils.permissions import dual_required
+from app.utils.permissions import dual_required, has_permission
 from app.shared.permissions import (
     PERM_REPORTS_CREATE,
     PERM_REPORTS_READ,
@@ -87,15 +87,33 @@ def _can_view(report) -> bool:
     return _role_name() in ("admin", "monitor", "editor", "viewer")
 
 
-def _can_modify(report) -> bool:
-    """Edición/eliminación: solo el autor del reporte. Admin tiene override
-    por seguridad administrativa."""
+def _can_modify_report(report, perm_any: str) -> bool:
+    """Helper unificado para editar/eliminar un reporte.
+
+    Política:
+      - Viewer bloqueado siempre.
+      - Override granular: usuario con `perm_any` en su set efectivo
+        (rol ∪ grants) puede modificar cualquier reporte. Admin sin el
+        permiso explícito no tiene privilegios extra.
+      - Sin override: solo el autor del reporte puede modificarlo.
+
+    `perm_any` debe ser `PERM_REPORTS_UPDATE_ANY` o
+    `PERM_REPORTS_DELETE_ANY` según la operación.
+    """
     if _is_viewer():
         return False
-    if _is_admin():
+    if has_permission(perm_any):
         return True
     uid = _current_user_id()
     return uid is not None and report.user_id == uid
+
+
+def _can_edit_report(report) -> bool:
+    return _can_modify_report(report, PERM_REPORTS_UPDATE_ANY)
+
+
+def _can_delete_report(report) -> bool:
+    return _can_modify_report(report, PERM_REPORTS_DELETE_ANY)
 
 
 # =========================================================
@@ -215,7 +233,7 @@ class ReportDetail(MethodView):
         if not report:
             abort(404, message="Report not found")
 
-        if not _can_modify(report):
+        if not _can_edit_report(report):
             abort(403, message="No tienes permiso para editar este reporte")
 
         updated, errors = ReportHandler.update(report, data)
@@ -238,7 +256,7 @@ class ReportDetail(MethodView):
         if not report:
             abort(404, message="Report not found")
 
-        if not _can_modify(report):
+        if not _can_delete_report(report):
             abort(403, message="No tienes permiso para eliminar este reporte")
 
         ReportHandler.delete(report)
@@ -260,7 +278,7 @@ class ReportLinkActivity(MethodView):
         if not report:
             abort(404, message="Reporte no encontrado")
 
-        if not _can_modify(report):
+        if not _can_edit_report(report):
             abort(403, message="No tienes permiso para modificar este reporte")
 
         result, errors = ReportHandler._link_activity_to_report(report, activity_id)

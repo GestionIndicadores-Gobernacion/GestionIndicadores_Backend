@@ -8,13 +8,6 @@ from app.shared.models.audit_log import AuditLog
 from sqlalchemy.orm import selectinload, joinedload
 
 
-def _current_user_is_admin():
-    from app.shared.models.user import User
-    user_id = get_jwt_identity()
-    user = User.query.get(user_id)
-    return user and user.role and user.role.name == "admin"
-
-
 class ReportHandler:
 
     @staticmethod
