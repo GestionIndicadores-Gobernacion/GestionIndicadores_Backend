@@ -13,7 +13,7 @@ from app.modules.action_plans.schemas.action_plan_schema import (
     ActionPlanActivityDetailSchema,
 )
 from app.modules.action_plans.services.action_plan_handler import ActionPlanHandler
-from app.utils.permissions import dual_required
+from app.utils.permissions import dual_required, has_permission
 from app.shared.permissions import (
     PERM_ACTION_PLANS_CREATE,
     PERM_ACTION_PLANS_READ,
@@ -45,27 +45,42 @@ def _is_viewer():
     user = _get_current_user()
     return user and user.role and user.role.name == "viewer"
 
-def _can_edit_plan(plan):
-    """Editar/eliminar un plan: solo el creador. Admin tiene override
-    por seguridad administrativa.
+def _can_modify_plan(plan, perm_any: str) -> bool:
+    """Helper unificado para editar/eliminar un plan.
 
-    Si el creador es Editor, además exige que el componente del plan siga
-    estando entre sus componentes asignados (si se lo desasignaron, pierde
-    el permiso aunque haya sido el autor).
+    Política:
+      - Viewer bloqueado siempre.
+      - Override granular: usuario con `perm_any` en su set efectivo
+        (rol ∪ grants) puede modificar cualquier plan, sin restricción de
+        creador ni de componente asignado. Admin sin el permiso explícito
+        no tiene privilegios extra — el permiso es la única vía de override.
+      - Sin override: solo el creador puede modificar. Si el creador es
+        editor, además se exige que el componente siga entre sus
+        `component_assignments` (si lo desasignaron, pierde la capacidad
+        aunque haya sido el autor).
+
+    `perm_any` debe ser `PERM_ACTION_PLANS_UPDATE_ANY` o
+    `PERM_ACTION_PLANS_DELETE_ANY` según la operación.
     """
     user = _get_current_user()
-    if not user or not user.role:
+    if not user or not user.role or user.role.name == "viewer":
         return False
-    if user.role.name == "admin":
+    if has_permission(perm_any):
         return True
-    if user.role.name == "viewer":
-        return False
     if plan.user_id is None or plan.user_id != user.id:
         return False
     if user.role.name == "editor":
         assigned = {uc.component_id for uc in user.component_assignments}
         return plan.component_id in assigned
     return True
+
+
+def _can_edit_plan(plan):
+    return _can_modify_plan(plan, PERM_ACTION_PLANS_UPDATE_ANY)
+
+
+def _can_delete_plan(plan):
+    return _can_modify_plan(plan, PERM_ACTION_PLANS_DELETE_ANY)
 
 def _get_activity_plan(activity_id: int):
     """Retorna (activity, plan) o (None, None) si no existe."""
@@ -81,25 +96,30 @@ def _get_activity_plan(activity_id: int):
 
 def _can_add_evidence(activity, plan) -> bool:
     """
-    Subir/editar evidencia: SOLO el responsable asignado al plan.
-    Admin tiene override por seguridad administrativa.
+    Subir/editar evidencia: por defecto SOLO el responsable asignado al plan.
+
+    Override granular: cualquier usuario (incluido admin) que tenga
+    `PERM_ACTION_PLANS_ADD_EVIDENCE` en su set efectivo (rol ∪ grants)
+    puede agregar/editar evidencia aunque no sea responsable. El permiso
+    es la ÚNICA vía de override — admin sin el permiso no tiene
+    privilegios extra. Viewer está bloqueado siempre.
     """
     user = _get_current_user()
     if not user or not user.role or user.role.name == "viewer":
         return False
-    if user.role.name == "admin":
+    if user.id in _plan_responsible_ids(plan):
         return True
-    return user.id in _plan_responsible_ids(plan)
+    return has_permission(PERM_ACTION_PLANS_ADD_EVIDENCE)
 
 
 def _can_edit_activity(activity, plan) -> bool:
-    """Editar una actividad: mismas reglas que editar el plan (solo creador)."""
+    """Editar una actividad: mismas reglas que editar el plan."""
     return _can_edit_plan(plan)
 
 
 def _can_delete_activity(activity, plan) -> bool:
-    """Eliminar una actividad: mismas reglas que editar el plan (solo creador)."""
-    return _can_edit_plan(plan)
+    """Eliminar una actividad: mismas reglas que eliminar el plan."""
+    return _can_delete_plan(plan)
 
 
 def _plan_responsible_ids(plan) -> set[int]:
@@ -111,14 +131,20 @@ def _plan_responsible_ids(plan) -> set[int]:
 
 def _can_report_activity(plan) -> bool:
     """
-    Reportar una actividad es un acto EXCLUSIVO del responsable asignado
-    al plan. Ni el creador del plan (si no es responsable), ni admin, ni
-    monitor pueden reportar por él.
+    Reportar una actividad: por defecto SOLO el responsable asignado al plan.
+
+    Override granular: cualquier usuario (incluido admin) que tenga
+    `PERM_ACTION_PLANS_REPORT_ACTIVITY` en su set efectivo (rol ∪ grants)
+    puede reportar aunque no sea responsable. El permiso es la ÚNICA vía
+    de override — admin sin el permiso no tiene privilegios extra.
+    Viewer está bloqueado siempre.
     """
     user = _get_current_user()
     if not user or not user.role or user.role.name == "viewer":
         return False
-    return user.id in _plan_responsible_ids(plan)
+    if user.id in _plan_responsible_ids(plan):
+        return True
+    return has_permission(PERM_ACTION_PLANS_REPORT_ACTIVITY)
 
 @blp.route("/")
 class ActionPlanList(MethodView):
@@ -229,7 +255,7 @@ class ActionPlanDetail(MethodView):
         plan = ActionPlanHandler.get_by_id(plan_id)
         if not plan:
             return jsonify({"error": "No encontrado"}), 404
-        if not _can_edit_plan(plan):
+        if not _can_delete_plan(plan):
             return jsonify({"error": "Sin permiso"}), 403
         success, errors = ActionPlanHandler.delete(plan_id)
         if not success:

@@ -79,12 +79,20 @@ class ActionPlanValidator:
             )
             return errors
 
-        # Solo el responsable del plan puede agregar/editar evidencia
+        # Por defecto solo el responsable del plan puede agregar/editar
+        # evidencia. Override granular: cualquier usuario con
+        # `PERM_ACTION_PLANS_ADD_EVIDENCE` en su set efectivo (rol ∪ grants)
+        # también puede, aunque no sea responsable. El permiso es la única
+        # vía de override — sin él, ni admin pasa.
+        from app.utils.permissions import has_permission
+        from app.shared.permissions import PERM_ACTION_PLANS_ADD_EVIDENCE
+
         responsible_ids = list(plan.responsible_user_ids)
         if activity.reported_by_user_id:
             responsible_ids.append(activity.reported_by_user_id)
 
-        if int(user_id) not in responsible_ids:
+        is_responsible = int(user_id) in responsible_ids
+        if not is_responsible and not has_permission(PERM_ACTION_PLANS_ADD_EVIDENCE):
             errors["activity"] = "Solo el responsable de la actividad puede agregar o editar la evidencia."
             return errors
 
