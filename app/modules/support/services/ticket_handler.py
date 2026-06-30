@@ -29,6 +29,7 @@ class TicketHandler:
         message: str,
         current_url: str = "",
         user_agent: str = "",
+        images: Optional[List[str]] = None,
     ) -> SupportTicket:
         ticket = SupportTicket(
             user_id=user_id,
@@ -46,6 +47,7 @@ class TicketHandler:
             body=message,
             is_admin_reply=False,
             read_by_owner=True,  # El propio autor ya lo leyó.
+            images=list(images) if images else None,
         )
         db.session.add(first_msg)
         db.session.commit()
@@ -104,6 +106,7 @@ class TicketHandler:
         ticket: SupportTicket,
         author: User,
         body: str,
+        images: Optional[List[str]] = None,
     ) -> Tuple[SupportMessage, Optional[str]]:
         is_admin = bool(author.role and author.role.name == "admin")
 
@@ -115,11 +118,12 @@ class TicketHandler:
         msg = SupportMessage(
             ticket_id=ticket.id,
             user_id=author.id,
-            body=body,
+            body=body or "",
             is_admin_reply=is_admin,
             # Si el autor del mensaje es el dueño, lo marcamos como leído
             # (no aplica el flag); si es admin, queda no leído para el dueño.
             read_by_owner=not is_admin,
+            images=list(images) if images else None,
         )
         db.session.add(msg)
         ticket.updated_at = datetime.utcnow()
@@ -128,10 +132,16 @@ class TicketHandler:
         # Notificación in-app cuando admin responde a un ticket de otro
         # usuario. Si admin se contesta a sí mismo, no la creamos.
         if is_admin and ticket.user_id != author.id:
+            preview = (body or "").strip()
+            if not preview and images:
+                n = len(images)
+                preview = "📷 Imagen adjunta" if n == 1 else f"📷 {n} imágenes adjuntas"
+            elif len(preview) > 160:
+                preview = preview[:160] + "…"
             NotificationHandler.create(
                 user_id=ticket.user_id,
                 title="Respuesta a tu reporte",
-                message=(body[:160] + "…") if len(body) > 160 else body,
+                message=preview,
                 category="support_reply",
                 entity_id=ticket.id,
             )
