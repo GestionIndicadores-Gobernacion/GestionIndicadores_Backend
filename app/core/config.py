@@ -33,6 +33,11 @@ class Config:
     MAX_CONTENT_LENGTH = int(os.getenv("MAX_UPLOAD_MB", 10)) * 1024 * 1024
     BASE_URL = os.getenv("BASE_URL", "http://localhost:5000")
 
+    # Email del administrador principal. Único autorizado a eliminar planes de
+    # acción que tengan actividades "Pendiente de Evidencia" (incluso vencidas).
+    # Configurable por env para no acoplar la lógica a un correo fijo.
+    SUPER_ADMIN_EMAIL = os.getenv("SUPER_ADMIN_EMAIL", "admin@gobernacion.gov.co")
+
     # Bandera usada por la factory para decidir comportamientos de entorno
     # (CORS, SSL, engine options). Solo `TestConfig` la pone en True.
     TESTING = False
