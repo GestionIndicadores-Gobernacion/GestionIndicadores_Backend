@@ -84,11 +84,18 @@ class TicketCollection(MethodView):
         user_agent = payload.get("user_agent", "") or ""
         screenshot = payload.get("screenshot_data_url")
 
+        # Imágenes a persistir en el primer mensaje: la lista nueva + el
+        # screenshot legado (si vino) al frente, sin duplicar.
+        images = list(payload.get("images") or [])
+        if screenshot and screenshot not in images:
+            images.insert(0, screenshot)
+
         ticket = TicketHandler.create(
             user_id=user.id,
             message=message,
             current_url=current_url,
             user_agent=user_agent,
+            images=images,
         )
 
         # Email al destinatario configurado. Si falla NO tumbamos la
@@ -198,7 +205,18 @@ class TicketMessages(MethodView):
         if ticket.status == "cerrado":
             return jsonify({"error": "El ticket está cerrado y no admite mensajes."}), 400
 
-        msg, err = TicketHandler.add_message(ticket=ticket, author=user, body=payload["body"])
+        # Combinamos la lista nueva con la imagen única (legado), sin duplicar.
+        images = list(payload.get("images") or [])
+        legacy = payload.get("image_data_url")
+        if legacy and legacy not in images:
+            images.insert(0, legacy)
+
+        msg, err = TicketHandler.add_message(
+            ticket=ticket,
+            author=user,
+            body=payload.get("body", ""),
+            images=images,
+        )
         if err:
             return jsonify({"error": err}), 400
         return jsonify(SupportMessageSchema().dump(msg)), 201

@@ -26,6 +26,24 @@ class SupportMessage(db.Model):
 
     body = db.Column(db.Text, nullable=False)
 
+    # [LEGADO] Imagen única adjunta como data URL base64. Se mantiene por
+    # compatibilidad de lectura con mensajes antiguos; los nuevos usan `images`.
+    image_data_url = db.Column(db.Text, nullable=True)
+
+    # Lista de imágenes adjuntas (data URLs base64). Se guardan inline en la BD
+    # porque el backend corre en Render con filesystem efímero (no persiste en
+    # disco). El frontend las comprime antes de enviarlas para no inflar la fila.
+    images = db.Column(db.JSON, nullable=True)
+
+    @property
+    def image_list(self) -> list:
+        """Lista unificada de imágenes (nuevas + legado de una sola imagen)."""
+        if self.images:
+            return list(self.images)
+        if self.image_data_url:
+            return [self.image_data_url]
+        return []
+
     # True cuando lo escribe un usuario con rol admin. Permite distinguir el
     # remitente en la UI sin tener que recargar la relación role en cada
     # render.

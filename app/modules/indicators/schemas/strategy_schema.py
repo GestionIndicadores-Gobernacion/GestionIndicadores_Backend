@@ -39,13 +39,33 @@ class StrategySchema(Schema):
     objective                = fields.Str(required=True)
     product_goal_description = fields.Str(required=True)
 
-    annual_goals = fields.Method("get_annual_goals", load_default=[])
+    # IMPORTANTE: pasar SOLO `serialize` a fields.Method lo vuelve dump_only
+    # (marshmallow: dump_only = bool(serialize) and not bool(deserialize)).
+    # Eso hacía que el `annual_goals` del POST/PUT se descartara al cargar y el
+    # validador siempre fallara con "Annual goals are required". Al añadir el
+    # método de deserialización el campo vuelve a aceptar carga.
+    annual_goals = fields.Method(
+        "get_annual_goals",
+        deserialize="load_annual_goals",
+        load_default=[],
+    )
     metrics      = fields.List(fields.Nested(StrategyMetricSchema), load_default=[])
 
     total_goal = fields.Method("get_total_goal", dump_only=True)
 
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
+
+    def load_annual_goals(self, value):
+        """Deserializa la lista de metas anuales entrante.
+
+        El frontend envía `[{ "year_number": 1, "value": 1 }, ...]`.
+        Reusamos StrategyAnnualGoalSchema para validar/normalizar cada item
+        (calendar_year es dump_only y se ignora aquí).
+        """
+        if not value:
+            return []
+        return StrategyAnnualGoalSchema(many=True).load(value)
 
     def get_annual_goals(self, obj):
         if obj is None:
