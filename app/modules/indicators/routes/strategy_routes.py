@@ -34,7 +34,11 @@ class StrategyListResource(MethodView):
     def post(self, data):
         strategy, errors = StrategyHandler.create(data)
         if errors:
-            return {"errors": errors}, 400
+            # No retornar el dict de errores tal cual: @blp.response intentaría
+            # serializarlo con StrategySchema y get_annual_goals reventaría con
+            # "'dict' object has no attribute 'annual_goals'" (500). abort() emite
+            # un error JSON propio sin pasar por el schema de respuesta.
+            abort(422, message="No se pudo crear la estrategia.", errors=errors)
         return strategy
 
 
