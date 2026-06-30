@@ -18,11 +18,21 @@ ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://127.0.0.1:4200",
     "https://gestionindicadoresgov.netlify.app",
+    # Dominio propio de producción (frontend).
+    "https://indicadorespyba.cloud",
+    "https://www.indicadorespyba.cloud",
 ]
 
 # Acepta también deploy previews de Netlify: https://<hash>--<site>.netlify.app
 NETLIFY_PREVIEW_RE = re.compile(
     r"^https://[a-z0-9-]+--gestionindicadoresgov\.netlify\.app$",
+    re.IGNORECASE,
+)
+
+# Acepta el apex y cualquier subdominio del dominio propio:
+# https://indicadorespyba.cloud y https://<sub>.indicadorespyba.cloud
+CUSTOM_DOMAIN_RE = re.compile(
+    r"^https://([a-z0-9-]+\.)?indicadorespyba\.cloud$",
     re.IGNORECASE,
 )
 
@@ -36,6 +46,8 @@ def _is_origin_allowed(origin: str) -> bool:
     if origin in ALLOWED_ORIGINS:
         return True
     if NETLIFY_PREVIEW_RE.match(origin):
+        return True
+    if CUSTOM_DOMAIN_RE.match(origin):
         return True
     return False
 
@@ -128,7 +140,7 @@ def create_app(config_class=Config):
     # ======================================================
     CORS(
         app,
-        resources={r"/*": {"origins": ALLOWED_ORIGINS + [NETLIFY_PREVIEW_RE]}},
+        resources={r"/*": {"origins": ALLOWED_ORIGINS + [NETLIFY_PREVIEW_RE, CUSTOM_DOMAIN_RE]}},
         allow_headers=["Content-Type", "Authorization", "Accept", "X-Requested-With"],
         expose_headers=["Content-Disposition"],
         methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],

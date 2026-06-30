@@ -37,6 +37,36 @@ def _get_current_user():
     from app.shared.models.user import User
     return User.query.get(get_jwt_identity())
 
+
+def _is_super_admin(user) -> bool:
+    """True si el usuario es el administrador principal (config SUPER_ADMIN_EMAIL).
+
+    Es el único autorizado a eliminar planes/actividades en estado
+    "Pendiente de Evidencia". Comparación case-insensitive y tolerante a espacios.
+    """
+    from flask import current_app
+    target = (current_app.config.get("SUPER_ADMIN_EMAIL") or "").strip().lower()
+    if not target:
+        return False
+    return bool(user and user.email and user.email.strip().lower() == target)
+
+
+def _activity_is_pending_evidence(activity) -> bool:
+    """Pendiente de Evidencia = reportada pero sin evidencia cargada.
+
+    Espeja la property `ActionPlanActivity.status` sin acoplarse al string.
+    """
+    return activity.reported_at is not None and not activity.evidence_url
+
+
+def _plan_has_pending_evidence(plan) -> bool:
+    """True si el plan tiene al menos una actividad Pendiente de Evidencia."""
+    for obj in plan.plan_objectives:
+        for act in obj.activities:
+            if _activity_is_pending_evidence(act):
+                return True
+    return False
+
 def _can_manage_plans():
     user = _get_current_user()
     return user and user.role and user.role.name in ("admin", "monitor")
@@ -255,8 +285,20 @@ class ActionPlanDetail(MethodView):
         plan = ActionPlanHandler.get_by_id(plan_id)
         if not plan:
             return jsonify({"error": "No encontrado"}), 404
-        if not _can_delete_plan(plan):
+
+        # Caso especial: planes con actividades "Pendiente de Evidencia"
+        # (incluso vencida la ventana). Solo el administrador principal puede
+        # eliminarlos — y puede aunque no sea el creador. Cualquier otro queda
+        # bloqueado, incluso si tendría permiso de borrado normal.
+        if _plan_has_pending_evidence(plan):
+            if not _is_super_admin(_get_current_user()):
+                return jsonify({
+                    "error": "Este plan tiene actividades pendientes de evidencia. "
+                             "Solo el administrador principal puede eliminarlo."
+                }), 403
+        elif not _can_delete_plan(plan):
             return jsonify({"error": "Sin permiso"}), 403
+
         success, errors = ActionPlanHandler.delete(plan_id)
         if not success:
             return jsonify({"errors": errors}), 404
@@ -333,7 +375,15 @@ class ActionPlanActivityDetail(MethodView):
         if not activity:
             return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
 
-        if not _can_delete_activity(activity, plan):
+        # Actividad "Pendiente de Evidencia" (incluso vencida): solo el
+        # administrador principal puede eliminarla. Espeja la regla del plan.
+        if _activity_is_pending_evidence(activity):
+            if not _is_super_admin(_get_current_user()):
+                return jsonify({
+                    "error": "Esta actividad está pendiente de evidencia. "
+                             "Solo el administrador principal puede eliminarla."
+                }), 403
+        elif not _can_delete_activity(activity, plan):
             return jsonify({"error": "Sin permiso para eliminar esta actividad"}), 403
 
         delete_all = request.args.get("delete_all", "false").lower() == "true"
