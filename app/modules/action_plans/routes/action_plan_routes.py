@@ -38,6 +38,33 @@ def _get_current_user():
     return User.query.get(get_jwt_identity())
 
 
+def _normalize_person_name(value) -> str:
+    """Clave canónica para comparar nombres de personas.
+
+    Minúsculas, sin acentos, espacios colapsados. Se usa para hacer coincidir
+    un nombre de texto libre (p. ej. en el campo legacy `responsible`) con el
+    nombre real de un usuario y así fusionar sus tareas en el dashboard.
+    """
+    import unicodedata
+    if not value:
+        return ""
+    s = unicodedata.normalize("NFKD", str(value))
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return " ".join(s.lower().split())
+
+
+def _split_responsible_names(text: str) -> list[str]:
+    """Divide un texto de responsables combinado en nombres individuales.
+
+    El sistema une varios responsables con ", " (ver `responsible_display`),
+    por lo que un texto libre puede traer varios nombres como si fuera uno.
+    Se separa por coma, punto y coma y salto de línea, descartando vacíos.
+    """
+    import re
+    parts = re.split(r"[,;\n]+", text or "")
+    return [p.strip() for p in parts if p and p.strip()]
+
+
 def _is_super_admin(user) -> bool:
     """True si el usuario es el administrador principal (config SUPER_ADMIN_EMAIL).
 
@@ -455,6 +482,16 @@ class ActionPlanUserDashboard(MethodView):
             selectinload(ActionPlan.responsible_users)
         ).all()
 
+        # Mapa nombre-normalizado → (user_id, "Nombre Apellido") para poder
+        # fusionar responsables de texto libre con su usuario real y así sumar
+        # las tareas bajo una sola persona (misma clave user_{id}).
+        users_by_name: dict[str, tuple[int, str]] = {}
+        for u in User.query.all():
+            full = f"{u.first_name or ''} {u.last_name or ''}".strip()
+            key = _normalize_person_name(full)
+            if key and key not in users_by_name:
+                users_by_name[key] = (u.id, full)
+
         grouped: dict[str, dict] = {}
 
         def _get_or_create_group(key: str, display_name: str):
@@ -482,16 +519,32 @@ class ActionPlanUserDashboard(MethodView):
                 if u:
                     name = f"{u.first_name} {u.last_name}".strip()
                     plan_responsible_entries.append((f"user_{u.id}", name))
-            # Fallback texto libre
+            # Fallback texto libre: puede traer varios nombres unidos
+            # ("EDILBERTO PEREIRA, NATALIA VALENCIA RODAS"). Se separa en
+            # personas individuales y cada una se fusiona con su usuario real
+            # si el nombre coincide, para que las tareas se sumen a esa persona.
             elif plan.responsible:
-                txt = plan.responsible.strip()
-                if txt:
-                    plan_responsible_entries.append((txt, txt))
+                for nombre in _split_responsible_names(plan.responsible):
+                    match = users_by_name.get(_normalize_person_name(nombre))
+                    if match:
+                        plan_responsible_entries.append((f"user_{match[0]}", match[1]))
+                    else:
+                        plan_responsible_entries.append((nombre, nombre))
 
             if not plan_responsible_entries:
                 continue
 
+            # Deduplicar por clave dentro del mismo plan para no contar dos
+            # veces las actividades si una persona aparece repetida en el texto.
+            seen_keys = set()
+            unique_entries = []
             for group_key, display_name in plan_responsible_entries:
+                if group_key in seen_keys:
+                    continue
+                seen_keys.add(group_key)
+                unique_entries.append((group_key, display_name))
+
+            for group_key, display_name in unique_entries:
                 grp = _get_or_create_group(group_key, display_name)
 
                 if plan.user_id:

@@ -53,10 +53,22 @@ class SupportMessage(db.Model):
     # ha leído todavía. Solo aplica a is_admin_reply=True.
     read_by_owner = db.Column(db.Boolean, default=False, nullable=False)
 
+    # Simétrico a read_by_owner pero del lado admin: permite saber qué
+    # mensajes escritos por el USUARIO (is_admin_reply=False) aún no ha visto
+    # ningún admin. Los mensajes escritos por un admin nacen ya en True.
+    read_by_admin = db.Column(db.Boolean, default=False, nullable=False)
+
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
     ticket = db.relationship("SupportTicket", back_populates="messages")
     user = db.relationship("User")
+
+    __table_args__ = (
+        # Índices compuestos para las consultas de "no leídos" en ambos
+        # sentidos (dueño ve respuestas admin; admin ve mensajes de usuario).
+        db.Index("ix_support_msg_owner_unread", "ticket_id", "is_admin_reply", "read_by_owner"),
+        db.Index("ix_support_msg_admin_unread", "ticket_id", "is_admin_reply", "read_by_admin"),
+    )
 
     def __repr__(self):
         return f"<SupportMessage {self.id} ticket={self.ticket_id} admin={self.is_admin_reply}>"
