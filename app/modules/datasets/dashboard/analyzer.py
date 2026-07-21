@@ -1,7 +1,16 @@
 from .orchestrator import orchestrate
 
 
-def detect_dataset_type(fields) -> str:
+def detect_dataset_type(fields, name_hint: str = "") -> str:
+    # Regla de máxima prioridad por nombre: cualquier archivo/dataset "Z080"
+    # es el reporte presupuestal (Z080 es el código del informe de ejecución
+    # presupuestal). Se evalúa antes que la detección por columnas porque el
+    # formato del Excel puede variar entre cortes mensuales (columnas vacías
+    # descartadas por el filtro de relleno, encabezados distintos, etc.) y
+    # aun así debe renderizar la vista de presupuesto.
+    if "z080" in (name_hint or "").lower():
+        return "presupuesto"
+
     names = {f.name.lower() for f in fields}
     # Denuncias: caso + denunciante + motivo de la denuncia (texto largo).
     # Se evalúa primero porque el Excel puede traer también "municipio" y
@@ -48,13 +57,13 @@ def detect_dataset_type(fields) -> str:
     return "generico"
 
 
-def analyze_dataset(fields, records) -> dict:
+def analyze_dataset(fields, records, name_hint: str = "") -> dict:
     total = len(records)
     if total == 0:
         return {"kpis": [], "sections": [], "total": 0}
 
     field_values = {f.name: [r.data.get(f.name) for r in records] for f in fields}
-    dtype = detect_dataset_type(fields)
+    dtype = detect_dataset_type(fields, name_hint)
 
     result = orchestrate(dtype, fields, field_values, total)
     result["dataset_type"] = dtype
