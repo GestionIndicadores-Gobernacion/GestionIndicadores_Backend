@@ -48,6 +48,19 @@ class NotificationHandler:
         db.session.commit()
         return count
 
+    @staticmethod
+    def mark_read_by_entity(user_id: int, category: str, entity_id: int, commit: bool = True) -> int:
+        """Marca como leídas las notificaciones de un usuario para una entidad
+        concreta (p. ej. todas las de un ticket de soporte). Permite unificar
+        el estado "no leído" de la campana con el de la vista del recurso: al
+        abrir el ticket también se limpian sus notificaciones."""
+        count = Notification.query.filter_by(
+            user_id=user_id, category=category, entity_id=entity_id, is_read=False
+        ).update({"is_read": True, "read_at": datetime.utcnow()})
+        if commit and count:
+            db.session.commit()
+        return count
+
     # ── NUEVO ────────────────────────────────────────────────────────────────
 
     @staticmethod
