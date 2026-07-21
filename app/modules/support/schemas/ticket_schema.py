@@ -49,6 +49,7 @@ class SupportMessageSchema(Schema):
     body = fields.Str(dump_only=True)
     is_admin_reply = fields.Bool(dump_only=True)
     read_by_owner = fields.Bool(dump_only=True)
+    read_by_admin = fields.Bool(dump_only=True)
     created_at = fields.DateTime(dump_only=True)
     # Lista unificada de imágenes (nuevas + legado de una sola imagen).
     images = fields.Function(lambda obj: obj.image_list, dump_only=True)
@@ -65,9 +66,17 @@ class SupportTicketSummarySchema(Schema):
     updated_at = fields.DateTime(dump_only=True)
     author = fields.Nested(TicketAuthorSchema, attribute="user", dump_only=True)
     last_message_preview = fields.Method("get_last_preview", dump_only=True)
+    # Respuestas admin sin leer por el dueño (badge del usuario).
     unread_admin_replies = fields.Method("get_unread", dump_only=True)
+    # Mensajes de usuario sin leer por el admin (badge del panel admin).
+    unread_user_messages = fields.Method("get_unread_admin", dump_only=True)
 
     def get_last_preview(self, obj):
+        # Preferimos el valor precalculado por el handler (sin N+1). Solo
+        # recorremos mensajes como fallback (p. ej. en el detalle de 1 ticket).
+        pre = getattr(obj, "_summary_last_preview", None)
+        if pre is not None:
+            return pre
         if not obj.messages:
             return None
         msg = obj.messages[-1]
@@ -78,9 +87,21 @@ class SupportTicketSummarySchema(Schema):
         return body[:140] + ("…" if len(body) > 140 else "")
 
     def get_unread(self, obj):
+        cached = getattr(obj, "_summary_unread_owner", None)
+        if cached is not None:
+            return cached
         return sum(
             1 for m in obj.messages
             if m.is_admin_reply and not m.read_by_owner
+        )
+
+    def get_unread_admin(self, obj):
+        cached = getattr(obj, "_summary_unread_admin", None)
+        if cached is not None:
+            return cached
+        return sum(
+            1 for m in obj.messages
+            if not m.is_admin_reply and not m.read_by_admin
         )
 
 

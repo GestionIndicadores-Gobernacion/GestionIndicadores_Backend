@@ -2,6 +2,14 @@
 from app.core.extensions import db
 from datetime import datetime
 
+# ── Categorías de notificación (evita magic strings dispersos) ───────────
+# El frontend enruta por estas mismas cadenas; no cambiar su valor.
+CATEGORY_ACTION_PLAN = "action_plan"
+CATEGORY_ACTION_PLAN_REMINDER = "action_plan_reminder"
+# Un mismo valor sirve para ambos sentidos del chat de soporte: la campana
+# enruta admin → /support y usuario → FAB según el rol del destinatario.
+CATEGORY_SUPPORT_REPLY = "support_reply"
+
 
 class Notification(db.Model):
     __tablename__ = "notifications"
