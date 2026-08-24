@@ -8,6 +8,11 @@ def make_accumulator():
         "by_month": defaultdict(float),
         "by_category": defaultdict(float),
         "by_nested": defaultdict(lambda: defaultdict(float)),
+        # Total plano por métrica para `categorized_group`. `by_nested`
+        # no sirve para esto porque guarda cada valor dos veces
+        # (categoría y "categoría – sexo"); sumarlo daría el doble.
+        # Lo consume `ReportConsolidatedHandler`; los serializers lo ignoran.
+        "by_metric": defaultdict(float),
     })
 
 
@@ -92,6 +97,7 @@ def _process_categorized_group(iv, r, value, month_key, acc, location_nested):
                 if isinstance(val, (int, float)):
                     acc["by_nested"][category][metric] += val
                     acc["by_nested"][f"{category} – {gender_clean}"][metric] += val
+                    acc["by_metric"][metric] += val
                     metric_totals[metric] += val
 
                     if r.intervention_location:
