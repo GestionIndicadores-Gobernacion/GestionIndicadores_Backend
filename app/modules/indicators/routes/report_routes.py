@@ -10,6 +10,7 @@ from app.shared.models.user import User
 from app.modules.indicators.services.report_handler import ReportHandler
 from app.modules.indicators.services.report_aggregate_handler import ReportAggregateHandler
 from app.modules.indicators.services.report_indicator_handler import ReportIndicatorHandler
+from app.modules.indicators.services.report_consolidated_handler import ReportConsolidatedHandler
 from app.utils.pagination import get_pagination_params, paginate_query, envelope
 from app.utils.permissions import dual_required, has_permission
 from app.shared.permissions import (
@@ -354,6 +355,29 @@ class ReportAggregateStrategy(MethodView):
     @jwt_required()
     def get(self, strategy_id):
         return ReportAggregateHandler.aggregate_by_strategy(strategy_id)
+
+@blp.route("/aggregate/component/<int:component_id>/location-year")
+class ReportConsolidatedLocationYear(MethodView):
+    """Consolidado municipio x año de los indicadores del componente.
+
+    Deliberadamente NO acepta `year` / `date_from` / `date_to` como los
+    otros aggregates: la gracia de esta vista es cruzar *todos* los años
+    con reportes. `year_from` / `year_to` existen solo para recortar el
+    rango cuando el historico crece demasiado.
+    """
+    @jwt_required()
+    def get(self, component_id):
+        from flask import request
+        result = ReportConsolidatedHandler.by_location_year(
+            component_id,
+            indicator_id=request.args.get("indicator_id", type=int),
+            year_from=request.args.get("year_from", type=int),
+            year_to=request.args.get("year_to", type=int),
+        )
+        if result is None:
+            abort(404, message="Componente no encontrado")
+        return result
+
 
 @blp.route("/aggregate/component/<int:component_id>/indicators")
 class ReportAggregateComponentIndicators(MethodView):
