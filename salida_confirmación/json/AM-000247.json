@@ -1,0 +1,69 @@
+{
+  "id_documento": "AM-000247",
+  "archivo_imagen": "AM-000247.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_053530.jpg",
+  "fecha_lote": "2026-08-22",
+  "dia_agosto": 22,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-413",
+  "fecha_documento_detectada": "16-Ago-26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": "",
+  "recibe_nombre": "",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Credelio",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dermolane",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "200"
+    },
+    {
+      "medicamento_insumo": "Diurivet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "NF 50ml"
+    },
+    {
+      "medicamento_insumo": "Eyetears",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "1.4%"
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Obrevon",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30gr"
+    },
+    {
+      "medicamento_insumo": "Sulfadiazine",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "1%"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-26T14:47:23.070271",
+    "duracion_segundos": 4.38,
+    "tokens_total": 2344
+  }
+}

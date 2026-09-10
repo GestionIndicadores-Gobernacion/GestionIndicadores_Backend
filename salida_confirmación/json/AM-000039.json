@@ -1,0 +1,167 @@
+{
+  "id_documento": "AM-000039",
+  "archivo_imagen": "AM-000039.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031317010.jpg",
+  "fecha_lote": "2026-08-14",
+  "dia_agosto": 14,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-015",
+  "fecha_documento_detectada": "14 Agosto",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Guantes",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "pares",
+      "presentacion": "talla M"
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "350 ml"
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "bolsas",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter Verde 18G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter Rosado 20G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter Azul 22G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter Amarillo 24G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Buretrol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cánula nasal oxígeno",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal 3.0",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal 2.5",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal 3.5",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 5ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 10ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 1ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sonda Nelaton",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapón heparinizado",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 3ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:56:12.686258",
+    "duracion_segundos": 4.8,
+    "tokens_total": 3154
+  }
+}

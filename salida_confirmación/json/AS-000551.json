@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000551",
+  "archivo_imagen": "AS-000551.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412014.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-414",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Junin",
+  "autoriza_entrega": {
+    "nombre": "Johany Penafield",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Leonela Vazquez",
+    "cedula": "3206778740"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 90.0,
+    "alimento_gato_kg": 80.0,
+    "total_alimento_seco_kg": 170.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 1,
+    "comida_humeda_total_und": 1,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 2,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Collares",
+        "cantidad": 4.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Huacal",
+        "cantidad": 1.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:43:47.951433"
+  }
+}

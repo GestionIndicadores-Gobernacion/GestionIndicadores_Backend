@@ -1,0 +1,48 @@
+{
+  "archivo_imagen": "E-000101.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15-08-26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Aminolife",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B12",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Depo-Provera",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Folies",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:19:44.993398",
+    "duracion_segundos": 2.8,
+    "tokens_entrada": 1372,
+    "tokens_salida": 282,
+    "tokens_total": 1654,
+    "costo_usd_estimado": 0.000766
+  }
+}

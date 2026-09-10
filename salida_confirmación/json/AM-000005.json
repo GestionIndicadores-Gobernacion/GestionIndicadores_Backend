@@ -1,0 +1,153 @@
+{
+  "id_documento": "AM-000005",
+  "archivo_imagen": "AM-000005.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030332003.jpg",
+  "fecha_lote": "2026-08-12",
+  "dia_agosto": 12,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-034",
+  "fecha_documento_detectada": "12/08/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Gabriel",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 3.0,
+      "unidad": "blister",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Clindamicina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 5.0,
+      "unidad": "blister",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Termómetro",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Marbofloxacina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 5.0,
+      "unidad": "blister",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "blister",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 6.0,
+      "unidad": "pastas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Complexvit",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Oxitetraciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "spray",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "blister",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 3.0,
+      "unidad": "blister",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 12.0,
+      "unidad": "pastas",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Suero electrolitos",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Carbón activado",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Fortiflora",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Trihepat",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Condrovet",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:53:08.639935",
+    "duracion_segundos": 5.66,
+    "tokens_total": 2998
+  }
+}

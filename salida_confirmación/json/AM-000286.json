@@ -1,0 +1,181 @@
+{
+  "id_documento": "AM-000286",
+  "archivo_imagen": "AM-000286.jpg",
+  "archivo_origen_escaneo": "20260827_183140.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-514",
+  "fecha_documento_detectada": "25/08/26",
+  "municipio_o_lugar": null,
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Clorhexidina jabón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "4%"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina jabón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Acetilcisteína",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "Sedolax oral gotas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "2mg x 10"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "0.5% iny."
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "4mg"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 25.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "iny. 50ml"
+    },
+    {
+      "medicamento_insumo": "Lágrimas artificiales",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "colirio"
+    },
+    {
+      "medicamento_insumo": "Lactulosa",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "jarabe"
+    },
+    {
+      "medicamento_insumo": "Ondansetrón",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 28.0,
+      "unidad": "tabletas",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "2% 50ml"
+    },
+    {
+      "medicamento_insumo": "Ivermectina",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10mg"
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "300g"
+    },
+    {
+      "medicamento_insumo": "Glicopan",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "125ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína jalea",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Aseptidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Vercatol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Ácido tranexámico",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Dexhomin",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:08:05.526546",
+    "duracion_segundos": 5.09,
+    "tokens_total": 3375
+  }
+}

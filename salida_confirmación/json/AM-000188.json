@@ -1,0 +1,97 @@
+{
+  "id_documento": "AM-000188",
+  "archivo_imagen": "AM-000188.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_070156000.jpg",
+  "fecha_lote": "2026-08-20",
+  "dia_agosto": 20,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-311",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextromin",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Clorexhidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Vetisure",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Crema GA",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sunimicon",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxic",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Disivet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxic Tab.",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tobramicina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "insumos",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:13:10.365091",
+    "duracion_segundos": 10.45,
+    "tokens_total": 2509
+  }
+}

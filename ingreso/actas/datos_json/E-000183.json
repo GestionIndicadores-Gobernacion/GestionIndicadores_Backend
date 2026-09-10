@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000183.jpg",
+  "fecha_lote": "2026-08-17",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "17/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Suero oral",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suero en polvo",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "400g"
+    },
+    {
+      "medicamento_insumo": "Desenredador",
+      "cantidad": 11.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "300g"
+    },
+    {
+      "medicamento_insumo": "Otofarm NF",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "200g"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 3.0,
+      "unidad": "tabletas",
+      "presentacion": "20 tabletas"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "250mg"
+    },
+    {
+      "medicamento_insumo": "Restaderm",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Pimobendan",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Enjuague bucal",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "130ml"
+    },
+    {
+      "medicamento_insumo": "Livererot",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cardial",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Crema dental",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "95g"
+    },
+    {
+      "medicamento_insumo": "Heloxibest",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Glicerina Carbonatada",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "N-acetilcisteína",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapón heparinizado",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "0.5"
+    },
+    {
+      "medicamento_insumo": "Flumucil",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lidocaína 2%",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20mg/ml"
+    },
+    {
+      "medicamento_insumo": "Suplemento nutricional",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:29:50.470203",
+    "duracion_segundos": 4.29,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1027,
+    "tokens_total": 2399,
+    "costo_usd_estimado": 0.001883
+  }
+}

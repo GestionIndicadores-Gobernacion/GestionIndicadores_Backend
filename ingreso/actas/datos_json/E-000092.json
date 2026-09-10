@@ -1,0 +1,180 @@
+{
+  "archivo_imagen": "E-000092.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "1000 ml"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 16.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Vendas",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 40.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "1000 ml"
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Set de infusión",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Vendas",
+      "cantidad": 36.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Equipo para venoclisis",
+      "cantidad": 17.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Vendas",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "1000 ml"
+    },
+    {
+      "medicamento_insumo": "Tafetes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "2 ml"
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 24.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "3 ml"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:17:20.017483",
+    "duracion_segundos": 4.74,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1168,
+    "tokens_total": 2540,
+    "costo_usd_estimado": 0.002095
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000552",
+  "archivo_imagen": "AS-000552.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412015.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-415",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Amor Verdadero-Albergue",
+  "autoriza_entrega": {
+    "nombre": "Eliana Peñafiel",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Brenda Serrano",
+    "cedula": "3185116474"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 30.0,
+    "alimento_gato_kg": 38.0,
+    "total_alimento_seco_kg": 68.0,
+    "comida_humeda_perro_und": 30,
+    "comida_humeda_gato_und": 10,
+    "comida_humeda_total_und": 40,
+    "arena_kg": 20.0,
+    "areneros_und": 0,
+    "camas_und": 4,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 3,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:43:54.679131"
+  }
+}

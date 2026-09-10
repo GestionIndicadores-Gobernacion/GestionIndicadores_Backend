@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000549",
+  "archivo_imagen": "AS-000549.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412012.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Johana Peñafiel",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Paola Paz",
+    "cedula": "316671022"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 28.0,
+    "alimento_gato_kg": 8.0,
+    "total_alimento_seco_kg": 36.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Arena",
+        "cantidad": 20.0,
+        "unidad": "kg"
+      },
+      {
+        "articulo": "Soluciones Salinas",
+        "cantidad": 50.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:43:34.186920"
+  }
+}

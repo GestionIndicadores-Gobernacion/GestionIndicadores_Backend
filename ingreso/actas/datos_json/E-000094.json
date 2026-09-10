@@ -1,0 +1,72 @@
+{
+  "archivo_imagen": "E-000094.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Termómetro",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tijera Basic",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lidocaína inyectable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lidocaína Gel",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ácido Tranexámico",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Quervetol",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Epinefrina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Fin hemox",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ixey 08",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:17:28.671468",
+    "duracion_segundos": 3.01,
+    "tokens_entrada": 1372,
+    "tokens_salida": 389,
+    "tokens_total": 1761,
+    "costo_usd_estimado": 0.000927
+  }
+}

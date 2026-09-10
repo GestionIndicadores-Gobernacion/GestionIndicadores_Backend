@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000161",
+  "archivo_imagen": "AS-000161.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031108021.jpg",
+  "fecha_lote": "2026-08-14",
+  "dia_agosto": 14,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Yumbo",
+  "barrio_corregimiento_refugio": "Policía",
+  "autoriza_entrega": {
+    "nombre": "Diego Caleño",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "J. Ninho Hernández R.",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 300.0,
+    "alimento_gato_kg": 50.0,
+    "total_alimento_seco_kg": 350.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 100,
+    "comida_humeda_total_und": 100,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 15,
+    "cobijas_und": 0,
+    "recipientes_und": 20,
+    "huacales_und": 0,
+    "collares_und": 10,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "cobijas",
+        "cantidad": 10.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:45:55.551652"
+  }
+}

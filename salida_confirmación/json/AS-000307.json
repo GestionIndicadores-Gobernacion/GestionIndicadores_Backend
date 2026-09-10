@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000307.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041523003.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Diego Cortes"
+  },
+  "barrio_corregimiento_refugio": "",
+  "codigo_acta_vinculante": "A-045",
+  "datos_alimentos": {
+    "alimento_gato_kg": 100,
+    "alimento_perro_kg": 300,
+    "arena_kg": 200,
+    "areneros_und": 0,
+    "camas_und": 5,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 2,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 400
+  },
+  "dia_agosto": 18,
+  "fecha_lote": "2026-08-18",
+  "id_documento": "AS-000307",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:00:05.752745"
+  },
+  "municipio": "La Unión",
+  "recibe": {
+    "cedula": "16402260",
+    "nombre": "Jhon Jairo Mosquera"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

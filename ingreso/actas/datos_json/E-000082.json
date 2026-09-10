@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000082.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/08/2026",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Baxdin Shampoo",
+      "cantidad": 1.0,
+      "unidad": "litro",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.5%",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Algicam Pets 2mg",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteina 300mg/3ml",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Quericid Vet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Doxaxan 100mg",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Sephaderm E",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Vetnil Otidex",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Singus",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "8 g"
+    },
+    {
+      "medicamento_insumo": "Filtrop",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Gialpet",
+      "cantidad": 11.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tri-Otic Zinc",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50 g"
+    },
+    {
+      "medicamento_insumo": "Dexomin-B",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Dexomin-B",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Biarecto 1M 100mg",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "25-5.5 kg"
+    },
+    {
+      "medicamento_insumo": "Credelio 112.5 mg",
+      "cantidad": 4.0,
+      "unidad": "tabletas",
+      "presentacion": ">22-45 kg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.15%",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.15%",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Cavupet",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Lagrimio",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "5 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:24.337075",
+    "duracion_segundos": 4.75,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1064,
+    "tokens_total": 2436,
+    "costo_usd_estimado": 0.001939
+  }
+}

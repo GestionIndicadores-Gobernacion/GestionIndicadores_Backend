@@ -1,0 +1,174 @@
+{
+  "id_documento": "AM-000020",
+  "archivo_imagen": "AM-000020.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030906013.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-032",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Comedero metal",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Comedero plástico",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pañales piso",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Collares",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10-25 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "25-50 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "4-10 kg"
+    },
+    {
+      "medicamento_insumo": "Lacteol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5-10 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5-10 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard Spectra",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": "2-3.5 kg"
+    },
+    {
+      "medicamento_insumo": "Stomorgyl",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Ampicilina + Sulbactam",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "20-40 kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5.5-11 kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "2.5-5.5 kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "11-22 kg"
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteína",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "150 ml"
+    },
+    {
+      "medicamento_insumo": "Renalof",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "150 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:54:30.534621",
+    "duracion_segundos": 5.07,
+    "tokens_total": 3341
+  }
+}

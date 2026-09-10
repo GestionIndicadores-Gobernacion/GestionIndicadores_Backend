@@ -1,0 +1,153 @@
+{
+  "id_documento": "AM-000253",
+  "archivo_imagen": "AM-000253.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054524004.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-415",
+  "fecha_documento_detectada": "15-08-26",
+  "municipio_o_lugar": "Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Desparasitante Nexgard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam inyectable",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam oral",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam tabletas",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 5.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gotas oftálmicas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pomada tópica",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suero oral",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suero papeleta",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dextrosa",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ácido Tranexámico",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suturas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Quercetal",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-26T14:47:57.547484",
+    "duracion_segundos": 4.83,
+    "tokens_total": 3007
+  }
+}

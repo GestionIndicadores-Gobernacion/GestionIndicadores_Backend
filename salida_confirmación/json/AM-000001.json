@@ -1,0 +1,181 @@
+{
+  "id_documento": "AM-000001",
+  "archivo_imagen": "AM-000001.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030332.jpg",
+  "fecha_lote": "2026-08-12",
+  "dia_agosto": 12,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-034",
+  "fecha_documento_detectada": "12/08/26",
+  "municipio_o_lugar": "Clinica",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Suplemento mineral",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pet milk",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Multinutricional",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Enfant",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Plata coloidal",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Herelitan",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Antiestres",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Esencia Floral",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 0.5,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Hema Vet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Glico Pam",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "125 ml"
+    },
+    {
+      "medicamento_insumo": "Canotox",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gerifort",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suplemento magistral",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 3.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Crovital",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "ATP B-15",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ocoxin",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cannabis",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ascuntol",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sutura",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "und",
+      "presentacion": "1/0"
+    },
+    {
+      "medicamento_insumo": "Sutura",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": "3/0"
+    },
+    {
+      "medicamento_insumo": "Sutura",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": "1/0"
+    },
+    {
+      "medicamento_insumo": "Renal scort",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:52:45.615560",
+    "duracion_segundos": 7.0,
+    "tokens_total": 3205
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "id_documento": "AM-000056",
+  "archivo_imagen": "AM-000056.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_032211002.jpg",
+  "fecha_lote": "2026-08-15",
+  "dia_agosto": 15,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-002",
+  "fecha_documento_detectada": "13/08/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Ranitidina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Condroitín sulfato de sodio",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": "1mg/1ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 9.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Ixer",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "12 ml"
+    },
+    {
+      "medicamento_insumo": "Hidra Plus",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "bolsas",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Freegen (Carboximetilcelulosa)",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "0.1% oral"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "2% inyectable"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "0.15% oral"
+    },
+    {
+      "medicamento_insumo": "Omeprazol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "40 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5mg/ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Vacol Pomada",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "200g"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Etamsilato",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Spino Max",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Actiflux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Fluimucil",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "300 mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:57:57.155437",
+    "duracion_segundos": 6.6,
+    "tokens_total": 3505
+  }
+}

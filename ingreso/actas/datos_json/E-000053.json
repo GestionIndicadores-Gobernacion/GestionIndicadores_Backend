@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000053.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 90.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cánulas",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Compresor nebulizador",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tecillitas",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": "1000ml"
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal",
+      "cantidad": 45.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Kits macro-goteo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas precortadas",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pinza quirúrgica",
+      "cantidad": 26.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Equipo para venoclisis",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tubo de solución",
+      "cantidad": 19.0,
+      "unidad": "unidades",
+      "presentacion": "1000ml"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "200"
+    },
+    {
+      "medicamento_insumo": "Agua oxigenada",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cajas de ampolla de dexametasona",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "25"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 25.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "250ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:13:47.281225",
+    "duracion_segundos": 4.58,
+    "tokens_entrada": 1372,
+    "tokens_salida": 995,
+    "tokens_total": 2367,
+    "costo_usd_estimado": 0.001835
+  }
+}

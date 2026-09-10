@@ -1,0 +1,174 @@
+{
+  "archivo_imagen": "E-000148.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16-Ago",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Anulec-B",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Oralpet",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "400ml"
+    },
+    {
+      "medicamento_insumo": "Caniforte",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Ixer 080",
+      "cantidad": 1.0,
+      "unidad": "litro",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jabones",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pañitos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Hepatocare",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tranquipets",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "80g"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "0.5%"
+    },
+    {
+      "medicamento_insumo": "Cutamycon",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Weshey Sol",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Agua Oxigenada",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 3.0,
+      "unidad": "tabletas",
+      "presentacion": "200mg"
+    },
+    {
+      "medicamento_insumo": "Penicilina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "1'200.000 UI"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "200mg"
+    },
+    {
+      "medicamento_insumo": "Ixer 080",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Piperacilina + Tazobactam",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Gotas Oftálmicas",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "pulverizador solución tópica 30ml"
+    },
+    {
+      "medicamento_insumo": "Ocoxín",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Inmol-V",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "gotas 12.5%"
+    },
+    {
+      "medicamento_insumo": "Keppra",
+      "cantidad": 28.0,
+      "unidad": "tabletas",
+      "presentacion": "500mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:25:05.507158",
+    "duracion_segundos": 4.57,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1334,
+    "tokens_total": 2706,
+    "costo_usd_estimado": 0.002344
+  }
+}

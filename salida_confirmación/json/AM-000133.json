@@ -1,0 +1,188 @@
+{
+  "id_documento": "AM-000133",
+  "archivo_imagen": "AM-000133.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733018.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-046",
+  "fecha_documento_detectada": "16/AGO/26",
+  "municipio_o_lugar": "SANTIAGO DE CALI",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Juan Carlos Morales",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Organew",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "12g"
+    },
+    {
+      "medicamento_insumo": "Spectra-da",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Acielux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Algicam Comprimidos",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Polypropylene",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "Sutura"
+    },
+    {
+      "medicamento_insumo": "Iodine",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120ml/60ml"
+    },
+    {
+      "medicamento_insumo": "Hidratación oral",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Colirio-200 oto oftálmica",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "19.3g"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": ">2.3-5kg"
+    },
+    {
+      "medicamento_insumo": "Nex Gard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": ">7.5-15kg"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": "30mg"
+    },
+    {
+      "medicamento_insumo": "Pomadas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "tubos",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 7.0,
+      "unidad": "tabletas",
+      "presentacion": "300ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B12 oral",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Cicatrizante",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "tubos",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Betametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20g"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "tubo",
+      "presentacion": "Tubo x 10g"
+    },
+    {
+      "medicamento_insumo": "Quercetol-Vet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "200mg"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco sódico",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "75mg/3ml"
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "tabletas",
+      "presentacion": "50mg 30 tab"
+    },
+    {
+      "medicamento_insumo": "Lidocaína clorhidrato",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Poncaína Solución antiséptica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Jabón",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:06:20.087357",
+    "duracion_segundos": 7.22,
+    "tokens_total": 3566
+  }
+}

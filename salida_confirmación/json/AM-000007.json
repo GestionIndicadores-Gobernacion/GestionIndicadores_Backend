@@ -1,0 +1,188 @@
+{
+  "id_documento": "AM-000007",
+  "archivo_imagen": "AM-000007.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030906000.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-021",
+  "fecha_documento_detectada": "13-08-2026",
+  "municipio_o_lugar": "Candelaria",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Franklin Rojas",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Cloruro de sodio",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 5.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Lactato de ringer",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 5.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "3800ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "350ml"
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": "500g"
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": "25g"
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "M"
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "L"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "paquetes",
+      "presentacion": "3x3 200u"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": "7 1/2 20"
+    },
+    {
+      "medicamento_insumo": "Toallitas húmedas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suero",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "rollos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "rollos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Jabón",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bolsas para desechos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "1ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Coban",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "rollo",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:53:20.709782",
+    "duracion_segundos": 5.32,
+    "tokens_total": 3444
+  }
+}

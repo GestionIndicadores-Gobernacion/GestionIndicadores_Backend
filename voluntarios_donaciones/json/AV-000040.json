@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000040",
+  "archivo_imagen": "AV-000040.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 40,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "Entrega de donaciones voluntarios: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Alejandra Ortiz",
+      "organismo_entidad": "Independiente",
+      "telefono": "3103858567",
+      "correo_electronico": "alejandra-ortiz@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sophia Vasquez",
+      "organismo_entidad": "Independiente",
+      "telefono": "3117788232",
+      "correo_electronico": "sophivasquezb@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jannath Holos",
+      "organismo_entidad": "Trabajador",
+      "telefono": "3172481618",
+      "correo_electronico": "janathoyos28@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Oscar Sanchez T",
+      "organismo_entidad": "Trabajador",
+      "telefono": "3015615507",
+      "correo_electronico": "oscarsanchez0400@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ximena Rojas C.",
+      "organismo_entidad": "Veterinaria",
+      "telefono": "3007626351",
+      "correo_electronico": "ximerc36@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Andrés Rojas E",
+      "organismo_entidad": "Ortopedista",
+      "telefono": "305300228",
+      "correo_electronico": "anroja19@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Denny Goyo",
+      "organismo_entidad": "Ingeniero",
+      "telefono": "3013682323",
+      "correo_electronico": "dgb100@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Andrea Tovar Mera",
+      "organismo_entidad": "Independiente",
+      "telefono": "3003862481",
+      "correo_electronico": "atmaros@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Isabela Achinte Fernanda",
+      "organismo_entidad": "Independiente",
+      "telefono": "3150616644",
+      "correo_electronico": "isabelaachinte2016@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Michael David Gilbert",
+      "organismo_entidad": "Independiente",
+      "telefono": "+1 2085393726",
+      "correo_electronico": "lo mismo",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Victor Andres Ramirez",
+      "organismo_entidad": "Domiciliario",
+      "telefono": "30463184174",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Isabel Tejada",
+      "organismo_entidad": "Independiente",
+      "telefono": "3003864822",
+      "correo_electronico": "tz2444660@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Dario Castaño",
+      "organismo_entidad": "Independiente",
+      "telefono": "3174729235",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Nicole Gonzalez",
+      "organismo_entidad": "Independiente",
+      "telefono": "3182828911",
+      "correo_electronico": "nicodagoce@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:01:39.376751",
+    "duracion_segundos": 5.12,
+    "tokens_total": 2745
+  }
+}

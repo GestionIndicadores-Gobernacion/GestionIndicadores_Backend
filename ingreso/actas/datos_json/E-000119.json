@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000119.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/Ago/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Lagnifresh",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Ampicilina",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "polvo 1.5 gr"
+    },
+    {
+      "medicamento_insumo": "Pisccina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2.1"
+    },
+    {
+      "medicamento_insumo": "Endogard",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "25.1-50 kg"
+    },
+    {
+      "medicamento_insumo": "Inyección lidocaína",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "2.1%"
+    },
+    {
+      "medicamento_insumo": "Oftalmosyn",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Visivet",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Canison",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Edomil-B",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Ketobest",
+      "cantidad": 8.0,
+      "unidad": "frascos",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Aerobest",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Rastoro Sutura",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteína",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "3 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 13.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Wescohex",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Vit. Quirúrgico",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tonerdoscopio",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pracan",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:21:36.210232",
+    "duracion_segundos": 6.51,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1076,
+    "tokens_total": 2448,
+    "costo_usd_estimado": 0.001957
+  }
+}

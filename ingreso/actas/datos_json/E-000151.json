@@ -1,0 +1,174 @@
+{
+  "archivo_imagen": "E-000151.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16-Ago",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Kit Disección",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pralpet",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "400ml"
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "cantidad": 2.0,
+      "unidad": "bolsas",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jabón",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sulfadiazina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Vardemint",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "litro",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Rondel Oral",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Gotas Lagrimas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lagrikov",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Melodol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "0.15%"
+    },
+    {
+      "medicamento_insumo": "Allerpet",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": "30 tabletas"
+    },
+    {
+      "medicamento_insumo": "Rexatel",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cannulas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pez y Cime",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Virbac opt",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sildenafilo",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "25mg"
+    },
+    {
+      "medicamento_insumo": "Lidocaína Clorhidrato",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "0.15%"
+    },
+    {
+      "medicamento_insumo": "Visibet",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ofloxacino",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "4mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "8mg"
+    },
+    {
+      "medicamento_insumo": "Logrigen",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:25:22.347432",
+    "duracion_segundos": 5.26,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1140,
+    "tokens_total": 2512,
+    "costo_usd_estimado": 0.002053
+  }
+}

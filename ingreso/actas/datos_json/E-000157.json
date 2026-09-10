@@ -1,0 +1,114 @@
+{
+  "archivo_imagen": "E-000157.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/Ago/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Solucion Antiseptica",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "1L / 520 ml"
+    },
+    {
+      "medicamento_insumo": "Vioxin",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Rondel",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Pomada Verdemint",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": "50g"
+    },
+    {
+      "medicamento_insumo": "Epinefrina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "1mg/1ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Oral pet-oral cat",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "90g"
+    },
+    {
+      "medicamento_insumo": "Jabon Antiseptico",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Comple B12 oral",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Jabon Quirurgico",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Piecimicina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Ocul-V",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol Polivinilico",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Sanimicon-Topico",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Conforte 28E",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "150g"
+    },
+    {
+      "medicamento_insumo": "Optilene",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "3/0"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:26:03.624447",
+    "duracion_segundos": 4.14,
+    "tokens_entrada": 1372,
+    "tokens_salida": 853,
+    "tokens_total": 2225,
+    "costo_usd_estimado": 0.001623
+  }
+}

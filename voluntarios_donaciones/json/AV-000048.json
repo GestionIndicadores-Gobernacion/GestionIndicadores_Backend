@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000048",
+  "archivo_imagen": "AV-000048.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 48,
+  "fecha_detectada": "13/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Darsy Xiomara Marin",
+      "organismo_entidad": "Independiente",
+      "telefono": "3107720875",
+      "correo_electronico": "darsy_xiomara@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Edgardo Marin",
+      "organismo_entidad": "Independiente",
+      "telefono": "3627473664",
+      "correo_electronico": "emarinol@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Shirly Liliana Lopez Abadia",
+      "organismo_entidad": "Independiente",
+      "telefono": "3752810673",
+      "correo_electronico": "lopezlabadia.liliana@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Dolly Davila G.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3106635859",
+      "correo_electronico": "dollydavi@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sofia Sanchez Leiva",
+      "organismo_entidad": "Independiente",
+      "telefono": "3204975076",
+      "correo_electronico": "sofialeivapec@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "sofia s.l"
+    },
+    {
+      "nombre_completo": "Natalia Ortiz Chavez",
+      "organismo_entidad": "Independiente",
+      "telefono": "3009331649",
+      "correo_electronico": "nataliaortizc@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Pablo Roa",
+      "organismo_entidad": "Independiente",
+      "telefono": "3147075681",
+      "correo_electronico": "pabloroa@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Estefania Cristancho G.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3203428081",
+      "correo_electronico": "estefania.cristancho@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Estefania GC"
+    },
+    {
+      "nombre_completo": "Dianne Garcia Ruiz",
+      "organismo_entidad": "Independiente",
+      "telefono": "3002163199",
+      "correo_electronico": "Dianneandrea93@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Dree"
+    },
+    {
+      "nombre_completo": "Sebastian Posada R.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3217204937",
+      "correo_electronico": "sebastianposadariva13@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Luis Peralta",
+      "organismo_entidad": "EMPLEADO",
+      "telefono": "3008758634",
+      "correo_electronico": "brendunperalta95@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Edimer Diaz S.",
+      "organismo_entidad": "EMPLEADO",
+      "telefono": "3148231450",
+      "correo_electronico": "juniorsandoval1211@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "EDIMER"
+    },
+    {
+      "nombre_completo": "Est Soccer AL",
+      "organismo_entidad": "Empresa derecho",
+      "telefono": "3233256772",
+      "correo_electronico": "Estsoccer@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Hector Orozco",
+      "organismo_entidad": "fanalca",
+      "telefono": "",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:02:32.830833",
+    "duracion_segundos": 5.49,
+    "tokens_total": 2736
+  }
+}

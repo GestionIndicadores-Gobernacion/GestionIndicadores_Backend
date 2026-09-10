@@ -1,0 +1,120 @@
+{
+  "archivo_imagen": "E-000176.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/08/2016",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Tramic-V LHR Lagrigen",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "Canipet",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Canvantel",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Bilexine",
+      "cantidad": 5.0,
+      "unidad": "tabletas",
+      "presentacion": "14 tabletas"
+    },
+    {
+      "medicamento_insumo": "Vioxin",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Ungüento Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco Sódico",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "28.3ml"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "28.3ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "16ml"
+    },
+    {
+      "medicamento_insumo": "Gastrointestinal",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": "150g"
+    },
+    {
+      "medicamento_insumo": "Dextrosa",
+      "cantidad": 5.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Electrolito",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Multivitamínico",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:27:59.072233",
+    "duracion_segundos": 5.01,
+    "tokens_entrada": 1372,
+    "tokens_salida": 894,
+    "tokens_total": 2266,
+    "costo_usd_estimado": 0.001684
+  }
+}

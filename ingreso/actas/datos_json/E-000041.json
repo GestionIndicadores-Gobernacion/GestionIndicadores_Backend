@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000041.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Catéter intravenoso",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 22.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": "x 200"
+    },
+    {
+      "medicamento_insumo": "Jabón estéril",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 34.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Material nebulizaciones",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Papel absorbente",
+      "cantidad": 50.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pañitos húmedos",
+      "cantidad": 200.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bolsas basura",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Papel absorbente",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "2x50"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución salina",
+      "cantidad": 28.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:12:40.737306",
+    "duracion_segundos": 4.86,
+    "tokens_entrada": 1372,
+    "tokens_salida": 979,
+    "tokens_total": 2351,
+    "costo_usd_estimado": 0.001812
+  }
+}

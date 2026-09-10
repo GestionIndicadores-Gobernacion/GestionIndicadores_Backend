@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000058.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Positos húmedos",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 1ml",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 3ml",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 5ml",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pañito húmedo",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sonda",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guante quirúrgico",
+      "cantidad": 2.0,
+      "unidad": "pares",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa estéril",
+      "cantidad": 24.0,
+      "unidad": "paquetes",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suturas",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suturas",
+      "cantidad": 14.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda cohesiva",
+      "cantidad": 2.0,
+      "unidad": "rollos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Rollos de venda",
+      "cantidad": 1.0,
+      "unidad": "rollos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "cantidad": 24.0,
+      "unidad": "paquetes",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sobre de gasa",
+      "cantidad": 10.0,
+      "unidad": "sobres",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución salina",
+      "cantidad": 9.0,
+      "unidad": "bolsas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suturas",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Nebulizador",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:14:12.778395",
+    "duracion_segundos": 4.16,
+    "tokens_entrada": 1372,
+    "tokens_salida": 959,
+    "tokens_total": 2331,
+    "costo_usd_estimado": 0.001782
+  }
+}

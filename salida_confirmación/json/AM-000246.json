@@ -1,0 +1,83 @@
+{
+  "id_documento": "AM-000246",
+  "archivo_imagen": "AM-000246.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_053431006.jpg",
+  "fecha_lote": "2026-08-22",
+  "dia_agosto": 22,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "fecha_documento_detectada": "22/08/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": "Johan",
+  "recibe_nombre": "Johan",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Collar mediano",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Correa grande",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Platos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Collares nuevos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Collares correas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guacal grande",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Juguetes",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cama hermética",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cobija nueva",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-26T14:47:17.987502",
+    "duracion_segundos": 3.98,
+    "tokens_total": 2413
+  }
+}

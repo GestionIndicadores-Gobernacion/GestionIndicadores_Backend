@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000525.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_053303027.jpg",
+  "autoriza_entrega": {
+    "cedula": "null",
+    "nombre": "Johan Perarier"
+  },
+  "barrio_corregimiento_refugio": "Fundacion Carmenza",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 16,
+    "alimento_perro_kg": 280,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 296
+  },
+  "dia_agosto": 22,
+  "fecha_lote": "2026-08-22",
+  "id_documento": "AS-000525",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:40:58.335335"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "31898259",
+    "nombre": "Danyer Pugin Gomez"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

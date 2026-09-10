@@ -1,0 +1,144 @@
+{
+  "id_documento": "VO-000001",
+  "archivo_imagen": "VO-000001.jpg",
+  "archivo_origen": "WhatsApp Image 2026-08-20 at 9.16.42 PM.jpeg",
+  "tipo_documento": "VOLUNTARIOS_OPERATIVOS",
+  "fecha_detectada": "15/08/2026",
+  "lugar_o_sede": "Bodega",
+  "total_voluntarios_hoja": 16,
+  "voluntarios": [
+    {
+      "nombre_completo": "Maria del mar lopez",
+      "cedula_o_id": null,
+      "telefono": "3176990256",
+      "labor_o_actividad": "Medicamentos",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Fernando Medina",
+      "cedula_o_id": null,
+      "telefono": "3150070581",
+      "labor_o_actividad": "Medicamentos",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Kin Libreros",
+      "cedula_o_id": null,
+      "telefono": "305 395 8898",
+      "labor_o_actividad": "Bodega",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Lauren Cruz",
+      "cedula_o_id": null,
+      "telefono": "3204975682",
+      "labor_o_actividad": "Bodega",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Andrea Suarez",
+      "cedula_o_id": null,
+      "telefono": "3161462921",
+      "labor_o_actividad": "Bodega",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Sergio Castrillon",
+      "cedula_o_id": null,
+      "telefono": "3194995334",
+      "labor_o_actividad": "Bodega",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Isabela Arroyave",
+      "cedula_o_id": null,
+      "telefono": "3218588267",
+      "labor_o_actividad": "Bodega",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Maria jose Vasquez",
+      "cedula_o_id": null,
+      "telefono": "3209316175",
+      "labor_o_actividad": "Bodega",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Maria del mar Zarama",
+      "cedula_o_id": null,
+      "telefono": "3188398221",
+      "labor_o_actividad": "Bodega",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Lizeth Camila Londono",
+      "cedula_o_id": null,
+      "telefono": "3155929065",
+      "labor_o_actividad": "Bodega",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Vanessa Aragon",
+      "cedula_o_id": null,
+      "telefono": "3165733128",
+      "labor_o_actividad": "Insumos fijos",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Miguel Angel Guarin",
+      "cedula_o_id": null,
+      "telefono": "3122868772",
+      "labor_o_actividad": "Insumos fijos",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Talia Grijal",
+      "cedula_o_id": null,
+      "telefono": "3136755770",
+      "labor_o_actividad": "Insumos fijos",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Simon Vega",
+      "cedula_o_id": null,
+      "telefono": "3123177395",
+      "labor_o_actividad": "Insumos fijos",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Lilibet Sanchez Guples",
+      "cedula_o_id": null,
+      "telefono": "3136755770",
+      "labor_o_actividad": "Insumos fijos",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Kevin Meneses",
+      "cedula_o_id": null,
+      "telefono": "3022623403",
+      "labor_o_actividad": "Carro / Grupo Carga",
+      "disponibilidad_o_fecha": "8:00 - 12:00",
+      "observaciones_o_firma": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:21:24.496720",
+    "duracion_segundos": 7.82,
+    "tokens_total": 2892
+  }
+}

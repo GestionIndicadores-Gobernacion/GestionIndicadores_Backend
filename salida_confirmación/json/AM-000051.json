@@ -1,0 +1,188 @@
+{
+  "id_documento": "AM-000051",
+  "archivo_imagen": "AM-000051.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031317022.jpg",
+  "fecha_lote": "2026-08-14",
+  "dia_agosto": 14,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-019",
+  "fecha_documento_detectada": "13/08/26",
+  "municipio_o_lugar": "SANTIAGO DE CALI",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Electrolitos",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Bacitracina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "0.15% 100g"
+    },
+    {
+      "medicamento_insumo": "Eutexmax",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "8g"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "2mg"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Paracoxis",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "N-acetilcisteína",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "300mg"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10-25kg"
+    },
+    {
+      "medicamento_insumo": "Advocate",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "1mg/ml"
+    },
+    {
+      "medicamento_insumo": "Rondy",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 7.0,
+      "unidad": "ampollas",
+      "presentacion": "50mg/ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "8mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Saniderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Vasol Pomada",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "60g"
+    },
+    {
+      "medicamento_insumo": "Splend colirio",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Rehidratante",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Bismo-Pet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": "20mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:57:26.705497",
+    "duracion_segundos": 6.41,
+    "tokens_total": 3554
+  }
+}

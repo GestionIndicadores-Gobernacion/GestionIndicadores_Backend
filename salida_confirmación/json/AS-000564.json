@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000564.jpg",
+  "archivo_origen_escaneo": "20260827_174902.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Diego Cedeño"
+  },
+  "barrio_corregimiento_refugio": "Albergue Divina Providencia",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 60,
+    "alimento_perro_kg": 30,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 20,
+    "comida_humeda_total_und": 20,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 90
+  },
+  "dia_agosto": 24,
+  "fecha_lote": "2026-08-24",
+  "id_documento": "AS-000564",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T18:58:07.304016"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "31285548",
+    "nombre": "Cecilia Salazar Mora"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

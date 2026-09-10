@@ -1,0 +1,195 @@
+{
+  "id_documento": "AM-000011",
+  "archivo_imagen": "AM-000011.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030906004.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-023",
+  "fecha_documento_detectada": "13-08-2026",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "350ml"
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 100.0,
+      "unidad": "sobres",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes L",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes M",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cloruro de sodio",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 5.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 5.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": "100g"
+    },
+    {
+      "medicamento_insumo": "Catéter 20G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter 18G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapones de parina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Toallitas húmedas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": "50u"
+    },
+    {
+      "medicamento_insumo": "Suero",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gafas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Micropore y esparadrapo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "rollos",
+      "presentacion": "450cm"
+    },
+    {
+      "medicamento_insumo": "Catéter 22G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cánulas IV",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sonda urinaria N8",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bolsa para desechos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "rollos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sonda uretral",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Compresas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "50mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:53:44.458545",
+    "duracion_segundos": 6.32,
+    "tokens_total": 3432
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000049",
+  "archivo_imagen": "AV-000049.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 49,
+  "fecha_detectada": "13/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Andrea Timaran B.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3006271172",
+      "correo_electronico": "andreaestefania12@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Carlos Mazorra",
+      "organismo_entidad": "Independiente",
+      "telefono": null,
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Isabella Aristizabal",
+      "organismo_entidad": "Independiente",
+      "telefono": "3164102224",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lorena Cifuentes",
+      "organismo_entidad": "Independiente",
+      "telefono": "3145199828",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sophia Velasco",
+      "organismo_entidad": "Independiente",
+      "telefono": "3163681649",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alexandra Socarte E.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3113755750",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Gabriella Duque López",
+      "organismo_entidad": "Independiente",
+      "telefono": "3185482990",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Martha Cecilia Londoño",
+      "organismo_entidad": "Independiente",
+      "telefono": "3168592192",
+      "correo_electronico": "fisioterapiacusa20@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Paola Sorapaf",
+      "organismo_entidad": "Independiente",
+      "telefono": "3153359493",
+      "correo_electronico": "mariapsr21@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sebastian Collazos Jimenez",
+      "organismo_entidad": "Independiente",
+      "telefono": "3165307215",
+      "correo_electronico": "sebascollazo1546@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Nicole Gutierrez",
+      "organismo_entidad": "Independiente",
+      "telefono": "3144238637",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Yulisa Castillo",
+      "organismo_entidad": "Independiente",
+      "telefono": "3176063694",
+      "correo_electronico": "yulisacastillo@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Kevin Lopez Vallejo",
+      "organismo_entidad": "Independiente",
+      "telefono": "3106696241",
+      "correo_electronico": "venlopez776@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Dayhan Miranda",
+      "organismo_entidad": "Independiente",
+      "telefono": "3157186352",
+      "correo_electronico": "daymirandaa@outlook.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:02:38.563713",
+    "duracion_segundos": 4.92,
+    "tokens_total": 2694
+  }
+}

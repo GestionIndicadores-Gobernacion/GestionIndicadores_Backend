@@ -1,0 +1,132 @@
+{
+  "id_documento": "AM-000046",
+  "archivo_imagen": "AM-000046.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031317017.jpg",
+  "fecha_lote": "2026-08-14",
+  "dia_agosto": 14,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-016",
+  "fecha_documento_detectada": "13 Agos/18",
+  "municipio_o_lugar": "Tuluá",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Doxiciclina Oral",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Vetriderm",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "150ml"
+    },
+    {
+      "medicamento_insumo": "Arthri-Flex",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Quercetina",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Simeticona",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "lates derecha"
+    },
+    {
+      "medicamento_insumo": "Bactrol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Dextrosa",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Splash",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:56:54.455895",
+    "duracion_segundos": 5.31,
+    "tokens_total": 2973
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "archivo_imagen": "E-000023.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13-08-26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dexametasona inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Quercetol Vet 100 mg",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Quercetol Vet 50 mg",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Multivitamínico especies grandes",
+      "cantidad": 1.0,
+      "unidad": "amv",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam oral gotas",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam tabletas",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Adrenalina ampollas",
+      "cantidad": 100.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Antiparasitario oral",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam inyectable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tramadol ampollas",
+      "cantidad": 15.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dipirona ampolla",
+      "cantidad": 20.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno gotas",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Vitamina B inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona ampollas",
+      "cantidad": 16.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Curagan",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Electrolito Vet Polvo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Esencia Floral Poppy",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Esencia Floral Kitten",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Quercetol inyectable 12.5%",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Fibrinexam tabletas",
+      "cantidad": 5.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Antiparasitario oral",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam gotas",
+      "cantidad": 10.0,
+      "unidad": "goteros",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ciprofloxacina 100mg tableta",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica spray",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam tabletas",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:06:03.323706",
+    "duracion_segundos": 4.89,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1068,
+    "tokens_total": 2440,
+    "costo_usd_estimado": 0.001945
+  }
+}

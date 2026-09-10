@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000248.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031900057.jpg",
+  "autoriza_entrega": {
+    "cedula": "No especificado",
+    "nombre": "No especificado"
+  },
+  "barrio_corregimiento_refugio": "Policía Ambiental",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 0,
+    "alimento_perro_kg": 13,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 13
+  },
+  "dia_agosto": 15,
+  "fecha_lote": "2026-08-15",
+  "id_documento": "AS-000248",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:54:21.435065"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "No especificado",
+    "nombre": "Heyder Diaz"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

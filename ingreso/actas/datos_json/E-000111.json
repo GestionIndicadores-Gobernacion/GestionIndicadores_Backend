@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000111.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/Ago/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 3.0,
+      "unidad": "tabletas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina Hyclato",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "600 mg/10 comp"
+    },
+    {
+      "medicamento_insumo": "Melox",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Acetaminofen infusión",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "7.5 mg"
+    },
+    {
+      "medicamento_insumo": "Fitovete gel",
+      "cantidad": 1.0,
+      "unidad": "tubo",
+      "presentacion": "1g/100ml"
+    },
+    {
+      "medicamento_insumo": "Vita cell bet",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "15g"
+    },
+    {
+      "medicamento_insumo": "N. Acetilcisteina",
+      "cantidad": 13.0,
+      "unidad": "tabletas",
+      "presentacion": "1.5g"
+    },
+    {
+      "medicamento_insumo": "Galgoca",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Canisan-D",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 5.0,
+      "unidad": "tabletas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "100 mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Epinefrina",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "1mg/1ml"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Unisel",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "30 comprimidos"
+    },
+    {
+      "medicamento_insumo": "Prednisona",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "30 tabletas"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Tranquilan",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "20 tabletas"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:20:43.619119",
+    "duracion_segundos": 5.76,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1096,
+    "tokens_total": 2468,
+    "costo_usd_estimado": 0.001987
+  }
+}

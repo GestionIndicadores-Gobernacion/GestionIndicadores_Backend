@@ -1,0 +1,168 @@
+{
+  "archivo_imagen": "E-000031.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 50.0,
+      "unidad": "ampollas",
+      "presentacion": "1mg/1ml"
+    },
+    {
+      "medicamento_insumo": "Ampicilina Sulbactam",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Omeprazol",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Lagelikov",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "0.5%/15ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Trazidex",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "3.5g"
+    },
+    {
+      "medicamento_insumo": "Oluvvet N.F.",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Hemolitan Pet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Hemolitan Pet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "40ml"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "75mg/3ml"
+    },
+    {
+      "medicamento_insumo": "Dolofeno",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Oftal Motil Lub",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Melodol",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "0.15% 10ml"
+    },
+    {
+      "medicamento_insumo": "Pet Drops",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Fiprostat",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Splash Tears",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Solepol NF",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "360ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Ranidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Yodopovidona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Colirio",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Anestesin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5g"
+    },
+    {
+      "medicamento_insumo": "Imostimuline",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:06:53.695260",
+    "duracion_segundos": 4.9,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1273,
+    "tokens_total": 2645,
+    "costo_usd_estimado": 0.002253
+  }
+}

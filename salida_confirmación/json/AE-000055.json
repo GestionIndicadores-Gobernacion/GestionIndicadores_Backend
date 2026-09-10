@@ -1,0 +1,62 @@
+{
+  "id_documento": "AE-000055",
+  "archivo_imagen": "AE-000055.jpg",
+  "archivo_origen_escaneo": "20260901_110735.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "null",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 2,
+    "total_perros_censo": 70,
+    "total_gatos_censo": 25,
+    "total_animales_censo": 95,
+    "total_alimento_perro_kg": 280.0,
+    "total_alimento_gato_kg": 40.0,
+    "total_alimento_general_kg": 320.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Bella Fusion",
+      "municipio": "null",
+      "direccion": "Cra 3 #15-38",
+      "telefono": "3184387744",
+      "censo": {
+        "perros": 70,
+        "gatos": 25,
+        "total_animales": 95
+      },
+      "alimento_entregado": {
+        "perro_kg": 200.0,
+        "gato_kg": 20.0,
+        "total_kg": 220.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "null"
+    },
+    {
+      "nombre_fundacion": "Bella Fusion",
+      "municipio": "null",
+      "direccion": "Cra 3 #15-38",
+      "telefono": "3184387744",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 80.0,
+        "gato_kg": 20.0,
+        "total_kg": 100.0
+      },
+      "firma_registrada": false,
+      "observaciones_fila": "null"
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:00:23.536501"
+  }
+}

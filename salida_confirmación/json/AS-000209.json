@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000209",
+  "archivo_imagen": "AS-000209.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031900018.jpg",
+  "fecha_lote": "2026-08-15",
+  "dia_agosto": 15,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "La Cumbre",
+  "barrio_corregimiento_refugio": "Pavas",
+  "autoriza_entrega": {
+    "nombre": "Diep Gelet",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Luisa Pathala Uribe D.",
+    "cedula": "1144047060"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 300.0,
+    "alimento_gato_kg": 100.0,
+    "total_alimento_seco_kg": 400.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 100,
+    "comida_humeda_total_und": 100,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 10,
+    "cobijas_und": 20,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "collares",
+        "cantidad": 20.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "recipientes",
+        "cantidad": 20.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:50:39.248023"
+  }
+}

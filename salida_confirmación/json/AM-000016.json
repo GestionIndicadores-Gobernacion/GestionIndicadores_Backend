@@ -1,0 +1,167 @@
+{
+  "id_documento": "AM-000016",
+  "archivo_imagen": "AM-000016.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030906009.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-028",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Jose herrera",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cloruro de sodio",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Toallitas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 80.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "300 ml"
+    },
+    {
+      "medicamento_insumo": "Bacina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venoclisis Micro",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sonda nasogástrica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "2M 125"
+    },
+    {
+      "medicamento_insumo": "Tapones heparinizados",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "24G, 20G, 18G, 22G"
+    },
+    {
+      "medicamento_insumo": "Sonda uretral gato",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Agujas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "1ml, 3ml, 5ml, 10ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Suero",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "bolsa",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "1ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:54:13.947749",
+    "duracion_segundos": 4.94,
+    "tokens_total": 3209
+  }
+}

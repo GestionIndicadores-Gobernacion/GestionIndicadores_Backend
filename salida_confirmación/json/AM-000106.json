@@ -1,0 +1,104 @@
+{
+  "id_documento": "AM-000106",
+  "archivo_imagen": "AM-000106.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_042219003.jpg",
+  "fecha_lote": "2026-08-17",
+  "dia_agosto": 17,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-037",
+  "fecha_documento_detectada": "23/03/23",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Rocidan",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Hebript",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "0.15% 5ml"
+    },
+    {
+      "medicamento_insumo": "Compleland",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "2% 30g"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Tears Lágrimas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "8ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina Spray",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": "500mg 10 tab"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "8mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Sanimic",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Pets and Cat Miedo",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "25ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:03:21.898463",
+    "duracion_segundos": 4.44,
+    "tokens_total": 2735
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000541",
+  "archivo_imagen": "AS-000541.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412004.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Belle Suiza",
+  "autoriza_entrega": {
+    "nombre": "Johana Pardo",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Claudia Medina",
+    "cedula": "3226708394"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 15.0,
+    "alimento_gato_kg": 24.0,
+    "total_alimento_seco_kg": 39.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 30,
+    "comida_humeda_total_und": 30,
+    "arena_kg": 30.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 10,
+    "recipientes_und": 0,
+    "huacales_und": 2,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:42:40.821219"
+  }
+}

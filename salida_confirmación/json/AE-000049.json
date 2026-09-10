@@ -1,0 +1,44 @@
+{
+  "id_documento": "AE-000049",
+  "archivo_imagen": "AE-000049.jpg",
+  "archivo_origen_escaneo": "20260901_110657.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "FO-M9-P3-01- V04",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_NUMERO",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 1,
+    "total_perros_censo": 200,
+    "total_gatos_censo": 100,
+    "total_animales_censo": 300,
+    "total_alimento_perro_kg": 0.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 0.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Alcaldía Andalucía",
+      "municipio": "Andalucía",
+      "direccion": "Calle 12 con 4 esq",
+      "telefono": "3187406329",
+      "censo": {
+        "perros": 200,
+        "gatos": 100,
+        "total_animales": 300
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Ninguna"
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": false,
+    "fecha_procesamiento": "2026-09-01T11:59:04.999690"
+  }
+}

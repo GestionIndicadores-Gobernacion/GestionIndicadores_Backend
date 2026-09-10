@@ -1,0 +1,108 @@
+{
+  "archivo_imagen": "E-000040.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "B"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 5.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Lidocaína gel",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Boxicaina",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "dorada"
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Weschex",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Weschex",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "4%"
+    },
+    {
+      "medicamento_insumo": "Weschex",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "4% jabón anti"
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 3.0,
+      "unidad": "und",
+      "presentacion": "20mg"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "4.5-10kg"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "10-20kg"
+    },
+    {
+      "medicamento_insumo": "Pielabelina",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "20mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 4.0,
+      "unidad": "und",
+      "presentacion": "10ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:07:48.403841",
+    "duracion_segundos": 3.53,
+    "tokens_entrada": 1372,
+    "tokens_salida": 747,
+    "tokens_total": 2119,
+    "costo_usd_estimado": 0.001463
+  }
+}

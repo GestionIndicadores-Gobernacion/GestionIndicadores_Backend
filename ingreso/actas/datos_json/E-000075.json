@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000075.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "Agosto 14",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Rozosan",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100 gr"
+    },
+    {
+      "medicamento_insumo": "Dermat",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "500 gr"
+    },
+    {
+      "medicamento_insumo": "Vordemint (antibacteriano)",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Hemolitan",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteína",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Vermiplex",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Rondel Suspensión",
+      "cantidad": 250.0,
+      "unidad": "ml",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Digest-V",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteína",
+      "cantidad": 15.0,
+      "unidad": "ampollas",
+      "presentacion": "3 ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona Sódica",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Flunixin Meglumina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Melovet",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Tranquisets",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "80 gr"
+    },
+    {
+      "medicamento_insumo": "Oxitetraciclina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxic",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína inyección",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Flunixin Meglumina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:15:47.852215",
+    "duracion_segundos": 4.75,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1206,
+    "tokens_total": 2578,
+    "costo_usd_estimado": 0.002152
+  }
+}

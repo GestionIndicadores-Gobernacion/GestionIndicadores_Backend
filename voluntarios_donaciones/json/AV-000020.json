@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000020",
+  "archivo_imagen": "AV-000020.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 20,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Rubelly Solarte Buitrago",
+      "organismo_entidad": "",
+      "telefono": "3185600735",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Rubelly Solarte"
+    },
+    {
+      "nombre_completo": "Jazmin Mera Molina",
+      "organismo_entidad": "",
+      "telefono": "3188374692",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Jazmin Mera"
+    },
+    {
+      "nombre_completo": "Ores Pimentel",
+      "organismo_entidad": "",
+      "telefono": "3152737817",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Ores Pimentel"
+    },
+    {
+      "nombre_completo": "Chloe Jimenez",
+      "organismo_entidad": "",
+      "telefono": "3003159949",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Chloe"
+    },
+    {
+      "nombre_completo": "Martina Correa",
+      "organismo_entidad": "",
+      "telefono": "3117328387",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Diana Alvarez Salinas",
+      "organismo_entidad": "",
+      "telefono": "3178860548",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Salome Rojas Alvarez",
+      "organismo_entidad": "",
+      "telefono": "3154616168",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Salome Rojas Alvarez"
+    },
+    {
+      "nombre_completo": "Innaidis Morales",
+      "organismo_entidad": "",
+      "telefono": "6483099",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Innaidis"
+    },
+    {
+      "nombre_completo": "Hector Trochez",
+      "organismo_entidad": "",
+      "telefono": "3184555754",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Hctr."
+    },
+    {
+      "nombre_completo": "Mala Rodriguez",
+      "organismo_entidad": "",
+      "telefono": "3143843805",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Mala Rodriguez"
+    },
+    {
+      "nombre_completo": "Darwin Sebastian Devia",
+      "organismo_entidad": "",
+      "telefono": "3160725663",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Darwin"
+    },
+    {
+      "nombre_completo": "Lorena Nino Quiroga",
+      "organismo_entidad": "",
+      "telefono": "3123681226",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Lucero Balcazar Campo",
+      "organismo_entidad": "",
+      "telefono": "3176032884",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Lucero"
+    },
+    {
+      "nombre_completo": "Yimar Calzadilla",
+      "organismo_entidad": "",
+      "telefono": "3178337000",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Yimar"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:59:28.810780",
+    "duracion_segundos": 4.63,
+    "tokens_total": 2537
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "id_documento": "AM-000055",
+  "archivo_imagen": "AM-000055.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_032211001.jpg",
+  "fecha_lote": "2026-08-15",
+  "dia_agosto": 15,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-002",
+  "fecha_documento_detectada": "7/08/26",
+  "municipio_o_lugar": "Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Deflam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Fiproprotection",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Dermolyn",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Cevpet",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "150ml"
+    },
+    {
+      "medicamento_insumo": "Oftalmol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Visner",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Mebapet",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "0.5% 10ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "2% 10ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Hemovet",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Neodoxyl",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": "10 tab"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": "5mg 10 tab"
+    },
+    {
+      "medicamento_insumo": "Prednizol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Plerion",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:57:49.902434",
+    "duracion_segundos": 4.23,
+    "tokens_total": 2940
+  }
+}

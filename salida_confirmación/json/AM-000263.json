@@ -1,0 +1,139 @@
+{
+  "id_documento": "AM-000263",
+  "archivo_imagen": "AM-000263.jpg",
+  "archivo_origen_escaneo": "20260827_180040.jpg",
+  "fecha_lote": "2026-08-24",
+  "dia_agosto": 24,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-500",
+  "fecha_documento_detectada": "20/08/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Guantes",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 150.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pañitos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 12.0,
+      "unidad": "bolsas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "paquetes",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 300.0,
+      "unidad": "ml",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter desechable",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Macrogotero",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cánula Nasal",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 0.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 0.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sellas de orina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 300.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tarro coprológicos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sonda",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Batal",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:05:54.186190",
+    "duracion_segundos": 4.28,
+    "tokens_total": 2835
+  }
+}

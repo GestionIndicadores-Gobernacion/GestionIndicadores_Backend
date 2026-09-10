@@ -1,0 +1,120 @@
+{
+  "archivo_imagen": "E-000002.jpg",
+  "fecha_lote": "2026-08-12",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "12/08/2016",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Zoo-calm",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Helbproc",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 80.0,
+      "unidad": "tabletas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Ampicilina",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "Spray 100 ml"
+    },
+    {
+      "medicamento_insumo": "Boxidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250 mg"
+    },
+    {
+      "medicamento_insumo": "Fiprodo",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.67 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.15% 30 ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Propofol",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Metrodix",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "8% 60 ml"
+    },
+    {
+      "medicamento_insumo": "Finhemox",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50% 50 ml"
+    },
+    {
+      "medicamento_insumo": "Pronalgin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:03:00.139793",
+    "duracion_segundos": 6.03,
+    "tokens_entrada": 1372,
+    "tokens_salida": 896,
+    "tokens_total": 2268,
+    "costo_usd_estimado": 0.001687
+  }
+}

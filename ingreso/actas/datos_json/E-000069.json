@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000069.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "METOCLOPRAMIDA",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML 4MG/30ML"
+    },
+    {
+      "medicamento_insumo": "HEMOLITAN",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML"
+    },
+    {
+      "medicamento_insumo": "TRANEXAM",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "500 MG"
+    },
+    {
+      "medicamento_insumo": "METOCLOPRAMIDA",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ML 4MG/30ML"
+    },
+    {
+      "medicamento_insumo": "CANISAN D",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ML"
+    },
+    {
+      "medicamento_insumo": "TRAMADOL",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "10 MG/10%"
+    },
+    {
+      "medicamento_insumo": "VIOXIN 2.3%",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML"
+    },
+    {
+      "medicamento_insumo": "VISOFT",
+      "cantidad": 11.0,
+      "unidad": "frascos",
+      "presentacion": "120 ML"
+    },
+    {
+      "medicamento_insumo": "IXEL 0.80",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ML"
+    },
+    {
+      "medicamento_insumo": "BAXIDIN",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "300 ML"
+    },
+    {
+      "medicamento_insumo": "CLORHEXIN SPRAY",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "120 ML"
+    },
+    {
+      "medicamento_insumo": "SEPTIDERM E",
+      "cantidad": 38.0,
+      "unidad": "frascos",
+      "presentacion": "500 ML"
+    },
+    {
+      "medicamento_insumo": "DEXTROMIN-B",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML"
+    },
+    {
+      "medicamento_insumo": "IXEL 0.80",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML"
+    },
+    {
+      "medicamento_insumo": "ISODINE",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120 ML"
+    },
+    {
+      "medicamento_insumo": "VETISULE",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML"
+    },
+    {
+      "medicamento_insumo": "KLINADINE",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML"
+    },
+    {
+      "medicamento_insumo": "IXEL 0.80",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120 ML"
+    },
+    {
+      "medicamento_insumo": "VIOXIN 2%",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ML"
+    },
+    {
+      "medicamento_insumo": "EDO 5",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ML"
+    },
+    {
+      "medicamento_insumo": "SEPTIDERM E",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ML"
+    },
+    {
+      "medicamento_insumo": "SANIX AH",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML"
+    },
+    {
+      "medicamento_insumo": "BAXIDIN",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "60 ML"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:15:11.377062",
+    "duracion_segundos": 4.75,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1244,
+    "tokens_total": 2616,
+    "costo_usd_estimado": 0.002209
+  }
+}

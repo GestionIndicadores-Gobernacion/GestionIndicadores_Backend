@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000294",
+  "archivo_imagen": "AS-000294.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_042012020.jpg",
+  "fecha_lote": "2026-08-17",
+  "dia_agosto": 17,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Jamundí",
+  "barrio_corregimiento_refugio": "San Antonio",
+  "autoriza_entrega": {
+    "nombre": "Diego Gutes",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Maria Ximena L",
+    "cedula": "66807577"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 100.0,
+    "alimento_gato_kg": 50.0,
+    "total_alimento_seco_kg": 150.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 200,
+    "comida_humeda_total_und": 200,
+    "arena_kg": 30.0,
+    "areneros_und": 0,
+    "camas_und": 10,
+    "cobijas_und": 15,
+    "recipientes_und": 20,
+    "huacales_und": 2,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:58:48.069787"
+  }
+}

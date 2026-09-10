@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000115",
+  "archivo_imagen": "AS-000115.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030539062.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Paupalinda",
+  "autoriza_entrega": {
+    "nombre": "Diego Gelber",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Frank R",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 30.0,
+    "alimento_gato_kg": 16.0,
+    "total_alimento_seco_kg": 46.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Grupo rescate en calle",
+        "cantidad": 1.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:41:25.344065"
+  }
+}

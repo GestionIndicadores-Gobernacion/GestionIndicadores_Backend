@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000030",
+  "archivo_imagen": "AV-000030.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 30,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega donaciones voluntarias: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Andres Felipe Patiño",
+      "organismo_entidad": "",
+      "telefono": "3175295740",
+      "correo_electronico": "felipcariias93@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Carlos Camacho",
+      "organismo_entidad": "",
+      "telefono": "3152058862",
+      "correo_electronico": "carloscamacho@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Elibanet Pom",
+      "organismo_entidad": "",
+      "telefono": "3186043949",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Miguel Ruiz",
+      "organismo_entidad": "",
+      "telefono": "3155892920",
+      "correo_electronico": "miguel.ruiz.hurtado10@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Fierro",
+      "organismo_entidad": "",
+      "telefono": "3215461435",
+      "correo_electronico": "mariafierrocastro@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Angie Paola Soto G.",
+      "organismo_entidad": "",
+      "telefono": "3104569153",
+      "correo_electronico": "angie1206@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Valentina Caicedo",
+      "organismo_entidad": "",
+      "telefono": "3104755411",
+      "correo_electronico": "valentinacaicedo@yahoo.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jean Carlo Peña",
+      "organismo_entidad": "",
+      "telefono": "3245714793",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniela Vivas Molano",
+      "organismo_entidad": "",
+      "telefono": "3197918116",
+      "correo_electronico": "vivasmolanodaniela@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sergio Andres Ruiz",
+      "organismo_entidad": "",
+      "telefono": "3116010232",
+      "correo_electronico": "sergioshoes2024@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Isabel Arbelaez",
+      "organismo_entidad": "",
+      "telefono": "3183705950",
+      "correo_electronico": "mariath6@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Jenifer Bernay R.",
+      "organismo_entidad": "",
+      "telefono": "3155199009",
+      "correo_electronico": "jen-347@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Johana Echavarria",
+      "organismo_entidad": "",
+      "telefono": "3023887802",
+      "correo_electronico": "johanaechavarria@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Alejandra Aguilar Garcia",
+      "organismo_entidad": "",
+      "telefono": "3169213814",
+      "correo_electronico": "marialeja9507@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:00:32.607708",
+    "duracion_segundos": 5.15,
+    "tokens_total": 2690
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id_documento": "AM-000283",
+  "archivo_imagen": "AM-000283.jpg",
+  "archivo_origen_escaneo": "20260827_183054.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-512",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": null,
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Cajas de gasa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 5.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapa oídos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1000.0,
+      "unidad": "ml",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 400.0,
+      "unidad": "ml",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución Hartmann",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 400.0,
+      "unidad": "ml",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Vendas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 500.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10000.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 200.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Caja de alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 50.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:07:49.087217",
+    "duracion_segundos": 2.62,
+    "tokens_total": 2376
+  }
+}

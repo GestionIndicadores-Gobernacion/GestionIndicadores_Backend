@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000133.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16 agosto 2026",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jeringa desechables",
+      "cantidad": 100.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes medianos",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "100 unidades"
+    },
+    {
+      "medicamento_insumo": "Gasa esteril",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "300 unidades"
+    },
+    {
+      "medicamento_insumo": "Gasa esteril",
+      "cantidad": 24.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa esteril",
+      "cantidad": 24.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cinta microporosa",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gorro quirurgico",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa no esteril",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 50.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes latex",
+      "cantidad": 100.0,
+      "unidad": "guantes",
+      "presentacion": "talla M"
+    },
+    {
+      "medicamento_insumo": "Pañitos humedos",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": "100 und cada 1"
+    },
+    {
+      "medicamento_insumo": "Toalla cocina",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pañales perro",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": "talla M, 12 unid"
+    },
+    {
+      "medicamento_insumo": "Paños humedos mascota",
+      "cantidad": 3.0,
+      "unidad": "paquetes",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda autoadhesiva",
+      "cantidad": 3.0,
+      "unidad": "paquetes",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 3.0,
+      "unidad": "tarros",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cepillo mascota",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "talla M, 100 und"
+    },
+    {
+      "medicamento_insumo": "Gasa",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "cantidad": 4.0,
+      "unidad": "rollos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa antihaderente",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "cada una 200 und"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:23:44.707563",
+    "duracion_segundos": 11.31,
+    "tokens_entrada": 1372,
+    "tokens_salida": 951,
+    "tokens_total": 2323,
+    "costo_usd_estimado": 0.00177
+  }
+}

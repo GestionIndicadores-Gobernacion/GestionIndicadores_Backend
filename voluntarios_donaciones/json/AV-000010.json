@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000010",
+  "archivo_imagen": "AV-000010.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 10,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones Voluntarias. Insumos alimentos y medicamentos",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Jessica Plata",
+      "organismo_entidad": "Ninguna",
+      "telefono": "3243381774",
+      "correo_electronico": "jplata.cto@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juan Pablo Preciado",
+      "organismo_entidad": "Ninguna",
+      "telefono": "3017304756",
+      "correo_electronico": "JuanPabloPreciado@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Luisa Fernanda Pareja",
+      "organismo_entidad": "Ninguna",
+      "telefono": "3116425840",
+      "correo_electronico": "lupa94@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alexandra Urbano",
+      "organismo_entidad": "Ninguna",
+      "telefono": "3044182740",
+      "correo_electronico": "alexandra.urbano.profe@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ana Sofía Arango B.",
+      "organismo_entidad": "Ninguna",
+      "telefono": "3162365450",
+      "correo_electronico": "Sofiarango.b57@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sara Ortiz Restrepo",
+      "organismo_entidad": "Ninguna",
+      "telefono": "3138117278",
+      "correo_electronico": "saraluciana.o510@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Gabriela Lemos M.",
+      "organismo_entidad": "NINGUNA",
+      "telefono": "3145769435",
+      "correo_electronico": "LEMOSMARTINEZG@GMAIL.COM",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Luz Miranda",
+      "organismo_entidad": "Ninguno",
+      "telefono": "3162998988",
+      "correo_electronico": "luz.kannemiranda@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Linda Cuellar",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3105145421",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Nathalie Morales L.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3043912225",
+      "correo_electronico": "nathalie22.morales@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Catalina M.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3206034390",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Alejandro Yamamoto G.",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3206062300",
+      "correo_electronico": "Alejandro",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Marcela Diez N.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3197403654",
+      "correo_electronico": "marceladiez35@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Gabriela Ospina",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3216487240",
+      "correo_electronico": "gabrielaospina1625@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jefferson Castellanos",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3133483697",
+      "correo_electronico": "jcastellanos.jgc@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Salua Marulanda",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3232993438",
+      "correo_electronico": "Saluamr6@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Valentina Cuervo",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3112134092",
+      "correo_electronico": "valentinacuervo@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lizeth Botina Castro",
+      "organismo_entidad": "Acopio Jairo Varela",
+      "telefono": "3183910094",
+      "correo_electronico": "lizbotina@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:58:17.039099",
+    "duracion_segundos": 7.42,
+    "tokens_total": 3143
+  }
+}

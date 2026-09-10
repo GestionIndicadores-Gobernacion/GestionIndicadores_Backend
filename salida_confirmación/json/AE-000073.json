@@ -1,0 +1,98 @@
+{
+  "id_documento": "AE-000073",
+  "archivo_imagen": "AE-000073.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_111438_Chrome.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-15",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 4,
+    "total_perros_censo": 0,
+    "total_gatos_censo": 0,
+    "total_animales_censo": 0,
+    "total_alimento_perro_kg": 580.0,
+    "total_alimento_gato_kg": 330.0,
+    "total_alimento_general_kg": 910.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Holly Villareal",
+      "municipio": "Candelaria",
+      "direccion": "",
+      "telefono": "3185235701",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 70.0,
+        "gato_kg": 100.0,
+        "total_kg": 170.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Juan Manuel Rengifo",
+      "municipio": "Candelaria",
+      "direccion": "",
+      "telefono": "3188501361",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 180.0,
+        "gato_kg": 70.0,
+        "total_kg": 250.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Gloria Alicia mera Cifuentes",
+      "municipio": "Candelaria",
+      "direccion": "",
+      "telefono": "3137571684",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 30.0,
+        "gato_kg": 30.0,
+        "total_kg": 60.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Alcaldía",
+      "municipio": "Candelaria",
+      "direccion": "",
+      "telefono": "",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 300.0,
+        "gato_kg": 130.0,
+        "total_kg": 430.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimentos en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:03:41.473611"
+  }
+}

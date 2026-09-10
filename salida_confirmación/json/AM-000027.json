@@ -1,0 +1,69 @@
+{
+  "id_documento": "AM-000027",
+  "archivo_imagen": "AM-000027.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030906020.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-033",
+  "fecha_documento_detectada": "12/08/2026",
+  "municipio_o_lugar": "Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jeringas de 3ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "x 100 und"
+    },
+    {
+      "medicamento_insumo": "Jeringas de 1ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "x 100 und"
+    },
+    {
+      "medicamento_insumo": "Tapetes absorbentes",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": "60 cm x 60 cm"
+    },
+    {
+      "medicamento_insumo": "Catgut cromado",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "100 und"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "al 5%"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Leche de Kingel",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:55:02.622746",
+    "duracion_segundos": 3.34,
+    "tokens_total": 2403
+  }
+}

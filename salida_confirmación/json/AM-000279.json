@@ -1,0 +1,69 @@
+{
+  "id_documento": "AM-000279",
+  "archivo_imagen": "AM-000279.jpg",
+  "archivo_origen_escaneo": "20260827_183006.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-510",
+  "fecha_documento_detectada": "25/08/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Alexandra Megu...",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Glicopan",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "4-10kg"
+    },
+    {
+      "medicamento_insumo": "Atrevia",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Enrovet",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10%"
+    },
+    {
+      "medicamento_insumo": "Gusantol",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Fipronil",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "gotas"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:07:27.614032",
+    "duracion_segundos": 2.69,
+    "tokens_total": 2340
+  }
+}

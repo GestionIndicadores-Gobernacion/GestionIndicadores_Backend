@@ -1,0 +1,223 @@
+{
+  "id_documento": "AM-000165",
+  "archivo_imagen": "AM-000165.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733050.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-056",
+  "fecha_documento_detectada": "18/8/26",
+  "municipio_o_lugar": "SANTIAGO DE CALI",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "SUERO ORAL PET",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "BAXIDIN",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "1LT"
+    },
+    {
+      "medicamento_insumo": "NEBULIZADOR",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "DEXTROMIN B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ML"
+    },
+    {
+      "medicamento_insumo": "ANIKOTEN",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ML"
+    },
+    {
+      "medicamento_insumo": "ALFA-3",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "ANTAX",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "VACOL POMADA",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "CIKUL-V LHA",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "170 ML"
+    },
+    {
+      "medicamento_insumo": "MELODOL",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "0.15%"
+    },
+    {
+      "medicamento_insumo": "CLAVASEPTIN",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "250MG"
+    },
+    {
+      "medicamento_insumo": "FOAN KET",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50 ML"
+    },
+    {
+      "medicamento_insumo": "MELOXIPLOC",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "0.5%"
+    },
+    {
+      "medicamento_insumo": "LIDOCAINA",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "ALL VET",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "100 ML"
+    },
+    {
+      "medicamento_insumo": "NOVALGINA",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "NUTRIGEL",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 50.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "QUIMOX",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "0.5%"
+    },
+    {
+      "medicamento_insumo": "DEXAMETASONA",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ML"
+    },
+    {
+      "medicamento_insumo": "OJUX V",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ML"
+    },
+    {
+      "medicamento_insumo": "MELOXIMAX",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "MELOX CAN",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "7.5 MG"
+    },
+    {
+      "medicamento_insumo": "OMEPRAZOL",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": "20 MG"
+    },
+    {
+      "medicamento_insumo": "SANIMICON SPRAY",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "QUERCETOL VET",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "LEGABIN",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "150 MG"
+    },
+    {
+      "medicamento_insumo": "LEGABIN",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": "75 MG"
+    },
+    {
+      "medicamento_insumo": "PREDNISOLONA",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "DICLOFENACO SODICO",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "25 MG"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:09:49.348502",
+    "duracion_segundos": 6.13,
+    "tokens_total": 3759
+  }
+}

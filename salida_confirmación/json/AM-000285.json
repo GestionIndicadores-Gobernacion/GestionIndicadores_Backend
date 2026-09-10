@@ -1,0 +1,153 @@
+{
+  "id_documento": "AM-000285",
+  "archivo_imagen": "AM-000285.jpg",
+  "archivo_origen_escaneo": "20260827_183126.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-514",
+  "fecha_documento_detectada": "25/08/26",
+  "municipio_o_lugar": null,
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Gradual",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Aminolute",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Boxidin",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "litro",
+      "presentacion": "1L"
+    },
+    {
+      "medicamento_insumo": "Enteromax",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 16.0,
+      "unidad": "tabletas",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Ampicilina Sulbactam",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda Coban",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter 24",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter 22",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 40.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter 18",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter 18",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Busa",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "200 unidades"
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Batas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapa heparinizada",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Microgoteo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Macrogoteo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 24.0,
+      "unidad": "unidades",
+      "presentacion": "x5"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:07:59.369981",
+    "duracion_segundos": 4.3,
+    "tokens_total": 2969
+  }
+}

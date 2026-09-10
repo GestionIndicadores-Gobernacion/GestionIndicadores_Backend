@@ -1,0 +1,111 @@
+{
+  "id_documento": "AM-000255",
+  "archivo_imagen": "AM-000255.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054524006.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-416",
+  "fecha_documento_detectada": "",
+  "municipio_o_lugar": "",
+  "autoriza_nombre": "",
+  "recibe_nombre": "",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Vendas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 54.0,
+      "unidad": "unidades",
+      "presentacion": "22G"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 150.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pañitos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 200.0,
+      "unidad": "unidades",
+      "presentacion": "6 1/2"
+    },
+    {
+      "medicamento_insumo": "Agujas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 100.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 400.0,
+      "unidad": "unidades",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Solución Salina",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 12.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sutura",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cuchillas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 50.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 5.0,
+      "unidad": "paquetes",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-26T14:48:07.793768",
+    "duracion_segundos": 3.71,
+    "tokens_total": 2619
+  }
+}

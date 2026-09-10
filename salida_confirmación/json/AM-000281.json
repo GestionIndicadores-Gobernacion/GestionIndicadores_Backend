@@ -1,0 +1,167 @@
+{
+  "id_documento": "AM-000281",
+  "archivo_imagen": "AM-000281.jpg",
+  "archivo_origen_escaneo": "20260827_183031.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-511",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "1g"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "20mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 100.0,
+      "unidad": "tabletas",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500mg iny."
+    },
+    {
+      "medicamento_insumo": "Niclan",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "400"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 12.0,
+      "unidad": "tabletas",
+      "presentacion": "200mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 60.0,
+      "unidad": "tabletas",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Clavaseptin",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "250mg"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Amox C",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "200mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "1000mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 60.0,
+      "unidad": "tabletas",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Lágrimas artificiales",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 24.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Oxitetraciclina oftálmica",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "tubos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Colirio",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Gentamicina oftálmica",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Ciprofloxacino oftálmico",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Doxiciclina oral",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Bon relax",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "25ml"
+    },
+    {
+      "medicamento_insumo": "Saniderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "250ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:07:39.620236",
+    "duracion_segundos": 4.8,
+    "tokens_total": 3240
+  }
+}

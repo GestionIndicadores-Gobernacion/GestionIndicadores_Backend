@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000180.jpg",
+  "fecha_lote": "2026-08-17",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "17-08-26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Solución oral lidocaína",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "400ml"
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Solución tópica",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "1 litro"
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Fumicel",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Algican",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Baxium",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Antiparasitario",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Dexapro",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Desinfectante",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam tableta",
+      "cantidad": 80.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam gotas",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Antiinflamatorio",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Protector ocular Vedipal",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Inhalador",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Trimebutina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Antiinflamatorio",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Trimetoprim + Sulfametoxazol",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Antibacteriano",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solución oftálmica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Pregabalina",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:29:36.004823",
+    "duracion_segundos": 4.55,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1150,
+    "tokens_total": 2522,
+    "costo_usd_estimado": 0.002068
+  }
+}

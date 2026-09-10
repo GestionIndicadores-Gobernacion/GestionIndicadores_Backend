@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000331",
+  "archivo_imagen": "AS-000331.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041523027.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "No especificado",
+  "autoriza_entrega": {
+    "nombre": "Diego Cedeno",
+    "cedula": "No especificado"
+  },
+  "recibe": {
+    "nombre": "Osorio",
+    "cedula": "No especificado"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 60.0,
+    "alimento_gato_kg": 32.0,
+    "total_alimento_seco_kg": 92.0,
+    "comida_humeda_perro_und": 75,
+    "comida_humeda_gato_und": 24,
+    "comida_humeda_total_und": 99,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 2,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Arena",
+        "cantidad": 30.0,
+        "unidad": "kg"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:02:30.286385"
+  }
+}

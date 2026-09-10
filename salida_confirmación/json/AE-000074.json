@@ -1,0 +1,80 @@
+{
+  "id_documento": "AE-000074",
+  "archivo_imagen": "AE-000074.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_111504_Drive.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "null",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 3,
+    "total_perros_censo": 28,
+    "total_gatos_censo": 31,
+    "total_animales_censo": 49,
+    "total_alimento_perro_kg": 78.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 78.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Luz Adriana Muñoz / Hydara",
+      "municipio": "null",
+      "direccion": "Km 6 via Cristo Rey",
+      "telefono": "3004426672",
+      "censo": {
+        "perros": 20,
+        "gatos": 8,
+        "total_animales": 18
+      },
+      "alimento_entregado": {
+        "perro_kg": 28.0,
+        "gato_kg": 0.0,
+        "total_kg": 28.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "null"
+    },
+    {
+      "nombre_fundacion": "Fundacion Angeles Terrenales",
+      "municipio": "null",
+      "direccion": "null",
+      "telefono": "3167446922",
+      "censo": {
+        "perros": 0,
+        "gatos": 18,
+        "total_animales": 18
+      },
+      "alimento_entregado": {
+        "perro_kg": 30.0,
+        "gato_kg": 0.0,
+        "total_kg": 30.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "null"
+    },
+    {
+      "nombre_fundacion": "Hogar de Paso, dona Paty",
+      "municipio": "null",
+      "direccion": "Cra 53 E Oeste 12C 42",
+      "telefono": "301400099",
+      "censo": {
+        "perros": 8,
+        "gatos": 5,
+        "total_animales": 13
+      },
+      "alimento_entregado": {
+        "perro_kg": 20.0,
+        "gato_kg": 0.0,
+        "total_kg": 20.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "null"
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:03:50.966543"
+  }
+}

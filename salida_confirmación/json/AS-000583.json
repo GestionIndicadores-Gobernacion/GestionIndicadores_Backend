@@ -1,0 +1,47 @@
+{
+  "archivo_imagen": "AS-000583.jpg",
+  "archivo_origen_escaneo": "20260827_175219.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Una Ceya"
+  },
+  "barrio_corregimiento_refugio": "Jerson Montoya",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 116,
+    "alimento_perro_kg": 280,
+    "arena_kg": 160,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "arena",
+        "cantidad": 40,
+        "unidad": "kg"
+      }
+    ],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 396
+  },
+  "dia_agosto": 24,
+  "fecha_lote": "2026-08-24",
+  "id_documento": "AS-000583",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T18:59:49.578581"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "1007976837",
+    "nombre": "Jerson David Montoya Betancour"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

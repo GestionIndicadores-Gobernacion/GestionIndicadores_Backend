@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000004",
+  "archivo_imagen": "AV-000004.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 4,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "Donaciones. LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Jose Legarda",
+      "organismo_entidad": "Donacion",
+      "telefono": "3185538122",
+      "correo_electronico": "joselegarda@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Andres Arturo",
+      "organismo_entidad": "Poblado Campestre",
+      "telefono": "3186053385",
+      "correo_electronico": "Pecosito2603@hotmail.es",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ivan Sanchez-Adriana",
+      "organismo_entidad": null,
+      "telefono": "5036023",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Gipsy Andrea Bolaños",
+      "organismo_entidad": "USC",
+      "telefono": "3134374633",
+      "correo_electronico": "giandrea963@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Mena",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3164998002",
+      "correo_electronico": "kathamen09@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Jose Lopez",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3146557761",
+      "correo_electronico": "majo.lopezsarmiento@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Giraldo",
+      "organismo_entidad": "USC-movil insumos",
+      "telefono": "3225316594",
+      "correo_electronico": "lauraceron710@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Valentina Escobar",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3117543030",
+      "correo_electronico": "Valentinacifuentes1812@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Catalina Sanchez Gomez",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3146698875",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Botero",
+      "organismo_entidad": "Veterinaria",
+      "telefono": "3188393964",
+      "correo_electronico": "lauraboterovet@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Leidy Londono",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3217804995",
+      "correo_electronico": "leidymarion72@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Vivian Gomez",
+      "organismo_entidad": "aux comunidad",
+      "telefono": "3052024965",
+      "correo_electronico": "vividgomez.usc@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Elizabeth Trujillo Torres",
+      "organismo_entidad": "Medica familiar",
+      "telefono": "3013295499",
+      "correo_electronico": "elizatrujillot@hot.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Zapata Mares",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3177442619",
+      "correo_electronico": "natalac213@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juliana Neiva Castaneda",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3157648146",
+      "correo_electronico": "juneivacastaneda@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Leidy Ospina",
+      "organismo_entidad": "USC. MV.",
+      "telefono": "3003525723",
+      "correo_electronico": "lady.ospina02@usc.edu.co",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Johanna Sanchez",
+      "organismo_entidad": null,
+      "telefono": "3183553540",
+      "correo_electronico": "jhoansan198@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Nathalia Lozano B.",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3168794630",
+      "correo_electronico": "sentidovertical@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:57:33.402029",
+    "duracion_segundos": 6.36,
+    "tokens_total": 3142
+  }
+}

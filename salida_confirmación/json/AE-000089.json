@@ -1,0 +1,62 @@
+{
+  "id_documento": "AE-000089",
+  "archivo_imagen": "AE-000089.jpg",
+  "archivo_origen_escaneo": "20260901_110619.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 2,
+    "total_perros_censo": 0,
+    "total_gatos_censo": 0,
+    "total_animales_censo": 0,
+    "total_alimento_perro_kg": 218.0,
+    "total_alimento_gato_kg": 95.0,
+    "total_alimento_general_kg": 313.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Andres Felipe Ruiz",
+      "municipio": "Ulloa",
+      "direccion": "calle 5",
+      "telefono": "3163711773",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 150.0,
+        "gato_kg": 50.0,
+        "total_kg": 200.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_OBSERVACIONES"
+    },
+    {
+      "nombre_fundacion": "Isabela Matos",
+      "municipio": "Ulloa",
+      "direccion": "cr 3 #55",
+      "telefono": "3108223638",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 68.0,
+        "gato_kg": 45.0,
+        "total_kg": 113.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_OBSERVACIONES"
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:06:30.342788"
+  }
+}

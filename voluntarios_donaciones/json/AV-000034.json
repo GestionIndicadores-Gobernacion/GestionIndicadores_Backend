@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000034",
+  "archivo_imagen": "AV-000034.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 34,
+  "fecha_detectada": "13/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Valentina Sanchez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3153151036",
+      "correo_electronico": "SanchezValentina912@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Valentina S.J."
+    },
+    {
+      "nombre_completo": "Jennifer Lopez",
+      "organismo_entidad": "Cuda CC",
+      "telefono": "3226243285",
+      "correo_electronico": "yeye63@live.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Aneth Maria Gomez",
+      "organismo_entidad": "CC",
+      "telefono": "3159362760",
+      "correo_electronico": "Anethmariagomez@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Aneth G."
+    },
+    {
+      "nombre_completo": "Luz Castillo Otero",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "316748613",
+      "correo_electronico": "luzcastillo211@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Luz Castillo"
+    },
+    {
+      "nombre_completo": "Valentina Roa",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3137399103",
+      "correo_electronico": "Vroa09@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Valeria Guzman Rivera",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3246880837",
+      "correo_electronico": "Valeriaguzmanr1@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "VGR"
+    },
+    {
+      "nombre_completo": "Emilio Alandete",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3107545217",
+      "correo_electronico": "galvis7hebel@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Valentina Morales",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3153519451",
+      "correo_electronico": "Valentina.morales@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Cesar Olaya",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3217594770",
+      "correo_electronico": "cesarolaya91@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Nathalia Correa",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3132726285",
+      "correo_electronico": "moncayocorrea1999@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Nathalia"
+    },
+    {
+      "nombre_completo": "Yudy Fernanda Macho U.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3116088815",
+      "correo_electronico": "fernandamorov96@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Camila Bolivar Sierra",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3185379933",
+      "correo_electronico": "camilabolivar.s@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Camila Bolivar"
+    },
+    {
+      "nombre_completo": "Camila Perea Quiroz",
+      "organismo_entidad": "Cedula de ciudadana",
+      "telefono": "3185164735",
+      "correo_electronico": "camiper17@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Camila Perea Q."
+    },
+    {
+      "nombre_completo": "Karol Julieth Garcia",
+      "organismo_entidad": "Cedula de ciudadana",
+      "telefono": "3184544803",
+      "correo_electronico": "juliethsala12019@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Karol G."
+    },
+    {
+      "nombre_completo": "Shelton S. Teleg",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3155858788",
+      "correo_electronico": "Sheltonstuarttelegvalderrama.97@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Shelton S."
+    },
+    {
+      "nombre_completo": "Sandra Caicedo",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3172100584",
+      "correo_electronico": "sandra.caicedo@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "S.C."
+    },
+    {
+      "nombre_completo": "Mara Marin",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3161660003",
+      "correo_electronico": "maraschiamarin@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Mara Marin"
+    },
+    {
+      "nombre_completo": "Jessica Sandoval",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3168689924",
+      "correo_electronico": "jessicasandoval@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Jessica Sandoval"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:00:59.745793",
+    "duracion_segundos": 6.32,
+    "tokens_total": 3142
+  }
+}

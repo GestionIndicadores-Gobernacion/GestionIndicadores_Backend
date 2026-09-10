@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000272.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041255021.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Alejandro Davila"
+  },
+  "barrio_corregimiento_refugio": "Edif. Vanessa",
+  "codigo_acta_vinculante": "A-041",
+  "datos_alimentos": {
+    "alimento_gato_kg": 50,
+    "alimento_perro_kg": 250,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 50,
+    "comida_humeda_perro_und": 100,
+    "comida_humeda_total_und": 150,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 300
+  },
+  "dia_agosto": 16,
+  "fecha_lote": "2026-08-16",
+  "id_documento": "AS-000272",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:56:40.857904"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Kala Villan"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

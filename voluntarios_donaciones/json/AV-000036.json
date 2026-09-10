@@ -1,0 +1,120 @@
+{
+  "id_documento": "AV-000036",
+  "archivo_imagen": "AV-000036.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 36,
+  "fecha_detectada": "13/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 13,
+  "personas": [
+    {
+      "nombre_completo": "Paola A. Micelta",
+      "organismo_entidad": "",
+      "telefono": "3127078026",
+      "correo_electronico": "pcito22@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Laura Mogollon",
+      "organismo_entidad": "",
+      "telefono": "3152834865",
+      "correo_electronico": "laudaniela.mogollon@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Karen Valeria Zapata",
+      "organismo_entidad": "Fundacion Alma Perruna",
+      "telefono": "3132426003",
+      "correo_electronico": "karen-zapata180294@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Angela Sanchez G.",
+      "organismo_entidad": "Donacion personal",
+      "telefono": "3153520628",
+      "correo_electronico": "verdeazul6@yahoo.es",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Natalia Toro",
+      "organismo_entidad": "Donacion",
+      "telefono": "3182032527",
+      "correo_electronico": "nataliat.roldan@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Johan Zapata",
+      "organismo_entidad": "Donacion",
+      "telefono": "316864498",
+      "correo_electronico": "johanmaguipi@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Mariana Gomez A.",
+      "organismo_entidad": "Donacion",
+      "telefono": "3165020787",
+      "correo_electronico": "mariana0327gomez@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Mª Alexandra Solarte",
+      "organismo_entidad": "Donacion",
+      "telefono": "3113555750",
+      "correo_electronico": "alexasolarte@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Mario Victoria Anaya Cordoba",
+      "organismo_entidad": "Donacion",
+      "telefono": "3104665226",
+      "correo_electronico": "mcronaana@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Vanessa Reyes",
+      "organismo_entidad": "Donacion",
+      "telefono": "3155297090",
+      "correo_electronico": "vanessa9cola@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Kevin Mancipe",
+      "organismo_entidad": "Donacion",
+      "telefono": "",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Dora Betancourth",
+      "organismo_entidad": "Donacion",
+      "telefono": "3243154369",
+      "correo_electronico": "betancourthmartin@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Johanna Marin",
+      "organismo_entidad": "Donacion",
+      "telefono": "3043841984",
+      "correo_electronico": "johannm164-76@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:01:12.454188",
+    "duracion_segundos": 5.05,
+    "tokens_total": 2585
+  }
+}

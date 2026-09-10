@@ -1,0 +1,188 @@
+{
+  "id_documento": "AM-000243",
+  "archivo_imagen": "AM-000243.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_053431003.jpg",
+  "fecha_lote": "2026-08-22",
+  "dia_agosto": 22,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-413",
+  "fecha_documento_detectada": "16-Ago-28",
+  "municipio_o_lugar": "Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Miguel Ramos",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Pisacaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "20mg"
+    },
+    {
+      "medicamento_insumo": "Hidramin Oral",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jabon Splend",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jabon Pulvican",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gotas Manzanilla ojos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cicandul",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "8 gr"
+    },
+    {
+      "medicamento_insumo": "Entero Chronic",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lagrimas opthacril",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Lagrigen",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Drenda-Sol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "B-fex",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Cann ex",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 mg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "12 mg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Advocate gatos",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Visivet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "12 frascos 5ml"
+    },
+    {
+      "medicamento_insumo": "Irangulan",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Coyoxyme",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": "2mg x 10 tabl"
+    },
+    {
+      "medicamento_insumo": "Hial Tears",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "0.4%"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "0.15 mg"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-26T14:46:59.644845",
+    "duracion_segundos": 5.19,
+    "tokens_total": 3442
+  }
+}

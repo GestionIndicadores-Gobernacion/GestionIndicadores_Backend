@@ -1,0 +1,88 @@
+{
+  "id_documento": "AV-000029",
+  "archivo_imagen": "AV-000029.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 29,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 9,
+  "personas": [
+    {
+      "nombre_completo": "Jean Marlanda",
+      "organismo_entidad": "",
+      "telefono": "3023429279",
+      "correo_electronico": "byemnesty@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Mónica Narváez",
+      "organismo_entidad": "",
+      "telefono": "3136950028",
+      "correo_electronico": "narvaezmonica596@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Oswaldo Mera",
+      "organismo_entidad": "",
+      "telefono": "3017764588",
+      "correo_electronico": "OswaldoM@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Monica Montilla",
+      "organismo_entidad": "",
+      "telefono": "3217775037",
+      "correo_electronico": "monicamontilla89@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Aleman",
+      "organismo_entidad": "",
+      "telefono": "3185384119",
+      "correo_electronico": "aleman618.la@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Martha Isabel Toscan",
+      "organismo_entidad": "",
+      "telefono": "3126837160",
+      "correo_electronico": "princasa198@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Katherine Peña",
+      "organismo_entidad": "",
+      "telefono": "3155594962",
+      "correo_electronico": "Kathe7925@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juan José Mateus",
+      "organismo_entidad": "",
+      "telefono": "3015976361",
+      "correo_electronico": "juanjomateusK@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Evelin Garzon O",
+      "organismo_entidad": "",
+      "telefono": "3184675419",
+      "correo_electronico": "evelyngarzon24@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:00:26.669265",
+    "duracion_segundos": 4.35,
+    "tokens_total": 2234
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000187.jpg",
+  "fecha_lote": "2026-08-17",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "17/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Alfa-3",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución Antiséptica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Aminotonic",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Bardin",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "250mg"
+    },
+    {
+      "medicamento_insumo": "Lubricante ocular",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Vethistam",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Antiparasitario int.",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Carrofero",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Fluralaner",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Trien t.a",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "polvo"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Bismo-cet",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "240ml"
+    },
+    {
+      "medicamento_insumo": "Meloxivet",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "0.15%"
+    },
+    {
+      "medicamento_insumo": "Antar",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "170ml"
+    },
+    {
+      "medicamento_insumo": "Bismo-cet antidiarreico",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxican",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución oftalmica",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Novafan top",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ankofen",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:30:12.566686",
+    "duracion_segundos": 4.87,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1086,
+    "tokens_total": 2458,
+    "costo_usd_estimado": 0.001972
+  }
+}

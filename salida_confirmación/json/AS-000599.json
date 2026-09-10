@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000599",
+  "archivo_imagen": "AS-000599.jpg",
+  "archivo_origen_escaneo": "20260827_175526.jpg",
+  "fecha_lote": "2026-08-24",
+  "dia_agosto": 24,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Jamundí",
+  "barrio_corregimiento_refugio": "San Antonio",
+  "autoriza_entrega": {
+    "nombre": "Johana Peñafield",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Maria Ximena Lopez",
+    "cedula": "3103824199"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 130.0,
+    "alimento_gato_kg": 16.0,
+    "total_alimento_seco_kg": 146.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 10.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 20,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T19:01:24.439534"
+  }
+}

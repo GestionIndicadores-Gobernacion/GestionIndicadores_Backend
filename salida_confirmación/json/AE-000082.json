@@ -1,0 +1,116 @@
+{
+  "id_documento": "AE-000082",
+  "archivo_imagen": "AE-000082.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_113834_Drive.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-13",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 5,
+    "total_perros_censo": 242,
+    "total_gatos_censo": 235,
+    "total_animales_censo": 477,
+    "total_alimento_perro_kg": 786.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 786.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Martha Roror",
+      "municipio": "",
+      "direccion": "Palo seco",
+      "telefono": "3105481119",
+      "censo": {
+        "perros": 37,
+        "gatos": 40,
+        "total_animales": 77
+      },
+      "alimento_entregado": {
+        "perro_kg": 283.0,
+        "gato_kg": 0.0,
+        "total_kg": 283.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Lucia Giraldo",
+      "municipio": "",
+      "direccion": "Kocke",
+      "telefono": "311637700",
+      "censo": {
+        "perros": 80,
+        "gatos": 160,
+        "total_animales": 240
+      },
+      "alimento_entregado": {
+        "perro_kg": 152.0,
+        "gato_kg": 0.0,
+        "total_kg": 152.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Rocio Valle",
+      "municipio": "",
+      "direccion": "La curva",
+      "telefono": "3156577667",
+      "censo": {
+        "perros": 90,
+        "gatos": 0,
+        "total_animales": 90
+      },
+      "alimento_entregado": {
+        "perro_kg": 265.0,
+        "gato_kg": 0.0,
+        "total_kg": 265.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Endris Margoth",
+      "municipio": "",
+      "direccion": "SIN_DIRECCION",
+      "telefono": "3176320043",
+      "censo": {
+        "perros": 15,
+        "gatos": 20,
+        "total_animales": 35
+      },
+      "alimento_entregado": {
+        "perro_kg": 32.0,
+        "gato_kg": 0.0,
+        "total_kg": 32.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Dono Boris",
+      "municipio": "",
+      "direccion": "Union de vivienda",
+      "telefono": "SIN_TELEFONO",
+      "censo": {
+        "perros": 20,
+        "gatos": 15,
+        "total_animales": 35
+      },
+      "alimento_entregado": {
+        "perro_kg": 54.0,
+        "gato_kg": 0.0,
+        "total_kg": 54.0
+      },
+      "firma_registrada": false,
+      "observaciones_fila": "no firma"
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:05:14.220649"
+  }
+}

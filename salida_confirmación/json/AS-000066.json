@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000066.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030539012.jpg",
+  "autoriza_entrega": {
+    "cedula": "",
+    "nombre": "Diep Cuber"
+  },
+  "barrio_corregimiento_refugio": "",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 300,
+    "alimento_perro_kg": 300,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 50,
+    "comida_humeda_total_und": 50,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 600
+  },
+  "dia_agosto": 13,
+  "fecha_lote": "2026-08-13",
+  "id_documento": "AS-000066",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:36:42.941631"
+  },
+  "municipio": "Cartago",
+  "recibe": {
+    "cedula": "1107838149",
+    "nombre": "Alejandra Agudelo Juna"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

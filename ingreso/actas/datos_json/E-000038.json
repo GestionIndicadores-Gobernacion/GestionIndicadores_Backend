@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000038.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/Ago/202",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Inyección lidocaína y epinefrina",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": "20 ml / 2%"
+    },
+    {
+      "medicamento_insumo": "Meloxicam tabletas",
+      "cantidad": 9.0,
+      "unidad": "tabletas",
+      "presentacion": "2mg"
+    },
+    {
+      "medicamento_insumo": "Electrolito pet",
+      "cantidad": 14.0,
+      "unidad": "unidades",
+      "presentacion": "4mg"
+    },
+    {
+      "medicamento_insumo": "Baxidin solución",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "Sobre Hemo 10ml"
+    },
+    {
+      "medicamento_insumo": "Canipet oral",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "300ml"
+    },
+    {
+      "medicamento_insumo": "Canipet fort",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Sucralfato",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Lagrigen ocular",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Hidratars",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Fibrinex (Ácido tranexámico)",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "0.4%"
+    },
+    {
+      "medicamento_insumo": "Electro 200 oral",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "10 tabletas 500mg"
+    },
+    {
+      "medicamento_insumo": "Diarrevet",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": "10gr"
+    },
+    {
+      "medicamento_insumo": "Sales orales sobre",
+      "cantidad": 13.0,
+      "unidad": "sobres",
+      "presentacion": "20gr"
+    },
+    {
+      "medicamento_insumo": "Pulfen oral",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "3.2ml"
+    },
+    {
+      "medicamento_insumo": "Amigo fresh polvo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5g"
+    },
+    {
+      "medicamento_insumo": "Melcox-meloxicam",
+      "cantidad": 60.0,
+      "unidad": "tabletas",
+      "presentacion": "30t / 200mg 7.5mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina (tableta)",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona inyectable",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina oral",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "250mg/5ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.15%",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína tópica",
+      "cantidad": 14.0,
+      "unidad": "unidades",
+      "presentacion": "30ml / 2%"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:07:37.438109",
+    "duracion_segundos": 6.78,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1137,
+    "tokens_total": 2509,
+    "costo_usd_estimado": 0.002048
+  }
+}

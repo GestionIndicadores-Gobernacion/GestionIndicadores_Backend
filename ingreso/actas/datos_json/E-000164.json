@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000164.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16 Agosto 2024",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Suero fisiológico",
+      "cantidad": 3.0,
+      "unidad": "bolsas",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "West jabón",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Splash tears (lágrima)",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Aaflux (supremicin)",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Didol 0.1%",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Ácido tranexámico",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "West jabón 4%",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Legimort 0.5%",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Organew pet",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "100 g"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco 70 mg",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "3 ml"
+    },
+    {
+      "medicamento_insumo": "Power comprimidos",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "900 mg / 33.75 mg"
+    },
+    {
+      "medicamento_insumo": "Credelio plus",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "22.5 mg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "75 mg"
+    },
+    {
+      "medicamento_insumo": "Credelio lotilaner",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "450 mg"
+    },
+    {
+      "medicamento_insumo": "Clopidogrel",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "2.60 mg"
+    },
+    {
+      "medicamento_insumo": "Fiprofectum",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Pronalgin",
+      "cantidad": 2.0,
+      "unidad": "goteros",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Canisan suspención",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "1000 ml"
+    },
+    {
+      "medicamento_insumo": "Detromin-B",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Metoclopramida 4 mg",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Metronid 250 mg",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Peracani silvan gel",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:26:47.272383",
+    "duracion_segundos": 5.16,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1196,
+    "tokens_total": 2568,
+    "costo_usd_estimado": 0.002137
+  }
+}

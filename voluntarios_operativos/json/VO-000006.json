@@ -1,0 +1,248 @@
+{
+  "id_documento": "VO-000006",
+  "archivo_imagen": "VO-000006.jpg",
+  "archivo_origen": "WhatsApp Image 2026-08-20 at 9.16.44 PM.jpeg",
+  "tipo_documento": "VOLUNTARIOS_OPERATIVOS",
+  "fecha_detectada": null,
+  "lugar_o_sede": "Acopio CBA",
+  "total_voluntarios_hoja": 29,
+  "voluntarios": [
+    {
+      "nombre_completo": "Diana Hurtado",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Adriana Moreno",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Cristina Moreno",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Ana Fernanda Bueno",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Drew Alan Danin",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Cristian Andrés Hurtado",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Nathaly Garcia León",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Melanie Artunduaga",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Nathaly Brand",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Alejandro Rodriguez",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Sofia Losado",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Santiago Pedraza",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Simón Vega",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Edwin Bolaños",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Jaime Guiza",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Jacobo Acero",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Luisa Chavarro",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Mónica Andrade",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Maria Juliana Restrepo Castaño",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Encargada medicamentos",
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Maria Jose Vasquez Giraldo",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Encargada insumos",
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Jackeline Somelet Largo",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Lina Lopez",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Karina Rodriguez",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Melani Artunduaga",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Maria Plejandia Cobo",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Jorge Cobo",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Sandra Patricia Moreno",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Monica Mendez Diaz",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Maria Paula Jordan",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": null,
+      "observaciones_o_firma": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:21:58.083313",
+    "duracion_segundos": 6.4,
+    "tokens_total": 3074
+  }
+}

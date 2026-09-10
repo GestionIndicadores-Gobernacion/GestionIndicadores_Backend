@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000242.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031900051.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Diego Bedoya"
+  },
+  "barrio_corregimiento_refugio": "Albergue Patadas",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 0,
+    "alimento_perro_kg": 800,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 800
+  },
+  "dia_agosto": 15,
+  "fecha_lote": "2026-08-15",
+  "id_documento": "AS-000242",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:53:45.453805"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Claudia Liliana Velasco Rivera"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

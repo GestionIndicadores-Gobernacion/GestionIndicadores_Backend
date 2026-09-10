@@ -1,0 +1,188 @@
+{
+  "id_documento": "AM-000006",
+  "archivo_imagen": "AM-000006.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030906.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-020",
+  "fecha_documento_detectada": "13 de Agosto",
+  "municipio_o_lugar": "El Dovio Valle",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Jose Herrera",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Lactato Ringer",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 5.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Cloruro de sodio",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 5.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "300ml"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 50.0,
+      "unidad": "unidades",
+      "presentacion": "1ml, 3ml, 5ml, 10ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "350ml"
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "50 unidades"
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "talla M"
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": "1 libra"
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "22G"
+    },
+    {
+      "medicamento_insumo": "Tapón heparina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Toallitas húmedas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": "50 unidades"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Gafas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "rollo",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Compresas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Venoclisis",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "Macro"
+    },
+    {
+      "medicamento_insumo": "Venoclisis",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "Micro"
+    },
+    {
+      "medicamento_insumo": "Bocitra",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "1ml"
+    },
+    {
+      "medicamento_insumo": "Endovet",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "oral"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "tabletas"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "40mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:53:14.765787",
+    "duracion_segundos": 5.49,
+    "tokens_total": 3505
+  }
+}

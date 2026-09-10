@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000639",
+  "archivo_imagen": "AS-000639.jpg",
+  "archivo_origen_escaneo": "20260827_182736.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Jamundí",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Valeria C",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Paola Mendoza",
+    "cedula": ""
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 21.0,
+    "alimento_gato_kg": 2.0,
+    "total_alimento_seco_kg": 23.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 4.5,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T19:04:56.222881"
+  }
+}

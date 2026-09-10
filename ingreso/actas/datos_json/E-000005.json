@@ -1,0 +1,126 @@
+{
+  "archivo_imagen": "E-000005.jpg",
+  "fecha_lote": "2026-08-12",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "12-AGO-26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 87.0,
+      "unidad": "unidades",
+      "presentacion": "4mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 390.0,
+      "unidad": "unidades",
+      "presentacion": "8mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 12.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Cavental Antiparasitario oral",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 7.0,
+      "unidad": "tabletas",
+      "presentacion": "2mg"
+    },
+    {
+      "medicamento_insumo": "Electrolito",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "15mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "7.5mg"
+    },
+    {
+      "medicamento_insumo": "Trumel",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "John Burn",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "cantidad": 2.0,
+      "unidad": "bolsas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 3.0,
+      "unidad": "blisters",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:03:24.625609",
+    "duracion_segundos": 7.71,
+    "tokens_entrada": 1372,
+    "tokens_salida": 907,
+    "tokens_total": 2279,
+    "costo_usd_estimado": 0.001704
+  }
+}

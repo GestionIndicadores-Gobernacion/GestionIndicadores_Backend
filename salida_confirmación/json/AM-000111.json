@@ -1,0 +1,111 @@
+{
+  "id_documento": "AM-000111",
+  "archivo_imagen": "AM-000111.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_042219008.jpg",
+  "fecha_lote": "2026-08-17",
+  "dia_agosto": 17,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-038",
+  "fecha_documento_detectada": "15/09/2024",
+  "municipio_o_lugar": "Clinica CBA",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Caja Distemper",
+      "categoria_farmacologica": "Vacunas y Biológicos",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "botellas",
+      "presentacion": "3.7L"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Protectores",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "bolsa",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "rollo",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 32.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 32.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 32.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:03:49.429042",
+    "duracion_segundos": 4.23,
+    "tokens_total": 2651
+  }
+}

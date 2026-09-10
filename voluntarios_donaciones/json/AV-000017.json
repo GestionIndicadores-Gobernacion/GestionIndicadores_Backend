@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000017",
+  "archivo_imagen": "AV-000017.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 17,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias. Insumos alimentos y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Angula Cortias",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3104982022",
+      "correo_electronico": "ancortias2002@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Juan Esteban Acosta",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3103459037",
+      "correo_electronico": "jacoxtax@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Luisa Fernanda Mosquera",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3186838763",
+      "correo_electronico": "luamosdela@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Daniela Lema L.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3104162372",
+      "correo_electronico": "daniela119@hot.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Natalia Vanesa Hidalgo Lopez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3168294805",
+      "correo_electronico": "vanesahl@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "David Stiven Bravo Ortiz",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3175981564",
+      "correo_electronico": "davidbravo1805@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "ADRIANA CARVAJAL",
+      "organismo_entidad": null,
+      "telefono": "60599745",
+      "correo_electronico": "Nyta_Carv@MAC.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Stephany Barona G.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3128836973",
+      "correo_electronico": "stefybaronag@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Valentina Ordoñez Jimenez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3052616921",
+      "correo_electronico": "jkvalentina2c@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Paula Sofía Losada",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3003615658",
+      "correo_electronico": "p.losada.19@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Lisbeth Barco L.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3154371511",
+      "correo_electronico": "lisbeth_barco@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Ashlin Nicol Hernández",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3180667903",
+      "correo_electronico": "ashlie07tecno@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Maria Jose Vasquez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3186645109",
+      "correo_electronico": "majovasquez20102@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Miguel Gomez Hinojosa",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3153420117",
+      "correo_electronico": "miguelgomezhl6@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:59:09.661401",
+    "duracion_segundos": 5.67,
+    "tokens_total": 2723
+  }
+}

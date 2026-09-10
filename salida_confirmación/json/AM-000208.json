@@ -1,0 +1,188 @@
+{
+  "id_documento": "AM-000208",
+  "archivo_imagen": "AM-000208.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_070156020.jpg",
+  "fecha_lote": "2026-08-20",
+  "dia_agosto": 20,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-317",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Suero Oral Pet",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "400 ml"
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Gotas para ojos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "1 litro"
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "900 mg"
+    },
+    {
+      "medicamento_insumo": "Sutura quirúrgica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "CBD gotas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Jabon quirúrgico",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "90 g"
+    },
+    {
+      "medicamento_insumo": "Desparasitante Puppy",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Canicel",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 21.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Desparasitante tabletas",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20-90 kg"
+    },
+    {
+      "medicamento_insumo": "Desparasitante oral",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "25-50 kg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Yodo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 120.0,
+      "unidad": "ml",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lidocaína inyectable",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Pentamycin",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": "80 mg"
+    },
+    {
+      "medicamento_insumo": "Trimebutina tabletas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "1 g"
+    },
+    {
+      "medicamento_insumo": "Tramadol cápsulas",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Piperacilina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Aciflux susp.",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Triamcinolona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "6 mg"
+    },
+    {
+      "medicamento_insumo": "Galgocal",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "600 tab"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:15:19.730447",
+    "duracion_segundos": 5.85,
+    "tokens_total": 3521
+  }
+}

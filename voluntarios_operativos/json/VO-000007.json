@@ -1,0 +1,56 @@
+{
+  "id_documento": "VO-000007",
+  "archivo_imagen": "VO-000007.jpg",
+  "archivo_origen": "WhatsApp Image 2026-08-20 at 9.16.44 PM (1).jpeg",
+  "tipo_documento": "VOLUNTARIOS_OPERATIVOS",
+  "fecha_detectada": null,
+  "lugar_o_sede": null,
+  "total_voluntarios_hoja": 5,
+  "voluntarios": [
+    {
+      "nombre_completo": "Emelyn Clavijo",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Voluntariado",
+      "disponibilidad_o_fecha": "Mañana 2pm",
+      "observaciones_o_firma": "Autorizado por Johan"
+    },
+    {
+      "nombre_completo": "Nicol Saavedra",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Voluntariado",
+      "disponibilidad_o_fecha": "Mañana 2pm",
+      "observaciones_o_firma": "Autorizado por Johan"
+    },
+    {
+      "nombre_completo": "Sebastian Otalvaro",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Voluntariado",
+      "disponibilidad_o_fecha": "Mañana 2pm",
+      "observaciones_o_firma": "Autorizado por Johan"
+    },
+    {
+      "nombre_completo": "Samuel Castrillón",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Voluntariado",
+      "disponibilidad_o_fecha": "Mañana 2pm",
+      "observaciones_o_firma": "Autorizado por Johan"
+    },
+    {
+      "nombre_completo": "Alejandra Henao Bonilla",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Voluntariado",
+      "disponibilidad_o_fecha": "Mañana 2pm",
+      "observaciones_o_firma": "Autorizado por Johan"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:22:01.561411",
+    "duracion_segundos": 2.92,
+    "tokens_total": 1745
+  }
+}

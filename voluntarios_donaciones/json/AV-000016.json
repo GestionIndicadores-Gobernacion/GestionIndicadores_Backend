@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000016",
+  "archivo_imagen": "AV-000016.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 16,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Noel Orozco",
+      "organismo_entidad": "",
+      "telefono": "3164963616",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sharon Martinez",
+      "organismo_entidad": "Profesional",
+      "telefono": "3116651628",
+      "correo_electronico": "martinez.sharon@unagraria.edu.co",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sofia Bonilla Rojas",
+      "organismo_entidad": "Profesional",
+      "telefono": "3153072809",
+      "correo_electronico": "sbonilla@unel.edu.co",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juan Sebastián Bedoya G.",
+      "organismo_entidad": "",
+      "telefono": "3185883747",
+      "correo_electronico": "juanc.bas@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Nathalia Garavito",
+      "organismo_entidad": "",
+      "telefono": "3185883747",
+      "correo_electronico": "nathaliaq19@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Valentina Velasquez",
+      "organismo_entidad": "Médica",
+      "telefono": "3155274313",
+      "correo_electronico": "valenjurutana20@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Maria Camila Suárez",
+      "organismo_entidad": "Profesional",
+      "telefono": "3002627020",
+      "correo_electronico": "cami.sm96@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "hogar de paso"
+    },
+    {
+      "nombre_completo": "Ana Milena Mora",
+      "organismo_entidad": "Aux. Enf.",
+      "telefono": "3171209542",
+      "correo_electronico": "milenazz24@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Angela Holguin",
+      "organismo_entidad": "Profesional",
+      "telefono": "3225889007",
+      "correo_electronico": "angela.holguin.s@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Paula Muñoz",
+      "organismo_entidad": "Publicista",
+      "telefono": "3182200977",
+      "correo_electronico": "paula.andrea7298@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Alejandra Osorio",
+      "organismo_entidad": "Abogada",
+      "telefono": "3166003724",
+      "correo_electronico": "amorenod871@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sonia Jimenez",
+      "organismo_entidad": "Psicóloga",
+      "telefono": "3155515925",
+      "correo_electronico": "soniajisv@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juanita Lopez Grecia",
+      "organismo_entidad": "Estudiante",
+      "telefono": "3044460385",
+      "correo_electronico": "juanitalg0411@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Anasofia Solórzano",
+      "organismo_entidad": "Estudiante",
+      "telefono": "3154383616",
+      "correo_electronico": "anasofiasolorzano042@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juan José Agudelo",
+      "organismo_entidad": "Estudiante",
+      "telefono": "3105787877",
+      "correo_electronico": "juanjoagudelo463@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Rafael Ervey Cabrera",
+      "organismo_entidad": "Profesional",
+      "telefono": "3154749682",
+      "correo_electronico": "cabrerapenna@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Brayan Steven Duque",
+      "organismo_entidad": "Profesional",
+      "telefono": "3216043065",
+      "correo_electronico": "duquebrayan27@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Helen Bedoya",
+      "organismo_entidad": "Estética",
+      "telefono": "3002335665",
+      "correo_electronico": "tarotis0376@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:59:03.209828",
+    "duracion_segundos": 6.69,
+    "tokens_total": 3063
+  }
+}

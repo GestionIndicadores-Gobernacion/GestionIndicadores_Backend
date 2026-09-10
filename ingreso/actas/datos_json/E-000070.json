@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000070.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "JABON 200",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30GR"
+    },
+    {
+      "medicamento_insumo": "PET MED JABON",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "15GR"
+    },
+    {
+      "medicamento_insumo": "SUTUVET",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "90CM"
+    },
+    {
+      "medicamento_insumo": "ADRENALINA",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "1ML/1MG"
+    },
+    {
+      "medicamento_insumo": "KETO BEST",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50ML"
+    },
+    {
+      "medicamento_insumo": "MELOXICAM",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "15MG/1.5ML"
+    },
+    {
+      "medicamento_insumo": "MELOXIPROC 0.5M",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ML"
+    },
+    {
+      "medicamento_insumo": "APETIL",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "10ML"
+    },
+    {
+      "medicamento_insumo": "FITOVETE",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "32GR"
+    },
+    {
+      "medicamento_insumo": "COLIRIO",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ML"
+    },
+    {
+      "medicamento_insumo": "RENAL BALANCE",
+      "cantidad": 60.0,
+      "unidad": "tabletas",
+      "presentacion": "1 TARRO"
+    },
+    {
+      "medicamento_insumo": "S-TOM MASCOTAS",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "270GR"
+    },
+    {
+      "medicamento_insumo": "AMINOLITE",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "500ML"
+    },
+    {
+      "medicamento_insumo": "AMINOLITE",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "250ML"
+    },
+    {
+      "medicamento_insumo": "MEGLUNIX",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "2MG"
+    },
+    {
+      "medicamento_insumo": "ALGICAN PETS",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100ML"
+    },
+    {
+      "medicamento_insumo": "AMINOCOMPLEAN",
+      "cantidad": 60.0,
+      "unidad": "cápsulas",
+      "presentacion": "20MG"
+    },
+    {
+      "medicamento_insumo": "PLAZED",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "300ML"
+    },
+    {
+      "medicamento_insumo": "BAXIDIN",
+      "cantidad": 40.0,
+      "unidad": "tabletas",
+      "presentacion": "PERRO 30KG 100MG"
+    },
+    {
+      "medicamento_insumo": "ENDOGARD 30",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "5ML"
+    },
+    {
+      "medicamento_insumo": "CIPROVET GOTAS",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ML"
+    },
+    {
+      "medicamento_insumo": "KETONEL",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "5ML"
+    },
+    {
+      "medicamento_insumo": "OFTALMOTRIMAX",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "3.5GR"
+    },
+    {
+      "medicamento_insumo": "EPITELIZANTE OCULAR",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "3.5GR"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:15:18.097621",
+    "duracion_segundos": 5.72,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1277,
+    "tokens_total": 2649,
+    "costo_usd_estimado": 0.002259
+  }
+}

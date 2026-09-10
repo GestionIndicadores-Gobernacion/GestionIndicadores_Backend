@@ -1,0 +1,126 @@
+{
+  "archivo_imagen": "E-000067.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/09/2026",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Duo recuadro",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Albendazol 600",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20.7g"
+    },
+    {
+      "medicamento_insumo": "Sales hidratación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "40ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "100g"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": "4mg/ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam proc 0.1%",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Quetoprofeno",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Aminofilina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10u"
+    },
+    {
+      "medicamento_insumo": "Etolacato vet",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Anikora",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Midazolam",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Metamizol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "50mg/ml"
+    },
+    {
+      "medicamento_insumo": "Metamizol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Material",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "25mg"
+    },
+    {
+      "medicamento_insumo": "Nebulizador",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500g"
+    },
+    {
+      "medicamento_insumo": "Bismo-pet",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:14:59.121856",
+    "duracion_segundos": 4.77,
+    "tokens_entrada": 1372,
+    "tokens_salida": 942,
+    "tokens_total": 2314,
+    "costo_usd_estimado": 0.001756
+  }
+}

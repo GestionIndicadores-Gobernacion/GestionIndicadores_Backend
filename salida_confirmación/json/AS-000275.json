@@ -1,0 +1,56 @@
+{
+  "id_documento": "AS-000275",
+  "archivo_imagen": "AS-000275.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_042012001.jpg",
+  "fecha_lote": "2026-08-17",
+  "dia_agosto": 17,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Zarzal",
+  "barrio_corregimiento_refugio": "Vallejuelo",
+  "autoriza_entrega": {
+    "nombre": "Diego Castro",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Lina M Acosta",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 250.0,
+    "alimento_gato_kg": 150.0,
+    "total_alimento_seco_kg": 400.0,
+    "comida_humeda_perro_und": 100,
+    "comida_humeda_gato_und": 100,
+    "comida_humeda_total_und": 200,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 20,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "recipientes",
+        "cantidad": 30.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "huacales",
+        "cantidad": 10.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "collares",
+        "cantidad": 20.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:56:57.458167"
+  }
+}

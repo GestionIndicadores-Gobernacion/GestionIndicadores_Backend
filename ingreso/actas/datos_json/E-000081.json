@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000081.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/08/2023",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Nexgard Spectra",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "2-3.5 kg"
+    },
+    {
+      "medicamento_insumo": "Quercetol Vet",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Maxicam",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 25.0,
+      "unidad": "unidades",
+      "presentacion": "2.5-5 kg"
+    },
+    {
+      "medicamento_insumo": "Agamofen",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20-40 kg"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5-10 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "2.5-5 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20-40 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "40-60 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "11-22 kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5.5-11 kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "22-45 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10.1-25 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard Spectra",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "7.5-15 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard Spectra",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20-40 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "2.5-5 kg"
+    },
+    {
+      "medicamento_insumo": "Revolution Plus",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "2.5-5 kg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:18.576303",
+    "duracion_segundos": 4.91,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1070,
+    "tokens_total": 2442,
+    "costo_usd_estimado": 0.001948
+  }
+}

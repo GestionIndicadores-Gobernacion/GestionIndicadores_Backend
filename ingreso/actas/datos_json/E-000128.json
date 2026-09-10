@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000128.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Revitalize",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Edo bags y cut",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Cansan-Diclorvil",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxen oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Splend colirio",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Oblio",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Crecelio",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "21.1-22.5 kg"
+    },
+    {
+      "medicamento_insumo": "Rondel",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Oxitetraciclina",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "6-10 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard Spectra",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "20-40 kg"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "2-3.5 kg"
+    },
+    {
+      "medicamento_insumo": "Aminelec-B",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Nicilan",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "400 mg"
+    },
+    {
+      "medicamento_insumo": "Rondel Puppy",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Fenbendazol 10%",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Stoy Multivitamínico",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "270 g"
+    },
+    {
+      "medicamento_insumo": "Dermosyn",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Pallicida Perros",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "26-40 kg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:22:29.253460",
+    "duracion_segundos": 5.17,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1106,
+    "tokens_total": 2478,
+    "costo_usd_estimado": 0.002002
+  }
+}

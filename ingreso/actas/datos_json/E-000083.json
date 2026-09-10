@@ -1,0 +1,192 @@
+{
+  "archivo_imagen": "E-000083.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 Agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Algodón plisado",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda cohesiva",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "130ml"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Toallitas húmedas",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa de lavado precargada",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Caja de gasa",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jabón antiséptico",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Vendaje gasa",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "19ml"
+    },
+    {
+      "medicamento_insumo": "Guantes desechables",
+      "cantidad": 5.0,
+      "unidad": "pares",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Mascarilla facial",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "0,9mm"
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "1000ml"
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Guante quirúrgico",
+      "cantidad": 5.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gorro desechable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda elástica",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa precortada",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Aguja hipodérmica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Kit prueba rápida",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda elástica cohesiva no tejida",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes nitrilo azul",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "500ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:30.101967",
+    "duracion_segundos": 4.76,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1255,
+    "tokens_total": 2627,
+    "costo_usd_estimado": 0.002226
+  }
+}

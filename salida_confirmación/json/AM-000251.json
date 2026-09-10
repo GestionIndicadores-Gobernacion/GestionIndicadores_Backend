@@ -1,0 +1,174 @@
+{
+  "id_documento": "AM-000251",
+  "archivo_imagen": "AM-000251.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054524002.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-414",
+  "fecha_documento_detectada": "13/08/2026",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Ixer",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Septi-derm",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina Spray",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "0.15% 4mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Lidocaína Clorhidrato",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Gusantrol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 8.0,
+      "unidad": "tabletas",
+      "presentacion": "60g"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Fluimucil",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "300mg"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "0.5% 100ml"
+    },
+    {
+      "medicamento_insumo": "Hioscina",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "20mg 5ml"
+    },
+    {
+      "medicamento_insumo": "Rendel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Omeprazol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "70mg"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "12.5% 10ml"
+    },
+    {
+      "medicamento_insumo": "Ubravet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Vitamina K",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Saniderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20g"
+    },
+    {
+      "medicamento_insumo": "Yodo Povidona",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-26T14:47:47.696881",
+    "duracion_segundos": 5.69,
+    "tokens_total": 3406
+  }
+}

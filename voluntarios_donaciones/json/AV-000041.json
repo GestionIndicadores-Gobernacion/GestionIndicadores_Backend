@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000041",
+  "archivo_imagen": "AV-000041.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 41,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "Entrega de donaciones voluntarias: Insumos, alimeto y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Santiago Arenas",
+      "organismo_entidad": "Voluntario",
+      "telefono": "317857695",
+      "correo_electronico": "Sanharenaslibreros@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Santiago A"
+    },
+    {
+      "nombre_completo": "Patricio Chacon",
+      "organismo_entidad": "Voluntario",
+      "telefono": "3164830075",
+      "correo_electronico": "pachacon19@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Pchacon"
+    },
+    {
+      "nombre_completo": "Ma Fernanda Hoyos",
+      "organismo_entidad": "Voluntario",
+      "telefono": "3152650281",
+      "correo_electronico": "mfh997@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma ilegible"
+    },
+    {
+      "nombre_completo": "Mónica Realpe J",
+      "organismo_entidad": "Voluntario",
+      "telefono": "3162586126",
+      "correo_electronico": "monicarealpe@yahoo.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Catalina Franco",
+      "organismo_entidad": "Voluntario",
+      "telefono": "3184141718",
+      "correo_electronico": "catafranco@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma ilegible"
+    },
+    {
+      "nombre_completo": "Felipe Escobar",
+      "organismo_entidad": "Veterinaria",
+      "telefono": "3113088459",
+      "correo_electronico": "mvzfelipe13@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma ilegible"
+    },
+    {
+      "nombre_completo": "Nidia Zorrilla Cruz",
+      "organismo_entidad": "IPS Serinsg. Voluntario",
+      "telefono": "3234899455",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma ilegible"
+    },
+    {
+      "nombre_completo": "Daniela Tascon V.",
+      "organismo_entidad": null,
+      "telefono": "3225267051",
+      "correo_electronico": "daniela.tascon",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Lina Quintero",
+      "organismo_entidad": "Donacion",
+      "telefono": "3153309810",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Lina Quintero"
+    },
+    {
+      "nombre_completo": "Oscar Leonardo Silva",
+      "organismo_entidad": "Donacion",
+      "telefono": "3212361256",
+      "correo_electronico": "o.lsilva@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "O Silva"
+    },
+    {
+      "nombre_completo": "Diana Marcela Moreno E",
+      "organismo_entidad": "Donacion",
+      "telefono": "304223237",
+      "correo_electronico": "dmmorenoescobar@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Diana Moreno E"
+    },
+    {
+      "nombre_completo": "Camila Arango A",
+      "organismo_entidad": "Donacion",
+      "telefono": "3182836044",
+      "correo_electronico": "carango@",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma ilegible"
+    },
+    {
+      "nombre_completo": "Maria Cristina Abella",
+      "organismo_entidad": "Donacion",
+      "telefono": "3217750100",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma ilegible"
+    },
+    {
+      "nombre_completo": "Edwin Burbano U",
+      "organismo_entidad": "Donacion",
+      "telefono": "3185561346",
+      "correo_electronico": "pito830731@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Edwin B"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:01:45.622932",
+    "duracion_segundos": 5.42,
+    "tokens_total": 2733
+  }
+}

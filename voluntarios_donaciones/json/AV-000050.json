@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000050",
+  "archivo_imagen": "AV-000050.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 50,
+  "fecha_detectada": "19 AGOSTO 2026",
+  "titulo_encabezado": "Entrega de donaciones voluntarias: Insumos, alimento y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Natalia Orozco",
+      "organismo_entidad": "",
+      "telefono": "3163604487",
+      "correo_electronico": "nathyxime19@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Fernando Pera Domingues",
+      "organismo_entidad": "",
+      "telefono": "3122991833",
+      "correo_electronico": "LFPO.FER01@HOTMAIL.COM",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Ana Paola Madriñan",
+      "organismo_entidad": "",
+      "telefono": "3013369144",
+      "correo_electronico": "saamadriñan@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sofia Saa",
+      "organismo_entidad": "",
+      "telefono": "3008016795",
+      "correo_electronico": "soasaa2006@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Aracelly Serna",
+      "organismo_entidad": "",
+      "telefono": "3104562005",
+      "correo_electronico": "aritavo@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Leonardo Tamayo",
+      "organismo_entidad": "",
+      "telefono": "3183796705",
+      "correo_electronico": "ltamayo@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Isabella Storino Paz",
+      "organismo_entidad": "",
+      "telefono": "3003483669",
+      "correo_electronico": "TSASTORINO@HOTMAIL.COM",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Anamaria Duran C",
+      "organismo_entidad": "",
+      "telefono": "31858862",
+      "correo_electronico": "anamaduran@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Camila Diaz",
+      "organismo_entidad": "",
+      "telefono": "3046195100",
+      "correo_electronico": "camiguidiaz12311@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sandra Diaz",
+      "organismo_entidad": "",
+      "telefono": "3117613259",
+      "correo_electronico": "Smdiaz85@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Geraldine Nuñez L",
+      "organismo_entidad": "",
+      "telefono": "3164066580",
+      "correo_electronico": "adriler2@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juvet JAS",
+      "organismo_entidad": "",
+      "telefono": "310374254",
+      "correo_electronico": "ejimenez@favetcolombia.com.co",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juan Esteban Rivera",
+      "organismo_entidad": "",
+      "telefono": "3113574732",
+      "correo_electronico": "riverasl@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Karen L. Cubillos Arias",
+      "organismo_entidad": "",
+      "telefono": "3508133977",
+      "correo_electronico": "karencubillos634@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:02:45.321291",
+    "duracion_segundos": 5.36,
+    "tokens_total": 2609
+  }
+}

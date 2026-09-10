@@ -1,0 +1,167 @@
+{
+  "id_documento": "AM-000211",
+  "archivo_imagen": "AM-000211.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_070156023.jpg",
+  "fecha_lote": "2026-08-20",
+  "dia_agosto": 20,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-317",
+  "fecha_documento_detectada": "20/08/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Praziquantel",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Lágrimas artificiales",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Polof",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dextrosa",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 8.0,
+      "unidad": "bolsas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Yodo",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución quirúrgica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sildenafilo",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 12.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Carprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 5.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Vetjaban",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Instrumental quirúrgico",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexapen",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Nicilan",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 7.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 7.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ampicilina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 7.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Opter",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:15:37.855078",
+    "duracion_segundos": 5.29,
+    "tokens_total": 3100
+  }
+}

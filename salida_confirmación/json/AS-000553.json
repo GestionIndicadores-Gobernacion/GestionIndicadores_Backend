@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000553",
+  "archivo_imagen": "AS-000553.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412016.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-416",
+  "municipio": "Jamundí",
+  "barrio_corregimiento_refugio": "Robles - Patitas de Nana - Hogar de paso",
+  "autoriza_entrega": {
+    "nombre": "Johan Penafiel",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Adrian Robles S",
+    "cedula": "3105143812"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 90.0,
+    "alimento_gato_kg": 40.0,
+    "total_alimento_seco_kg": 130.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 30.0,
+    "areneros_und": 0,
+    "camas_und": 4,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 1,
+    "collares_und": 12,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:44:00.478727"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id_documento": "AE-000056",
+  "archivo_imagen": "AE-000056.jpg",
+  "archivo_origen_escaneo": "20260901_110741.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 1,
+    "total_perros_censo": 90,
+    "total_gatos_censo": 45,
+    "total_animales_censo": 135,
+    "total_alimento_perro_kg": 150.0,
+    "total_alimento_gato_kg": 100.0,
+    "total_alimento_general_kg": 250.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Huella de Esperanza",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "Corg. Golondrinas Nda La Maria",
+      "telefono": "3016369392",
+      "censo": {
+        "perros": 90,
+        "gatos": 45,
+        "total_animales": 135
+      },
+      "alimento_entregado": {
+        "perro_kg": 150.0,
+        "gato_kg": 100.0,
+        "total_kg": 250.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Incluye 12.750g y 2 arena"
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:00:35.820176"
+  }
+}

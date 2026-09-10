@@ -1,0 +1,80 @@
+{
+  "id_documento": "AE-000066",
+  "archivo_imagen": "AE-000066.jpg",
+  "archivo_origen_escaneo": "IMG-20260813-WA0008.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 3,
+    "total_perros_censo": 31,
+    "total_gatos_censo": 77,
+    "total_animales_censo": 108,
+    "total_alimento_perro_kg": 88.0,
+    "total_alimento_gato_kg": 110.0,
+    "total_alimento_general_kg": 198.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Los Peluditos Tambien Cuentan",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "SIN_INFORMACION",
+      "telefono": "SIN_INFORMACION",
+      "censo": {
+        "perros": 8,
+        "gatos": 30,
+        "total_animales": 38
+      },
+      "alimento_entregado": {
+        "perro_kg": 30.0,
+        "gato_kg": 50.0,
+        "total_kg": 80.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_OBSERVACIONES"
+    },
+    {
+      "nombre_fundacion": "El Muná Angola",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "SIN_INFORMACION",
+      "telefono": "3174161470",
+      "censo": {
+        "perros": 5,
+        "gatos": 35,
+        "total_animales": 40
+      },
+      "alimento_entregado": {
+        "perro_kg": 8.0,
+        "gato_kg": 40.0,
+        "total_kg": 48.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_OBSERVACIONES"
+    },
+    {
+      "nombre_fundacion": "Animalista Naturaleza",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "SIN_INFORMACION",
+      "telefono": "3206811424",
+      "censo": {
+        "perros": 18,
+        "gatos": 12,
+        "total_animales": 30
+      },
+      "alimento_entregado": {
+        "perro_kg": 50.0,
+        "gato_kg": 20.0,
+        "total_kg": 70.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_OBSERVACIONES"
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:02:22.560417"
+  }
+}

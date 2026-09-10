@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000064.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "11/Ago/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Freegen gel",
+      "cantidad": 17.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Hialtears",
+      "cantidad": 17.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lagrigen",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Spidr tears",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Carmelub",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Eyetears",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Carmelub",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Colirio-100",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Humylub",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Kielalgic",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Halidol",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Colirio",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Triaqex",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Opticam",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tranquilan",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Anraten",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "cantidad": 11.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Oftal moori lub",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "iny 4mg/ml"
+    },
+    {
+      "medicamento_insumo": "Lagrimart",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:14:42.504843",
+    "duracion_segundos": 4.64,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1030,
+    "tokens_total": 2402,
+    "costo_usd_estimado": 0.001888
+  }
+}

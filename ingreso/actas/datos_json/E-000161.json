@@ -1,0 +1,210 @@
+{
+  "archivo_imagen": "E-000161.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/ago/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Guantes Talla M",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes Talla L",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución Salina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Paños Humedos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "350ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "700ml"
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Cloruro Sodio",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter Verde",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "18G"
+    },
+    {
+      "medicamento_insumo": "Catéter Rosado",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter Azul",
+      "cantidad": 40.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter Amarillo",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Burcholes",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Microgotero",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cánula Nasal Oxígeno",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "30"
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "26"
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "16"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 60.0,
+      "unidad": "unidades",
+      "presentacion": "1ML"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 60.0,
+      "unidad": "unidades",
+      "presentacion": "5ML"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 60.0,
+      "unidad": "unidades",
+      "presentacion": "10ML"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 60.0,
+      "unidad": "unidades",
+      "presentacion": "20ML"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "60ML"
+    },
+    {
+      "medicamento_insumo": "Cánula Oxígeno",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Suturas",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapón heparizado",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes Talla S",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:26:28.531838",
+    "duracion_segundos": 5.9,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1409,
+    "tokens_total": 2781,
+    "costo_usd_estimado": 0.002456
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "archivo_imagen": "AS-000402.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_043457036.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Uzeth Parra"
+  },
+  "barrio_corregimiento_refugio": "Nidia Alarcon",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 0,
+    "alimento_perro_kg": 0,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 1,
+    "cobijas_und": 1,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Tabletas Algicam Pets",
+        "cantidad": 2,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Meloxicam",
+        "cantidad": 1,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Cefalexina",
+        "cantidad": 1,
+        "unidad": "und"
+      }
+    ],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 0
+  },
+  "dia_agosto": 19,
+  "fecha_lote": "2026-08-19",
+  "id_documento": "AS-000402",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:10:02.233407"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Nidia Alarcon"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

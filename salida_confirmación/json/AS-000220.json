@@ -1,0 +1,47 @@
+{
+  "archivo_imagen": "AS-000220.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031900029.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_DATO",
+    "nombre": "Cesar Augusto Velez"
+  },
+  "barrio_corregimiento_refugio": "",
+  "codigo_acta_vinculante": "A-007",
+  "datos_alimentos": {
+    "alimento_gato_kg": 0,
+    "alimento_perro_kg": 0,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Insumos Medicos Veterinarios",
+        "cantidad": 1,
+        "unidad": "listado"
+      }
+    ],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 0
+  },
+  "dia_agosto": 15,
+  "fecha_lote": "2026-08-15",
+  "id_documento": "AS-000220",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:51:42.291714"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "SIN_DATO",
+    "nombre": "Lizeth Badillo Alzate"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

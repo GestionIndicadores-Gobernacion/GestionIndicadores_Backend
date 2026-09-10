@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000006",
+  "archivo_imagen": "AV-000006.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 6,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos alimentos y medicamentos",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Danna Rodriguez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3168981088",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Cardenas",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3168297474",
+      "correo_electronico": "nati2297@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Camilo Arrubla",
+      "organismo_entidad": "M.V.T",
+      "telefono": "3014342214",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Cristian Cuartas",
+      "organismo_entidad": "M.V.T",
+      "telefono": "3186436579",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Bastidas",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3217761445",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Sofia Alvarez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3146552412",
+      "correo_electronico": "alvarezmerolaurag10@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Johan Steven Cermeño",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3104677976",
+      "correo_electronico": "johancermeno@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Karen Arango",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3223724413",
+      "correo_electronico": "ArangoKaren94@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Luisa Fernanda Tapia R.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3136044855",
+      "correo_electronico": "luisaytapia@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Myriam Restrepo",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3137233389",
+      "correo_electronico": "lylyrc12@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Patricia Paez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3152690166",
+      "correo_electronico": "fel.monica.paez@ali.edu.co",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "David Alejandro Arce",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3017746499",
+      "correo_electronico": "arceburbanod@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Nathalee Colarado T.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3128460430",
+      "correo_electronico": "d.ct.nathalee.colarado@cali.edu.co",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sergio Rodriguez Garcia",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3133432063",
+      "correo_electronico": "sergiorodgarcia@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Karol G. Esquivel",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3025273989",
+      "correo_electronico": "didtesquivelar@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Fernanda Ocampo",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3248374916",
+      "correo_electronico": "fernandaocampo50@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sofia Delg. Salgado",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3170152862",
+      "correo_electronico": "sofiortizg25@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Fabio Conde",
+      "organismo_entidad": "C.C",
+      "telefono": "3044277701",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:57:48.455956",
+    "duracion_segundos": 6.95,
+    "tokens_total": 3142
+  }
+}

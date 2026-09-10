@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000527",
+  "archivo_imagen": "AS-000527.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_053303029.jpg",
+  "fecha_lote": "2026-08-22",
+  "dia_agosto": 22,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Villacarmelo",
+  "autoriza_entrega": {
+    "nombre": "Johana Penafiel",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Dolly bedoyn",
+    "cedula": "310 302 6702"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 60.0,
+    "alimento_gato_kg": 24.0,
+    "total_alimento_seco_kg": 84.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 20.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "snacks",
+        "cantidad": 1.0,
+        "unidad": "caja"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:41:12.185583"
+  }
+}

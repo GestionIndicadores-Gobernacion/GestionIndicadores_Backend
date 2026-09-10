@@ -1,0 +1,181 @@
+{
+  "id_documento": "AM-000169",
+  "archivo_imagen": "AM-000169.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733054.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-057",
+  "fecha_documento_detectada": "18/8/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Lactoleemparador",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "400 ml"
+    },
+    {
+      "medicamento_insumo": "Pronalgin",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "100 gr"
+    },
+    {
+      "medicamento_insumo": "Simparica Trio",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 5.0,
+      "unidad": "cajas",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Canisan Suspensión",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Baño Seco",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Splend Dog",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Suturas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "variadas"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "25 mg"
+    },
+    {
+      "medicamento_insumo": "Jabón en barra",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 gr"
+    },
+    {
+      "medicamento_insumo": "Glitter Sec",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "90 gr"
+    },
+    {
+      "medicamento_insumo": "Rondel Suspensión",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "150 ml"
+    },
+    {
+      "medicamento_insumo": "Viox",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Wescohex Jabón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Wescohex Solución",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "4% 60 ml"
+    },
+    {
+      "medicamento_insumo": "Cianodul",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "8 gr"
+    },
+    {
+      "medicamento_insumo": "Hialteals",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "20 mg/20ml"
+    },
+    {
+      "medicamento_insumo": "Pisacaina",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2% 60 ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.5% 30 ml"
+    },
+    {
+      "medicamento_insumo": "Hemolitan",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60 gr"
+    },
+    {
+      "medicamento_insumo": "Vacol Pomada",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60 gr"
+    },
+    {
+      "medicamento_insumo": "Perosan-N",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 gr"
+    },
+    {
+      "medicamento_insumo": "Hereel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 50.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:10:11.208440",
+    "duracion_segundos": 5.71,
+    "tokens_total": 3478
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "archivo_imagen": "E-000084.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Toallitas",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "x 35"
+    },
+    {
+      "medicamento_insumo": "Agujas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "x 50"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 11.0,
+      "unidad": "unidades",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "x 700ml"
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 64.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Sutura",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cuchillos",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Dispensador",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "x 200"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 36.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 14.0,
+      "unidad": "unidades",
+      "presentacion": "2 ml"
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "1000 ml"
+    },
+    {
+      "medicamento_insumo": "Dispensado",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Torundas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Venoclisis",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "x 2 ml"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "1000 ml"
+    },
+    {
+      "medicamento_insumo": "Llave de paso",
+      "cantidad": 16.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Aguja hipodérmica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Gasa parafinada",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Toalla de alcohol",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Aguja hipodérmica",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": "16g"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:36.016301",
+    "duracion_segundos": 4.91,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1321,
+    "tokens_total": 2693,
+    "costo_usd_estimado": 0.002324
+  }
+}

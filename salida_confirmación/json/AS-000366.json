@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000366",
+  "archivo_imagen": "AS-000366.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_043457000.jpg",
+  "fecha_lote": "2026-08-19",
+  "dia_agosto": 19,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-120",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Cali",
+  "autoriza_entrega": {
+    "nombre": "Diego Ceballos",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Dione Martinez",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 100.0,
+    "alimento_gato_kg": 24.0,
+    "total_alimento_seco_kg": 124.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 150,
+    "comida_humeda_total_und": 150,
+    "arena_kg": 100.0,
+    "areneros_und": 0,
+    "camas_und": 5,
+    "cobijas_und": 10,
+    "recipientes_und": 10,
+    "huacales_und": 1,
+    "collares_und": 10,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:06:23.444111"
+  }
+}

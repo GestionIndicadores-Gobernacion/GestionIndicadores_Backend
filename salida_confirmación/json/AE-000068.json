@@ -1,0 +1,80 @@
+{
+  "id_documento": "AE-000068",
+  "archivo_imagen": "AE-000068.jpg",
+  "archivo_origen_escaneo": "IMG-20260813-WA0047.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 3,
+    "total_perros_censo": 100,
+    "total_gatos_censo": 50,
+    "total_animales_censo": 148,
+    "total_alimento_perro_kg": 0.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 0.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Leidy Ordoñez",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3207407227",
+      "censo": {
+        "perros": 0,
+        "gatos": 30,
+        "total_animales": 30
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Stella Paz",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3206611951",
+      "censo": {
+        "perros": 30,
+        "gatos": 10,
+        "total_animales": 40
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Mestizos & Patas",
+      "municipio": "",
+      "direccion": "Villa Gorgona",
+      "telefono": "321 730 8489",
+      "censo": {
+        "perros": 70,
+        "gatos": 10,
+        "total_animales": 78
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": false,
+    "fecha_procesamiento": "2026-09-01T12:02:44.286981"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "id_documento": "AM-000144",
+  "archivo_imagen": "AM-000144.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733029.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-048",
+  "fecha_documento_detectada": "16/ago/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Vita cell pet",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Electrolitos hidratante",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 4.0,
+      "unidad": "bolsas",
+      "presentacion": "400 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 6.0,
+      "unidad": "tabletas",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Algicam comprimidos",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": "10 ml / 7.5 mg"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Carboximetilcelulosa",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Lagrimas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "2.5 ml"
+    },
+    {
+      "medicamento_insumo": "Tobramicina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Antibiótico",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "2.3 ml"
+    },
+    {
+      "medicamento_insumo": "Rondel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "6 ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína clorhidrato odontocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Crema dermica",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "tubos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "1000 mg"
+    },
+    {
+      "medicamento_insumo": "Sistema de disección",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Repelente",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Shampoo, Jabón",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:07:28.570361",
+    "duracion_segundos": 4.49,
+    "tokens_total": 3187
+  }
+}

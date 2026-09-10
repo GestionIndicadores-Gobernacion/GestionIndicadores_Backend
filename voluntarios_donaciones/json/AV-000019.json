@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000019",
+  "archivo_imagen": "AV-000019.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 19,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Evelyn Gaviria Satizabal",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3175563027",
+      "correo_electronico": "egs27022002@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Karol Facundo",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3153602432",
+      "correo_electronico": "Karolfacundo3@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Andres Zapata",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3167555107",
+      "correo_electronico": "andrex.94@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Ciudad pacifica"
+    },
+    {
+      "nombre_completo": "Carolina Dorado",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3216447131",
+      "correo_electronico": "carodorado.r@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Alexandra Lopez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3232277416",
+      "correo_electronico": "dorado.alexandra.lopez@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Cynthia Montaño",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3022911995",
+      "correo_electronico": "Cynthiaexperimentale@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Alana Reyes M.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3157430579",
+      "correo_electronico": "alanareyesmri@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Nancy Mora",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "315055658",
+      "correo_electronico": "majumora0528@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Emerson Garcia",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3152492385",
+      "correo_electronico": "emersonprospecto77@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Diana Mesa",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3168646420",
+      "correo_electronico": "linamunoz2413@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Terraza Salsera",
+      "organismo_entidad": "Empresa",
+      "telefono": "3007740436",
+      "correo_electronico": "parcoscolledelsabor@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Esther Cecilia Pabon",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3013041992",
+      "correo_electronico": "solotrabajoesther@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Dona Patricia Ortego I",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3152826008",
+      "correo_electronico": "dianapatricia943@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Anny Dahan Aleda Diaz",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3023512565",
+      "correo_electronico": "annyda@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:59:23.385094",
+    "duracion_segundos": 5.65,
+    "tokens_total": 2710
+  }
+}

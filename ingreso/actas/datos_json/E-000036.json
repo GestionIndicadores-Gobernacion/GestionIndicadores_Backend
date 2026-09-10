@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000036.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Predicorten",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Lidocaina iny",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": "2%/10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 11.0,
+      "unidad": "unidades",
+      "presentacion": "10mg/10ml"
+    },
+    {
+      "medicamento_insumo": "Pregabalina",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "50mg/30t"
+    },
+    {
+      "medicamento_insumo": "Tramadol S.oral",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Acido tranexamico",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10t/500mg"
+    },
+    {
+      "medicamento_insumo": "Adrenalina inyectable",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Tranquilan gotas",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Hidratante oral",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "0.5-2.0kg"
+    },
+    {
+      "medicamento_insumo": "Credelio perros",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "11-22kg"
+    },
+    {
+      "medicamento_insumo": "Pregabalina tableta",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "30capsulas/25mg"
+    },
+    {
+      "medicamento_insumo": "Tramadol tableta",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Pracan",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Pracan",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Neoclikdan",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Boxifig",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "25-50kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "4.1-10kg"
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Splend Colino",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexin Spray",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Power tableta",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Metronid oral",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:07:24.233718",
+    "duracion_segundos": 4.76,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1200,
+    "tokens_total": 2572,
+    "costo_usd_estimado": 0.002143
+  }
+}

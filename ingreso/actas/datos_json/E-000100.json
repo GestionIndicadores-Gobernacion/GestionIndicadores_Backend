@@ -1,0 +1,60 @@
+{
+  "archivo_imagen": "E-000100.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Pomada Vedemin",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 8.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "cantidad": 2.0,
+      "unidad": "bolsas",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Gota oftalmológica",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 8.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:17:52.360319",
+    "duracion_segundos": 3.14,
+    "tokens_entrada": 1372,
+    "tokens_salida": 344,
+    "tokens_total": 1716,
+    "costo_usd_estimado": 0.000859
+  }
+}

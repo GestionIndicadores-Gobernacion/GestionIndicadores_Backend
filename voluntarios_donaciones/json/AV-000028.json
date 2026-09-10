@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000028",
+  "archivo_imagen": "AV-000028.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 28,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "Entrega donaciones voluntarias: Insumos, alimentos y medicamento",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Sebastian Barona",
+      "organismo_entidad": "Cibol",
+      "telefono": "321836483",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juliana Villegas",
+      "organismo_entidad": "",
+      "telefono": "3006663662",
+      "correo_electronico": "julvill41@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Daniela Rodriguez",
+      "organismo_entidad": "",
+      "telefono": "3152089952",
+      "correo_electronico": "daniecimonique909@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alian Rojas Lobos",
+      "organismo_entidad": "",
+      "telefono": "3168637290",
+      "correo_electronico": "arfoto925@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Karol Hernandez",
+      "organismo_entidad": "",
+      "telefono": "3152170961",
+      "correo_electronico": "karolh122705@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Katherin Bustos",
+      "organismo_entidad": "",
+      "telefono": "317847613",
+      "correo_electronico": "ktybustos448@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Valentina Hernandez",
+      "organismo_entidad": "",
+      "telefono": "3154959033",
+      "correo_electronico": "natravalentina12@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Kevin Sanchez",
+      "organismo_entidad": "",
+      "telefono": "3183038446",
+      "correo_electronico": "kevinsanchez.gc@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Natalia Lopez Gonzalez",
+      "organismo_entidad": "",
+      "telefono": "3160867857",
+      "correo_electronico": "nalagonzalez0809@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Shaddy Perez Restrepo",
+      "organismo_entidad": "",
+      "telefono": "3138367470",
+      "correo_electronico": "perezshaddy21@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Werner Gordon",
+      "organismo_entidad": "",
+      "telefono": "3142845274",
+      "correo_electronico": "wernergordonc31@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniela A Galindez Love",
+      "organismo_entidad": "",
+      "telefono": "3152180131",
+      "correo_electronico": "galindezdaniela93@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Mauricio Tessone",
+      "organismo_entidad": "",
+      "telefono": "3216449876",
+      "correo_electronico": "mtessone@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Valeria Navia",
+      "organismo_entidad": "",
+      "telefono": "3104317208",
+      "correo_electronico": "valeriana.c0927@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:00:21.533572",
+    "duracion_segundos": 5.55,
+    "tokens_total": 2690
+  }
+}

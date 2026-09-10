@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000021",
+  "archivo_imagen": "AV-000021.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 21,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Sara Gonzalez Amador",
+      "organismo_entidad": "",
+      "telefono": "3204534904",
+      "correo_electronico": "savagonam@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Isabela Gonzalez Rosero",
+      "organismo_entidad": "",
+      "telefono": "3137357459",
+      "correo_electronico": "igrisabela@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Diana Triana",
+      "organismo_entidad": "",
+      "telefono": "3007775317",
+      "correo_electronico": "dianamartriana05@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Diego Garcia Ospina",
+      "organismo_entidad": "",
+      "telefono": "3158087864",
+      "correo_electronico": "diryo.garcia.ospina@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Marco Alejandro Gonzalez A.A.",
+      "organismo_entidad": "Fundación PRAGAR",
+      "telefono": "350238093932",
+      "correo_electronico": "marcoalejandropredo584@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Johan Sebastian Palacio",
+      "organismo_entidad": "",
+      "telefono": "3153753268",
+      "correo_electronico": "sebastiuan696@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Nicolle Vargas Gomalez",
+      "organismo_entidad": "",
+      "telefono": "3147363036",
+      "correo_electronico": "Nicolledayanna721@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Andres Felipe Castaño C.",
+      "organismo_entidad": "",
+      "telefono": "3186939217",
+      "correo_electronico": "andres.felipe@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Kelly Alvarado",
+      "organismo_entidad": "",
+      "telefono": "3112133865",
+      "correo_electronico": "kalupiar@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Jullana Bolañas",
+      "organismo_entidad": "",
+      "telefono": "3173153493",
+      "correo_electronico": "karenbomezb729@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Camila Gómez",
+      "organismo_entidad": "",
+      "telefono": "3003288762",
+      "correo_electronico": "camibobolanos945@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Angela Muñoz",
+      "organismo_entidad": "",
+      "telefono": "3157845261",
+      "correo_electronico": "amigamia8@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Saray Castañeda",
+      "organismo_entidad": "",
+      "telefono": "3168877351",
+      "correo_electronico": "castañedaballerosaray@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Antonia Marín",
+      "organismo_entidad": "",
+      "telefono": "3164638149",
+      "correo_electronico": "doggyMarin@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:59:35.059040",
+    "duracion_segundos": 5.45,
+    "tokens_total": 2655
+  }
+}

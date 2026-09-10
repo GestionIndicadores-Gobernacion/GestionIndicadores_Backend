@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000243.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031900052.jpg",
+  "autoriza_entrega": {
+    "cedula": "null",
+    "nombre": "Lina Vega"
+  },
+  "barrio_corregimiento_refugio": "Santiago Arenas",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 17,
+    "alimento_perro_kg": 120,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 137
+  },
+  "dia_agosto": 15,
+  "fecha_lote": "2026-08-15",
+  "id_documento": "AS-000243",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:53:50.723973"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "3147732611",
+    "nombre": "Juan Jose Hurtado"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

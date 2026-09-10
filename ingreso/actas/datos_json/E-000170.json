@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000170.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16 09 2020",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Baytril",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "10 tab 2 mg"
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "300 ml"
+    },
+    {
+      "medicamento_insumo": "Ciclorac",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "110 ml"
+    },
+    {
+      "medicamento_insumo": "Liv-52",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Etamolate",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": "17.5%"
+    },
+    {
+      "medicamento_insumo": "Diamel",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Pimocard",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "1.25 mg x 10 tab"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "2 mg x 2 tab"
+    },
+    {
+      "medicamento_insumo": "Predni-200",
+      "cantidad": 1.0,
+      "unidad": "sobre",
+      "presentacion": "5 mg"
+    },
+    {
+      "medicamento_insumo": "Electrolito Pet",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "30 tab 5 mg"
+    },
+    {
+      "medicamento_insumo": "Clavaseptin",
+      "cantidad": 1.0,
+      "unidad": "sobre",
+      "presentacion": "250 mg x 8 tab"
+    },
+    {
+      "medicamento_insumo": "Gusano",
+      "cantidad": 1.0,
+      "unidad": "ungüento",
+      "presentacion": "60 g 200 mg 50 mg"
+    },
+    {
+      "medicamento_insumo": "Penicilina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2.400.000 UI"
+    },
+    {
+      "medicamento_insumo": "Gentax-Otico",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Panolog",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Gentax-100",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Tranquilan",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:27:20.344272",
+    "duracion_segundos": 5.24,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1063,
+    "tokens_total": 2435,
+    "costo_usd_estimado": 0.001937
+  }
+}

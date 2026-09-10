@@ -1,0 +1,181 @@
+{
+  "id_documento": "AM-000134",
+  "archivo_imagen": "AM-000134.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733019.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-046",
+  "fecha_documento_detectada": "16/AGO/26",
+  "municipio_o_lugar": "SANTIAGO DE CALI",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Juan Carlos Morales",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jabon",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10ml oral"
+    },
+    {
+      "medicamento_insumo": "Cannex",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "200mg"
+    },
+    {
+      "medicamento_insumo": "Quinotrat Tabs",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "Roxicaina Jalea",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "20g oral"
+    },
+    {
+      "medicamento_insumo": "Celederm",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "oftalmica esteril"
+    },
+    {
+      "medicamento_insumo": "Sales Rehidratación",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Melbal",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Iodine",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": "50ml inyectable"
+    },
+    {
+      "medicamento_insumo": "Overxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Roxicaina",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "14g"
+    },
+    {
+      "medicamento_insumo": "Clorhexin Spray",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "> 10kg"
+    },
+    {
+      "medicamento_insumo": "Biocanis",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "Antiseptico"
+    },
+    {
+      "medicamento_insumo": "Wesconex Jabon",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "tubo x 10g"
+    },
+    {
+      "medicamento_insumo": "Roxicaina Pomada",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "100ml oral"
+    },
+    {
+      "medicamento_insumo": "Roxicaina",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "20mg/ml"
+    },
+    {
+      "medicamento_insumo": "oral Pet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "Antiseptico 1L"
+    },
+    {
+      "medicamento_insumo": "Piscaina 2%",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "8mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Ixer 0.80",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:06:26.384267",
+    "duracion_segundos": 5.69,
+    "tokens_total": 3460
+  }
+}

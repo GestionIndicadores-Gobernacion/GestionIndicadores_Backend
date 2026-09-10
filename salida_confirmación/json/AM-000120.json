@@ -1,0 +1,188 @@
+{
+  "id_documento": "AM-000120",
+  "archivo_imagen": "AM-000120.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733005.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-043",
+  "fecha_documento_detectada": "16/Ago/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Carlos Andres Suarez",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Solucion Antiseptica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Lacto reemplazable",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "180 g"
+    },
+    {
+      "medicamento_insumo": "Colirio - 200",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Crema 6 A",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "tubos",
+      "presentacion": "10 g"
+    },
+    {
+      "medicamento_insumo": "Solucion otica-oftalmica",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Loratadina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Multivitaminico",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Epacnel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "60 comprimidos"
+    },
+    {
+      "medicamento_insumo": "Hemostatico",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B12 oral",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Revit-V",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Solucion oftalmica esteril",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Ectoparasiticida",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15 mg"
+    },
+    {
+      "medicamento_insumo": "Vioxin",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Iodine",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Blokser",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "8 mg/4 ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": "1 g"
+    },
+    {
+      "medicamento_insumo": "Kit de instrumentos",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "kit",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jabon",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "320 ml"
+    },
+    {
+      "medicamento_insumo": "Gel refrescante manzanilla",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol inyectable",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:04:45.734459",
+    "duracion_segundos": 6.31,
+    "tokens_total": 3542
+  }
+}

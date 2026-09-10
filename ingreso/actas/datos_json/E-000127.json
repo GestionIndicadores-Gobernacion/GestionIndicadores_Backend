@@ -1,0 +1,96 @@
+{
+  "archivo_imagen": "E-000127.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/AGO/16",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dental Care",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Adrenalina vet",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Florave",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Dispensador med",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Cicangel",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "35g"
+    },
+    {
+      "medicamento_insumo": "Alfa 3",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Cutamycon-V",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "35g"
+    },
+    {
+      "medicamento_insumo": "Cutamycon-VF Crema",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 6.0,
+      "unidad": "ampollas",
+      "presentacion": "4 gato 2 perro"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:22:23.082589",
+    "duracion_segundos": 3.86,
+    "tokens_entrada": 1372,
+    "tokens_salida": 665,
+    "tokens_total": 2037,
+    "costo_usd_estimado": 0.001341
+  }
+}

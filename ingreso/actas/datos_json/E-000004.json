@@ -1,0 +1,114 @@
+{
+  "archivo_imagen": "E-000004.jpg",
+  "fecha_lote": "2026-08-12",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "12/02/2016",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Neoclindan",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Quinochar",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "suspensión 5% 60 ml"
+    },
+    {
+      "medicamento_insumo": "Descensor",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "200 mg x 30 tabletas"
+    },
+    {
+      "medicamento_insumo": "B-Fex",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Marodix",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30% 60 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "250 mg/5 ml"
+    },
+    {
+      "medicamento_insumo": "Metosal",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 9.0,
+      "unidad": "tabletas",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Pretub",
+      "cantidad": 13.0,
+      "unidad": "tabletas",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 76.0,
+      "unidad": "tabletas",
+      "presentacion": "5 mg (Genfar)"
+    },
+    {
+      "medicamento_insumo": "Prednicare",
+      "cantidad": 6.0,
+      "unidad": "tabletas",
+      "presentacion": "5 mg"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": "20 mg (Holliday)"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": "5 mg x 100 tabletas"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "20 mg (Cosapharma)"
+    },
+    {
+      "medicamento_insumo": "Metilprednisolona",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "500 mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:03:15.910493",
+    "duracion_segundos": 5.11,
+    "tokens_entrada": 1372,
+    "tokens_salida": 873,
+    "tokens_total": 2245,
+    "costo_usd_estimado": 0.001652
+  }
+}

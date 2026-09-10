@@ -1,0 +1,251 @@
+{
+  "id_documento": "AM-000159",
+  "archivo_imagen": "AM-000159.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733044.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-053",
+  "fecha_documento_detectada": "18/8/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Nebulizador",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "300 ml"
+    },
+    {
+      "medicamento_insumo": "Wescohex Jabón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "2% / 60 ml"
+    },
+    {
+      "medicamento_insumo": "Wescohex Solución",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "4% / 60 ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin Solución",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "400 ml"
+    },
+    {
+      "medicamento_insumo": "Septiderme",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Ixel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Sutura",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tramadol Inyectable",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 6.0,
+      "unidad": "ampollas",
+      "presentacion": "100 mg / 2 ml"
+    },
+    {
+      "medicamento_insumo": "Atrevia One",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Kit de disección",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Saniderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "40 gr"
+    },
+    {
+      "medicamento_insumo": "Meloxicproc",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "0.15% / 10 ml"
+    },
+    {
+      "medicamento_insumo": "Cannabis IV",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Nefrotec DS",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 mg"
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "60 tab"
+    },
+    {
+      "medicamento_insumo": "Anikofen Oral",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Pet Ocis",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxifin",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.2% / 20 ml"
+    },
+    {
+      "medicamento_insumo": "Liveprot Pets",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Lactoreemplazador",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "bolsa",
+      "presentacion": "300 gr"
+    },
+    {
+      "medicamento_insumo": "Glicopan Pet",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "125 ml"
+    },
+    {
+      "medicamento_insumo": "Amino Impulsor",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Immunol",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Prednicare",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "20 mg / 10 tab"
+    },
+    {
+      "medicamento_insumo": "Freegen",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.5% / 2.5 ml"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "500 mg / 10 tab"
+    },
+    {
+      "medicamento_insumo": "Prednicare",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "20 mg / 10 tab"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": "8 mg / 2 ml"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "75 mg / 3 ml"
+    },
+    {
+      "medicamento_insumo": "Peoni-200",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 5.0,
+      "unidad": "cajas",
+      "presentacion": "5 mg / 30 tab"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:09:13.555401",
+    "duracion_segundos": 7.41,
+    "tokens_total": 4153
+  }
+}

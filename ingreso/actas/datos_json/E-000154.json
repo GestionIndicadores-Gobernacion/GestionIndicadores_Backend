@@ -1,0 +1,168 @@
+{
+  "archivo_imagen": "E-000154.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/Ago/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Desin-ta",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Lagnkov",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "0.8% 60ml oral"
+    },
+    {
+      "medicamento_insumo": "Acetaminofen",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "16 tabletas"
+    },
+    {
+      "medicamento_insumo": "Predicorten",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Saniderm crema topica",
+      "cantidad": 5.0,
+      "unidad": "tubos",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Pulloff topica",
+      "cantidad": 3.0,
+      "unidad": "viales",
+      "presentacion": "0.67ml perros"
+    },
+    {
+      "medicamento_insumo": "Parche medico",
+      "cantidad": 3.0,
+      "unidad": "parches",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Sales de rehidratación",
+      "cantidad": 4.0,
+      "unidad": "sobres",
+      "presentacion": "20.3g"
+    },
+    {
+      "medicamento_insumo": "Bebida refrescante Fresa",
+      "cantidad": 11.0,
+      "unidad": "unidades",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Electrolito",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml/30ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "1 tab > 5-10kg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Pezosan-n",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "150g"
+    },
+    {
+      "medicamento_insumo": "Caniforte 25E",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina Vet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "otico 20ml"
+    },
+    {
+      "medicamento_insumo": "Splend colirio",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50g"
+    },
+    {
+      "medicamento_insumo": "Genoflex-NF",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "210ml"
+    },
+    {
+      "medicamento_insumo": "Vita cell",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "75mg/3ml"
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": "180g"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco Sodico",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "500mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Lacto reemplazador",
+      "cantidad": 2.0,
+      "unidad": "bolsas",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona sodica",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "400ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona fosfato",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jabon Demosyn locion medica",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Wescohex solucion antiseptica oral pet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:25:46.621883",
+    "duracion_segundos": 5.68,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1317,
+    "tokens_total": 2689,
+    "costo_usd_estimado": 0.002318
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "id_documento": "AM-000174",
+  "archivo_imagen": "AM-000174.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_043759001.jpg",
+  "fecha_lote": "2026-08-19",
+  "dia_agosto": 19,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-120",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextromin B",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Xer 080",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Lagrima artificial",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "70ml"
+    },
+    {
+      "medicamento_insumo": "Electrolitico",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Wesconex jabon",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "20mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Complex vitaminico",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Omeprazol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Vacufox",
+      "categoria_farmacologica": "Vacunas y Biológicos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Fibrinexam",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Nutrifarma",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cefalox",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": "1000mg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Stomorgyl",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 40.0,
+      "unidad": "tabletas",
+      "presentacion": "600mg"
+    },
+    {
+      "medicamento_insumo": "Puracanis",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Gluconato de calcio",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Ciprofloxacina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:10:46.086267",
+    "duracion_segundos": 5.79,
+    "tokens_total": 3610
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "id_documento": "AM-000044",
+  "archivo_imagen": "AM-000044.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031317015.jpg",
+  "fecha_lote": "2026-08-14",
+  "dia_agosto": 14,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-016",
+  "fecha_documento_detectada": "13/08/2025",
+  "municipio_o_lugar": "Tulua",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Datromir",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Sanicor",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Ixer",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "125ml"
+    },
+    {
+      "medicamento_insumo": "Cefalona",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "1000mg"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "1ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína 2%",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Neoclindan",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Clean lágrimas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "7.5mg"
+    },
+    {
+      "medicamento_insumo": "Cerpet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Saniderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Fipronil",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Meloxivet",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "0.15%"
+    },
+    {
+      "medicamento_insumo": "Lidocaína 2%",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:56:42.400674",
+    "duracion_segundos": 4.37,
+    "tokens_total": 3127
+  }
+}

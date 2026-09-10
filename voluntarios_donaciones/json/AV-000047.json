@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000047",
+  "archivo_imagen": "AV-000047.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 47,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Melissa Henao Muñoz",
+      "organismo_entidad": "",
+      "telefono": "3012872707",
+      "correo_electronico": "melissahenao9@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Erika Barrera Lopez",
+      "organismo_entidad": "",
+      "telefono": "3113356243",
+      "correo_electronico": "ebarreralopez@yahoo.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Cárdenas Ruiz",
+      "organismo_entidad": "",
+      "telefono": "3168297474",
+      "correo_electronico": "ncruiz19@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lina Lucia Hernandez",
+      "organismo_entidad": "",
+      "telefono": "3146276211",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Maria Paula Cuello",
+      "organismo_entidad": "",
+      "telefono": "3154318800",
+      "correo_electronico": "mariapaula03103@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Marina Padilla",
+      "organismo_entidad": "",
+      "telefono": "3253944260",
+      "correo_electronico": "m.padilla2201@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Danna Roncancio",
+      "organismo_entidad": "",
+      "telefono": "3162811851",
+      "correo_electronico": "dannacrcruz@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alexandra Insuasty",
+      "organismo_entidad": "",
+      "telefono": "3122272832",
+      "correo_electronico": "ainsuasty695@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sofia Malagon C.",
+      "organismo_entidad": "",
+      "telefono": "3171200388",
+      "correo_electronico": "sofiamalagoncuartas@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Karla Restrepo",
+      "organismo_entidad": "",
+      "telefono": "3104379524",
+      "correo_electronico": "karlarestrepoacevedo17@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Camila Morales",
+      "organismo_entidad": "",
+      "telefono": "3102722047",
+      "correo_electronico": "camilamorales09@icloud.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Carolina Monsalve",
+      "organismo_entidad": "",
+      "telefono": "3184065163",
+      "correo_electronico": "karola17.306@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Paola Paredes",
+      "organismo_entidad": "Ciudadanos",
+      "telefono": "3158035161",
+      "correo_electronico": "andreapaola.paredes@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Tecnical Music Cali",
+      "organismo_entidad": "Empresa",
+      "telefono": "3133511996",
+      "correo_electronico": "tecnicalmusic@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:02:26.481140",
+    "duracion_segundos": 5.15,
+    "tokens_total": 2717
+  }
+}

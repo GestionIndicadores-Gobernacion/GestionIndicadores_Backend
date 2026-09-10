@@ -1,0 +1,174 @@
+{
+  "archivo_imagen": "E-000149.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Tapete absorbente",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Toallas húmedas",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Parche lidocaína",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bondel",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Petcell",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Diclofenaco",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "x 10"
+    },
+    {
+      "medicamento_insumo": "Cilexine",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "x 14"
+    },
+    {
+      "medicamento_insumo": "Caniforte",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250 mg"
+    },
+    {
+      "medicamento_insumo": "Baño seco",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "350 ml"
+    },
+    {
+      "medicamento_insumo": "Electrolitos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "x 10"
+    },
+    {
+      "medicamento_insumo": "Tranquipets",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pipidogs",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Compleland B12",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Diclofenaco inyectable",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "75 mg"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Allerbey",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5 mg"
+    },
+    {
+      "medicamento_insumo": "Pulop",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "tópico"
+    },
+    {
+      "medicamento_insumo": "Jabón Splash",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pomada Dermice",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Hidratante",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Fibrinex",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "inyectable"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:25:10.635229",
+    "duracion_segundos": 4.12,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1157,
+    "tokens_total": 2529,
+    "costo_usd_estimado": 0.002079
+  }
+}

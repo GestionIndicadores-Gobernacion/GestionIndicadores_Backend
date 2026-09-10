@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000256",
+  "archivo_imagen": "AS-000256.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041255005.jpg",
+  "fecha_lote": "2026-08-16",
+  "dia_agosto": 16,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "No especificado",
+  "autoriza_entrega": {
+    "nombre": "No legible",
+    "cedula": "No especificado"
+  },
+  "recibe": {
+    "nombre": "Johan Penafiel",
+    "cedula": "No especificado"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 76.0,
+    "alimento_gato_kg": 21.0,
+    "total_alimento_seco_kg": 97.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 112.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Arena",
+        "cantidad": 28.0,
+        "unidad": "kg"
+      },
+      {
+        "articulo": "Comida húmeda (latas)",
+        "cantidad": 100.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:55:09.366995"
+  }
+}

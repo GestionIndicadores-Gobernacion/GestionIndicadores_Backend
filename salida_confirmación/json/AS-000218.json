@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000218",
+  "archivo_imagen": "AS-000218.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031900027.jpg",
+  "fecha_lote": "2026-08-15",
+  "dia_agosto": 15,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-005",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Cesar Varela",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "David Ricardo Lozano Daza",
+    "cedula": ""
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 0.0,
+    "alimento_gato_kg": 0.0,
+    "total_alimento_seco_kg": 0.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Insumos Médicos Veterinarios (Listado Anexo)",
+        "cantidad": 1.0,
+        "unidad": "listado"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:51:30.389354"
+  }
+}

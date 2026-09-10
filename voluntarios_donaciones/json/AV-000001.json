@@ -1,0 +1,152 @@
+{
+  "id_documento": "AV-000001",
+  "archivo_imagen": "AV-000001.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 1,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 17,
+  "personas": [
+    {
+      "nombre_completo": "Claudia H. Henao",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3155952917",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alexandra M.",
+      "organismo_entidad": "Fundac",
+      "telefono": "314630864",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniela Tabares Reina",
+      "organismo_entidad": "",
+      "telefono": "",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Michell Henao",
+      "organismo_entidad": "",
+      "telefono": "3114261419",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Claudia F. Mora Perdomo",
+      "organismo_entidad": "",
+      "telefono": "3172684829",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Jose Mendez",
+      "organismo_entidad": "",
+      "telefono": "3213232203",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sandra Gonzalez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3171494271",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniela Rincon",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3207112444",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Marisabel Echeverri",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3133671463",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Eliana Zuluaga",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3154907113",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ma. Carolina Agredo",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3107740207",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Diana Fernandez",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3188319416",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Iragorri",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3137170708",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Rosalba Bedoya",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3173830372",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alexandra Guerra",
+      "organismo_entidad": "Ciu",
+      "telefono": "3153203735",
+      "correo_electronico": "",
+      "cedula_o_id": "1151957713",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Jaramillo",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3147965905",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Stephania Nagles S.",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3183214487",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:57:10.670054",
+    "duracion_segundos": 6.95,
+    "tokens_total": 2840
+  }
+}

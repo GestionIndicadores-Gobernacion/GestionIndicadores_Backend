@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000130.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15 Agosto/16",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Suministro Ciem de medlogica",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.5% inyectable",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona inyectable",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Antiparasitario",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Suplemento Gradoc",
+      "cantidad": 36.0,
+      "unidad": "unidades",
+      "presentacion": "180 g"
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona inyectable",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Ketoconazol",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Suplemento Petmilk",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "250 g"
+    },
+    {
+      "medicamento_insumo": "Shampoo Piro Bore Petshop",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina inyectable",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Lágrimas oculares",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Antidiarreico",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "2% 50 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona inyectable",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Shampoo antiséptico",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "200 ml"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 46.0,
+      "unidad": "unidades",
+      "presentacion": "100 mg 30 pastillas"
+    },
+    {
+      "medicamento_insumo": "Kit de prueba rápido",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "20 ml inyectable"
+    },
+    {
+      "medicamento_insumo": "Suplemento multivitamínico",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "240 ml Vitocell PCT"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:22:39.400883",
+    "duracion_segundos": 4.45,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1135,
+    "tokens_total": 2507,
+    "costo_usd_estimado": 0.002046
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "archivo_imagen": "E-000166.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16 Agosto 2016",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jabon Arbol de te",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 3.0,
+      "unidad": "sobre",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Dicloxacilina",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Cateter #20",
+      "cantidad": 2.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Amlodipino",
+      "cantidad": 6.0,
+      "unidad": "sobres",
+      "presentacion": "5 mg"
+    },
+    {
+      "medicamento_insumo": "Cateter mariposa #19",
+      "cantidad": 13.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tapones",
+      "cantidad": 4.0,
+      "unidad": "caja",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cefalung",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "200mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:26:55.947131",
+    "duracion_segundos": 2.51,
+    "tokens_entrada": 1372,
+    "tokens_salida": 427,
+    "tokens_total": 1799,
+    "costo_usd_estimado": 0.000983
+  }
+}

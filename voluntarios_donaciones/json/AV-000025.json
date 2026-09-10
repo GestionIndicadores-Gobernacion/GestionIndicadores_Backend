@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000025",
+  "archivo_imagen": "AV-000025.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 25,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Sara Michelle Muñoz",
+      "organismo_entidad": "Comunidad",
+      "telefono": "3132575844",
+      "correo_electronico": "saramunoz.michelle@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Hernandez",
+      "organismo_entidad": "",
+      "telefono": "3165438883",
+      "correo_electronico": "natalie.motta020@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "David Sanchez Rincon",
+      "organismo_entidad": "",
+      "telefono": "3183376523",
+      "correo_electronico": "david.rap112@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Jose Ruiz Aparicio",
+      "organismo_entidad": "",
+      "telefono": "3205767950",
+      "correo_electronico": "mjruiz01@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lina Marcela Orejuela",
+      "organismo_entidad": "",
+      "telefono": "3011908929",
+      "correo_electronico": "linaorejuela41@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Iglesia Adventista",
+      "organismo_entidad": "",
+      "telefono": "3168804296",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Elizabeth Salgado J.",
+      "organismo_entidad": "",
+      "telefono": "3104256684",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Oscar Gonzalez Vargas",
+      "organismo_entidad": "",
+      "telefono": "3173814048",
+      "correo_electronico": "osgov3970@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Katherin Bejarano",
+      "organismo_entidad": "",
+      "telefono": "3187782036",
+      "correo_electronico": "kbejarano7@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Victor Soto R.",
+      "organismo_entidad": "",
+      "telefono": "3159267302",
+      "correo_electronico": "Vsoto@itt.com.co",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Julian Alvarado",
+      "organismo_entidad": "",
+      "telefono": "3188486028",
+      "correo_electronico": "jualya1198@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Valentina Lopez Agudelo",
+      "organismo_entidad": "",
+      "telefono": "3159556268",
+      "correo_electronico": "vlopezagudelo22@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Mariana Rojas Orozco",
+      "organismo_entidad": "",
+      "telefono": "3045690474",
+      "correo_electronico": "mariarojas@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Angelica Martelo Vales",
+      "organismo_entidad": "",
+      "telefono": "3002614440",
+      "correo_electronico": "drangelicamartelo@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:00:01.377219",
+    "duracion_segundos": 5.19,
+    "tokens_total": 2688
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "id_documento": "AS-000422",
+  "archivo_imagen": "AS-000422.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_070047004.jpg",
+  "fecha_lote": "2026-08-20",
+  "dia_agosto": 20,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-312",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Centro de Bienestar Animal",
+  "autoriza_entrega": {
+    "nombre": "SIN_DATO",
+    "cedula": "SIN_DATO"
+  },
+  "recibe": {
+    "nombre": "SIN_DATO",
+    "cedula": "SIN_DATO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 0.0,
+    "alimento_gato_kg": 0.0,
+    "total_alimento_seco_kg": 0.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Guantes talla S",
+        "cantidad": 4.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Guantes talla M",
+        "cantidad": 3.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Guantes talla L",
+        "cantidad": 4.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Guantes talla XL",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Pañitos húmedos",
+        "cantidad": 5.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Alcohol 700 ml",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Lactato de Ringer",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Cloruro de sodio",
+        "cantidad": 10.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Dextrosa",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Esparadrapo",
+        "cantidad": 4.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Micropore",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Gasa",
+        "cantidad": 3.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Algodón",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Catéter rosado",
+        "cantidad": 20.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Catéter verde",
+        "cantidad": 10.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Catéter azul",
+        "cantidad": 10.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Microgotero",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Cánula nasal oxígeno",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Tubo endotraqueal",
+        "cantidad": 2.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Jeringa 1 ml",
+        "cantidad": 20.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Jeringa 2 ml",
+        "cantidad": 60.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Jeringa 3 ml",
+        "cantidad": 60.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Jeringa 5 ml",
+        "cantidad": 80.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Jeringa 10 ml",
+        "cantidad": 60.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Jeringa 20 ml",
+        "cantidad": 10.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Sutura",
+        "cantidad": 5.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Vedas",
+        "cantidad": 7.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Tapones de heparina",
+        "cantidad": 20.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Mariposas",
+        "cantidad": 5.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Sondas",
+        "cantidad": 9.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Agujas",
+        "cantidad": 50.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Caretas",
+        "cantidad": 9.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T20:09:43.847079"
+  }
+}

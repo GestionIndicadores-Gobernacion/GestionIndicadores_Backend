@@ -1,0 +1,174 @@
+{
+  "id_documento": "AM-000182",
+  "archivo_imagen": "AM-000182.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_043759009.jpg",
+  "fecha_lote": "2026-08-19",
+  "dia_agosto": 19,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-124",
+  "fecha_documento_detectada": "16-Ago-26",
+  "municipio_o_lugar": null,
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextromib-B",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Oxibest",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Neostrong leche",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol oral",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "250 mg"
+    },
+    {
+      "medicamento_insumo": "Asuntol jabón",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "con amor"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "0.5%"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Simparica Trio",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Algicam pets",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Pezosen-N",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50 gr"
+    },
+    {
+      "medicamento_insumo": "Bondel oral",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100 gr"
+    },
+    {
+      "medicamento_insumo": "Orende Grave",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 mg"
+    },
+    {
+      "medicamento_insumo": "Glicopan",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "B-fdx polvo",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "bolsas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Ojux V",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 6.0,
+      "unidad": "tabletas",
+      "presentacion": "25 mg"
+    },
+    {
+      "medicamento_insumo": "Omeprazol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "cajas",
+      "presentacion": "x 30"
+    },
+    {
+      "medicamento_insumo": "Meloxicam oral",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "0.5%"
+    },
+    {
+      "medicamento_insumo": "Miocen-T Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Cicandul",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "8 gr"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:11:34.204483",
+    "duracion_segundos": 5.02,
+    "tokens_total": 3403
+  }
+}

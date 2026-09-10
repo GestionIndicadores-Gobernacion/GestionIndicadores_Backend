@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000037.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/04/2026",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Meloxicam tableta",
+      "cantidad": 4.0,
+      "unidad": "tabletas",
+      "presentacion": "15 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam suspensión oral",
+      "cantidad": 16.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam oral",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam oral",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Etamsilato",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Metaclor",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Clara C",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "1000 ml"
+    },
+    {
+      "medicamento_insumo": "Iver OYO",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Fluimucil",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meladol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 11.0,
+      "unidad": "tabletas",
+      "presentacion": "5-10 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 7.0,
+      "unidad": "tabletas",
+      "presentacion": "25-50 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 8.0,
+      "unidad": "tabletas",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 5.0,
+      "unidad": "tabletas",
+      "presentacion": "2-3.5 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 6.0,
+      "unidad": "tabletas",
+      "presentacion": "10-25 kg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:07:29.649084",
+    "duracion_segundos": 4.41,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1039,
+    "tokens_total": 2411,
+    "costo_usd_estimado": 0.001901
+  }
+}

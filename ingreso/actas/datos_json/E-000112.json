@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000112.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "25 agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Anahorn",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Fumado",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Antiesmo",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Ankofen",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lyrica",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Espadrapo",
+      "cantidad": 2.0,
+      "unidad": "rollos",
+      "presentacion": "5cm"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Nutrisure",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Suero",
+      "cantidad": 5.0,
+      "unidad": "bolsas",
+      "presentacion": "200ml"
+    },
+    {
+      "medicamento_insumo": "Ensure",
+      "cantidad": 2.0,
+      "unidad": "latas",
+      "presentacion": "400g"
+    },
+    {
+      "medicamento_insumo": "Oral Pet",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "400ml"
+    },
+    {
+      "medicamento_insumo": "Doggy Cat",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tramadol clorhidrato",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Feeding kit",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Sonda Two way",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Electrolito",
+      "cantidad": 1.0,
+      "unidad": "bolsa",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10kg"
+    },
+    {
+      "medicamento_insumo": "Met-gurt",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Mox Colina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "2%"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:20:49.216279",
+    "duracion_segundos": 4.59,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1103,
+    "tokens_total": 2475,
+    "costo_usd_estimado": 0.001998
+  }
+}

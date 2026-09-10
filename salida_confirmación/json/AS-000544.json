@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000544",
+  "archivo_imagen": "AS-000544.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412007.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "El Recuerdo",
+  "autoriza_entrega": {
+    "nombre": "Johany Perdomo",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Rolando Mauricio C.",
+    "cedula": "3222501929"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 90.0,
+    "alimento_gato_kg": 24.0,
+    "total_alimento_seco_kg": 114.0,
+    "comida_humeda_perro_und": 20,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 20,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 10,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 5,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "latas medicadas ID",
+        "cantidad": 5.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "cocas",
+        "cantidad": 10.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:43:02.181136"
+  }
+}

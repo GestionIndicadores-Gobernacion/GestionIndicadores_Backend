@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000109.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/09/2022",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Canisan-D",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Dufen Naol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Paracanu",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "32ml"
+    },
+    {
+      "medicamento_insumo": "Fipet spray",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Milpro",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "16mg/40mg 2 tabletas"
+    },
+    {
+      "medicamento_insumo": "Canipetis",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Colivet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Farnex",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Creolina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5.5-11kg"
+    },
+    {
+      "medicamento_insumo": "Galgocal",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Fitovete",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "32g"
+    },
+    {
+      "medicamento_insumo": "Electrolitico Pet",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10gr"
+    },
+    {
+      "medicamento_insumo": "Electro 700",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "5g"
+    },
+    {
+      "medicamento_insumo": "Amigo Fresh",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Colirio-200",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Hemavet",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "200mg 30 tabletas"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:20:30.684170",
+    "duracion_segundos": 5.03,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1141,
+    "tokens_total": 2513,
+    "costo_usd_estimado": 0.002054
+  }
+}

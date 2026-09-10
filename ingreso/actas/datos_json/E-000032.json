@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000032.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/Agosto/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2% 240ml"
+    },
+    {
+      "medicamento_insumo": "Cutamycon-VF",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "35g"
+    },
+    {
+      "medicamento_insumo": "Levetiracetam",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "500mg/30tab"
+    },
+    {
+      "medicamento_insumo": "Lactoreemplazador",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Caprocol",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "75mg"
+    },
+    {
+      "medicamento_insumo": "Yoad",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2.5% 1000ml"
+    },
+    {
+      "medicamento_insumo": "Entrocine",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "4gr"
+    },
+    {
+      "medicamento_insumo": "Petaderm Creme",
+      "cantidad": 1.0,
+      "unidad": "tubo",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Colgikov",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "0.5% 15ml"
+    },
+    {
+      "medicamento_insumo": "Meloxiproc",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.15% 10ml"
+    },
+    {
+      "medicamento_insumo": "Floratac",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Svitears",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Energyin oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Zeel",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Obrevet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15g"
+    },
+    {
+      "medicamento_insumo": "Petmed jabón",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Ahrofen",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10% 100mg/ml"
+    },
+    {
+      "medicamento_insumo": "Vilivet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Melalgic",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "200mg/12"
+    },
+    {
+      "medicamento_insumo": "Nicilon",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Hectovita-vet C",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Sanic-Alt",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Hemolitan Pet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:07:00.094943",
+    "duracion_segundos": 5.39,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1252,
+    "tokens_total": 2624,
+    "costo_usd_estimado": 0.002221
+  }
+}

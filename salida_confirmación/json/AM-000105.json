@@ -1,0 +1,167 @@
+{
+  "id_documento": "AM-000105",
+  "archivo_imagen": "AM-000105.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_042219002.jpg",
+  "fecha_lote": "2026-08-17",
+  "dia_agosto": 17,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-036",
+  "fecha_documento_detectada": "16/2024",
+  "municipio_o_lugar": "Yumbo",
+  "autoriza_nombre": "Cina Lopez",
+  "recibe_nombre": "Sandra Hernandez",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Baxidin",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Sanasec",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "300 ml"
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Iver 080",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexin Spray",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Iver 080",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Netisore",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "180 g"
+    },
+    {
+      "medicamento_insumo": "Nutrifarma Gradual",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Champú limpieza",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Agua oxigenada",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Tranc-V HA",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Bismo-pet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Agua oxigenada",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Traumeel tabletas",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "82 ml"
+    },
+    {
+      "medicamento_insumo": "Ivermectina",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "82 ml"
+    },
+    {
+      "medicamento_insumo": "ADN Vital",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Enrovid",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Colirio-ZBO",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "8 ml"
+    },
+    {
+      "medicamento_insumo": "Lágrimas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "8 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:03:16.845720",
+    "duracion_segundos": 5.49,
+    "tokens_total": 3353
+  }
+}

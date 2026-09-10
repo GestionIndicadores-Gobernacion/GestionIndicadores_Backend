@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000563",
+  "archivo_imagen": "AS-000563.jpg",
+  "archivo_origen_escaneo": "20260827_174851.jpg",
+  "fecha_lote": "2026-08-24",
+  "dia_agosto": 24,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-500",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Lizeth Parra",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Diana Maria Alvarez",
+    "cedula": ""
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 0.0,
+    "alimento_gato_kg": 0.0,
+    "total_alimento_seco_kg": 0.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 240,
+    "comida_humeda_total_und": 240,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 3,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Hills y Royal Canin",
+        "cantidad": 240.0,
+        "unidad": "latas"
+      },
+      {
+        "articulo": "kits de insumos médicos",
+        "cantidad": 3.0,
+        "unidad": "kits"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T18:58:01.768740"
+  }
+}

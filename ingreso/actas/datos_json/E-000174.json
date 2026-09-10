@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000174.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/08/2021",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Vetisure",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "1L"
+    },
+    {
+      "medicamento_insumo": "Fibrilok tableta",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "10ml 300mg"
+    },
+    {
+      "medicamento_insumo": "Meloxican",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "7.5mg 50ml/12.5%"
+    },
+    {
+      "medicamento_insumo": "Etamsilato",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Sutrim",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Clorehexidina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "2mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam tableta",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": "7.5mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50/100ml"
+    },
+    {
+      "medicamento_insumo": "B-Flex oral",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "De 20 jan-h unguento",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50/150ml 200mg/20"
+    },
+    {
+      "medicamento_insumo": "Tears lagrimal",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "8ml"
+    },
+    {
+      "medicamento_insumo": "Enteromax",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Ocul-v LHA",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Ampicilina + Sulbactam",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "1g"
+    },
+    {
+      "medicamento_insumo": "Cefazolina",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Iver",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Gastrivet famotidina",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "15gr"
+    },
+    {
+      "medicamento_insumo": "Gentax unguento",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Gentax oftalmica",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Apoquel tableta",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": "20/3.6mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina tableta",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": "500mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:27:47.757738",
+    "duracion_segundos": 4.39,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1158,
+    "tokens_total": 2530,
+    "costo_usd_estimado": 0.00208
+  }
+}

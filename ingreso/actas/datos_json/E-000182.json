@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000182.jpg",
+  "fecha_lote": "2026-08-17",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "17/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Elektrolito",
+      "cantidad": 12.0,
+      "unidad": "Sobres",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Clavaseptin",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "250mg"
+    },
+    {
+      "medicamento_insumo": "Clavaseptin",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Clavaseptin",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "250mg"
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.5% 100ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "1000ml"
+    },
+    {
+      "medicamento_insumo": "Jabon",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Baño seco",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "235ml"
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "235ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "4L"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.15% 10ml"
+    },
+    {
+      "medicamento_insumo": "Hojas bisturí",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Clorhexidina Digluconato",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Solución yodada",
+      "cantidad": 2.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Enterogermina",
+      "cantidad": 7.0,
+      "unidad": "ampollas",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Jabón antiséptico",
+      "cantidad": 2.0,
+      "unidad": "frasco",
+      "presentacion": "100g"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 6.0,
+      "unidad": "ampollas",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Antiparasitario interno",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 2.0,
+      "unidad": "comprimidos",
+      "presentacion": "25mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:29:45.175318",
+    "duracion_segundos": 4.16,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1089,
+    "tokens_total": 2461,
+    "costo_usd_estimado": 0.001976
+  }
+}

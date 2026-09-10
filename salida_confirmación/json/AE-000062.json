@@ -1,0 +1,44 @@
+{
+  "id_documento": "AE-000062",
+  "archivo_imagen": "AE-000062.jpg",
+  "archivo_origen_escaneo": "IMG-20260812-WA0024.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "No especificado",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 1,
+    "total_perros_censo": 70,
+    "total_gatos_censo": 25,
+    "total_animales_censo": 95,
+    "total_alimento_perro_kg": 280.0,
+    "total_alimento_gato_kg": 40.0,
+    "total_alimento_general_kg": 320.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Bellfusion",
+      "municipio": "No especificado",
+      "direccion": "Cra 3 # 15-38",
+      "telefono": "3184367144",
+      "censo": {
+        "perros": 70,
+        "gatos": 25,
+        "total_animales": 95
+      },
+      "alimento_entregado": {
+        "perro_kg": 280.0,
+        "gato_kg": 40.0,
+        "total_kg": 320.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Se registran dos entregas en la misma fila: 200-20 y 80-20"
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:01:37.751023"
+  }
+}

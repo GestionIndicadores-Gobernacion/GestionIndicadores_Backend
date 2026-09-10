@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000131.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/09/24",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jabon West",
+      "cantidad": 24.0,
+      "unidad": "unidades",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20-40 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5-10 kg"
+    },
+    {
+      "medicamento_insumo": "Quirucidal",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "240 cc"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Jabón Quirúrgico Aseptin",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Prueba Parvo",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Ambientador Antiséptico",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "240 ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "Solución 120 ml"
+    },
+    {
+      "medicamento_insumo": "Edos Antiséptico",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina Espuma",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina Gluconato",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Vioxin",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "4% 60 ml"
+    },
+    {
+      "medicamento_insumo": "Glucocorticoide",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 mg"
+    },
+    {
+      "medicamento_insumo": "Shampoo Antiséptico",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "230 ml"
+    },
+    {
+      "medicamento_insumo": "Suplemento",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "110 ml"
+    },
+    {
+      "medicamento_insumo": "Opti",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "25 ml"
+    },
+    {
+      "medicamento_insumo": "Credelio Plus",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "22-45 kg"
+    },
+    {
+      "medicamento_insumo": "Credelio Plus",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "11-22 kg"
+    },
+    {
+      "medicamento_insumo": "Finilex",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "Inyectable 50 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:22:45.397089",
+    "duracion_segundos": 4.99,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1209,
+    "tokens_total": 2581,
+    "costo_usd_estimado": 0.002156
+  }
+}

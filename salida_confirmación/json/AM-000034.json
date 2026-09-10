@@ -1,0 +1,174 @@
+{
+  "id_documento": "AM-000034",
+  "archivo_imagen": "AM-000034.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031317005.jpg",
+  "fecha_lote": "2026-08-14",
+  "dia_agosto": 14,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-012",
+  "fecha_documento_detectada": "",
+  "municipio_o_lugar": "",
+  "autoriza_nombre": "",
+  "recibe_nombre": "",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Dermocyn",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Cervet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "150"
+    },
+    {
+      "medicamento_insumo": "Meloxiproc",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Rilexine",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "600mg"
+    },
+    {
+      "medicamento_insumo": "Metrodix",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Neocindan",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 6.0,
+      "unidad": "ampollas",
+      "presentacion": "8mg"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "8mg"
+    },
+    {
+      "medicamento_insumo": "Tratidex",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "3.5g"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "4.5ml"
+    },
+    {
+      "medicamento_insumo": "Atropina",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "200 Vitan",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "8ml"
+    },
+    {
+      "medicamento_insumo": "Tears",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Neocindan",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Toxipidol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Paracanis",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Lagikon",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "1mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:55:42.576461",
+    "duracion_segundos": 5.22,
+    "tokens_total": 3319
+  }
+}

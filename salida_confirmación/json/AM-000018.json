@@ -1,0 +1,27 @@
+{
+  "id_documento": "AM-000018",
+  "archivo_imagen": "AM-000018.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030906011.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-031",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Hills A/D",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 40.0,
+      "unidad": "unidades",
+      "presentacion": "latas"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:54:20.365324",
+    "duracion_segundos": 2.46,
+    "tokens_total": 1979
+  }
+}

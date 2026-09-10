@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000021.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Acido Tranexamico",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "500mg/5ml"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco Sodico",
+      "cantidad": 82.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "8mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": "160mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Fleegen (Lagrimas)",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pet Drops",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pull Off 11-20kg Perro",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pull Off 2-10kg Perro",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pull Off Gato 2-4kg",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Oftalmotrif",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Bandel Puppy",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Bandel",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Micardil",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "35mg"
+    },
+    {
+      "medicamento_insumo": "Roxicaina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "2% 30ml"
+    },
+    {
+      "medicamento_insumo": "Dacderm",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Restaderm",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Combit",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Peronic",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "100gr"
+    },
+    {
+      "medicamento_insumo": "Mamitolina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "150gr"
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "300gr"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:05:50.946616",
+    "duracion_segundos": 4.27,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1032,
+    "tokens_total": 2404,
+    "costo_usd_estimado": 0.001891
+  }
+}

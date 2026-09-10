@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000079.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "19/09/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50 mg x 10"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "2 mg x 10"
+    },
+    {
+      "medicamento_insumo": "Prednicorten",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5 mg x 10"
+    },
+    {
+      "medicamento_insumo": "Carvitel",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Bondel",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Ketobest",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Quercitol",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Ocul-vet-ha",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "3 ml"
+    },
+    {
+      "medicamento_insumo": "Tevsoft",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Ofiaproc M",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "10 mg/ml"
+    },
+    {
+      "medicamento_insumo": "Melodol 0.5%",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5 mg/ml"
+    },
+    {
+      "medicamento_insumo": "Ondansetron",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "8 mg/4 ml"
+    },
+    {
+      "medicamento_insumo": "Efe-201",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Lagrimas artificiales",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Sophixim oftlm",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "B-Fex",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Tobramicina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Ciprofloxacina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:07.373756",
+    "duracion_segundos": 4.42,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1042,
+    "tokens_total": 2414,
+    "costo_usd_estimado": 0.001906
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "id_documento": "AV-000007",
+  "archivo_imagen": "AV-000007.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 7,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 17,
+  "personas": [
+    {
+      "nombre_completo": "Juan Camilo Torres",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3117233276",
+      "correo_electronico": "juancamilo10xdf123@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Camilo Gaitán",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3006748502",
+      "correo_electronico": "cagartanma@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jhon Ortiz",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3174975846",
+      "correo_electronico": "jhonortiz20@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Helen Briceño",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3241701852",
+      "correo_electronico": "helenbriceño08@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Carlos Cabal",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3218007770",
+      "correo_electronico": "carlos.cabal746@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Jenny A. Chavarro López",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3023752528",
+      "correo_electronico": "jach102.96@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ivan Camilo",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3150013781",
+      "correo_electronico": "ivanwrd@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniela Ortiz Martínez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3154887170",
+      "correo_electronico": "danielaortizm13@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Tatiana Gallegos",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3189908115",
+      "correo_electronico": "tatianagallegos@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Mayse Aguayo Pérez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3153106389",
+      "correo_electronico": "mayseaguayo1999@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Karen Salazar",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3103115727",
+      "correo_electronico": "karentatiana2008@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alexis Gómez",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3153362132",
+      "correo_electronico": "alexisgpo224@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sathya Merulanda",
+      "organismo_entidad": "",
+      "telefono": "",
+      "correo_electronico": "",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Christian Stiven Quitistar",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3154008310",
+      "correo_electronico": "chris997@outlook.es",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lina Quintero S.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3183148685",
+      "correo_electronico": "linajulietaquintero@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Freber",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3152983165",
+      "correo_electronico": "laura-freber02@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Isabella Torres",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3175321330",
+      "correo_electronico": "",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:57:55.213302",
+    "duracion_segundos": 5.96,
+    "tokens_total": 3016
+  }
+}

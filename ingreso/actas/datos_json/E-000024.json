@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000024.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13-08-26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Catéter intravenoso calibre 24",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso K 20",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso K 18",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso K 22",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 1 ml",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa 10 ml",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Clorhexidina 2% spray",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución auricular",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bronquicor",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cicatrizante en spray",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "tópico"
+    },
+    {
+      "medicamento_insumo": "Lidocaína clorhidrato 2%",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Colirio-200",
+      "cantidad": 16.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dermo clean-ojos",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dipirona inyectable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sellos de Heparina",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sutura",
+      "cantidad": 5.0,
+      "unidad": "cajas",
+      "presentacion": "caja x 12"
+    },
+    {
+      "medicamento_insumo": "Lidocaína inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "1mg"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 3.0,
+      "unidad": "comprimidos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sanimicon crema",
+      "cantidad": 1.0,
+      "unidad": "tubos",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:06:09.542719",
+    "duracion_segundos": 5.21,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1049,
+    "tokens_total": 2421,
+    "costo_usd_estimado": 0.001917
+  }
+}

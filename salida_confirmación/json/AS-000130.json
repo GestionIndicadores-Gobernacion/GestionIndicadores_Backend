@@ -1,0 +1,121 @@
+{
+  "id_documento": "AS-000130",
+  "archivo_imagen": "AS-000130.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030539077.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "CBA",
+  "autoriza_entrega": {
+    "nombre": "Diop Cebero",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Angeles Gralde",
+    "cedula": ""
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 0.0,
+    "alimento_gato_kg": 0.0,
+    "total_alimento_seco_kg": 0.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Caja jeringas 10ml",
+        "cantidad": 100.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Caja jeringas 5ml",
+        "cantidad": 100.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Caja jeringas 3ml",
+        "cantidad": 100.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Caja jeringas 1ml",
+        "cantidad": 100.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Caja de gasas estériles",
+        "cantidad": 20.0,
+        "unidad": "sobres"
+      },
+      {
+        "articulo": "Gasas normales",
+        "cantidad": 800.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Caja guantes talla M",
+        "cantidad": 1.0,
+        "unidad": "caja"
+      },
+      {
+        "articulo": "Caja tabocas",
+        "cantidad": 1.0,
+        "unidad": "caja"
+      },
+      {
+        "articulo": "Sonda Nelaton silicona #6",
+        "cantidad": 7.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Nebulizador",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "articulo": "Alcohol 700ml",
+        "cantidad": 1.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Clorhexidina west 500ml",
+        "cantidad": 1.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Lidocaína 2% inyectable",
+        "cantidad": 50.0,
+        "unidad": "ml"
+      },
+      {
+        "articulo": "Catéter calibre 20",
+        "cantidad": 5.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Catéter calibre 18",
+        "cantidad": 5.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Epinefrina 1 mg ampolla",
+        "cantidad": 10.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:42:54.942641"
+  }
+}

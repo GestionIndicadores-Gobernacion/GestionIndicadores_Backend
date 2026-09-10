@@ -1,0 +1,44 @@
+{
+  "id_documento": "AE-000087",
+  "archivo_imagen": "AE-000087.jpg",
+  "archivo_origen_escaneo": "20260901_110604.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "No especificado",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 1,
+    "total_perros_censo": 10,
+    "total_gatos_censo": 25,
+    "total_animales_censo": 35,
+    "total_alimento_perro_kg": 0.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 0.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "HOGAR DE PASO",
+      "municipio": "No especificado",
+      "direccion": "Carrera 30 # 24-98",
+      "telefono": "3023552892",
+      "censo": {
+        "perros": 10,
+        "gatos": 25,
+        "total_animales": 35
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Ninguna"
+    }
+  ],
+  "notas_generales_planilla": "5 Camel, 1 bulto Arena gato, 13 comida húmeda, 12 sobre comida húmeda.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": false,
+    "fecha_procesamiento": "2026-09-01T12:06:09.857800"
+  }
+}

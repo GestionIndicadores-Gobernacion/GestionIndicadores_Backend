@@ -1,0 +1,62 @@
+{
+  "id_documento": "AE-000064",
+  "archivo_imagen": "AE-000064.jpg",
+  "archivo_origen_escaneo": "IMG-20260812-WA0030.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 2,
+    "total_perros_censo": 22,
+    "total_gatos_censo": 105,
+    "total_animales_censo": 127,
+    "total_alimento_perro_kg": 0.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 0.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Los Morochos",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "Cra 32B #41-35",
+      "telefono": "3105268063",
+      "censo": {
+        "perros": 7,
+        "gatos": 35,
+        "total_animales": 42
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_OBSERVACIONES"
+    },
+    {
+      "nombre_fundacion": "Refugio Kgoi",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "Calle 17A 24-45",
+      "telefono": "305238805",
+      "censo": {
+        "perros": 15,
+        "gatos": 70,
+        "total_animales": 85
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Agla m/ 4 S."
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": false,
+    "fecha_procesamiento": "2026-09-01T12:02:00.417463"
+  }
+}

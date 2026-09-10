@@ -1,0 +1,168 @@
+{
+  "archivo_imagen": "E-000071.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Sustane Ultra",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2.5 ml"
+    },
+    {
+      "medicamento_insumo": "Nexgard (perro)",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "2-3.5 kg"
+    },
+    {
+      "medicamento_insumo": "Rondel",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxiproc 0.15%",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Nexgard (perro)",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Cannex",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Canicel suspensión",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Orenda crema",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "100 gr"
+    },
+    {
+      "medicamento_insumo": "Nexcare gasa",
+      "cantidad": 24.0,
+      "unidad": "caja",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solomox",
+      "cantidad": 60.0,
+      "unidad": "cajas",
+      "presentacion": "300 mg"
+    },
+    {
+      "medicamento_insumo": "Sanix",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Rondel suspensión",
+      "cantidad": 4.0,
+      "unidad": "cajas",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Edo Flunix",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "75 mg/3 ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "1 gr/2 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "8 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Polipropileno",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "22 mm/75 cm"
+    },
+    {
+      "medicamento_insumo": "Nylon",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": "19 mm/75 cm"
+    },
+    {
+      "medicamento_insumo": "Dextromin B",
+      "cantidad": 4.0,
+      "unidad": "cajas",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Canipets Puppy",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "8 ml"
+    },
+    {
+      "medicamento_insumo": "Teals lágrimas",
+      "cantidad": 5.0,
+      "unidad": "cajas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "30 gr"
+    },
+    {
+      "medicamento_insumo": "Orenda crema",
+      "cantidad": 40.0,
+      "unidad": "tabletas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Quercetol Vet",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "100 mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:15:25.138583",
+    "duracion_segundos": 6.04,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1301,
+    "tokens_total": 2673,
+    "costo_usd_estimado": 0.002295
+  }
+}

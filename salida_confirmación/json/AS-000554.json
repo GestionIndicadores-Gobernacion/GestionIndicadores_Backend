@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000554",
+  "archivo_imagen": "AS-000554.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412017.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-417",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Comuna 2",
+  "autoriza_entrega": {
+    "nombre": "Johana Penafiel",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Bryzn Caicedo",
+    "cedula": "1.102.911.775"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 24.0,
+    "alimento_gato_kg": 16.0,
+    "total_alimento_seco_kg": 40.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 20,
+    "comida_humeda_total_und": 20,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 2,
+    "collares_und": 0,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Kit Aseo",
+        "cantidad": 1.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:44:06.507169"
+  }
+}

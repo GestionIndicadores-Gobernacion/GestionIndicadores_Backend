@@ -1,0 +1,174 @@
+{
+  "id_documento": "AM-000282",
+  "archivo_imagen": "AM-000282.jpg",
+  "archivo_origen_escaneo": "20260827_183039.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-511",
+  "fecha_documento_detectada": "",
+  "municipio_o_lugar": "",
+  "autoriza_nombre": "",
+  "recibe_nombre": "",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Quercetol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 39.0,
+      "unidad": "tabletas",
+      "presentacion": "70mg"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 48.0,
+      "unidad": "tabletas",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "Rostaderm",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Trihepat",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Stomorgyl",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 40.0,
+      "unidad": "tabletas",
+      "presentacion": "120mg"
+    },
+    {
+      "medicamento_insumo": "Verdemint",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Atrevic",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pregabalina",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Galgocel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Electrolitos",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dextromin",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 2.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 3.0,
+      "unidad": "bolsas",
+      "presentacion": "1000ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin RB",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 3.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "inyectable"
+    },
+    {
+      "medicamento_insumo": "Eplotic",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "suspensión 60ml"
+    },
+    {
+      "medicamento_insumo": "Pesoran",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Ubrevet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Aminosyn",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Calsyn",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:07:45.408860",
+    "duracion_segundos": 4.72,
+    "tokens_total": 3170
+  }
+}

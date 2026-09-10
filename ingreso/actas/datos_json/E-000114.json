@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000114.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Shooter",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Petosan-N cicatrizante",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100g"
+    },
+    {
+      "medicamento_insumo": "Acetaminofen",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "400g"
+    },
+    {
+      "medicamento_insumo": "Bavidin antiséptico",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Paño seco anti-pulgas",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "160ml"
+    },
+    {
+      "medicamento_insumo": "Toallitas húmedas",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": "120 toallitas"
+    },
+    {
+      "medicamento_insumo": "Enteromax",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "8g"
+    },
+    {
+      "medicamento_insumo": "Inmunol líquido",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Curex-Pet topic",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Cunex oral",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "jeringa x 10ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol oral",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Polvo reconstituyente oral",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxivet",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "Meloxivet suspensión",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Jabón de limpieza",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "300ml"
+    },
+    {
+      "medicamento_insumo": "Puruncans Puppy",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "jeringa 5ml"
+    },
+    {
+      "medicamento_insumo": "Puruncans",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Pollo para reconstituir oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "900ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:21:01.047231",
+    "duracion_segundos": 6.07,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1116,
+    "tokens_total": 2488,
+    "costo_usd_estimado": 0.002017
+  }
+}

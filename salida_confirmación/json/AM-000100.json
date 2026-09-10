@@ -1,0 +1,167 @@
+{
+  "id_documento": "AM-000100",
+  "archivo_imagen": "AM-000100.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041352011.jpg",
+  "fecha_lote": "2026-08-16",
+  "dia_agosto": 16,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-011",
+  "fecha_documento_detectada": "16/09/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "150 mg"
+    },
+    {
+      "medicamento_insumo": "Celeporin",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "2% 10 ml"
+    },
+    {
+      "medicamento_insumo": "Jabón Control Garrapatas y Pulgas",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "Tubo 30g"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 13.0,
+      "unidad": "tabletas",
+      "presentacion": "> 5-10kg"
+    },
+    {
+      "medicamento_insumo": "Power Comprimidos",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "700 mg"
+    },
+    {
+      "medicamento_insumo": "Oxitetraciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "inyectable"
+    },
+    {
+      "medicamento_insumo": "Overxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "oral"
+    },
+    {
+      "medicamento_insumo": "Hidramin oral",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml oral"
+    },
+    {
+      "medicamento_insumo": "Iodine",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "protección infección 10 ml oral"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Oralpet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "300 ml oral"
+    },
+    {
+      "medicamento_insumo": "Revitalice",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Bactroderm",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Vetmedin",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "5 mg"
+    },
+    {
+      "medicamento_insumo": "Dogg y Cat",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml inyectable"
+    },
+    {
+      "medicamento_insumo": "Quercetol-vet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 19.0,
+      "unidad": "ampollas",
+      "presentacion": "8mg / 2ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "1mg / ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:02:30.367379",
+    "duracion_segundos": 4.96,
+    "tokens_total": 3338
+  }
+}

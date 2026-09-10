@@ -1,0 +1,78 @@
+{
+  "archivo_imagen": "E-000105.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15-08-26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Quercetol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "30 mg"
+    },
+    {
+      "medicamento_insumo": "Electrolito Pet",
+      "cantidad": 3.0,
+      "unidad": "sobres",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Ungüento Verde VMT",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 g"
+    },
+    {
+      "medicamento_insumo": "Perosan",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "4 y 0.5 g"
+    },
+    {
+      "medicamento_insumo": "Piperacilina Tazobactam",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "1 g"
+    },
+    {
+      "medicamento_insumo": "Solución Antiséptica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "250 mg/5 ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "20 mg/ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "30 g"
+    },
+    {
+      "medicamento_insumo": "Perosen",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "14 g"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:20:04.296345",
+    "duracion_segundos": 3.65,
+    "tokens_entrada": 1372,
+    "tokens_salida": 548,
+    "tokens_total": 1920,
+    "costo_usd_estimado": 0.001165
+  }
+}

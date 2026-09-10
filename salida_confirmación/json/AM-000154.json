@@ -1,0 +1,132 @@
+{
+  "id_documento": "AM-000154",
+  "archivo_imagen": "AM-000154.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733039.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-051",
+  "fecha_documento_detectada": "18/8/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": "NANCY DIAZ",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Galgocal tabletas",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "600"
+    },
+    {
+      "medicamento_insumo": "Paracanis",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Canisand",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Rondel",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Placan",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Canipets",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "Puppy 5ml"
+    },
+    {
+      "medicamento_insumo": "Novacan",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "Top 10kg"
+    },
+    {
+      "medicamento_insumo": "Milpro",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "Gato"
+    },
+    {
+      "medicamento_insumo": "Pirarafen",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "440 mg"
+    },
+    {
+      "medicamento_insumo": "Total + Perro",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Sanix AH",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "300 ml"
+    },
+    {
+      "medicamento_insumo": "Sanimicon",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10 gr"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina jabón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "Jabón antiséptico"
+    },
+    {
+      "medicamento_insumo": "Pregabalina",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 15.0,
+      "unidad": "tabletas",
+      "presentacion": "500 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:08:34.691404",
+    "duracion_segundos": 4.48,
+    "tokens_total": 3002
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id_documento": "AV-000039",
+  "archivo_imagen": "AV-000039.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 39,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 13,
+  "personas": [
+    {
+      "nombre_completo": "Yorleydim Mosquera",
+      "organismo_entidad": "Independiente",
+      "telefono": "3122186020",
+      "correo_electronico": "docenteyorleydim@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Luisa Fernanda Bravo L.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3135446645",
+      "correo_electronico": "luisabravo1108@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Sofia Dumett Beretti",
+      "organismo_entidad": "Donación",
+      "telefono": "3134613210",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Eliana Giraldo",
+      "organismo_entidad": "Independiente",
+      "telefono": "3057520202",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Oscar Morales",
+      "organismo_entidad": "Independiente",
+      "telefono": "3182821569",
+      "correo_electronico": "ofmorales12@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Andres Moreno",
+      "organismo_entidad": "Independiente",
+      "telefono": "3128238176",
+      "correo_electronico": "agmoreno7@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Luz Adriana Moreno",
+      "organismo_entidad": "ANRU Health Group",
+      "telefono": "3164820044",
+      "correo_electronico": "adry-1206@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniel Marmalejo",
+      "organismo_entidad": "Estudiante",
+      "telefono": "3112497867",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ana Sofia Castro",
+      "organismo_entidad": "Estudiante",
+      "telefono": "3244578863",
+      "correo_electronico": "castroanasoft2@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Fabiola Morales G.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3105905632",
+      "correo_electronico": "fabidi2002@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Mayor",
+      "organismo_entidad": "Independiente",
+      "telefono": "3006889658",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jose Diaz",
+      "organismo_entidad": "Particular",
+      "telefono": "3244643942",
+      "correo_electronico": "jocdiazr@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Martha Velet",
+      "organismo_entidad": "Independiente",
+      "telefono": "3173797395",
+      "correo_electronico": "marcev24@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:01:33.436822",
+    "duracion_segundos": 7.12,
+    "tokens_total": 2643
+  }
+}

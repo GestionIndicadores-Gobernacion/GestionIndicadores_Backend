@@ -1,0 +1,116 @@
+{
+  "id_documento": "AE-000081",
+  "archivo_imagen": "AE-000081.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_113825_Drive.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "1.330.50",
+  "fecha_entrega": "2026-08-13",
+  "transportista_ruta": "SIN_NUMERO",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 5,
+    "total_perros_censo": 205,
+    "total_gatos_censo": 52,
+    "total_animales_censo": 254,
+    "total_alimento_perro_kg": 328.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 328.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Albergue Somosvoz",
+      "municipio": "",
+      "direccion": "El triunfo",
+      "telefono": "3116429889",
+      "censo": {
+        "perros": 90,
+        "gatos": 20,
+        "total_animales": 110
+      },
+      "alimento_entregado": {
+        "perro_kg": 124.0,
+        "gato_kg": 0.0,
+        "total_kg": 124.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Pasos de amor",
+      "municipio": "",
+      "direccion": "Zacarias",
+      "telefono": "3155111544",
+      "censo": {
+        "perros": 92,
+        "gatos": 0,
+        "total_animales": 92
+      },
+      "alimento_entregado": {
+        "perro_kg": 126.0,
+        "gato_kg": 0.0,
+        "total_kg": 126.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Yuli Diaz Molinari",
+      "municipio": "",
+      "direccion": "SIN_DIRECCION",
+      "telefono": "3188082175",
+      "censo": {
+        "perros": 12,
+        "gatos": 0,
+        "total_animales": 12
+      },
+      "alimento_entregado": {
+        "perro_kg": 8.0,
+        "gato_kg": 0.0,
+        "total_kg": 8.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Sandra Florez",
+      "municipio": "",
+      "direccion": "Cabal Pombo",
+      "telefono": "3104490137",
+      "censo": {
+        "perros": 0,
+        "gatos": 32,
+        "total_animales": 29
+      },
+      "alimento_entregado": {
+        "perro_kg": 60.0,
+        "gato_kg": 0.0,
+        "total_kg": 60.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Maria Dufay",
+      "municipio": "",
+      "direccion": "Independencia",
+      "telefono": "3053445325",
+      "censo": {
+        "perros": 11,
+        "gatos": 0,
+        "total_animales": 11
+      },
+      "alimento_entregado": {
+        "perro_kg": 10.0,
+        "gato_kg": 0.0,
+        "total_kg": 10.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:05:03.349534"
+  }
+}

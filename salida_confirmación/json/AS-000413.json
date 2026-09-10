@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000413",
+  "archivo_imagen": "AS-000413.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_043457047.jpg",
+  "fecha_lote": "2026-08-19",
+  "dia_agosto": 19,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-128",
+  "municipio": "Dagua",
+  "barrio_corregimiento_refugio": "El Queremal",
+  "autoriza_entrega": {
+    "nombre": "No especificado",
+    "cedula": "No especificado"
+  },
+  "recibe": {
+    "nombre": "Shwen Cortero",
+    "cedula": "1130629885"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 100.0,
+    "alimento_gato_kg": 16.0,
+    "total_alimento_seco_kg": 116.0,
+    "comida_humeda_perro_und": 200,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 200,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 30,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "kit medicamento",
+        "cantidad": 1.0,
+        "unidad": "kit"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:11:10.036930"
+  }
+}

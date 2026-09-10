@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000038",
+  "archivo_imagen": "AV-000038.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 38,
+  "fecha_detectada": "13/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Viviana Dávila",
+      "organismo_entidad": "Independiente",
+      "telefono": "3137644492",
+      "correo_electronico": "vivianadavilaportilla@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Karen Gaviria",
+      "organismo_entidad": "Independiente",
+      "telefono": "3183623613",
+      "correo_electronico": "karengaviria@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juan Camilo Fernández M.",
+      "organismo_entidad": "Pets & Friends-Zuluspets",
+      "telefono": "3154197772",
+      "correo_electronico": "petsufriends.shop@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Johanna Castro G.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3136247626",
+      "correo_electronico": "johagg1710@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Katheyne López",
+      "organismo_entidad": "Independiente",
+      "telefono": "3152998700",
+      "correo_electronico": "katheysusana@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Diana Pinto",
+      "organismo_entidad": "Independiente",
+      "telefono": "3153100192",
+      "correo_electronico": "dianapinto094@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Valentina Saa Cuartas",
+      "organismo_entidad": "Independiente",
+      "telefono": "3146433283",
+      "correo_electronico": "valentinas0957@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "M. Gómez Benavides",
+      "organismo_entidad": "Independiente",
+      "telefono": "3186421450",
+      "correo_electronico": "yulifer97@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Karol Marín",
+      "organismo_entidad": "Independiente",
+      "telefono": "3229238884",
+      "correo_electronico": "karolmarin887@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Leidy Brito",
+      "organismo_entidad": "Independiente",
+      "telefono": "3104583570",
+      "correo_electronico": "leidy-b22@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Camila Lenis",
+      "organismo_entidad": "Independiente",
+      "telefono": "3173694663",
+      "correo_electronico": "mlmarilena12@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Andrés Aragón",
+      "organismo_entidad": "Independiente",
+      "telefono": "3003532672",
+      "correo_electronico": "andresflenis@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juan Tobón",
+      "organismo_entidad": "Independiente",
+      "telefono": "3115845196",
+      "correo_electronico": "juan.sebas.2007@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jaime E. Pulgarín",
+      "organismo_entidad": "Independiente",
+      "telefono": "3154716107",
+      "correo_electronico": "jep73@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:01:25.536606",
+    "duracion_segundos": 5.55,
+    "tokens_total": 2780
+  }
+}

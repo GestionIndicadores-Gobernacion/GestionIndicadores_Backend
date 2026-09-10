@@ -1,0 +1,62 @@
+{
+  "id_documento": "AE-000077",
+  "archivo_imagen": "AE-000077.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_111627_Drive.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 2,
+    "total_perros_censo": 0,
+    "total_gatos_censo": 0,
+    "total_animales_censo": 0,
+    "total_alimento_perro_kg": 70.0,
+    "total_alimento_gato_kg": 10.0,
+    "total_alimento_general_kg": 80.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Maria luz apio",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3117556505",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 30.0,
+        "gato_kg": 0.0,
+        "total_kg": 30.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "José Divalier",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3012546184",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 40.0,
+        "gato_kg": 10.0,
+        "total_kg": 50.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:04:20.056099"
+  }
+}

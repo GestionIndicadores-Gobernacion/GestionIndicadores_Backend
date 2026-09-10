@@ -1,0 +1,132 @@
+{
+  "archivo_imagen": "E-000120.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Splidex oral",
+      "cantidad": 15.0,
+      "unidad": "frascos",
+      "presentacion": "20.7g"
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteína",
+      "cantidad": 6.0,
+      "unidad": "ampollas",
+      "presentacion": "300mg/3ml"
+    },
+    {
+      "medicamento_insumo": "Agujas",
+      "cantidad": 6.0,
+      "unidad": "cajas",
+      "presentacion": "100 unidades"
+    },
+    {
+      "medicamento_insumo": "Quinodiar Enrofloxacina",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Splidex",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Agua de tejido",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Povidin",
+      "cantidad": 9.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Suturas absorbibles",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "1000 176"
+    },
+    {
+      "medicamento_insumo": "Meloxicam oral",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Geta intravenosa",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Sello de Rinna",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.5%",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.5% inyectable",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Antifen tabletas",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "tabletas 20mg"
+    },
+    {
+      "medicamento_insumo": "Venda adhesiva",
+      "cantidad": 1.0,
+      "unidad": "rollo",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Dilipet oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Povidin antiséptico",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Genax-Otico",
+      "cantidad": 10.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:21:41.842632",
+    "duracion_segundos": 4.63,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1022,
+    "tokens_total": 2394,
+    "costo_usd_estimado": 0.001876
+  }
+}

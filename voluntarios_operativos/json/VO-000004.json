@@ -1,0 +1,128 @@
+{
+  "id_documento": "VO-000004",
+  "archivo_imagen": "VO-000004.jpg",
+  "archivo_origen": "WhatsApp Image 2026-08-20 at 9.16.43 PM (1).jpeg",
+  "tipo_documento": "VOLUNTARIOS_OPERATIVOS",
+  "fecha_detectada": "14 de agosto",
+  "lugar_o_sede": null,
+  "total_voluntarios_hoja": 14,
+  "voluntarios": [
+    {
+      "nombre_completo": "Melissa Henao",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "mañana 14 de agosto 12:00pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Gustavo Soto",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "mañana 14 de agosto 12:00pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Mariana Rojas",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "mañana 14 de agosto 12:00pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Samuel Henao",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "mañana 14 de agosto 12:00pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Jhon Marin",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "mañana 14 de agosto 12:00pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Sofia Florez",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "mañana 14 de agosto 12:00pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Nicolle Saavedra",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "mañana 2pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Sebastian Otalvaro",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "mañana 2pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Catalina Sanchez",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "2pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Isabella Arroyave",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "2pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Sergio Carrillo",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "2pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Juliana Castrillon",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "2pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Juan Pablo Urbina",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "12pm",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Juan Pablo Ramirez",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": null,
+      "disponibilidad_o_fecha": "7am",
+      "observaciones_o_firma": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:21:43.744076",
+    "duracion_segundos": 4.53,
+    "tokens_total": 2453
+  }
+}

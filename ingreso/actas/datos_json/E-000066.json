@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000066.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Hexaderm crema",
+      "cantidad": 1.0,
+      "unidad": "tubo",
+      "presentacion": "35 gr"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "1/30"
+    },
+    {
+      "medicamento_insumo": "Ketocol inyectable",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Clindamicina",
+      "cantidad": 16.0,
+      "unidad": "tabletas",
+      "presentacion": "300 mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 5.0,
+      "unidad": "tabletas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Pedicorten",
+      "cantidad": 0.0,
+      "unidad": "n/a",
+      "presentacion": "vencido"
+    },
+    {
+      "medicamento_insumo": "Acetilcisteína",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "300 mg/3 ml"
+    },
+    {
+      "medicamento_insumo": "Diramox L.A.",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "cantidad": 22.0,
+      "unidad": "tabletas",
+      "presentacion": "10 mg"
+    },
+    {
+      "medicamento_insumo": "Sustane Ultra",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2.5 ml"
+    },
+    {
+      "medicamento_insumo": "Sustane Ultra",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Vioxin 2.3%",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Ketobest",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.5%",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Aurotel",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Vioxin 2%",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60 gr"
+    },
+    {
+      "medicamento_insumo": "Gusantol NF",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Ixef 080",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Ciclopac",
+      "cantidad": 1.0,
+      "unidad": "tubo",
+      "presentacion": "15 gr"
+    },
+    {
+      "medicamento_insumo": "Dermomax",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.15%",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Neo IBP",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Galtika sutura",
+      "cantidad": 20.0,
+      "unidad": "cajas",
+      "presentacion": "c/u"
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:14:53.346107",
+    "duracion_segundos": 4.32,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1262,
+    "tokens_total": 2634,
+    "costo_usd_estimado": 0.002236
+  }
+}

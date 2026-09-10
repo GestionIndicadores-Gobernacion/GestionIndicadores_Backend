@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000178.jpg",
+  "fecha_lote": "2026-08-17",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "17/Ago/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "0.15% / 10ml"
+    },
+    {
+      "medicamento_insumo": "Suero oral",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "20mg / 50ml"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "cantidad": 1.0,
+      "unidad": "sobre",
+      "presentacion": "30mg / 10+"
+    },
+    {
+      "medicamento_insumo": "Alfa 3",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "topica"
+    },
+    {
+      "medicamento_insumo": "Polfen",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "2mg / 10tab"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Aminalite",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "100mg / 10ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 11.0,
+      "unidad": "unidades",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Oxitetraciclina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "300ml"
+    },
+    {
+      "medicamento_insumo": "Dihidrocodeina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "300mg"
+    },
+    {
+      "medicamento_insumo": "Fluimucil",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Suturas",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "Oral"
+    },
+    {
+      "medicamento_insumo": "Pondel",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "2-3.5kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard Spectra",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "75mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:29:25.176864",
+    "duracion_segundos": 4.79,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1134,
+    "tokens_total": 2506,
+    "costo_usd_estimado": 0.002044
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id_documento": "AV-000022",
+  "archivo_imagen": "AV-000022.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 22,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 13,
+  "personas": [
+    {
+      "nombre_completo": "Diego Alejandro Data",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3164508537",
+      "correo_electronico": "diego.data@desbigotes.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Julieta Fabbri",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3222344817",
+      "correo_electronico": "fabbrijulieta99@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Erika Valencia",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "320700848",
+      "correo_electronico": "erina.valencia1991@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "JOSE HADER ESPAÑA",
+      "organismo_entidad": "CIUDADANO",
+      "telefono": "3188449282",
+      "correo_electronico": "haddher@yahoo.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juan David Segura Bravo",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3164938443",
+      "correo_electronico": "Juandsegura10d@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Magdalena Junisa",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3002240478",
+      "correo_electronico": "magdazuma@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "DAMARIS ESCOBAR",
+      "organismo_entidad": "M",
+      "telefono": "3215576819",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "JACKSON MENDOZA",
+      "organismo_entidad": "SE EXTRA",
+      "telefono": "3245876819",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Claudia P. Bolaños",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "29705852",
+      "correo_electronico": "Clauchabolaños26@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "EFFETA Cali",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3226946805",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lady Cacali",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3143509889",
+      "correo_electronico": "Johnita1302@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jorge A. Pathe",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3185211023",
+      "correo_electronico": "joryeonpb@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Saray yoliana lópez S.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3033702723",
+      "correo_electronico": "saray.yolianalopez@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:59:41.508135",
+    "duracion_segundos": 5.67,
+    "tokens_total": 2622
+  }
+}

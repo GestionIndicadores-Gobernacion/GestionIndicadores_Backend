@@ -1,0 +1,27 @@
+{
+  "id_documento": "AM-000022",
+  "archivo_imagen": "AM-000022.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030906015.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-033",
+  "fecha_documento_detectada": "13/08/26",
+  "municipio_o_lugar": "Albergue",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Collar isabelino",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:54:39.611373",
+    "duracion_segundos": 3.19,
+    "tokens_total": 1976
+  }
+}

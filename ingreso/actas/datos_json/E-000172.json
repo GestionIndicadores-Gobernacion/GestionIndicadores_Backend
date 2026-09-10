@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000172.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/08/2016",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Complejo B",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "200ml"
+    },
+    {
+      "medicamento_insumo": "Colirio",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "2g"
+    },
+    {
+      "medicamento_insumo": "Lazarvet",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "200ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B oral",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Canipets",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Canipets VIT",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Ojo V",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Visioet",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Canatox NF",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Bestadem",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Orenda",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Sarna",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "140grs"
+    },
+    {
+      "medicamento_insumo": "Tears Lagrima",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "8ml"
+    },
+    {
+      "medicamento_insumo": "Champú",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "200ml"
+    },
+    {
+      "medicamento_insumo": "Hial",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "2,5ml"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "11,3mg"
+    },
+    {
+      "medicamento_insumo": "Earotic",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Oftalmoxyn",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxiproc",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Detoblas",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "1,5"
+    },
+    {
+      "medicamento_insumo": "Optive Funsion",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Insecticida SHPO",
+      "cantidad": 3.0,
+      "unidad": "tabletas",
+      "presentacion": "2 tabletas"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:27:36.041748",
+    "duracion_segundos": 8.76,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1140,
+    "tokens_total": 2512,
+    "costo_usd_estimado": 0.002053
+  }
+}

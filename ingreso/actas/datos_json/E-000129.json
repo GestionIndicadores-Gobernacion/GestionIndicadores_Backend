@@ -1,0 +1,96 @@
+{
+  "archivo_imagen": "E-000129.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/Agos/16",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Sello Heparina",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Acido Tranexamico",
+      "cantidad": 5.0,
+      "unidad": "ampolletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bicarbonato Sodio",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Hioscina",
+      "cantidad": 5.0,
+      "unidad": "ampolletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Hidrocortisona inyectable",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ondansetron",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 1.0,
+      "unidad": "ampolletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "cantidad": 5.0,
+      "unidad": "ampolletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 3.0,
+      "unidad": "ampolletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Atropina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:22:33.944055",
+    "duracion_segundos": 3.69,
+    "tokens_entrada": 1372,
+    "tokens_salida": 554,
+    "tokens_total": 1926,
+    "costo_usd_estimado": 0.001174
+  }
+}

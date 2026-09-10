@@ -1,0 +1,61 @@
+{
+  "id_documento": "AS-000631",
+  "archivo_imagen": "AS-000631.jpg",
+  "archivo_origen_escaneo": "20260827_182632.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Jamundí",
+  "barrio_corregimiento_refugio": "Paso de la Bolsa",
+  "autoriza_entrega": {
+    "nombre": "Lina Vega",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Adriano Guerrero C.",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 100.0,
+    "alimento_gato_kg": 300.0,
+    "total_alimento_seco_kg": 400.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 20.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 3,
+    "huacales_und": 0,
+    "collares_und": 2,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "guantes",
+        "cantidad": 1.0,
+        "unidad": "caja"
+      },
+      {
+        "articulo": "comida humeda",
+        "cantidad": 1.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "cepillo",
+        "cantidad": 1.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "guacal",
+        "cantidad": 1.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T19:04:18.533674"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000005",
+  "archivo_imagen": "AV-000005.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 5,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Vivian Gomez",
+      "organismo_entidad": "",
+      "telefono": "3156020508",
+      "correo_electronico": "vg884037@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Vivian Gomez"
+    },
+    {
+      "nombre_completo": "Isabela Ortiz",
+      "organismo_entidad": "",
+      "telefono": "3164405559",
+      "correo_electronico": "isabelamortizaborda@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Isabela O."
+    },
+    {
+      "nombre_completo": "Alexandra Lopez",
+      "organismo_entidad": "",
+      "telefono": "3245823703",
+      "correo_electronico": "alyondralopez@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Alexandra L."
+    },
+    {
+      "nombre_completo": "Juan David Fuentes",
+      "organismo_entidad": "",
+      "telefono": "3007071068",
+      "correo_electronico": "juandavidfuentes@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Juan David F."
+    },
+    {
+      "nombre_completo": "Karol Facundo",
+      "organismo_entidad": "",
+      "telefono": "3153602432",
+      "correo_electronico": "KarolFacundo13@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Karol Facundo"
+    },
+    {
+      "nombre_completo": "Martina Giraldo",
+      "organismo_entidad": "",
+      "telefono": "3217198706",
+      "correo_electronico": "martigiraldo07@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Martina Giraldo"
+    },
+    {
+      "nombre_completo": "Luisa B",
+      "organismo_entidad": "",
+      "telefono": "3103434544",
+      "correo_electronico": "luisabemudez05@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "LB"
+    },
+    {
+      "nombre_completo": "Sara",
+      "organismo_entidad": "",
+      "telefono": "3017368182",
+      "correo_electronico": "salartes@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Sara"
+    },
+    {
+      "nombre_completo": "Lisbeth Barco",
+      "organismo_entidad": "",
+      "telefono": "3154371151",
+      "correo_electronico": "lisbeth.barco@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Lisbeth Barco"
+    },
+    {
+      "nombre_completo": "Lina Maria Montilla",
+      "organismo_entidad": "",
+      "telefono": "3122206980",
+      "correo_electronico": "linacerrato2029@outlook.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Lina Maria Montilla"
+    },
+    {
+      "nombre_completo": "Sandra Solarte",
+      "organismo_entidad": "",
+      "telefono": "3003540176",
+      "correo_electronico": "sandraxsolartemartinez@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Sandra S."
+    },
+    {
+      "nombre_completo": "Maria Herrera",
+      "organismo_entidad": "",
+      "telefono": "3109137549",
+      "correo_electronico": "marianaherreramora2003@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "MH"
+    },
+    {
+      "nombre_completo": "Erik Ramirez",
+      "organismo_entidad": "",
+      "telefono": "3154762049",
+      "correo_electronico": "erikramirez@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Erik"
+    },
+    {
+      "nombre_completo": "Oscar Taramuel",
+      "organismo_entidad": "",
+      "telefono": "3156251193",
+      "correo_electronico": "oscar327oatu@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Oscar T."
+    },
+    {
+      "nombre_completo": "Tatiana Marin",
+      "organismo_entidad": "",
+      "telefono": "3160965278",
+      "correo_electronico": "tatimarinladina@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Tatiana M."
+    },
+    {
+      "nombre_completo": "Valentina Beltran",
+      "organismo_entidad": "",
+      "telefono": "3105575389",
+      "correo_electronico": "Moonblna@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Valentina Beltran"
+    },
+    {
+      "nombre_completo": "Daniela Perez",
+      "organismo_entidad": "",
+      "telefono": "3106568402",
+      "correo_electronico": "perez.daniela0927@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Daniela P."
+    },
+    {
+      "nombre_completo": "Ruth Arteaga",
+      "organismo_entidad": "",
+      "telefono": "3217537723",
+      "correo_electronico": "poetars21@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Ruth Arteaga"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:57:40.674335",
+    "duracion_segundos": 6.47,
+    "tokens_total": 3084
+  }
+}

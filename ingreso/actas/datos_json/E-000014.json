@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000014.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "8-13-26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Doloro",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": "10mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "8mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Petcell",
+      "cantidad": 20.0,
+      "unidad": "ml",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Hemocytan",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "340ml"
+    },
+    {
+      "medicamento_insumo": "Orenda",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Ocoxi",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "150ml"
+    },
+    {
+      "medicamento_insumo": "Yodopovidona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60mg"
+    },
+    {
+      "medicamento_insumo": "Aseptidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Syndet",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "240g"
+    },
+    {
+      "medicamento_insumo": "Dermocan",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Complemil",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Aurotel",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Eimatos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Aseptidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Weconex",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Iodolor",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Fisohex",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "230ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 14.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Iodine",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:05:09.809482",
+    "duracion_segundos": 5.37,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1067,
+    "tokens_total": 2439,
+    "costo_usd_estimado": 0.001943
+  }
+}

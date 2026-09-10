@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000068",
+  "archivo_imagen": "AS-000068.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030539014.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-024",
+  "municipio": "El Cairo",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Diego Geller",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Juan Carlos Garcia",
+    "cedula": "1147953166"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 150.0,
+    "alimento_gato_kg": 50.0,
+    "total_alimento_seco_kg": 200.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 10,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Recipientes",
+        "cantidad": 10.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Comida humeda",
+        "cantidad": 100.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:36:55.239457"
+  }
+}

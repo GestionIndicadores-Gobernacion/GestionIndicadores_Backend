@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000047.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Aguja hipodérmica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "x 300"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 19.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "x 500 ml"
+    },
+    {
+      "medicamento_insumo": "Jabón estéril",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Cánula plásticas",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapa heparinizada",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Termómetro",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Caja sutura",
+      "cantidad": 12.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 4.0,
+      "unidad": "cajas",
+      "presentacion": "x 50"
+    },
+    {
+      "medicamento_insumo": "Guante",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Catéter de silicón",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "x 10"
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "cantidad": 1.0,
+      "unidad": "litros",
+      "presentacion": "1L"
+    },
+    {
+      "medicamento_insumo": "Platos comedores",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bolsas plásticas",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa no tejida",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda algodón",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:13:12.412647",
+    "duracion_segundos": 4.11,
+    "tokens_entrada": 1372,
+    "tokens_salida": 941,
+    "tokens_total": 2313,
+    "costo_usd_estimado": 0.001754
+  }
+}

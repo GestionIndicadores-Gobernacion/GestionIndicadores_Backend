@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000636",
+  "archivo_imagen": "AS-000636.jpg",
+  "archivo_origen_escaneo": "20260827_182717.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Jamundí",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Valeria Candela",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Didier Olwany Gil",
+    "cedula": ""
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 400.0,
+    "alimento_gato_kg": 100.0,
+    "total_alimento_seco_kg": 500.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 20.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Bolsa de arena gatos",
+        "cantidad": 5.0,
+        "unidad": "bolsa"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T19:04:41.878116"
+  }
+}

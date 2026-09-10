@@ -1,0 +1,108 @@
+{
+  "archivo_imagen": "E-000165.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16 Agos 2026",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "10 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 7.0,
+      "unidad": "sobres",
+      "presentacion": "16 mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 9.0,
+      "unidad": "cajas",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 7.0,
+      "unidad": "sobres",
+      "presentacion": "1000 mg"
+    },
+    {
+      "medicamento_insumo": "Itraconazol",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Acido poliglicolico",
+      "cantidad": 16.0,
+      "unidad": "suturas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Algicam",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "10 comprimidos"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "1.5 ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "1 ml"
+    },
+    {
+      "medicamento_insumo": "Metodix",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Tramic-V",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Lagrimas artificiales",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "15 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:26:52.430274",
+    "duracion_segundos": 4.15,
+    "tokens_entrada": 1372,
+    "tokens_salida": 785,
+    "tokens_total": 2157,
+    "costo_usd_estimado": 0.00152
+  }
+}

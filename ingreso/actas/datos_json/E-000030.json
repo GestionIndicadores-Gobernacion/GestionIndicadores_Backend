@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000030.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dexmedetomidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2 ml"
+    },
+    {
+      "medicamento_insumo": "Ecodic",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 38.0,
+      "unidad": "unidades",
+      "presentacion": "50 mg/1 ml"
+    },
+    {
+      "medicamento_insumo": "Vetoquinol",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Nebulizador portátil",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Balanza digital",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pelunos",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "8 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "75 mg/3 ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "1 g/2 ml"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "cantidad": 60.0,
+      "unidad": "unidades",
+      "presentacion": "40 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2% / 10 ml"
+    },
+    {
+      "medicamento_insumo": "Colirio",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "200"
+    },
+    {
+      "medicamento_insumo": "Apetil",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10% / 100 ml"
+    },
+    {
+      "medicamento_insumo": "Hemavet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Visivet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250 mg/5 ml"
+    },
+    {
+      "medicamento_insumo": "Neo 18p",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "300 ml"
+    },
+    {
+      "medicamento_insumo": "Tranqui Pets",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Dermosyn",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:06:47.789845",
+    "duracion_segundos": 4.47,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1230,
+    "tokens_total": 2602,
+    "costo_usd_estimado": 0.002188
+  }
+}

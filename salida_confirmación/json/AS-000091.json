@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000091",
+  "archivo_imagen": "AS-000091.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030539037.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Diego Cedeño",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Luz Adriana Moreno",
+    "cedula": "1107069142"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 20.0,
+    "alimento_gato_kg": 20.0,
+    "total_alimento_seco_kg": 40.0,
+    "comida_humeda_perro_und": 16,
+    "comida_humeda_gato_und": 12,
+    "comida_humeda_total_und": 28,
+    "arena_kg": 20.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 1,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Arena",
+        "cantidad": 20.0,
+        "unidad": "kg"
+      },
+      {
+        "articulo": "Collares",
+        "cantidad": 1.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:39:02.966099"
+  }
+}

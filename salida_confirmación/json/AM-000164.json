@@ -1,0 +1,34 @@
+{
+  "id_documento": "AM-000164",
+  "archivo_imagen": "AM-000164.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733049.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-055",
+  "fecha_documento_detectada": "18/08/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Diana Perez",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Latas A/D",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Desparasitante interno",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:09:42.615188",
+    "duracion_segundos": 2.31,
+    "tokens_total": 2038
+  }
+}

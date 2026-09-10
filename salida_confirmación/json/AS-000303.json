@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000303",
+  "archivo_imagen": "AS-000303.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041523.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A043",
+  "municipio": "El Cairo",
+  "barrio_corregimiento_refugio": "Argelia",
+  "autoriza_entrega": {
+    "nombre": "Diego Gaitan",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Carlos Suarez",
+    "cedula": "1144098234"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 800.0,
+    "alimento_gato_kg": 200.0,
+    "total_alimento_seco_kg": 1000.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 2,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "kit",
+        "cantidad": 2.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:59:39.754241"
+  }
+}

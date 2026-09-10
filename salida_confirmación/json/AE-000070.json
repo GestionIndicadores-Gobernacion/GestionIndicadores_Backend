@@ -1,0 +1,62 @@
+{
+  "id_documento": "AE-000070",
+  "archivo_imagen": "AE-000070.jpg",
+  "archivo_origen_escaneo": "IMG-20260828-WA0008.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-20",
+  "transportista_ruta": "No especificado",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 2,
+    "total_perros_censo": 0,
+    "total_gatos_censo": 0,
+    "total_animales_censo": 0,
+    "total_alimento_perro_kg": 0.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 0.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "María Luisa Villarreal",
+      "municipio": "Yotoco",
+      "direccion": "",
+      "telefono": "3218402557",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Cantidad reportada en planilla como 5 x 30kg con total de 200kg"
+    },
+    {
+      "nombre_fundacion": "Heysen Constanza Lozada",
+      "municipio": "Yotoco",
+      "direccion": "",
+      "telefono": "3152653849",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Cantidad reportada en planilla como 5 x 30kg con total de 200kg"
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimentos en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": false,
+    "fecha_procesamiento": "2026-09-01T12:03:04.882026"
+  }
+}

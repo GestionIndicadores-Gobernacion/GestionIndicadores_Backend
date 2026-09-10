@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000173.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/08/2026",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 8.0,
+      "unidad": "tabletas",
+      "presentacion": "1000mg"
+    },
+    {
+      "medicamento_insumo": "Meloxivet oral",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Sanipic topico",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno inv",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Etoricoxib",
+      "cantidad": 3.0,
+      "unidad": "tabletas",
+      "presentacion": "14/90mg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "3.5-7.5kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "9.5-15kg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 12.0,
+      "unidad": "tabletas",
+      "presentacion": "2mg/10ta"
+    },
+    {
+      "medicamento_insumo": "Bonavit oral",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Claupet S. oral",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Liv.52",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 9.0,
+      "unidad": "frascos",
+      "presentacion": "50ml/2%"
+    },
+    {
+      "medicamento_insumo": "Canipet's puppy",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "1L"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 4.0,
+      "unidad": "tabletas",
+      "presentacion": "11-22kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "5.5-11kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "22-45kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "2.5-5.5kg"
+    },
+    {
+      "medicamento_insumo": "Agrikova",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "500mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:27:42.359925",
+    "duracion_segundos": 5.31,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1069,
+    "tokens_total": 2441,
+    "costo_usd_estimado": 0.001947
+  }
+}

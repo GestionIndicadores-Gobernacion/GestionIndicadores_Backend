@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000122.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Meloxicam 2%",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona inyectable",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina gluconato",
+      "cantidad": 1.0,
+      "unidad": "litro",
+      "presentacion": "1 litro"
+    },
+    {
+      "medicamento_insumo": "Isodine",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Butosol (yodo)",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B12",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "4 litros"
+    },
+    {
+      "medicamento_insumo": "Ixer 080 antiséptico",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "caja x 50 unidades"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno inyectable",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Asuntol jabón",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "100g"
+    },
+    {
+      "medicamento_insumo": "Gasas no estériles",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": "1x1/2"
+    },
+    {
+      "medicamento_insumo": "Complejo B",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Jabón",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "90g"
+    },
+    {
+      "medicamento_insumo": "Gasas estériles",
+      "cantidad": 2.0,
+      "unidad": "sobres",
+      "presentacion": "12 sobres"
+    },
+    {
+      "medicamento_insumo": "Curatox oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin antiséptico",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Pedicun suspensión oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Panlog pomada",
+      "cantidad": 2.0,
+      "unidad": "tubos",
+      "presentacion": "15ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:21:53.143561",
+    "duracion_segundos": 5.21,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1064,
+    "tokens_total": 2436,
+    "costo_usd_estimado": 0.001939
+  }
+}

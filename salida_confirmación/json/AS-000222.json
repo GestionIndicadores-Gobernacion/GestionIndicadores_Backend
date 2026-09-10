@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000222",
+  "archivo_imagen": "AS-000222.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031900031.jpg",
+  "fecha_lote": "2026-08-15",
+  "dia_agosto": 15,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-009",
+  "municipio": "Florida",
+  "barrio_corregimiento_refugio": "El Chocó",
+  "autoriza_entrega": {
+    "nombre": "Cesar Varela",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Doly Corone",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 0.0,
+    "alimento_gato_kg": 0.0,
+    "total_alimento_seco_kg": 0.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "medicamentos e insumos",
+        "cantidad": 12.0,
+        "unidad": "hojas"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:51:54.062408"
+  }
+}

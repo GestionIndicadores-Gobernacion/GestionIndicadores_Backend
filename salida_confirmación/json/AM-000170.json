@@ -1,0 +1,167 @@
+{
+  "id_documento": "AM-000170",
+  "archivo_imagen": "AM-000170.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733055.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-058",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": null,
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Solución Antiséptica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Esencia Floral",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Multivitamínico",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Gaza Protector",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Oxitetraciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Lágrimas Artificiales",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Desodorizante",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Dextrosa",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "bolsa",
+      "presentacion": "40 ml"
+    },
+    {
+      "medicamento_insumo": "Shampoo Neutro",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "19.5 g"
+    },
+    {
+      "medicamento_insumo": "Protector",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "500 g"
+    },
+    {
+      "medicamento_insumo": "Jabón Barra",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "210 ml"
+    },
+    {
+      "medicamento_insumo": "Dimosyn",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "200 ml"
+    },
+    {
+      "medicamento_insumo": "Antiséptico",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Cetexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 20.0,
+      "unidad": "ampollas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Antiinflamatorio",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Piperacilina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "420 ml"
+    },
+    {
+      "medicamento_insumo": "Pomada",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "tubos",
+      "presentacion": "75 mg"
+    },
+    {
+      "medicamento_insumo": "Sanider",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Kit Disección",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "kit",
+      "presentacion": "40 g"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:10:16.960442",
+    "duracion_segundos": 5.12,
+    "tokens_total": 3308
+  }
+}

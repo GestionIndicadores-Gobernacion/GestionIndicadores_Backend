@@ -1,0 +1,118 @@
+{
+  "id_documento": "AM-000187",
+  "archivo_imagen": "AM-000187.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_070156.jpg",
+  "fecha_lote": "2026-08-20",
+  "dia_agosto": 20,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-310",
+  "fecha_documento_detectada": "20/08/26",
+  "municipio_o_lugar": null,
+  "autoriza_nombre": null,
+  "recibe_nombre": "Ana Maria G.R.",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 16.0,
+      "unidad": "unidades",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina Spray",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 80.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter azul",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 56.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Caja tapabocas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 12.0,
+      "unidad": "cajas",
+      "presentacion": "x 50"
+    },
+    {
+      "medicamento_insumo": "Caja aguja",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "cajas",
+      "presentacion": "23G x 1"
+    },
+    {
+      "medicamento_insumo": "Pañitos húmedos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 600.0,
+      "unidad": "unidades",
+      "presentacion": "3ml x 100"
+    },
+    {
+      "medicamento_insumo": "Caja cuchilla quirúrgica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda coban",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes látex",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 12.0,
+      "unidad": "pares",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bolsa solución salina",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 10.0,
+      "unidad": "bolsas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 13.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Talmosyn",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:12:59.235821",
+    "duracion_segundos": 4.88,
+    "tokens_total": 2771
+  }
+}

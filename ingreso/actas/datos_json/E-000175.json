@@ -1,0 +1,120 @@
+{
+  "archivo_imagen": "E-000175.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/08/2026",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 3.0,
+      "unidad": "blister",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 8.0,
+      "unidad": "blister",
+      "presentacion": "25-50kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 6.0,
+      "unidad": "tabletas",
+      "presentacion": "4-10kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 4.0,
+      "unidad": "tabletas",
+      "presentacion": "22-45kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 4.0,
+      "unidad": "tabletas",
+      "presentacion": "10-25kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 3.0,
+      "unidad": "tabletas",
+      "presentacion": "2-4kg"
+    },
+    {
+      "medicamento_insumo": "Verdemax",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "50g"
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "110ml"
+    },
+    {
+      "medicamento_insumo": "Limpiador de oídos",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Alpiel crema",
+      "cantidad": 2.0,
+      "unidad": "tubos",
+      "presentacion": "15g"
+    },
+    {
+      "medicamento_insumo": "Propofol",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Cedelo",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "22-45kg"
+    },
+    {
+      "medicamento_insumo": "Betametasona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Suplementos",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Electrolitos",
+      "cantidad": 1.0,
+      "unidad": "bolsa",
+      "presentacion": "500ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:27:53.053140",
+    "duracion_segundos": 4.29,
+    "tokens_entrada": 1372,
+    "tokens_salida": 875,
+    "tokens_total": 2247,
+    "costo_usd_estimado": 0.001656
+  }
+}

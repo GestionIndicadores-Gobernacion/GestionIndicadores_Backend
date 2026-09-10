@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000012",
+  "archivo_imagen": "AV-000012.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 12,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Cristhian Isaza",
+      "organismo_entidad": "Particular",
+      "telefono": "3179400453",
+      "correo_electronico": "cristian.273@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Letizia Campo",
+      "organismo_entidad": "Particular",
+      "telefono": "3205526202",
+      "correo_electronico": "letiziacampo00@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Valeria Ruiz",
+      "organismo_entidad": "Particular",
+      "telefono": "3168974273",
+      "correo_electronico": "valericvrm@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Adward Rincon",
+      "organismo_entidad": "Particular",
+      "telefono": "3168983113",
+      "correo_electronico": "ajrincon95@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Alejandra Carrillo G.",
+      "organismo_entidad": "Particular",
+      "telefono": "3212425646",
+      "correo_electronico": "aalejandracarrillo@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniel Rojas",
+      "organismo_entidad": "Particular",
+      "telefono": "3003020320",
+      "correo_electronico": "rdaniel.felipe99@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Shanelly Gamarra",
+      "organismo_entidad": "Particular",
+      "telefono": "3235854971",
+      "correo_electronico": "sgamarraaristizabal@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Jose Neira Cortes",
+      "organismo_entidad": "Particular",
+      "telefono": "3177952620",
+      "correo_electronico": "majoseneiracortes@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Angie Carolina Munoz Nieto",
+      "organismo_entidad": "Particular",
+      "telefono": "3184434580",
+      "correo_electronico": "caromunozn99@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Isabela Cruz Osorio",
+      "organismo_entidad": "Particular",
+      "telefono": "3004307180",
+      "correo_electronico": "isacoral99@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ivan Beltran",
+      "organismo_entidad": "Particular",
+      "telefono": "321730020",
+      "correo_electronico": "wonjoana1989@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ivan Beltran",
+      "organismo_entidad": "Particular",
+      "telefono": "3166835574",
+      "correo_electronico": "ivandariobeltran@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Catalina Coral",
+      "organismo_entidad": "Particular",
+      "telefono": "3013450748",
+      "correo_electronico": "catacoral0108@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Betty Rodriguez",
+      "organismo_entidad": "Particular",
+      "telefono": "3157266013",
+      "correo_electronico": "bettyr23@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Estefania Lucero R.",
+      "organismo_entidad": "Particular",
+      "telefono": "3143744125",
+      "correo_electronico": "estefaniaritos@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Nicolas Diaz A.",
+      "organismo_entidad": "Particular",
+      "telefono": "3147062977",
+      "correo_electronico": "nidiazar2000@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Oscar Brand Betancourt",
+      "organismo_entidad": "Particular",
+      "telefono": "3206454484",
+      "correo_electronico": "oscarbrand2000@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Angelo Ruiz De la Cuesta",
+      "organismo_entidad": "Particular",
+      "telefono": "3226615157",
+      "correo_electronico": "stevendelacuesta@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:58:33.205740",
+    "duracion_segundos": 7.91,
+    "tokens_total": 3138
+  }
+}

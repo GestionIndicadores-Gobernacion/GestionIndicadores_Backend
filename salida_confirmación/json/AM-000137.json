@@ -1,0 +1,125 @@
+{
+  "id_documento": "AM-000137",
+  "archivo_imagen": "AM-000137.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733022.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-047",
+  "fecha_documento_detectada": "16/09/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Solución saborizada 5-toy vainilla",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "270g"
+    },
+    {
+      "medicamento_insumo": "Miel de rosas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Canforte 28E",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Hemolitan",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "180g"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Polvo para reconstituir oral",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Ácido poliglicólico",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jabón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Electrolítico",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 4.0,
+      "unidad": "bolsas",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Gastrivet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol inyectable",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Rondel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "38 ml"
+    },
+    {
+      "medicamento_insumo": "Mieltertos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 30.0,
+      "unidad": "ampollas",
+      "presentacion": "8mg/2ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:06:45.348619",
+    "duracion_segundos": 4.21,
+    "tokens_total": 2929
+  }
+}

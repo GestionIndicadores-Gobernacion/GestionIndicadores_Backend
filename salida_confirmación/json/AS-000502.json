@@ -1,0 +1,57 @@
+{
+  "archivo_imagen": "AS-000502.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_053303004.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Diego Cedeño"
+  },
+  "barrio_corregimiento_refugio": "Universidad del Valle",
+  "codigo_acta_vinculante": "A-412",
+  "datos_alimentos": {
+    "alimento_gato_kg": 50,
+    "alimento_perro_kg": 60,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "kit de aseo",
+        "cantidad": 1,
+        "unidad": "kit"
+      },
+      {
+        "articulo": "kit medicamentos",
+        "cantidad": 1,
+        "unidad": "kit"
+      },
+      {
+        "articulo": "humeda",
+        "cantidad": 100,
+        "unidad": "und"
+      }
+    ],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 110
+  },
+  "dia_agosto": 22,
+  "fecha_lote": "2026-08-22",
+  "id_documento": "AS-000502",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:38:27.297167"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "1.440.460.96",
+    "nombre": "Falon Aguirre"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

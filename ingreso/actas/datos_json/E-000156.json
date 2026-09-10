@@ -1,0 +1,174 @@
+{
+  "archivo_imagen": "E-000156.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Tapetes absorbentes",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Toallas húmedas",
+      "cantidad": 1.0,
+      "unidad": "paquete",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Parche lidocaína",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Detcell",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Anclofenco Dvp",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "x 10"
+    },
+    {
+      "medicamento_insumo": "Dilexine",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "300 x 14"
+    },
+    {
+      "medicamento_insumo": "Caniforte",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Metronid",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "250 mg"
+    },
+    {
+      "medicamento_insumo": "Baño seco",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Electrolítica",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "350 ml x 10"
+    },
+    {
+      "medicamento_insumo": "Tranquipets",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Esparadrapo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pipetas",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Completand B12",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Diclofenaco inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "75 mg"
+    },
+    {
+      "medicamento_insumo": "Glicoxn",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Allerbey",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5 mg"
+    },
+    {
+      "medicamento_insumo": "Pulop",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "tópico"
+    },
+    {
+      "medicamento_insumo": "Jabón",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "splash"
+    },
+    {
+      "medicamento_insumo": "Pomada dermice",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Hidratante pulpos",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Fibrinexme",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "tebl"
+    },
+    {
+      "medicamento_insumo": "Dexametasona inyectable",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:25:58.474869",
+    "duracion_segundos": 4.42,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1177,
+    "tokens_total": 2549,
+    "costo_usd_estimado": 0.002109
+  }
+}

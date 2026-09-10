@@ -1,0 +1,116 @@
+{
+  "id_documento": "AE-000085",
+  "archivo_imagen": "AE-000085.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_113855_Drive.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 5,
+    "total_perros_censo": 363,
+    "total_gatos_censo": 130,
+    "total_animales_censo": 493,
+    "total_alimento_perro_kg": 2100.0,
+    "total_alimento_gato_kg": 550.0,
+    "total_alimento_general_kg": 2650.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Martha Janeth Hincapie",
+      "municipio": "Buenaventura",
+      "direccion": "Zocorros Dagua",
+      "telefono": "3155111544",
+      "censo": {
+        "perros": 100,
+        "gatos": 0,
+        "total_animales": 100
+      },
+      "alimento_entregado": {
+        "perro_kg": 500.0,
+        "gato_kg": 0.0,
+        "total_kg": 500.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Manuela Sanchez",
+      "municipio": "Buenaventura",
+      "direccion": "Triunfo",
+      "telefono": "3116429889",
+      "censo": {
+        "perros": 90,
+        "gatos": 20,
+        "total_animales": 110
+      },
+      "alimento_entregado": {
+        "perro_kg": 300.0,
+        "gato_kg": 150.0,
+        "total_kg": 450.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Rita",
+      "municipio": "Buenaventura",
+      "direccion": "Santa Fe Calle 8 24-49",
+      "telefono": "3222462076",
+      "censo": {
+        "perros": 53,
+        "gatos": 0,
+        "total_animales": 53
+      },
+      "alimento_entregado": {
+        "perro_kg": 300.0,
+        "gato_kg": 0.0,
+        "total_kg": 300.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Zulma Franco",
+      "municipio": "Buenaventura",
+      "direccion": "Barrio 10 Granja 24",
+      "telefono": "3207441193",
+      "censo": {
+        "perros": 120,
+        "gatos": 110,
+        "total_animales": 230
+      },
+      "alimento_entregado": {
+        "perro_kg": 200.0,
+        "gato_kg": 200.0,
+        "total_kg": 400.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Alcaldia",
+      "municipio": "Buenaventura",
+      "direccion": "SIN_INFORMACION",
+      "telefono": "SIN_INFORMACION",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 800.0,
+        "gato_kg": 200.0,
+        "total_kg": 1000.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:05:48.071851"
+  }
+}

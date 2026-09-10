@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000213",
+  "archivo_imagen": "AS-000213.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031900022.jpg",
+  "fecha_lote": "2026-08-15",
+  "dia_agosto": 15,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-004",
+  "municipio": "Tuluá",
+  "barrio_corregimiento_refugio": "Acopio",
+  "autoriza_entrega": {
+    "nombre": "Diego Cerbero",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Selmar Martinez",
+    "cedula": "1010228067"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 1500.0,
+    "alimento_gato_kg": 500.0,
+    "total_alimento_seco_kg": 2000.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 1010,
+    "comida_humeda_total_und": 1010,
+    "arena_kg": 0.0,
+    "areneros_und": 20,
+    "camas_und": 30,
+    "cobijas_und": 0,
+    "recipientes_und": 50,
+    "huacales_und": 10,
+    "collares_und": 60,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:51:01.258713"
+  }
+}

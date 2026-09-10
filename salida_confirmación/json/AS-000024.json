@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000024",
+  "archivo_imagen": "AS-000024.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030001022.jpg",
+  "fecha_lote": "2026-08-12",
+  "dia_agosto": 12,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Cali - Oriente",
+  "autoriza_entrega": {
+    "nombre": "Diego Fdo Gaviria",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Brenda Serrano",
+    "cedula": "1144138961"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 30.0,
+    "alimento_gato_kg": 50.0,
+    "total_alimento_seco_kg": 80.0,
+    "comida_humeda_perro_und": 10,
+    "comida_humeda_gato_und": 10,
+    "comida_humeda_total_und": 20,
+    "arena_kg": 15.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 5,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:32:33.283611"
+  }
+}

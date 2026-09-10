@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000045.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 Agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Bobinas alcohol",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "caja x 24"
+    },
+    {
+      "medicamento_insumo": "Jeringa 2ml",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "caja x 100"
+    },
+    {
+      "medicamento_insumo": "Esparadrapo tipo tela",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Leukoplast",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa antiadherente",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda elástica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa no tejida",
+      "cantidad": 1.0,
+      "unidad": "paquetes",
+      "presentacion": "x 12"
+    },
+    {
+      "medicamento_insumo": "Clotrimazol",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bolsa para desechos",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tabacos",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Jeringa hipodérmica",
+      "cantidad": 19.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Intracath",
+      "cantidad": 25.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Equipo administración solución",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Caja catéter intravenoso",
+      "cantidad": 9.0,
+      "unidad": "cajas",
+      "presentacion": "grandes"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapetes absorbentes",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas antiadherente",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Fardos de gasas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:13:01.436969",
+    "duracion_segundos": 4.33,
+    "tokens_entrada": 1372,
+    "tokens_salida": 995,
+    "tokens_total": 2367,
+    "costo_usd_estimado": 0.001835
+  }
+}

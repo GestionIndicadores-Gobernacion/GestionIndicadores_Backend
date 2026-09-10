@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000338",
+  "archivo_imagen": "AS-000338.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041523034.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A055",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Miamiau suites",
+  "autoriza_entrega": {
+    "nombre": "Diego Cardenas",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Diana Perez",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 0.0,
+    "alimento_gato_kg": 0.0,
+    "total_alimento_seco_kg": 0.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 50.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Alimento A/D",
+        "cantidad": 18.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Desparasitante",
+        "cantidad": 2.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:03:39.680992"
+  }
+}

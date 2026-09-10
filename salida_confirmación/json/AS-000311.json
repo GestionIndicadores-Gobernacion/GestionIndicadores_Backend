@@ -1,0 +1,47 @@
+{
+  "archivo_imagen": "AS-000311.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041523007.jpg",
+  "autoriza_entrega": {
+    "cedula": "No especificada",
+    "nombre": "Diego Cuellar"
+  },
+  "barrio_corregimiento_refugio": "Fundación Mercurio",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 90,
+    "alimento_perro_kg": 90,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Alimento",
+        "cantidad": 30,
+        "unidad": "kg"
+      }
+    ],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 180
+  },
+  "dia_agosto": 18,
+  "fecha_lote": "2026-08-18",
+  "id_documento": "AS-000311",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:00:29.844231"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "No especificada",
+    "nombre": "Carolina Diana"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

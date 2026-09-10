@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000027.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Sutura Chromic Cat 3.0",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Hojas de bisturí",
+      "cantidad": 28.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Trazidex 3ml optico",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Hioscina 20ml 1ml",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona 4mg 1ml",
+      "cantidad": 7.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Epiotic 100ml",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dipirona sódica 2ml",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Furosemida 20mg/2ml",
+      "cantidad": 15.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dexametasona 8mg/10ml",
+      "cantidad": 16.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tramadol 50mg/1ml",
+      "cantidad": 18.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Adrenalina 1mg 1ml",
+      "cantidad": 16.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Complejo B",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Metilprednisolona 500mg",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lidocaína clorhidrato 10ml",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Diclofenaco sódico 75mg x 3ml",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Psicaina 20mg",
+      "cantidad": 19.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Hial Tears 0.4%",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sophixin 0.3% 5ml",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ofta-200 10ml",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Orthabracin D",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Splash Tears 15ml",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Trazidex 3.5g",
+      "cantidad": 1.0,
+      "unidad": "tubo",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Trobafotal 0.3% 5ml",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Landax 0.5% 25ml",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:06:27.678547",
+    "duracion_segundos": 4.83,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1104,
+    "tokens_total": 2476,
+    "costo_usd_estimado": 0.001999
+  }
+}

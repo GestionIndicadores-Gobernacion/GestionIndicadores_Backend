@@ -1,0 +1,44 @@
+{
+  "id_documento": "AE-000048",
+  "archivo_imagen": "AE-000048.jpg",
+  "archivo_origen_escaneo": "20260901_110650.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 1,
+    "total_perros_censo": 1080,
+    "total_gatos_censo": 420,
+    "total_animales_censo": 1500,
+    "total_alimento_perro_kg": 1000.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 1000.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Sebastian Cardona",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "SIN_INFORMACION",
+      "telefono": "3135146227",
+      "censo": {
+        "perros": 1080,
+        "gatos": 420,
+        "total_animales": 1500
+      },
+      "alimento_entregado": {
+        "perro_kg": 1000.0,
+        "gato_kg": 0.0,
+        "total_kg": 1000.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_INFORMACION"
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T11:58:53.538589"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "archivo_imagen": "E-000020.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Veldemint",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": "30 g"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Bisoft",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Edo Alsa",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "100 g"
+    },
+    {
+      "medicamento_insumo": "Ungüento",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "120 g"
+    },
+    {
+      "medicamento_insumo": "Sulfadiazina de plata",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Ut Balance (pastas)",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 36.0,
+      "unidad": "unidades",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "cantidad": 35.0,
+      "unidad": "unidades",
+      "presentacion": "40 mg"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 56.0,
+      "unidad": "unidades",
+      "presentacion": "2 ml"
+    },
+    {
+      "medicamento_insumo": "Compleand",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Renalet",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "150 ml"
+    },
+    {
+      "medicamento_insumo": "Asbrip",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "150 ml"
+    },
+    {
+      "medicamento_insumo": "Pezonil",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "40 g"
+    },
+    {
+      "medicamento_insumo": "Nature",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "frasco"
+    },
+    {
+      "medicamento_insumo": "Agua estéril",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Meloximax",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "1 mg"
+    },
+    {
+      "medicamento_insumo": "Naproxeno",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Descense Vet",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Moxar",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "5 mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:05:45.672144",
+    "duracion_segundos": 5.38,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1022,
+    "tokens_total": 2394,
+    "costo_usd_estimado": 0.001876
+  }
+}

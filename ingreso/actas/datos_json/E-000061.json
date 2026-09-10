@@ -1,0 +1,42 @@
+{
+  "archivo_imagen": "E-000061.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "8-14-24",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Juguetes para perro",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Platos para perro",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gacales",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Collares",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:14:28.106329",
+    "duracion_segundos": 3.22,
+    "tokens_entrada": 1372,
+    "tokens_salida": 199,
+    "tokens_total": 1571,
+    "costo_usd_estimado": 0.000642
+  }
+}

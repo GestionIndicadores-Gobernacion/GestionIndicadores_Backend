@@ -1,0 +1,44 @@
+{
+  "id_documento": "AE-000090",
+  "archivo_imagen": "AE-000090.jpg",
+  "archivo_origen_escaneo": "20260901_110626.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "No especificado",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 1,
+    "total_perros_censo": 15,
+    "total_gatos_censo": 8,
+    "total_animales_censo": 23,
+    "total_alimento_perro_kg": 0.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 0.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Omorio",
+      "municipio": "No especificado",
+      "direccion": "cll 4 # 50-8",
+      "telefono": "311 3324351",
+      "censo": {
+        "perros": 15,
+        "gatos": 8,
+        "total_animales": 23
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:06:40.112104"
+  }
+}

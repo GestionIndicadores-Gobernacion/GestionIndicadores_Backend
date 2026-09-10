@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000106.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "N-Acetilcisteína",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pirapraten",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "Sewful",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "20ml inyectable"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 4.0,
+      "unidad": "bolsas",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "1L"
+    },
+    {
+      "medicamento_insumo": "Restaderm",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Vioxin",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Ixer",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "080 60ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": ">10-20kg"
+    },
+    {
+      "medicamento_insumo": "Fibrinexan",
+      "cantidad": 10.0,
+      "unidad": "pastillas",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Clavaseptin",
+      "cantidad": 4.0,
+      "unidad": "pastillas",
+      "presentacion": "250mg"
+    },
+    {
+      "medicamento_insumo": "Clavaseptin",
+      "cantidad": 10.0,
+      "unidad": "pastillas",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Pezosen-N",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "220g"
+    },
+    {
+      "medicamento_insumo": "Klinadina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "1L"
+    },
+    {
+      "medicamento_insumo": "Ponccina",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2% 20ml"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 3.0,
+      "unidad": "pastillas",
+      "presentacion": "450mg"
+    },
+    {
+      "medicamento_insumo": "Metromid",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "250mg"
+    },
+    {
+      "medicamento_insumo": "Trihepat",
+      "cantidad": 9.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Hidromin",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "oral 120ml"
+    },
+    {
+      "medicamento_insumo": "Nawcen",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "215ml"
+    },
+    {
+      "medicamento_insumo": "Cutamycon-VF",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "35g"
+    },
+    {
+      "medicamento_insumo": "Gluconato de Clorhexidina",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "1%"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:20:11.240348",
+    "duracion_segundos": 5.94,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1201,
+    "tokens_total": 2573,
+    "costo_usd_estimado": 0.002145
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id_documento": "AE-000079",
+  "archivo_imagen": "AE-000079.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_111657_Drive.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "FO-M9-P3-01-V04",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_NUMERO",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 5,
+    "total_perros_censo": 120,
+    "total_gatos_censo": 75,
+    "total_animales_censo": 195,
+    "total_alimento_perro_kg": 370.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 370.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Asociación Huellitas",
+      "municipio": "SIN_NUMERO",
+      "direccion": "Barrio Mónaco",
+      "telefono": "3148135779",
+      "censo": {
+        "perros": 67,
+        "gatos": 0,
+        "total_animales": 67
+      },
+      "alimento_entregado": {
+        "perro_kg": 120.0,
+        "gato_kg": 0.0,
+        "total_kg": 120.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Luisa Fda Garcés",
+      "municipio": "SIN_NUMERO",
+      "direccion": "Cra 17 # 10-30",
+      "telefono": "3026585026",
+      "censo": {
+        "perros": 12,
+        "gatos": 15,
+        "total_animales": 27
+      },
+      "alimento_entregado": {
+        "perro_kg": 40.0,
+        "gato_kg": 0.0,
+        "total_kg": 40.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Lilibeth González",
+      "municipio": "SIN_NUMERO",
+      "direccion": "Cl 25-21-20",
+      "telefono": "3168732920",
+      "censo": {
+        "perros": 15,
+        "gatos": 15,
+        "total_animales": 30
+      },
+      "alimento_entregado": {
+        "perro_kg": 50.0,
+        "gato_kg": 0.0,
+        "total_kg": 50.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Claudia Zapata",
+      "municipio": "SIN_NUMERO",
+      "direccion": "Vereda Buenavista La Galeana",
+      "telefono": "3504339997",
+      "censo": {
+        "perros": 24,
+        "gatos": 35,
+        "total_animales": 59
+      },
+      "alimento_entregado": {
+        "perro_kg": 110.0,
+        "gato_kg": 0.0,
+        "total_kg": 110.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Emma Stella Montoya",
+      "municipio": "SIN_NUMERO",
+      "direccion": "Vereda Bagaseca",
+      "telefono": "3147406241",
+      "censo": {
+        "perros": 2,
+        "gatos": 10,
+        "total_animales": 12
+      },
+      "alimento_entregado": {
+        "perro_kg": 50.0,
+        "gato_kg": 0.0,
+        "total_kg": 50.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:04:45.713519"
+  }
+}

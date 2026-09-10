@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000310",
+  "archivo_imagen": "AS-000310.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041523006.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-048",
+  "municipio": "Florida",
+  "barrio_corregimiento_refugio": "El Chocó",
+  "autoriza_entrega": {
+    "nombre": "Diep Galeb",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Fallece",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 200.0,
+    "alimento_gato_kg": 100.0,
+    "total_alimento_seco_kg": 300.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 2,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:00:23.265651"
+  }
+}

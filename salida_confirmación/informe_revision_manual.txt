@@ -1,0 +1,224 @@
+====================================================================
+   INFORME DE AUDITORÍA Y CASOS PARA REVISIÓN MANUAL (SALIDAS)
+====================================================================
+
+[2026-08-20 17:30:24] AS-000001.jpg | AS-000001.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: ''
+--------------------------------------------------------------------
+[2026-08-20 17:36:32] AS-000064.jpg | AS-000064.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Policía Ambiental'
+--------------------------------------------------------------------
+[2026-08-20 17:36:42] AS-000066.jpg | AS-000066.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: ''
+--------------------------------------------------------------------
+[2026-08-20 17:40:45] AS-000109.jpg | AS-000109.json
+   • Motivo:  Error en ejecución: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'Deadline expired before operation could complete.', 'status': 'UNAVAILABLE'}}
+   • Detalle: Untitled_08202026_030539055.jpg
+--------------------------------------------------------------------
+[2026-08-20 17:42:46] AS-000129.jpg | AS-000129.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Centro de Bienestar Animal'
+--------------------------------------------------------------------
+[2026-08-20 17:43:01] AS-000131.jpg | AS-000131.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'N/A'
+--------------------------------------------------------------------
+[2026-08-20 17:48:15] AS-000185.jpg | AS-000185.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'CAU'
+--------------------------------------------------------------------
+[2026-08-20 17:48:32] AS-000188.jpg | AS-000188.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Policía'
+--------------------------------------------------------------------
+[2026-08-20 17:48:37] AS-000189.jpg | AS-000189.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Policía'
+--------------------------------------------------------------------
+[2026-08-20 17:51:36] AS-000219.jpg | AS-000219.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'SIN_DATO'
+--------------------------------------------------------------------
+[2026-08-20 17:51:42] AS-000220.jpg | AS-000220.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'SIN_DATO'
+--------------------------------------------------------------------
+[2026-08-20 17:51:47] AS-000221.jpg | AS-000221.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'null'
+--------------------------------------------------------------------
+[2026-08-20 17:52:49] AS-000232.jpg | AS-000232.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Sofia Lopez - LAFE - Valle Pueblo'
+--------------------------------------------------------------------
+[2026-08-20 17:53:00] AS-000234.jpg | AS-000234.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Huellita-Terron Colorado'
+--------------------------------------------------------------------
+[2026-08-20 17:53:16] AS-000237.jpg | AS-000237.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Resguardo Animal'
+--------------------------------------------------------------------
+[2026-08-20 17:53:22] AS-000238.jpg | AS-000238.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Yurani Romero'
+--------------------------------------------------------------------
+[2026-08-20 17:53:39] AS-000241.jpg | AS-000241.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Fundación Pataclown'
+--------------------------------------------------------------------
+[2026-08-20 17:53:45] AS-000242.jpg | AS-000242.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Albergue Patadas'
+--------------------------------------------------------------------
+[2026-08-20 17:53:50] AS-000243.jpg | AS-000243.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Santiago Arenas'
+--------------------------------------------------------------------
+[2026-08-20 17:54:21] AS-000248.jpg | AS-000248.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Policía Ambiental'
+--------------------------------------------------------------------
+[2026-08-20 17:54:32] AS-000250.jpg | AS-000250.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'N/A'
+--------------------------------------------------------------------
+[2026-08-20 17:55:21] AS-000258.jpg | AS-000258.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Colegio Coclet'
+--------------------------------------------------------------------
+[2026-08-20 17:55:50] AS-000263.jpg | AS-000263.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Cali - Rescatistas'
+--------------------------------------------------------------------
+[2026-08-20 17:56:12] AS-000267.jpg | AS-000267.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Reconstruyendo el Valle'
+--------------------------------------------------------------------
+[2026-08-20 17:56:40] AS-000272.jpg | AS-000272.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Edif. Varussa'
+--------------------------------------------------------------------
+[2026-08-20 17:57:32] AS-000281.jpg | AS-000281.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'CBA'
+--------------------------------------------------------------------
+[2026-08-20 18:00:05] AS-000307.jpg | AS-000307.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Urma'
+--------------------------------------------------------------------
+[2026-08-20 18:00:29] AS-000311.jpg | AS-000311.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Fundación Merculo'
+--------------------------------------------------------------------
+[2026-08-20 18:01:00] AS-000316.jpg | AS-000316.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Esperanza animal - palm'
+--------------------------------------------------------------------
+[2026-08-20 18:04:21] AS-000345.jpg | AS-000345.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Allo de Silop'
+--------------------------------------------------------------------
+[2026-08-20 18:05:52] AS-000361.jpg | AS-000361.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'No especificado'
+--------------------------------------------------------------------
+[2026-08-20 18:06:09] AS-000364.jpg | AS-000364.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: '10 Julio'
+--------------------------------------------------------------------
+[2026-08-20 18:06:29] AS-000367.jpg | AS-000367.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Parques Naturales'
+--------------------------------------------------------------------
+[2026-08-20 18:08:02] AS-000382.jpg | AS-000382.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Cali - Aloe'
+--------------------------------------------------------------------
+[2026-08-20 18:10:02] AS-000402.jpg | AS-000402.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Nidia Alarcon'
+--------------------------------------------------------------------
+[2026-08-20 18:10:15] AS-000404.jpg | AS-000404.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'CBA'
+--------------------------------------------------------------------
+[2026-08-20 18:10:33] AS-000407.jpg | AS-000407.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'SIN_ESPECIFICAR'
+--------------------------------------------------------------------
+[2026-08-20 18:10:40] AS-000408.jpg | AS-000408.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'No especificado'
+--------------------------------------------------------------------
+[2026-08-20 20:09:25] AS-000420.jpg | AS-000420.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'SIN_DATO'
+--------------------------------------------------------------------
+[2026-08-20 20:11:59] AS-000443.jpg | AS-000443.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Albergue-Protección animal'
+--------------------------------------------------------------------
+[2026-08-26 14:37:24] AS-000493.jpg | AS-000493.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Albergue-Protección animal'
+--------------------------------------------------------------------
+[2026-08-26 14:38:27] AS-000502.jpg | AS-000502.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Universidad del Valle'
+--------------------------------------------------------------------
+[2026-08-26 14:40:58] AS-000525.jpg | AS-000525.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Fundacion Carmenza'
+--------------------------------------------------------------------
+[2026-08-26 14:41:17] AS-000528.jpg | AS-000528.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: ''
+--------------------------------------------------------------------
+[2026-08-27 18:58:07] AS-000564.jpg | AS-000564.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Albergue Divina Providencia'
+--------------------------------------------------------------------
+[2026-08-27 18:58:12] AS-000565.jpg | AS-000565.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Malleny Andrade Narvaez'
+--------------------------------------------------------------------
+[2026-08-27 18:59:37] AS-000581.jpg | AS-000581.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Albagur Sllong'
+--------------------------------------------------------------------
+[2026-08-27 18:59:43] AS-000582.jpg | AS-000582.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: ''
+--------------------------------------------------------------------
+[2026-08-27 18:59:49] AS-000583.jpg | AS-000583.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'CAU - Jerson Montoya'
+--------------------------------------------------------------------
+[2026-08-27 18:59:55] AS-000584.jpg | AS-000584.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Salvando angeles'
+--------------------------------------------------------------------
+[2026-08-27 19:01:06] AS-000596.jpg | AS-000596.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Apoyo'
+--------------------------------------------------------------------
+[2026-08-27 19:01:50] AS-000604.jpg | AS-000604.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Fundacion Patitas con Dios'
+--------------------------------------------------------------------
+[2026-08-27 19:02:19] AS-000609.jpg | AS-000609.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Apoyo Aumdh'
+--------------------------------------------------------------------
+[2026-08-27 19:04:01] AS-000628.jpg | AS-000628.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'CBA'
+--------------------------------------------------------------------
+[2026-08-27 19:04:06] AS-000629.jpg | AS-000629.json
+   • Motivo:  Municipio ambiguo o no identificado
+   • Detalle: Texto detectado en lugar: 'Cali'
+--------------------------------------------------------------------

@@ -1,0 +1,44 @@
+{
+  "id_documento": "AE-000065",
+  "archivo_imagen": "AE-000065.jpg",
+  "archivo_origen_escaneo": "IMG-20260812-WA0032.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "FO-M9-P3-01-V04",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "null",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 1,
+    "total_perros_censo": 23,
+    "total_gatos_censo": 50,
+    "total_animales_censo": 83,
+    "total_alimento_perro_kg": 26.0,
+    "total_alimento_gato_kg": 15.0,
+    "total_alimento_general_kg": 41.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "mona",
+      "municipio": "null",
+      "direccion": "cl 1c # 42c-11",
+      "telefono": "3005476061",
+      "censo": {
+        "perros": 23,
+        "gatos": 50,
+        "total_animales": 83
+      },
+      "alimento_entregado": {
+        "perro_kg": 26.0,
+        "gato_kg": 15.0,
+        "total_kg": 41.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "null"
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:02:10.402574"
+  }
+}

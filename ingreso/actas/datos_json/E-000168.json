@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000168.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16-Ago",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Bravecto",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "112.5 mg"
+    },
+    {
+      "medicamento_insumo": "Nardomin",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Aminelec B",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "B-Fex",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Discaline",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Odi-pet",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Cutencon",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Floxvet",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Canetox",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Ivermectina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Deasen-N",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Piperacilina + Tazobactam",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "15 mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Diclicin",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "160 mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Nebxpet",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Logrikov",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "0.5% 15 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:27:08.018873",
+    "duracion_segundos": 5.25,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1221,
+    "tokens_total": 2593,
+    "costo_usd_estimado": 0.002175
+  }
+}

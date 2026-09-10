@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000008",
+  "archivo_imagen": "AV-000008.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 8,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "ANA MARIA NAVIA TABORDA",
+      "organismo_entidad": "CIUDADANA",
+      "telefono": "3135201576",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Karol Andrea Caicedo S",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3147295771",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Luis Alberto Recio Juarez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3005923626",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sara Calero",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3147763089",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Alejandra Bolaños",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3108693949",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Vanessa Sierra",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3203071456",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Nicolas Perez",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3025904212",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sandra Valderrama",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3173968937",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Carolina Paz",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "carolinapaz1095",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Mariam López",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3245468469",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Victoria Orozco",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3175081714",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Maria Camila Paz",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3151888665",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Alison Perez Zuñiga",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3187277728",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Margarita Alivret",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3043360198",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Mayra Alejandra Calvo",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3148865909",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Kely Lopez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3113644975",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Karen Ospina",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3116004072",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sofia Marin",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3108069238",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:58:01.832767",
+    "duracion_segundos": 5.78,
+    "tokens_total": 2868
+  }
+}

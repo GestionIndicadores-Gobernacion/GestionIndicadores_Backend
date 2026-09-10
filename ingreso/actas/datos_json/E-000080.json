@@ -1,0 +1,108 @@
+{
+  "archivo_imagen": "E-000080.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/09/20",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 10.0,
+      "unidad": "frascos",
+      "presentacion": "40ml"
+    },
+    {
+      "medicamento_insumo": "Tears off",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Colirio",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Enzystal",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "12 unidades"
+    },
+    {
+      "medicamento_insumo": "Melox-200",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Pilosan-N",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Diving",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Bathoderm",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Wescocet jabón",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Lecigrin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Matricaria",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol clorhidrato",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Grasas",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100mg/2ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:12.665697",
+    "duracion_segundos": 4.29,
+    "tokens_entrada": 1372,
+    "tokens_salida": 793,
+    "tokens_total": 2165,
+    "costo_usd_estimado": 0.001533
+  }
+}

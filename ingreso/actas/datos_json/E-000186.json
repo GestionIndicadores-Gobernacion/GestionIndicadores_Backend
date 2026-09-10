@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000186.jpg",
+  "fecha_lote": "2026-08-17",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "17/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "0.15%"
+    },
+    {
+      "medicamento_insumo": "Desinfección pre y post quirúrgica",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Dermosyn",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Semiderm",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Desloratadina",
+      "cantidad": 19.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Metocarbamol",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 1.0,
+      "unidad": "ampolleta",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 2.0,
+      "unidad": "ampolletas",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Shampoo Clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Vitamina K1",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Shampoo",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Dermosyn",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solución salina",
+      "cantidad": 4.0,
+      "unidad": "ampolletas",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Entero Chronic",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lidocaína Clorhidrato",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Naproxeno",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Acetaminofén",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Vaselina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Canisan",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:30:06.690453",
+    "duracion_segundos": 4.68,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1050,
+    "tokens_total": 2422,
+    "costo_usd_estimado": 0.001918
+  }
+}

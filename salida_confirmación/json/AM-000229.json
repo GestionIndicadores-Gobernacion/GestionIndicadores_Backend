@@ -1,0 +1,41 @@
+{
+  "id_documento": "AM-000229",
+  "archivo_imagen": "AM-000229.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_052325012.jpg",
+  "fecha_lote": "2026-08-21",
+  "dia_agosto": 21,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-406",
+  "fecha_documento_detectada": "21/09/26",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Nexgard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Carprofeno",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-26T14:45:39.952867",
+    "duracion_segundos": 2.41,
+    "tokens_total": 2088
+  }
+}

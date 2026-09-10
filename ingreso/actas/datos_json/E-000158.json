@@ -1,0 +1,114 @@
+{
+  "archivo_imagen": "E-000158.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/08/2026",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Solución Antiséptica",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "1L / 520 ml"
+    },
+    {
+      "medicamento_insumo": "Vioxin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Rondel",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 g"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": "1 mg / 1 ml"
+    },
+    {
+      "medicamento_insumo": "Oralpet-Oral enteral",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Jabón Antiséptico",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "400 ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B12 Oral",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "90 g"
+    },
+    {
+      "medicamento_insumo": "Jabón Quirúrgico",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Pifamicina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Ranidin V",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Ocul-V",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Alcohol Polivinílico",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Sanimicon-Tópico",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Caniforte 28E",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "150 g"
+    },
+    {
+      "medicamento_insumo": "Optilene",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "3/0"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:26:10.555113",
+    "duracion_segundos": 5.92,
+    "tokens_entrada": 1372,
+    "tokens_salida": 863,
+    "tokens_total": 2235,
+    "costo_usd_estimado": 0.001638
+  }
+}

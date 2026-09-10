@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000048.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 AGO",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Guantes estériles",
+      "cantidad": 4.0,
+      "unidad": "cajas",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Papel limpio",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "x 75"
+    },
+    {
+      "medicamento_insumo": "Compresa abdominal",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Gasa estéril",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "x 25"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringa hipodérmica",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "2 ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": "3 ml x 100"
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "x 50"
+    },
+    {
+      "medicamento_insumo": "Equipo pericraneal",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Termómetro",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pastillero",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Polipropileno",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "x 12"
+    },
+    {
+      "medicamento_insumo": "Polidioxanona",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "x 12"
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "x 50"
+    },
+    {
+      "medicamento_insumo": "Cánula nasal",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": "1 ml"
+    },
+    {
+      "medicamento_insumo": "Polipropileno",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:13:17.854571",
+    "duracion_segundos": 4.44,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1078,
+    "tokens_total": 2450,
+    "costo_usd_estimado": 0.00196
+  }
+}

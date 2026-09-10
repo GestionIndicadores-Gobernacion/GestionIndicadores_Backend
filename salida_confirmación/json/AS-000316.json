@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000316.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041523012.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "J. F. R. P."
+  },
+  "barrio_corregimiento_refugio": "Fundación Esperanza Animal",
+  "codigo_acta_vinculante": "A-051",
+  "datos_alimentos": {
+    "alimento_gato_kg": 24,
+    "alimento_perro_kg": 120,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 144
+  },
+  "dia_agosto": 18,
+  "fecha_lote": "2026-08-18",
+  "id_documento": "AS-000316",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:01:00.195462"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Nancy Diaz"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

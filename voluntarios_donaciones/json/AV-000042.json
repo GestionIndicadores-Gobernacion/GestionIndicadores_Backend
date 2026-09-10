@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000042",
+  "archivo_imagen": "AV-000042.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 42,
+  "fecha_detectada": "13/08/2024",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimentos y medicamentos bienestar Animal cali",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Raquel Guerrero",
+      "organismo_entidad": "Particular",
+      "telefono": "3005795268",
+      "correo_electronico": "raquel.gc0420@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Franco Castaño",
+      "organismo_entidad": "Particular",
+      "telefono": "3173005878",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Geraldin Andrea Leis Y",
+      "organismo_entidad": "Particular",
+      "telefono": "3152166179",
+      "correo_electronico": "leis42022@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Yaenna Ruiz",
+      "organismo_entidad": "Particular",
+      "telefono": "3002544316",
+      "correo_electronico": "yayouq1482@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Audrey Bohorquez",
+      "organismo_entidad": "Subdirectora",
+      "telefono": "312241009",
+      "correo_electronico": "audreyb020@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Luis Hernan Marin",
+      "organismo_entidad": "Particular",
+      "telefono": "3187994483",
+      "correo_electronico": "luismarin527@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Juan David Sanchez",
+      "organismo_entidad": "Vet One",
+      "telefono": "3207207844",
+      "correo_electronico": "veterinariavetone@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Santiago Hurtado",
+      "organismo_entidad": "Particular",
+      "telefono": "3135519894",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Loren Sandoval",
+      "organismo_entidad": "Particular",
+      "telefono": "3002922890",
+      "correo_electronico": "loelsonu34@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Dahiana Patiño",
+      "organismo_entidad": "Particular",
+      "telefono": "3154083639",
+      "correo_electronico": "dayispas@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lisset Zuñiga",
+      "organismo_entidad": "Particular",
+      "telefono": "3181923620",
+      "correo_electronico": "lisset.zuniga@correounivalle.edu.co",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "German Quero",
+      "organismo_entidad": "Particular",
+      "telefono": "3154493401",
+      "correo_electronico": "german.quero87@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Camila Lentera A",
+      "organismo_entidad": "Particular",
+      "telefono": "3164152862",
+      "correo_electronico": "makarm.98@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lonny Melissa N",
+      "organismo_entidad": "Particular",
+      "telefono": "3172504427",
+      "correo_electronico": "jimenezmari207@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Diana Patricia Trujillo",
+      "organismo_entidad": "Particular",
+      "telefono": "3002165810",
+      "correo_electronico": "dianatrujillo.medina@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Isabel Rico Solano",
+      "organismo_entidad": "Particular",
+      "telefono": "3109175081",
+      "correo_electronico": "maria-isar98@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jhon Edwin Lucero D",
+      "organismo_entidad": "Particular",
+      "telefono": "3183499332",
+      "correo_electronico": "cairo37628@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Claudia Florez",
+      "organismo_entidad": "Particular",
+      "telefono": "3155495097",
+      "correo_electronico": "clauvflorez@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:01:54.121159",
+    "duracion_segundos": 7.68,
+    "tokens_total": 3124
+  }
+}

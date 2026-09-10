@@ -1,0 +1,139 @@
+{
+  "id_documento": "AM-000273",
+  "archivo_imagen": "AM-000273.jpg",
+  "archivo_origen_escaneo": "20260827_183147.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-514",
+  "fecha_documento_detectada": "",
+  "municipio_o_lugar": "",
+  "autoriza_nombre": "",
+  "recibe_nombre": "",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jeringas 3ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 71.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas 5ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 114.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas 2ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 110.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas 10ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 145.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas 20ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 40.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringas 50ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Ringer lactato",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 15.0,
+      "unidad": "bolsas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter 22G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 29.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dextromin",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Bakidin",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "1L"
+    },
+    {
+      "medicamento_insumo": "Gradual gatos",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venda elástica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 14.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter 18G",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 21.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Tapones",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 27.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 192.0,
+      "unidad": "unidades",
+      "presentacion": "x5"
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 35.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Venoclisis macro",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:06:53.453035",
+    "duracion_segundos": 3.73,
+    "tokens_total": 2821
+  }
+}

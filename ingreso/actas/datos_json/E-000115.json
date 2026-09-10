@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000115.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "26 Agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Aminex",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Pulvican",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "B. 500g"
+    },
+    {
+      "medicamento_insumo": "Gomos quirúrgicos",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 8.0,
+      "unidad": "pastas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Genfor",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": "2 ml"
+    },
+    {
+      "medicamento_insumo": "Oxiorst",
+      "cantidad": 10.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Nicilan",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Oral Pet",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "400 ml"
+    },
+    {
+      "medicamento_insumo": "Polivet",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Iver",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "0.8 120 ml"
+    },
+    {
+      "medicamento_insumo": "Polypropylene",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Metgard",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "68 mg"
+    },
+    {
+      "medicamento_insumo": "Fito vet",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15 g"
+    },
+    {
+      "medicamento_insumo": "Tranqui Pet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Olectol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "vet. dog"
+    },
+    {
+      "medicamento_insumo": "Maxidin",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "300 mg"
+    },
+    {
+      "medicamento_insumo": "Pomada",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "afa 220 g"
+    },
+    {
+      "medicamento_insumo": "Hipodry",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "1.34 ml"
+    },
+    {
+      "medicamento_insumo": "Pisacaina",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Finhemox",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxic",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "1 xr 080 60 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:21:12.108790",
+    "duracion_segundos": 10.06,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1121,
+    "tokens_total": 2493,
+    "costo_usd_estimado": 0.002025
+  }
+}

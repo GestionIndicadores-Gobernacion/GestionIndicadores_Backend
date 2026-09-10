@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000075",
+  "archivo_imagen": "AS-000075.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030539021.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-028",
+  "municipio": "Roldanillo",
+  "barrio_corregimiento_refugio": "Roldanillo",
+  "autoriza_entrega": {
+    "nombre": "Diep Gedeon",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Jose Herrera",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 150.0,
+    "alimento_gato_kg": 50.0,
+    "total_alimento_seco_kg": 200.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 100,
+    "comida_humeda_total_und": 100,
+    "arena_kg": 100.0,
+    "areneros_und": 0,
+    "camas_und": 10,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Arena Gatos",
+        "cantidad": 25.0,
+        "unidad": "kg"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:37:34.920696"
+  }
+}

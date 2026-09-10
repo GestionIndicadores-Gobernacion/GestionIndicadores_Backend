@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000150",
+  "archivo_imagen": "AS-000150.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031108010.jpg",
+  "fecha_lote": "2026-08-14",
+  "dia_agosto": 14,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Palmira",
+  "barrio_corregimiento_refugio": "Reunir Animal",
+  "autoriza_entrega": {
+    "nombre": "Diego Geller",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Victoria E. Gutierrez",
+    "cedula": "null"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 200.0,
+    "alimento_gato_kg": 50.0,
+    "total_alimento_seco_kg": 250.0,
+    "comida_humeda_perro_und": 50,
+    "comida_humeda_gato_und": 50,
+    "comida_humeda_total_und": 100,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 10,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "cobijas",
+        "cantidad": 10.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:44:50.090368"
+  }
+}

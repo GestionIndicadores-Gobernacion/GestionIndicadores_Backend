@@ -1,0 +1,120 @@
+{
+  "id_documento": "AV-000043",
+  "archivo_imagen": "AV-000043.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 43,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 13,
+  "personas": [
+    {
+      "nombre_completo": "JUAN DIAZ",
+      "organismo_entidad": "",
+      "telefono": "3042430794",
+      "correo_electronico": "JPABLO047@OUTLOOK.COM",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Camila Ramos",
+      "organismo_entidad": "Fundacion amecats",
+      "telefono": "3188319802",
+      "correo_electronico": "camisgarcia1996@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Marguri Arte",
+      "organismo_entidad": "Fundacion Amecats",
+      "telefono": "31921404",
+      "correo_electronico": "margu2210@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Adriana de la Rosa",
+      "organismo_entidad": "Familia de la Rosa",
+      "telefono": "3014002319",
+      "correo_electronico": "adridelalarosa26@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Corona Granados Barco",
+      "organismo_entidad": "",
+      "telefono": "3003286319",
+      "correo_electronico": "lograba@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jhon Andres Calvache B.",
+      "organismo_entidad": "",
+      "telefono": "3126539502",
+      "correo_electronico": "JhonCalvache113399@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Henry Cardona",
+      "organismo_entidad": "",
+      "telefono": "3116298537",
+      "correo_electronico": "hamicargo2021@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Zequeira",
+      "organismo_entidad": "",
+      "telefono": "3176506926",
+      "correo_electronico": "lzequeiracantillo@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ana Milena Coroz",
+      "organismo_entidad": "independiente",
+      "telefono": "3005166583",
+      "correo_electronico": "milenitacoroz@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Paola Blanco",
+      "organismo_entidad": "",
+      "telefono": "3053282046",
+      "correo_electronico": "PaolaAndreabf25@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natalia Quintero",
+      "organismo_entidad": "independiente",
+      "telefono": "3136252433",
+      "correo_electronico": "nataliaquintero2208@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Mariana Reyes",
+      "organismo_entidad": "Angeles por Colombia",
+      "telefono": "3147991769",
+      "correo_electronico": "marianareyespax18@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniela Ortega R.",
+      "organismo_entidad": "independiente",
+      "telefono": "3202145580",
+      "correo_electronico": "danielaoortegar@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:02:00.675729",
+    "duracion_segundos": 5.73,
+    "tokens_total": 2681
+  }
+}

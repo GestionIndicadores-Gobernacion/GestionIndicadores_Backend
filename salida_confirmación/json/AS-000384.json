@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000384",
+  "archivo_imagen": "AS-000384.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_043457018.jpg",
+  "fecha_lote": "2026-08-19",
+  "dia_agosto": 19,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-122",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Cali",
+  "autoriza_entrega": {
+    "nombre": "Johan Peñafiel",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Maria del socorro Saniceto Z",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 60.0,
+    "alimento_gato_kg": 30.0,
+    "total_alimento_seco_kg": 90.0,
+    "comida_humeda_perro_und": 50,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 50,
+    "arena_kg": 24.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 1,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "caja de galletas",
+        "cantidad": 1.0,
+        "unidad": "caja"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:08:14.813570"
+  }
+}

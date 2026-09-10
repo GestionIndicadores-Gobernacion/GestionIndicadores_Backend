@@ -1,0 +1,168 @@
+{
+  "archivo_imagen": "E-000029.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "100mg/ml"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "250mg/5ml"
+    },
+    {
+      "medicamento_insumo": "Ojuk V",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Zylkene",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "225 mg"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Clinanex",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Fiprotecton",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Agua oxigenada",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Vitin-R",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Bromuro de ipratropio",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "20 mcg"
+    },
+    {
+      "medicamento_insumo": "Finhemox",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Peronil",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "20 gr"
+    },
+    {
+      "medicamento_insumo": "Ceruline",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Dogg y Cat",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Ubrevet",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "220 gr"
+    },
+    {
+      "medicamento_insumo": "Finhemox",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Galgocal Pool",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Fibrilok",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 30.0,
+      "unidad": "unidades",
+      "presentacion": "100"
+    },
+    {
+      "medicamento_insumo": "Meloxic",
+      "cantidad": 28.0,
+      "unidad": "unidades",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Nexgard Gatos",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "2.5-7.5 kg"
+    },
+    {
+      "medicamento_insumo": "Loxicaina Jalea",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "30 g"
+    },
+    {
+      "medicamento_insumo": "Lidocaina Jalea",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "30 g"
+    },
+    {
+      "medicamento_insumo": "Euphorbium Heel",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lidocaina inyección",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "2% / 50 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:06:42.311051",
+    "duracion_segundos": 6.99,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1264,
+    "tokens_total": 2636,
+    "costo_usd_estimado": 0.002239
+  }
+}

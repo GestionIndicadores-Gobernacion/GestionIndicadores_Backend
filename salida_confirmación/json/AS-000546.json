@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000546",
+  "archivo_imagen": "AS-000546.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412009.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Rescatistas",
+  "autoriza_entrega": {
+    "nombre": "Johana Penafort",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Karen Ximena Rodriguez",
+    "cedula": "3005348610"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 60.0,
+    "alimento_gato_kg": 0.0,
+    "total_alimento_seco_kg": 60.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 3,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:43:14.376779"
+  }
+}

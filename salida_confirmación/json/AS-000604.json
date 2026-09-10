@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000604.jpg",
+  "archivo_origen_escaneo": "20260827_175645.jpg",
+  "autoriza_entrega": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Diego Bedoya"
+  },
+  "barrio_corregimiento_refugio": "Fundacion Patitas con Dios",
+  "codigo_acta_vinculante": "A-502",
+  "datos_alimentos": {
+    "alimento_gato_kg": 30,
+    "alimento_perro_kg": 370,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 400
+  },
+  "dia_agosto": 24,
+  "fecha_lote": "2026-08-24",
+  "id_documento": "AS-000604",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T19:01:50.640350"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "SIN_NUMERO",
+    "nombre": "Camilo Arboleda"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

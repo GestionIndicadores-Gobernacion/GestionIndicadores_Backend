@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000539",
+  "archivo_imagen": "AS-000539.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_054412002.jpg",
+  "fecha_lote": "2026-08-23",
+  "dia_agosto": 23,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Alfonso Lopez",
+  "autoriza_entrega": {
+    "nombre": "Johan Penafiel",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Clara Angela Ceron",
+    "cedula": ""
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 14.0,
+    "alimento_gato_kg": 32.0,
+    "total_alimento_seco_kg": 46.0,
+    "comida_humeda_perro_und": 80,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 80,
+    "arena_kg": 0.0,
+    "areneros_und": 2,
+    "camas_und": 5,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 1,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "latas gato",
+        "cantidad": 1.0,
+        "unidad": "caja"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:42:29.182460"
+  }
+}

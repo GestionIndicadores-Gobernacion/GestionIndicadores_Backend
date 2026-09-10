@@ -1,0 +1,186 @@
+{
+  "archivo_imagen": "E-000155.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/Ago/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Rondel",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Desinita",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60ml oral"
+    },
+    {
+      "medicamento_insumo": "Lagnkov",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Acetaminofen",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "16 tabletas"
+    },
+    {
+      "medicamento_insumo": "Predicorten",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Saniderm crema topica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Oligomax homeopatico",
+      "cantidad": 1.0,
+      "unidad": "viales",
+      "presentacion": "0.67ml perros"
+    },
+    {
+      "medicamento_insumo": "Pulloe topica",
+      "cantidad": 3.0,
+      "unidad": "parches",
+      "presentacion": "3 parches"
+    },
+    {
+      "medicamento_insumo": "Parche medico",
+      "cantidad": 5.0,
+      "unidad": "sobres",
+      "presentacion": "20g/sobres"
+    },
+    {
+      "medicamento_insumo": "Sales de rehidratacion",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Bebida refrescante fresca",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Electrolito",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "1tab > 10kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 11.0,
+      "unidad": "unidades",
+      "presentacion": "10ml/30ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Pezosan-n",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "180g"
+    },
+    {
+      "medicamento_insumo": "Caniforte 25E",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina Vet",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "otico 10ml"
+    },
+    {
+      "medicamento_insumo": "Splend colirio",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "gotero 20ml"
+    },
+    {
+      "medicamento_insumo": "Genetex NF",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50g"
+    },
+    {
+      "medicamento_insumo": "Verde mint",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "240ml"
+    },
+    {
+      "medicamento_insumo": "Vita cell",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "75mg/3ml"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco Sodico",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": "180g"
+    },
+    {
+      "medicamento_insumo": "Lacto reemplazador",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "500mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona Sodica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "2.5g/5ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona Fosfato",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Jabon",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "400ml"
+    },
+    {
+      "medicamento_insumo": "Demosyn locion medica",
+      "cantidad": 0.0,
+      "unidad": "null",
+      "presentacion": "null"
+    },
+    {
+      "medicamento_insumo": "Wescohex solucion antiseptica oral pet",
+      "cantidad": 0.0,
+      "unidad": "null",
+      "presentacion": "null"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:25:53.046585",
+    "duracion_segundos": 5.42,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1462,
+    "tokens_total": 2834,
+    "costo_usd_estimado": 0.002536
+  }
+}

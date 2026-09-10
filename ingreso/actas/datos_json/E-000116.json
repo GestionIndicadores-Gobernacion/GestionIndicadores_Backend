@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000116.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15 Agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Sutura no absorbible",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "0.15% 10ml"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "2-3.5kg"
+    },
+    {
+      "medicamento_insumo": "Sugastrin",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "240ml"
+    },
+    {
+      "medicamento_insumo": "Nexgard Spectra",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Metronidazol inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "4mg"
+    },
+    {
+      "medicamento_insumo": "Diampel",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Melobest",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "200-Floxin",
+      "cantidad": 20.0,
+      "unidad": "pastas",
+      "presentacion": "100gr"
+    },
+    {
+      "medicamento_insumo": "Iver",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "0.6%"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "1000ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "0.5% 10ml"
+    },
+    {
+      "medicamento_insumo": "Tears",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "8ml"
+    },
+    {
+      "medicamento_insumo": "Nebulizadores",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Nexgard Spectra",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "3.5-7.5kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5-10kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10-20kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20-40kg"
+    },
+    {
+      "medicamento_insumo": "Metronidazol inyectable",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Pulfen",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "3.2ml"
+    },
+    {
+      "medicamento_insumo": "Penicilina",
+      "cantidad": 16.0,
+      "unidad": "unidades",
+      "presentacion": "puro"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:21:17.553350",
+    "duracion_segundos": 4.44,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1191,
+    "tokens_total": 2563,
+    "costo_usd_estimado": 0.002129
+  }
+}

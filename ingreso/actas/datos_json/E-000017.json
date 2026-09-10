@@ -1,0 +1,126 @@
+{
+  "archivo_imagen": "E-000017.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/08/2016",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml IXER 080"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Carprodol",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "blister"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "cantidad": 3.0,
+      "unidad": "blisters",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 1.0,
+      "unidad": "blister",
+      "presentacion": "15%"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": "inyectable"
+    },
+    {
+      "medicamento_insumo": "Electrolítico Pet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Mesopram",
+      "cantidad": 2.0,
+      "unidad": "tarros",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "tarros",
+      "presentacion": "oral"
+    },
+    {
+      "medicamento_insumo": "Oftalmotri Fresh",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "Natural 200"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5-10 kg"
+    },
+    {
+      "medicamento_insumo": "Yodo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "inyectable"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "inyectable"
+    },
+    {
+      "medicamento_insumo": "Gluconato de clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "4%"
+    },
+    {
+      "medicamento_insumo": "Gluconato de clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Canipets",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "suspensión oral"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "inyectable 2%"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:05:26.075295",
+    "duracion_segundos": 3.6,
+    "tokens_entrada": 1372,
+    "tokens_salida": 924,
+    "tokens_total": 2296,
+    "costo_usd_estimado": 0.001729
+  }
+}

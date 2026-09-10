@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000143.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16-Ago",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextrosa en agua",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Orcipet",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "400 ml"
+    },
+    {
+      "medicamento_insumo": "Ixer",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "0.80 1 litro"
+    },
+    {
+      "medicamento_insumo": "Simparic",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Quintapet",
+      "cantidad": 4.0,
+      "unidad": "tabletas",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "1.5 mg 10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "0.15 mg 10 ml"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 4.0,
+      "unidad": "tabletas",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Bionics",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "14 gr"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "cantidad": 3.0,
+      "unidad": "tabletas",
+      "presentacion": "Simple 20 mg"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Cennex",
+      "cantidad": 4.0,
+      "unidad": "jeringas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "oral 10 ml"
+    },
+    {
+      "medicamento_insumo": "Overxicam",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "inyectable 50 ml"
+    },
+    {
+      "medicamento_insumo": "Isodine",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "solución"
+    },
+    {
+      "medicamento_insumo": "Pulvican",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "talco"
+    },
+    {
+      "medicamento_insumo": "Roxicaine",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "tubo x 30 ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "2% tubo x 10 ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "spray"
+    },
+    {
+      "medicamento_insumo": "Septiderm",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "gel"
+    },
+    {
+      "medicamento_insumo": "Azitromicina",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Bioestril",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "legumbres"
+    },
+    {
+      "medicamento_insumo": "Selex",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "rehidratación"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:24:37.162500",
+    "duracion_segundos": 5.7,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1200,
+    "tokens_total": 2572,
+    "costo_usd_estimado": 0.002143
+  }
+}

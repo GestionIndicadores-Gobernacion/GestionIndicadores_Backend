@@ -1,0 +1,116 @@
+{
+  "id_documento": "AE-000088",
+  "archivo_imagen": "AE-000088.jpg",
+  "archivo_origen_escaneo": "20260901_110612.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 5,
+    "total_perros_censo": 0,
+    "total_gatos_censo": 0,
+    "total_animales_censo": 0,
+    "total_alimento_perro_kg": 2050.0,
+    "total_alimento_gato_kg": 950.0,
+    "total_alimento_general_kg": 3000.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Hogar Paso Simond",
+      "municipio": "Buga",
+      "direccion": "Homero",
+      "telefono": "3154282369",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 400.0,
+        "gato_kg": 200.0,
+        "total_kg": 600.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "10 kg Nexican"
+    },
+    {
+      "nombre_fundacion": "Sebastian Cardona",
+      "municipio": "Tuluá",
+      "direccion": "transversal 12 25-88",
+      "telefono": "3135146227",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 600.0,
+        "gato_kg": 400.0,
+        "total_kg": 1000.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "20 kg Arena"
+    },
+    {
+      "nombre_fundacion": "Alcaldia La Victoria",
+      "municipio": "La Victoria",
+      "direccion": "Cra 7 #8-45",
+      "telefono": "3153548244",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 300.0,
+        "gato_kg": 100.0,
+        "total_kg": 400.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "400K"
+    },
+    {
+      "nombre_fundacion": "Erika A. Rodriguez",
+      "municipio": "El Águila",
+      "direccion": "Corregimiento Ansermanuevo",
+      "telefono": "3176691575",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 600.0,
+        "gato_kg": 200.0,
+        "total_kg": 800.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_OBSERVACIONES"
+    },
+    {
+      "nombre_fundacion": "JUDEA",
+      "municipio": "Alcalá",
+      "direccion": "SIN_DIRECCION",
+      "telefono": "3166739381",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 150.0,
+        "gato_kg": 50.0,
+        "total_kg": 200.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "SIN_OBSERVACIONES"
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:06:22.061110"
+  }
+}

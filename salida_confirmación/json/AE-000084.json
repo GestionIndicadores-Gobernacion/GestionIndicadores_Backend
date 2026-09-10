@@ -1,0 +1,116 @@
+{
+  "id_documento": "AE-000084",
+  "archivo_imagen": "AE-000084.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_113851_Drive.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "Yins Quejada",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 5,
+    "total_perros_censo": 243,
+    "total_gatos_censo": 250,
+    "total_animales_censo": 493,
+    "total_alimento_perro_kg": 1500.0,
+    "total_alimento_gato_kg": 850.0,
+    "total_alimento_general_kg": 2350.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Rocio Ampudia",
+      "municipio": "Buenaventura",
+      "direccion": "Pancuso",
+      "telefono": "3156572606",
+      "censo": {
+        "perros": 130,
+        "gatos": 22,
+        "total_animales": 152
+      },
+      "alimento_entregado": {
+        "perro_kg": 500.0,
+        "gato_kg": 150.0,
+        "total_kg": 650.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Margot Caro",
+      "municipio": "Buenaventura",
+      "direccion": "La Libertad",
+      "telefono": "3178320043",
+      "censo": {
+        "perros": 23,
+        "gatos": 24,
+        "total_animales": 47
+      },
+      "alimento_entregado": {
+        "perro_kg": 300.0,
+        "gato_kg": 200.0,
+        "total_kg": 500.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Yuli Diaz",
+      "municipio": "Buenaventura",
+      "direccion": "San Buenaventura Cra 55 # 7B-70",
+      "telefono": "3183082175",
+      "censo": {
+        "perros": 0,
+        "gatos": 12,
+        "total_animales": 12
+      },
+      "alimento_entregado": {
+        "perro_kg": 200.0,
+        "gato_kg": 0.0,
+        "total_kg": 200.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Lucia Giraldo",
+      "municipio": "Buenaventura",
+      "direccion": "Kokerely",
+      "telefono": "3168002104",
+      "censo": {
+        "perros": 80,
+        "gatos": 120,
+        "total_animales": 200
+      },
+      "alimento_entregado": {
+        "perro_kg": 300.0,
+        "gato_kg": 300.0,
+        "total_kg": 600.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Matheus Roman",
+      "municipio": "Buenaventura",
+      "direccion": "Pancuso",
+      "telefono": "3105481119",
+      "censo": {
+        "perros": 10,
+        "gatos": 72,
+        "total_animales": 82
+      },
+      "alimento_entregado": {
+        "perro_kg": 200.0,
+        "gato_kg": 200.0,
+        "total_kg": 400.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:05:35.671980"
+  }
+}

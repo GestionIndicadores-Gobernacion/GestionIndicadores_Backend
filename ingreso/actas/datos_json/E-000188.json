@@ -1,0 +1,162 @@
+{
+  "archivo_imagen": "E-000188.jpg",
+  "fecha_lote": "2026-08-17",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "17/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Hemolitan",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "0.1%"
+    },
+    {
+      "medicamento_insumo": "Sirocon pet",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Antiparasitario int",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Antihelmintico",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solucion antiseptica",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Hidratacion oral",
+      "cantidad": 10.0,
+      "unidad": "sobres",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Omeprazol",
+      "cantidad": 3.0,
+      "unidad": "ampollas",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Gluconato de clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Prontosano",
+      "cantidad": 1.0,
+      "unidad": "ampolla",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "cantidad": 2.0,
+      "unidad": "comprimidos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxin",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "0.5%"
+    },
+    {
+      "medicamento_insumo": "Novacon top",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": "2.5kg"
+    },
+    {
+      "medicamento_insumo": "Simparica trio",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solucion oftalmica",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Jabon",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Constilax",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "240ml"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cefalotina",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": "1g"
+    },
+    {
+      "medicamento_insumo": "Acido tranexamico",
+      "cantidad": 5.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:30:18.285756",
+    "duracion_segundos": 4.71,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1196,
+    "tokens_total": 2568,
+    "costo_usd_estimado": 0.002137
+  }
+}

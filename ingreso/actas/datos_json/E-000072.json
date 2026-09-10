@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000072.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Lidocaína",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "15% 50 ml"
+    },
+    {
+      "medicamento_insumo": "Fitovete",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15 gr"
+    },
+    {
+      "medicamento_insumo": "Electro-300 C",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "19.5 gr"
+    },
+    {
+      "medicamento_insumo": "Ixel 080",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "1 lt"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "1 lt + 60 ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 10.0,
+      "unidad": "frascos",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Aminolite",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Septiderme",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Compleand B12",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Pecunos (oidos)",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Roxicaina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "80 gr"
+    },
+    {
+      "medicamento_insumo": "Clorhexin Spray",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.15% 10 ml"
+    },
+    {
+      "medicamento_insumo": "Ketobest",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Ketobest",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 20.0,
+      "unidad": "ampollas",
+      "presentacion": "8 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxican",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "15 mg/1.5 ml"
+    },
+    {
+      "medicamento_insumo": "Aminotonic",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "70 mg"
+    },
+    {
+      "medicamento_insumo": "Dogg 4 Cat",
+      "cantidad": 10.0,
+      "unidad": "cajas",
+      "presentacion": "7.5% / 2.5%"
+    },
+    {
+      "medicamento_insumo": "Diciclin 50",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "50 mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:15:31.172421",
+    "duracion_segundos": 5.03,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1223,
+    "tokens_total": 2595,
+    "costo_usd_estimado": 0.002177
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000565.jpg",
+  "archivo_origen_escaneo": "20260827_174914.jpg",
+  "autoriza_entrega": {
+    "cedula": "null",
+    "nombre": "Sandra P. Perez"
+  },
+  "barrio_corregimiento_refugio": "Malleny Andrade Narvaez",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 40,
+    "alimento_perro_kg": 30,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 70
+  },
+  "dia_agosto": 24,
+  "fecha_lote": "2026-08-24",
+  "id_documento": "AS-000565",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T18:58:12.477422"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "3042020958",
+    "nombre": "Abelardo Murillas"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

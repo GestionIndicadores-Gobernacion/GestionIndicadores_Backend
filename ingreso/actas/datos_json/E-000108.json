@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000108.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15 agosto 2020",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Septiderm",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "110ml"
+    },
+    {
+      "medicamento_insumo": "Boxidan",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Traumeel",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Pet drops",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50 comprimidos"
+    },
+    {
+      "medicamento_insumo": "Aurotel",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "1.25-2.5kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10-20kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20-40kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "40-60kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "2-3.5kg"
+    },
+    {
+      "medicamento_insumo": "Credelio",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "25.1-50kg"
+    },
+    {
+      "medicamento_insumo": "Canex",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "41-60kg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "15mg"
+    },
+    {
+      "medicamento_insumo": "Traumeel",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "2mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Tranhic-V LHA",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "14gr"
+    },
+    {
+      "medicamento_insumo": "Biocanis",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "8mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "4mg/1ml"
+    },
+    {
+      "medicamento_insumo": "Ankofen",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:20:24.645252",
+    "duracion_segundos": 6.43,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1092,
+    "tokens_total": 2464,
+    "costo_usd_estimado": 0.001981
+  }
+}

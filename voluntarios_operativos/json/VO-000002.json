@@ -1,0 +1,152 @@
+{
+  "id_documento": "VO-000002",
+  "archivo_imagen": "VO-000002.jpg",
+  "archivo_origen": "WhatsApp Image 2026-08-20 at 9.16.42 PM (1).jpeg",
+  "tipo_documento": "VOLUNTARIOS_OPERATIVOS",
+  "fecha_detectada": null,
+  "lugar_o_sede": "Bodega",
+  "total_voluntarios_hoja": 17,
+  "voluntarios": [
+    {
+      "nombre_completo": "Mariana Rojas",
+      "cedula_o_id": null,
+      "telefono": "3045690474",
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Carlos Omedo",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Melissa Henao",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Gustavo Botto",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Jhon Marin",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Avril Gonzalez",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Samuel Henao",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Sofia Flores",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Juan Jose Galarza",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Santiago Pena",
+      "cedula_o_id": null,
+      "telefono": null,
+      "labor_o_actividad": "Conocen ingreso, inventario comida, cargue entrada",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Emelyn Clavijo",
+      "cedula_o_id": null,
+      "telefono": "3155322009",
+      "labor_o_actividad": "Bodega Cargue",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Samuel Castrillon",
+      "cedula_o_id": null,
+      "telefono": "3194115272",
+      "labor_o_actividad": "Bodega Cargue",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Lina Marin",
+      "cedula_o_id": null,
+      "telefono": "3014371579",
+      "labor_o_actividad": "Bodega Cargue",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Angel Jose Lobato",
+      "cedula_o_id": null,
+      "telefono": "3228907934",
+      "labor_o_actividad": "Bodega Cargue",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Juan Manuel Rios",
+      "cedula_o_id": null,
+      "telefono": "3216522840",
+      "labor_o_actividad": "Bodega Cargue",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Ismary Lobato",
+      "cedula_o_id": null,
+      "telefono": "3148167277",
+      "labor_o_actividad": "Bodega Cargue",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    },
+    {
+      "nombre_completo": "Miller Gonzalez",
+      "cedula_o_id": null,
+      "telefono": "3164935333",
+      "labor_o_actividad": "Bodega Cargue",
+      "disponibilidad_o_fecha": "Tarde, 12:00 pm en adelante",
+      "observaciones_o_firma": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:21:30.946985",
+    "duracion_segundos": 5.88,
+    "tokens_total": 2995
+  }
+}

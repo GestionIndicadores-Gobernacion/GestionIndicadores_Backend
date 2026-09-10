@@ -1,0 +1,168 @@
+{
+  "archivo_imagen": "E-000171.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "16/08/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Organew Suplemento",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "100g"
+    },
+    {
+      "medicamento_insumo": "Oralpet",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "400 ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "300 ml"
+    },
+    {
+      "medicamento_insumo": "Citoprotector Antiulceroso",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Antibiótico Bacteriostático",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "10 tab/5mg"
+    },
+    {
+      "medicamento_insumo": "Antiinflamatorio y analgésico",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30mg/62.5mg"
+    },
+    {
+      "medicamento_insumo": "Clavaseptin",
+      "cantidad": 1.0,
+      "unidad": "tab",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Canisan-D",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "90g/150m"
+    },
+    {
+      "medicamento_insumo": "Jabon",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30mg/ml"
+    },
+    {
+      "medicamento_insumo": "Tramasindol",
+      "cantidad": 1.0,
+      "unidad": "tab",
+      "presentacion": "10 tab"
+    },
+    {
+      "medicamento_insumo": "Diciclin 100",
+      "cantidad": 10.0,
+      "unidad": "ampolla",
+      "presentacion": "10 ampolla"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "50 mg"
+    },
+    {
+      "medicamento_insumo": "Oxitetraciclina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "300 ml"
+    },
+    {
+      "medicamento_insumo": "Splash herbal para perros",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "1mg/1ml"
+    },
+    {
+      "medicamento_insumo": "Epinefrina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Flumucil",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "160mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Arsenicum homeopático",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cannaby",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lactoreemplazador",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "100g"
+    },
+    {
+      "medicamento_insumo": "Compresor nebulizador",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Kit de tijeras",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Optilene",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "3/0"
+    },
+    {
+      "medicamento_insumo": "Novasyn",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Talco",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "70cm"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:27:26.271967",
+    "duracion_segundos": 4.92,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1290,
+    "tokens_total": 2662,
+    "costo_usd_estimado": 0.002278
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000044",
+  "archivo_imagen": "AV-000044.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 44,
+  "fecha_detectada": "13/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Katherine Mera Herrera",
+      "organismo_entidad": "Independiente",
+      "telefono": "3118202103",
+      "correo_electronico": "katermera@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Marco Antonio Londoño",
+      "organismo_entidad": "Independiente",
+      "telefono": "3128490092",
+      "correo_electronico": "martac1246@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alirio Caycedo",
+      "organismo_entidad": "Independiente",
+      "telefono": "3021218814",
+      "correo_electronico": "aliriocaycedo12@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Camila Rojas",
+      "organismo_entidad": "Independiente",
+      "telefono": "3122646539",
+      "correo_electronico": "cmirojas.92@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Fernanda Morales",
+      "organismo_entidad": "Independiente",
+      "telefono": "3168760890",
+      "correo_electronico": "diana.fer.morales@outlook.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Yury",
+      "organismo_entidad": "Distrivet MCM",
+      "telefono": "3117267577",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "William Castrillón",
+      "organismo_entidad": "Independiente",
+      "telefono": "3104145491",
+      "correo_electronico": "williamcastrillon.sgv@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lina Daniela García",
+      "organismo_entidad": "Independiente",
+      "telefono": "3226418198",
+      "correo_electronico": "daniela.gp.0612@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Luisa Fernanda Rios García",
+      "organismo_entidad": "Independiente",
+      "telefono": "3185574577",
+      "correo_electronico": "luisarios05@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juan Andrés Salazar",
+      "organismo_entidad": "Independiente",
+      "telefono": "3233637861",
+      "correo_electronico": "juanandressalazar6@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Isabella Castillo Sarria",
+      "organismo_entidad": "Independiente",
+      "telefono": "3127550437",
+      "correo_electronico": "isabella.castillo.s@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Isabella Velásquez",
+      "organismo_entidad": "Independiente",
+      "telefono": "3154180006",
+      "correo_electronico": "isabella.velasquez.garcia@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Enmanuel López Velandia",
+      "organismo_entidad": "Independiente",
+      "telefono": "3163280933",
+      "correo_electronico": "enmanuellopez206@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Estefanía Arias",
+      "organismo_entidad": "Independiente",
+      "telefono": "3080663991",
+      "correo_electronico": "estefania.a.0119@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:02:07.230846",
+    "duracion_segundos": 5.78,
+    "tokens_total": 2780
+  }
+}

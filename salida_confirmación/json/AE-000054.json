@@ -1,0 +1,98 @@
+{
+  "id_documento": "AE-000054",
+  "archivo_imagen": "AE-000054.jpg",
+  "archivo_origen_escaneo": "20260901_110729.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "No especificado",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 4,
+    "total_perros_censo": 70,
+    "total_gatos_censo": 85,
+    "total_animales_censo": 155,
+    "total_alimento_perro_kg": 78.0,
+    "total_alimento_gato_kg": 90.0,
+    "total_alimento_general_kg": 168.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Maria Camila Gil",
+      "municipio": "No especificado",
+      "direccion": "Calle 10C oeste #46-09",
+      "telefono": "3146674214",
+      "censo": {
+        "perros": 10,
+        "gatos": 5,
+        "total_animales": 15
+      },
+      "alimento_entregado": {
+        "perro_kg": 12.0,
+        "gato_kg": 8.0,
+        "total_kg": 20.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Gato 8kg, Perro 12kg"
+    },
+    {
+      "nombre_fundacion": "Shiara Serna",
+      "municipio": "No especificado",
+      "direccion": "Av las palmas casa 421",
+      "telefono": "3011793958",
+      "censo": {
+        "perros": 0,
+        "gatos": 30,
+        "total_animales": 30
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 34.0,
+        "total_kg": 34.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Gato 34kg"
+    },
+    {
+      "nombre_fundacion": "Liliana Bahot Diaz",
+      "municipio": "No especificado",
+      "direccion": "Corr. montbello cll 12w #40-16",
+      "telefono": "3014191008",
+      "censo": {
+        "perros": 60,
+        "gatos": 20,
+        "total_animales": 80
+      },
+      "alimento_entregado": {
+        "perro_kg": 66.0,
+        "gato_kg": 24.0,
+        "total_kg": 90.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Perro 66kg, Gato 24kg"
+    },
+    {
+      "nombre_fundacion": "Eva Surmento",
+      "municipio": "No especificado",
+      "direccion": "Calle 02 oeste 55B",
+      "telefono": "3217225742",
+      "censo": {
+        "perros": 0,
+        "gatos": 30,
+        "total_animales": 30
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 24.0,
+        "total_kg": 24.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Gato 24kg"
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": false,
+    "fecha_procesamiento": "2026-09-01T12:00:10.479481"
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "id_documento": "AM-000132",
+  "archivo_imagen": "AM-000132.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041733017.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-046",
+  "fecha_documento_detectada": "16/AGO/26",
+  "municipio_o_lugar": "CENTRO DE BIENESTAR ANIMAL",
+  "autoriza_nombre": null,
+  "recibe_nombre": "Juan Carlos Morales",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Organew",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "12g"
+    },
+    {
+      "medicamento_insumo": "Spectra-da",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Polvo reconstituir",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Algicam comprimidos",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "2mg"
+    },
+    {
+      "medicamento_insumo": "Inadine",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "sutura"
+    },
+    {
+      "medicamento_insumo": "Polypropylene",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Handel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "120ml/60ml"
+    },
+    {
+      "medicamento_insumo": "Hidratación oral",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "19,5g"
+    },
+    {
+      "medicamento_insumo": "Colirio-zoo oftálmica",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": ">2.3-5kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard",
+      "categoria_farmacologica": "Antiparasitarios y Purgantes",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": ">7.3-15kg"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "50g"
+    },
+    {
+      "medicamento_insumo": "Pomadas",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "300ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B12 oral",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Cicatrizante",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "30g"
+    },
+    {
+      "medicamento_insumo": "Betametasona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "20g"
+    },
+    {
+      "medicamento_insumo": "Lidocaína",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Quercetol-vet",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "tubos",
+      "presentacion": "tubo x 10g"
+    },
+    {
+      "medicamento_insumo": "Doxiciclina",
+      "categoria_farmacologica": "Antibióticos",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "200mg"
+    },
+    {
+      "medicamento_insumo": "Diclofenaco sódico",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "75mg / 3ml"
+    },
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "50mg 30 tab"
+    },
+    {
+      "medicamento_insumo": "Lidocaína clorhidrato",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Poncaina",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Solución antiséptica",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Jabón",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "unidad",
+      "presentacion": "10 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T18:06:12.268589",
+    "duracion_segundos": 7.41,
+    "tokens_total": 3746
+  }
+}

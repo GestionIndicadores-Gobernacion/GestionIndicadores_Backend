@@ -1,0 +1,132 @@
+{
+  "archivo_imagen": "E-000088.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Kit de disección",
+      "cantidad": 13.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasa",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": "1 paquete"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Pañitos",
+      "cantidad": 70.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Sonda nelaton",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Kit de disección",
+      "cantidad": 18.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Botella de alcohol",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "700 ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 700.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Pañitos",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jabon",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "x 48"
+    },
+    {
+      "medicamento_insumo": "Equipo de infusión",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 100.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 24.0,
+      "unidad": "sobres",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 12.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 44.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Suero fisiológico",
+      "cantidad": 70.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Suero fisiológico",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "250 ml"
+    },
+    {
+      "medicamento_insumo": "Suero fisiológico",
+      "cantidad": 22.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Cloruro de sodio",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:56.334135",
+    "duracion_segundos": 3.48,
+    "tokens_entrada": 1372,
+    "tokens_salida": 886,
+    "tokens_total": 2258,
+    "costo_usd_estimado": 0.001672
+  }
+}

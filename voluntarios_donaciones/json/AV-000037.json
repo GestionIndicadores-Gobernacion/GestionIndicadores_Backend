@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000037",
+  "archivo_imagen": "AV-000037.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 37,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones Voluntarias: Insumos, alimentos y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Jacqueline Gonzalez",
+      "organismo_entidad": "Independiente",
+      "telefono": "3127058863",
+      "correo_electronico": "jagon68@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniel Marin",
+      "organismo_entidad": "Independiente",
+      "telefono": "3116049160",
+      "correo_electronico": "danisferc1090@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Antonio Cordoba",
+      "organismo_entidad": "Independiente",
+      "telefono": "3194499208",
+      "correo_electronico": "director.siga@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Martha Garcia",
+      "organismo_entidad": "Independiente",
+      "telefono": "3113227562",
+      "correo_electronico": "Maluga34@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Fabio Bravo Rendon",
+      "organismo_entidad": "Independiente",
+      "telefono": "3044262067",
+      "correo_electronico": "fabobravo19@icloud.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Salom Amaya T.",
+      "organismo_entidad": "Independiente",
+      "telefono": "3001664510",
+      "correo_electronico": "elayosala2020@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juan Camilo Pulido",
+      "organismo_entidad": "Independiente",
+      "telefono": "3112220399",
+      "correo_electronico": "pulidoruizjuancamilo@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Adrien Lopez Olneyer",
+      "organismo_entidad": "Grupo Social Pendragón 77",
+      "telefono": "3245994786",
+      "correo_electronico": "adrianlopez058@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniela Benavidez",
+      "organismo_entidad": "Grupo Social Mika 494",
+      "telefono": "3171044745",
+      "correo_electronico": "jalicora@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Heidy Salazar C.",
+      "organismo_entidad": "",
+      "telefono": "",
+      "correo_electronico": "",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Carolina Monsalve",
+      "organismo_entidad": "Independiente",
+      "telefono": "3184065153",
+      "correo_electronico": "karola1730@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Beatriz Emilia R.",
+      "organismo_entidad": "Independiente",
+      "telefono": "31309777",
+      "correo_electronico": "beatriz.emilia@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Laura Rodriguez",
+      "organismo_entidad": "",
+      "telefono": "3169194424",
+      "correo_electronico": "laura-rodriguez@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jhon Henry Pepe",
+      "organismo_entidad": "Independiente",
+      "telefono": "3166402477",
+      "correo_electronico": "jhonhenry1003@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:01:19.201125",
+    "duracion_segundos": 5.93,
+    "tokens_total": 2748
+  }
+}

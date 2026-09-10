@@ -1,0 +1,98 @@
+{
+  "id_documento": "AE-000063",
+  "archivo_imagen": "AE-000063.jpg",
+  "archivo_origen_escaneo": "IMG-20260812-WA0026.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "No especificado",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 4,
+    "total_perros_censo": 44,
+    "total_gatos_censo": 73,
+    "total_animales_censo": 117,
+    "total_alimento_perro_kg": 44.0,
+    "total_alimento_gato_kg": 74.6,
+    "total_alimento_general_kg": 118.6
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Salvame",
+      "municipio": "",
+      "direccion": "Carrera 94C # 16-49",
+      "telefono": "3128424390",
+      "censo": {
+        "perros": 19,
+        "gatos": 15,
+        "total_animales": 34
+      },
+      "alimento_entregado": {
+        "perro_kg": 19.0,
+        "gato_kg": 15.8,
+        "total_kg": 34.8
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Olga Garcia",
+      "municipio": "",
+      "direccion": "Carrera 82 # 5-70",
+      "telefono": "3117370654",
+      "censo": {
+        "perros": 0,
+        "gatos": 30,
+        "total_animales": 30
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 30.8,
+        "total_kg": 30.8
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Pets friends",
+      "municipio": "",
+      "direccion": "Carrera 84 # 6a-114",
+      "telefono": "3156698822",
+      "censo": {
+        "perros": 0,
+        "gatos": 28,
+        "total_animales": 28
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 28.0,
+        "total_kg": 28.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Dora Rodriguez",
+      "municipio": "",
+      "direccion": "Calle 4b # 95-200",
+      "telefono": "3166196160",
+      "censo": {
+        "perros": 25,
+        "gatos": 0,
+        "total_animales": 25
+      },
+      "alimento_entregado": {
+        "perro_kg": 25.0,
+        "gato_kg": 0.0,
+        "total_kg": 25.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:01:52.091410"
+  }
+}

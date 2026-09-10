@@ -1,0 +1,181 @@
+{
+  "id_documento": "AM-000003",
+  "archivo_imagen": "AM-000003.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030332001.jpg",
+  "fecha_lote": "2026-08-12",
+  "dia_agosto": 12,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-034",
+  "fecha_documento_detectada": "12/08/2016",
+  "municipio_o_lugar": "Santiago de Cali",
+  "autoriza_nombre": "Gabriel",
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Metoclopramida",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "iny",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Laxante",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Silimarina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Protector",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "capsulas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Biocanis",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "6ml"
+    },
+    {
+      "medicamento_insumo": "Roxicaina",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dextrosa",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Electrolitos",
+      "categoria_farmacologica": "Fluidoterapia y Sueros",
+      "cantidad": 53.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "inyectable"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 6.0,
+      "unidad": "und",
+      "presentacion": "0.5%"
+    },
+    {
+      "medicamento_insumo": "Meloxicam Gotas",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 4.0,
+      "unidad": "und",
+      "presentacion": "0.15%"
+    },
+    {
+      "medicamento_insumo": "Fiohemox",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Stomil",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "20mg"
+    },
+    {
+      "medicamento_insumo": "Lyrica",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 3.0,
+      "unidad": "und",
+      "presentacion": "105ml"
+    },
+    {
+      "medicamento_insumo": "Ainom-V",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": "(LHA)"
+    },
+    {
+      "medicamento_insumo": "Revit-V",
+      "categoria_farmacologica": "Vitaminas y Suplementos",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "(LHA)"
+    },
+    {
+      "medicamento_insumo": "Traumeel",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "und",
+      "presentacion": "frasco 50 tabletas"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tramic Gotas",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Neurexan",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "50 tabletas"
+    },
+    {
+      "medicamento_insumo": "Salbutamol",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "oral 120ml"
+    },
+    {
+      "medicamento_insumo": "Hidramin",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "oral 120ml"
+    },
+    {
+      "medicamento_insumo": "Bethahistina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": "8mg 10 tabletas"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T17:52:57.969623",
+    "duracion_segundos": 5.88,
+    "tokens_total": 3398
+  }
+}

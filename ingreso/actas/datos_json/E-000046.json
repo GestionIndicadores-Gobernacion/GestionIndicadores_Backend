@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000046.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 Agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "1ml"
+    },
+    {
+      "medicamento_insumo": "Guía",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "no tejida"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "700ml"
+    },
+    {
+      "medicamento_insumo": "Suero fisiológico",
+      "cantidad": 6.0,
+      "unidad": "bolsas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringa para catéter",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "cantidad": 8.0,
+      "unidad": "paquetes",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "cantidad": 1.0,
+      "unidad": "paquetes",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Electrodos",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": "500g"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Venda elástica",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 4.0,
+      "unidad": "cajas",
+      "presentacion": "20ml x 50"
+    },
+    {
+      "medicamento_insumo": "Paños húmedos",
+      "cantidad": 5.0,
+      "unidad": "paquetes",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Escalpelo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tijeras",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "quirúrgicas"
+    },
+    {
+      "medicamento_insumo": "Pinza",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "quirúrgica"
+    },
+    {
+      "medicamento_insumo": "Venda elástica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cuchillas",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Suturas",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "x 12"
+    },
+    {
+      "medicamento_insumo": "Gasa larga",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Tapabocas",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:13:07.300872",
+    "duracion_segundos": 4.86,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1071,
+    "tokens_total": 2443,
+    "costo_usd_estimado": 0.001949
+  }
+}

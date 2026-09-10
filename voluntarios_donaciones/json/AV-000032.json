@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000032",
+  "archivo_imagen": "AV-000032.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 32,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega donaciones voluntarias: Insumos, alimento y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Zulema Zambrano",
+      "organismo_entidad": "Particular",
+      "telefono": "3187774923",
+      "correo_electronico": "1969zuly11@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Antonia Calad Feijoo",
+      "organismo_entidad": "Particular",
+      "telefono": "3223082680",
+      "correo_electronico": "antoniacalad2007@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sandra P. Castro A.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3155088182",
+      "correo_electronico": "sandra3castro@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Dayana Molina",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "318200983",
+      "correo_electronico": "dayi_dayana002@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Jeniffer Sanchez R.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3143821325",
+      "correo_electronico": "jeniffersanchezr0@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Tania Chamorro",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3160581104",
+      "correo_electronico": "taniachamorro768@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Fernanda Ortega",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3186622810",
+      "correo_electronico": "ortegafernanda583@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sofia Arredondo C.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3107006665",
+      "correo_electronico": "sofiarredondocast1@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sara Ospina Hernandez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3013637939",
+      "correo_electronico": "sospinahernandez@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Santiago Villalobos",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3052216807",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Karen Suarez",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3017143138",
+      "correo_electronico": "suarezkaren000@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Edier Grain",
+      "organismo_entidad": "Ciudadano",
+      "telefono": "3233887272",
+      "correo_electronico": "ediergrain2003@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Alejandra G.",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3151566604",
+      "correo_electronico": "aleja-gaugala@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lizette Camila Londoño",
+      "organismo_entidad": "Ciudadana",
+      "telefono": "3155929055",
+      "correo_electronico": "camila25@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:00:45.157433",
+    "duracion_segundos": 5.51,
+    "tokens_total": 2772
+  }
+}

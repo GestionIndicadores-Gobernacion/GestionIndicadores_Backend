@@ -1,0 +1,181 @@
+{
+  "id_documento": "AM-000280",
+  "archivo_imagen": "AM-000280.jpg",
+  "archivo_origen_escaneo": "20260827_183013.jpg",
+  "fecha_lote": "2026-08-25",
+  "dia_agosto": 25,
+  "tipo_documento": "VETERINARIO",
+  "codigo_acta_vinculante": "A-511",
+  "fecha_documento_detectada": null,
+  "municipio_o_lugar": "Cali",
+  "autoriza_nombre": null,
+  "recibe_nombre": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Meloxicam gotas",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 49.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam tab 2mg",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 130.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam tab 3mg",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 5.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam tab 4mg",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam tab 15mg",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam 0.15% iny",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Meloxicam 1mg Tab",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lidocaína 50ml",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína 20ml",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 17.0,
+      "unidad": "frascos",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaína jalea",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Lidocaína 10ml",
+      "categoria_farmacologica": "Anestésicos y Sedantes",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 7.5mg tab",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "7.5mg"
+    },
+    {
+      "medicamento_insumo": "Baxidin 3.8L",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "3.8L"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina 120ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Spray clorhexidina",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Yodo sobre",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 40.0,
+      "unidad": "sobres",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Clorhexidina 120ml",
+      "categoria_farmacologica": "Material Quirúrgico y Curación",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam 15mg iny",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "15mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona 8mg",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 80.0,
+      "unidad": "unidades",
+      "presentacion": "8mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona 4mg",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 60.0,
+      "unidad": "unidades",
+      "presentacion": "4mg"
+    },
+    {
+      "medicamento_insumo": "Tramadol 50mg tab",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 30.0,
+      "unidad": "tabletas",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Tramadol 50mg ampolla",
+      "categoria_farmacologica": "Analgésicos y Antiinflamatorios",
+      "cantidad": 13.0,
+      "unidad": "ampollas",
+      "presentacion": "50mg"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "categoria_farmacologica": "Otros Insumos Veterinarios",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-27T19:07:33.746611",
+    "duracion_segundos": 5.09,
+    "tokens_total": 3415
+  }
+}

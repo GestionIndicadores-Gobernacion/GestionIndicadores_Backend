@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000562",
+  "archivo_imagen": "AS-000562.jpg",
+  "archivo_origen_escaneo": "20260827_174841.jpg",
+  "fecha_lote": "2026-08-24",
+  "dia_agosto": 24,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "CBA-Cali",
+  "autoriza_entrega": {
+    "nombre": "Lizeth Parra",
+    "cedula": "No especificada"
+  },
+  "recibe": {
+    "nombre": "Carmen E. Dominguez",
+    "cedula": "No especificada"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 650.0,
+    "alimento_gato_kg": 150.0,
+    "total_alimento_seco_kg": 800.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 100.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T18:57:53.800283"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id_documento": "AE-000069",
+  "archivo_imagen": "AE-000069.jpg",
+  "archivo_origen_escaneo": "IMG-20260819-WA0007.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 5,
+    "total_perros_censo": 0,
+    "total_gatos_censo": 0,
+    "total_animales_censo": 0,
+    "total_alimento_perro_kg": 30.0,
+    "total_alimento_gato_kg": 125.0,
+    "total_alimento_general_kg": 155.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Valery Otero",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3225184541",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 30.0,
+        "total_kg": 30.0
+      },
+      "firma_registrada": false,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Claudy Eliene",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3152585550",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 25.0,
+        "total_kg": 25.0
+      },
+      "firma_registrada": false,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Jhon Espinoza",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3116340568",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 30.0,
+        "total_kg": 30.0
+      },
+      "firma_registrada": false,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Yuri Corrales",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3157901779",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 30.0,
+        "gato_kg": 20.0,
+        "total_kg": 50.0
+      },
+      "firma_registrada": false,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Monica Huru",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3137507520",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 20.0,
+        "total_kg": 20.0
+      },
+      "firma_registrada": false,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:02:53.977247"
+  }
+}

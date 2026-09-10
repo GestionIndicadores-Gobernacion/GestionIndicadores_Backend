@@ -1,0 +1,41 @@
+{
+  "archivo_imagen": "AS-000367.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_043457001.jpg",
+  "autoriza_entrega": {
+    "cedula": "null",
+    "nombre": "Jeyp. Cedeno"
+  },
+  "barrio_corregimiento_refugio": "Parques Naturales",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 0,
+    "alimento_perro_kg": 30,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 100,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 100,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 30
+  },
+  "dia_agosto": 19,
+  "fecha_lote": "2026-08-19",
+  "id_documento": "AS-000367",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:06:29.559009"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "null",
+    "nombre": "Marianne Hayo M."
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000085.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Canula",
+      "cantidad": 21.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Sonda nelaton",
+      "cantidad": 75.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Mascarilla de oxigeno",
+      "cantidad": 17.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "cantidad": 36.0,
+      "unidad": "unidades",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Caja mascarilla",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "x 50"
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "700 ml"
+    },
+    {
+      "medicamento_insumo": "Suero",
+      "cantidad": 4.0,
+      "unidad": "bolsas",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Suero",
+      "cantidad": 3.0,
+      "unidad": "bolsas",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Algodon",
+      "cantidad": 1.0,
+      "unidad": "paquetes",
+      "presentacion": "x 6 u"
+    },
+    {
+      "medicamento_insumo": "Jeringa microgotero",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Paquete algodon",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "3 ml"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 6.0,
+      "unidad": "paquetes",
+      "presentacion": "septicas x 100 u"
+    },
+    {
+      "medicamento_insumo": "Set de infusion",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Mascaras oxigeno",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "x 24 u"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 2.0,
+      "unidad": "paquetes",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Gasas",
+      "cantidad": 8.0,
+      "unidad": "paquetes",
+      "presentacion": "x 25 u"
+    },
+    {
+      "medicamento_insumo": "Sueros",
+      "cantidad": 72.0,
+      "unidad": "bolsas",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Rollos dentales",
+      "cantidad": 1.0,
+      "unidad": "rollos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Sueros alcohol",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "500 ml / 3600 ml"
+    },
+    {
+      "medicamento_insumo": "Guantes",
+      "cantidad": 5.0,
+      "unidad": "cajas",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:41.304601",
+    "duracion_segundos": 4.28,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1154,
+    "tokens_total": 2526,
+    "costo_usd_estimado": 0.002074
+  }
+}

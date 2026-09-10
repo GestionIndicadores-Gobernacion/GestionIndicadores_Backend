@@ -1,0 +1,62 @@
+{
+  "id_documento": "AE-000071",
+  "archivo_imagen": "AE-000071.jpg",
+  "archivo_origen_escaneo": "IMG-20260901-WA0002.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "FO-M9-P3-01- V04",
+  "fecha_entrega": "2026-08-15",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 2,
+    "total_perros_censo": 45,
+    "total_gatos_censo": 13,
+    "total_animales_censo": 58,
+    "total_alimento_perro_kg": 0.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 0.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Luz Angela Arias",
+      "municipio": "Vijes",
+      "direccion": "SIN_INFORMACION",
+      "telefono": "SIN_INFORMACION",
+      "censo": {
+        "perros": 45,
+        "gatos": 13,
+        "total_animales": 58
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Cantidad de alimento registrada como 600kg en columna de cantidad y 90kg en total"
+    },
+    {
+      "nombre_fundacion": "Alcaldía",
+      "municipio": "Vijes",
+      "direccion": "SIN_INFORMACION",
+      "telefono": "SIN_INFORMACION",
+      "censo": {
+        "perros": 0,
+        "gatos": 0,
+        "total_animales": 0
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": "Cantidad de alimento registrada como 510kg en columna de cantidad y 500kg en total"
+    }
+  ],
+  "notas_generales_planilla": "Entrega de alimentos en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": false,
+    "fecha_procesamiento": "2026-09-01T12:03:17.398924"
+  }
+}

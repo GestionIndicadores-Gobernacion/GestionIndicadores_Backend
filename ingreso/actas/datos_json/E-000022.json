@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000022.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dolidol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.1% 10ml"
+    },
+    {
+      "medicamento_insumo": "Systane Ultra",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2.5ml"
+    },
+    {
+      "medicamento_insumo": "Oftalmotamax",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Hialub",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "4mg 10ml"
+    },
+    {
+      "medicamento_insumo": "Toblacort",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Tealsoft",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Dextromin B",
+      "cantidad": 25.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Aminolyte",
+      "cantidad": 4.0,
+      "unidad": "bolsas",
+      "presentacion": "250ml"
+    },
+    {
+      "medicamento_insumo": "Baxidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "solución"
+    },
+    {
+      "medicamento_insumo": "Pleasepsis",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "1000ml"
+    },
+    {
+      "medicamento_insumo": "Compleand",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "1lt"
+    },
+    {
+      "medicamento_insumo": "Ixer",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "080 1lt"
+    },
+    {
+      "medicamento_insumo": "Clorhexin spray",
+      "cantidad": 10.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Vioxin solución",
+      "cantidad": 7.0,
+      "unidad": "frascos",
+      "presentacion": "2.3%"
+    },
+    {
+      "medicamento_insumo": "Vioxin solución",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "2%"
+    },
+    {
+      "medicamento_insumo": "Vioxin solución",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "4%"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 11.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Hexocleen",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "2% 120ml"
+    },
+    {
+      "medicamento_insumo": "Vetisule",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 75.0,
+      "unidad": "ampollas",
+      "presentacion": "8mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 22.0,
+      "unidad": "ampollas",
+      "presentacion": "1ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:05:57.433338",
+    "duracion_segundos": 5.48,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1145,
+    "tokens_total": 2517,
+    "costo_usd_estimado": 0.00206
+  }
+}

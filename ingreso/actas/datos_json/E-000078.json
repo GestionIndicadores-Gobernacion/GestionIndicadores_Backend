@@ -1,0 +1,48 @@
+{
+  "archivo_imagen": "E-000078.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/09/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dexametasona inyectable",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona inyectable",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "10mg"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "20mg"
+    },
+    {
+      "medicamento_insumo": "P. Salina",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:16:01.953786",
+    "duracion_segundos": 2.21,
+    "tokens_entrada": 1372,
+    "tokens_salida": 303,
+    "tokens_total": 1675,
+    "costo_usd_estimado": 0.000798
+  }
+}

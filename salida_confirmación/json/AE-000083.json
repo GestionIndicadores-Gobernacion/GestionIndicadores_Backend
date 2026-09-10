@@ -1,0 +1,62 @@
+{
+  "id_documento": "AE-000083",
+  "archivo_imagen": "AE-000083.jpg",
+  "archivo_origen_escaneo": "Screenshot_20260901_113840_Drive.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "1.330.50",
+  "fecha_entrega": "2026-08-13",
+  "transportista_ruta": "",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 2,
+    "total_perros_censo": 109,
+    "total_gatos_censo": 28,
+    "total_animales_censo": 137,
+    "total_alimento_perro_kg": 0.0,
+    "total_alimento_gato_kg": 0.0,
+    "total_alimento_general_kg": 0.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Ana Georgina",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3103823133",
+      "censo": {
+        "perros": 100,
+        "gatos": 8,
+        "total_animales": 108
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Honorio Romero",
+      "municipio": "",
+      "direccion": "",
+      "telefono": "3116428889",
+      "censo": {
+        "perros": 9,
+        "gatos": 20,
+        "total_animales": 29
+      },
+      "alimento_entregado": {
+        "perro_kg": 0.0,
+        "gato_kg": 0.0,
+        "total_kg": 0.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": false,
+    "fecha_procesamiento": "2026-09-01T12:05:24.771421"
+  }
+}

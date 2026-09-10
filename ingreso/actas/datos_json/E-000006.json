@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000006.jpg",
+  "fecha_lote": "2026-08-12",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "12/08/202X",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Dextromin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Baixidin",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Meloxiproc",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Bronqui",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "200 120ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 25.0,
+      "unidad": "ampollas",
+      "presentacion": "1mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 20.0,
+      "unidad": "ampollas",
+      "presentacion": "8mg/2ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "2% 50ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Paracanis",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Carmelub",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Quercetol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100mg"
+    },
+    {
+      "medicamento_insumo": "Electrolito",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10g"
+    },
+    {
+      "medicamento_insumo": "Metarsal",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "4mg"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina spray",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Tears lagrima",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Wesche",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Digest",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "100g"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "cantidad": 1.0,
+      "unidad": "tableta",
+      "presentacion": "40mg"
+    },
+    {
+      "medicamento_insumo": "Prednisona",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "5mg"
+    },
+    {
+      "medicamento_insumo": "Tramadol",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "50mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:03:33.822534",
+    "duracion_segundos": 8.19,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1135,
+    "tokens_total": 2507,
+    "costo_usd_estimado": 0.002046
+  }
+}

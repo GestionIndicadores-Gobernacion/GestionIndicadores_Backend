@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000570",
+  "archivo_imagen": "AS-000570.jpg",
+  "archivo_origen_escaneo": "20260827_174958.jpg",
+  "fecha_lote": "2026-08-24",
+  "dia_agosto": 24,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Diego cedeño",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Alison Daza",
+    "cedula": ""
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 28.0,
+    "alimento_gato_kg": 32.0,
+    "total_alimento_seco_kg": 60.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 0,
+    "arena_kg": 16.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Arena para gato",
+        "cantidad": 16.0,
+        "unidad": "kg"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-27T18:58:39.497872"
+  }
+}

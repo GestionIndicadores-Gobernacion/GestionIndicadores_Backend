@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000035",
+  "archivo_imagen": "AV-000035.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 35,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimento y medicamento",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Paola Fernandez",
+      "organismo_entidad": "",
+      "telefono": "3003649326",
+      "correo_electronico": "Paolafernandezm1991@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Orlando Lastra",
+      "organismo_entidad": "",
+      "telefono": "3016651464",
+      "correo_electronico": "Orlando.lastra@correounivalle.edu.co",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Desayunos sorpresa Cali",
+      "organismo_entidad": "",
+      "telefono": "3178947825",
+      "correo_electronico": "Valenninfante@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Manuela Mayorga E",
+      "organismo_entidad": "",
+      "telefono": "3016414813",
+      "correo_electronico": "mayorgaecheverry2008@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Faison Jacome",
+      "organismo_entidad": "",
+      "telefono": "317059620",
+      "correo_electronico": "Faxija@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Evelyn Guzman B",
+      "organismo_entidad": "",
+      "telefono": "3154162234",
+      "correo_electronico": "eveguzmanb@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Monica Bonilla",
+      "organismo_entidad": "",
+      "telefono": "3245923685",
+      "correo_electronico": "mmos49992@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Isabella Rebolledo",
+      "organismo_entidad": "",
+      "telefono": "3154149012",
+      "correo_electronico": "isazr0405@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Ingrid Julieth Guanga",
+      "organismo_entidad": "",
+      "telefono": "3143996495",
+      "correo_electronico": "ingrid9914@live.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Laura Sofia Collazos",
+      "organismo_entidad": "",
+      "telefono": "3137139048",
+      "correo_electronico": "laurasofia6110705@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Jazmin Marmolyo",
+      "organismo_entidad": "",
+      "telefono": "3175631994",
+      "correo_electronico": "Jazmin.marmolyo77@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Andres Paez",
+      "organismo_entidad": "",
+      "telefono": "3123925793",
+      "correo_electronico": "andresp19@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Jorge Luis Aparicio E",
+      "organismo_entidad": "",
+      "telefono": "3102392964",
+      "correo_electronico": "jorgeluisaparicio@yahoo.es",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Mariana Rojas Orozco",
+      "organismo_entidad": "",
+      "telefono": "3045690474",
+      "correo_electronico": "Mariarojasorozo@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:01:06.606316",
+    "duracion_segundos": 6.04,
+    "tokens_total": 2681
+  }
+}

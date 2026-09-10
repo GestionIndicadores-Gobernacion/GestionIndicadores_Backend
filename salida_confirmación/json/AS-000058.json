@@ -1,0 +1,76 @@
+{
+  "id_documento": "AS-000058",
+  "archivo_imagen": "AS-000058.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_030539004.jpg",
+  "fecha_lote": "2026-08-13",
+  "dia_agosto": 13,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "El Cairo",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Diego Cedeno",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Omar esteban blandon escobar",
+    "cedula": "1007560435"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 300.0,
+    "alimento_gato_kg": 100.0,
+    "total_alimento_seco_kg": 400.0,
+    "comida_humeda_perro_und": 15,
+    "comida_humeda_gato_und": 15,
+    "comida_humeda_total_und": 30,
+    "arena_kg": 200.0,
+    "areneros_und": 0,
+    "camas_und": 10,
+    "cobijas_und": 0,
+    "recipientes_und": 10,
+    "huacales_und": 1,
+    "collares_und": 10,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Cajas de Tapabocas",
+        "cantidad": 3.0,
+        "unidad": "cajas"
+      },
+      {
+        "articulo": "Cajas Guantes",
+        "cantidad": 3.0,
+        "unidad": "cajas"
+      },
+      {
+        "articulo": "Cateter Azules",
+        "cantidad": 118.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Microgoteo",
+        "cantidad": 5.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Tapan he rodorado",
+        "cantidad": 100.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Lactato de Ringer 500ml",
+        "cantidad": 25.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "Lactato de Ringer 1000ml",
+        "cantidad": 12.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:35:56.678494"
+  }
+}

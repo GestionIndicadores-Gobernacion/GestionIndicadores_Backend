@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000132.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/09/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Rifamicina Spray",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Multivitaminico oral",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Talcox",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Jeringas",
+      "cantidad": 7.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina 2%",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "inyectable"
+    },
+    {
+      "medicamento_insumo": "Detergente desinfectante",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Suplemento Petcell",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Clorhexidina",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "0.12% bucal"
+    },
+    {
+      "medicamento_insumo": "Gel Dentrifico",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "75ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Detergente",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina inyeccion",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Jabon Antiseptico",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Metubest",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "inyectable"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 4.0,
+      "unidad": "ampollas",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteina",
+      "cantidad": 1.0,
+      "unidad": "ampollas",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml 0.15%"
+    },
+    {
+      "medicamento_insumo": "Epinefrina",
+      "cantidad": 15.0,
+      "unidad": "ampollas",
+      "presentacion": "1mg"
+    },
+    {
+      "medicamento_insumo": "Suero revitall",
+      "cantidad": 12.0,
+      "unidad": "frascos",
+      "presentacion": "liquido"
+    },
+    {
+      "medicamento_insumo": "Dextromin-B",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "100ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 2.0,
+      "unidad": "ampollas",
+      "presentacion": "20ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteina",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "300mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:22:50.759363",
+    "duracion_segundos": 4.35,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1221,
+    "tokens_total": 2593,
+    "costo_usd_estimado": 0.002175
+  }
+}

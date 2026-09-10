@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000024",
+  "archivo_imagen": "AV-000024.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 24,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Sophie Mineiro Palacio",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3022378719",
+      "correo_electronico": "Sophie.palacio17@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Mateo Astaiza",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3155872842",
+      "correo_electronico": "mateo.astaiza@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Geraldine Vargas",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3003416618",
+      "correo_electronico": "geral.vargas200@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Stevens Moreno C.",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3148676741",
+      "correo_electronico": "morenoescobar215@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Andrea Romero",
+      "organismo_entidad": "ciudadana",
+      "telefono": "3006879304",
+      "correo_electronico": "anroked.cali@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "IVAN MARTINEZ",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3205444358",
+      "correo_electronico": "ivanmarc@yahoo.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Benjamin Santa Guzman",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3136856990",
+      "correo_electronico": "benjaminsantava@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Catalina Trujillo",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3157513045",
+      "correo_electronico": "ctrujillo0806@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Daniela Ortega Rojas",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3202145580",
+      "correo_electronico": "dannielaortegar@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Andrés Ortiz",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3103966622",
+      "correo_electronico": "andortga@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ana Sofia Urrea",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3027244662",
+      "correo_electronico": "anasofia.urrea414@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "CLAUDIA SOTO",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3155775703",
+      "correo_electronico": "claudiasoto79@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ana Maria Guaman",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3224508995",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "GERARDO AGUILAR",
+      "organismo_entidad": "ciudadano",
+      "telefono": "3163200657",
+      "correo_electronico": "Locate22@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:59:55.412109",
+    "duracion_segundos": 5.49,
+    "tokens_total": 2741
+  }
+}

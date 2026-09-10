@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000068.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "B-tex",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "60 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxiproc",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "0.15% / 10ml"
+    },
+    {
+      "medicamento_insumo": "Doxifig",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Spectra del gotas",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Canisan F",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Paracodina",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "2.42 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxic",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxipet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "0.15% / 10ml"
+    },
+    {
+      "medicamento_insumo": "Vita Vet C",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Cannabis",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "1% / 30 ml"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxiproc",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml / 0.15%"
+    },
+    {
+      "medicamento_insumo": "Traumeel",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "50 tabletas"
+    },
+    {
+      "medicamento_insumo": "Glicopan Pet",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "ALT"
+    },
+    {
+      "medicamento_insumo": "Liv 52",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "110 ml"
+    },
+    {
+      "medicamento_insumo": "Mirrapel",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Quinodiar",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Metronidazol",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Canisan D",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Total F",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Ventilan",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Emetibest",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "10 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:15:05.620000",
+    "duracion_segundos": 5.49,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1139,
+    "tokens_total": 2511,
+    "costo_usd_estimado": 0.002051
+  }
+}

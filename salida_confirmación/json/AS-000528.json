@@ -1,0 +1,47 @@
+{
+  "archivo_imagen": "AS-000528.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_053303030.jpg",
+  "autoriza_entrega": {
+    "cedula": "",
+    "nombre": "Johana Penafiel"
+  },
+  "barrio_corregimiento_refugio": "Terrón Colorado",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "datos_alimentos": {
+    "alimento_gato_kg": 40,
+    "alimento_perro_kg": 90,
+    "arena_kg": 0,
+    "areneros_und": 0,
+    "camas_und": 4,
+    "cobijas_und": 0,
+    "collares_und": 0,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_total_und": 0,
+    "huacales_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Camas",
+        "cantidad": 4,
+        "unidad": "und"
+      }
+    ],
+    "recipientes_und": 0,
+    "total_alimento_seco_kg": 130
+  },
+  "dia_agosto": 22,
+  "fecha_lote": "2026-08-22",
+  "id_documento": "AS-000528",
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:41:17.869469"
+  },
+  "municipio": "Santiago de Cali",
+  "recibe": {
+    "cedula": "",
+    "nombre": "Esmeralda Suarez"
+  },
+  "tipo_documento": "ALIMENTOS",
+  "desglose_municipios": []
+}

@@ -1,0 +1,248 @@
+{
+  "id_documento": "VO-000003",
+  "archivo_imagen": "VO-000003.jpg",
+  "archivo_origen": "WhatsApp Image 2026-08-20 at 9.16.43 PM.jpeg",
+  "tipo_documento": "VOLUNTARIOS_OPERATIVOS",
+  "fecha_detectada": null,
+  "lugar_o_sede": null,
+  "total_voluntarios_hoja": 29,
+  "voluntarios": [
+    {
+      "nombre_completo": "Natalia Cárdenas Ruiz",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juan Diego Cartoro",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juan Pablo Ramirez",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Alejandra Morales",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Valeria Navia",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Angela Velasquez",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Michelle Ortiz",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Ana Castillo Candelo",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Fernando Medina",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8:30 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Nathalia",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8:30 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Maria del Mar Zarama Sanchez",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1:00 pm",
+      "observaciones_o_firma": "☺"
+    },
+    {
+      "nombre_completo": "Sofia Malagon",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8:00 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Alexandra Insuasty",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "8:00 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sofia Erazo Zamora",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "10:00 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Claudia Soto",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "12:00 m",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Victoria Roman",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "2:00 m",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Maria Jose Vasquez G",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "10:00 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Valeria Rojas",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "10:00 am",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Tirso Luna",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "12:00 m",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sebastian Parra L",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "7:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Gabriela Ladino",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "7:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Salome Rojas",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "7:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Hadon Thomas Ramirez",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "7:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Tomas Castañeda",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "7:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Lizette Camila Londoño Becerra",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Miguel Angel Guarin",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Diego Alexander Alban Portilla",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Ingrid Vanesa Erazo Realpe",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1:00 pm",
+      "observaciones_o_firma": ""
+    },
+    {
+      "nombre_completo": "Nathalia Quiroz Mosquera",
+      "cedula_o_id": "",
+      "telefono": "",
+      "labor_o_actividad": "",
+      "disponibilidad_o_fecha": "1:00 pm",
+      "observaciones_o_firma": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:21:38.640338",
+    "duracion_segundos": 7.14,
+    "tokens_total": 3517
+  }
+}

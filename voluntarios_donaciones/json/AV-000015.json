@@ -1,0 +1,160 @@
+{
+  "id_documento": "AV-000015",
+  "archivo_imagen": "AV-000015.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 15,
+  "fecha_detectada": "11/08/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA",
+  "total_personas_hoja": 18,
+  "personas": [
+    {
+      "nombre_completo": "Jennifer Gutierrez",
+      "organismo_entidad": "Profesional",
+      "telefono": "3172259523",
+      "correo_electronico": "jennifergutierrez2010@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Gabriel Garcés",
+      "organismo_entidad": "Estudiante",
+      "telefono": "3152204982",
+      "correo_electronico": "ggarces2123@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Oriana Canelo",
+      "organismo_entidad": "Profesional",
+      "telefono": "3233405681",
+      "correo_electronico": "orianacanelo75@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Gloria Rengifo",
+      "organismo_entidad": "Profesional",
+      "telefono": "3117228893",
+      "correo_electronico": "rengifo_11-s@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Kimberly Sotelo",
+      "organismo_entidad": "Profesional",
+      "telefono": "3154449874",
+      "correo_electronico": "sotelokimberly10.16@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Natali Solarte",
+      "organismo_entidad": "Profesional",
+      "telefono": "3154116480",
+      "correo_electronico": "nathalyso141@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Victor Manuel Diaz",
+      "organismo_entidad": "Profesional",
+      "telefono": "3122840391",
+      "correo_electronico": "vmddiaz@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Lina Sofia Ospina M",
+      "organismo_entidad": "Profesional",
+      "telefono": "3237606152",
+      "correo_electronico": "linalsomx@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Juan Narvaez A",
+      "organismo_entidad": "Profesional",
+      "telefono": "3173273518",
+      "correo_electronico": "narvaezacosta@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Erick Johan Rueda Tobar",
+      "organismo_entidad": "Profesional",
+      "telefono": "3099687910",
+      "correo_electronico": "erickrueda7120@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Miguel Angel Millan",
+      "organismo_entidad": "Profesional",
+      "telefono": "3137266294",
+      "correo_electronico": "millanmiguel223@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Sofia Romero",
+      "organismo_entidad": "Profesional",
+      "telefono": "3017405027",
+      "correo_electronico": "sofiaromeronar@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ruby Narvaez",
+      "organismo_entidad": "Profesional",
+      "telefono": "3166943446",
+      "correo_electronico": "rubynarvaez@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Ruben Dario Escudero",
+      "organismo_entidad": "Independiente",
+      "telefono": "3165811753",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Melanie Arcos",
+      "organismo_entidad": "Estudiante",
+      "telefono": "305453355",
+      "correo_electronico": "mclaniearcos23@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Angela L Taborda",
+      "organismo_entidad": "Ama de casa",
+      "telefono": "3124024719",
+      "correo_electronico": "yolitaborda76@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Yeimer Barragan",
+      "organismo_entidad": "Profesional",
+      "telefono": "3146807665",
+      "correo_electronico": "yeimer.p29@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Diana Balanta",
+      "organismo_entidad": "Profesional",
+      "telefono": "3188844708",
+      "correo_electronico": "dcb09@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T20:58:55.734476",
+    "duracion_segundos": 6.69,
+    "tokens_total": 3149
+  }
+}

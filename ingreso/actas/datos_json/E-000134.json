@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000134.jpg",
+  "fecha_lote": "2026-08-16",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": null,
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Cateter intravenosa",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "30 und"
+    },
+    {
+      "medicamento_insumo": "Gasa",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "12 und x 1 caja"
+    },
+    {
+      "medicamento_insumo": "Jeringa 1ml",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "100 unidades"
+    },
+    {
+      "medicamento_insumo": "Jeringa 3ml",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "100 und"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 4.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 28.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Equipo pericraneal",
+      "cantidad": 4.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Macrogotero",
+      "cantidad": 3.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Algicam pets",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "2mg, 10 tabletas"
+    },
+    {
+      "medicamento_insumo": "Antiseptico",
+      "cantidad": 1.0,
+      "unidad": "tarro",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Fitovete crema",
+      "cantidad": 1.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Gasa esteril",
+      "cantidad": 30.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Micropore",
+      "cantidad": 2.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Gasa",
+      "cantidad": 5.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pañales mascotas",
+      "cantidad": 3.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Solucion salina",
+      "cantidad": 12.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cateter 22 G",
+      "cantidad": 14.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cateter 24 G",
+      "cantidad": 15.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cateter 20 G",
+      "cantidad": 15.0,
+      "unidad": "und",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Cateter",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "20x4, 22x4, 24x4"
+    },
+    {
+      "medicamento_insumo": "Solucion Salina",
+      "cantidad": 4.0,
+      "unidad": "tarros",
+      "presentacion": "1000 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:23:50.348657",
+    "duracion_segundos": 4.64,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1039,
+    "tokens_total": 2411,
+    "costo_usd_estimado": 0.001901
+  }
+}

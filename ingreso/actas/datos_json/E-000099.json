@@ -1,0 +1,54 @@
+{
+  "archivo_imagen": "E-000099.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "11-Ago/16",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Nexgard",
+      "cantidad": 3.5,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "20mg"
+    },
+    {
+      "medicamento_insumo": "Amoxicilina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "250mg/5ml"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "250mg/5ml"
+    },
+    {
+      "medicamento_insumo": "Prednisolona",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": "5mg/30 tabletas"
+    },
+    {
+      "medicamento_insumo": "Traumeel",
+      "cantidad": 2.0,
+      "unidad": "tabletas",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:17:48.219375",
+    "duracion_segundos": 2.5,
+    "tokens_entrada": 1372,
+    "tokens_salida": 343,
+    "tokens_total": 1715,
+    "costo_usd_estimado": 0.000857
+  }
+}

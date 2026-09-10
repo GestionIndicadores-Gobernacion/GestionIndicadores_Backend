@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000308",
+  "archivo_imagen": "AS-000308.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_041523004.jpg",
+  "fecha_lote": "2026-08-18",
+  "dia_agosto": 18,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-046",
+  "municipio": "Versalles",
+  "barrio_corregimiento_refugio": "Juan Carlos Morales-Dagua-Versalles",
+  "autoriza_entrega": {
+    "nombre": "Diego",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Juan Carlos Morales",
+    "cedula": "316 040 5485"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 90.0,
+    "alimento_gato_kg": 32.0,
+    "total_alimento_seco_kg": 122.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 150,
+    "comida_humeda_total_und": 150,
+    "arena_kg": 28.0,
+    "areneros_und": 27,
+    "camas_und": 2,
+    "cobijas_und": 2,
+    "recipientes_und": 16,
+    "huacales_und": 6,
+    "collares_und": 0,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "Collar isabelino",
+        "cantidad": 3.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:00:12.189520"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000520",
+  "archivo_imagen": "AS-000520.jpg",
+  "archivo_origen_escaneo": "Untitled_08242026_053303022.jpg",
+  "fecha_lote": "2026-08-22",
+  "dia_agosto": 22,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Ulloa",
+  "barrio_corregimiento_refugio": "Sucre",
+  "autoriza_entrega": {
+    "nombre": "Johann Penafield",
+    "cedula": "null"
+  },
+  "recibe": {
+    "nombre": "Elizabet Fora Lopez",
+    "cedula": "null"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 40.0,
+    "alimento_gato_kg": 0.0,
+    "total_alimento_seco_kg": 40.0,
+    "comida_humeda_perro_und": 6,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 6,
+    "arena_kg": 0.0,
+    "areneros_und": 0,
+    "camas_und": 2,
+    "cobijas_und": 0,
+    "recipientes_und": 0,
+    "huacales_und": 0,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-26T14:40:26.347600"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id_documento": "AS-000296",
+  "archivo_imagen": "AS-000296.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_042012022.jpg",
+  "fecha_lote": "2026-08-17",
+  "dia_agosto": 17,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "Base aérea",
+  "autoriza_entrega": {
+    "nombre": "Deyp Galvis",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Karina Sacas",
+    "cedula": "66.956.247"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 50.0,
+    "alimento_gato_kg": 50.0,
+    "total_alimento_seco_kg": 100.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 100,
+    "comida_humeda_total_und": 100,
+    "arena_kg": 30.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 20,
+    "huacales_und": 1,
+    "collares_und": 10,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "areneros",
+        "cantidad": 2.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:58:59.598528"
+  }
+}

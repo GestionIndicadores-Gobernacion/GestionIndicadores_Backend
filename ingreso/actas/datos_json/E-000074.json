@@ -1,0 +1,150 @@
+{
+  "archivo_imagen": "E-000074.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "19/08",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Lagrimas artificiales",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Clorhidrato de nafazolina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Carboximetilcelulosa",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina + Betametasona",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Hialuronato Sodio",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "4mg/ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Solución oftálmica",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina 0.3%",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina + Dexametasona + Lidocaina",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Poxter",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "8.8ml"
+    },
+    {
+      "medicamento_insumo": "Acetato de Prednisolona",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Canisan F",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Simparica TRIO",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "24mg"
+    },
+    {
+      "medicamento_insumo": "Calgocal 200",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Calgocal 600",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Suplemento Alimenticio",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30u."
+    },
+    {
+      "medicamento_insumo": "Jabon Antiseptico",
+      "cantidad": 40.0,
+      "unidad": "ml",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 20.0,
+      "unidad": "ml",
+      "presentacion": "2ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 10.0,
+      "unidad": "ml",
+      "presentacion": "1ml"
+    },
+    {
+      "medicamento_insumo": "SeptiDerm E",
+      "cantidad": 10.0,
+      "unidad": "frascos",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 13.0,
+      "unidad": "ampollas",
+      "presentacion": "1ml"
+    },
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 25.0,
+      "unidad": "ampollas",
+      "presentacion": "1ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:15:42.092227",
+    "duracion_segundos": 4.31,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1167,
+    "tokens_total": 2539,
+    "costo_usd_estimado": 0.002093
+  }
+}

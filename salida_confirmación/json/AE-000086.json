@@ -1,0 +1,62 @@
+{
+  "id_documento": "AE-000086",
+  "archivo_imagen": "AE-000086.jpg",
+  "archivo_origen_escaneo": "20260901_110555.jpg",
+  "tipo_documento": "PLANILLA_ENTREGA_MULTI_REFUGIO",
+  "consecutivo_impreso": "SIN_NUMERO",
+  "fecha_entrega": "2026-08-12",
+  "transportista_ruta": "SIN_INFORMACION",
+  "resumen_totales_acta": {
+    "total_refugios_atendidos": 2,
+    "total_perros_censo": 70,
+    "total_gatos_censo": 35,
+    "total_animales_censo": 105,
+    "total_alimento_perro_kg": 170.0,
+    "total_alimento_gato_kg": 28.0,
+    "total_alimento_general_kg": 198.0
+  },
+  "refugios_atendidos": [
+    {
+      "nombre_fundacion": "Amor Verdadero",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "Calle 10d 24 B 16",
+      "telefono": "3185116441",
+      "censo": {
+        "perros": 4,
+        "gatos": 26,
+        "total_animales": 30
+      },
+      "alimento_entregado": {
+        "perro_kg": 20.0,
+        "gato_kg": 20.0,
+        "total_kg": 40.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    },
+    {
+      "nombre_fundacion": "Salvando Angelitos peluditos",
+      "municipio": "SIN_INFORMACION",
+      "direccion": "KM 14 via al mar",
+      "telefono": "3137533135",
+      "censo": {
+        "perros": 66,
+        "gatos": 9,
+        "total_animales": 75
+      },
+      "alimento_entregado": {
+        "perro_kg": 150.0,
+        "gato_kg": 8.0,
+        "total_kg": 158.0
+      },
+      "firma_registrada": true,
+      "observaciones_fila": ""
+    }
+  ],
+  "notas_generales_planilla": "Por medio de la presente acta se realiza la entrega de alimento en atención a la situación de emergencia derivada del sismo ocurrido el día 10 de agosto del presente año.",
+  "metadatos_auditoria": {
+    "triple_pasada_completada": true,
+    "consenso_pleno_3_pasadas": true,
+    "fecha_procesamiento": "2026-09-01T12:06:00.140530"
+  }
+}

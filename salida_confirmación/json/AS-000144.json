@@ -1,0 +1,40 @@
+{
+  "id_documento": "AS-000144",
+  "archivo_imagen": "AS-000144.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_031108004.jpg",
+  "fecha_lote": "2026-08-14",
+  "dia_agosto": 14,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "A-014",
+  "municipio": "Toro",
+  "barrio_corregimiento_refugio": "Daud Pura",
+  "autoriza_entrega": {
+    "nombre": "Diego Celler",
+    "cedula": "SIN_NUMERO"
+  },
+  "recibe": {
+    "nombre": "Elmer Gomez",
+    "cedula": "SIN_NUMERO"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 200.0,
+    "alimento_gato_kg": 100.0,
+    "total_alimento_seco_kg": 300.0,
+    "comida_humeda_perro_und": 400,
+    "comida_humeda_gato_und": 0,
+    "comida_humeda_total_und": 400,
+    "arena_kg": 400.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 20,
+    "huacales_und": 0,
+    "collares_und": 10,
+    "insumos_medicos_und": 1,
+    "otros_articulos_adicionales": []
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T17:44:19.060073"
+  }
+}

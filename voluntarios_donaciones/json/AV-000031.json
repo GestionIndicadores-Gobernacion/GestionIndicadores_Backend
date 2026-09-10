@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000031",
+  "archivo_imagen": "AV-000031.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 31,
+  "fecha_detectada": "12/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimento y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Diana Enríquez",
+      "organismo_entidad": "",
+      "telefono": "3182372959",
+      "correo_electronico": "dianaenriquez@hotmail.es",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Valentina Garton L.",
+      "organismo_entidad": "",
+      "telefono": "3165802855",
+      "correo_electronico": "valentinagartonl@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Nicolas Rincun B.",
+      "organismo_entidad": "",
+      "telefono": "3104710768",
+      "correo_electronico": "nicorinconburbano@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Alejandro Montealegre",
+      "organismo_entidad": "",
+      "telefono": "3105089427",
+      "correo_electronico": "alexmont4793@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Alejandro",
+      "organismo_entidad": "",
+      "telefono": "3028406261",
+      "correo_electronico": "alejandro.sanchez.castillo@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Diana Villaquirán M.",
+      "organismo_entidad": "",
+      "telefono": "3218999155",
+      "correo_electronico": "dianaviri@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juan Carlos Posada Lopez",
+      "organismo_entidad": "",
+      "telefono": "3146971389",
+      "correo_electronico": "juancarlosposada28@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Karen Dayana Home",
+      "organismo_entidad": "",
+      "telefono": "3147946861",
+      "correo_electronico": "karenf3008@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Diana Rojas",
+      "organismo_entidad": "",
+      "telefono": "3016075613",
+      "correo_electronico": "Diana.rojas.sepulveda@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juan Pablo Garcia",
+      "organismo_entidad": "",
+      "telefono": "3154820056",
+      "correo_electronico": "juanpablo.ceballos09@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Fernando Garcia Navia",
+      "organismo_entidad": "",
+      "telefono": "3193101904",
+      "correo_electronico": "fernandologn@hotmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Juan Esteban Perez Velasco",
+      "organismo_entidad": "",
+      "telefono": "3127013460",
+      "correo_electronico": "perezjuanesteban06@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Maria Jose Villamil Angel",
+      "organismo_entidad": "",
+      "telefono": "3226666219",
+      "correo_electronico": "majovillamil6@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    },
+    {
+      "nombre_completo": "Sofia Prado Ascuntar",
+      "organismo_entidad": "",
+      "telefono": "31792497463",
+      "correo_electronico": "sophiookun@gmail.com",
+      "cedula_o_id": "",
+      "detalle_donacion_o_firma": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:00:38.854078",
+    "duracion_segundos": 5.38,
+    "tokens_total": 2671
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "archivo_imagen": "E-000050.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Venda plástica",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa estéril",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "3ml"
+    },
+    {
+      "medicamento_insumo": "Gasa estéril no tejida",
+      "cantidad": 23.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Catéter intravenoso",
+      "cantidad": 19.0,
+      "unidad": "unidades",
+      "presentacion": "25mm"
+    },
+    {
+      "medicamento_insumo": "Jeringa hipodérmica",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Solución inyectable",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Canal nasal",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "Adulto"
+    },
+    {
+      "medicamento_insumo": "Tapabocas con elástico",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": "x 50"
+    },
+    {
+      "medicamento_insumo": "Bata desechable",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "x 50"
+    },
+    {
+      "medicamento_insumo": "Tubo endotraqueal con balón",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Guantes látex",
+      "cantidad": 4.0,
+      "unidad": "cajas",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Gasa no tejida",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 8.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Pañitos húmedos",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "5g"
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": "5ml"
+    },
+    {
+      "medicamento_insumo": "Venda cohesiva",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jeringa",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "x 100"
+    },
+    {
+      "medicamento_insumo": "Algodón",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Jabón azul",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    },
+    {
+      "medicamento_insumo": "Alcohol",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": ""
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:13:30.012233",
+    "duracion_segundos": 6.08,
+    "tokens_entrada": 1372,
+    "tokens_salida": 965,
+    "tokens_total": 2337,
+    "costo_usd_estimado": 0.00179
+  }
+}

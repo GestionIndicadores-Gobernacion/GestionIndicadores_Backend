@@ -1,0 +1,168 @@
+{
+  "archivo_imagen": "E-000019.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "13/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Prednisona",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Carbamazepina",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "15 mg"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "200 mg"
+    },
+    {
+      "medicamento_insumo": "Cefalexina",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Tirafen",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "350 mg"
+    },
+    {
+      "medicamento_insumo": "Alernex",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "5 mg"
+    },
+    {
+      "medicamento_insumo": "Novalgina",
+      "cantidad": 15.0,
+      "unidad": "unidades",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "cantidad": 20.0,
+      "unidad": "unidades",
+      "presentacion": "40 mg"
+    },
+    {
+      "medicamento_insumo": "Doxocin",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "100 mg"
+    },
+    {
+      "medicamento_insumo": "Propofol",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "0.5 ml"
+    },
+    {
+      "medicamento_insumo": "Flegen",
+      "cantidad": 6.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Roncaina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Condroton",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Complejo B",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Roncaina con epinefrina",
+      "cantidad": 5.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Ampicilina",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "1.5 gr"
+    },
+    {
+      "medicamento_insumo": "Midazolam",
+      "cantidad": 8.0,
+      "unidad": "ampollas",
+      "presentacion": "2 ml"
+    },
+    {
+      "medicamento_insumo": "Dexmedetomidina",
+      "cantidad": 37.0,
+      "unidad": "unidades",
+      "presentacion": "200 mcg"
+    },
+    {
+      "medicamento_insumo": "N-Acetilcisteína",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "300 mg"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 20.0,
+      "unidad": "ampollas",
+      "presentacion": "8 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "160 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Gusantol NF",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Epiotic",
+      "cantidad": 26.0,
+      "unidad": "frascos",
+      "presentacion": "100 ml"
+    },
+    {
+      "medicamento_insumo": "Galgocal",
+      "cantidad": 26.0,
+      "unidad": "unidades",
+      "presentacion": "200 mg"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:05:39.283327",
+    "duracion_segundos": 5.97,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1296,
+    "tokens_total": 2668,
+    "costo_usd_estimado": 0.002287
+  }
+}

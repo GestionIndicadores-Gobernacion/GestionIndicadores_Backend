@@ -1,0 +1,51 @@
+{
+  "id_documento": "AS-000391",
+  "archivo_imagen": "AS-000391.jpg",
+  "archivo_origen_escaneo": "Untitled_08202026_043457025.jpg",
+  "fecha_lote": "2026-08-19",
+  "dia_agosto": 19,
+  "tipo_documento": "ALIMENTOS",
+  "codigo_acta_vinculante": "SIN_NUMERO",
+  "municipio": "Santiago de Cali",
+  "barrio_corregimiento_refugio": "",
+  "autoriza_entrega": {
+    "nombre": "Diego Cervera",
+    "cedula": ""
+  },
+  "recibe": {
+    "nombre": "Gabriela Forero",
+    "cedula": "31580967"
+  },
+  "datos_alimentos": {
+    "alimento_perro_kg": 90.0,
+    "alimento_gato_kg": 40.0,
+    "total_alimento_seco_kg": 130.0,
+    "comida_humeda_perro_und": 0,
+    "comida_humeda_gato_und": 100,
+    "comida_humeda_total_und": 100,
+    "arena_kg": 100.0,
+    "areneros_und": 0,
+    "camas_und": 0,
+    "cobijas_und": 0,
+    "recipientes_und": 10,
+    "huacales_und": 1,
+    "collares_und": 0,
+    "insumos_medicos_und": 0,
+    "otros_articulos_adicionales": [
+      {
+        "articulo": "galletas",
+        "cantidad": 12.0,
+        "unidad": "und"
+      },
+      {
+        "articulo": "guante",
+        "cantidad": 1.0,
+        "unidad": "und"
+      }
+    ]
+  },
+  "metadatos_auditoria": {
+    "arbitrada_con_pensamiento": false,
+    "fecha_procesamiento": "2026-08-20T18:08:55.919995"
+  }
+}

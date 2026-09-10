@@ -1,0 +1,128 @@
+{
+  "id_documento": "AV-000046",
+  "archivo_imagen": "AV-000046.jpg",
+  "archivo_pdf_origen": "listado_entrega_voluntarios.pdf",
+  "numero_pagina_pdf": 46,
+  "fecha_detectada": "13/AGOSTO/2026",
+  "titulo_encabezado": "LISTADO DE ASISTENCIA - Entrega de donaciones voluntarias: Insumos, alimento y medicamentos",
+  "total_personas_hoja": 14,
+  "personas": [
+    {
+      "nombre_completo": "Juliana Borrero Vega",
+      "organismo_entidad": "Independiente",
+      "telefono": "3007239437",
+      "correo_electronico": "vegajuliana832@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Camilo Caro Sayegh",
+      "organismo_entidad": "Independiente",
+      "telefono": "3122434289",
+      "correo_electronico": "camilocaro09@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Cristina Acosta F",
+      "organismo_entidad": "Independiente",
+      "telefono": "3022901362",
+      "correo_electronico": "cristinaacostaf@usurtual.edu",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Juliana Rodriguez",
+      "organismo_entidad": "Independiente",
+      "telefono": "3113417505",
+      "correo_electronico": "julior743@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Felipe Salgado",
+      "organismo_entidad": "Independiente",
+      "telefono": "3223114931",
+      "correo_electronico": "dfelipesalgado@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Jenny Morlody Ana Di",
+      "organismo_entidad": "Independiente",
+      "telefono": "3168603959",
+      "correo_electronico": "jeny.derecho@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": null
+    },
+    {
+      "nombre_completo": "Sofia Sotelo Correa",
+      "organismo_entidad": "Independiente",
+      "telefono": "302299017",
+      "correo_electronico": "sofiacorea86@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Carolina Castillo",
+      "organismo_entidad": "Independiente",
+      "telefono": "3236120649",
+      "correo_electronico": "carolinacastillo@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Luciana Rubio",
+      "organismo_entidad": "Independiente",
+      "telefono": "3077794500",
+      "correo_electronico": null,
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Claudia Isabel Lesmes",
+      "organismo_entidad": "Independiente",
+      "telefono": "3167579883",
+      "correo_electronico": "cilesmes@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Claudia Lesmes"
+    },
+    {
+      "nombre_completo": "Ana Sofia Pantoja",
+      "organismo_entidad": "Independiente",
+      "telefono": "3116728009",
+      "correo_electronico": "anapantojaorreb@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Ana Sofia"
+    },
+    {
+      "nombre_completo": "Stiven Sg",
+      "organismo_entidad": "Independiente",
+      "telefono": "3152195312",
+      "correo_electronico": "stiven.sg@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Zulema Aguirre",
+      "organismo_entidad": "Independiente",
+      "telefono": "3148162724",
+      "correo_electronico": "aguirrezulema90@gmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    },
+    {
+      "nombre_completo": "Maria Juliana Villalba Villegas",
+      "organismo_entidad": "Independiente",
+      "telefono": "3165137501",
+      "correo_electronico": "julianavv799@hotmail.com",
+      "cedula_o_id": null,
+      "detalle_donacion_o_firma": "Firma presente"
+    }
+  ],
+  "metadatos_auditoria": {
+    "fecha_procesamiento": "2026-08-20T21:02:20.540074",
+    "duracion_segundos": 5.57,
+    "tokens_total": 2762
+  }
+}

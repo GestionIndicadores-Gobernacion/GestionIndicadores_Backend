@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000077.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14/8/26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Nexgard (perro)",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "2-4 kg"
+    },
+    {
+      "medicamento_insumo": "Nexgard (perro)",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "10-25 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica (perro)",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Meloxic",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "2 mg"
+    },
+    {
+      "medicamento_insumo": "Gentamicina",
+      "cantidad": 10.0,
+      "unidad": "ampollas",
+      "presentacion": "160 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Atrevia One (perro)",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "10-20 kg"
+    },
+    {
+      "medicamento_insumo": "Atrevia One (perro)",
+      "cantidad": 3.0,
+      "unidad": "cajas",
+      "presentacion": "5-10 kg"
+    },
+    {
+      "medicamento_insumo": "Simparica",
+      "cantidad": 2.0,
+      "unidad": "cajas",
+      "presentacion": "20 mg"
+    },
+    {
+      "medicamento_insumo": "Visivet",
+      "cantidad": 5.0,
+      "unidad": "gotas",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "80 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Ampliex polvo",
+      "cantidad": 12.0,
+      "unidad": "ampollas",
+      "presentacion": "100 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Ketoprofeno",
+      "cantidad": 1.0,
+      "unidad": "caja",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Cannex jeringa",
+      "cantidad": 10.0,
+      "unidad": "sobres",
+      "presentacion": "variada"
+    },
+    {
+      "medicamento_insumo": "Sutura",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "500 mg"
+    },
+    {
+      "medicamento_insumo": "Fibrilok",
+      "cantidad": 30.0,
+      "unidad": "ampollas",
+      "presentacion": "8 mg/2 ml"
+    },
+    {
+      "medicamento_insumo": "Dexametasona",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "500 ml"
+    },
+    {
+      "medicamento_insumo": "Aminolute",
+      "cantidad": 20.0,
+      "unidad": "ampollas",
+      "presentacion": "15 mg/1.5 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxican",
+      "cantidad": 1.0,
+      "unidad": "frasco",
+      "presentacion": "20 ml"
+    },
+    {
+      "medicamento_insumo": "Canatox NF",
+      "cantidad": 3.0,
+      "unidad": "gotas",
+      "presentacion": "8 ml"
+    },
+    {
+      "medicamento_insumo": "Teals lagrimas",
+      "cantidad": 2.0,
+      "unidad": "gotas",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Gentamicina 0.3%",
+      "cantidad": 68.0,
+      "unidad": "sobres",
+      "presentacion": "10 gr"
+    },
+    {
+      "medicamento_insumo": "Electrolitico",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": null
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:15:58.737567",
+    "duracion_segundos": 4.54,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1217,
+    "tokens_total": 2589,
+    "costo_usd_estimado": 0.002168
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "archivo_imagen": "E-000097.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Panitos",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Renalot",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "30 ml"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:17:41.135219",
+    "duracion_segundos": 2.2,
+    "tokens_entrada": 1372,
+    "tokens_salida": 134,
+    "tokens_total": 1506,
+    "costo_usd_estimado": 0.000544
+  }
+}

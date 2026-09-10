@@ -1,0 +1,156 @@
+{
+  "archivo_imagen": "E-000124.jpg",
+  "fecha_lote": "2026-08-15",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "15/08/16",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Nebumax",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "3 tabletas"
+    },
+    {
+      "medicamento_insumo": "Berberis inyectable",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Tecnisum Pets",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Ocovin Pets",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "150 ml"
+    },
+    {
+      "medicamento_insumo": "Rezosen-n",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Pixicaine",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "20 unidades 30 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 6.0,
+      "unidad": "frascos",
+      "presentacion": "0.5% 15 ml"
+    },
+    {
+      "medicamento_insumo": "Nicthu Polimixico",
+      "cantidad": 2.0,
+      "unidad": "frascos",
+      "presentacion": "1.4% 5 ml"
+    },
+    {
+      "medicamento_insumo": "Of-tiprednol",
+      "cantidad": 4.0,
+      "unidad": "frascos",
+      "presentacion": "0.2% 90 ml"
+    },
+    {
+      "medicamento_insumo": "Polivicun",
+      "cantidad": 3.0,
+      "unidad": "frascos",
+      "presentacion": "120 ml"
+    },
+    {
+      "medicamento_insumo": "Iver obc antiseptic",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "50 ml"
+    },
+    {
+      "medicamento_insumo": "Enrofloxacina",
+      "cantidad": 1.0,
+      "unidad": "cajas",
+      "presentacion": "50 tabletas"
+    },
+    {
+      "medicamento_insumo": "Fibrilon acido tranexamico",
+      "cantidad": 1.0,
+      "unidad": "solución",
+      "presentacion": "15 ml"
+    },
+    {
+      "medicamento_insumo": "Melox azitromicina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "30 ml"
+    },
+    {
+      "medicamento_insumo": "Freeyen gel",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Meloxiproc",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "0.5% 10 ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina HCl",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "2% 20 ml"
+    },
+    {
+      "medicamento_insumo": "Ultra tauris",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "3 ampollas 10 ml"
+    },
+    {
+      "medicamento_insumo": "N-acetilcisteina",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "inyectable 20 ml"
+    },
+    {
+      "medicamento_insumo": "Inmuno antibiótico oral",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "8 ml / 2 ml"
+    },
+    {
+      "medicamento_insumo": "Betametasona",
+      "cantidad": 1.0,
+      "unidad": "frascos",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Calcio",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "200 mg 10 tabletas"
+    },
+    {
+      "medicamento_insumo": "Meloxicam",
+      "cantidad": 1.0,
+      "unidad": "tabletas",
+      "presentacion": "10 tabletas"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:22:05.691916",
+    "duracion_segundos": 5.61,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1252,
+    "tokens_total": 2624,
+    "costo_usd_estimado": 0.002221
+  }
+}

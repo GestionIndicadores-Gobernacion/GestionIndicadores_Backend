@@ -1,0 +1,174 @@
+{
+  "archivo_imagen": "E-000039.jpg",
+  "fecha_lote": "2026-08-13",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "8-13-26",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Plata coloidal",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Yodintek",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Lágrimas artificiales",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Lactato de Ringer",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10ml"
+    },
+    {
+      "medicamento_insumo": "Danimicon",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "10gr"
+    },
+    {
+      "medicamento_insumo": "Eyelears",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "15ml"
+    },
+    {
+      "medicamento_insumo": "Agua oxigenada",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Deoper",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "19.8g"
+    },
+    {
+      "medicamento_insumo": "Electro",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "200-38.7g"
+    },
+    {
+      "medicamento_insumo": "Bolfo",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "20g"
+    },
+    {
+      "medicamento_insumo": "Aciflux",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "50ml"
+    },
+    {
+      "medicamento_insumo": "Finhemo",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "30ml"
+    },
+    {
+      "medicamento_insumo": "Gallopon pet",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "125ml"
+    },
+    {
+      "medicamento_insumo": "D-tex",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "60ml"
+    },
+    {
+      "medicamento_insumo": "Gabapool",
+      "cantidad": 10.0,
+      "unidad": "tabletas",
+      "presentacion": "300mg"
+    },
+    {
+      "medicamento_insumo": "Previcox",
+      "cantidad": 20.0,
+      "unidad": "tabletas",
+      "presentacion": "227mg"
+    },
+    {
+      "medicamento_insumo": "Cronoten",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Cutamycon",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "35g"
+    },
+    {
+      "medicamento_insumo": "Furosemida",
+      "cantidad": 60.0,
+      "unidad": "tabletas",
+      "presentacion": "40g"
+    },
+    {
+      "medicamento_insumo": "Compleland",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "312 100ml"
+    },
+    {
+      "medicamento_insumo": "Dipirona",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "500mg"
+    },
+    {
+      "medicamento_insumo": "Pomada",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20g"
+    },
+    {
+      "medicamento_insumo": "Pregabalina",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "20mg/ml"
+    },
+    {
+      "medicamento_insumo": "Dermo-pet",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "120ml"
+    },
+    {
+      "medicamento_insumo": "Botica",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "5g"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:07:43.872068",
+    "duracion_segundos": 5.43,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1316,
+    "tokens_total": 2688,
+    "costo_usd_estimado": 0.002317
+  }
+}

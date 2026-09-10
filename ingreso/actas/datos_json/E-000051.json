@@ -1,0 +1,168 @@
+{
+  "archivo_imagen": "E-000051.jpg",
+  "fecha_lote": "2026-08-14",
+  "codigo_acta": "SIN_NUMERO",
+  "tipo_documento": "RECEPCION_MEDICAMENTOS",
+  "fecha_documento_detectada": "14 de Agosto",
+  "datos_medicamentos": [
+    {
+      "medicamento_insumo": "Adrenalina",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "1 ml"
+    },
+    {
+      "medicamento_insumo": "Lidocaina",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "2% x50ml"
+    },
+    {
+      "medicamento_insumo": "Meloxican",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "0,2% x10ml inyectable"
+    },
+    {
+      "medicamento_insumo": "Pinza diseccion con garra",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "14,5cm"
+    },
+    {
+      "medicamento_insumo": "Sonda acanalada",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Pinza mosquito recta",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "12,5 cm"
+    },
+    {
+      "medicamento_insumo": "Pinza rochester curva",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "14cm"
+    },
+    {
+      "medicamento_insumo": "Tijera mayo recta",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "14cm"
+    },
+    {
+      "medicamento_insumo": "Tijera mayo curva",
+      "cantidad": 1.0,
+      "unidad": "unidades",
+      "presentacion": "14cm"
+    },
+    {
+      "medicamento_insumo": "Porta agujas mayo",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "x 14.5"
+    },
+    {
+      "medicamento_insumo": "Pinza rochester recta",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "14cm"
+    },
+    {
+      "medicamento_insumo": "Sutura Sutuvet",
+      "cantidad": 10.0,
+      "unidad": "unidades",
+      "presentacion": "#1"
+    },
+    {
+      "medicamento_insumo": "Sutura Galtika",
+      "cantidad": 9.0,
+      "unidad": "unidades",
+      "presentacion": "#0"
+    },
+    {
+      "medicamento_insumo": "Dextromin B",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "500ml"
+    },
+    {
+      "medicamento_insumo": "Cloruro de sodio",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "0,9% de 500ml"
+    },
+    {
+      "medicamento_insumo": "Buretra",
+      "cantidad": 2.0,
+      "unidad": "unidades",
+      "presentacion": "150 CC"
+    },
+    {
+      "medicamento_insumo": "Venoclis",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": null
+    },
+    {
+      "medicamento_insumo": "Jeringa desechable",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "2 ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa desechable",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "10 ml"
+    },
+    {
+      "medicamento_insumo": "Jeringa goliat",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "1ml insulina"
+    },
+    {
+      "medicamento_insumo": "Jeringa goliat",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "5 ml"
+    },
+    {
+      "medicamento_insumo": "Cateter intravenoso desechable",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "24"
+    },
+    {
+      "medicamento_insumo": "Cateter intravenoso desechable",
+      "cantidad": 4.0,
+      "unidad": "unidades",
+      "presentacion": "22"
+    },
+    {
+      "medicamento_insumo": "Cateter intravenoso desechable",
+      "cantidad": 3.0,
+      "unidad": "unidades",
+      "presentacion": "20"
+    },
+    {
+      "medicamento_insumo": "Cateter intravenoso desechable",
+      "cantidad": 5.0,
+      "unidad": "unidades",
+      "presentacion": "18"
+    }
+  ],
+  "metadatos_auditoria": {
+    "modelo_ia": "gemini-3.1-flash-lite",
+    "fecha_procesamiento": "2026-08-19T17:13:36.325164",
+    "duracion_segundos": 5.31,
+    "tokens_entrada": 1372,
+    "tokens_salida": 1301,
+    "tokens_total": 2673,
+    "costo_usd_estimado": 0.002295
+  }
+}
