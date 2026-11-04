@@ -1,4 +1,5 @@
 from .orchestrator import orchestrate
+from app.modules.datasets.red_animalia import is_red_animalia
 
 
 def detect_dataset_type(fields, name_hint: str = "") -> str:
@@ -38,9 +39,7 @@ def detect_dataset_type(fields, name_hint: str = "") -> str:
     if {"mujer", "hombre", "municipio", "guia_1"}.issubset(names):
         return "personas_capacitadas"
     # Red Animalia: tiene vinculación + campos de animales domésticos
-    if ("tipo_de_vinculacion_dentro_de_la_red_animalia_valle" in names
-            and any("perros" in n for n in names)
-            and any("gatos" in n for n in names)):
+    if is_red_animalia(names):
         return "red_animalia"
     if ({"perros_cantidad", "gatos_cantidad",
          "tipo_de_vinculacion_dentro_de_la_red_animalia_valle"}.issubset(names) or
