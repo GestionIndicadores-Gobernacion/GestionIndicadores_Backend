@@ -9,6 +9,7 @@ from app.modules.datasets.services.record_import_handler import import_records
 from app.modules.datasets.validators.dataset_validator import validate_dataset_name
 from app.utils.normalizers import MAX_TABLE_NAME_LENGTH, normalize_name
 from app.core.extensions import db
+from app.modules.datasets.red_animalia import is_red_animalia
 
 # Una fila necesita al menos esta fracción de columnas con datos para importarse.
 # Ejemplo: 0.3 significa que si hay 10 columnas, al menos 3 deben tener valor.
@@ -98,6 +99,14 @@ def _clean_dataframe(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
     - Elimina filas resumen (ENTREGADO / TOTAL GENERAL / RESUMEN / ...) de
       forma explícita para que no contaminen los KPIs ni las gráficas.
     """
+    # Members with basic identity remain valid even with optional answers missing.
+    animalia = is_red_animalia(normalize_name(c) for c in df.columns)
+    member_columns = [c for c in df.columns if normalize_name(c) == "nombres_y_apellidos"]
+    member_rows = pd.Series(False, index=df.index)
+    if animalia:
+        for column in member_columns:
+            member_rows |= df[column].notna() & df[column].astype(str).str.strip().ne("")
+
     # 1. Eliminar columnas 100% vacías
     df = df.dropna(axis=1, how="all")
     if df.empty:
@@ -116,7 +125,7 @@ def _clean_dataframe(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
 
     # 4. Eliminar filas con menos del MIN_ROW_FILL_RATIO de columnas con datos
     min_row_values = max(1, int(len(df.columns) * MIN_ROW_FILL_RATIO))
-    df = df[df.notna().sum(axis=1) >= min_row_values]
+    df = df[(df.notna().sum(axis=1) >= min_row_values) | member_rows.reindex(df.index, fill_value=False)]
     if df.empty:
         return df, 0
 
