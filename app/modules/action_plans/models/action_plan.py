@@ -253,3 +253,34 @@ class ActionPlanSupportStaff(db.Model):
 
     def __repr__(self):
         return f"<ActionPlanSupportStaff {self.id} - {self.name}>"
+
+class ActionPlanActivityChange(db.Model):
+    """Historial PERMANENTE de correcciones administrativas sobre actividades
+    ya reportadas (una fila por campo modificado).
+
+    Se mantiene separado de `audit_logs` a propósito: `audit_logs` se purga
+    periódicamente (`flask purge-audit-logs`), mientras que este historial
+    debe conservarse para la trazabilidad de actividades ya ejecutadas.
+
+    `activity_id` usa SET NULL para que el historial sobreviva aunque la
+    actividad se elimine después; `action_plan_id` se guarda como entero
+    plano por la misma razón.
+    """
+    __tablename__ = "action_plan_activity_changes"
+
+    id             = db.Column(db.Integer, primary_key=True)
+    activity_id    = db.Column(db.Integer, db.ForeignKey("action_plan_activities.id", ondelete="SET NULL"), nullable=True, index=True)
+    action_plan_id = db.Column(db.Integer, nullable=True, index=True)
+    user_id        = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True)
+    # Agrupa los campos modificados en un mismo guardado.
+    change_group   = db.Column(db.String(36), nullable=False, index=True)
+    field          = db.Column(db.String(50), nullable=False)
+    old_value      = db.Column(db.Text, nullable=True)
+    new_value      = db.Column(db.Text, nullable=True)
+    reason         = db.Column(db.Text, nullable=False)
+    created_at     = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+
+    user = db.relationship("User", foreign_keys=[user_id], lazy="select")
+
+    def __repr__(self):
+        return f"<ActionPlanActivityChange act={self.activity_id} {self.field}>"

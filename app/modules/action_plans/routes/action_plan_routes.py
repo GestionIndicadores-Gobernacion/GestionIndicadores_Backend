@@ -11,6 +11,8 @@ from app.modules.action_plans.schemas.action_plan_schema import (
     ActionPlanResponseSchema,
     ActionPlanActivitySchema,
     ActionPlanActivityDetailSchema,
+    ActionPlanActivityAdminEditSchema,
+    ActionPlanActivityChangeSchema,
 )
 from app.modules.action_plans.services.action_plan_handler import ActionPlanHandler
 from app.utils.permissions import dual_required, has_permission
@@ -24,6 +26,7 @@ from app.shared.permissions import (
     PERM_ACTION_PLANS_REPORT_ACTIVITY,
     PERM_ACTION_PLANS_ADD_EVIDENCE,
     PERM_ACTION_PLANS_DASHBOARD,
+    PERM_ACTION_PLANS_EDIT_REPORTED,
 )
 
 blp = Blueprint(
@@ -177,6 +180,24 @@ def _can_edit_activity(activity, plan) -> bool:
 def _can_delete_activity(activity, plan) -> bool:
     """Eliminar una actividad: mismas reglas que eliminar el plan."""
     return _can_delete_plan(plan)
+
+
+def _can_admin_edit_reported() -> bool:
+    """Corrección administrativa de actividades YA reportadas.
+
+    Doble condición (ambas obligatorias):
+      1. Rol `admin` — requisito explícito de negocio: monitor, editor y
+         viewer nunca pueden, aunque se les otorgue el permiso por override.
+      2. Permiso `PERM_ACTION_PLANS_EDIT_REPORTED` en el set efectivo leído
+         de BD (rol ∪ grants − revokes), no del claim del JWT: así revocarlo
+         a un admin concreto desde la UI surte efecto inmediato, sin esperar
+         a que expire su token.
+    """
+    from app.utils.permissions import current_user, get_effective_permissions
+    user = current_user()
+    if not user or not user.role or user.role.name != "admin":
+        return False
+    return PERM_ACTION_PLANS_EDIT_REPORTED in get_effective_permissions(user)
 
 
 def _plan_responsible_ids(plan) -> set[int]:
@@ -380,11 +401,78 @@ class ActionPlanActivityEdit(MethodView):
             return jsonify({"error": "Sin permiso para editar esta actividad"}), 403
 
         edit_all = data.pop("edit_all", False)
+
+        # Una actividad ya reportada no se edita por el flujo normal: este
+        # endpoint sobrescribe apoyos/generates_report/etc. con defaults y no
+        # deja historial. Su corrección va por `/admin-edit` (solo admin).
+        # Con edit_all el handler ya excluye las reportadas del grupo.
+        if activity.reported_at and not edit_all:
+            return jsonify({
+                "error": "La actividad ya fue reportada. Solo un administrador puede "
+                         "corregirla mediante la corrección administrativa."
+            }), 409
+
         activity, errors = ActionPlanHandler.update_activity(activity_id, data, edit_all=edit_all)
         if errors:
             status_code = 404 if "activity" in errors else 422
             return jsonify({"errors": errors}), status_code
         return jsonify(ActionPlanActivityDetailSchema().dump(activity)), 200
+
+@blp.route("/activities/<int:activity_id>/admin-edit")
+class ActionPlanActivityAdminEdit(MethodView):
+    """Corrección administrativa de una actividad YA reportada.
+
+    Solo rol admin con `PERM_ACTION_PLANS_EDIT_REPORTED`. Campos permitidos:
+    name, deliverable, lugar, delivery_date (+ `reason` obligatorio). No toca
+    el reporte vinculado ni sus indicadores. Deja historial permanente.
+    """
+
+    @blp.arguments(ActionPlanActivityAdminEditSchema)
+    @jwt_required()
+    @dual_required(
+        roles=("admin",),
+        perms=(PERM_ACTION_PLANS_EDIT_REPORTED,),
+    )
+    def put(self, data, activity_id):
+        if not _can_admin_edit_reported():
+            return jsonify({
+                "error": "Solo un administrador autorizado puede corregir actividades reportadas."
+            }), 403
+
+        activity, _plan = _get_activity_plan(activity_id)
+        if not activity:
+            return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
+        if not activity.reported_at:
+            return jsonify({
+                "errors": {"activity": "La actividad aún no ha sido reportada; edítala desde el plan de acción."}
+            }), 409
+
+        activity, errors, warnings = ActionPlanHandler.admin_edit_reported_activity(activity_id, data)
+        if errors:
+            status_code = 500 if "database" in errors else 422
+            return jsonify({"errors": errors}), status_code
+        return jsonify({
+            "activity": ActionPlanActivitySchema().dump(activity),
+            "warnings": warnings,
+        }), 200
+
+
+@blp.route("/activities/<int:activity_id>/changes")
+class ActionPlanActivityChanges(MethodView):
+    """Historial permanente de correcciones administrativas de una actividad."""
+
+    @jwt_required()
+    @dual_required(
+        roles=("admin", "monitor", "editor"),
+        perms=(PERM_ACTION_PLANS_READ,),
+    )
+    def get(self, activity_id):
+        activity, _plan = _get_activity_plan(activity_id)
+        if not activity:
+            return jsonify({"errors": {"activity": "Actividad no encontrada."}}), 404
+        changes = ActionPlanHandler.get_activity_changes(activity_id)
+        return jsonify(ActionPlanActivityChangeSchema(many=True).dump(changes)), 200
+
 
 @blp.route("/activities/<int:activity_id>")
 class ActionPlanActivityDetail(MethodView):
