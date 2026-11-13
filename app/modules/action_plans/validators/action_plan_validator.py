@@ -104,6 +104,88 @@ class ActionPlanValidator:
         return errors
 
     @staticmethod
+    def validate_admin_edit(data, activity, today: date | None = None):
+        """Reglas de la corrección administrativa de una actividad YA reportada.
+
+        Retorna (errors, changes, warnings):
+          - errors:   dict campo → mensaje (vacío si es válido).
+          - changes:  dict campo → (valor_anterior, valor_nuevo), solo los que
+                      realmente cambian (texto normalizado con strip).
+          - warnings: avisos no bloqueantes para mostrar al administrador.
+
+        Reglas de fecha (`delivery_date`):
+          - No puede ser posterior a la fecha en que se reportó la actividad
+            (una actividad no se ejecuta después de haber sido reportada).
+          - Debe permanecer en el mismo año: mover entre años alteraría los
+            consolidados anuales ya cerrados.
+          - Si está "Pendiente de Evidencia", la nueva fecha no puede reabrir
+            el plazo de 8 días para cargar evidencia si ese plazo ya venció.
+        """
+        if today is None:
+            today = date.today()
+        errors, changes, warnings = {}, {}, []
+
+        if not activity.reported_at:
+            errors["activity"] = (
+                "La actividad aún no ha sido reportada; edítala desde el plan de acción."
+            )
+            return errors, changes, warnings
+
+        for field in ("name", "deliverable"):
+            if field in data:
+                new = (data[field] or "").strip()
+                if not new:
+                    errors[field] = "Este campo no puede quedar vacío."
+                elif new != (getattr(activity, field) or ""):
+                    changes[field] = (getattr(activity, field), new)
+
+        if "lugar" in data:
+            new = (data["lugar"] or "").strip() or None
+            if new != (activity.lugar or None):
+                changes["lugar"] = (activity.lugar, new)
+
+        if "delivery_date" in data and data["delivery_date"] is not None:
+            new_date = data["delivery_date"]
+            if isinstance(new_date, str):
+                new_date = date.fromisoformat(new_date)
+            old_date = activity.delivery_date
+            if new_date != old_date:
+                reported_day = activity.reported_at.date()
+                window = timedelta(days=8)
+                if new_date > reported_day:
+                    errors["delivery_date"] = (
+                        f"La fecha no puede ser posterior a la fecha de reporte "
+                        f"({reported_day.isoformat()})."
+                    )
+                elif new_date.year != old_date.year:
+                    errors["delivery_date"] = (
+                        "La fecha corregida debe permanecer en el mismo año "
+                        f"({old_date.year}) para no alterar consolidados anuales."
+                    )
+                elif (not activity.evidence_url
+                      and today > old_date + window
+                      and today <= new_date + window):
+                    errors["delivery_date"] = (
+                        "El plazo para cargar evidencia ya venció; la corrección "
+                        "de fecha no puede reabrirlo."
+                    )
+                else:
+                    changes["delivery_date"] = (old_date.isoformat(), new_date.isoformat())
+                    try:
+                        report = activity.linked_report
+                    except Exception:
+                        report = None
+                    if report is not None and report.report_date != new_date:
+                        warnings.append(
+                            f"El reporte vinculado #{report.id} conserva su propia fecha "
+                            f"({report.report_date.isoformat()}); no se modifica."
+                        )
+
+        if not errors and not changes:
+            errors["activity"] = "No hay cambios para guardar."
+        return errors, changes, warnings
+
+    @staticmethod
     def _validate_objectives(objectives, component_id):
         for i, obj in enumerate(objectives):
             position = i + 1

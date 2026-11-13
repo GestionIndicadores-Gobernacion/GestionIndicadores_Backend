@@ -6,7 +6,7 @@ import uuid
 from app.core.extensions import db
 from app.modules.action_plans.models.action_plan import (
     ActionPlan, ActionPlanObjective, ActionPlanActivity, ActionPlanSupportStaff,
-    ActionPlanResponsibleUser
+    ActionPlanResponsibleUser, ActionPlanActivityChange
 )
 from app.modules.action_plans.validators.action_plan_validator import ActionPlanValidator
 from app.shared.models.audit_log import AuditLog
@@ -423,6 +423,79 @@ class ActionPlanHandler:
         except Exception as e:
             db.session.rollback()
             return None, {"database": str(e)}
+
+    @staticmethod
+    def admin_edit_reported_activity(activity_id, data):
+        """Corrección administrativa de una actividad YA reportada.
+
+        Solo toca la lista blanca (nombre, entregable, lugar, fecha). Nunca
+        modifica: reporte/evidencia/descripción del reporte, `reported_at`,
+        `reported_by`, puntaje, `generates_report`, apoyos, recurrencia, ni el
+        vínculo con objetivo/componente/estrategia. El `Report` vinculado
+        (indicadores y valores) no se toca: tiene sus propios datos.
+
+        Cada campo modificado deja una fila permanente en
+        `action_plan_activity_changes` + un resumen en `audit_logs`.
+
+        Retorna (activity, errors, warnings).
+        """
+        activity = ActionPlanActivity.query.get(activity_id)
+        if not activity:
+            return None, {"activity": "Actividad no encontrada."}, []
+
+        errors, changes, warnings = ActionPlanValidator.validate_admin_edit(data, activity)
+        if errors:
+            return None, errors, []
+
+        try:
+            user_id = int(get_jwt_identity())
+            reason = data["reason"].strip()
+            group = str(uuid.uuid4())
+            plan_id = activity.plan_objective.action_plan_id
+
+            for field, (old, new) in changes.items():
+                if field == "delivery_date":
+                    activity.delivery_date = date.fromisoformat(new)
+                else:
+                    setattr(activity, field, new)
+                db.session.add(ActionPlanActivityChange(
+                    activity_id=activity.id,
+                    action_plan_id=plan_id,
+                    user_id=user_id,
+                    change_group=group,
+                    field=field,
+                    old_value=None if old is None else str(old),
+                    new_value=None if new is None else str(new),
+                    reason=reason,
+                ))
+
+            db.session.add(AuditLog(
+                user_id=user_id,
+                entity="action_plan",
+                entity_id=plan_id,
+                action="updated",
+                detail=(
+                    f"Actividad #{activity_id} (reportada) corregida por administrador — "
+                    f"campos: {', '.join(changes.keys())}. Motivo: {reason}"
+                ),
+            ))
+
+            db.session.commit()
+            return activity, None, warnings
+
+        except Exception as e:
+            db.session.rollback()
+            return None, {"database": str(e)}, []
+
+    @staticmethod
+    def get_activity_changes(activity_id):
+        return (
+            ActionPlanActivityChange.query
+            .filter_by(activity_id=activity_id)
+            .order_by(ActionPlanActivityChange.created_at.desc(),
+                      ActionPlanActivityChange.id.desc())
+            .all()
+        )
 
     @staticmethod
     def delete(plan_id):
