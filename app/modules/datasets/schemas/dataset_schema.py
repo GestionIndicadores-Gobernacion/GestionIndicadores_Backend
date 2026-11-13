@@ -10,6 +10,7 @@ class DatasetSchema(Schema):
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
     active = fields.Bool(dump_only=True)
+    dataset_type = fields.Str(dump_only=True, allow_none=True)
 
     tables = fields.List(
         fields.Nested(TableSchema),

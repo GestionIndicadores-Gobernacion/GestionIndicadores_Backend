@@ -9,6 +9,9 @@ def _filas_proyecto(fields, field_values):
         None
     )
     if not f_proyecto:
+        # Formato completo SAP del Z080: "Desc. Proyecto"
+        f_proyecto = next((f for f in fields if norm(f.name) == "desc_proyecto"), None)
+    if not f_proyecto:
         return list(range(len(next(iter(field_values.values())))))
     vals = field_values[f_proyecto.name]
     idx = [i for i, v in enumerate(vals) if v and _PROYECTO_KW in norm(str(v))]
@@ -91,6 +94,14 @@ def build_presupuesto(fields, field_values, total):
     if not fn_cdp:   fn_cdp   = _fname_exact(fields, "total_ejecutado")
     if not fn_rubro: fn_rubro = _fname_exact(fields, "descripcion_pep")
     if not fn_rubro: fn_rubro = _fname_exact(fields, "descripcion_proyecto")
+
+    # Fallbacks formato completo SAP del Z080 ("Presup. Definitivo",
+    # "Presup. Dispon.", "Total Oblig.", "Desc. PEP"). Solo aplican si los
+    # nombres de los formatos anteriores no existen.
+    if not fn_aprop: fn_aprop = _fname_exact(fields, "presup_definitivo")
+    if not fn_disp:  fn_disp  = _fname_exact(fields, "presup_dispon")
+    if not fn_oblig: fn_oblig = _fname_exact(fields, "total_oblig")
+    if not fn_rubro: fn_rubro = _fname_exact(fields, "desc_pep")
 
     # Etiqueta dinámica para el KPI de ejecución comprometida
     cdp_label = "Total ejecutado" if (fn_cdp and norm(fn_cdp) == "total_ejecutado") else "CDP ejecutado"
@@ -340,6 +351,9 @@ def build_presupuesto(fields, field_values, total):
             None
         )
     if not fn_pep: fn_pep = _fname_all(fields, "descripcion", "pep")
+    # Formato completo SAP del Z080: "Desc. Proyecto" / "Desc. PEP"
+    if not fn_desc_proyecto: fn_desc_proyecto = _fname_exact(fields, "desc_proyecto")
+    if not fn_pep: fn_pep = _fname_exact(fields, "desc_pep")
 
     if fn_pep and fn_aprop:
         code_vals  = field_values.get(fn_proyecto_code, []) if fn_proyecto_code else []

@@ -55,4 +55,9 @@ class DatasetUpdateResource(MethodView):
         if file is None and not (dataset_name and dataset_name.strip()):
             abort(400, message="Debe enviar un archivo o un nuevo nombre")
 
-        return update_excel_dataset(file, dataset_id, dataset_name)
+        # Solo con confirmación explícita se permite que un Excel incompatible
+        # cambie el dashboard de un dataset con tipo específico.
+        allow_type_change = (request.form.get("allow_type_change") or "").strip().lower() in ("1", "true", "yes", "si", "sí")
+
+        return update_excel_dataset(file, dataset_id, dataset_name,
+                                    allow_type_change=allow_type_change)
