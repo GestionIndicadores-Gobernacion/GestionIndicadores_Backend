@@ -4,12 +4,16 @@ from unicodedata import normalize as _ud_normalize
 import pandas as pd
 from app.modules.datasets.models.dataset import Dataset
 from app.modules.datasets.models.table import Table
-from app.modules.datasets.services.field_handler import create_fields
+from app.modules.datasets.services.field_handler import create_fields, plan_field_names
 from app.modules.datasets.services.record_import_handler import import_records
 from app.modules.datasets.validators.dataset_validator import validate_dataset_name
 from app.utils.normalizers import MAX_TABLE_NAME_LENGTH, normalize_name
 from app.core.extensions import db
 from app.modules.datasets.red_animalia import is_red_animalia
+from app.modules.datasets.dashboard.dataset_types import (
+    GENERIC, detect_type_from_names, is_compatible, is_specific,
+    missing_requirements, type_label,
+)
 
 # Una fila necesita al menos esta fracción de columnas con datos para importarse.
 # Ejemplo: 0.3 significa que si hay 10 columnas, al menos 3 deben tener valor.
@@ -138,6 +142,81 @@ def _clean_dataframe(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
     return df, summary_count
 
 
+def _prepare_sheets(excel) -> tuple[list[dict], int, int]:
+    """
+    Lee y limpia todas las hojas SIN tocar la base de datos.
+
+    Devuelve ``(hojas, filas_descartadas, filas_resumen)``; cada hoja es
+    ``{"sheet", "table_name", "df", "field_names"}``. Separar la lectura de la
+    escritura permite validar el Excel completo antes de reemplazar datos.
+    """
+    sheets = []
+    skipped_rows = 0
+    summary_rows_dropped = 0
+
+    for sheet_name in excel.sheet_names:
+        if _should_skip_sheet(sheet_name):
+            print(f"[INFO] Hoja '{sheet_name}' ignorada (auxiliar de Google Forms/AutoCrat).")
+            continue
+
+        df = excel.parse(sheet_name)
+        if df.empty:
+            continue
+
+        original_rows = len(df)
+        df, dropped_summary = _clean_dataframe(df)
+        if df.empty:
+            continue
+
+        skipped_rows += original_rows - len(df)
+        summary_rows_dropped += dropped_summary
+        if dropped_summary:
+            print(
+                f"[INFO] Hoja '{sheet_name}': {dropped_summary} fila(s) "
+                f"resumen descartadas (ENTREGADO/TOTAL/RESUMEN)."
+            )
+
+        sheets.append({
+            "sheet": sheet_name,
+            "table_name": normalize_name(sheet_name, MAX_TABLE_NAME_LENGTH),
+            "df": df,
+            "field_names": list(plan_field_names(df.columns).values()),
+        })
+
+    return sheets, skipped_rows, summary_rows_dropped
+
+
+def _main_type(field_name_groups) -> str:
+    """Tipo del dataset = primer grupo de columnas (hoja/tabla) con tipo específico."""
+    for names in field_name_groups:
+        dtype = detect_type_from_names(names)
+        if is_specific(dtype):
+            return dtype
+    return GENERIC
+
+
+def _write_sheets(dataset_id: int, sheets: list[dict], description: str) -> dict:
+    counts = {"tables_created": 0, "fields_created": 0,
+              "records_inserted": 0, "failed_rows": 0}
+    for sheet in sheets:
+        table = Table(
+            dataset_id=dataset_id,
+            name=sheet["table_name"],
+            description=description,
+        )
+        db.session.add(table)
+        db.session.flush()
+        counts["tables_created"] += 1
+
+        field_map = create_fields(table, sheet["df"])
+        counts["fields_created"] += len(field_map)
+
+        inserted, failed = import_records(table, sheet["df"], field_map)
+        counts["records_inserted"] += inserted
+        counts["failed_rows"] += failed
+    return counts
+
+
 def import_excel_dataset(file, dataset_name):
     try:
         excel = pd.ExcelFile(file)
@@ -146,70 +225,29 @@ def import_excel_dataset(file, dataset_name):
         return {"message": f"No se pudo leer el archivo Excel: {e}"}, 400
 
     try:
+        sheets, skipped_rows, summary_rows_dropped = _prepare_sheets(excel)
+        # El tipo de dashboard se decide una sola vez, al crear el dataset, y
+        # queda guardado para las actualizaciones siguientes.
+        dataset_type = _main_type(s["field_names"] for s in sheets)
+
         dataset = Dataset(
             name=dataset_name,
-            description="Importado desde Excel"
+            description="Importado desde Excel",
+            dataset_type=dataset_type,
         )
         db.session.add(dataset)
         db.session.flush()
 
-        tables_created = 0
-        fields_created = 0
-        records_inserted = 0
-        failed_rows = 0
-        skipped_rows = 0
-        summary_rows_dropped = 0
-
-        for sheet_name in excel.sheet_names:
-            if _should_skip_sheet(sheet_name):
-                print(f"[INFO] Hoja '{sheet_name}' ignorada (auxiliar de Google Forms/AutoCrat).")
-                continue
-
-            df = excel.parse(sheet_name)
-
-            if df.empty:
-                continue
-
-            original_rows = len(df)
-            df, dropped_summary = _clean_dataframe(df)
-
-            if df.empty:
-                continue
-
-            skipped_rows += original_rows - len(df)
-            summary_rows_dropped += dropped_summary
-            if dropped_summary:
-                print(
-                    f"[INFO] Hoja '{sheet_name}': {dropped_summary} fila(s) resumen "
-                    f"descartadas (ENTREGADO/TOTAL/RESUMEN)."
-                )
-
-            table = Table(
-                dataset_id=dataset.id,
-                name=normalize_name(sheet_name, MAX_TABLE_NAME_LENGTH),
-                description="Importado desde Excel"
-            )
-
-            db.session.add(table)
-            db.session.flush()
-            tables_created += 1
-
-            field_map = create_fields(table, df)
-            fields_created += len(field_map)
-
-            inserted, failed = import_records(table, df, field_map)
-            records_inserted += inserted
-            failed_rows += failed
+        counts = _write_sheets(dataset.id, sheets, "Importado desde Excel")
 
         db.session.commit()
 
         return {
             "dataset_id": dataset.id,
             "dataset_name": dataset.name,
-            "tables_created": tables_created,
-            "fields_created": fields_created,
-            "records_inserted": records_inserted,
-            "failed_rows": failed_rows,
+            "dataset_type": dataset_type,
+            "dataset_type_label": type_label(dataset_type),
+            **counts,
             "skipped_rows": skipped_rows,
             "summary_rows_dropped": summary_rows_dropped,
         }
@@ -226,17 +264,28 @@ def import_excel_dataset(file, dataset_name):
         if "json" in msg and "serial" in msg:
             return {"message": "El Excel contiene un valor que no se puede serializar (revisa fechas/horas)."}, 400
         return {"message": f"No se pudo importar el Excel: {e}"}, 400
-    
 
-def update_excel_dataset(file, dataset_id, dataset_name: str | None = None):
-    import traceback
+
+def update_excel_dataset(file, dataset_id, dataset_name: str | None = None,
+                         allow_type_change: bool = False):
+    """
+    Reemplaza el contenido de un dataset existente (mismo ``dataset_id``) con
+    un Excel nuevo, conservando su tipo de dashboard.
+
+    - El dataset se identifica por ID; el nombre del archivo no influye.
+    - Si el dataset tiene un tipo específico (presupuesto, denuncias, ...) y
+      ninguna hoja del Excel nuevo tiene las columnas que ese dashboard
+      necesita, NO se modifica nada y se responde 409 con las columnas
+      faltantes (a menos que ``allow_type_change`` lo autorice).
+    - Toda la validación ocurre antes de borrar las tablas anteriores.
+    """
     try:
         from app.modules.datasets.models.field import Field
         from app.modules.datasets.models.record import Record
 
         dataset = Dataset.query.get(dataset_id)
         if not dataset:
-            return {"error": "Dataset no encontrado"}, 404
+            return {"error": "Dataset no encontrado", "message": "Dataset no encontrado"}, 404
 
         name_changed = False
         if dataset_name:
@@ -246,60 +295,96 @@ def update_excel_dataset(file, dataset_id, dataset_name: str | None = None):
                 dataset.name = new_name
                 name_changed = True
 
-        tables_created = 0
-        fields_created = 0
-        records_inserted = 0
-        failed_rows = 0
+        counts = {"tables_created": 0, "fields_created": 0,
+                  "records_inserted": 0, "failed_rows": 0}
         skipped_rows = 0
         summary_rows_dropped = 0
+        previous_type = dataset.dataset_type
+        columns_added: list[str] = []
+        columns_removed: list[str] = []
+        warnings: list[str] = []
 
         if file is not None:
-            excel = pd.ExcelFile(file)
+            try:
+                excel = pd.ExcelFile(file)
+            except Exception as e:
+                db.session.rollback()
+                msg = f"No se pudo leer el archivo Excel: {e}"
+                return {"error": msg, "message": msg}, 400
 
-            old_tables = Table.query.filter_by(dataset_id=dataset_id).all()
+            sheets, skipped_rows, summary_rows_dropped = _prepare_sheets(excel)
+            if not sheets:
+                db.session.rollback()
+                msg = "El archivo no contiene hojas con datos. No se modificó el dataset."
+                return {"error": msg, "message": msg, "code": "EMPTY_WORKBOOK"}, 400
+
+            old_tables = Table.query.filter_by(dataset_id=dataset_id).order_by(Table.id).all()
+            old_groups = [
+                [f.name for f in Field.query.filter_by(table_id=t.id).all()]
+                for t in old_tables
+            ]
+            new_groups = [s["field_names"] for s in sheets]
+
+            # Datasets anteriores a la columna dataset_type: el tipo previo se
+            # deduce de las columnas que ya estaban cargadas.
+            if not previous_type and old_groups:
+                previous_type = _main_type(old_groups)
+
+            detected_type = _main_type(new_groups)
+
+            if is_specific(previous_type):
+                if any(is_compatible(previous_type, g) for g in new_groups):
+                    final_type = previous_type
+                elif allow_type_change:
+                    final_type = detected_type
+                    warnings.append(
+                        f"El dashboard cambió de '{type_label(previous_type)}' "
+                        f"a '{type_label(detected_type)}' por confirmación del usuario."
+                    )
+                else:
+                    db.session.rollback()
+                    missing = min(
+                        (missing_requirements(previous_type, g) for g in new_groups),
+                        key=len,
+                    )
+                    msg = (
+                        f"El archivo no es compatible con el dashboard "
+                        f"'{type_label(previous_type)}' de este dataset. "
+                        f"Faltan columnas: {', '.join(missing)}. "
+                        f"No se modificó el dataset."
+                    )
+                    return {
+                        "error": msg,
+                        "message": msg,
+                        "code": "DATASET_TYPE_INCOMPATIBLE",
+                        "expected_type": previous_type,
+                        "expected_type_label": type_label(previous_type),
+                        "detected_type": detected_type,
+                        "detected_type_label": type_label(detected_type),
+                        "missing_columns": missing,
+                    }, 409
+            else:
+                # Genérico o sin tipo: puede "subir" a un tipo específico si
+                # el Excel nuevo ya trae las columnas de uno.
+                final_type = detected_type
+
+            old_names = {n for g in old_groups for n in g}
+            new_names = {n for g in new_groups for n in g}
+            columns_added = sorted(new_names - old_names) if old_names else []
+            columns_removed = sorted(old_names - new_names)
+            if columns_removed:
+                warnings.append(
+                    "Columnas que ya no vienen en el archivo: " + ", ".join(columns_removed)
+                )
+
             for t in old_tables:
                 Record.query.filter_by(table_id=t.id).delete()
                 Field.query.filter_by(table_id=t.id).delete()
                 db.session.delete(t)
             db.session.flush()
 
-            for sheet_name in excel.sheet_names:
-                if _should_skip_sheet(sheet_name):
-                    print(f"[INFO] Hoja '{sheet_name}' ignorada (auxiliar de Google Forms/AutoCrat).")
-                    continue
-
-                df = excel.parse(sheet_name)
-                if df.empty:
-                    continue
-
-                original_rows = len(df)
-                df, dropped_summary = _clean_dataframe(df)
-                if df.empty:
-                    continue
-
-                skipped_rows += original_rows - len(df)
-                summary_rows_dropped += dropped_summary
-                if dropped_summary:
-                    print(
-                        f"[INFO] Hoja '{sheet_name}': {dropped_summary} fila(s) "
-                        f"resumen descartadas (ENTREGADO/TOTAL/RESUMEN)."
-                    )
-
-                table = Table(
-                    dataset_id=dataset_id,
-                    name=normalize_name(sheet_name, MAX_TABLE_NAME_LENGTH),
-                    description="Actualizado desde Excel"
-                )
-                db.session.add(table)
-                db.session.flush()
-                tables_created += 1
-
-                field_map = create_fields(table, df)
-                fields_created += len(field_map)
-
-                inserted, failed = import_records(table, df, field_map)
-                records_inserted += inserted
-                failed_rows += failed
+            counts = _write_sheets(dataset_id, sheets, "Actualizado desde Excel")
+            dataset.dataset_type = final_type
 
         if file is not None or name_changed:
             dataset.updated_at = datetime.utcnow()
@@ -309,12 +394,15 @@ def update_excel_dataset(file, dataset_id, dataset_name: str | None = None):
         return {
             "dataset_id": dataset_id,
             "dataset_name": dataset.name,
-            "tables_created": tables_created,
-            "fields_created": fields_created,
-            "records_inserted": records_inserted,
-            "failed_rows": failed_rows,
+            "dataset_type": dataset.dataset_type,
+            "dataset_type_label": type_label(dataset.dataset_type),
+            "previous_dataset_type": previous_type,
+            **counts,
             "skipped_rows": skipped_rows,
             "summary_rows_dropped": summary_rows_dropped,
+            "columns_added": columns_added,
+            "columns_removed": columns_removed,
+            "warnings": warnings,
             "name_changed": name_changed,
             "file_processed": file is not None,
         }
@@ -323,4 +411,4 @@ def update_excel_dataset(file, dataset_id, dataset_name: str | None = None):
         db.session.rollback()
         print("[ERROR] update_excel_dataset:")
         traceback.print_exc()
-        return {"error": str(e)}, 500
+        return {"error": str(e), "message": str(e)}, 500

@@ -451,4 +451,58 @@ def build_generico(fields, field_values, total):
     dh = build_data_health(fields, field_values, total, classified)
     if dh: sections.append(dh)
 
+    # Datasets tipo listado (p. ej. solo "#" + nombre) no producen ninguna
+    # gráfica: en lugar de un dashboard vacío se muestra el listado.
+    if not sections:
+        listing = build_listing_section(fields, field_values, total)
+        if listing: sections.append(listing)
+
     return {"total": total, "kpis": kpis, "sections": sections}
+
+
+# Campos autogenerados por normalize_name para encabezados sin letras ("#", "")
+_LISTING_SKIP = {"field", "_"}
+LISTING_MAX_COLUMNS = 8
+LISTING_MAX_ROWS = 1000
+
+
+def _listing_value(v):
+    if v is None or (isinstance(v, str) and not v.strip()):
+        return "—"
+    if isinstance(v, float) and v.is_integer():
+        return int(v)
+    return v
+
+
+def build_listing_section(fields, field_values, total):
+    """Sección 'table' con los registros, solo para datasets sin gráficas."""
+    cols = [f for f in fields if norm(f.name) not in _LISTING_SKIP
+            and not re.fullmatch(r"field_\d+", norm(f.name))][:LISTING_MAX_COLUMNS]
+    if not cols or total == 0:
+        return None
+
+    labels = []
+    for f in cols:
+        label = (f.label or f.name).strip()
+        while label in labels:          # encabezados repetidos
+            label += " "
+        labels.append(label)
+
+    n = min(total, LISTING_MAX_ROWS)
+    rows = [
+        {label: _listing_value(field_values[f.name][i]) for f, label in zip(cols, labels)}
+        for i in range(n)
+    ]
+    subtitle = f"{total} registros"
+    if total > n:
+        subtitle = f"Primeros {n} de {total} registros (ver pestaña Registros)"
+
+    return {
+        "id": "__listado__",
+        "title": "Listado",
+        "subtitle": subtitle,
+        "type": "table",
+        "span": "full",
+        "columns": labels,
+        "rows": rows,
+    }
