@@ -152,3 +152,40 @@ class ActionPlanActivityDetailSchema(Schema):
     recurrence_group_id = fields.Str(dump_only=True, allow_none=True)
     recurrence_rule     = fields.Dict(dump_only=True, allow_none=True)
     support_staff       = fields.List(fields.Nested(ActionPlanSupportStaffSchema), dump_only=True)
+
+# ── Corrección administrativa de actividades ya reportadas ─────────────────
+# Lista blanca de campos corregibles. Ningún campo tiene `load_default`: lo
+# que no se envía no se toca. Cualquier otro campo en el body (evidence_url,
+# description, generates_report, support_staff, edit_all, ...) es rechazado
+# con 422 por `unknown=RAISE` (default de marshmallow), para que el bloqueo
+# de campos no dependa del frontend.
+ADMIN_EDITABLE_FIELDS = ("name", "deliverable", "delivery_date", "lugar")
+
+
+class ActionPlanActivityAdminEditSchema(Schema):
+    name          = fields.Str(validate=validate.Length(min=1, max=500))
+    deliverable   = fields.Str(validate=validate.Length(min=1))
+    delivery_date = fields.Date(format="iso")
+    lugar         = fields.Str(allow_none=True, validate=validate.Length(max=255))
+    reason        = fields.Str(
+        required=True,
+        validate=validate.Length(min=10, max=1000,
+                                 error="El motivo debe tener entre 10 y 1000 caracteres."),
+    )
+
+
+class ActionPlanActivityChangeSchema(Schema):
+    id           = fields.Int(dump_only=True)
+    activity_id  = fields.Int(dump_only=True, allow_none=True)
+    change_group = fields.Str(dump_only=True)
+    field        = fields.Str(dump_only=True)
+    old_value    = fields.Str(dump_only=True, allow_none=True)
+    new_value    = fields.Str(dump_only=True, allow_none=True)
+    reason       = fields.Str(dump_only=True)
+    created_at   = fields.DateTime(dump_only=True)
+    user_name    = fields.Method("get_user_name", dump_only=True)
+
+    def get_user_name(self, obj):
+        if obj.user:
+            return f"{obj.user.first_name or ''} {obj.user.last_name or ''}".strip() or obj.user.email
+        return None

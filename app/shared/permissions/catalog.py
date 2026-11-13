@@ -112,6 +112,10 @@ PERM_ACTION_PLANS_DELETE_ANY        = "action_plans.delete_any"
 PERM_ACTION_PLANS_REPORT_ACTIVITY   = "action_plans.report_activity"
 PERM_ACTION_PLANS_ADD_EVIDENCE      = "action_plans.add_evidence"
 PERM_ACTION_PLANS_DASHBOARD         = "action_plans.dashboard"
+# Corrección administrativa de actividades YA reportadas (nombre, entregable,
+# lugar, fecha). Además del permiso, el endpoint exige rol `admin`:
+# monitor/editor/viewer nunca pueden, aunque se les otorgue el permiso.
+PERM_ACTION_PLANS_EDIT_REPORTED     = "action_plans.edit_reported"
 
 
 # ── Catálogo canónico ────────────────────────────────────────────────────
@@ -167,6 +171,7 @@ ALL_PERMISSIONS: Tuple[PermissionDef, ...] = (
     PermissionDef(PERM_ACTION_PLANS_REPORT_ACTIVITY, "Reportar una actividad asignada",              MODULE_ACTION_PLANS),
     PermissionDef(PERM_ACTION_PLANS_ADD_EVIDENCE,    "Agregar evidencia a una actividad reportada",  MODULE_ACTION_PLANS),
     PermissionDef(PERM_ACTION_PLANS_DASHBOARD,       "Ver dashboard agregado por responsable",       MODULE_ACTION_PLANS),
+    PermissionDef(PERM_ACTION_PLANS_EDIT_REPORTED,   "Corregir actividades ya reportadas (solo admin)", MODULE_ACTION_PLANS),
 )
 
 
