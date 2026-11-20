@@ -1,4 +1,4 @@
-from flask import jsonify, g
+from flask import current_app, jsonify, g
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -178,6 +178,13 @@ class ReportList(MethodView):
 
         report, errors = ReportHandler.create(data)
         if errors:
+            # Sin este log, un 400 de validación no dejaba rastro en el
+            # servidor (solo la línea de acceso), lo que hacía imposible
+            # diagnosticar el genérico "Error al guardar" del frontend.
+            current_app.logger.warning(
+                "Report create rejected: user=%s component=%s errors=%s",
+                user.id, data.get("component_id"), errors,
+            )
             abort(400, message=errors)
         return report
 
@@ -239,6 +246,10 @@ class ReportDetail(MethodView):
 
         updated, errors = ReportHandler.update(report, data)
         if errors:
+            current_app.logger.warning(
+                "Report update rejected: user=%s report=%s errors=%s",
+                _current_user_id(), report_id, errors,
+            )
             abort(400, message=errors)
         return updated
 

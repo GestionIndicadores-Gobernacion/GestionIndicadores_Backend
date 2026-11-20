@@ -1,4 +1,9 @@
+from flask import current_app
 from flask_jwt_extended import get_jwt_identity
+
+# Mensaje genérico para fallos de BD: el detalle (SQL, constraint) solo va al
+# log del servidor, nunca a la respuesta HTTP.
+_DB_ERROR = {"database": "Error interno al guardar el reporte. Contacta al administrador."}
 
 from app.core.extensions import db
 from app.modules.indicators.models.Report.report import Report, ZoneTypeEnum
@@ -63,10 +68,11 @@ class ReportHandler:
             db.session.commit()
             return report, None
 
-        except Exception as e:
+        except Exception:
             db.session.rollback()
-            return None, {"database": str(e)}
-    
+            current_app.logger.exception("ReportHandler.create failed")
+            return None, _DB_ERROR
+
     @staticmethod
     def _link_activity_to_report(report, activity_id):
         """Vincula una actividad a un reporte existente."""
@@ -83,9 +89,10 @@ class ReportHandler:
             report.action_plan_activity_id = activity_id
             db.session.commit()
             return report, None
-        except Exception as e:
+        except Exception:
             db.session.rollback()
-            return None, {"database": str(e)}
+            current_app.logger.exception("ReportHandler._link_activity_to_report failed")
+            return None, _DB_ERROR
 
     @staticmethod
     def update(report, data):
@@ -124,10 +131,11 @@ class ReportHandler:
             db.session.commit()
             return report, None
 
-        except Exception as e:
+        except Exception:
             db.session.rollback()
-            return None, {"database": str(e)}
-        
+            current_app.logger.exception("ReportHandler.update failed")
+            return None, _DB_ERROR
+
     @staticmethod
     def base_query(user_id=None, is_admin=False, component_ids=None):
         """
