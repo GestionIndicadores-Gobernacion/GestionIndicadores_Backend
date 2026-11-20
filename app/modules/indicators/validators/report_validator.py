@@ -263,8 +263,9 @@ class ReportValidator:
             ).first()
             if existing and existing.id != current_report_id:
                 errors["evidence_link"] = (
-                    f"Ya existe un reporte con este link de evidencia (reporte #{existing.id}). "
-                    "Si deseas asociar esta actividad a ese reporte, usa el endpoint de vinculación."
+                    f"Ya existe un reporte con este enlace de evidencia (reporte #{existing.id}). "
+                    "Verifica si ese reporte ya registra esta actividad o usa un enlace "
+                    "de evidencia distinto para este reporte."
                 )
 
         if indicator_errors:
