@@ -122,3 +122,126 @@ def test_admin_reply_flags(app, _people):
         assert msg.is_admin_reply is True
         assert msg.read_by_admin is True
         assert msg.read_by_owner is False
+
+
+def _notifs(user_id, entity_id):
+    from app.modules.notifications.models.notification import Notification
+    return Notification.query.filter_by(
+        user_id=user_id, entity_id=entity_id, category="support_reply"
+    ).all()
+
+
+def test_notifications_identify_author_and_ticket(app, _people):
+    from app.shared.models.user import User
+    from app.modules.support.services.ticket_handler import TicketHandler
+
+    owner_id, admin1_id = _people["owner"], _people["admin1"]
+    with app.app_context():
+        owner = User.query.get(owner_id)
+        owner.first_name, owner.last_name = "Ana", "Pérez"
+        admin1 = User.query.get(admin1_id)
+        ticket = TicketHandler.create(user_id=owner_id, message="Falla el login")
+
+        # Ticket nuevo: el admin ve quién lo creó y el número.
+        (n,) = _notifs(admin1_id, ticket.id)
+        assert n.title == f"Nuevo reporte #{ticket.id} de Ana Pérez"
+
+        TicketHandler.add_message(ticket=ticket, author=admin1, body="¿Qué navegador usas?")
+        (n,) = _notifs(owner_id, ticket.id)
+        assert n.title == f"Nueva respuesta de soporte en tu reporte #{ticket.id}"
+        assert n.message == "¿Qué navegador usas?"
+
+        TicketHandler.add_message(ticket=ticket, author=owner, body="Chrome")
+        (n,) = [x for x in _notifs(admin1_id, ticket.id) if not x.is_read]
+        assert n.title == f"Ana Pérez respondió en el reporte #{ticket.id}"
+
+
+def test_no_duplicate_unread_notifications_per_ticket(app, _people):
+    from app.shared.models.user import User
+    from app.modules.support.services.ticket_handler import TicketHandler
+    from app.modules.notifications.services.notification_handler import NotificationHandler
+    from app.modules.notifications.models.notification import CATEGORY_SUPPORT_REPLY
+
+    owner_id, admin1_id = _people["owner"], _people["admin1"]
+    with app.app_context():
+        owner = User.query.get(owner_id)
+        admin1 = User.query.get(admin1_id)
+        ticket = TicketHandler.create(user_id=owner_id, message="Error 500")
+
+        # Tres respuestas seguidas del admin → UNA notificación no leída.
+        for body in ("uno", "dos", "tres"):
+            TicketHandler.add_message(ticket=ticket, author=admin1, body=body)
+        assert _unread_notifs(owner_id, ticket.id) == 1
+        (n,) = _notifs(owner_id, ticket.id)
+        assert n.message == "3 mensajes nuevos · tres"
+        assert NotificationHandler.count_unread(owner_id) == 1
+
+        # El dueño la lee; una respuesta posterior genera un aviso NUEVO.
+        TicketHandler.mark_admin_replies_as_read(ticket)
+        NotificationHandler.mark_read_by_entity(owner_id, CATEGORY_SUPPORT_REPLY, ticket.id)
+        assert NotificationHandler.count_unread(owner_id) == 0
+        TicketHandler.add_message(ticket=ticket, author=admin1, body="cuatro")
+        assert _unread_notifs(owner_id, ticket.id) == 1
+        assert len(_notifs(owner_id, ticket.id)) == 2
+        unread = [x for x in _notifs(owner_id, ticket.id) if not x.is_read][0]
+        assert unread.message == "cuatro"
+
+        # Lado admin: "nuevo reporte" + 2 mensajes del usuario → 1 aviso.
+        TicketHandler.add_message(ticket=ticket, author=owner, body="a")
+        TicketHandler.add_message(ticket=ticket, author=owner, body="b")
+        assert _unread_notifs(admin1_id, ticket.id) == 1
+
+
+def test_admin_owned_ticket_notifies_other_admins(app, _people):
+    """Un admin que reporta un fallo actúa como usuario en SU ticket."""
+    from app.shared.models.user import User
+    from app.modules.support.services.ticket_handler import TicketHandler
+    from app.modules.notifications.services.notification_handler import NotificationHandler
+    from app.modules.notifications.models.notification import CATEGORY_SUPPORT_REPLY
+
+    admin1_id, admin2_id = _people["admin1"], _people["admin2"]
+    with app.app_context():
+        admin1 = User.query.get(admin1_id)
+        admin2 = User.query.get(admin2_id)
+        ticket = TicketHandler.create(user_id=admin1_id, message="Reporte del admin 1")
+        assert _unread_notifs(admin2_id, ticket.id) == 1
+        assert _unread_notifs(admin1_id, ticket.id) == 0
+
+        # admin2 lo atiende y responde → avisa al dueño (admin1).
+        TicketHandler.mark_user_messages_as_read_by_admin(ticket)
+        NotificationHandler.mark_read_by_entity(admin2_id, CATEGORY_SUPPORT_REPLY, ticket.id)
+        msg, _ = TicketHandler.add_message(ticket=ticket, author=admin2, body="Lo reviso")
+        assert msg.is_admin_reply is True
+        assert _unread_notifs(admin1_id, ticket.id) == 1
+        assert TicketHandler.count_unread_for_user(admin1_id) == 1
+
+        # admin1 contesta en SU ticket → cuenta como mensaje de usuario y avisa a admin2.
+        msg, _ = TicketHandler.add_message(ticket=ticket, author=admin1, body="Gracias, sigue")
+        assert msg.is_admin_reply is False
+        assert msg.read_by_admin is False
+        assert _unread_notifs(admin2_id, ticket.id) == 1
+        assert TicketHandler.count_unread_for_admin() == 1
+
+
+def test_inactive_admin_participant_not_notified(app, _people):
+    from app.shared.models.user import User
+    from app.modules.support.services.ticket_handler import TicketHandler
+
+    owner_id, admin1_id, admin2_id = _people["owner"], _people["admin1"], _people["admin2"]
+    with app.app_context():
+        owner = User.query.get(owner_id)
+        admin1 = User.query.get(admin1_id)
+        ticket = TicketHandler.create(user_id=owner_id, message="Ayuda")
+        TicketHandler.add_message(ticket=ticket, author=admin1, body="Hola")
+
+        admin1.is_active = False
+        db.session.commit()
+        try:
+            before = len(_notifs(admin1_id, ticket.id))
+            TicketHandler.add_message(ticket=ticket, author=owner, body="¿Sigues ahí?")
+            # El único admin que participó está inactivo → se avisa a los activos.
+            assert len(_notifs(admin1_id, ticket.id)) == before
+            assert _unread_notifs(admin2_id, ticket.id) == 1
+        finally:
+            admin1.is_active = True
+            db.session.commit()

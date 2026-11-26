@@ -61,6 +61,30 @@ class NotificationHandler:
             db.session.commit()
         return count
 
+    @staticmethod
+    def upsert_unread_for_entity(
+        user_id: int, title: str, message: str, category: str, entity_id: int
+    ) -> Notification:
+        """Crea la notificación, o si el usuario ya tiene una NO leída de la
+        misma (categoría, entidad) la actualiza y la sube al primer lugar.
+        Evita acumular N avisos del mismo recurso (p. ej. N mensajes en el mismo
+        ticket de soporte). Uso opcional: los demás módulos siguen con create()."""
+        existing = (
+            Notification.query
+            .filter_by(user_id=user_id, category=category, entity_id=entity_id, is_read=False)
+            .order_by(Notification.created_at.desc())
+            .first()
+        )
+        if existing is None:
+            return NotificationHandler.create(
+                user_id=user_id, title=title, message=message,
+                category=category, entity_id=entity_id,
+            )
+        existing.title = title
+        existing.message = message
+        existing.created_at = datetime.utcnow()
+        return existing
+
     # ── NUEVO ────────────────────────────────────────────────────────────────
 
     @staticmethod

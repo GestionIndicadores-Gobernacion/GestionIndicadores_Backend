@@ -75,7 +75,9 @@ def _mark_ticket_read(user: User, ticket) -> None:
     como en el polling incremental, para que ver el chat marque lo entrante."""
     if ticket.user_id == user.id:
         TicketHandler.mark_admin_replies_as_read(ticket)
-    if _is_admin(user):
+    # Un admin que abre SU propio reporte lo ve como usuario: no debe marcar
+    # sus propios mensajes como "atendidos" por soporte.
+    if _is_admin(user) and ticket.user_id != user.id:
         TicketHandler.mark_user_messages_as_read_by_admin(ticket)
     NotificationHandler.mark_read_by_entity(
         user_id=user.id, category=CATEGORY_SUPPORT_REPLY, entity_id=ticket.id
