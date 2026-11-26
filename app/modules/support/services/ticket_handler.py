@@ -45,12 +45,48 @@ def _active_admin_ids(exclude_id: int | None = None) -> list[int]:
 
 
 def _ticket_admin_participant_ids(ticket: SupportTicket, exclude_id: int | None = None) -> list[int]:
-    """Admins que ya han escrito en el ticket (los que lo están atendiendo)."""
+    """Admins que ya han respondido en el ticket (los que lo están atendiendo).
+    Solo cuenta a quienes siguen siendo admins activos: un ex-admin o un
+    usuario desactivado no debe seguir recibiendo avisos del ticket."""
     ids = {
         m.user_id for m in ticket.messages
         if m.is_admin_reply and m.user_id and m.user_id != exclude_id
     }
-    return list(ids)
+    active = set(_active_admin_ids(exclude_id=exclude_id))
+    return sorted(ids & active)
+
+
+def _is_staff_reply(ticket: SupportTicket, author: User) -> bool:
+    """Un mensaje es "respuesta de soporte" si lo escribe un admin en un ticket
+    AJENO. Si un admin escribe en su propio reporte actúa como usuario: sus
+    mensajes deben avisar a los demás admins y contar como pendientes."""
+    is_admin = bool(author.role and author.role.name == "admin")
+    return is_admin and ticket.user_id != author.id
+
+
+def _display_name(user: User | None) -> str:
+    if user is None:
+        return "Un usuario"
+    name = f"{user.first_name or ''} {user.last_name or ''}".strip()
+    return name or user.email or "Un usuario"
+
+
+def _with_count(preview: str, n: int) -> str:
+    """Antepone el número de mensajes sin leer cuando hay más de uno, porque
+    la notificación del ticket se reutiliza en vez de duplicarse."""
+    return f"{n} mensajes nuevos · {preview}" if n > 1 else preview
+
+
+def _notify_support(recipient_ids, ticket_id: int, title: str, message: str) -> None:
+    """Un solo aviso no leído por destinatario y ticket (se actualiza si ya existe)."""
+    for uid in recipient_ids:
+        NotificationHandler.upsert_unread_for_entity(
+            user_id=uid,
+            title=title,
+            message=message,
+            category=CATEGORY_SUPPORT_REPLY,
+            entity_id=ticket_id,
+        )
 
 
 class TicketHandler:
@@ -87,15 +123,13 @@ class TicketHandler:
         db.session.flush()
 
         # Aviso in-app a todos los admins de que entró un reporte nuevo.
-        preview = _preview(message, images)
-        for admin_id in _active_admin_ids(exclude_id=user_id):
-            NotificationHandler.create(
-                user_id=admin_id,
-                title="Nuevo reporte de soporte",
-                message=preview,
-                category=CATEGORY_SUPPORT_REPLY,
-                entity_id=ticket.id,
-            )
+        author = User.query.get(user_id)
+        _notify_support(
+            _active_admin_ids(exclude_id=user_id),
+            ticket.id,
+            f"Nuevo reporte #{ticket.id} de {_display_name(author)}",
+            _preview(message, images),
+        )
 
         db.session.commit()
         return ticket
@@ -252,7 +286,9 @@ class TicketHandler:
         body: str,
         images: Optional[List[str]] = None,
     ) -> Tuple[SupportMessage, Optional[str]]:
-        is_admin = bool(author.role and author.role.name == "admin")
+        # "admin" aquí = escribe como soporte (admin en ticket ajeno). Un admin
+        # en su propio reporte escribe como usuario.
+        is_admin = _is_staff_reply(ticket, author)
 
         # Transiciones automáticas de estado según quién escribe:
         # - admin responde ticket "pendiente" → "en_proceso" (alguien lo atiende).
@@ -278,32 +314,42 @@ class TicketHandler:
         db.session.add(msg)
         ticket.updated_at = datetime.utcnow()
 
+        db.session.flush()  # para que el mensaje cuente en los no leídos
+
         # ── Notificaciones in-app en AMBOS sentidos ─────────────────────────
+        # Un aviso no leído por destinatario y ticket: si ya hay uno se
+        # actualiza (título, último mensaje y cuántos van) en vez de duplicarse.
         preview = _preview(body, images)
-        if is_admin and ticket.user_id != author.id:
-            # Admin → dueño del ticket.
-            NotificationHandler.create(
-                user_id=ticket.user_id,
-                title="Respuesta a tu reporte",
-                message=preview,
-                category=CATEGORY_SUPPORT_REPLY,
-                entity_id=ticket.id,
+        if is_admin:
+            # Soporte → dueño del ticket.
+            pending = (
+                SupportMessage.query
+                .filter_by(ticket_id=ticket.id, is_admin_reply=True, read_by_owner=False)
+                .count()
             )
-        elif not is_admin:
+            _notify_support(
+                [ticket.user_id],
+                ticket.id,
+                f"Nueva respuesta de soporte en tu reporte #{ticket.id}",
+                _with_count(preview, pending),
+            )
+        else:
             # Usuario → admins que ya atienden el ticket; si aún no ha
-            # respondido ningún admin, se avisa a todos los admins.
+            # respondido ningún admin, se avisa a todos los admins activos.
             recipients = _ticket_admin_participant_ids(ticket, exclude_id=author.id)
             if not recipients:
                 recipients = _active_admin_ids(exclude_id=author.id)
-            title = f"Respuesta en reporte #{ticket.id}"
-            for admin_id in recipients:
-                NotificationHandler.create(
-                    user_id=admin_id,
-                    title=title,
-                    message=preview,
-                    category=CATEGORY_SUPPORT_REPLY,
-                    entity_id=ticket.id,
-                )
+            pending = (
+                SupportMessage.query
+                .filter_by(ticket_id=ticket.id, is_admin_reply=False, read_by_admin=False)
+                .count()
+            )
+            _notify_support(
+                recipients,
+                ticket.id,
+                f"{_display_name(author)} respondió en el reporte #{ticket.id}",
+                _with_count(preview, pending),
+            )
 
         db.session.commit()
         return msg, None
